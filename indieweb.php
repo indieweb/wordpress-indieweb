@@ -1,8 +1,8 @@
 <?php
 /*
  Plugin Name: IndieWeb
- Plugin URI: https://github.com/pfefferle/wordpress-indieweb-comments
- Description: Adds some IndieWeb functionality to WordPress' comment system
+ Plugin URI: https://github.com/pfefferle/wordpress-indieweb
+ Description: Adds some IndieWeb functionality to your WordPress blog
  Author: pfefferle
  Author URI: http://notizblog.org/
  Version: 1.0.0-dev
