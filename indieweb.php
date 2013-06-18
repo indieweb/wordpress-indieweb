@@ -1,6 +1,6 @@
 <?php
 /*
- Plugin Name: IndieWeb Comments
+ Plugin Name: IndieWeb
  Plugin URI: https://github.com/pfefferle/wordpress-indieweb-comments
  Description: Adds some IndieWeb functionality to WordPress' comment system
  Author: pfefferle
