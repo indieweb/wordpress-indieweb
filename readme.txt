@@ -1,4 +1,1 @@
-wordpress-indieweb-comments
-===========================
-
-A WordPress plugin to support IndieWeb comments
+This plugin is still under developement please don't use it yet!
