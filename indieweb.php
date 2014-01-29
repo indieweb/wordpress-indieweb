@@ -20,12 +20,30 @@ if ( ! defined( 'WP_PLUGIN_DIR' ) )
 if ( ! defined( 'WP_ADMIN_URL' ) )
     define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
 
+// initialize plugin
+add_action('init', array( 'IndieWebPlugin', 'init' ), 99);
+
 /**
  *
  *
  * @author Matthias Pfefferle
  */
 class IndieWebPlugin {
+
+  /**
+   *
+   */
+  public static function init() {
+    // include webmentions if not already installed
+    if (!class_exists("WebMentionPlugin")) {
+      require_once "webmention/webmention.php";
+    }
+
+    // include semantic linkbacks if not already installed
+    if (!class_exists("SemanticLinkbacksPlugin")) {
+      require_once "semantic-linkbacks/semantic-linkbacks.php";
+    }
+  }
 
   public static function add_menu_item() {
     add_options_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
