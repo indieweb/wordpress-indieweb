@@ -20,18 +20,12 @@ if ( ! defined( 'WP_PLUGIN_DIR' ) )
 if ( ! defined( 'WP_ADMIN_URL' ) )
     define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
 
+// include bundled plugins
+include_once "webmention/webmention.php";
+include_once "semantic-linkbacks/semantic-linkbacks.php";
+
 // initialize plugin
-add_action('init', array( 'IndieWebPlugin', 'init' ), 99);
-
-// include webmentions if not already installed
-if (!class_exists("WebMentionPlugin")) {
-  include_once "webmention/webmention.php";
-}
-
-// include semantic linkbacks if not already installed
-if (!class_exists("SemanticLinkbacksPlugin")) {
-  include_once "semantic-linkbacks/semantic-linkbacks.php";
-}
+add_action('init', array( 'IndieWebPlugin', 'init' ));
 
 /**
  *
