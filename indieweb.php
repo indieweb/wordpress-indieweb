@@ -23,6 +23,16 @@ if ( ! defined( 'WP_ADMIN_URL' ) )
 // initialize plugin
 add_action('init', array( 'IndieWebPlugin', 'init' ), 99);
 
+// include webmentions if not already installed
+if (!class_exists("WebMentionPlugin")) {
+  include_once "webmention/webmention.php";
+}
+
+// include semantic linkbacks if not already installed
+if (!class_exists("SemanticLinkbacksPlugin")) {
+  include_once "semantic-linkbacks/semantic-linkbacks.php";
+}
+
 /**
  *
  *
@@ -31,25 +41,23 @@ add_action('init', array( 'IndieWebPlugin', 'init' ), 99);
 class IndieWebPlugin {
 
   /**
-   *
+   * Initialize the plugin, registering WordPress hooks.
    */
   public static function init() {
-    // include webmentions if not already installed
-    if (!class_exists("WebMentionPlugin")) {
-      require_once "webmention/webmention.php";
-    }
-
-    // include semantic linkbacks if not already installed
-    if (!class_exists("SemanticLinkbacksPlugin")) {
-      require_once "semantic-linkbacks/semantic-linkbacks.php";
-    }
+    // hooks
+    add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
   }
 
+  /**
+   * add menu item
+   */
   public static function add_menu_item() {
     add_options_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
-    add_menu_page('IndieWeb',  'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'), WP_PLUGIN_URL.'/indieweb/static/img/indieweb-16.png');
   }
 
+  /**
+   * settings page
+   */
   public static function settings() {
     wp_enqueue_style( 'plugin-install' );
     wp_enqueue_script( 'plugin-install' );
@@ -72,5 +80,3 @@ class IndieWebPlugin {
 <?php
   }
 }
-
-add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
