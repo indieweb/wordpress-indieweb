@@ -13,8 +13,8 @@ IndieWeb for WordPress!
 The [IndieWeb](http://indiewebcamp.com/) version of [WordPress' Jetpack plugin](http://wordpress.org/plugins/jetpack/).
 This IndieWeb bundle supports:
 
-* [webmentions](https://github.com/pfefferle/wordpress-webmention)
 * [semantic-pingbacks](https://github.com/pfefferle/wordpress-semantic-linkbacks)
+* [webmentions](https://github.com/pfefferle/wordpress-webmention)
 * ...
 
 more to come.
@@ -23,7 +23,7 @@ more to come.
 
 == Changelog ==
 
-Project maintined on github at [pfefferle/wordpress-indieweb](https://github.com/pfefferle/wordpress-indieweb).
+Project maintined on github at [pfefferle/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
 = 1.0.0 =
 

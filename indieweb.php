@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: IndieWeb
- Plugin URI: https://github.com/pfefferle/wordpress-indieweb
+ Plugin URI: https://github.com/indieweb/wordpress-indieweb
  Description: The IndieWeb version of WordPress' Jetpack plugin
  Author: pfefferle
  Author URI: http://notizblog.org/
