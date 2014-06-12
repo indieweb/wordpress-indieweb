@@ -4,7 +4,7 @@ Donate link: http://14101978.de
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
 Tested up to: 3.8.1
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 
 IndieWeb for WordPress!
 
@@ -24,6 +24,11 @@ more to come.
 == Changelog ==
 
 Project maintined on github at [pfefferle/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 1.1.0 =
+
+* updated webmention and semantic-linkbacks plugins
+* added hum (url shortener)
 
 = 1.0.0 =
 
