@@ -23,6 +23,7 @@ if ( ! defined( 'WP_ADMIN_URL' ) )
 // include bundled plugins
 include_once "webmention/webmention.php";
 include_once "semantic-linkbacks/semantic-linkbacks.php";
+include_once "hum/hum.php";
 
 // initialize plugin
 add_action('init', array( 'IndieWebPlugin', 'init' ));
