@@ -1,9 +1,0 @@
-[submodule "webmention"]
-	path = webmention
-	url = https://github.com/pfefferle/wordpress-webmention.git
-[submodule "semantic-linkbacks"]
-	path = semantic-linkbacks
-	url = https://github.com/pfefferle/wordpress-semantic-linkbacks.git
-[submodule "hum"]
-	path = hum
-	url = https://github.com/willnorris/wordpress-hum.git
