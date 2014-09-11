@@ -3,7 +3,7 @@ Contributors: pfefferle
 Donate link: http://14101978.de
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
-Tested up to: 3.8.1
+Tested up to: 4.0
 Stable tag: 1.1.0
 
 IndieWeb for WordPress!
@@ -11,19 +11,16 @@ IndieWeb for WordPress!
 == Description ==
 
 The [IndieWeb](http://indiewebcamp.com/) version of [WordPress' Jetpack plugin](http://wordpress.org/plugins/jetpack/).
-This IndieWeb bundle supports:
-
-* [semantic-pingbacks](https://github.com/pfefferle/wordpress-semantic-linkbacks)
-* [webmentions](https://github.com/pfefferle/wordpress-webmention)
-* ...
-
-more to come.
 
 == FAQ ==
 
 == Changelog ==
 
-Project maintined on github at [pfefferle/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+Project maintined on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 2.0.0 =
+
+* plugins are not bundled any more
 
 = 1.1.0 =
 
