@@ -60,13 +60,15 @@ class IndieWebPlugin {
   <div class="wrap">
     <img src="<?php echo WP_PLUGIN_URL ?>/indieweb/static/img/indieweb-32.png" alt="OSstatus for WordPress" class="icon32" />
 
-    <h2>Indie Webify your WordPress-Blog</h2>
+    <h2>IndieWebify your WordPress-Blog</h2>
 
     <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>
     <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
 
     <p>WordPress is an easy way to start your <em>Indie Web</em> live. There are a bunch of plugins that will help you to get you even more in control of
       your own data.</p>
+
+    <p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary">Install Plugins</a></p>
 
     <p>For some more informations, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>Indie Web Camp</em> wiki</a>
       and especially the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a>.</p>
