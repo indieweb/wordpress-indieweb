@@ -5,7 +5,7 @@
  Description: The IndieWeb version of WordPress' Jetpack plugin
  Author: pfefferle
  Author URI: http://notizblog.org/
- Version: 2.0.0
+ Version: 2.0.1-beta
 */
 
 // Pre-2.6 compatibility

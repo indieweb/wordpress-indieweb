@@ -12,7 +12,7 @@ IndieWeb for WordPress!
 
 The [IndieWeb](http://indiewebcamp.com/) version of [WordPress' Jetpack plugin](http://wordpress.org/plugins/jetpack/).
 
-== FAQ ==
+== Frequently Asked Questions ==
 
 = What about plugin XYZ? =
 
