@@ -4,7 +4,7 @@ Donate link: http://14101978.de
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
 Tested up to: 4.0
-Stable tag: 1.1.0
+Stable tag: 2.0.0
 
 IndieWeb for WordPress!
 
@@ -13,6 +13,10 @@ IndieWeb for WordPress!
 The [IndieWeb](http://indiewebcamp.com/) version of [WordPress' Jetpack plugin](http://wordpress.org/plugins/jetpack/).
 
 == FAQ ==
+
+= What about plugin XYZ? =
+
+If you think we missed a plugin reference, please file an issue on [Github](https://github.com/indieweb/wordpress-indieweb/issues).
 
 == Changelog ==
 
