@@ -30,16 +30,17 @@ add_action('init', array( 'IndieWebPlugin', 'init' ));
 add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'));
 
 /**
- *
+ * IndieWeb Plugin Class
  *
  * @author Matthias Pfefferle
  */
-class IndieWebPlugin {
-
+class IndieWebPlugin
+{
   /**
    * Initialize the plugin, registering WordPress hooks.
    */
-  public static function init() {
+  public static function init()
+  {
     // hooks
     add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
     add_filter('tgmpa_admin_menu_use_add_theme_page', '__return_false');
@@ -48,14 +49,16 @@ class IndieWebPlugin {
   /**
    * add menu item
    */
-  public static function add_menu_item() {
+  public static function add_menu_item()
+  {
     add_options_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
   }
 
   /**
    * settings page
    */
-  public static function settings() {
+  public static function settings()
+  {
 ?>
   <div class="wrap">
     <img src="<?php echo WP_PLUGIN_URL ?>/indieweb/static/img/indieweb-32.png" alt="OSstatus for WordPress" class="icon32" />
@@ -82,8 +85,8 @@ class IndieWebPlugin {
    * This function is hooked into tgmpa_init, which is fired within the
    * TGM_Plugin_Activation class constructor.
    */
-  function register_required_plugins() {
-
+  public function register_required_plugins()
+  {
     /**
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -145,6 +148,15 @@ class IndieWebPlugin {
         'source'        => 'https://github.com/dshanske/indieweb-taxonomy/archive/master.zip',
         'required'      => false,
         'external_url'  => 'https://github.com/dshanske/indieweb-taxonomy'
+      ),
+
+      // recommend the Semantic Taxonomy plugin
+      array(
+        'name'          => 'Add and Display Syndication Links',
+        'slug'          => 'syndication-links-master',
+        'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
+        'required'      => false,
+        'external_url'  => 'https://github.com/dshanske/syndication-links'
       ),
 
     );
