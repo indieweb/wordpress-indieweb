@@ -85,7 +85,7 @@ class IndieWebPlugin
    * This function is hooked into tgmpa_init, which is fired within the
    * TGM_Plugin_Activation class constructor.
    */
-  public function register_required_plugins()
+  public static function register_required_plugins()
   {
     /**
      * Array of plugin arrays. Required keys are name and slug.
