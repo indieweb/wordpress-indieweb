@@ -1,0 +1,27 @@
+{
+  "name": "wordpress-indieweb",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/indieweb/wordpress-indieweb.git"
+  },
+  "author": {
+    "name": "Matthias Pfefferle",
+    "email": "pfefferle@gmail.com",
+    "web": "http://notizblog.org"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-wp-readme-to-markdown": "*"
+  },
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/indieweb/wordpress-indieweb/issues"
+  },
+  "homepage": "https://github.com/indieweb/wordpress-indieweb",
+  "keywords": [
+    "indieweb",
+    "wordpress"
+  ]
+}
