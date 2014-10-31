@@ -22,6 +22,11 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 
 Project maintined on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+### 2.1.0 ###
+
+* added "syndication-links" plugin
+* fixed some small bugs
+
 ### 2.0.0 ###
 
 * plugins are not bundled any more
