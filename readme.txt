@@ -1,5 +1,5 @@
 === IndieWeb ===
-Contributors: pfefferle, dshanske
+Contributors: pfefferle & dshanske
 Donate link: http://14101978.de
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8

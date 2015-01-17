@@ -3,8 +3,8 @@
  Plugin Name: IndieWeb
  Plugin URI: https://github.com/indieweb/wordpress-indieweb
  Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so. 
- Author: pfefferle, dshanske
- Author URI: http://indiewebcamp.org/
+ Author: IndieWebCamp WordPress Outreach Club
+ Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
  Version: 2.1.0
 */
 
