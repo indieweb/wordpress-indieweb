@@ -44,6 +44,10 @@ class IndieWebPlugin
     // hooks
     add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
     add_filter('tgmpa_admin_menu_use_add_theme_page', '__return_false');
+    $plugin = plugin_basename(__FILE__);
+    add_filter("plugin_action_links_$plugin", array('IndieWebPlugin', 'indieweb_plugin_link') );
+
+
   }
 
   /**
@@ -212,7 +216,7 @@ class IndieWebPlugin
       'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
       'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
       'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-      'message'      => 'Choose the combination of plugins that are right for your site', // Message to output right before the plugins table.
+      'message'      => 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', // Message to output right before the plugins table.
       'strings'      => array(
         'page_title'                      => __('Install Indieweb Plugins', 'indieweb'),
         'menu_title'                      => __('IndieWeb Plugin Installer', 'indieweb'),
@@ -237,4 +241,10 @@ class IndieWebPlugin
 
     tgmpa($plugins, $config);
   }
+public static function indieweb_plugin_link($links) { 
+  $settings_link = '<a href="plugins.php?page=indieweb">Getting Started</a>'; 
+  array_unshift($links, $settings_link); 
+  return $links; 
+	}
+ 
 }
