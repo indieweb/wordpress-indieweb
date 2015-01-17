@@ -2,10 +2,10 @@
 /*
  Plugin Name: IndieWeb
  Plugin URI: https://github.com/indieweb/wordpress-indieweb
- Description: The IndieWeb version of WordPress' Jetpack plugin
- Author: pfefferle
- Author URI: http://notizblog.org/
- Version: 2.1.0-beta
+ Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so. 
+ Author: pfefferle, dshanske
+ Author URI: http://indiewebcamp.org/
+ Version: 2.1.0
 */
 
 // Pre-2.6 compatibility
@@ -51,7 +51,7 @@ class IndieWebPlugin
    */
   public static function add_menu_item()
   {
-    add_options_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
+    add_plugins_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
   }
 
   /**
@@ -65,16 +65,35 @@ class IndieWebPlugin
 
     <h2>IndieWebify your WordPress-Blog</h2>
 
-    <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>
-    <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
+<h3>Getting Started</h3>
+  
+    <p>It is easy to get started with <em>IndieWeb</em> on WordPress. This plugin will help you set up the plugins that will enhance your site. Not all plugins are right for you. Required plugins are those we recommend every site have.</p>
+    <p>For more information on these plugins, visit the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a> on the Indiewebcamp wiki.</p>
 
-    <p>WordPress is an easy way to start your <em>Indie Web</em> live. There are a bunch of plugins that will help you to get you even more in control of
-      your own data.</p>
+
+<ul>
+<li><strong>Webmention</strong> <em>(Required)</em> - adds webmention support to WordPress. The plumbing of the Indieweb</li>
+<li><strong>Semantic Linkbacks</strong> <em>(Required)</em> - enhances linkbacks such as webmention to create richer comments.</li>
+<li><strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.</li>
+<li><strong>Webactions</strong> - Adds webaction markups to WordPress elements</li> 
+<li><strong>Post Kinds</strong> - Adds support for kinds of posts to WordPress as a custom taxonomy. Allows you to reply/like/etc . to another site from your own.</li>
+<li><strong>Syndication Plugins</strong> - Both of the below offer differing ways to display links for POSSE/syndicated versions of a post.
+   <ol>	<li><strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links</li>
+	<li><strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish</li>
+  </ol></li>
+<li><strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click</li>
+<li><strong>Hum URL Shortener</strong> - A personal URL shortener</li>
+
+</ul>
 
     <p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary">Install Plugins</a></p>
 
-    <p>For some more informations, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>Indie Web Camp</em> wiki</a>
-      and especially the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a>.</p>
+<h3>What is the Indieweb?</h3>
+
+    <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>  
+    <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
+
+    <p>For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>Indie Web Camp</em> wiki</a>.</p>
   </div>
 <?php
   }
@@ -103,7 +122,7 @@ class IndieWebPlugin
       // require the Semantic Linkbacks plugin
       array(
         'name'               => 'Semantic Linkbacks',
-        'slug'               => 'semantic-linkbacks',
+
         'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       ),
 
@@ -141,23 +160,32 @@ class IndieWebPlugin
         'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments'
       ),
 
-      // recommend the Semantic Taxonomy plugin
+      // recommend the Post Kinds plugin
       array(
-        'name'          => 'Semantic Taxonomy to support and display like/reply/repost, etc.',
-        'slug'          => 'indieweb-taxonomy-master',
-        'source'        => 'https://github.com/dshanske/indieweb-taxonomy/archive/master.zip',
+        'name'          => 'Post Kinds',
+        'slug'          => 'indieweb-post-kinds-master',
+        'source'        => 'https://github.com/dshanske/indieweb-post-kinds/archive/master.zip',
         'required'      => false,
-        'external_url'  => 'https://github.com/dshanske/indieweb-taxonomy'
+        'external_url'  => 'https://github.com/dshanske/indieweb-post-kinds'
       ),
 
-      // recommend the Semantic Taxonomy plugin
+      // recommend the Syndication Links plugin
       array(
-        'name'          => 'Add and Display Syndication Links',
+        'name'          => 'Syndication Links',
         'slug'          => 'syndication-links-master',
         'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
         'required'      => false,
         'external_url'  => 'https://github.com/dshanske/syndication-links'
       ),
+
+      // recommend the WordPress Syndication plugin
+      array(  
+        'name'          => 'WordPress Syndication',
+        'slug'          => 'wordpress-syndication-master',  
+        'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
+        'required'      => false,
+        'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
+      ), 
 
     );
 
@@ -176,12 +204,12 @@ class IndieWebPlugin
       'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
       'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
       'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-      'message'      => 'We recommend/require the following "IndieWeb" Plugins', // Message to output right before the plugins table.
+      'message'      => 'Choose the combination of plugins that are right for your site', // Message to output right before the plugins table.
       'strings'      => array(
-        'page_title'                      => __('Install Required Plugins', 'indieweb'),
-        'menu_title'                      => __('Install IndieWeb Plugins', 'indieweb'),
+        'page_title'                      => __('Install Indieweb Plugins', 'indieweb'),
+        'menu_title'                      => __('IndieWeb Plugin Installer', 'indieweb'),
         'installing'                      => __('Installing Plugin: %s', 'indieweb'), // %s = plugin name.
-        'oops'                            => __('Something went wrong with the plugin API.', 'indieweb'),
+        'oops'                            => __('Something went wrong with the plugin install.', 'indieweb'),
         'notice_can_install_required'     => _n_noop('The IndieWeb plugin requires the following plugin: %1$s.', 'The IndieWeb plugin requires the following plugins: %1$s.', 'indieweb'), // %1$s = plugin name(s).
         'notice_can_install_recommended'  => _n_noop('The IndieWeb plugin recommends the following plugin: %1$s.', 'The IndieWeb plugin recommends the following plugins: %1$s.', 'indieweb'), // %1$s = plugin name(s).
         'notice_cannot_install'           => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'indieweb'), // %1$s = plugin name(s).
@@ -192,7 +220,7 @@ class IndieWebPlugin
         'notice_cannot_update'            => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb'), // %1$s = plugin name(s).
         'install_link'                    => _n_noop('Begin installing plugin', 'Begin installing plugins', 'indieweb'),
         'activate_link'                   => _n_noop('Begin activating plugin', 'Begin activating plugins', 'indieweb'),
-        'return'                          => __('Return to Required Plugins Installer', 'indieweb'),
+        'return'                          => __('Return to Indieweb Plugins Installer', 'indieweb'),
         'plugin_activated'                => __('Plugin activated successfully.', 'indieweb'),
         'complete'                        => __('All plugins installed and activated successfully. %s', 'indieweb'), // %s = dashboard link.
         'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.

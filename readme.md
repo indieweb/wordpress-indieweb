@@ -1,16 +1,16 @@
 # IndieWeb #
-**Contributors:** pfefferle  
+**Contributors:** pfefferle, dshanske
 **Donate link:** http://14101978.de  
 **Tags:** indieweb, webmention, webaction, POSSE, indieauth  
 **Requires at least:** 3.8  
-**Tested up to:** 4.0  
-**Stable tag:** 2.0.0  
+**Tested up to:** 4.1  
+**Stable tag:** 2.1.0  
 
 IndieWeb for WordPress!
 
 ## Description ##
 
-The [IndieWeb](http://indiewebcamp.com/) version of [WordPress' Jetpack plugin](http://wordpress.org/plugins/jetpack/).
+Interested in connecting your WordPress site to the [Indieweb](https://indiewebcamp.com/)? Let us help you get started.
 
 ## Frequently Asked Questions ##
 
@@ -24,8 +24,11 @@ Project maintined on github at [indieweb/wordpress-indieweb](https://github.com/
 
 ### 2.1.0 ###
 
-* added "syndication-links" plugin
+* added "syndication-links" and "wordpress-syndication plugins
+* expanded Indieweb Page with description of plugins
+* second contributor
 * fixed some small bugs
+
 
 ### 2.0.0 ###
 
