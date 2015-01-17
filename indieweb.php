@@ -70,7 +70,7 @@ class IndieWebPlugin
     <p>It is easy to get started with <em>IndieWeb</em> on WordPress. This plugin will help you set up the plugins that will enhance your site. Not all plugins are right for you. Required plugins are those we recommend every site have.</p>
     <p>For more information on these plugins, visit the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a> on the Indiewebcamp wiki.</p>
 
-
+<h3>Plugins</h3>
 <ul>
 <li><strong>Webmention</strong> <em>(Required)</em> - adds webmention support to WordPress. The plumbing of the Indieweb</li>
 <li><strong>Semantic Linkbacks</strong> <em>(Required)</em> - enhances linkbacks such as webmention to create richer comments.</li>
@@ -83,7 +83,7 @@ class IndieWebPlugin
   </ol></li>
 <li><strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click</li>
 <li><strong>Hum URL Shortener</strong> - A personal URL shortener</li>
-
+<li><strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.</li>
 </ul>
 
     <p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary">Install Plugins</a></p>
@@ -93,7 +93,7 @@ class IndieWebPlugin
     <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>  
     <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
 
-    <p>For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>Indie Web Camp</em> wiki</a>.</p>
+    <p>For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>IndieWebCamp</em> wiki</a>.</p>
   </div>
 <?php
   }
@@ -186,6 +186,14 @@ class IndieWebPlugin
         'required'      => false,
         'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
       ), 
+
+      // recommend the Indieauth plugin
+      array( 
+        'name'          => 'Indieauth',
+        'slug'          => 'indieauth', 
+        'required'      => false,
+      ),
+
 
     );
 

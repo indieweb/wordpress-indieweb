@@ -24,7 +24,7 @@ Project maintined on github at [indieweb/wordpress-indieweb](https://github.com/
 
 ### 2.1.0 ###
 
-* added "syndication-links" and "wordpress-syndication plugins
+* added "syndication-links", "indieauth" and "wordpress-syndication plugins
 * expanded Indieweb Page with description of plugins
 * second contributor
 * fixed some small bugs
