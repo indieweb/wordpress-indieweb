@@ -2,7 +2,7 @@
 /*
  Plugin Name: IndieWeb
  Plugin URI: https://github.com/indieweb/wordpress-indieweb
- Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so. 
+ Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so.
  Author: IndieWebCamp WordPress Outreach Club
  Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
  Version: 2.1.0
@@ -23,10 +23,10 @@ if ( ! defined( 'WP_ADMIN_URL' ) )
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 
 // initialize plugin
-add_action('init', array( 'IndieWebPlugin', 'init' ));
+add_action('init', array('IndieWebPlugin', 'init'));
 add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'));
 
 /**
@@ -34,67 +34,61 @@ add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'
  *
  * @author Matthias Pfefferle
  */
-class IndieWebPlugin
-{
+class IndieWebPlugin {
   /**
    * Initialize the plugin, registering WordPress hooks.
    */
-  public static function init()
-  {
+  public static function init() {
     // hooks
     add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
     add_filter('tgmpa_admin_menu_use_add_theme_page', '__return_false');
     $plugin = plugin_basename(__FILE__);
-    add_filter("plugin_action_links_$plugin", array('IndieWebPlugin', 'indieweb_plugin_link') );
-
-
+    add_filter("plugin_action_links_$plugin", array('IndieWebPlugin', 'plugin_link') );
   }
 
   /**
    * add menu item
    */
-  public static function add_menu_item()
-  {
+  public static function add_menu_item() {
     add_plugins_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
   }
 
   /**
    * settings page
    */
-  public static function settings()
-  {
+  public static function settings() {
 ?>
   <div class="wrap">
-    <img src="<?php echo WP_PLUGIN_URL ?>/indieweb/static/img/indieweb-32.png" alt="OSstatus for WordPress" class="icon32" />
-
     <h2>IndieWebify your WordPress-Blog</h2>
 
-<h3>Getting Started</h3>
-  
+    <h3>Getting Started</h3>
+
     <p>It is easy to get started with <em>IndieWeb</em> on WordPress. This plugin will help you set up the plugins that will enhance your site. Not all plugins are right for you. Required plugins are those we recommend every site have.</p>
     <p>For more information on these plugins, visit the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a> on the Indiewebcamp wiki.</p>
 
-<h3>Plugins</h3>
-<ul>
-<li><strong>Webmention</strong> <em>(Required)</em> - adds webmention support to WordPress. The plumbing of the Indieweb</li>
-<li><strong>Semantic Linkbacks</strong> <em>(Required)</em> - enhances linkbacks such as webmention to create richer comments.</li>
-<li><strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.</li>
-<li><strong>Webactions</strong> - Adds webaction markups to WordPress elements</li> 
-<li><strong>Post Kinds</strong> - Adds support for kinds of posts to WordPress as a custom taxonomy. Allows you to reply/like/etc . to another site from your own.</li>
-<li><strong>Syndication Plugins</strong> - Both of the below offer differing ways to display links for POSSE/syndicated versions of a post.
-   <ol>	<li><strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links</li>
-	<li><strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish</li>
-  </ol></li>
-<li><strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click</li>
-<li><strong>Hum URL Shortener</strong> - A personal URL shortener</li>
-<li><strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.</li>
-</ul>
+    <h3>Plugins</h3>
+    <ul>
+      <li><strong>Webmention</strong> <em>(Required)</em> - adds webmention support to WordPress. The plumbing of the Indieweb</li>
+      <li><strong>Semantic Linkbacks</strong> <em>(Required)</em> - enhances linkbacks such as webmention to create richer comments.</li>
+      <li><strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.</li>
+      <li><strong>Webactions</strong> - Adds webaction markups to WordPress elements</li>
+      <li><strong>Post Kinds</strong> - Adds support for kinds of posts to WordPress as a custom taxonomy. Allows you to reply/like/etc . to another site from your own.</li>
+      <li><strong>Syndication Plugins</strong> - Both of the below offer differing ways to display links for POSSE/syndicated versions of a post.
+         <ol>
+           <li><strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links</li>
+           <li><strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish</li>
+        </ol>
+      </li>
+      <li><strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click</li>
+      <li><strong>Hum URL Shortener</strong> - A personal URL shortener</li>
+      <li><strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.</li>
+    </ul>
 
     <p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary">Install Plugins</a></p>
 
-<h3>What is the Indieweb?</h3>
+    <h3>What is the Indieweb?</h3>
 
-    <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>  
+    <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>
     <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
 
     <p>For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>IndieWebCamp</em> wiki</a>.</p>
@@ -108,8 +102,7 @@ class IndieWebPlugin
    * This function is hooked into tgmpa_init, which is fired within the
    * TGM_Plugin_Activation class constructor.
    */
-  public static function register_required_plugins()
-  {
+  public static function register_required_plugins() {
     /**
      * Array of plugin arrays. Required keys are name and slug.
      * If the source is NOT from the .org repo, then source is also required.
@@ -126,7 +119,7 @@ class IndieWebPlugin
       // require the Semantic Linkbacks plugin
       array(
         'name'               => 'Semantic Linkbacks',
-
+        'slug'               => 'semantic-linkbacks',
         'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       ),
 
@@ -183,18 +176,18 @@ class IndieWebPlugin
       ),
 
       // recommend the WordPress Syndication plugin
-      array(  
+      array(
         'name'          => 'WordPress Syndication',
-        'slug'          => 'wordpress-syndication-master',  
+        'slug'          => 'wordpress-syndication-master',
         'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
         'required'      => false,
         'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
-      ), 
+      ),
 
       // recommend the Indieauth plugin
-      array( 
+      array(
         'name'          => 'Indieauth',
-        'slug'          => 'indieauth', 
+        'slug'          => 'indieauth',
         'required'      => false,
       ),
 
@@ -241,10 +234,12 @@ class IndieWebPlugin
 
     tgmpa($plugins, $config);
   }
-public static function indieweb_plugin_link($links) { 
-  $settings_link = '<a href="plugins.php?page=indieweb">Getting Started</a>'; 
-  array_unshift($links, $settings_link); 
-  return $links; 
-	}
- 
+
+  public static function plugin_link($links) {
+    $settings_link = '<a href="'.admin_url("plugins.php?page=indieweb").'">Getting Started</a>';
+    array_unshift($links, $settings_link);
+
+    return $links;
+  }
+
 }
