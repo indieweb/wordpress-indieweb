@@ -59,39 +59,8 @@ class IndieWebPlugin {
   public static function settings() {
 ?>
   <div class="wrap">
-    <h2>IndieWebify your WordPress-Blog</h2>
+    <?php require_once dirname(__FILE__) . '/getting_started.php'; ?>
 
-    <h3>Getting Started</h3>
-
-    <p>It is easy to get started with <em>IndieWeb</em> on WordPress. This plugin will help you set up the plugins that will enhance your site. Not all plugins are right for you. Required plugins are those we recommend every site have.</p>
-    <p>For more information on these plugins, visit the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a> on the Indiewebcamp wiki.</p>
-
-    <h3>Plugins</h3>
-    <ul>
-      <li><strong>Webmention</strong> <em>(Required)</em> - adds webmention support to WordPress. The plumbing of the Indieweb</li>
-      <li><strong>Semantic Linkbacks</strong> <em>(Required)</em> - enhances linkbacks such as webmention to create richer comments.</li>
-      <li><strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.</li>
-      <li><strong>Webactions</strong> - Adds webaction markups to WordPress elements</li>
-      <li><strong>Post Kinds</strong> - Adds support for kinds of posts to WordPress as a custom taxonomy. Allows you to reply/like/etc . to another site from your own.</li>
-      <li><strong>Syndication Plugins</strong> - Both of the below offer differing ways to display links for POSSE/syndicated versions of a post.
-         <ol>
-           <li><strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links</li>
-           <li><strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish</li>
-        </ol>
-      </li>
-      <li><strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click</li>
-      <li><strong>Hum URL Shortener</strong> - A personal URL shortener</li>
-      <li><strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.</li>
-    </ul>
-
-    <p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary">Install Plugins</a></p>
-
-    <h3>What is the Indieweb?</h3>
-
-    <p><strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.</p>
-    <p>This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.</p>
-
-    <p>For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>IndieWebCamp</em> wiki</a>.</p>
   </div>
 <?php
   }
