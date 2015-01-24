@@ -14,6 +14,10 @@ Interested in connecting your WordPress site to the [Indieweb](https://indiewebc
 
 == Frequently Asked Questions ==
 
+= How do I get Started? =
+
+Indieweb for WordPress is a plugin installer program. A Getting Started Guide can be found under Plugins->Indieweb.
+
 = What about plugin XYZ? =
 
 If you think we missed a plugin reference, please file an issue on [Github](https://github.com/indieweb/wordpress-indieweb/issues).
