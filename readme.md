@@ -1,5 +1,5 @@
 # IndieWeb #
-**Contributors:** pfefferle & dshanske
+**Contributors:** pfefferle & dshanske  
 **Donate link:** http://14101978.de  
 **Tags:** indieweb, webmention, webaction, POSSE, indieauth  
 **Requires at least:** 3.8  
@@ -28,7 +28,6 @@ Project maintined on github at [indieweb/wordpress-indieweb](https://github.com/
 * expanded Indieweb Page with description of plugins
 * second contributor
 * fixed some small bugs
-
 
 ### 2.0.0 ###
 
