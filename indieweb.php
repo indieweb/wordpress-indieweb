@@ -12,29 +12,8 @@ Domain Path: /languages
 
 
 
-// Pre-2.6 compatibility
-if ( ! defined( 'WP_CONTENT_URL' ) )
-	define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
-if ( ! defined( 'WP_CONTENT_DIR' ) )
-	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
-if ( ! defined( 'WP_PLUGIN_URL' ) )
-	define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );
-if ( ! defined( 'WP_PLUGIN_DIR' ) )
-	define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
-if ( ! defined( 'WP_ADMIN_URL' ) )
-	define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
-
-
-
-/**
- * Include the TGM_Plugin_Activation class.
- */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-
 // initialize plugin
-add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'enable_translation' ) );
-add_action( 'init', array( 'IndieWebPlugin', 'init' ) );
-add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
+add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'init' ) );
 
 
 
@@ -49,33 +28,63 @@ class IndieWebPlugin {
 	 * Initialize the plugin, registering WordPress hooks.
 	 */
 	public static function init() {
-		// hooks
-		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ));
+
+		// enable translation
+		self::enable_translation();
+
+		// include the TGM_Plugin_Activation class
+		require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+
+		// register TGM hooks
+		add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
 		add_filter( 'tgmpa_admin_menu_use_add_theme_page', '__return_false' );
+
+		// add menu
+		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ) );
+
+		// show a link to the "Getting Started" page
 		$plugin = plugin_basename( __FILE__ );
 		add_filter( "plugin_action_links_$plugin", array( 'IndieWebPlugin', 'plugin_link' ) );
+
 	}
 
 	/**
-	 * Load translation files
+	 * Load translation files.
+	 *
 	 * A good reference on how to implement translation in WordPress:
 	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
 	 */
 	public static function enable_translation() {
-		load_plugin_textdomain( 'indieweb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		// for plugins
+		load_plugin_textdomain(
+			'indieweb', // unique slug
+			false, // deprecated
+			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
+		);
+
 	}
 
 	/**
-	 * Add menu item
+	 * Add menu item to "Plugins" top-level menu.
 	 */
 	public static function add_menu_item() {
-		add_plugins_page( __( 'IndieWeb', 'indieweb' ), 'IndieWeb', 'manage_options', 'indieweb', array( 'IndieWebPlugin', 'settings' ) );
+
+		// add to Plugins top-level menu
+		add_plugins_page(
+			__( 'IndieWeb', 'indieweb' ), // page title
+			__( 'IndieWeb', 'indieweb' ), // menu title
+			'manage_options', // access capability
+			'indieweb', // menu slug
+			array( 'IndieWebPlugin', 'getting_started' ) // callback
+		);
+
 	}
 
 	/**
-	 * Settings page
+	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
-	public static function settings() {
+	public static function getting_started() {
 		require_once dirname( __FILE__ ) . '/getting_started.php';
 	}
 
@@ -215,9 +224,9 @@ class IndieWebPlugin {
 				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			)
 
-		); // end cofig array
+		); // end config array
 
-		tgmpa( $plugins, $config);
+		tgmpa( $plugins, $config );
 
 	}
 
