@@ -50,7 +50,7 @@ class IndieWebPlugin {
    * add menu item
    */
   public static function add_menu_item() {
-    add_plugins_page('IndieWeb', 'IndieWeb', 'administrator', 'indieweb', array('IndieWebPlugin', 'settings'));
+    add_plugins_page('IndieWeb', 'IndieWeb', 'manage_options', 'indieweb', array('IndieWebPlugin', 'settings'));
   }
 
   /**
