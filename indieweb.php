@@ -10,27 +10,33 @@ Text Domain: indieweb
 Domain Path: /languages
 */
 
+
+
 // Pre-2.6 compatibility
 if ( ! defined( 'WP_CONTENT_URL' ) )
-    define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
+	define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
 if ( ! defined( 'WP_CONTENT_DIR' ) )
-    define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
+	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 if ( ! defined( 'WP_PLUGIN_URL' ) )
-    define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );
+	define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );
 if ( ! defined( 'WP_PLUGIN_DIR' ) )
-    define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
+	define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
 if ( ! defined( 'WP_ADMIN_URL' ) )
-    define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
+	define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
+
+
 
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
+require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
 
 // initialize plugin
-add_action('plugins_loaded', array('IndieWebPlugin', 'enable_translation'));
-add_action('init', array('IndieWebPlugin', 'init'));
-add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'));
+add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'enable_translation' ) );
+add_action( 'init', array( 'IndieWebPlugin', 'init' ) );
+add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
+
+
 
 /**
  * IndieWeb Plugin Class
@@ -38,189 +44,193 @@ add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'
  * @author Matthias Pfefferle
  */
 class IndieWebPlugin {
-  /**
-   * Initialize the plugin, registering WordPress hooks.
-   */
-  public static function init() {
-    // hooks
-    add_action('admin_menu', array('IndieWebPlugin', 'add_menu_item'));
-    add_filter('tgmpa_admin_menu_use_add_theme_page', '__return_false');
-    $plugin = plugin_basename(__FILE__);
-    add_filter("plugin_action_links_$plugin", array('IndieWebPlugin', 'plugin_link') );
-  }
 
-  /**
-   * Load translation files
-   * A good reference on how to implement translation in WordPress:
-   * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
-   */
-  public static function enable_translation() {
-    load_plugin_textdomain( 'indieweb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-  }
+	/**
+	 * Initialize the plugin, registering WordPress hooks.
+	 */
+	public static function init() {
+		// hooks
+		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ));
+		add_filter( 'tgmpa_admin_menu_use_add_theme_page', '__return_false' );
+		$plugin = plugin_basename( __FILE__ );
+		add_filter( "plugin_action_links_$plugin", array( 'IndieWebPlugin', 'plugin_link' ) );
+	}
 
-  /**
-   * add menu item
-   */
-  public static function add_menu_item() {
-    add_plugins_page(__('IndieWeb', 'indieweb'), 'IndieWeb', 'manage_options', 'indieweb', array('IndieWebPlugin', 'settings'));
-  }
+	/**
+	 * Load translation files
+	 * A good reference on how to implement translation in WordPress:
+	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
+	 */
+	public static function enable_translation() {
+		load_plugin_textdomain( 'indieweb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
 
-  /**
-   * settings page
-   */
-  public static function settings() {
-?>
-  <div class="wrap">
-    <?php require_once dirname(__FILE__) . '/getting_started.php'; ?>
+	/**
+	 * Add menu item
+	 */
+	public static function add_menu_item() {
+		add_plugins_page( __( 'IndieWeb', 'indieweb' ), 'IndieWeb', 'manage_options', 'indieweb', array( 'IndieWebPlugin', 'settings' ) );
+	}
 
-  </div>
-<?php
-  }
+	/**
+	 * Settings page
+	 */
+	public static function settings() {
+		require_once dirname( __FILE__ ) . '/getting_started.php';
+	}
 
-  /**
-   * Register the required plugins.
-   *
-   * This function is hooked into tgmpa_init, which is fired within the
-   * TGM_Plugin_Activation class constructor.
-   */
-  public static function register_required_plugins() {
-    /**
-     * Array of plugin arrays. Required keys are name and slug.
-     * If the source is NOT from the .org repo, then source is also required.
-     */
-    $plugins = array(
+	/**
+	 * Register the required plugins.
+	 *
+	 * This function is hooked into tgmpa_init, which is fired within the
+	 * TGM_Plugin_Activation class constructor.
+	 */
+	public static function register_required_plugins() {
 
-      // require the WebMention plugin
-      array(
-        'name'               => __( 'WebMention', 'indieweb' ),
-        'slug'               => 'webmention',
-        'required'           => true,
-      ),
+		/**
+		 * Array of plugin arrays. Required keys are name and slug.
+		 * If the source is NOT from the .org repo, then source is also required.
+		 */
+		$plugins = array(
 
-      // require the Semantic Linkbacks plugin
-      array(
-        'name'               => __( 'Semantic Linkbacks', 'indieweb' ),
-        'slug'               => 'semantic-linkbacks',
-        'required'           => true, // If false, the plugin is only 'recommended' instead of required.
-      ),
+			// require the WebMention plugin
+			array(
+				'name'               => __( 'WebMention', 'indieweb' ),
+				'slug'               => 'webmention',
+				'required'           => true,
+			),
 
-      // recommend the Hum URL shortener
-      array(
-        'name'      => __( 'Hum (URL shortener)', 'indieweb' ),
-        'slug'      => 'hum',
-        'required'  => false,
-      ),
+			// require the Semantic Linkbacks plugin
+			array(
+				'name'               => __( 'Semantic Linkbacks', 'indieweb' ),
+				'slug'               => 'semantic-linkbacks',
+				'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+			),
 
-      // recommend the WebActions plugin
-      array(
-        'name'          => __( 'WebActions', 'indieweb' ),
-        'slug'          => 'wordpress-webactions-master',
-        'source'        => 'https://github.com/pfefferle/wordpress-webactions/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/pfefferle/wordpress-webactions'
-      ),
+			// recommend the Hum URL shortener
+			array(
+				'name'      => __( 'Hum (URL shortener)', 'indieweb' ),
+				'slug'      => 'hum',
+				'required'  => false,
+			),
 
-      // recommend the IndieWeb Press-This plugin
-      array(
-        'name'          => __( 'IndieWeb Press-This', 'indieweb' ),
-        'slug'          => 'wordpress-indieweb-press-this-master',
-        'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/pfefferle/wordpress-indieweb-press-this'
-      ),
+			// recommend the WebActions plugin
+			array(
+				'name'          => __( 'WebActions', 'indieweb' ),
+				'slug'          => 'wordpress-webactions-master',
+				'source'        => 'https://github.com/pfefferle/wordpress-webactions/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/pfefferle/wordpress-webactions'
+			),
 
-      // recommend the "WebMention for Comments" plugin
-      array(
-        'name'          => __( 'WebMention support for (threaded) comments', 'indieweb' ),
-        'slug'          => 'wordpress-webmention-for-comments-master',
-        'source'        => 'https://github.com/pfefferle/wordpress-webmention-for-comments/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments'
-      ),
+			// recommend the IndieWeb Press-This plugin
+			array(
+				'name'          => __( 'IndieWeb Press-This', 'indieweb' ),
+				'slug'          => 'wordpress-indieweb-press-this-master',
+				'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/pfefferle/wordpress-indieweb-press-this'
+			),
 
-      // recommend the Post Kinds plugin
-      array(
-        'name'          => __( 'Post Kinds', 'indieweb' ),
-        'slug'          => 'indieweb-post-kinds-master',
-        'source'        => 'https://github.com/dshanske/indieweb-post-kinds/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/dshanske/indieweb-post-kinds'
-      ),
+			// recommend the "WebMention for Comments" plugin
+			array(
+				'name'          => __( 'WebMention support for (threaded) comments', 'indieweb' ),
+				'slug'          => 'wordpress-webmention-for-comments-master',
+				'source'        => 'https://github.com/pfefferle/wordpress-webmention-for-comments/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments'
+			),
 
-      // recommend the Syndication Links plugin
-      array(
-        'name'          => __( 'Syndication Links', 'indieweb' ),
-        'slug'          => 'syndication-links-master',
-        'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/dshanske/syndication-links'
-      ),
+			// recommend the Post Kinds plugin
+			array(
+				'name'          => __( 'Post Kinds', 'indieweb' ),
+				'slug'          => 'indieweb-post-kinds-master',
+				'source'        => 'https://github.com/dshanske/indieweb-post-kinds/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/dshanske/indieweb-post-kinds'
+			),
 
-      // recommend the WordPress Syndication plugin
-      array(
-        'name'          => __( 'WordPress Syndication', 'indieweb' ),
-        'slug'          => 'wordpress-syndication-master',
-        'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
-        'required'      => false,
-        'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
-      ),
+			// recommend the Syndication Links plugin
+			array(
+				'name'          => __( 'Syndication Links', 'indieweb' ),
+				'slug'          => 'syndication-links-master',
+				'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/dshanske/syndication-links'
+			),
 
-      // recommend the Indieauth plugin
-      array(
-        'name'          => __( 'Indieauth', 'indieweb' ),
-        'slug'          => 'indieauth',
-        'required'      => false,
-      ),
+			// recommend the WordPress Syndication plugin
+			array(
+				'name'          => __( 'WordPress Syndication', 'indieweb' ),
+				'slug'          => 'wordpress-syndication-master',
+				'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
+				'required'      => false,
+				'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
+			),
 
+			// recommend the Indieauth plugin
+			array(
+				'name'          => __( 'Indieauth', 'indieweb' ),
+				'slug'          => 'indieauth',
+				'required'      => false,
+			),
 
-    );
+		);
 
-    /**
-     * Array of configuration settings. Amend each line as needed.
-     * If you want the default strings to be available under your own theme domain,
-     * leave the strings uncommented.
-     * Some of the strings are added into a sprintf, so see the comments at the
-     * end of each line for what each argument will be.
-     */
-    $config = array(
-      'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
-      'default_path' => '',                      // Default absolute path to pre-packaged plugins.
-      'menu'         => 'indieweb-installer',    // Menu slug.
-      'has_notices'  => true,                    // Show admin notices or not.
-      'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-      'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-      'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-      'message'      => __('For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb'), // Message to output right before the plugins table.
-      'strings'      => array(
-        'page_title'                      => __('Install Indieweb Plugins', 'indieweb'),
-        'menu_title'                      => __('IndieWeb Plugin Installer', 'indieweb'),
-        'installing'                      => __('Installing Plugin: %s', 'indieweb'), // %s = plugin name.
-        'oops'                            => __('Something went wrong with the plugin install.', 'indieweb'),
-        'notice_can_install_required'     => _n_noop('The IndieWeb plugin requires the following plugin: %1$s.', 'The IndieWeb plugin requires the following plugins: %1$s.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_can_install_recommended'  => _n_noop('The IndieWeb plugin recommends the following plugin: %1$s.', 'The IndieWeb plugin recommends the following plugins: %1$s.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_cannot_install'           => _n_noop('Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_can_activate_required'    => _n_noop('The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_can_activate_recommended' => _n_noop('The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_cannot_activate'          => _n_noop('Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_ask_to_update'            => _n_noop('The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'indieweb'), // %1$s = plugin name(s).
-        'notice_cannot_update'            => _n_noop('Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb'), // %1$s = plugin name(s).
-        'install_link'                    => _n_noop('Begin installing plugin', 'Begin installing plugins', 'indieweb'),
-        'activate_link'                   => _n_noop('Begin activating plugin', 'Begin activating plugins', 'indieweb'),
-        'return'                          => __('Return to Indieweb Plugins Installer', 'indieweb'),
-        'plugin_activated'                => __('Plugin activated successfully.', 'indieweb'),
-        'complete'                        => __('All plugins installed and activated successfully. %s', 'indieweb'), // %s = dashboard link.
-        'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-      )
-    );
+		/**
+		 * Array of configuration settings. Amend each line as needed.
+		 * If you want the default strings to be available under your own theme domain,
+		 * leave the strings uncommented.
+		 * Some of the strings are added into a sprintf, so see the comments at the
+		 * end of each line for what each argument will be.
+		 */
+		$config = array(
 
-    tgmpa($plugins, $config);
-  }
+			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
+			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
+			'menu'         => 'indieweb-installer',    // Menu slug.
+			'has_notices'  => true,                    // Show admin notices or not.
+			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+			'message'      => __( 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb' ), // Message to output right before the plugins table.
+			'strings'      => array(
+				'page_title'                      => __( 'Install Indieweb Plugins', 'indieweb' ),
+				'menu_title'                      => __( 'IndieWeb Plugin Installer', 'indieweb' ),
+				'installing'                      => __( 'Installing Plugin: %s', 'indieweb' ), // %s = plugin name.
+				'oops'                            => __( 'Something went wrong with the plugin install.', 'indieweb' ),
+				'notice_can_install_required'     => _n_noop( 'The IndieWeb plugin requires the following plugin: %1$s.', 'The IndieWeb plugin requires the following plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_can_install_recommended'  => _n_noop( 'The IndieWeb plugin recommends the following plugin: %1$s.', 'The IndieWeb plugin recommends the following plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb' ), // %1$s = plugin name(s).
+				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'indieweb' ),
+				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'indieweb' ),
+				'return'                          => __( 'Return to Indieweb Plugins Installer', 'indieweb' ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', 'indieweb' ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
+				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+			)
 
-  public static function plugin_link($links) {
-    $settings_link = '<a href="'.admin_url("plugins.php?page=indieweb").'">Getting Started</a>';
-    array_unshift($links, $settings_link);
+		); // end cofig array
 
-    return $links;
-  }
+		tgmpa( $plugins, $config);
 
-}
+	}
+
+	/**
+	 * Show a link to the "Getting Started" page
+	 *
+	 * @param array $links The existing plugin links array
+	 * @return array $links The modified plugin links array
+	 */
+	public static function plugin_link( $links ) {
+		$settings_link = '<a href="' . admin_url( "plugins.php?page=indieweb") . '">Getting Started</a>';
+		array_unshift( $links, $settings_link);
+		return $links;
+	}
+
+} // end class IndieWebPlugin
