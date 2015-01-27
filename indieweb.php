@@ -62,7 +62,7 @@ class IndieWebPlugin {
    * add menu item
    */
   public static function add_menu_item() {
-    add_plugins_page('IndieWeb', 'IndieWeb', 'manage_options', 'indieweb', array('IndieWebPlugin', 'settings'));
+    add_plugins_page(__('IndieWeb', 'indieweb'), 'IndieWeb', 'manage_options', 'indieweb', array('IndieWebPlugin', 'settings'));
   }
 
   /**
@@ -92,28 +92,28 @@ class IndieWebPlugin {
 
       // require the WebMention plugin
       array(
-        'name'               => 'WebMention',
+        'name'               => __( 'WebMention', 'indieweb' ),
         'slug'               => 'webmention',
         'required'           => true,
       ),
 
       // require the Semantic Linkbacks plugin
       array(
-        'name'               => 'Semantic Linkbacks',
+        'name'               => __( 'Semantic Linkbacks', 'indieweb' ),
         'slug'               => 'semantic-linkbacks',
         'required'           => true, // If false, the plugin is only 'recommended' instead of required.
       ),
 
       // recommend the Hum URL shortener
       array(
-        'name'      => 'Hum (URL shortener)',
+        'name'      => __( 'Hum (URL shortener)', 'indieweb' ),
         'slug'      => 'hum',
         'required'  => false,
       ),
 
       // recommend the WebActions plugin
       array(
-        'name'          => 'WebActions',
+        'name'          => __( 'WebActions', 'indieweb' ),
         'slug'          => 'wordpress-webactions-master',
         'source'        => 'https://github.com/pfefferle/wordpress-webactions/archive/master.zip',
         'required'      => false,
@@ -122,7 +122,7 @@ class IndieWebPlugin {
 
       // recommend the IndieWeb Press-This plugin
       array(
-        'name'          => 'IndieWeb Press-This',
+        'name'          => __( 'IndieWeb Press-This', 'indieweb' ),
         'slug'          => 'wordpress-indieweb-press-this-master',
         'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
         'required'      => false,
@@ -131,7 +131,7 @@ class IndieWebPlugin {
 
       // recommend the "WebMention for Comments" plugin
       array(
-        'name'          => 'WebMention support for (threaded) comments',
+        'name'          => __( 'WebMention support for (threaded) comments', 'indieweb' ),
         'slug'          => 'wordpress-webmention-for-comments-master',
         'source'        => 'https://github.com/pfefferle/wordpress-webmention-for-comments/archive/master.zip',
         'required'      => false,
@@ -140,7 +140,7 @@ class IndieWebPlugin {
 
       // recommend the Post Kinds plugin
       array(
-        'name'          => 'Post Kinds',
+        'name'          => __( 'Post Kinds', 'indieweb' ),
         'slug'          => 'indieweb-post-kinds-master',
         'source'        => 'https://github.com/dshanske/indieweb-post-kinds/archive/master.zip',
         'required'      => false,
@@ -149,7 +149,7 @@ class IndieWebPlugin {
 
       // recommend the Syndication Links plugin
       array(
-        'name'          => 'Syndication Links',
+        'name'          => __( 'Syndication Links', 'indieweb' ),
         'slug'          => 'syndication-links-master',
         'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
         'required'      => false,
@@ -158,7 +158,7 @@ class IndieWebPlugin {
 
       // recommend the WordPress Syndication plugin
       array(
-        'name'          => 'WordPress Syndication',
+        'name'          => __( 'WordPress Syndication', 'indieweb' ),
         'slug'          => 'wordpress-syndication-master',
         'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
         'required'      => false,
@@ -167,7 +167,7 @@ class IndieWebPlugin {
 
       // recommend the Indieauth plugin
       array(
-        'name'          => 'Indieauth',
+        'name'          => __( 'Indieauth', 'indieweb' ),
         'slug'          => 'indieauth',
         'required'      => false,
       ),
@@ -190,7 +190,7 @@ class IndieWebPlugin {
       'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
       'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
       'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-      'message'      => 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', // Message to output right before the plugins table.
+      'message'      => __('For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb'), // Message to output right before the plugins table.
       'strings'      => array(
         'page_title'                      => __('Install Indieweb Plugins', 'indieweb'),
         'menu_title'                      => __('IndieWeb Plugin Installer', 'indieweb'),
