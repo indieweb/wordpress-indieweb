@@ -75,11 +75,7 @@ class IndieWebPlugin {
 	 * settings page
 	 */
 	public static function settings() {
-		?>
-		<div class="wrap">
-			<?php require_once dirname(__FILE__) . '/getting_started.php'; ?>
-		</div>
-		<?php
+		require_once dirname(__FILE__) . '/getting_started.php';
 	}
 
 	/**
