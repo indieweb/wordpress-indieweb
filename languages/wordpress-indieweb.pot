@@ -1,0 +1,296 @@
+# Copyright (C) 2015 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version:  \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-indieweb\n"
+"POT-Creation-Date: 2015-01-27 14:41:39+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: class-tgm-plugin-activation.php:196
+msgid "Install Required Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:197
+msgid "Install Plugins"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:198 indieweb.php:197
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:199
+msgid "Something went wrong."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:200
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:201
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:202 indieweb.php:201
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:203 indieweb.php:202
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:204 indieweb.php:203
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:205 indieweb.php:204
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:206
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:207 indieweb.php:206
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:208 indieweb.php:207
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:209 indieweb.php:208
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: class-tgm-plugin-activation.php:210
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:211
+msgid "Return to the dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:212 class-tgm-plugin-activation.php:1965
+#: indieweb.php:210
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:213 class-tgm-plugin-activation.php:1652
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:214
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:215
+msgid "Dismiss this notice"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:556 class-tgm-plugin-activation.php:2182
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1186
+msgid "Private Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1189
+msgid "Pre-Packaged"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1194
+msgid "WordPress Repository"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1197
+msgid "Required"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1197
+msgid "Recommended"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1200
+msgid "Not Installed"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1202
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1304 class-tgm-plugin-activation.php:1412
+msgid "Install"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1326 class-tgm-plugin-activation.php:1413
+msgid "Activate"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1375
+msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1391
+msgid "Plugin"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1392
+msgid "Source"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1393
+msgid "Type"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1394
+msgid "Status"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1522
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1630
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1948
+msgid "Install package not available."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1949
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1950
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1951
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1952
+msgid "Plugin install failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1953
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:1964
+msgid "Plugin activation failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2078
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2079
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2079 class-tgm-plugin-activation.php:2088
+msgid "Show Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2079 class-tgm-plugin-activation.php:2088
+msgid "Hide Details"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2080
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2081
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2085
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2086
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2087
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2088
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2089
+msgid "All installations have been completed."
+msgstr ""
+
+#: class-tgm-plugin-activation.php:2090
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: indieweb.php:195
+msgid "Install Indieweb Plugins"
+msgstr ""
+
+#: indieweb.php:196
+msgid "IndieWeb Plugin Installer"
+msgstr ""
+
+#: indieweb.php:198
+msgid "Something went wrong with the plugin install."
+msgstr ""
+
+#: indieweb.php:199
+msgid "The IndieWeb plugin requires the following plugin: %1$s."
+msgid_plural "The IndieWeb plugin requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: indieweb.php:200
+msgid "The IndieWeb plugin recommends the following plugin: %1$s."
+msgid_plural "The IndieWeb plugin recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: indieweb.php:205
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: indieweb.php:209
+msgid "Return to Indieweb Plugins Installer"
+msgstr ""
+
+#: indieweb.php:211
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""

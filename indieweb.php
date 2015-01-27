@@ -1,11 +1,13 @@
 <?php
 /*
- Plugin Name: IndieWeb
- Plugin URI: https://github.com/indieweb/wordpress-indieweb
- Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so.
- Author: IndieWebCamp WordPress Outreach Club
- Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
- Version: 2.1.0
+Plugin Name: IndieWeb
+Plugin URI: https://github.com/indieweb/wordpress-indieweb
+Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so.
+Author: IndieWebCamp WordPress Outreach Club
+Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
+Version: 2.1.0
+Text Domain: indieweb
+Domain Path: /languages
 */
 
 // Pre-2.6 compatibility
@@ -26,6 +28,7 @@ if ( ! defined( 'WP_ADMIN_URL' ) )
 require_once dirname(__FILE__) . '/class-tgm-plugin-activation.php';
 
 // initialize plugin
+add_action('plugins_loaded', array('IndieWebPlugin', 'enable_translation'));
 add_action('init', array('IndieWebPlugin', 'init'));
 add_action('tgmpa_register', array('IndieWebPlugin', 'register_required_plugins'));
 
@@ -44,6 +47,15 @@ class IndieWebPlugin {
     add_filter('tgmpa_admin_menu_use_add_theme_page', '__return_false');
     $plugin = plugin_basename(__FILE__);
     add_filter("plugin_action_links_$plugin", array('IndieWebPlugin', 'plugin_link') );
+  }
+
+  /**
+   * Load translation files
+   * A good reference on how to implement translation in WordPress:
+   * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
+   */
+  public static function enable_translation() {
+    load_plugin_textdomain( 'indieweb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
   }
 
   /**
