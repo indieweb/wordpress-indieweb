@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  \n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-indieweb\n"
-"POT-Creation-Date: 2015-01-27 14:41:39+00:00\n"
+"POT-Creation-Date: 2015-01-27 15:16:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,7 +16,7 @@ msgstr ""
 msgid "Install Required Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:197
+#: class-tgm-plugin-activation.php:197 getting_started.php:45
 msgid "Install Plugins"
 msgstr ""
 
@@ -255,6 +255,170 @@ msgstr ""
 
 #: class-tgm-plugin-activation.php:2090
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: getting_started.php:1
+msgid "IndieWebify your WordPress-Blog"
+msgstr ""
+
+#: getting_started.php:3
+msgid "Getting Started"
+msgstr ""
+
+#: getting_started.php:5
+msgid "The Indieweb Plugin can help you get set up to be a more active member of the indieweb. Required plugins make receiving indieweb comments and mentions work, recommended plugins further improve the experience."
+msgstr ""
+
+#: getting_started.php:7
+msgid "Once you have these activated, you can setup <a href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience."
+msgstr ""
+
+#: getting_started.php:9
+msgid "Plugins"
+msgstr ""
+
+#: getting_started.php:11
+msgid "For more information on these plugins, visit the <a href=\"http://indiewebcamp.com/wordpress\" target=\"_blank\">WordPress page</a> on the Indiewebcamp wiki or click the individual plugin links below."
+msgstr ""
+
+#: getting_started.php:15
+msgid "Send and receive responses with your site"
+msgstr ""
+
+#: getting_started.php:16
+msgid "Send and receive comments, likes, reposts, and other kinds of post responses using your own site!"
+msgstr ""
+
+#: getting_started.php:18
+msgid "<strong>Webmention</strong> <em>(Required)</em> - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site."
+msgstr ""
+
+#: getting_started.php:19
+msgid "<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes indieweb comments and mentions look better on your site."
+msgstr ""
+
+#: getting_started.php:20
+msgid "<strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions."
+msgstr ""
+
+#: getting_started.php:21
+msgid "<strong>Webactions</strong> - Adds webaction markups to WordPress elements."
+msgstr ""
+
+#: getting_started.php:22
+msgid "<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress as a custom taxonomy."
+msgstr ""
+
+#: getting_started.php:27
+msgid "Syndicate your content to other sites"
+msgstr ""
+
+#: getting_started.php:28
+msgid "Choose one of these different ways to display links for POSSE/syndicated versions of a post. They cannot both be used. Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying."
+msgstr ""
+
+#: getting_started.php:30
+msgid "<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links."
+msgstr ""
+
+#: getting_started.php:31
+msgid "<strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish."
+msgstr ""
+
+#: getting_started.php:36
+msgid "Other"
+msgstr ""
+
+#: getting_started.php:38
+msgid "<strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click."
+msgstr ""
+
+#: getting_started.php:39
+msgid "<strong>Hum URL Shortener</strong> - A personal URL shortener."
+msgstr ""
+
+#: getting_started.php:40
+msgid "<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user."
+msgstr ""
+
+#: getting_started.php:47
+msgid "Themes"
+msgstr ""
+
+#: getting_started.php:49
+msgid "Some WordPress themes are compatible with microformats. The Indieweb uses microformats2, the latest version, to mark up sites so that they can be interpreted by other sites when retrieved. Most parsers will fall back onto the older format if available."
+msgstr ""
+
+#: getting_started.php:51
+msgid "Formatting your site so other sites can consume the information allows for the communications Indieweb sites support. For example, a class of u-like-of added to a link to a site you liked to indicates that relationship."
+msgstr ""
+
+#: getting_started.php:53
+msgid "There is only one theme in the WordPress repository that is fully microformats2 compliant. That is Sempress."
+msgstr ""
+
+#: getting_started.php:55
+msgid "What is the Indieweb?"
+msgstr ""
+
+#: getting_started.php:57
+msgid "<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos."
+msgstr ""
+
+#: getting_started.php:58
+msgid "This is the basis of the <strong>Indie Web</strong>. For more, see <a href=\"http://indiewebcamp.com/principles\" target=\"_blank\">principles</a> and <a href=\"http://indiewebcamp.com/why\" target=\"_blank\">why</a>."
+msgstr ""
+
+#: getting_started.php:60
+msgid "For even more information, please visit the <a href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> wiki</a>."
+msgstr ""
+
+#: indieweb.php:65
+msgid "IndieWeb"
+msgstr ""
+
+#: indieweb.php:95
+msgid "WebMention"
+msgstr ""
+
+#: indieweb.php:102
+msgid "Semantic Linkbacks"
+msgstr ""
+
+#: indieweb.php:109
+msgid "Hum (URL shortener)"
+msgstr ""
+
+#: indieweb.php:116
+msgid "WebActions"
+msgstr ""
+
+#: indieweb.php:125
+msgid "IndieWeb Press-This"
+msgstr ""
+
+#: indieweb.php:134
+msgid "WebMention support for (threaded) comments"
+msgstr ""
+
+#: indieweb.php:143
+msgid "Post Kinds"
+msgstr ""
+
+#: indieweb.php:152
+msgid "Syndication Links"
+msgstr ""
+
+#: indieweb.php:161
+msgid "WordPress Syndication"
+msgstr ""
+
+#: indieweb.php:170
+msgid "Indieauth"
+msgstr ""
+
+#: indieweb.php:193
+msgid "For descriptions of the plugins and more information, visit <a href=\"plugins.php?page=indieweb\">Getting Started</a>"
 msgstr ""
 
 #: indieweb.php:195
