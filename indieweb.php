@@ -2,7 +2,7 @@
 /*
 Plugin Name: IndieWeb
 Plugin URI: https://github.com/indieweb/wordpress-indieweb
-Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so.
+Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
 Version: 2.1.0
@@ -207,7 +207,8 @@ class IndieWebPlugin {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => __( 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb' ), // Message to output right before the plugins table.
 			'strings'      => array(
-				'page_title'                      => __( 'Install Indieweb Plugins', 'indieweb' ),
+				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
+				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
 				'menu_title'                      => __( 'IndieWeb Plugin Installer', 'indieweb' ),
 				'installing'                      => __( 'Installing Plugin: %s', 'indieweb' ), // %s = plugin name.
 				'oops'                            => __( 'Something went wrong with the plugin install.', 'indieweb' ),
@@ -221,7 +222,7 @@ class IndieWebPlugin {
 				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb' ), // %1$s = plugin name(s).
 				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'indieweb' ),
 				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'indieweb' ),
-				'return'                          => __( 'Return to Indieweb Plugins Installer', 'indieweb' ),
+				'return'                          => __( 'Return to IndieWeb Plugins Installer', 'indieweb' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'indieweb' ),
 				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
 				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.

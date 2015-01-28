@@ -1,16 +1,17 @@
-# Copyright (C) 2015 
-# This file is distributed under the same license as the  package.
+# Copyright (C) 2015 IndieWebCamp WordPress Outreach Club
+# This file is distributed under the same license as the IndieWeb package.
 msgid ""
 msgstr ""
-"Project-Id-Version:  \n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-indieweb\n"
-"POT-Creation-Date: 2015-01-28 10:34:34+00:00\n"
+"Project-Id-Version: IndieWeb 2.1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/indieweb\n"
+"POT-Creation-Date: 2015-01-28 10:45:01+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
 
 #: class-tgm-plugin-activation.php:196
 msgid "Install Required Plugins"
@@ -20,7 +21,7 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#: class-tgm-plugin-activation.php:198 indieweb.php:212
+#: class-tgm-plugin-activation.php:198 indieweb.php:213
 msgid "Installing Plugin: %s"
 msgstr ""
 
@@ -40,49 +41,71 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:202 indieweb.php:216
-msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+#: class-tgm-plugin-activation.php:202 indieweb.php:217
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:203 indieweb.php:217
+#: class-tgm-plugin-activation.php:203 indieweb.php:218
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:204 indieweb.php:218
+#: class-tgm-plugin-activation.php:204 indieweb.php:219
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:205 indieweb.php:219
-msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+#: class-tgm-plugin-activation.php:205 indieweb.php:220
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
 msgstr[0] ""
 msgstr[1] ""
 
 #: class-tgm-plugin-activation.php:206
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:207 indieweb.php:221
-msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+#: class-tgm-plugin-activation.php:207 indieweb.php:222
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins updated."
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:208 indieweb.php:222
+#: class-tgm-plugin-activation.php:208 indieweb.php:223
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: class-tgm-plugin-activation.php:209 indieweb.php:223
+#: class-tgm-plugin-activation.php:209 indieweb.php:224
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
@@ -97,7 +120,7 @@ msgid "Return to the dashboard"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:212 class-tgm-plugin-activation.php:1965
-#: indieweb.php:225
+#: indieweb.php:226
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -154,7 +177,9 @@ msgid "Activate"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:1375
-msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:1391
@@ -210,7 +235,9 @@ msgid "Plugin activation failed."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2078
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2079
@@ -234,7 +261,9 @@ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2085
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
 msgstr ""
 
 #: class-tgm-plugin-activation.php:2086
@@ -261,16 +290,23 @@ msgstr ""
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: getting_started.php:5 indieweb.php:247
+#: getting_started.php:5 indieweb.php:248
 msgid "Getting Started"
 msgstr ""
 
 #: getting_started.php:7
-msgid "The Indieweb Plugin can help you get set up to be a more active member of the indieweb. Required plugins make receiving indieweb comments and mentions work, recommended plugins further improve the experience."
+msgid ""
+"The IndieWeb Plugin can help you get set up to be a more active member of "
+"the indieweb. Required plugins make receiving indieweb comments and "
+"mentions work, recommended plugins further improve the experience."
 msgstr ""
 
 #: getting_started.php:9
-msgid "Once you have these activated, you can setup <a href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience."
+msgid ""
+"Once you have these activated, you can setup <a "
+"href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
+"blog to responses from sites such as Facebook and Twitter too, allowing for "
+"a seamless experience."
 msgstr ""
 
 #: getting_started.php:11
@@ -278,7 +314,11 @@ msgid "Plugins"
 msgstr ""
 
 #: getting_started.php:13
-msgid "For more information on these plugins, visit the <a href=\"http://indiewebcamp.com/wordpress\" target=\"_blank\">WordPress page</a> on the Indiewebcamp wiki or click the individual plugin links below."
+msgid ""
+"For more information on these plugins, visit the <a "
+"href=\"http://indiewebcamp.com/wordpress\" target=\"_blank\">WordPress "
+"page</a> on the IndieWebCamp wiki or click the individual plugin links "
+"below."
 msgstr ""
 
 #: getting_started.php:17
@@ -286,19 +326,28 @@ msgid "Send and receive responses with your site"
 msgstr ""
 
 #: getting_started.php:18
-msgid "Send and receive comments, likes, reposts, and other kinds of post responses using your own site!"
+msgid ""
+"Send and receive comments, likes, reposts, and other kinds of post "
+"responses using your own site!"
 msgstr ""
 
 #: getting_started.php:20
-msgid "<strong>Webmention</strong> <em>(Required)</em> - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site."
+msgid ""
+"<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
+"receive by adding webmention support to WordPress. Mentions show up as "
+"comments on your site."
 msgstr ""
 
 #: getting_started.php:21
-msgid "<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes indieweb comments and mentions look better on your site."
+msgid ""
+"<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
+"comments and mentions look better on your site."
 msgstr ""
 
 #: getting_started.php:22
-msgid "<strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions."
+msgid ""
+"<strong>Webmention for (Threaded) Comments</strong> - Adds support for "
+"threaded comments for webmentions."
 msgstr ""
 
 #: getting_started.php:23
@@ -306,7 +355,10 @@ msgid "<strong>Webactions</strong> - Adds webaction markups to WordPress element
 msgstr ""
 
 #: getting_started.php:24
-msgid "<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress as a custom taxonomy."
+msgid ""
+"<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
+"site from your own, by adding support for kinds of posts to WordPress as a "
+"custom taxonomy."
 msgstr ""
 
 #: getting_started.php:29
@@ -314,15 +366,24 @@ msgid "Syndicate your content to other sites"
 msgstr ""
 
 #: getting_started.php:30
-msgid "Choose one of these different ways to display links for POSSE/syndicated versions of a post. They cannot both be used. Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying."
+msgid ""
+"Choose one of these different ways to display links for POSSE/syndicated "
+"versions of a post. They cannot both be used. Linking to the syndicated "
+"version of a post allows for bridgy to be able to discover the post as well "
+"as for end users to comment on those sites as a way of replying."
 msgstr ""
 
 #: getting_started.php:32
-msgid "<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links."
+msgid ""
+"<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
+"entry of syndication links."
 msgstr ""
 
 #: getting_started.php:33
-msgid "<strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish."
+msgid ""
+"<strong>WordPress Syndication</strong> - automatically adds link to a post "
+"from a supported syndication plugin. Fully supports Social, partial support "
+"for SNAP, and support for Bridgy Publish."
 msgstr ""
 
 #: getting_started.php:38
@@ -330,7 +391,10 @@ msgid "Other"
 msgstr ""
 
 #: getting_started.php:40
-msgid "<strong>Indieweb Press-This</strong> - Adds Indieweb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click."
+msgid ""
+"<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the "
+"WordPressPress-This bookmarkets to allow you to respond on your site with "
+"one-click."
 msgstr ""
 
 #: getting_started.php:41
@@ -338,7 +402,10 @@ msgid "<strong>Hum URL Shortener</strong> - A personal URL shortener."
 msgstr ""
 
 #: getting_started.php:42
-msgid "<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user."
+msgid ""
+"<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
+"backend via IndieAuth. It uses the URL from the profile page to identify "
+"the blog user."
 msgstr ""
 
 #: getting_started.php:49
@@ -346,34 +413,53 @@ msgid "Themes"
 msgstr ""
 
 #: getting_started.php:51
-msgid "Some WordPress themes are compatible with microformats. The Indieweb uses microformats2, the latest version, to mark up sites so that they can be interpreted by other sites when retrieved. Most parsers will fall back onto the older format if available."
+msgid ""
+"Some WordPress themes are compatible with microformats. The IndieWeb uses "
+"microformats2, the latest version, to mark up sites so that they can be "
+"interpreted by other sites when retrieved. Most parsers will fall back onto "
+"the older format if available."
 msgstr ""
 
 #: getting_started.php:53
-msgid "Formatting your site so other sites can consume the information allows for the communications Indieweb sites support. For example, a class of u-like-of added to a link to a site you liked to indicates that relationship."
+msgid ""
+"Formatting your site so other sites can consume the information allows for "
+"the communications IndieWeb sites support. For example, a class of "
+"u-like-of added to a link to a site you liked to indicates that "
+"relationship."
 msgstr ""
 
 #: getting_started.php:55
-msgid "There is only one theme in the WordPress repository that is fully microformats2 compliant. That is Sempress."
+msgid ""
+"There is only one theme in the WordPress repository that is fully "
+"microformats2 compliant. That is Sempress."
 msgstr ""
 
 #: getting_started.php:57
-msgid "What is the Indieweb?"
+msgid "What is the IndieWeb?"
 msgstr ""
 
 #: getting_started.php:59
-msgid "<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos."
+msgid ""
+"<strong>Own your data.</strong> Create and publish content on your own "
+"site, and only optionally syndicate to third-party silos."
 msgstr ""
 
 #: getting_started.php:60
-msgid "This is the basis of the <strong>Indie Web</strong>. For more, see <a href=\"http://indiewebcamp.com/principles\" target=\"_blank\">principles</a> and <a href=\"http://indiewebcamp.com/why\" target=\"_blank\">why</a>."
+msgid ""
+"This is the basis of the <strong>Indie Web</strong>. For more, see <a "
+"href=\"http://indiewebcamp.com/principles\" "
+"target=\"_blank\">principles</a> and <a "
+"href=\"http://indiewebcamp.com/why\" target=\"_blank\">why</a>."
 msgstr ""
 
 #: getting_started.php:62
-msgid "For even more information, please visit the <a href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> wiki</a>."
+msgid ""
+"For even more information, please visit the <a "
+"href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> "
+"wiki</a>."
 msgstr ""
 
-#: indieweb.php:78 indieweb.php:79
+#. Plugin Name of the plugin/theme
 msgid "IndieWeb"
 msgstr ""
 
@@ -418,43 +504,67 @@ msgid "Indieauth"
 msgstr ""
 
 #: indieweb.php:208
-msgid "For descriptions of the plugins and more information, visit <a href=\"plugins.php?page=indieweb\">Getting Started</a>"
+msgid ""
+"For descriptions of the plugins and more information, visit <a "
+"href=\"plugins.php?page=indieweb\">Getting Started</a>"
 msgstr ""
 
-#: indieweb.php:210
-msgid "Install Indieweb Plugins"
+#: indieweb.php:210 indieweb.php:211
+msgid "Install IndieWeb Plugins"
 msgstr ""
 
-#: indieweb.php:211
+#: indieweb.php:212
 msgid "IndieWeb Plugin Installer"
 msgstr ""
 
-#: indieweb.php:213
+#: indieweb.php:214
 msgid "Something went wrong with the plugin install."
 msgstr ""
 
-#: indieweb.php:214
+#: indieweb.php:215
 msgid "The IndieWeb plugin requires the following plugin: %1$s."
 msgid_plural "The IndieWeb plugin requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:215
+#: indieweb.php:216
 msgid "The IndieWeb plugin recommends the following plugin: %1$s."
 msgid_plural "The IndieWeb plugin recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:220
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+#: indieweb.php:221
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this plugin: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:224
-msgid "Return to Indieweb Plugins Installer"
+#: indieweb.php:225
+msgid "Return to IndieWeb Plugins Installer"
 msgstr ""
 
-#: indieweb.php:226
+#: indieweb.php:227
 msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/indieweb/wordpress-indieweb"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Interested in connecting your WordPress site to the IndieWeb? Get the right "
+"plugins to do so."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "IndieWebCamp WordPress Outreach Club"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://indiewebcamp.com/WordPress_Outreach_Club"
 msgstr ""
