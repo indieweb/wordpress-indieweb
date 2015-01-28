@@ -46,6 +46,9 @@ class IndieWebPlugin {
 		$plugin = plugin_basename( __FILE__ );
 		add_filter( "plugin_action_links_$plugin", array( 'IndieWebPlugin', 'plugin_link' ) );
 
+		// we're up and running
+		do_action( 'indieweb_loaded' );
+
 	}
 
 	/**
@@ -226,7 +229,11 @@ class IndieWebPlugin {
 
 		); // end config array
 
-		tgmpa( $plugins, $config );
+		// call TGM with filtered arrays
+		tgmpa(
+			apply_filters( 'indieweb_tgm_plugins', $plugins ),
+			apply_filters( 'indieweb_tgm_config', $config )
+		);
 
 	}
 
