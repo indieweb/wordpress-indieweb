@@ -244,7 +244,7 @@ class IndieWebPlugin {
 	 * @return array $links The modified plugin links array
 	 */
 	public static function plugin_link( $links ) {
-		$settings_link = '<a href="' . admin_url( "plugins.php?page=indieweb") . '">Getting Started</a>';
+		$settings_link = '<a href="' . admin_url( 'plugins.php?page=indieweb' ) . '">' . __( 'Getting Started', 'indieweb' ) . '</a>';
 		array_unshift( $links, $settings_link);
 		return $links;
 	}
