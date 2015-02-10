@@ -2,7 +2,7 @@
 /*
 Plugin Name: IndieWeb
 Plugin URI: https://github.com/indieweb/wordpress-indieweb
-Description: Interested in connecting your WordPress site to the Indieweb? Get the right plugins to do so.
+Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
 Version: 2.1.0
@@ -12,29 +12,8 @@ Domain Path: /languages
 
 
 
-// Pre-2.6 compatibility
-if ( ! defined( 'WP_CONTENT_URL' ) )
-	define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
-if ( ! defined( 'WP_CONTENT_DIR' ) )
-	define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
-if ( ! defined( 'WP_PLUGIN_URL' ) )
-	define( 'WP_PLUGIN_URL', WP_CONTENT_URL. '/plugins' );
-if ( ! defined( 'WP_PLUGIN_DIR' ) )
-	define( 'WP_PLUGIN_DIR', WP_CONTENT_DIR . '/plugins' );
-if ( ! defined( 'WP_ADMIN_URL' ) )
-	define( 'WP_ADMIN_URL', get_option('siteurl') . '/wp-admin' );
-
-
-
-/**
- * Include the TGM_Plugin_Activation class.
- */
-require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
-
 // initialize plugin
-add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'enable_translation' ) );
-add_action( 'init', array( 'IndieWebPlugin', 'init' ) );
-add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
+add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'init' ) );
 
 
 
@@ -49,33 +28,66 @@ class IndieWebPlugin {
 	 * Initialize the plugin, registering WordPress hooks.
 	 */
 	public static function init() {
-		// hooks
-		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ));
+
+		// enable translation
+		self::enable_translation();
+
+		// include the TGM_Plugin_Activation class
+		require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+
+		// register TGM hooks
+		add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
 		add_filter( 'tgmpa_admin_menu_use_add_theme_page', '__return_false' );
+
+		// add menu
+		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ) );
+
+		// show a link to the "Getting Started" page
 		$plugin = plugin_basename( __FILE__ );
 		add_filter( "plugin_action_links_$plugin", array( 'IndieWebPlugin', 'plugin_link' ) );
+
+		// we're up and running
+		do_action( 'indieweb_loaded' );
+
 	}
 
 	/**
-	 * Load translation files
+	 * Load translation files.
+	 *
 	 * A good reference on how to implement translation in WordPress:
 	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
 	 */
 	public static function enable_translation() {
-		load_plugin_textdomain( 'indieweb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+
+		// for plugins
+		load_plugin_textdomain(
+			'indieweb', // unique slug
+			false, // deprecated
+			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
+		);
+
 	}
 
 	/**
-	 * Add menu item
+	 * Add menu item to "Plugins" top-level menu.
 	 */
 	public static function add_menu_item() {
-		add_plugins_page( __( 'IndieWeb', 'indieweb' ), 'IndieWeb', 'manage_options', 'indieweb', array( 'IndieWebPlugin', 'settings' ) );
+
+		// add to Plugins top-level menu
+		add_plugins_page(
+			__( 'IndieWeb', 'indieweb' ), // page title
+			__( 'IndieWeb', 'indieweb' ), // menu title
+			'manage_options', // access capability
+			'indieweb', // menu slug
+			array( 'IndieWebPlugin', 'getting_started' ) // callback
+		);
+
 	}
 
 	/**
-	 * Settings page
+	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
-	public static function settings() {
+	public static function getting_started() {
 		require_once dirname( __FILE__ ) . '/getting_started.php';
 	}
 
@@ -193,7 +205,8 @@ class IndieWebPlugin {
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 			'message'      => __( 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb' ), // Message to output right before the plugins table.
 			'strings'      => array(
-				'page_title'                      => __( 'Install Indieweb Plugins', 'indieweb' ),
+				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
+				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
 				'menu_title'                      => __( 'IndieWeb Plugin Installer', 'indieweb' ),
 				'installing'                      => __( 'Installing Plugin: %s', 'indieweb' ), // %s = plugin name.
 				'oops'                            => __( 'Something went wrong with the plugin install.', 'indieweb' ),
@@ -207,15 +220,19 @@ class IndieWebPlugin {
 				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb' ), // %1$s = plugin name(s).
 				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'indieweb' ),
 				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'indieweb' ),
-				'return'                          => __( 'Return to Indieweb Plugins Installer', 'indieweb' ),
+				'return'                          => __( 'Return to IndieWeb Plugins Installer', 'indieweb' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'indieweb' ),
 				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
 				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			)
 
-		); // end cofig array
+		); // end config array
 
-		tgmpa( $plugins, $config);
+		// call TGM with filtered arrays
+		tgmpa(
+			apply_filters( 'indieweb_tgm_plugins', $plugins ),
+			apply_filters( 'indieweb_tgm_config', $config )
+		);
 
 	}
 
@@ -226,7 +243,7 @@ class IndieWebPlugin {
 	 * @return array $links The modified plugin links array
 	 */
 	public static function plugin_link( $links ) {
-		$settings_link = '<a href="' . admin_url( "plugins.php?page=indieweb") . '">Getting Started</a>';
+		$settings_link = '<a href="' . admin_url( 'plugins.php?page=indieweb' ) . '">' . __( 'Getting Started', 'indieweb' ) . '</a>';
 		array_unshift( $links, $settings_link);
 		return $links;
 	}
