@@ -144,10 +144,8 @@ class IndieWebPlugin {
 			// recommend the Post Kinds plugin
 			array(
 				'name'          => __( 'Post Kinds', 'indieweb' ),
-				'slug'          => 'indieweb-post-kinds-master',
-				'source'        => 'https://github.com/dshanske/indieweb-post-kinds/archive/master.zip',
+				'slug'          => 'indieweb-post-kinds',
 				'required'      => false,
-				'external_url'  => 'https://github.com/dshanske/indieweb-post-kinds'
 			),
 
 			// recommend the Syndication Links plugin
