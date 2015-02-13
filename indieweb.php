@@ -119,6 +119,13 @@ class IndieWebPlugin {
 				'required'           => true, // If false, the plugin is only 'recommended' instead of required.
 			),
 
+                        // recommend the MicroPub server plugin
+                        array(
+                                'name'               => __( 'MicroPub Server', 'indieweb' ),
+                                'slug'               => 'micropub',
+                                'required'           => false, // If false, the plugin is only 'recommended' instead of required.
+                        ),
+
 			// recommend the Hum URL shortener
 			array(
 				'name'      => __( 'Hum (URL shortener)', 'indieweb' ),

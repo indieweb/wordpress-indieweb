@@ -21,7 +21,7 @@
 				<li><?php _e( '<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb comments and mentions look better on your site.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Webactions</strong> - Adds webaction markups to WordPress elements.', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress as a custom taxonomy.', 'indieweb' ); ?></li>
+				<li><?php _e( '<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.', 'indieweb' ); ?></li>
 			</ol>
 		</li>
 
@@ -37,6 +37,7 @@
 		<li>
 			<h3><?php _e( 'Other', 'indieweb' ); ?></h3>
 			<ol>
+				<li><?php _e( '<strong>MicroPub</strong> - A MicroPub Server', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Hum URL Shortener</strong> - A personal URL shortener.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.', 'indieweb' ); ?></li>
