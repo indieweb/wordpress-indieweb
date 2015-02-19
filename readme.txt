@@ -4,7 +4,7 @@ Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 
 IndieWeb for WordPress!
 
@@ -25,6 +25,12 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 2.1.1 =
+
+* "Post Kinds" is now in the WordPress repository
+* "MicroPub" server plugin added
+* "Syndication Links" is now in the WordPress repository
 
 = 2.1.0 =
 

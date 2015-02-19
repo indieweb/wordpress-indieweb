@@ -170,10 +170,8 @@ class IndieWebPlugin {
 			// recommend the Syndication Links plugin
 			array(
 				'name'          => __( 'Syndication Links', 'indieweb' ),
-				'slug'          => 'syndication-links-master',
-				'source'        => 'https://github.com/dshanske/syndication-links/archive/master.zip',
+				'slug'          => 'syndication-links',
 				'required'      => false,
-				'external_url'  => 'https://github.com/dshanske/syndication-links'
 			),
 
 			// recommend the WordPress Syndication plugin
