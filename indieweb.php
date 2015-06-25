@@ -107,30 +107,30 @@ class IndieWebPlugin {
 
 			// require the WebMention plugin
 			array(
-				'name'               => __( 'WebMention', 'indieweb' ),
-				'slug'               => 'webmention',
-				'required'           => true,
+				'name'          => __( 'WebMention', 'indieweb' ),
+				'slug'          => 'webmention',
+				'required'      => true,
 			),
 
 			// require the Semantic Linkbacks plugin
 			array(
-				'name'               => __( 'Semantic Linkbacks', 'indieweb' ),
-				'slug'               => 'semantic-linkbacks',
-				'required'           => true, // If false, the plugin is only 'recommended' instead of required.
+				'name'          => __( 'Semantic Linkbacks', 'indieweb' ),
+				'slug'          => 'semantic-linkbacks',
+				'required'      => true, // If false, the plugin is only 'recommended' instead of required.
 			),
 
-                        // recommend the MicroPub server plugin
-                        array(
-                                'name'               => __( 'MicroPub Server', 'indieweb' ),
-                                'slug'               => 'micropub',
-                                'required'           => false, // If false, the plugin is only 'recommended' instead of required.
-                        ),
+			// recommend the MicroPub server plugin
+			array(
+				'name'          => __( 'MicroPub Server', 'indieweb' ),
+				'slug'          => 'micropub',
+				'required'      => false, // If false, the plugin is only 'recommended' instead of required.
+			),
 
 			// recommend the Hum URL shortener
 			array(
-				'name'      => __( 'Hum (URL shortener)', 'indieweb' ),
-				'slug'      => 'hum',
-				'required'  => false,
+				'name'          => __( 'Hum (URL shortener)', 'indieweb' ),
+				'slug'          => 'hum',
+				'required'      => false,
 			),
 
 			// recommend the WebActions plugin
