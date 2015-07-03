@@ -5,7 +5,7 @@ Plugin URI: https://github.com/indieweb/wordpress-indieweb
 Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
-Version: 2.1.0
+Version: 2.2.0
 Text Domain: indieweb
 Domain Path: /languages
 */
@@ -37,8 +37,7 @@ class IndieWebPlugin {
 
 		// register TGM hooks
 		add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
-		add_filter( 'tgmpa_admin_menu_use_add_theme_page', '__return_false' );
-
+		
 		// add menu
 		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ) );
 
@@ -83,6 +82,7 @@ class IndieWebPlugin {
 		);
 
 	}
+
 
 	/**
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
@@ -174,15 +174,6 @@ class IndieWebPlugin {
 				'required'      => false,
 			),
 
-			// recommend the WordPress Syndication plugin
-			array(
-				'name'          => __( 'WordPress Syndication', 'indieweb' ),
-				'slug'          => 'wordpress-syndication-master',
-				'source'        => 'https://github.com/jihaisse/wordpress-syndication/archive/master.zip',
-				'required'      => false,
-				'external_url'  => 'https://github.com/jihaisse/wordpress-syndication'
-			),
-
 			// recommend the Indieauth plugin
 			array(
 				'name'          => __( 'Indieauth', 'indieweb' ),
@@ -204,6 +195,7 @@ class IndieWebPlugin {
 			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
 			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 			'menu'         => 'indieweb-installer',    // Menu slug.
+			'parent_slug'  => 'plugins.php', 
 			'has_notices'  => true,                    // Show admin notices or not.
 			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.

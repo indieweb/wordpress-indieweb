@@ -27,11 +27,10 @@
 
 		<li>
 			<h3><?php _e( 'Syndicate your content to other sites', 'indieweb' ); ?></h3>
-			<p><?php _e( 'Choose one of these different ways to display links for POSSE/syndicated versions of a post. They cannot both be used. Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying.', 'indieweb' ); ?></p>
-			<ol>
-				<li><?php _e( '<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links.', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>WordPress Syndication</strong> - automatically adds link to a post from a supported syndication plugin. Fully supports Social, partial support for SNAP, and support for Bridgy Publish.', 'indieweb' ); ?></li>
-			</ol>
+			<p><?php _e( 'Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying.', 'indieweb' ); ?></p>
+		<ol>
+			<li><?php _e( '<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for SNAP.', 'indieweb' ); ?></li>
+	</ol>
 		</li>
 
 		<li>
@@ -45,7 +44,7 @@
 		</li>
 	</ul>
 
-	<p><a href="<?php echo admin_url('options-general.php?page=indieweb-installer'); ?>" class="button button-primary"><?php _e( 'Install Plugins', 'indieweb' ); ?></a></p>
+	<p><a href="<?php echo admin_url('plugins.php?page=indieweb-installer'); ?>" class="button button-primary"><?php _e( 'Install Plugins', 'indieweb' ); ?></a></p>
 
 	<h2><?php _e( 'Themes', 'indieweb' ); ?></h2>
 

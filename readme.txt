@@ -4,7 +4,7 @@ Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 
 IndieWeb for WordPress!
 
@@ -25,6 +25,11 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 2.2.0 = 
+
+* Update to Version 2.5.0 of the TGM Plugins Activation which adds update capability
+* Now that Syndication Links has the functionality of WordPress Syndication remove as duplicative
 
 = 2.1.1 =
 
