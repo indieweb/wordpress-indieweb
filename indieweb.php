@@ -37,7 +37,7 @@ class IndieWebPlugin {
 
 		// register TGM hooks
 		add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
-		
+
 		// add menu
 		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ) );
 
@@ -48,6 +48,10 @@ class IndieWebPlugin {
 		// we're up and running
 		do_action( 'indieweb_loaded' );
 
+		// additional user meta fields
+		add_filter('user_contactmethods', array( 'IndieWebPlugin', 'add_user_meta_fields' ) );
+
+		//add_action( 'wp_footer', array( 'IndieWebPlugin', 'rel_me_list' ) );
 	}
 
 	/**
@@ -195,7 +199,7 @@ class IndieWebPlugin {
 			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
 			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 			'menu'         => 'indieweb-installer',    // Menu slug.
-			'parent_slug'  => 'plugins.php', 
+			'parent_slug'  => 'plugins.php',
 			'has_notices'  => true,                    // Show admin notices or not.
 			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
@@ -243,6 +247,86 @@ class IndieWebPlugin {
 		$settings_link = '<a href="' . admin_url( 'plugins.php?page=indieweb' ) . '">' . __( 'Getting Started', 'indieweb' ) . '</a>';
 		array_unshift( $links, $settings_link);
 		return $links;
+	}
+
+	/**
+	 *
+	 * list of silos an profile url patterns which are supported by indieauth
+	 * http://indiewebcamp.com/indieauth.com
+	 */
+	public static function silos () {
+
+		$silos = array (
+			'github' => array (
+				'baseurl' => 'https://github.com/%s',
+				'display' => __( 'Github username', 'indieweb' ),
+			),
+			'googleplus' => array (
+				'baseurl' => 'https://plus.google.com/117393351799968573179/posts',
+				'display' => __( 'Google+ userID or username', 'indieweb' ),
+			),
+			'twitter' => array (
+				'baseurl' => 'https://twitter.com/%s',
+				'display' => __( 'Twitter username', 'indieweb' ),
+			),
+			'lastfm' => array (
+				'baseurl' => 'last.fm/user/%s',
+				'display' => __( 'Last.fm username', 'indieweb' ),
+			),
+			'flickr' => array (
+				'baseurl' => 'https://www.flickr.com/people/%s',
+				'display' => __( 'Flickr username', 'indieweb' ),
+			),
+		);
+
+		return apply_filters( 'wp_relme_silos', $silos );
+	}
+
+	/**
+	 * additional user fields
+	 *
+	 * @param array $profile_fields Current profile fields
+	 *
+	 * @return array $profile_fields extended
+	 *
+	 */
+	public static function add_user_meta_fields ($profile_fields) {
+
+		foreach ( self::silos() as $silo => $details ) {
+			$profile_fields[ 'indieweb_' . $name ] = $details['display'];
+		}
+
+		return $profile_fields;
+	}
+
+	/**
+	 * prints a formatted <ul> list of rel=me to supported silos
+	 *
+	 */
+	public static function rel_me_list ( ) {
+		$author_id = get_the_author_id();
+
+		if ( empty( $author_id ) || $author_id == 0 )
+			return false;
+
+		$author_name = get_the_author_meta ( 'display_name' , $author_id );
+
+		$list = array();
+
+		foreach ( self::silos() as $silo => $details ) {
+			$socialmeta = get_the_author_meta ( 'indieweb_' . $silo, $author_id );
+
+			if ( ! empty( $socialmeta ) )
+				$list[ $silo ] = sprintf ( $details['baseurl'], $socialmeta );
+		}
+
+		$r = array();
+		foreach ( $list as $silo => $profile_url ) {
+			$r [ $silo ] = "<a rel=\"me\" class=\"u-{$silo} x-{$silo} icon-{$silo} url u-url\" href=\"{$profile_url}\" title=\"{$author_name} @ {$silo}\">{$silo}</a>";
+		}
+
+		$r = "<ul class=\"indieweb-rel-me\">\n<li>" . join ( "</li>\n<li>", $r ) . "</li>\n</ul>";
+		echo apply_filters ( "indieweb-rel-me", $r, $author_id, $list );
 	}
 
 } // end class IndieWebPlugin
