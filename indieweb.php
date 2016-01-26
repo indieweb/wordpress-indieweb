@@ -107,7 +107,7 @@ class IndieWebPlugin_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'use_post_author' ); ?>"><?php _e( 'Use post author for rel-me links source on post-like pages instead of default author:', 'indieweb' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $instance['use_post_author'], $use_post_author ); ?> />
+			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $use_post_author ); ?> />
 		</p>
 		<?php
 	}
