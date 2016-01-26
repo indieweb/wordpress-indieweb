@@ -373,7 +373,7 @@ class IndieWebPlugin {
 				'display' => __( 'Twitter username', 'indieweb' ),
 			),
 			'lastfm' => array (
-				'baseurl' => 'last.fm/user/%s',
+				'baseurl' => 'https://last.fm/user/%s',
 				'display' => __( 'Last.fm username', 'indieweb' ),
 			),
 			'flickr' => array (
