@@ -438,7 +438,7 @@ class IndieWebPlugin {
 
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r [ $silo ] = "<a " . ( $include_rel ? 'rel="me" ' : '') . "class=\"icon-{$silo} url u-url\" href=\"{$profile_url}\" title=\"{$author_name} @ {$silo}\">{$silo}</a>";
+			$r [ $silo ] = "<a " . ( $include_rel ? 'rel="me" ' : '') . "class=\"icon-{$silo} url u-url\" href=\"" . esc_attr($profile_url) . "\" title=\"" . esc_attr($author_name) . " @ {$silo}\">{$silo}</a>";
 		}
 
 		$r = "<ul class=\"indieweb-rel-me\">\n<li>" . join ( "</li>\n<li>", $r ) . "</li>\n</ul>";
