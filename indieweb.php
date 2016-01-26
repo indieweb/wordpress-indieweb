@@ -47,11 +47,22 @@ class IndieWebPlugin_Widget extends WP_Widget {
 	 * @output echoes the list of rel-me links for the author
 	 */
 	public function widget( $args, $instance ) {
+		global $authordata;
+
+		$include_rel = is_author() || (is_front_page() && !is_multi_author());
 
 		$default_author = ( ! empty( $instance['default_author'] ) ) ? intval( $instance['default_author'] ) : 1;
 		$use_post_author = ( ! empty( $instance['use_post_author'] ) ) ? intval( $instance['use_post_author'] ) : 1;
 
-		if ( is_singular() && 1 == $use_post_author ) {
+		if ( is_author() ) {
+			global $authordata;
+
+			if ( 1 == $use_post_author ) {
+				$author_id = $authordata->ID;
+			} else if ( $default_author != $authordata->ID ) {
+				$include_rel = false;
+			}
+		} else if ( is_singular() && 1 == $use_post_author ) {
 			global $post;
 			$author_id = $post->post_author;
 		}
@@ -59,7 +70,7 @@ class IndieWebPlugin_Widget extends WP_Widget {
 			$author_id = $default_author;
 		}
 
-		echo IndieWebPlugin::rel_me_list ( $author_id );
+		echo IndieWebPlugin::rel_me_list ( $author_id, $include_rel );
 	}
 
 	/**
@@ -107,7 +118,7 @@ class IndieWebPlugin_Widget extends WP_Widget {
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'use_post_author' ); ?>"><?php _e( 'Use post author for rel-me links source on post-like pages instead of default author:', 'indieweb' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $instance['use_post_author'], $use_post_author ); ?> />
+			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $use_post_author ); ?> />
 		</p>
 		<?php
 	}
@@ -396,7 +407,7 @@ class IndieWebPlugin {
 	public static function add_user_meta_fields ($profile_fields) {
 
 		foreach ( self::silos() as $silo => $details ) {
-			$profile_fields[ 'indieweb_' . $name ] = $details['display'];
+			$profile_fields[ 'indieweb_' . $silo ] = $details['display'];
 		}
 
 		return $profile_fields;
@@ -406,7 +417,7 @@ class IndieWebPlugin {
 	 * prints a formatted <ul> list of rel=me to supported silos
 	 *
 	 */
-	public static function rel_me_list ( $author_id = null ) {
+	public static function rel_me_list ( $author_id = null, $include_rel = false ) {
 
 		if ( empty( $author_id ) )
 			$author_id = get_the_author_id();
@@ -427,7 +438,7 @@ class IndieWebPlugin {
 
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r [ $silo ] = "<a rel=\"me\" class=\"u-{$silo} x-{$silo} icon-{$silo} url u-url\" href=\"{$profile_url}\" title=\"{$author_name} @ {$silo}\">{$silo}</a>";
+			$r [ $silo ] = "<a " . ( $include_rel ? 'rel="me" ' : '') . "class=\"icon-{$silo} url u-url\" href=\"" . esc_attr($profile_url) . "\" title=\"" . esc_attr($author_name) . " @ {$silo}\">{$silo}</a>";
 		}
 
 		$r = "<ul class=\"indieweb-rel-me\">\n<li>" . join ( "</li>\n<li>", $r ) . "</li>\n</ul>";
