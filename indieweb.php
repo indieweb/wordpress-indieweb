@@ -396,7 +396,7 @@ class IndieWebPlugin {
 	public static function add_user_meta_fields ($profile_fields) {
 
 		foreach ( self::silos() as $silo => $details ) {
-			$profile_fields[ 'indieweb_' . $name ] = $details['display'];
+			$profile_fields[ 'indieweb_' . $silo ] = $details['display'];
 		}
 
 		return $profile_fields;
