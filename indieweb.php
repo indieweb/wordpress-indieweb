@@ -365,7 +365,7 @@ class IndieWebPlugin {
 				'display' => __( 'Github username', 'indieweb' ),
 			),
 			'googleplus' => array (
-				'baseurl' => 'https://plus.google.com/117393351799968573179/posts',
+				'baseurl' => 'https://plus.google.com/%s/posts',
 				'display' => __( 'Google+ userID or username', 'indieweb' ),
 			),
 			'twitter' => array (
@@ -431,7 +431,7 @@ class IndieWebPlugin {
 		}
 
 		$r = "<ul class=\"indieweb-rel-me\">\n<li>" . join ( "</li>\n<li>", $r ) . "</li>\n</ul>";
-		echo apply_filters ( "indieweb-rel-me", $r, $author_id, $list );
+		echo apply_filters ( "indieweb_rel_me", $r, $author_id, $list );
 	}
 
 } // end class IndieWebPlugin
