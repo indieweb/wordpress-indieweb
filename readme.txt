@@ -3,8 +3,8 @@ Contributors: pfefferle, dshanske
 Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
-Tested up to: 4.1
-Stable tag: 2.2.0
+Tested up to: 4.4
+Stable tag: 3.0.0
 
 IndieWeb for WordPress!
 
@@ -25,6 +25,14 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.0.0 = 
+
+* The plugin now supports establishing your identity on the web with your site.
+** Extended User Profile
+** includes additional properties to be used to generate h-card
+** includes rel-me for the silos supported by IndieAuth plus any arbitrary additional ones.
+
 
 = 2.2.0 = 
 

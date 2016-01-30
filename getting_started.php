@@ -44,7 +44,7 @@
 		</li>
 	</ul>
 
-	<p><a href="<?php echo admin_url('plugins.php?page=indieweb-installer'); ?>" class="button button-primary"><?php _e( 'Install Plugins', 'indieweb' ); ?></a></p>
+	<p><a href="<?php echo admin_url( 'admin.php?page=indieweb-installer' ); ?>" class="button button-primary"><?php _e( 'Install Plugins', 'indieweb' ); ?></a></p>
 
 	<h2><?php _e( 'Themes', 'indieweb' ); ?></h2>
 

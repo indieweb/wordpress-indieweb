@@ -5,125 +5,20 @@ Plugin URI: https://github.com/indieweb/wordpress-indieweb
 Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
-Version: 2.2.0
+Version: 3.0.0
 Text Domain: indieweb
 Domain Path: /languages
 */
 
 
+// Require H-Card Enhancements to User Profile
+	require_once dirname( __FILE__ ) . '/class-hcard-user.php';
+
+// Require Rel Me Widget Class
+require_once dirname( __FILE__ ) . '/class-relme-widget.php';
 
 // initialize plugin
 add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'init' ) );
-// add widget
-add_action( 'widgets_init', array( 'IndieWebPlugin', 'init_widgets' ) );
-
-
-/**
- * adds widget to display rel-me links for indieauth with per-user profile support
- *
- *
- */
-class IndieWebPlugin_Widget extends WP_Widget {
-
-	/**
-	 * widget constructor
-	 */
-	function __construct() {
-		parent::__construct(
-			'IndieWebPlugin_Widget',
-			__('Rel-me URLs', 'indieweb'),
-			array(
-				'description' => __( 'Adds automatic rel-me URLs based on author profile information.', 'indieweb' ),
-			)
-		);
-	}
-
-	/**
-	 * widget worker
-	 *
-	 * @param mixed $args widget parameters
-	 * @param mixed $instance saved widget data
-	 *
-	 * @output echoes the list of rel-me links for the author
-	 */
-	public function widget( $args, $instance ) {
-		global $authordata;
-
-		$include_rel = is_author() || (is_front_page() && !is_multi_author());
-
-		$default_author = ( ! empty( $instance['default_author'] ) ) ? intval( $instance['default_author'] ) : 1;
-		$use_post_author = ( ! empty( $instance['use_post_author'] ) ) ? intval( $instance['use_post_author'] ) : 1;
-
-		if ( is_author() ) {
-			global $authordata;
-
-			if ( 1 == $use_post_author ) {
-				$author_id = $authordata->ID;
-			} else if ( $default_author != $authordata->ID ) {
-				$include_rel = false;
-			}
-		} else if ( is_singular() && 1 == $use_post_author ) {
-			global $post;
-			$author_id = $post->post_author;
-		}
-		else {
-			$author_id = $default_author;
-		}
-
-		echo IndieWebPlugin::rel_me_list ( $author_id, $include_rel );
-	}
-
-	/**
-	 * widget data updater
-	 *
-	 * @param mixed $new_instance new widget data
-	 * @param mixed $old_instance current widget data
-	 *
-	 * @return mixed widget data
-	 */
-	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['default_author'] = ( ! empty( $new_instance['default_author'] ) ) ? intval( $new_instance['default_author'] ) : 1;
-
-		$instance['use_post_author'] = ( ! empty( $new_instance['use_post_author'] ) ) ? intval( $new_instance['use_post_author'] ) : 1;
-
-		return $instance;
-	}
-
-	/**
-	 * widget form
-	 *
-	 * @param mixed $instance
-	 *
-	 * @output displays the widget form
-	 *
-	 */
-	public function form( $instance ) {
-		$default_author = ( isset ( $instance['default_author'] ) ) ? $instance['default_author'] : 1;
-		$use_post_author = ( isset ( $instance['use_post_author'] ) ) ? $instance['use_post_author'] : true;
-
-		$users = get_users( array(
-			'orderby' => 'ID',
-			'fields' => array( 'ID', 'display_name' )
-		));
-
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'default_author' ); ?>"><?php _e( 'Default author:', 'indieweb' ); ?></label>
-			<select name="<?php echo $this->get_field_id( 'default_author' ); ?>" id="<?php echo $this->get_field_id( 'default_author' ); ?>">
-				<?php foreach ( $users as $user ): ?>
-				<option value="<?php echo $user->ID; ?>" <?php selected( $default_author , $user->ID ); ?>><?php echo $user->display_name; ?></option>
-				<?php endforeach; ?>
-			</select>
-		</p>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'use_post_author' ); ?>"><?php _e( 'Use post author for rel-me links source on post-like pages instead of default author:', 'indieweb' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $use_post_author ); ?> />
-		</p>
-		<?php
-	}
-
-}
 
 
 /**
@@ -157,15 +52,6 @@ class IndieWebPlugin {
 		// we're up and running
 		do_action( 'indieweb_loaded' );
 
-		// additional user meta fields
-		add_filter('user_contactmethods', array( 'IndieWebPlugin', 'add_user_meta_fields' ) );
-	}
-
-	/**
-	 * register WordPress widgets
-	 */
-	public static function init_widgets() {
-		register_widget( 'IndieWebPlugin_Widget' );
 	}
 
 	/**
@@ -190,17 +76,42 @@ class IndieWebPlugin {
 	 */
 	public static function add_menu_item() {
 
-		// add to Plugins top-level menu
-		add_plugins_page(
-			__( 'IndieWeb', 'indieweb' ), // page title
-			__( 'IndieWeb', 'indieweb' ), // menu title
-			'manage_options', // access capability
-			'indieweb', // menu slug
-			array( 'IndieWebPlugin', 'getting_started' ) // callback
+		add_menu_page(
+			'IndieWeb',
+			'IndieWeb',
+			'manage_options',
+			'indieweb',
+			array( 'IndieWebPlugin', 'general_options' ),
+			'dashicons-share-alt'
 		);
+
+		add_submenu_page(
+			'indieweb',
+			__( 'Getting Started', 'indieweb' ), // page title
+			__( 'Getting Started', 'indieweb' ), // menu title
+			'manage_options', // access capability
+			'iw_getting_started',
+			array( 'IndieWebPlugin', 'getting_started' )
+		);
+		global $submenu;
+		if ( isset( $submenu['indieweb'] ) && current_user_can( 'manage_options' ) ) {
+			$submenu['indieweb'][0][0] = __( 'General', 'indieweb' );
+		}
 
 	}
 
+
+	public static function general_options() {
+		echo '<div class="wrap">';
+		echo '<h2>' . esc_html__( 'General Options', 'indieweb' ) . '</h2>';
+		echo '<p>';
+		echo '</p><hr />';
+		echo '<form method="post" action="options.php">';
+		settings_fields( 'iwc_general_options' );
+		do_settings_sections( 'iwc_general_options' );
+		submit_button();
+		echo '</form></div>';
+	}
 
 	/**
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
@@ -257,7 +168,7 @@ class IndieWebPlugin {
 				'slug'          => 'wordpress-webactions-master',
 				'source'        => 'https://github.com/pfefferle/wordpress-webactions/archive/master.zip',
 				'required'      => false,
-				'external_url'  => 'https://github.com/pfefferle/wordpress-webactions'
+				'external_url'  => 'https://github.com/pfefferle/wordpress-webactions',
 			),
 
 			// recommend the IndieWeb Press-This plugin
@@ -266,7 +177,7 @@ class IndieWebPlugin {
 				'slug'          => 'wordpress-indieweb-press-this-master',
 				'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
 				'required'      => false,
-				'external_url'  => 'https://github.com/pfefferle/wordpress-indieweb-press-this'
+				'external_url'  => 'https://github.com/pfefferle/wordpress-indieweb-press-this',
 			),
 
 			// recommend the "WebMention for Comments" plugin
@@ -275,7 +186,7 @@ class IndieWebPlugin {
 				'slug'          => 'wordpress-webmention-for-comments-master',
 				'source'        => 'https://github.com/pfefferle/wordpress-webmention-for-comments/archive/master.zip',
 				'required'      => false,
-				'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments'
+				'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments',
 			),
 
 			// recommend the Post Kinds plugin
@@ -313,16 +224,16 @@ class IndieWebPlugin {
 			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
 			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 			'menu'         => 'indieweb-installer',    // Menu slug.
-			'parent_slug'  => 'plugins.php',
+			'parent_slug'  => 'indieweb',
 			'has_notices'  => true,                    // Show admin notices or not.
 			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-			'message'      => __( 'For descriptions of the plugins and more information, visit <a href="plugins.php?page=indieweb">Getting Started</a>', 'indieweb' ), // Message to output right before the plugins table.
+			'message'      => '', // Message to output right before the plugins table.
 			'strings'      => array(
 				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
 				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
-				'menu_title'                      => __( 'IndieWeb Plugin Installer', 'indieweb' ),
+				'menu_title'                      => __( 'Extensions', 'indieweb' ),
 				'installing'                      => __( 'Installing Plugin: %s', 'indieweb' ), // %s = plugin name.
 				'oops'                            => __( 'Something went wrong with the plugin install.', 'indieweb' ),
 				'notice_can_install_required'     => _n_noop( 'The IndieWeb plugin requires the following plugin: %1$s.', 'The IndieWeb plugin requires the following plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
@@ -338,8 +249,8 @@ class IndieWebPlugin {
 				'return'                          => __( 'Return to IndieWeb Plugins Installer', 'indieweb' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'indieweb' ),
 				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
-				'nag_type'                        => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
-			)
+				'nag_type'                        => 'updated',// Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+			),
 
 		); // end config array
 
@@ -359,41 +270,8 @@ class IndieWebPlugin {
 	 */
 	public static function plugin_link( $links ) {
 		$settings_link = '<a href="' . admin_url( 'plugins.php?page=indieweb' ) . '">' . __( 'Getting Started', 'indieweb' ) . '</a>';
-		array_unshift( $links, $settings_link);
+		array_unshift( $links, $settings_link );
 		return $links;
-	}
-
-	/**
-	 *
-	 * list of silos an profile url patterns which are supported by indieauth
-	 * http://indiewebcamp.com/indieauth.com
-	 */
-	public static function silos () {
-
-		$silos = array (
-			'github' => array (
-				'baseurl' => 'https://github.com/%s',
-				'display' => __( 'Github username', 'indieweb' ),
-			),
-			'googleplus' => array (
-				'baseurl' => 'https://plus.google.com/%s/posts',
-				'display' => __( 'Google+ userID or username', 'indieweb' ),
-			),
-			'twitter' => array (
-				'baseurl' => 'https://twitter.com/%s',
-				'display' => __( 'Twitter username', 'indieweb' ),
-			),
-			'lastfm' => array (
-				'baseurl' => 'https://last.fm/user/%s',
-				'display' => __( 'Last.fm username', 'indieweb' ),
-			),
-			'flickr' => array (
-				'baseurl' => 'https://www.flickr.com/people/%s',
-				'display' => __( 'Flickr username', 'indieweb' ),
-			),
-		);
-
-		return apply_filters( 'wp_relme_silos', $silos );
 	}
 
 	/**
@@ -402,7 +280,6 @@ class IndieWebPlugin {
 	 * @param array $profile_fields Current profile fields
 	 *
 	 * @return array $profile_fields extended
-	 *
 	 */
 	public static function add_user_meta_fields ($profile_fields) {
 
@@ -411,38 +288,6 @@ class IndieWebPlugin {
 		}
 
 		return $profile_fields;
-	}
-
-	/**
-	 * prints a formatted <ul> list of rel=me to supported silos
-	 *
-	 */
-	public static function rel_me_list ( $author_id = null, $include_rel = false ) {
-
-		if ( empty( $author_id ) )
-			$author_id = get_the_author_id();
-
-		if ( empty( $author_id ) || $author_id == 0 )
-			return false;
-
-		$author_name = get_the_author_meta ( 'display_name' , $author_id );
-
-		$list = array();
-
-		foreach ( self::silos() as $silo => $details ) {
-			$socialmeta = get_the_author_meta ( 'indieweb_' . $silo, $author_id );
-
-			if ( ! empty( $socialmeta ) )
-				$list[ $silo ] = sprintf ( $details['baseurl'], $socialmeta );
-		}
-
-		$r = array();
-		foreach ( $list as $silo => $profile_url ) {
-			$r [ $silo ] = "<a " . ( $include_rel ? 'rel="me" ' : '') . "class=\"icon-{$silo} url u-url\" href=\"" . esc_attr($profile_url) . "\" title=\"" . esc_attr($author_name) . " @ {$silo}\">{$silo}</a>";
-		}
-
-		$r = "<ul class=\"indieweb-rel-me\">\n<li>" . join ( "</li>\n<li>", $r ) . "</li>\n</ul>";
-		echo apply_filters ( "indieweb_rel_me", $r, $author_id, $list );
 	}
 
 } // end class IndieWebPlugin
