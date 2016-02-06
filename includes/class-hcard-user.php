@@ -2,11 +2,14 @@
 
 add_action( 'init', array( 'HCard_User', 'init' ) );
 
+// add widget
+add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 
 // Extended Profile for Rel-Me and H-Card
 class HCard_User {
 
 	public static function init() {
+		add_filter( 'author_link', array( 'HCard_User', 'author_link'), 10, 3 );
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
 		add_action( 'show_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
@@ -22,6 +25,19 @@ class HCard_User {
 	public static function init_widgets() {
 		register_widget( 'RelMe_Widget' );
 	}
+
+  /**
+   * If there is a URL set in the user profile, set author link to that
+   */
+  public static function author_link($link, $author_id, $nicename) {
+		$user_info = get_userdata( $author_id );
+		if ( ! empty( $user_info->user_url ) ) {
+				$link = $user_info->user_url;
+		}
+		return $link;
+  }
+
+
 
 	/**
 	 *
@@ -190,9 +206,9 @@ class HCard_User {
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
 		$fields['relme'] = array();
 		foreach ( $fields as $key => $value ) {
-			if ( isset( $_POST[$key] ) ) {
-				if ( ! empty( $_POST[$key] ) ) {
-					update_usermeta( $user_id, $key, $_POST[$key] );
+			if ( isset( $_POST[ $key ] ) ) {
+				if ( ! empty( $_POST[ $key ] ) ) {
+					update_usermeta( $user_id, $key, $_POST[ $key ] );
 				} else {
 					delete_usermeta( $user_id, $key );
 				}
@@ -208,7 +224,7 @@ class HCard_User {
 		if ( empty( $author_id ) ) {
 			$author_id = get_the_author_id(); }
 
-		if ( empty( $author_id ) || $author_id == 0 ) {
+		if ( empty( $author_id ) || 0 === $author_id ) {
 			return false; }
 
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
