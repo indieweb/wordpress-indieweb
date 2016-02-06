@@ -10,23 +10,15 @@ Text Domain: indieweb
 Domain Path: /languages
 */
 
-
-// Require H-Card Enhancements to User Profile
-	require_once dirname( __FILE__ ) . '/class-hcard-user.php';
-
-// Require Rel Me Widget Class
-require_once dirname( __FILE__ ) . '/class-relme-widget.php';
-
 // initialize plugin
-add_action( 'plugins_loaded', array( 'IndieWebPlugin', 'init' ) );
-
+add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
 
 /**
  * IndieWeb Plugin Class
  *
  * @author Matthias Pfefferle
  */
-class IndieWebPlugin {
+class IndieWeb_Plugin {
 
 	/**
 	 * Initialize the plugin, registering WordPress hooks.
@@ -37,22 +29,29 @@ class IndieWebPlugin {
 		self::enable_translation();
 
 		// include the TGM_Plugin_Activation class
-		require_once dirname( __FILE__ ) . '/class-tgm-plugin-activation.php';
+		require_once dirname( __FILE__ ) . '/includes/class-tgm-plugin-activation.php';
+
+		// Require H-Card Enhancements to User Profile
+		require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
+
+		// Require Rel Me Widget Class
+		require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+
+		// Add General Settings Page
+		// require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
 
 		// register TGM hooks
-		add_action( 'tgmpa_register', array( 'IndieWebPlugin', 'register_required_plugins' ) );
+		add_action( 'tgmpa_register', array( 'IndieWeb_Plugin', 'register_required_plugins' ) );
 
 		// add menu
-		add_action( 'admin_menu', array( 'IndieWebPlugin', 'add_menu_item' ) );
-
-		// show a link to the "Getting Started" page
-		$plugin = plugin_basename( __FILE__ );
-		add_filter( "plugin_action_links_$plugin", array( 'IndieWebPlugin', 'plugin_link' ) );
+		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'add_menu_item' ), 9 );
+		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'change_menu_title' ), 12 );
 
 		// we're up and running
 		do_action( 'indieweb_loaded' );
 
 	}
+
 
 	/**
 	 * Load translation files.
@@ -72,7 +71,7 @@ class IndieWebPlugin {
 	}
 
 	/**
-	 * Add menu item to "Plugins" top-level menu.
+	 * Add Top Level Menu Item
 	 */
 	public static function add_menu_item() {
 
@@ -81,43 +80,23 @@ class IndieWebPlugin {
 			'IndieWeb',
 			'manage_options',
 			'indieweb',
-			array( 'IndieWebPlugin', 'general_options' ),
+			array( 'IndieWeb_Plugin', 'getting_started' ),
 			'dashicons-share-alt'
 		);
-
-		add_submenu_page(
-			'indieweb',
-			__( 'Getting Started', 'indieweb' ), // page title
-			__( 'Getting Started', 'indieweb' ), // menu title
-			'manage_options', // access capability
-			'iw_getting_started',
-			array( 'IndieWebPlugin', 'getting_started' )
-		);
+	}
+	public static function change_menu_title() {
 		global $submenu;
 		if ( isset( $submenu['indieweb'] ) && current_user_can( 'manage_options' ) ) {
-			$submenu['indieweb'][0][0] = __( 'General', 'indieweb' );
+			$submenu['indieweb'][0][0] = __( 'Getting Started', 'indieweb' );
 		}
-
 	}
 
-
-	public static function general_options() {
-		echo '<div class="wrap">';
-		echo '<h2>' . esc_html__( 'General Options', 'indieweb' ) . '</h2>';
-		echo '<p>';
-		echo '</p><hr />';
-		echo '<form method="post" action="options.php">';
-		settings_fields( 'iwc_general_options' );
-		do_settings_sections( 'iwc_general_options' );
-		submit_button();
-		echo '</form></div>';
-	}
 
 	/**
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
 	public static function getting_started() {
-		require_once dirname( __FILE__ ) . '/getting_started.php';
+		require_once dirname( __FILE__ ) . '/includes/Getting_Started.php';
 	}
 
 	/**
@@ -262,32 +241,4 @@ class IndieWebPlugin {
 
 	}
 
-	/**
-	 * Show a link to the "Getting Started" page
-	 *
-	 * @param array $links The existing plugin links array
-	 * @return array $links The modified plugin links array
-	 */
-	public static function plugin_link( $links ) {
-		$settings_link = '<a href="' . admin_url( 'plugins.php?page=indieweb' ) . '">' . __( 'Getting Started', 'indieweb' ) . '</a>';
-		array_unshift( $links, $settings_link );
-		return $links;
-	}
-
-	/**
-	 * additional user fields
-	 *
-	 * @param array $profile_fields Current profile fields
-	 *
-	 * @return array $profile_fields extended
-	 */
-	public static function add_user_meta_fields ($profile_fields) {
-
-		foreach ( self::silos() as $silo => $details ) {
-			$profile_fields[ 'indieweb_' . $silo ] = $details['display'];
-		}
-
-		return $profile_fields;
-	}
-
-} // end class IndieWebPlugin
+} // end class IndieWeb_Plugin

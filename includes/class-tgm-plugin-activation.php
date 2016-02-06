@@ -3149,7 +3149,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								'clear_working'     => true,
 								'is_multi'          => true,
 								'hook_extra'        => array(
-									'plugin' => $plugin,
+								'plugin' => $plugin,
 								),
 							) );
 

@@ -1,7 +1,7 @@
 <?php
 
 // add widget
-add_action( 'widgets_init', array( 'hcard_user', 'init_widgets' ) );
+add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 
 
 /**
@@ -54,6 +54,23 @@ class RelMe_Widget extends WP_Widget {
 		}
 
 		echo hcard_user::rel_me_list( $author_id, $include_rel );
+	}
+
+
+	public function urls_to_rel_me( $urls ) {
+		echo '<ul class="social-icon">';
+		if ( ! empty( $urls ) ) {
+			foreach ( $urls as $url ) {
+				if ( empty( $url ) ) { continue; }
+				echo '<li><a';
+				if ( (is_front_page()||is_home()) ) {
+					echo ' rel="me"';
+				}
+				echo ' href="' . $url . '" ></a>';
+				echo '</li>' . "\n";
+			}
+		}
+		 echo '</ul></div>';
 	}
 
 	/**

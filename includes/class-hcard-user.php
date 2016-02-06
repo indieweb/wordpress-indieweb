@@ -1,19 +1,19 @@
 <?php
 
-add_action( 'init', array( 'hcard_user', 'init' ) );
+add_action( 'init', array( 'HCard_User', 'init' ) );
 
 
 // Extended Profile for Rel-Me and H-Card
-class hcard_user {
+class HCard_User {
 
 	public static function init() {
-		add_filter( 'user_contactmethods', array( 'hcard_user', 'user_contactmethods' ) );
+		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
-		add_action( 'show_user_profile', array( 'hcard_user', 'extended_user_profile' ) );
-		add_action( 'edit_user_profile', array( 'hcard_user', 'extended_user_profile' ) );
+		add_action( 'show_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
+		add_action( 'edit_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
 		// Save Extra User Data
-		add_action( 'personal_options_update', array( 'hcard_user', 'save_profile' ), 11 );
-		add_action( 'edit_user_profile_update', array( 'hcard_user', 'save_profile' ), 11 );
+		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
+		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
 	}
 
 	/**
