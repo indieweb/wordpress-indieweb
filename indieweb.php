@@ -38,7 +38,7 @@ class IndieWeb_Plugin {
 		require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
 
 		// Add General Settings Page
-		// require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
+		require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
 
 		// register TGM hooks
 		add_action( 'tgmpa_register', array( 'IndieWeb_Plugin', 'register_required_plugins' ) );
@@ -96,7 +96,7 @@ class IndieWeb_Plugin {
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
 	public static function getting_started() {
-		require_once dirname( __FILE__ ) . '/includes/Getting_Started.php';
+		require_once dirname( __FILE__ ) . '/includes/Getting-Started.php';
 	}
 
 	/**
