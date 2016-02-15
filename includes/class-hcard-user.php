@@ -3,7 +3,7 @@
 add_action( 'init', array( 'HCard_User', 'init' ) );
 
 // add widget
-if ( 1 != get_option('iw_relmehead', 0) ) { 
+if ( 1 !== get_option( 'iw_relmehead', 0 ) ) {
 	add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
   }
 // Extended Profile for Rel-Me and H-Card
@@ -32,7 +32,7 @@ class HCard_User {
   /**
    * If there is a URL set in the user profile, set author link to that
    */
-  public static function author_link($link, $author_id, $nicename) {
+  public static function author_link( $link, $author_id, $nicename ) {
 		$user_info = get_userdata( $author_id );
 		if ( ! empty( $user_info->user_url ) ) {
 				$link = $user_info->user_url;
@@ -153,9 +153,6 @@ class HCard_User {
 		return apply_filters( 'wp_user_extrafields', $extras );
 	}
 
-
-
-
 	public static function extended_user_profile( $user ) {
 		echo '<h3>' . __( 'Address', 'indieweb' ) . '</h3>';
 		echo '<p>' . __( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
@@ -174,7 +171,6 @@ class HCard_User {
 		self::extended_profile_textarea_field( $user, 'relme', __( 'Other Sites', 'indieweb' ), __( 'Sites not listed in the profile to add to rel-me (One URL per line)', 'indieweb' ) );
 		echo '</table>';
 	}
-
 
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
 	?>
@@ -285,9 +281,9 @@ class HCard_User {
 		$relme = get_the_author_meta( 'relme', $author_id );
 		if ($relme) {
 			$urls = explode( "\n", $relme );
-			$urls = self::clean_urls($urls);
+			$urls = self::clean_urls( $urls );
 			foreach ( $urls as $url ) {
-				$list[ self::extract_domain_name($url) ] = $url;
+				$list[ self::extract_domain_name( $url ) ] = $url;
 			}
 		return array_unique ($list);
 		}
@@ -298,11 +294,11 @@ class HCard_User {
 		 */
 	public static function rel_me_list ( $author_id = null, $include_rel = false ) {
 
-		$list = self::get_rel_me( $author_id);
+		$list = self::get_rel_me( $author_id );
 		if ( ! $list ) {
 			return false;
 		}
-
+		$author_name = get_the_author_meta( 'display_name' , $author_id ); 
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
 				$r [ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '') . "class='icon-{$silo} url u-url' href='" . esc_attr( $profile_url ) . "' title='" . esc_attr( $author_name ) . " @ {$silo}'>{$silo}</a>";
