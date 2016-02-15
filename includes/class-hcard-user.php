@@ -3,8 +3,9 @@
 add_action( 'init', array( 'HCard_User', 'init' ) );
 
 // add widget
-add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
-
+if ( 1 != get_option('iw_relmehead', 0) ) { 
+	add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
+  }
 // Extended Profile for Rel-Me and H-Card
 class HCard_User {
 
@@ -17,6 +18,8 @@ class HCard_User {
 		// Save Extra User Data
 		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
+		// Add Shortcode for H-Card
+		add_shortcode( 'h_card', array( 'HCard_User', 'h_card_shortcode') );
 	}
 
 	/**
@@ -216,26 +219,88 @@ class HCard_User {
 		}
 	}
 
+	/**
+	 * Filters a single silo URL.
+	 *
+	 * @param string $string A string that is expected to be a silo URL.
+	 * @return string|bool The filtered and escaped URL string, or FALSE if invalid.
+	 * @used-by clean_urls
+	 */
+	public static function clean_url($string) {
+		$url = trim( $string );
+		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
+			return false;
+		}
+		// Rewrite these to https as needed
+		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com' ) );
+		if ( in_array( extract_domain_name( $url ), $secure ) ) {
+			$url = preg_replace( '/^http:/i', 'https:', $url );
+		}
+		$url = esc_url_raw( $url );
+		return $url;
+	}
+
+	/*
+	Filters incoming URLs.
+	 *
+	 * @param array $urls An array of URLs to filter.
+	 * @return array A filtered array of unique URLs.
+	 * @uses clean_url
+	 */
+	public static function clean_urls($urls) {
+		$array = array_map( array( 'HCard_User', 'clean_url' ), $urls );
+		return array_filter( array_unique( $array ) );
+	}
+
+	/**
+	 * Returns the Domain Name out of a URL.
+	 *
+	 * @param string $url URL.
+	 *
+	 * @return string domain name
+	 */
+	public static function extract_domain_name( $url ) {
+		$host = parse_url( $url, PHP_URL_HOST );
+		$host = preg_replace( '/^www\./', '', $host );
+		return $host;
+	}
+
+    /**
+     * returns an array of links from the user profile to be used as rel-me
+     */
+  public static function get_rel_me ( $author_id = null ) {
+    if ( empty( $author_id ) ) {
+      $author_id = get_the_author_id(); }
+
+    if ( empty( $author_id ) || 0 === $author_id ) {
+      return false; 
+		}
+	  $list = array();
+    foreach ( self::silos() as $silo => $details ) {
+        $socialmeta = get_the_author_meta( $silo, $author_id );
+      	if ( ! empty( $socialmeta ) ) {
+          $list[ $silo ] = sprintf( $details['baseurl'], $socialmeta ); 
+				} 
+   }
+		$relme = get_the_author_meta( 'relme', $author_id );
+		if ($relme) {
+			$urls = explode( "\n", $relme );
+			$urls = self::clean_urls($urls);
+			foreach ( $urls as $url ) {
+				$list[ self::extract_domain_name($url) ] = $url;
+			}
+		return array_unique ($list);
+		}
+	}
+
 		/**
 		 * prints a formatted <ul> list of rel=me to supported silos
 		 */
 	public static function rel_me_list ( $author_id = null, $include_rel = false ) {
 
-		if ( empty( $author_id ) ) {
-			$author_id = get_the_author_id(); }
-
-		if ( empty( $author_id ) || 0 === $author_id ) {
-			return false; }
-
-		$author_name = get_the_author_meta( 'display_name' , $author_id );
-
-		$list = array();
-
-		foreach ( self::silos() as $silo => $details ) {
-				$socialmeta = get_the_author_meta( $silo, $author_id );
-
-			if ( ! empty( $socialmeta ) ) {
-					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta ); }
+		$list = self::get_rel_me( $author_id);
+		if ( ! $list ) {
+			return false;
 		}
 
 		$r = array();
@@ -246,5 +311,22 @@ class HCard_User {
 				$r = "<ul class='indieweb-rel-me'>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul>";
 			echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list );
 	}
+
+	// Outputs an H-Card
+	public static function h_card_shortcode( $atts ) {
+   extract(
+		shortcode_atts(
+			array(
+      	'author' => get_option('iw_default_author', 1), // User to Output
+				'address' => 'no', // Output Address Data
+				'relme' => 'no', // Output silo links with rel=me
+   		), 
+			$atts
+		) );
+		return '';
+	}
+
+
+
 
 } // End Class
