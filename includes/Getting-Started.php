@@ -4,7 +4,7 @@
 
 	<h2><?php _e( 'Getting Started', 'indieweb' ); ?></h2>
 
-	<p><?php _e( 'The IndieWeb Plugin can help you get set up to be a more active member of the indieweb. Required plugins make receiving indieweb comments and mentions work, recommended plugins further improve the experience.', 'indieweb' ); ?></p>
+	<p><?php _e( 'The IndieWeb Plugin can help you get set up to be a more active member of the indieweb. Required plugins make receiving indieweb comments and mentions work; recommended plugins further improve the experience.', 'indieweb' ); ?></p>
 
 	<p><?php _e( 'Once you have these activated, you can setup <a href="https://www.brid.gy" target="_blank">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience.', 'indieweb' ); ?></p>
 
@@ -29,7 +29,7 @@
 			<h3><?php _e( 'Syndicate your content to other sites', 'indieweb' ); ?></h3>
 			<p><?php _e( 'Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying.', 'indieweb' ); ?></p>
 		<ol>
-			<li><?php _e( '<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for SNAP.', 'indieweb' ); ?></li>
+			<li><?php _e( '<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports <a href="https://github.com/crowdfavorite/wp-social" target="_blank">Social</a>, partial support for <a href="https://wordpress.org/plugins/social-networks-auto-poster-facebook-twitter-g/" target="_blank">NextScripts: Social Networks Auto-Poster (aka SNAP)</a>.', 'indieweb' ); ?></li>
 	</ol>
 		</li>
 
@@ -37,7 +37,7 @@
 			<h3><?php _e( 'Other', 'indieweb' ); ?></h3>
 			<ol>
 				<li><?php _e( '<strong>MicroPub</strong> - A MicroPub Server', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the WordPressPress-This bookmarkets to allow you to respond on your site with one-click.', 'indieweb' ); ?></li>
+				<li><?php _e( '<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the WordPress Press-This bookmarkets to allow you to respond on your site with one-click.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Hum URL Shortener</strong> - A personal URL shortener.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.', 'indieweb' ); ?></li>
 			</ol>
@@ -52,7 +52,7 @@
 
 	<p><?php _e( 'Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. For example, a class of u-like-of added to a link to a site you liked to indicates that relationship.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'There is only one theme in the WordPress repository that is fully microformats2 compliant. That is Sempress.', 'indieweb' ); ?></p>
+	<p><?php _e( 'Currently, <a href="https://wordpress.org/themes/sempress/" target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully microformats2 compliant. In practice, most themes will work relatively well out of the box, though there can be some minor display issues.', 'indieweb' ); ?></p>
 
 	<h2><?php _e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
 
