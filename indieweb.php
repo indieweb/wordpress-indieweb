@@ -24,7 +24,6 @@ class IndieWeb_Plugin {
 	 * Initialize the plugin, registering WordPress hooks.
 	 */
 	public static function init() {
-
 		// enable translation
 		self::enable_translation();
 
@@ -49,9 +48,7 @@ class IndieWeb_Plugin {
 
 		// we're up and running
 		do_action( 'indieweb_loaded' );
-
 	}
-
 
 	/**
 	 * Load translation files.
@@ -60,21 +57,18 @@ class IndieWeb_Plugin {
 	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
 	 */
 	public static function enable_translation() {
-
 		// for plugins
 		load_plugin_textdomain(
 			'indieweb', // unique slug
 			false, // deprecated
 			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
 		);
-
 	}
 
 	/**
 	 * Add Top Level Menu Item
 	 */
 	public static function add_menu_item() {
-
 		add_menu_page(
 			'IndieWeb',
 			'IndieWeb',
@@ -84,13 +78,16 @@ class IndieWeb_Plugin {
 			'dashicons-share-alt'
 		);
 	}
+
+	/**
+	 * Changes the menu title
+	 */
 	public static function change_menu_title() {
 		global $submenu;
 		if ( isset( $submenu['indieweb'] ) && current_user_can( 'manage_options' ) ) {
 			$submenu['indieweb'][0][0] = __( 'Getting Started', 'indieweb' );
 		}
 	}
-
 
 	/**
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
@@ -106,7 +103,6 @@ class IndieWeb_Plugin {
 	 * TGM_Plugin_Activation class constructor.
 	 */
 	public static function register_required_plugins() {
-
 		/**
 		 * Array of plugin arrays. Required keys are name and slug.
 		 * If the source is NOT from the .org repo, then source is also required.
@@ -188,7 +184,6 @@ class IndieWeb_Plugin {
 				'slug'          => 'indieauth',
 				'required'      => false,
 			),
-
 		);
 
 		/**
@@ -199,7 +194,6 @@ class IndieWeb_Plugin {
 		 * end of each line for what each argument will be.
 		 */
 		$config = array(
-
 			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
 			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 			'menu'         => 'indieweb-installer',    // Menu slug.
@@ -230,7 +224,6 @@ class IndieWeb_Plugin {
 				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
 				'nag_type'                        => 'updated',// Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			),
-
 		); // end config array
 
 		// call TGM with filtered arrays
@@ -238,7 +231,5 @@ class IndieWeb_Plugin {
 			apply_filters( 'indieweb_tgm_plugins', $plugins ),
 			apply_filters( 'indieweb_tgm_config', $config )
 		);
-
 	}
-
 } // end class IndieWeb_Plugin
