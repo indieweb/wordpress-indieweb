@@ -25,13 +25,14 @@ Some of these plugins allow you to:
 * log into your WordPress site with services like Twitter, GitHub, SMS, or even email using IndieAuth.
 
 ### The IndieWeb ###
+
 **The [IndieWeb](http://indiewebcamp.com/) is a people-focused alternative to the ‘corporate web’ that allows you to be the humb of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
 
-#### The IndieWeb, like WordPress, feels that **your content is yours** ####
+### The IndieWeb, like WordPress, feels that **your content is yours** ###
 
 When you post something on the web, it should belong to you, not a corporation. Too many companies have gone out of business and lost all of their users’ data. By joining the IndieWeb, your content stays yours and in your control.
 
-#### The IndieWeb is here to help you be **better connected** ####
+### The IndieWeb is here to help you be **better connected** ###
 
 Your articles and status messages can be syndicated to all services, not just one, allowing you to engage with everyone in your social network/social graph. Even replies and likes on other services can come back to your site so they’re all in one place.
 
@@ -45,13 +46,13 @@ IndieWeb for WordPress includes a plugin installer program. A Getting Started Gu
 
 ### Where can I find help? Can I contribute? ###
 
-A group of web developers (including those knowledgeable about WordPress, among many other web technologies) can be found discussing and working on IndieWeb related technologies in the wiki at [IndieWebCamp.com](http://www.indiewebcamp.com) or in the #IndieWeb [IRC on Freenode](https://indiewebcamp.com/IRC). WordPress specific portions of the IndieWeb camp can be found at [WordPress](https://indiewebcamp.com/wordpress), [Getting Started on WordPress](https://indiewebcamp.com/Getting_Started_on_WordPress), [Examples](https://indiewebcamp.com/WordPress/Examples), and other [plugins](https://indiewebcamp.com/WordPress/Plugins). 
+A group of web developers (including those knowledgeable about WordPress, among many other web technologies) can be found discussing and working on IndieWeb related technologies in the wiki at [IndieWebCamp.com](http://www.indiewebcamp.com) or in the #IndieWeb [IRC on Freenode](https://indiewebcamp.com/IRC). WordPress specific portions of the IndieWeb camp can be found at [WordPress](https://indiewebcamp.com/wordpress), [Getting Started on WordPress](https://indiewebcamp.com/Getting_Started_on_WordPress), [Examples](https://indiewebcamp.com/WordPress/Examples), and other [plugins](https://indiewebcamp.com/WordPress/Plugins).
 
 If you need additional assistance, feel free to reach out to any of the [WordPress Outreach Club](https://indiewebcamp.com/WordPress_Outreach_Club) members via the website, our individual websites, or our social media presences -- we're happy to help!
 
 ### Why IndieWeb? ###
 
-Find more information and details for the motivations for joining the IndieWeb at http://indiewebcamp.com/Why 
+Find more information and details for the motivations for joining the IndieWeb at http://indiewebcamp.com/Why
 
 ### What about plugin XYZ? ###
 
@@ -79,9 +80,9 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 ### 3.0.0 ###
 
 * The plugin now supports establishing your identity on the web with your site.
-** Extended User Profile
-** includes additional properties to be used to generate h-card
-** includes rel-me for the silos supported by IndieAuth plus any arbitrary additional ones.
+    * Extended User Profile
+    * includes additional properties to be used to generate h-card
+    * includes rel-me for the silos supported by IndieAuth plus any arbitrary additional ones.
 
 
 ### 2.2.0 ###

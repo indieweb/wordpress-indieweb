@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.0.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2016-02-06 04:55:44+00:00\n"
+"POT-Creation-Date: 2016-06-03 06:51:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,63 +13,776 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.4.9\n"
 
-#: build/tags/1.0.0/webmention/webmention.php:217
-msgid "This %s was mentioned on <a href=\"%s\">%s</a>"
+#: includes/Getting-Started.php:3
+msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:196
-#: build/tags/2.0.0/indieweb.php:169
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:196
-#: build/trunk/class-tgm-plugin-activation.php:333
+#: includes/Getting-Started.php:5 indieweb.php:90
+msgid "Getting Started"
+msgstr ""
+
+#: includes/Getting-Started.php:7
+msgid ""
+"The IndieWeb Plugin can help you get set up to be a more active member of "
+"the indieweb. Required plugins make receiving indieweb comments and "
+"mentions work; recommended plugins further improve the experience."
+msgstr ""
+
+#: includes/Getting-Started.php:9
+msgid ""
+"Once you have these activated, you can setup <a "
+"href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
+"blog to responses from sites such as Facebook and Twitter too, allowing for "
+"a seamless experience."
+msgstr ""
+
+#: includes/Getting-Started.php:11
+msgid "Plugins"
+msgstr ""
+
+#: includes/Getting-Started.php:13
+msgid ""
+"For more information on these plugins, visit the <a "
+"href=\"http://indiewebcamp.com/wordpress\" target=\"_blank\">WordPress "
+"page</a> on the IndieWebCamp wiki or click the individual plugin links "
+"below."
+msgstr ""
+
+#: includes/Getting-Started.php:17
+msgid "Send and receive responses with your site"
+msgstr ""
+
+#: includes/Getting-Started.php:18
+msgid ""
+"Send and receive comments, likes, reposts, and other kinds of post "
+"responses using your own site!"
+msgstr ""
+
+#: includes/Getting-Started.php:20
+msgid ""
+"<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
+"receive by adding webmention support to WordPress. Mentions show up as "
+"comments on your site."
+msgstr ""
+
+#: includes/Getting-Started.php:21
+msgid ""
+"<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
+"comments and mentions look better on your site."
+msgstr ""
+
+#: includes/Getting-Started.php:22
+msgid ""
+"<strong>Webmention for (Threaded) Comments</strong> - Adds support for "
+"threaded comments for webmentions."
+msgstr ""
+
+#: includes/Getting-Started.php:23
+msgid "<strong>Webactions</strong> - Adds webaction markups to WordPress elements."
+msgstr ""
+
+#: includes/Getting-Started.php:24
+msgid ""
+"<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
+"site from your own, by adding support for kinds of posts to WordPress."
+msgstr ""
+
+#: includes/Getting-Started.php:29
+msgid "Syndicate your content to other sites"
+msgstr ""
+
+#: includes/Getting-Started.php:30
+msgid ""
+"Linking to the syndicated version of a post allows for bridgy to be able to "
+"discover the post as well as for end users to comment on those sites as a "
+"way of replying."
+msgstr ""
+
+#: includes/Getting-Started.php:32
+msgid ""
+"<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
+"entry of syndication links as well as automatically from a supported "
+"syndication plugin. Fully supports <a "
+"href=\"https://github.com/crowdfavorite/wp-social\" "
+"target=\"_blank\">Social</a>, partial support for <a "
+"href=\"https://wordpress.org/plugins/social-networks-auto-poster-facebook-"
+"twitter-g/\" target=\"_blank\">NextScripts: Social Networks Auto-Poster "
+"(aka SNAP)</a>."
+msgstr ""
+
+#: includes/Getting-Started.php:37
+msgid "Other"
+msgstr ""
+
+#: includes/Getting-Started.php:39
+msgid "<strong>MicroPub</strong> - A MicroPub Server"
+msgstr ""
+
+#: includes/Getting-Started.php:40
+msgid ""
+"<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the "
+"WordPress Press-This bookmarkets to allow you to respond on your site with "
+"one-click."
+msgstr ""
+
+#: includes/Getting-Started.php:41
+msgid "<strong>Hum URL Shortener</strong> - A personal URL shortener."
+msgstr ""
+
+#: includes/Getting-Started.php:42
+msgid ""
+"<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
+"backend via IndieAuth. It uses the URL from the profile page to identify "
+"the blog user."
+msgstr ""
+
+#: includes/Getting-Started.php:47 includes/class-tgm-plugin-activation.php:334
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/Getting-Started.php:49
+msgid "Themes"
+msgstr ""
+
+#: includes/Getting-Started.php:51
+msgid ""
+"Some WordPress themes are compatible with microformats. The IndieWeb uses "
+"microformats2, the latest version, to mark up sites so that they can be "
+"interpreted by other sites when retrieved. Most parsers will fall back onto "
+"the older format if available."
+msgstr ""
+
+#: includes/Getting-Started.php:53
+msgid ""
+"Formatting your site so other sites can consume the information allows for "
+"the communications IndieWeb sites support. For example, a class of "
+"u-like-of added to a link to a site you liked to indicates that "
+"relationship."
+msgstr ""
+
+#: includes/Getting-Started.php:55
+msgid ""
+"Currently, <a href=\"https://wordpress.org/themes/sempress/\" "
+"target=\"_blank\">SemPress</a> is the only theme in the WordPress "
+"repository that is fully microformats2 compliant. In practice, most themes "
+"will work relatively well out of the box, though there can be some minor "
+"display issues."
+msgstr ""
+
+#: includes/Getting-Started.php:57
+msgid "What is the IndieWeb?"
+msgstr ""
+
+#: includes/Getting-Started.php:59
+msgid ""
+"<strong>Own your data.</strong> Create and publish content on your own "
+"site, and only optionally syndicate to third-party silos."
+msgstr ""
+
+#: includes/Getting-Started.php:60
+msgid ""
+"This is the basis of the <strong>Indie Web</strong>. For more, see <a "
+"href=\"http://indiewebcamp.com/principles\" "
+"target=\"_blank\">principles</a> and <a "
+"href=\"http://indiewebcamp.com/why\" target=\"_blank\">why</a>."
+msgstr ""
+
+#: includes/Getting-Started.php:62
+msgid ""
+"For even more information, please visit the <a "
+"href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> "
+"wiki</a>."
+msgstr ""
+
+#: includes/class-general-settings.php:13
+#: includes/class-general-settings.php:14
+msgid "Options"
+msgstr ""
+
+#: includes/class-general-settings.php:75
+msgid ""
+"Using rel=me on a link indicates the link represents the same person or "
+"entity as the current page. Depending on whether this is a single author or "
+"multi-author site, these links will either be displayed on the main page or "
+"on the specific page representing the author on the site."
+msgstr ""
+
+#: includes/class-hcard-user.php:55
+msgid "Telephone"
+msgstr ""
+
+#: includes/class-hcard-user.php:60
+msgid "Github username"
+msgstr ""
+
+#: includes/class-hcard-user.php:64
+msgid "Google+ userID (not username)"
+msgstr ""
+
+#: includes/class-hcard-user.php:68
+msgid "Twitter username (without @)"
+msgstr ""
+
+#: includes/class-hcard-user.php:72
+msgid "Facebook ID"
+msgstr ""
+
+#: includes/class-hcard-user.php:76
+msgid "Last.fm username"
+msgstr ""
+
+#: includes/class-hcard-user.php:81
+msgid "Instagram username"
+msgstr ""
+
+#: includes/class-hcard-user.php:85
+msgid "Flickr username"
+msgstr ""
+
+#: includes/class-hcard-user.php:111
+msgid "Street Address"
+msgstr ""
+
+#: includes/class-hcard-user.php:112
+msgid "Street Number and Name"
+msgstr ""
+
+#: includes/class-hcard-user.php:115
+msgid "Extended Address"
+msgstr ""
+
+#: includes/class-hcard-user.php:116
+msgid "Apartment/Suite/Room Name/Number if any"
+msgstr ""
+
+#: includes/class-hcard-user.php:119
+msgid "Locality"
+msgstr ""
+
+#: includes/class-hcard-user.php:120
+msgid "City/State/Village"
+msgstr ""
+
+#: includes/class-hcard-user.php:123
+msgid "Region"
+msgstr ""
+
+#: includes/class-hcard-user.php:124
+msgid "State/County/Province"
+msgstr ""
+
+#: includes/class-hcard-user.php:127
+msgid "Postal Code"
+msgstr ""
+
+#: includes/class-hcard-user.php:128
+msgid "Postal Code, such as Zip Code"
+msgstr ""
+
+#: includes/class-hcard-user.php:131 includes/class-hcard-user.php:132
+msgid "Country Name"
+msgstr ""
+
+#: includes/class-hcard-user.php:141
+msgid "Job Title"
+msgstr ""
+
+#: includes/class-hcard-user.php:142
+msgid "Title or Role"
+msgstr ""
+
+#: includes/class-hcard-user.php:145
+msgid "Organization"
+msgstr ""
+
+#: includes/class-hcard-user.php:146
+msgid "Affiliated Organization"
+msgstr ""
+
+#: includes/class-hcard-user.php:149
+msgid "Honorific Prefix"
+msgstr ""
+
+#: includes/class-hcard-user.php:150
+msgid "e.g. Mrs., Mr. Dr."
+msgstr ""
+
+#: includes/class-hcard-user.php:157
+msgid "Address"
+msgstr ""
+
+#: includes/class-hcard-user.php:158 includes/class-hcard-user.php:166
+msgid "Fill in all fields you are wish displayed."
+msgstr ""
+
+#: includes/class-hcard-user.php:165
+msgid "Additional Profile Information"
+msgstr ""
+
+#: includes/class-hcard-user.php:171
+msgid "Other Sites"
+msgstr ""
+
+#: includes/class-hcard-user.php:171
+msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
+msgstr ""
+
+#: includes/class-relme-widget.php:14
+msgid "Rel-me URLs"
+msgstr ""
+
+#: includes/class-relme-widget.php:16
+msgid "Adds automatic rel-me URLs based on author profile information."
+msgstr ""
+
+#: includes/class-relme-widget.php:104
+msgid ""
+"Use post author for rel-me links source on post-like pages instead of "
+"default author:"
+msgstr ""
+
 #: includes/class-tgm-plugin-activation.php:333
 msgid "Install Required Plugins"
 msgstr ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:197
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:197
-#: build/tags/2.1.0/getting_started.php:47
-#: build/trunk/class-tgm-plugin-activation.php:334
-#: build/trunk/getting_started.php:47 includes/Getting-Started.php:47
-#: includes/class-tgm-plugin-activation.php:334
-msgid "Install Plugins"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:198
-#: build/tags/2.0.0/indieweb.php:171
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:198
-#: build/tags/2.1.0/indieweb.php:213
-#: build/trunk/class-tgm-plugin-activation.php:335 build/trunk/indieweb.php:208
 #: includes/class-tgm-plugin-activation.php:335 indieweb.php:216
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:199
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:199
-msgid "Something went wrong."
+#: includes/class-tgm-plugin-activation.php:336
+msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:200
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:200
-#: build/trunk/class-tgm-plugin-activation.php:337
 #: includes/class-tgm-plugin-activation.php:337
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:201
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:201
-#: build/trunk/class-tgm-plugin-activation.php:342
 #: includes/class-tgm-plugin-activation.php:342
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:202
-#: build/tags/2.0.0/indieweb.php:175
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:202
-#: build/tags/2.1.0/indieweb.php:217 build/trunk/indieweb.php:212
+#: includes/class-tgm-plugin-activation.php:347
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:352
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:357
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:362
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:367 indieweb.php:221
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:372 indieweb.php:222
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:377
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:382 indieweb.php:226
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:387
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:392 indieweb.php:227
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:397
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:398
+msgid "Return to the dashboard"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:399
+#: includes/class-tgm-plugin-activation.php:3029 indieweb.php:229
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:400
+#: includes/class-tgm-plugin-activation.php:2832
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:401
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:402
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:403
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:404
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:405
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:520
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:521
+msgid "Update Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:635
+msgid "Set the parent_slug config variable instead."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:828
+#: includes/class-tgm-plugin-activation.php:3438
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:935
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:935
+#: includes/class-tgm-plugin-activation.php:938
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:938
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2167
+msgid "Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2170
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2186
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2189
+msgid "External Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2192
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2209
+msgid "Not Installed"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2213
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2215
+msgid "Active"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2221
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2224
+msgid "Requires Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2227
+msgid "Update recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2283
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:2286
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:2289
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-tgm-plugin-activation.php:2379
+msgid "Installed version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2387
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2399
+msgid "Available version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2422
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2436
+msgid "Plugin"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2437
+msgid "Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2438
+msgid "Type"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2442
+msgid "Version"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2443
+msgid "Status"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2570
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2603
+msgid "Install"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2609
+msgid "Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2612
+msgid "Activate"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2643
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2645
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2681
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2683
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2788
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2814
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3028
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3362
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3364
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3365
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3369
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3370
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3370
+#: includes/class-tgm-plugin-activation.php:3376
+msgid "Show Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3370
+#: includes/class-tgm-plugin-activation.php:3376
+msgid "Hide Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3371
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3372
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3375
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3376
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3377
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3378
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: indieweb.php:118
+msgid "WebMention"
+msgstr ""
+
+#: indieweb.php:125
+msgid "Semantic Linkbacks"
+msgstr ""
+
+#: indieweb.php:132
+msgid "MicroPub Server"
+msgstr ""
+
+#: indieweb.php:139
+msgid "Hum (URL shortener)"
+msgstr ""
+
+#: indieweb.php:146
+msgid "WebActions"
+msgstr ""
+
+#: indieweb.php:155
+msgid "IndieWeb Press-This"
+msgstr ""
+
+#: indieweb.php:164
+msgid "WebMention support for (threaded) comments"
+msgstr ""
+
+#: indieweb.php:173
+msgid "Post Kinds"
+msgstr ""
+
+#: indieweb.php:180
+msgid "Syndication Links"
+msgstr ""
+
+#: indieweb.php:187
+msgid "Indieauth"
+msgstr ""
+
+#: indieweb.php:213 indieweb.php:214
+msgid "Install IndieWeb Plugins"
+msgstr ""
+
+#: indieweb.php:215
+msgid "Extensions"
+msgstr ""
+
+#: indieweb.php:217
+msgid "Something went wrong with the plugin install."
+msgstr ""
+
+#: indieweb.php:218
+msgid "The IndieWeb plugin requires the following plugin: %1$s."
+msgid_plural "The IndieWeb plugin requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: indieweb.php:219
+msgid "The IndieWeb plugin recommends the following plugin: %1$s."
+msgid_plural "The IndieWeb plugin recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
 #: indieweb.php:220
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s "
@@ -82,32 +795,6 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:203
-#: build/tags/2.0.0/indieweb.php:176
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:203
-#: build/tags/2.1.0/indieweb.php:218
-#: build/trunk/class-tgm-plugin-activation.php:367 build/trunk/indieweb.php:213
-#: includes/class-tgm-plugin-activation.php:367 indieweb.php:221
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:204
-#: build/tags/2.0.0/indieweb.php:177
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:204
-#: build/tags/2.1.0/indieweb.php:219
-#: build/trunk/class-tgm-plugin-activation.php:372 build/trunk/indieweb.php:214
-#: includes/class-tgm-plugin-activation.php:372 indieweb.php:222
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:205
-#: build/tags/2.0.0/indieweb.php:178
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:205
-#: build/tags/2.1.0/indieweb.php:220 build/trunk/indieweb.php:215
 #: indieweb.php:223
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -120,23 +807,16 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:206
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:206
-#: build/trunk/class-tgm-plugin-activation.php:352
-#: includes/class-tgm-plugin-activation.php:352
+#: indieweb.php:224
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
+"maximum compatibility with this plugin: %1$s."
 msgid_plural ""
 "The following plugins need to be updated to their latest version to ensure "
 "maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:207
-#: build/tags/2.0.0/indieweb.php:180
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:207
-#: build/tags/2.1.0/indieweb.php:222 build/trunk/indieweb.php:217
 #: indieweb.php:225
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -149,1052 +829,16 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:208
-#: build/tags/2.0.0/indieweb.php:181
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:208
-#: build/tags/2.1.0/indieweb.php:223
-#: build/trunk/class-tgm-plugin-activation.php:382 build/trunk/indieweb.php:218
-#: includes/class-tgm-plugin-activation.php:382 indieweb.php:226
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:209
-#: build/tags/2.0.0/indieweb.php:182
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:209
-#: build/tags/2.1.0/indieweb.php:224
-#: build/trunk/class-tgm-plugin-activation.php:392 build/trunk/indieweb.php:219
-#: includes/class-tgm-plugin-activation.php:392 indieweb.php:227
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:210
-#: build/tags/2.0.0/indieweb.php:183
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:210
-#: build/trunk/class-tgm-plugin-activation.php:397
-#: includes/class-tgm-plugin-activation.php:397
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:211
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:211
-#: build/trunk/class-tgm-plugin-activation.php:398
-#: includes/class-tgm-plugin-activation.php:398
-msgid "Return to the dashboard"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:212
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1965
-#: build/tags/2.0.0/indieweb.php:184
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:212
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1965
-#: build/tags/2.1.0/indieweb.php:226
-#: build/trunk/class-tgm-plugin-activation.php:399
-#: build/trunk/class-tgm-plugin-activation.php:3029
-#: build/trunk/indieweb.php:221 includes/class-tgm-plugin-activation.php:399
-#: includes/class-tgm-plugin-activation.php:3029 indieweb.php:229
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:213
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1652
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:213
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1652
-#: build/trunk/class-tgm-plugin-activation.php:400
-#: build/trunk/class-tgm-plugin-activation.php:2832
-#: includes/class-tgm-plugin-activation.php:400
-#: includes/class-tgm-plugin-activation.php:2832
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:214
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:214
-#: build/trunk/class-tgm-plugin-activation.php:403
-#: includes/class-tgm-plugin-activation.php:403
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:215
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:215
-#: build/trunk/class-tgm-plugin-activation.php:404
-#: includes/class-tgm-plugin-activation.php:404
-msgid "Dismiss this notice"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:556
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2182
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:556
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2182
-#: build/trunk/class-tgm-plugin-activation.php:828
-#: build/trunk/class-tgm-plugin-activation.php:3438
-#: includes/class-tgm-plugin-activation.php:828
-#: includes/class-tgm-plugin-activation.php:3438
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1186
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1186
-msgid "Private Repository"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1189
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1189
-#: build/trunk/class-tgm-plugin-activation.php:2192
-#: includes/class-tgm-plugin-activation.php:2192
-msgid "Pre-Packaged"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1194
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1194
-#: build/trunk/class-tgm-plugin-activation.php:2186
-#: includes/class-tgm-plugin-activation.php:2186
-msgid "WordPress Repository"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1197
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1197
-#: build/trunk/class-tgm-plugin-activation.php:2167
-#: includes/class-tgm-plugin-activation.php:2167
-msgid "Required"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1197
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1197
-#: build/trunk/class-tgm-plugin-activation.php:2170
-#: includes/class-tgm-plugin-activation.php:2170
-msgid "Recommended"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1200
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1200
-#: build/trunk/class-tgm-plugin-activation.php:2209
-#: includes/class-tgm-plugin-activation.php:2209
-msgid "Not Installed"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1202
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1202
-#: build/trunk/class-tgm-plugin-activation.php:2213
-#: includes/class-tgm-plugin-activation.php:2213
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1304
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1412
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1304
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1412
-#: build/trunk/class-tgm-plugin-activation.php:2603
-#: includes/class-tgm-plugin-activation.php:2603
-msgid "Install"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1326
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1413
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1326
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1413
-#: build/trunk/class-tgm-plugin-activation.php:2612
-#: includes/class-tgm-plugin-activation.php:2612
-msgid "Activate"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1375
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1375
-msgid ""
-"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
-"Dashboard\">Return to the Dashboard</a>"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1391
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1391
-#: build/trunk/class-tgm-plugin-activation.php:2436
-#: includes/class-tgm-plugin-activation.php:2436
-msgid "Plugin"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1392
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1392
-#: build/trunk/class-tgm-plugin-activation.php:2437
-#: includes/class-tgm-plugin-activation.php:2437
-msgid "Source"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1393
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1393
-#: build/trunk/class-tgm-plugin-activation.php:2438
-#: includes/class-tgm-plugin-activation.php:2438
-msgid "Type"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1394
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1394
-#: build/trunk/class-tgm-plugin-activation.php:2443
-#: includes/class-tgm-plugin-activation.php:2443
-msgid "Status"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1522
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1522
-#: build/trunk/class-tgm-plugin-activation.php:2681
-#: includes/class-tgm-plugin-activation.php:2681
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1630
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1630
-#: build/trunk/class-tgm-plugin-activation.php:2814
-#: includes/class-tgm-plugin-activation.php:2814
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1948
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1948
-msgid "Install package not available."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1949
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1949
-msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1950
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1950
-msgid "Unpacking the package&#8230;"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1951
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1951
-msgid "Installing the plugin&#8230;"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1952
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1952
-msgid "Plugin install failed."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1953
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1953
-msgid "Plugin installed successfully."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:1964
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:1964
-#: build/trunk/class-tgm-plugin-activation.php:3028
-#: includes/class-tgm-plugin-activation.php:3028
-msgid "Plugin activation failed."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2078
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2078
-#: build/trunk/class-tgm-plugin-activation.php:3369
-#: includes/class-tgm-plugin-activation.php:3369
-msgid ""
-"The installation and activation process is starting. This process may take "
-"a while on some hosts, so please be patient."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2079
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2079
-#: build/trunk/class-tgm-plugin-activation.php:3370
-#: includes/class-tgm-plugin-activation.php:3370
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2079
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2088
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2079
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
-#: build/trunk/class-tgm-plugin-activation.php:3370
-#: build/trunk/class-tgm-plugin-activation.php:3376
-#: includes/class-tgm-plugin-activation.php:3370
-#: includes/class-tgm-plugin-activation.php:3376
-msgid "Show Details"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2079
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2088
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2079
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
-#: build/trunk/class-tgm-plugin-activation.php:3370
-#: build/trunk/class-tgm-plugin-activation.php:3376
-#: includes/class-tgm-plugin-activation.php:3370
-#: includes/class-tgm-plugin-activation.php:3376
-msgid "Hide Details"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2080
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2080
-#: build/trunk/class-tgm-plugin-activation.php:3371
-#: includes/class-tgm-plugin-activation.php:3371
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2081
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2081
-#: build/trunk/class-tgm-plugin-activation.php:3372
-#: includes/class-tgm-plugin-activation.php:3372
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2085
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2085
-#: build/trunk/class-tgm-plugin-activation.php:3375
-#: includes/class-tgm-plugin-activation.php:3375
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2086
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2086
-#: build/trunk/class-tgm-plugin-activation.php:3364
-#: includes/class-tgm-plugin-activation.php:3364
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2087
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2087
-#: build/trunk/class-tgm-plugin-activation.php:3365
-#: includes/class-tgm-plugin-activation.php:3365
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2088
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
-#: build/trunk/class-tgm-plugin-activation.php:3376
-#: includes/class-tgm-plugin-activation.php:3376
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2089
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2089
-#: build/trunk/class-tgm-plugin-activation.php:3377
-#: includes/class-tgm-plugin-activation.php:3377
-msgid "All installations have been completed."
-msgstr ""
-
-#: build/tags/2.0.0/class-tgm-plugin-activation.php:2090
-#: build/tags/2.1.0/class-tgm-plugin-activation.php:2090
-#: build/trunk/class-tgm-plugin-activation.php:3378
-#: includes/class-tgm-plugin-activation.php:3378
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: build/tags/2.0.0/indieweb.php:170 build/tags/2.1.0/indieweb.php:210
-#: build/tags/2.1.0/indieweb.php:211 build/trunk/indieweb.php:205
-#: build/trunk/indieweb.php:206 indieweb.php:213 indieweb.php:214
-msgid "Install IndieWeb Plugins"
-msgstr ""
-
-#: build/tags/2.0.0/indieweb.php:172
-#: build/trunk/class-tgm-plugin-activation.php:336
-#: includes/class-tgm-plugin-activation.php:336
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: build/tags/2.0.0/indieweb.php:173 build/tags/2.1.0/indieweb.php:215
-#: build/trunk/indieweb.php:210 indieweb.php:218
-msgid "The IndieWeb plugin requires the following plugin: %1$s."
-msgid_plural "The IndieWeb plugin requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/indieweb.php:174 build/tags/2.1.0/indieweb.php:216
-#: build/trunk/indieweb.php:211 indieweb.php:219
-msgid "The IndieWeb plugin recommends the following plugin: %1$s."
-msgid_plural "The IndieWeb plugin recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/indieweb.php:179 build/tags/2.1.0/indieweb.php:221
-#: build/trunk/indieweb.php:216 indieweb.php:224
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this plugin: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/tags/2.0.0/indieweb.php:185 build/tags/2.1.0/indieweb.php:227
-#: build/trunk/indieweb.php:222 indieweb.php:230
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:3 build/trunk/getting_started.php:3
-#: includes/Getting-Started.php:3
-msgid "IndieWebify your WordPress-Blog"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:5 build/tags/2.1.0/indieweb.php:248
-#: build/trunk/getting_started.php:5 build/trunk/indieweb.php:243
-#: includes/Getting-Started.php:5 indieweb.php:90
-msgid "Getting Started"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:7 build/trunk/getting_started.php:7
-#: includes/Getting-Started.php:7
-msgid ""
-"The IndieWeb Plugin can help you get set up to be a more active member of "
-"the indieweb. Required plugins make receiving indieweb comments and "
-"mentions work, recommended plugins further improve the experience."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:9 build/trunk/getting_started.php:9
-#: includes/Getting-Started.php:9
-msgid ""
-"Once you have these activated, you can setup <a "
-"href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
-"blog to responses from sites such as Facebook and Twitter too, allowing for "
-"a seamless experience."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:11 build/trunk/getting_started.php:11
-#: includes/Getting-Started.php:11
-msgid "Plugins"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:13 build/trunk/getting_started.php:13
-#: includes/Getting-Started.php:13
-msgid ""
-"For more information on these plugins, visit the <a "
-"href=\"http://indiewebcamp.com/wordpress\" target=\"_blank\">WordPress "
-"page</a> on the IndieWebCamp wiki or click the individual plugin links "
-"below."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:17 build/trunk/getting_started.php:17
-#: includes/Getting-Started.php:17
-msgid "Send and receive responses with your site"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:18 build/trunk/getting_started.php:18
-#: includes/Getting-Started.php:18
-msgid ""
-"Send and receive comments, likes, reposts, and other kinds of post "
-"responses using your own site!"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:20 build/trunk/getting_started.php:20
-#: includes/Getting-Started.php:20
-msgid ""
-"<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
-"receive by adding webmention support to WordPress. Mentions show up as "
-"comments on your site."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:21 build/trunk/getting_started.php:21
-#: includes/Getting-Started.php:21
-msgid ""
-"<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
-"comments and mentions look better on your site."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:22 build/trunk/getting_started.php:22
-#: includes/Getting-Started.php:22
-msgid ""
-"<strong>Webmention for (Threaded) Comments</strong> - Adds support for "
-"threaded comments for webmentions."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:23 build/trunk/getting_started.php:23
-#: includes/Getting-Started.php:23
-msgid "<strong>Webactions</strong> - Adds webaction markups to WordPress elements."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:24
-msgid ""
-"<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
-"site from your own, by adding support for kinds of posts to WordPress as a "
-"custom taxonomy."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:29 build/trunk/getting_started.php:29
-#: includes/Getting-Started.php:29
-msgid "Syndicate your content to other sites"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:30
-msgid ""
-"Choose one of these different ways to display links for POSSE/syndicated "
-"versions of a post. They cannot both be used. Linking to the syndicated "
-"version of a post allows for bridgy to be able to discover the post as well "
-"as for end users to comment on those sites as a way of replying."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:32
-msgid ""
-"<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
-"entry of syndication links."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:33
-msgid ""
-"<strong>WordPress Syndication</strong> - automatically adds link to a post "
-"from a supported syndication plugin. Fully supports Social, partial support "
-"for SNAP, and support for Bridgy Publish."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:38 build/trunk/getting_started.php:37
-#: includes/Getting-Started.php:37
-msgid "Other"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:40 build/trunk/getting_started.php:40
-#: includes/Getting-Started.php:40
-msgid ""
-"<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the "
-"WordPressPress-This bookmarkets to allow you to respond on your site with "
-"one-click."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:41 build/trunk/getting_started.php:41
-#: includes/Getting-Started.php:41
-msgid "<strong>Hum URL Shortener</strong> - A personal URL shortener."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:42 build/trunk/getting_started.php:42
-#: includes/Getting-Started.php:42
-msgid ""
-"<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
-"backend via IndieAuth. It uses the URL from the profile page to identify "
-"the blog user."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:49 build/trunk/getting_started.php:49
-#: includes/Getting-Started.php:49
-msgid "Themes"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:51 build/trunk/getting_started.php:51
-#: includes/Getting-Started.php:51
-msgid ""
-"Some WordPress themes are compatible with microformats. The IndieWeb uses "
-"microformats2, the latest version, to mark up sites so that they can be "
-"interpreted by other sites when retrieved. Most parsers will fall back onto "
-"the older format if available."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:53 build/trunk/getting_started.php:53
-#: includes/Getting-Started.php:53
-msgid ""
-"Formatting your site so other sites can consume the information allows for "
-"the communications IndieWeb sites support. For example, a class of "
-"u-like-of added to a link to a site you liked to indicates that "
-"relationship."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:55 build/trunk/getting_started.php:55
-#: includes/Getting-Started.php:55
-msgid ""
-"There is only one theme in the WordPress repository that is fully "
-"microformats2 compliant. That is Sempress."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:57 build/trunk/getting_started.php:57
-#: includes/Getting-Started.php:57
-msgid "What is the IndieWeb?"
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:59 build/trunk/getting_started.php:59
-#: includes/Getting-Started.php:59
-msgid ""
-"<strong>Own your data.</strong> Create and publish content on your own "
-"site, and only optionally syndicate to third-party silos."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:60 build/trunk/getting_started.php:60
-#: includes/Getting-Started.php:60
-msgid ""
-"This is the basis of the <strong>Indie Web</strong>. For more, see <a "
-"href=\"http://indiewebcamp.com/principles\" "
-"target=\"_blank\">principles</a> and <a "
-"href=\"http://indiewebcamp.com/why\" target=\"_blank\">why</a>."
-msgstr ""
-
-#: build/tags/2.1.0/getting_started.php:62 build/trunk/getting_started.php:62
-#: includes/Getting-Started.php:62
-msgid ""
-"For even more information, please visit the <a "
-"href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> "
-"wiki</a>."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "IndieWeb"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:110 build/trunk/indieweb.php:110
-#: indieweb.php:118
-msgid "WebMention"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:117 build/trunk/indieweb.php:117
-#: indieweb.php:125
-msgid "Semantic Linkbacks"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:124 build/trunk/indieweb.php:131
-#: indieweb.php:139
-msgid "Hum (URL shortener)"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:131 build/trunk/indieweb.php:138
-#: indieweb.php:146
-msgid "WebActions"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:140 build/trunk/indieweb.php:147
-#: indieweb.php:155
-msgid "IndieWeb Press-This"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:149 build/trunk/indieweb.php:156
-#: indieweb.php:164
-msgid "WebMention support for (threaded) comments"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:158 build/trunk/indieweb.php:165
-#: indieweb.php:173
-msgid "Post Kinds"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:167 build/trunk/indieweb.php:172
-#: indieweb.php:180
-msgid "Syndication Links"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:176
-msgid "WordPress Syndication"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:185 build/trunk/indieweb.php:179
-#: indieweb.php:187
-msgid "Indieauth"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:208 build/trunk/indieweb.php:203
-msgid ""
-"For descriptions of the plugins and more information, visit <a "
-"href=\"plugins.php?page=indieweb\">Getting Started</a>"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:212 build/trunk/indieweb.php:207
-msgid "IndieWeb Plugin Installer"
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:214 build/trunk/indieweb.php:209
-#: indieweb.php:217
-msgid "Something went wrong with the plugin install."
-msgstr ""
-
-#: build/tags/2.1.0/indieweb.php:225 build/trunk/indieweb.php:220
 #: indieweb.php:228
 msgid "Return to IndieWeb Plugins Installer"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:347
-#: includes/class-tgm-plugin-activation.php:347
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:357
-#: includes/class-tgm-plugin-activation.php:357
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:362
-#: includes/class-tgm-plugin-activation.php:362
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:377
-#: includes/class-tgm-plugin-activation.php:377
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:387
-#: includes/class-tgm-plugin-activation.php:387
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:401
-#: includes/class-tgm-plugin-activation.php:401
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:402
-#: includes/class-tgm-plugin-activation.php:402
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:405
-#: includes/class-tgm-plugin-activation.php:405
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:520
-#: includes/class-tgm-plugin-activation.php:520
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:521
-#: includes/class-tgm-plugin-activation.php:521
-msgid "Update Required"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:635
-#: includes/class-tgm-plugin-activation.php:635
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:935
-#: includes/class-tgm-plugin-activation.php:935
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:935
-#: build/trunk/class-tgm-plugin-activation.php:938
-#: includes/class-tgm-plugin-activation.php:935
-#: includes/class-tgm-plugin-activation.php:938
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:938
-#: includes/class-tgm-plugin-activation.php:938
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2189
-#: includes/class-tgm-plugin-activation.php:2189
-msgid "External Source"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2215
-#: includes/class-tgm-plugin-activation.php:2215
-msgid "Active"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2221
-#: includes/class-tgm-plugin-activation.php:2221
-msgid "Required Update not Available"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2224
-#: includes/class-tgm-plugin-activation.php:2224
-msgid "Requires Update"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2227
-#: includes/class-tgm-plugin-activation.php:2227
-msgid "Update recommended"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2283
-#: includes/class-tgm-plugin-activation.php:2283
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2286
-#: includes/class-tgm-plugin-activation.php:2286
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2289
-#: includes/class-tgm-plugin-activation.php:2289
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2379
-#: includes/class-tgm-plugin-activation.php:2379
-msgid "Installed version:"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2387
-#: includes/class-tgm-plugin-activation.php:2387
-msgid "Minimum required version:"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2399
-#: includes/class-tgm-plugin-activation.php:2399
-msgid "Available version:"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2422
-#: includes/class-tgm-plugin-activation.php:2422
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2442
-#: includes/class-tgm-plugin-activation.php:2442
-msgid "Version"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2570
-#: includes/class-tgm-plugin-activation.php:2570
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2609
-#: includes/class-tgm-plugin-activation.php:2609
-msgid "Update"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2643
-#: includes/class-tgm-plugin-activation.php:2643
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2645
-#: includes/class-tgm-plugin-activation.php:2645
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2683
-#: includes/class-tgm-plugin-activation.php:2683
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:2788
-#: includes/class-tgm-plugin-activation.php:2788
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:3362
-#: includes/class-tgm-plugin-activation.php:3362
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: build/trunk/getting_started.php:24 includes/Getting-Started.php:24
-msgid ""
-"<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
-"site from your own, by adding support for kinds of posts to WordPress."
-msgstr ""
-
-#: build/trunk/getting_started.php:30 includes/Getting-Started.php:30
-msgid ""
-"Linking to the syndicated version of a post allows for bridgy to be able to "
-"discover the post as well as for end users to comment on those sites as a "
-"way of replying."
-msgstr ""
-
-#: build/trunk/getting_started.php:32 includes/Getting-Started.php:32
-msgid ""
-"<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
-"entry of syndication links as well as automatically from a supported "
-"syndication plugin. Fully supports Social, partial support for SNAP."
-msgstr ""
-
-#: build/trunk/getting_started.php:39 includes/Getting-Started.php:39
-msgid "<strong>MicroPub</strong> - A MicroPub Server"
-msgstr ""
-
-#: build/trunk/indieweb.php:124 indieweb.php:132
-msgid "MicroPub Server"
-msgstr ""
-
-#: includes/class-general-settings.php:12
-#: includes/class-general-settings.php:13
-#: includes/class-general-settings.php:19
-#: includes/class-general-settings.php:35
-msgid "General Options"
-msgstr ""
-
-#: includes/class-general-settings.php:21
-msgid "Default Author"
-msgstr ""
-
-#: includes/class-general-settings.php:23
-msgid "Add Hidden Rel-Me Links or Use Widget"
-msgstr ""
-
-#: includes/class-general-settings.php:29
-msgid ""
-"Provides support for rel-me links, either through a widget or invisibly "
-"adding them to the page."
-msgstr ""
-
-#: includes/class-hcard-user.php:36
-msgid "Telephone"
-msgstr ""
-
-#: includes/class-hcard-user.php:41
-msgid "Github username"
-msgstr ""
-
-#: includes/class-hcard-user.php:45
-msgid "Google+ userID (not username)"
-msgstr ""
-
-#: includes/class-hcard-user.php:49
-msgid "Twitter username (without @)"
-msgstr ""
-
-#: includes/class-hcard-user.php:53
-msgid "Facebook ID"
-msgstr ""
-
-#: includes/class-hcard-user.php:57
-msgid "Last.fm username"
-msgstr ""
-
-#: includes/class-hcard-user.php:62
-msgid "Instagram username"
-msgstr ""
-
-#: includes/class-hcard-user.php:66
-msgid "Flickr username"
-msgstr ""
-
-#: includes/class-hcard-user.php:92
-msgid "Street Address"
-msgstr ""
-
-#: includes/class-hcard-user.php:93
-msgid "Street Number and Name"
-msgstr ""
-
-#: includes/class-hcard-user.php:96
-msgid "Extended Address"
-msgstr ""
-
-#: includes/class-hcard-user.php:97
-msgid "Apartment/Suite/Room Name/Number if any"
-msgstr ""
-
-#: includes/class-hcard-user.php:100
-msgid "Locality"
-msgstr ""
-
-#: includes/class-hcard-user.php:101
-msgid "City/State/Village"
-msgstr ""
-
-#: includes/class-hcard-user.php:104
-msgid "Region"
-msgstr ""
-
-#: includes/class-hcard-user.php:105
-msgid "State/County/Province"
-msgstr ""
-
-#: includes/class-hcard-user.php:108
-msgid "Postal Code"
-msgstr ""
-
-#: includes/class-hcard-user.php:109
-msgid "Postal Code, such as Zip Code"
-msgstr ""
-
-#: includes/class-hcard-user.php:112 includes/class-hcard-user.php:113
-msgid "Country Name"
-msgstr ""
-
-#: includes/class-hcard-user.php:122
-msgid "Job Title"
-msgstr ""
-
-#: includes/class-hcard-user.php:123
-msgid "Title or Role"
-msgstr ""
-
-#: includes/class-hcard-user.php:126
-msgid "Organization"
-msgstr ""
-
-#: includes/class-hcard-user.php:127
-msgid "Affiliated Organization"
-msgstr ""
-
-#: includes/class-hcard-user.php:130
-msgid "Honorific Prefix"
-msgstr ""
-
-#: includes/class-hcard-user.php:131
-msgid "e.g. Mrs., Mr. Dr."
-msgstr ""
-
-#: includes/class-hcard-user.php:141
-msgid "Address"
-msgstr ""
-
-#: includes/class-hcard-user.php:142 includes/class-hcard-user.php:150
-msgid "Fill in all fields you are wish displayed."
-msgstr ""
-
-#: includes/class-hcard-user.php:149
-msgid "Additional Profile Information"
-msgstr ""
-
-#: includes/class-hcard-user.php:155
-msgid "Other Sites"
-msgstr ""
-
-#: includes/class-hcard-user.php:155
-msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
-msgstr ""
-
-#: includes/class-relme-widget.php:18
-msgid "Rel-me URLs"
-msgstr ""
-
-#: includes/class-relme-widget.php:20
-msgid "Adds automatic rel-me URLs based on author profile information."
-msgstr ""
-
-#: includes/class-relme-widget.php:111
-msgid "Default author:"
-msgstr ""
-
-#: includes/class-relme-widget.php:119
-msgid ""
-"Use post author for rel-me links source on post-like pages instead of "
-"default author:"
+#: indieweb.php:230
+msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: indieweb.php:215
-msgid "Extensions"
+#. Plugin Name of the plugin/theme
+msgid "IndieWeb"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -1215,77 +859,22 @@ msgstr ""
 msgid "http://indiewebcamp.com/WordPress_Outreach_Club"
 msgstr ""
 
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:140
-msgctxt "semantic_linkbacks"
-msgid "mentioned"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:142
-msgctxt "semantic_linkbacks"
-msgid "replied"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:143
-msgctxt "semantic_linkbacks"
-msgid "reposted"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:144
-msgctxt "semantic_linkbacks"
-msgid "liked"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:145
-msgctxt "semantic_linkbacks"
-msgid "favorited"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:157
-msgctxt "semantic_linkbacks"
-msgid "Mention"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:159
-msgctxt "semantic_linkbacks"
-msgid "Reply"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:160
-msgctxt "semantic_linkbacks"
-msgid "Repost"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:161
-msgctxt "semantic_linkbacks"
-msgid "Like"
-msgstr ""
-
-#: build/tags/1.0.0/semantic-linkbacks/semantic-linkbacks.php:162
-msgctxt "semantic_linkbacks"
-msgid "Favorite"
-msgstr ""
-
-#: build/trunk/class-tgm-plugin-activation.php:1116
-#: build/trunk/class-tgm-plugin-activation.php:2828
 #: includes/class-tgm-plugin-activation.php:1116
 #: includes/class-tgm-plugin-activation.php:2828
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:1881
 #: includes/class-tgm-plugin-activation.php:1881
 msgctxt "%s = version number"
 msgid "TGMPA v%s"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2235
 #: includes/class-tgm-plugin-activation.php:2235
 msgctxt "%1$s = install status, %2$s = update status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2280
 #: includes/class-tgm-plugin-activation.php:2280
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -1293,25 +882,21 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2371
 #: includes/class-tgm-plugin-activation.php:2371
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2491
 #: includes/class-tgm-plugin-activation.php:2491
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Install %2$s"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2495
 #: includes/class-tgm-plugin-activation.php:2495
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Update %2$s"
 msgstr ""
 
-#: build/trunk/class-tgm-plugin-activation.php:2500
 #: includes/class-tgm-plugin-activation.php:2500
 msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Activate %2$s"
