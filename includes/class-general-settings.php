@@ -79,7 +79,7 @@ class IndieWeb_General_Settings {
   public static function general_options_page() {
 		// If this is not a multi-author site, always set single_author to checked.
 		if ( ! is_multi_author() ) {
-			set_option('iw_single_author', 1);
+			update_option('iw_single_author', 1);
 		}
     echo '<div class="wrap">';
     echo '<form method="post" action="options.php">';
