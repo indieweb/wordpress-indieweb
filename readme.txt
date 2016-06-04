@@ -3,14 +3,16 @@ Contributors: pfefferle, dshanske
 Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
-Tested up to: 4.4
+Tested up to: 4.5
 Stable tag: 3.0.0
 
 IndieWeb for WordPress!
 
 == Description ==
 
-The IndieWeb Plugin for Wordpress is a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below). Some of these sub-plugins are required while others are optional.
+The IndieWeb Plugin for Wordpress helps you establish your IndiewWeb identity by extended the user profile to provide rel-me and h-card fields.
+It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly 
+and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below). 
 
 Some of these plugins allow you to:
 * send and receive comments, likes, reposts, and other kinds of post responses using your own site
@@ -42,7 +44,7 @@ Interested in connecting your WordPress site to the [IndieWeb](https://indiewebc
 
 = How do I get Started? =
 
-IndieWeb for WordPress includes a plugin installer program. A Getting Started Guide can be found under Plugins->IndieWeb.
+IndieWeb for WordPress includes a plugin installer program. A Getting Started Guide can be found under IndieWeb.
 
 = Where can I find help? Can I contribute? =
 
@@ -80,9 +82,12 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 = 3.0.0 =
 
 * The plugin now supports establishing your identity on the web with your site.
-    * Extended User Profile
-    * includes additional properties to be used to generate h-card
-    * includes rel-me for the silos supported by IndieAuth plus any arbitrary additional ones.
+* Extended User Profile
+* includes additional properties to be used to generate h-card
+* includes rel-me for the silos supported by IndieAuth plus any arbitrary additional ones
+* supports 'hidden' rel-me links or a rel-me widget with SVG icons
+* Admin is redesigned with a top-level menu
+* Update TGM Plugins Activate to Version 2.6.1
 
 
 = 2.2.0 =

@@ -31,7 +31,7 @@ class RelMe_Widget extends WP_Widget {
 
 		$include_rel = is_author() || (is_front_page() && ! is_multi_author());
 
-		$default_author = get_option('iw_default_author', 1) ;
+		$default_author = get_option( 'iw_default_author', 1 );
 		$use_post_author = ( ! empty( $instance['use_post_author'] ) ) ? intval( $instance['use_post_author'] ) : 1;
 
 		if ( is_author() ) {

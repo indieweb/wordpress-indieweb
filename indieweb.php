@@ -202,6 +202,7 @@ class IndieWeb_Plugin {
 		 */
 		$config = array(
 			'id'           => 'indieweb-installer',    // Unique ID for hashing notices for multiple instances of TGMPA.
+			'capability'   => 'install_plugins',			//
 			'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 			'menu'         => 'indieweb-installer',    // Menu slug.
 			'parent_slug'  => 'indieweb',
