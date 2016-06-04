@@ -284,7 +284,7 @@ class HCard_User {
 				// feed
 				'foursquare.com'  => 'foursquare',
 				'ghost.org' 					=> 'ghost',
-				'plus.google.com' => 'googleplus',
+				'plus.google.com' => 'google-plus',
 				'github.com'      => 'github',
 				'instagram.com'   => 'instagram',
 				'linkedin.com'    => 'linkedin',
@@ -349,8 +349,8 @@ class HCard_User {
 			foreach ( $urls as $url ) {
 				$list[ self::extract_domain_name( $url ) ] = $url;
 			}
-		return array_unique ($list);
 		}
+		return array_unique ($list);
 	}
 
 		/**
