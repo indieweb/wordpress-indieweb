@@ -35,6 +35,8 @@ class IndieWeb_Plugin {
 
 		// Require Rel Me Widget Class
 		require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+		add_action( 'wp_enqueue_scripts', array('IndieWeb_Plugin', 'enqueue_style') );
+
 
 		// Add General Settings Page
 		require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
@@ -64,6 +66,11 @@ class IndieWeb_Plugin {
 			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
 		);
 	}
+
+  public static function enqueue_style() {
+        wp_enqueue_style( 'indieweb', plugin_dir_url( __FILE__ ) . 'css/indieweb.css', array() );
+  }
+
 
 	/**
 	 * Add Top Level Menu Item

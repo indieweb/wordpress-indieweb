@@ -1,0 +1,41 @@
+.svg-icon {
+	fill: currentColor;
+	vertical-align: middle;
+	/*  position: relative;  Align more nicely with capital letters */
+	top: -0.0625em;
+} 
+.relme ul{
+	  display: inline-block;
+		list-style: none;
+		text-align: top;
+		margin: 0;
+		padding: 1px;
+		.svg-icon {
+ 			height: 2em;
+  		width: 2em;
+  	 }
+		li {
+  		display: inline-block;
+			padding-right: 5px;
+  		a {
+   			text-decoration: none;
+				color: black;
+				.relmename {
+					display: none;
+				}
+			}
+			a:hover {
+				text-decoration: none;
+  		  cursor: pointer;
+				.svg-icon {
+					color: grey;
+				}
+				.relmename {
+					display: inline;
+				}
+	  	}
+			a:visited {
+			color: black;
+			}
+  	}
+	}

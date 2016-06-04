@@ -261,6 +261,70 @@ class HCard_User {
 		return $host;
 	}
 
+  /**
+   * Return a marked up SVG icon..
+   *
+   * @param string $domain domain.
+   *
+   * @return string svg icon
+   */
+	public static function get_icon( $domain ) {
+		// Supported icons.
+			$icons =  array(
+				'default'         => 'share',
+				'amazon.com'      => 'amazon', 
+				'behance.net'     => 'behance',
+				'blogspot.com'    => 'blogger',
+				'codepen.io'      => 'codepen',
+				'dribbble.com'    => 'dribbble',
+				'dropbox.com'     => 'dropbox',
+				'eventbrite.com'  => 'eventbrite',
+				'facebook.com'    => 'facebook',
+				'flickr.com'      => 'flickr',
+				// feed
+				'foursquare.com'  => 'foursquare',
+				'ghost.org' 					=> 'ghost',
+				'plus.google.com' => 'googleplus',
+				'github.com'      => 'github',
+				'instagram.com'   => 'instagram',
+				'linkedin.com'    => 'linkedin',
+				'mailto:'         => 'mail',
+				'medium.com'      => 'medium',
+				'path.com'        => 'path',
+				'pinterest.com'   => 'pinterest',
+				'getpocket.com'   => 'pocket',
+				'polldaddy.com'   => 'polldaddy',
+				// print
+				'reddit.com'      => 'reddit',
+				'squarespace.com' => 'squarespace',
+				'skype.com'       => 'skype',
+				'skype:'          => 'skype',
+				// share
+				'soundcloud.com'  => 'cloud',
+				'spotify.com'     => 'spotify',
+				'stumbleupon.com' => 'stumbleupon',
+				'telegram.org'    => 'telegram',
+				'tumblr.com'      => 'tumblr',
+				'twitch.tv'       => 'twitch',
+				'twitter.com'     => 'twitter',
+				'vimeo.com'       => 'vimeo',
+				'whatsapp.com'    => 'whatsapp',
+				'wordpress.org'   => 'wordpress',
+				'wordpress.com'   => 'wordpress',
+				'youtube.com'     => 'youtube'
+			);
+		// Substitute another domain to sprite map
+		$icons = apply_filters( 'indieweb_domain_icons', $icons );
+		$icon = $icons['default'];
+		if ( array_key_exists( $domain, $icons ) ) {
+				$icon = $icons[ $domain ];
+		}
+		// Substitute another svg sprite file
+		$sprite = apply_filters( 'indieweb_icon_sprite', plugin_dir_url( __FILE__ ) . 'social-logos.svg', $domain );
+    return '<svg class="svg-icon ' . 'svg-' . $icon . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $icon . '"></use><svg>';
+	}
+	
+
     /**
      * returns an array of links from the user profile to be used as rel-me
      */
@@ -301,10 +365,10 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id ); 
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-				$r [ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '') . "class='icon-{$silo} url u-url' href='" . esc_attr( $profile_url ) . "' title='" . esc_attr( $author_name ) . " @ {$silo}'>{$silo}</a>";
+				$r [ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '') . "class='icon-{$silo} url u-url' href='" . esc_attr( $profile_url ) . "' title='" . esc_attr( $author_name ) . " @ {$silo}'><span class='relmename'>{$silo}</span>" . self::get_icon( self::extract_domain_name( $profile_url ) ) . "</a>";
 		}
 
-				$r = "<ul class='indieweb-rel-me'>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul>";
+				$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
 			echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list );
 	}
 
@@ -321,8 +385,4 @@ class HCard_User {
 		) );
 		return '';
 	}
-
-
-
-
 } // End Class

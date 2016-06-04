@@ -11,9 +11,9 @@ class RelMe_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'RelMe_Widget',
-			__( 'Rel-me URLs', 'indieweb' ),
+			__( 'Rel=Me', 'indieweb' ),
 			array(
-				'description' => __( 'Adds automatic rel-me URLs based on author profile information.', 'indieweb' ),
+				'description' => __( 'Adds automatic rel-me URLs based on default author profile information.', 'indieweb' ),
 			)
 		);
 	}
@@ -48,25 +48,7 @@ class RelMe_Widget extends WP_Widget {
 		} else {
 			$author_id = $default_author;
 		}
-
 		echo hcard_user::rel_me_list( $author_id, $include_rel );
-	}
-
-
-	public function urls_to_rel_me( $urls ) {
-		echo '<ul class="social-icon">';
-		if ( ! empty( $urls ) ) {
-			foreach ( $urls as $url ) {
-				if ( empty( $url ) ) { continue; }
-				echo '<li><a';
-				if ( (is_front_page()||is_home()) ) {
-					echo ' rel="me"';
-				}
-				echo ' href="' . $url . '" ></a>';
-				echo '</li>' . "\n";
-			}
-		}
-		 echo '</ul></div>';
 	}
 
 	/**
@@ -93,11 +75,6 @@ class RelMe_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$use_post_author = ( isset( $instance['use_post_author'] ) ) ? $instance['use_post_author'] : true;
-
-		$users = get_users( array(
-			'orderby' => 'ID',
-			'fields' => array( 'ID', 'display_name' ),
-		));
 
 		?>
 		<p>
