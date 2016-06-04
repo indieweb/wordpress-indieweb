@@ -1,0 +1,118 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+* Link Style
+* Social Icons
+* Widgets
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Link Style
+--------------------------------------------------------------*/
+.svg-icon {
+  fill: currentColor;
+  vertical-align: middle;
+  /*  position: relative;  Align more nicely with capital letters */
+  top: -0.0625em; }
+
+.relme ul {
+  display: inline-block;
+  list-style: none;
+  text-align: top;
+  margin: 0;
+  padding: 1px; }
+  .relme ul .svg-icon {
+    height: 2em;
+    width: 2em; }
+  .relme ul li {
+    display: inline-block;
+    padding-right: 5px; }
+    .relme ul li a {
+      text-decoration: none;
+      color: black; }
+      .relme ul li a .relmename {
+        display: none; }
+    .relme ul li a:hover {
+      text-decoration: none;
+      cursor: pointer; }
+      .relme ul li a:hover .svg-icon {
+        color: grey; }
+      .relme ul li a:hover .relmename {
+        display: inline; }
+    .relme ul li a:visited {
+      color: black; }
+
+/*--------------------------------------------------------------
+Social Icons
+--------------------------------------------------------------*/
+.relme li a .svg-facebook {
+  color: #3b5998; }
+
+.relme li a .svg-feed {
+  color: #ff6600; }
+
+.relme li a .svg-twitter, .relme li a .svg-twitter-alt {
+  color: #55ACEE; }
+
+.relme li a .svg-dribbble {
+  color: #ea4c89; }
+
+.relme li a .svg-googleplus, .relme li a .svg-googleplus-alt {
+  color: #dd4b39; }
+
+.relme li a .svg-pinterest, .relme li a .svg-pinterest-alt {
+  color: #c8232c; }
+
+.relme li a .svg-github {
+  color: #171515; }
+
+.relme li a .svg-tumblr {
+  color: #34526f; }
+
+.relme li a .svg-youtube {
+  color: #c4302b; }
+
+.relme li a .svg-flickr {
+  color: #ff0084; }
+
+.relme li a .svg-vimeo {
+  color: #1AB7EA; }
+
+.relme li a .svg-instagram {
+  color: #3f729b; }
+
+.relme li a .svg-codepen {
+  color: #000; }
+
+.relme li a .svg-linkedin, .relme li a .svg-linkedin-alt {
+  color: #0e76a8; }
+
+.relme li a .svg-skype {
+  color: #12A5F4; }
+
+.relme li a .svg-reddit {
+  color: #000; }
+
+.relme li a .svg-foursquare {
+  color: #000; }
+
+.relme li a .svg-pocket {
+  color: #e61010; }
+
+.relme li a .svg-dropbox {
+  color: #007ee5; }
+
+.relme li a .svg-wordpress {
+  color: #464646; }
+
+/*--------------------------------------------------------------
+Widgets
+--------------------------------------------------------------*/
+#hcard_widget {
+  text-align: left; }
+  #hcard_widget img {
+    display: inline; }
+
+#relme_widget {
+  font-size: 24px;
+  text-align: left; }
