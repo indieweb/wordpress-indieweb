@@ -229,7 +229,7 @@ class HCard_User {
 		}
 		// Rewrite these to https as needed
 		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com' ) );
-		if ( in_array( extract_domain_name( $url ), $secure ) ) {
+		if ( in_array( self::extract_domain_name( $url ), $secure ) ) {
 			$url = preg_replace( '/^http:/i', 'https:', $url );
 		}
 		$url = esc_url_raw( $url );
