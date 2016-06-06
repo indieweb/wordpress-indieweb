@@ -11,10 +11,11 @@ IndieWeb for WordPress!
 ## Description ##
 
 The IndieWeb Plugin for Wordpress helps you establish your IndiewWeb identity by extended the user profile to provide rel-me and h-card fields.
-It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly 
-and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below). 
+It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly
+and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below).
 
 Some of these plugins allow you to:
+
 * send and receive comments, likes, reposts, and other kinds of post responses using your own site
 * allow comments on others' sites to show up as comments on your posts
 * help make IndieWeb comments and mentions look better on your site
@@ -78,6 +79,16 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.0.2 ###
+
+* Fixed indents
+
+### 3.0.1 ###
+
+* General cleanups
+* Update TGM Plugin Activation to 2.6.1
+* SVG Icon Support
 
 ### 3.0.0 ###
 
