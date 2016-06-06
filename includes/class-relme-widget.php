@@ -83,5 +83,4 @@ class RelMe_Widget extends WP_Widget {
 		</p>
 		<?php
 	}
-
 }

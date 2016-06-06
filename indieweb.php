@@ -99,7 +99,7 @@ class IndieWeb_Plugin {
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
 	public static function getting_started() {
-		require_once dirname( __FILE__ ) . '/includes/Getting-Started.php';
+		require_once dirname( __FILE__ ) . '/includes/getting-started.php';
 	}
 
 	/**

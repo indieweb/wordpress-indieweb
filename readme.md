@@ -82,6 +82,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 ### 3.0.2 ###
 
+* WordPress coding style
 * Fixed indents
 
 ### 3.0.1 ###
