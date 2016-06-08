@@ -31,11 +31,11 @@ Some of these plugins allow you to:
 
 **The [IndieWeb](http://indiewebcamp.com/) is a people-focused alternative to the ‘corporate web’ that allows you to be the humb of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
 
-### The IndieWeb, like WordPress, feels that **your content is yours** ###
+### The IndieWeb, like WordPress, feels that your content is yours ###
 
 When you post something on the web, it should belong to you, not a corporation. Too many companies have gone out of business and lost all of their users’ data. By joining the IndieWeb, your content stays yours and in your control.
 
-### The IndieWeb is here to help you be **better connected** ###
+### The IndieWeb is here to help you be better connected ###
 
 Your articles and status messages can be syndicated to all services, not just one, allowing you to engage with everyone in your social network/social graph. Even replies and likes on other services can come back to your site so they’re all in one place.
 
