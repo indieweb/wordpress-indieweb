@@ -4,7 +4,7 @@ Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
 Tested up to: 4.5
-Stable tag: 3.0.1
+Stable tag: 3.0.2
 
 IndieWeb for WordPress!
 
