@@ -10,7 +10,7 @@ IndieWeb for WordPress!
 
 ## Description ##
 
-The IndieWeb Plugin for Wordpress helps you establish your IndiewWeb identity by extended the user profile to provide rel-me and h-card fields.
+The IndieWeb Plugin for Wordpress helps you establish your IndiewWeb identity by extended the user profile to provide [rel-me](http://indiewebcamp.com/rel-me) and [h-card](http://indiewebcamp.com/h-card) fields.
 It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly
 and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below).
 
@@ -25,11 +25,11 @@ Some of these plugins allow you to:
 * allow you to add bookmarklets to easily respond/comment on other sites with one click
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
 * set up a personal URL shortener
-* log into your WordPress site with services like Twitter, GitHub, SMS, or even email using IndieAuth.
+* log into your WordPress site with services like Twitter, GitHub, SMS, or even email using [IndieAuth](http://indiewebcamp.com/indieauth).
 
 ### The IndieWeb ###
 
-**The [IndieWeb](http://indiewebcamp.com/) is a people-focused alternative to the ‘corporate web’ that allows you to be the humb of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
+**The [IndieWeb](http://indiewebcamp.com/) is a people-focused alternative to the ‘corporate web’ that allows you to be the hub of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
 
 ### The IndieWeb, like WordPress, feels that your content is yours ###
 
