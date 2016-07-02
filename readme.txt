@@ -3,8 +3,8 @@ Contributors: pfefferle, dshanske
 Donate link: http://indiewebcamp.com/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 3.8
-Tested up to: 4.5
-Stable tag: 3.0.2
+Tested up to: 4.5.3
+Stable tag: 3.0.3
 
 IndieWeb for WordPress!
 
@@ -79,6 +79,12 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.0.3 = 
+* Bug fix re rel=me on multi-author sites
+* Removal of post author option due changes in global config
+* Remove use of deprecated functions
+* Disable hidden rel=me option due error
 
 = 3.0.2 =
 

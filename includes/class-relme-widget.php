@@ -29,24 +29,22 @@ class RelMe_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $authordata;
 
-		$include_rel = is_author() || (is_front_page() && ! is_multi_author());
-
-		$default_author = get_option( 'iw_default_author', 1 );
-		$use_post_author = ( ! empty( $instance['use_post_author'] ) ) ? intval( $instance['use_post_author'] ) : 1;
-
+		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
+		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
+		$include_rel = false; // is_author() || ( is_front_page() && 1 == $single_author );
+		if ( is_front_page() && 1 == $single_author ) {
+			$include_rel = true;
+		}
 		if ( is_author() ) {
-			global $authordata;
-
-			if ( 1 === $use_post_author ) {
-				$author_id = $authordata->ID;
-			} else if ( $default_author !== $authordata->ID ) {
-				$include_rel = false;
+			global $authordata; 
+			$author_id = $authordata->ID;
+			if ( 0 == $single_author ) {
+				$include_rel = true;
 			}
-		} else if ( is_singular() && 1 === $use_post_author ) {
-			global $post;
-			$author_id = $post->post_author;
-		} else {
-			$author_id = $default_author;
+		} 
+		if ( is_singular() && 0 == $single_author ) {
+				global $post;
+				$author_id = $post->post_author;
 		}
 		echo hcard_user::rel_me_list( $author_id, $include_rel );
 	}
@@ -60,10 +58,7 @@ class RelMe_Widget extends WP_Widget {
 	 * @return mixed widget data
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['use_post_author'] = ( ! empty( $new_instance['use_post_author'] ) ) ? intval( $new_instance['use_post_author'] ) : 1;
-
-		return $instance;
+		return $new_instance;
 	}
 
 	/**
@@ -74,13 +69,8 @@ class RelMe_Widget extends WP_Widget {
 	 * @output displays the widget form
 	 */
 	public function form( $instance ) {
-		$use_post_author = ( isset( $instance['use_post_author'] ) ) ? $instance['use_post_author'] : true;
-
-		?>
-		<p>
-			<label for="<?php echo $this->get_field_id( 'use_post_author' ); ?>"><?php _e( 'Use post author for rel-me links source on post-like pages instead of default author:', 'indieweb' ); ?></label>
-			<input id="<?php echo $this->get_field_id( 'use_post_author' ); ?>" name="<?php echo $this->get_field_name( 'use_post_author' ); ?>" type="checkbox" value="1" <?php checked( $use_post_author ); ?> />
-		</p>
-		<?php
+		echo '<p>';
+		_e( 'Displays rel=me links', 'indieweb' );
+		echo '</p>';
 	}
 }

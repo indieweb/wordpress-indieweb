@@ -57,7 +57,7 @@ class IndieWeb_General_Settings {
 
 		register_setting( $section, 'iw_relmehead' );
 
-		add_settings_field(
+		/* add_settings_field(
 			'iw_relmehead', // ID used to identify the field throughout the theme
 			'Hidden Rel-Me Links', // The label to the left of the option interface element
 			array( 'IndieWeb_General_Settings', 'checkbox_callback' ), // The name of the function responsible for rendering the option interface
@@ -67,7 +67,7 @@ class IndieWeb_General_Settings {
 				'name' => 'iw_relmehead',
 				'description' => 'This will embed rel-me links into the page invisibly. Disables other options such as the Rel-Me Widget.',
 			)
-		);
+		); */
 	}
 
 	public static function identity_options_callback() {

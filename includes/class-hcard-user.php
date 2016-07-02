@@ -198,15 +198,16 @@ class HCard_User {
 
 	public static function save_profile( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
-			return false; }
+			return false; 
+		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
 		$fields['relme'] = array();
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				if ( ! empty( $_POST[ $key ] ) ) {
-					update_usermeta( $user_id, $key, $_POST[ $key ] );
+					update_user_meta( $user_id, $key, $_POST[ $key ] );
 				} else {
-					delete_usermeta( $user_id, $key );
+					delete_user_meta( $user_id, $key );
 				}
 			}
 		}
@@ -369,7 +370,7 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-{$silo} url u-url" href="' . esc_attr( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' . $silo . '"><span class="relmename">' . $silo . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
+			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url u-url" href="' . esc_attr( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' . $silo . '"><span class="relmename">' . $silo . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";

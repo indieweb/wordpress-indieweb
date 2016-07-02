@@ -5,7 +5,7 @@ Plugin URI: https://github.com/indieweb/wordpress-indieweb
 Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
-Version: 3.0.2
+Version: 3.0.3
 Text Domain: indieweb
 Domain Path: /languages
 */
