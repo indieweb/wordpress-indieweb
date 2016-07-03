@@ -57,22 +57,18 @@ class IndieWeb_General_Settings {
 
 		register_setting( $section, 'iw_relmehead' );
 
-		/* add_settings_field(
-			'iw_relmehead', // ID used to identify the field throughout the theme
-			'Hidden Rel-Me Links', // The label to the left of the option interface element
-			array( 'IndieWeb_General_Settings', 'checkbox_callback' ), // The name of the function responsible for rendering the option interface
-			$page, // The page on which this option will be displayed
-			$section,  // The name of the section to which this field belongs
-			array( // The array of arguments to pass to the callback. In this case, just a description.
-				'name' => 'iw_relmehead',
-				'description' => 'This will embed rel-me links into the page invisibly. Disables other options such as the Rel-Me Widget.',
-			)
-		); */
 	}
 
 	public static function identity_options_callback() {
 		echo '<p>';
-		esc_html_e( 'Using rel=me on a link indicates the link represents the same person or entity as the current page. Depending on whether this is a single author or multi-author site, these links will either be displayed on the main page or on the specific page representing the author on the site.', 'indieweb' );
+		esc_html_e( 'Using rel=me on a link indicates the link represents the same person or entity as
+				the current page. On a site with a single author, rel=me links from their user profile will
+				appear on the homepage. On a site with multiple authors rel=me will appear in the links on the author page only.' , 'indieweb' );
+		echo '</p>';
+		echo '<p>';
+		esc_html_e( 'The Default Author is the one whose that will be used on the home pages and archive pages. If the single author setting is not set,
+				on all other pages, the post author links will be used. To display the links, add the
+				widget, otherwise they will remain hidden. ', 'indieweb' );
 		echo '</p>';
 	}
 

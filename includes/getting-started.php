@@ -52,7 +52,11 @@
 
 	<p><?php _e( 'Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. For example, a class of u-like-of added to a link to a site you liked to indicates that relationship.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'Currently, <a href="https://wordpress.org/themes/sempress/" target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully microformats2 compliant. In practice, most themes will work relatively well out of the box, though there can be some minor display issues.', 'indieweb' ); ?></p>
+	<p><?php _e( 'Currently, <a href="https://wordpress.org/themes/sempress/"
+			target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully
+			microformats2 compliant. <a href="http://wordpress.org/themes/independent-publisher/"
+			target="_blank">Independent Publisher</a> has been updated to include basic microformats2 and
+			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues.', 'indieweb' ); ?></p>
 
 	<h2><?php _e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
 

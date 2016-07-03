@@ -1,11 +1,8 @@
 <?php
 
 add_action( 'init', array( 'HCard_User', 'init' ) );
+add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 
-// add widget
-if ( 1 !== get_option( 'iw_relmehead', 0 ) ) {
-	add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
-}
 
 // Extended Profile for Rel-Me and H-Card
 class HCard_User {
@@ -19,8 +16,6 @@ class HCard_User {
 		// Save Extra User Data
 		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
-		// Add Shortcode for H-Card
-		add_shortcode( 'h_card', array( 'HCard_User', 'h_card_shortcode' ) );
 	}
 
 	/**
@@ -198,7 +193,7 @@ class HCard_User {
 
 	public static function save_profile( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
-			return false; 
+			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
 		$fields['relme'] = array();
@@ -378,19 +373,39 @@ class HCard_User {
 		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list );
 	}
 
-	// Outputs an H-Card
-	public static function h_card_shortcode( $atts ) {
-		extract(
-			shortcode_atts(
-				array(
-					'author' => get_option( 'iw_default_author', 1 ), // User to Output
-					'address' => 'no', // Output Address Data
-					'relme' => 'no', // Output silo links with rel=me
-				),
-				$atts
-			)
-		);
-
-		return '';
+	/**
+	 * prints a formatted list of rel=me for the head to supported silos
+	 */
+	public static function relme_head_list( $author_id = null ) {
+		$list = self::get_rel_me( $author_id );
+		if ( ! $list ) {
+			return false;
+		}
+		$author_name = get_the_author_meta( 'display_name' , $author_id );
+		$r = array();
+		foreach ( $list as $silo => $profile_url ) {
+			$r[ $silo ] = '<link rel="me" href="' . esc_attr( $profile_url ) . '" />';
+		}
+		return join( '', $r );
 	}
+
+	/**
+	 *
+	 */
+	public static function relme_head() {
+		global $authordata;
+		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
+		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
+		if ( is_front_page() && 1 == $single_author ) {
+			 echo self::relme_head_list( $author_id );
+			 return;
+		}
+		if ( is_author() ) {
+			global $authordata;
+			$author_id = $authordata->ID;
+			echo self::relme_head_list( $author_id );
+		}
+	}
+
+
 } // End Class

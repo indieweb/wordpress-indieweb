@@ -16,6 +16,9 @@ class RelMe_Widget extends WP_Widget {
 				'description' => __( 'Adds automatic rel-me URLs based on default author profile information.', 'indieweb' ),
 			)
 		);
+		if ( ! is_active_widget( false, false, $this->id_base ) ) {
+			add_action( 'wp_head', array( 'HCard_User', 'relme_head' ) );
+		}
 	}
 
 	/**
@@ -36,12 +39,12 @@ class RelMe_Widget extends WP_Widget {
 			$include_rel = true;
 		}
 		if ( is_author() ) {
-			global $authordata; 
+			global $authordata;
 			$author_id = $authordata->ID;
 			if ( 0 == $single_author ) {
 				$include_rel = true;
 			}
-		} 
+		}
 		if ( is_singular() && 0 == $single_author ) {
 				global $post;
 				$author_id = $post->post_author;

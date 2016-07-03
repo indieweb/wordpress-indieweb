@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the IndieWeb package.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.0.3\n"
+"Project-Id-Version: IndieWeb 3.0.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2016-07-02 07:09:38+00:00\n"
+"POT-Creation-Date: 2016-07-03 07:22:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,6 +21,7 @@ msgstr ""
 #: build/tags/2.0.0/indieweb.php:169
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:196
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:334
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:334
 #: build/trunk/includes/class-tgm-plugin-activation.php:334
 #: includes/class-tgm-plugin-activation.php:334
 msgid "Install Required Plugins"
@@ -31,6 +32,8 @@ msgstr ""
 #: build/tags/2.1.0/getting_started.php:47
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:335
 #: build/tags/3.0.2/includes/getting-started.php:47
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:335
+#: build/tags/3.0.3/includes/getting-started.php:47
 #: build/trunk/includes/class-tgm-plugin-activation.php:335
 #: build/trunk/includes/getting-started.php:47
 #: includes/class-tgm-plugin-activation.php:335 includes/getting-started.php:47
@@ -43,6 +46,8 @@ msgstr ""
 #: build/tags/2.1.0/indieweb.php:213
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:337
 #: build/tags/3.0.2/indieweb.php:217
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:337
+#: build/tags/3.0.3/indieweb.php:217
 #: build/trunk/includes/class-tgm-plugin-activation.php:337
 #: build/trunk/indieweb.php:217 includes/class-tgm-plugin-activation.php:337
 #: indieweb.php:217
@@ -73,7 +78,8 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:175
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:202
 #: build/tags/2.1.0/indieweb.php:217 build/tags/3.0.2/indieweb.php:221
-#: build/trunk/indieweb.php:221 indieweb.php:221
+#: build/tags/3.0.3/indieweb.php:221 build/trunk/indieweb.php:221
+#: indieweb.php:221
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s "
 "plugin. Contact the administrator of this site for help on getting the "
@@ -89,7 +95,8 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:176
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:203
 #: build/tags/2.1.0/indieweb.php:218 build/tags/3.0.2/indieweb.php:222
-#: build/trunk/indieweb.php:222 indieweb.php:222
+#: build/tags/3.0.3/indieweb.php:222 build/trunk/indieweb.php:222
+#: indieweb.php:222
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -99,7 +106,8 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:177
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:204
 #: build/tags/2.1.0/indieweb.php:219 build/tags/3.0.2/indieweb.php:223
-#: build/trunk/indieweb.php:223 indieweb.php:223
+#: build/tags/3.0.3/indieweb.php:223 build/trunk/indieweb.php:223
+#: indieweb.php:223
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
@@ -109,7 +117,8 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:178
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:205
 #: build/tags/2.1.0/indieweb.php:220 build/tags/3.0.2/indieweb.php:224
-#: build/trunk/indieweb.php:224 indieweb.php:224
+#: build/tags/3.0.3/indieweb.php:224 build/trunk/indieweb.php:224
+#: indieweb.php:224
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugin. Contact the administrator of this site for help on getting the "
@@ -136,7 +145,8 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:180
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:207
 #: build/tags/2.1.0/indieweb.php:222 build/tags/3.0.2/indieweb.php:226
-#: build/trunk/indieweb.php:226 indieweb.php:226
+#: build/tags/3.0.3/indieweb.php:226 build/trunk/indieweb.php:226
+#: indieweb.php:226
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
@@ -154,6 +164,8 @@ msgstr[1] ""
 #: build/tags/2.1.0/indieweb.php:223
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:377
 #: build/tags/3.0.2/indieweb.php:227
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:377
+#: build/tags/3.0.3/indieweb.php:227
 #: build/trunk/includes/class-tgm-plugin-activation.php:377
 #: build/trunk/indieweb.php:227 includes/class-tgm-plugin-activation.php:377
 #: indieweb.php:227
@@ -169,6 +181,8 @@ msgstr[1] ""
 #: build/tags/2.1.0/indieweb.php:224
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:387
 #: build/tags/3.0.2/indieweb.php:228
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:387
+#: build/tags/3.0.3/indieweb.php:228
 #: build/trunk/includes/class-tgm-plugin-activation.php:387
 #: build/trunk/indieweb.php:228 includes/class-tgm-plugin-activation.php:387
 #: indieweb.php:228
@@ -181,6 +195,7 @@ msgstr[1] ""
 #: build/tags/2.0.0/indieweb.php:183
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:210
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:392
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:392
 #: build/trunk/includes/class-tgm-plugin-activation.php:392
 #: includes/class-tgm-plugin-activation.php:392
 msgid "Return to Required Plugins Installer"
@@ -200,6 +215,9 @@ msgstr ""
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:394
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3252
 #: build/tags/3.0.2/indieweb.php:230
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:394
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3252
+#: build/tags/3.0.3/indieweb.php:230
 #: build/trunk/includes/class-tgm-plugin-activation.php:394
 #: build/trunk/includes/class-tgm-plugin-activation.php:3252
 #: build/trunk/indieweb.php:230 includes/class-tgm-plugin-activation.php:394
@@ -213,6 +231,8 @@ msgstr ""
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1652
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:395
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3045
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:395
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3045
 #: build/trunk/includes/class-tgm-plugin-activation.php:395
 #: build/trunk/includes/class-tgm-plugin-activation.php:3045
 #: includes/class-tgm-plugin-activation.php:395
@@ -223,6 +243,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:214
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:214
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:401
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:401
 #: build/trunk/includes/class-tgm-plugin-activation.php:401
 #: includes/class-tgm-plugin-activation.php:401
 #. translators: 1: dashboard link.
@@ -232,6 +253,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:215
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:215
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:402
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:402
 #: build/trunk/includes/class-tgm-plugin-activation.php:402
 #: includes/class-tgm-plugin-activation.php:402
 msgid "Dismiss this notice"
@@ -245,6 +267,10 @@ msgstr ""
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:920
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2626
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3673
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:393
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:920
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2626
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3673
 #: build/trunk/includes/class-tgm-plugin-activation.php:393
 #: build/trunk/includes/class-tgm-plugin-activation.php:920
 #: build/trunk/includes/class-tgm-plugin-activation.php:2626
@@ -264,6 +290,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1189
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1189
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2391
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2391
 #: build/trunk/includes/class-tgm-plugin-activation.php:2391
 #: includes/class-tgm-plugin-activation.php:2391
 msgid "Pre-Packaged"
@@ -272,6 +299,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1194
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1194
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2385
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2385
 #: build/trunk/includes/class-tgm-plugin-activation.php:2385
 #: includes/class-tgm-plugin-activation.php:2385
 msgid "WordPress Repository"
@@ -280,6 +308,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1197
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1197
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2366
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2366
 #: build/trunk/includes/class-tgm-plugin-activation.php:2366
 #: includes/class-tgm-plugin-activation.php:2366
 msgid "Required"
@@ -288,6 +317,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1197
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1197
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2369
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2369
 #: build/trunk/includes/class-tgm-plugin-activation.php:2369
 #: includes/class-tgm-plugin-activation.php:2369
 msgid "Recommended"
@@ -296,6 +326,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1200
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1200
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2408
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2408
 #: build/trunk/includes/class-tgm-plugin-activation.php:2408
 #: includes/class-tgm-plugin-activation.php:2408
 msgid "Not Installed"
@@ -304,6 +335,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1202
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1202
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2412
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2412
 #: build/trunk/includes/class-tgm-plugin-activation.php:2412
 #: includes/class-tgm-plugin-activation.php:2412
 msgid "Installed But Not Activated"
@@ -314,6 +346,7 @@ msgstr ""
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1304
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1412
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2810
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2810
 #: build/trunk/includes/class-tgm-plugin-activation.php:2810
 #: includes/class-tgm-plugin-activation.php:2810
 msgid "Install"
@@ -324,6 +357,7 @@ msgstr ""
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1326
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1413
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2819
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2819
 #: build/trunk/includes/class-tgm-plugin-activation.php:2819
 #: includes/class-tgm-plugin-activation.php:2819
 msgid "Activate"
@@ -339,6 +373,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1391
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1391
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2640
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2640
 #: build/trunk/includes/class-tgm-plugin-activation.php:2640
 #: includes/class-tgm-plugin-activation.php:2640
 msgid "Plugin"
@@ -347,6 +382,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1392
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1392
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2641
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2641
 #: build/trunk/includes/class-tgm-plugin-activation.php:2641
 #: includes/class-tgm-plugin-activation.php:2641
 msgid "Source"
@@ -355,6 +391,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1393
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1393
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2642
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2642
 #: build/trunk/includes/class-tgm-plugin-activation.php:2642
 #: includes/class-tgm-plugin-activation.php:2642
 msgid "Type"
@@ -363,6 +400,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1394
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1394
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2647
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2647
 #: build/trunk/includes/class-tgm-plugin-activation.php:2647
 #: includes/class-tgm-plugin-activation.php:2647
 msgid "Status"
@@ -371,6 +409,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1522
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1522
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2893
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2893
 #: build/trunk/includes/class-tgm-plugin-activation.php:2893
 #: includes/class-tgm-plugin-activation.php:2893
 msgid "No plugins are available to be installed at this time."
@@ -379,6 +418,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1630
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1630
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3027
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3027
 #: build/trunk/includes/class-tgm-plugin-activation.php:3027
 #: includes/class-tgm-plugin-activation.php:3027
 msgid "No plugins are available to be activated at this time."
@@ -417,6 +457,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:1964
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:1964
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3251
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3251
 #: build/trunk/includes/class-tgm-plugin-activation.php:3251
 #: includes/class-tgm-plugin-activation.php:3251
 msgid "Plugin activation failed."
@@ -425,6 +466,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2078
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2078
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3600
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3600
 #: build/trunk/includes/class-tgm-plugin-activation.php:3600
 #: includes/class-tgm-plugin-activation.php:3600
 msgid ""
@@ -435,6 +477,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2079
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2079
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3602
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3602
 #: build/trunk/includes/class-tgm-plugin-activation.php:3602
 #: includes/class-tgm-plugin-activation.php:3602
 #. translators: 1: plugin name.
@@ -447,6 +490,8 @@ msgstr ""
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3602
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3610
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3602
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3610
 #: build/trunk/includes/class-tgm-plugin-activation.php:3602
 #: build/trunk/includes/class-tgm-plugin-activation.php:3610
 #: includes/class-tgm-plugin-activation.php:3602
@@ -460,6 +505,8 @@ msgstr ""
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3602
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3610
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3602
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3610
 #: build/trunk/includes/class-tgm-plugin-activation.php:3602
 #: build/trunk/includes/class-tgm-plugin-activation.php:3610
 #: includes/class-tgm-plugin-activation.php:3602
@@ -470,6 +517,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2080
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2080
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3603
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3603
 #: build/trunk/includes/class-tgm-plugin-activation.php:3603
 #: includes/class-tgm-plugin-activation.php:3603
 msgid "All installations and activations have been completed."
@@ -478,6 +526,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2081
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2081
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3605
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3605
 #: build/trunk/includes/class-tgm-plugin-activation.php:3605
 #: includes/class-tgm-plugin-activation.php:3605
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
@@ -487,6 +536,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2085
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2085
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3608
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3608
 #: build/trunk/includes/class-tgm-plugin-activation.php:3608
 #: includes/class-tgm-plugin-activation.php:3608
 msgid ""
@@ -497,6 +547,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2086
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2086
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3594
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3594
 #: build/trunk/includes/class-tgm-plugin-activation.php:3594
 #: includes/class-tgm-plugin-activation.php:3594
 #. translators: 1: plugin name, 2: error message.
@@ -506,6 +557,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2087
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2087
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3596
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3596
 #: build/trunk/includes/class-tgm-plugin-activation.php:3596
 #: includes/class-tgm-plugin-activation.php:3596
 #. translators: 1: plugin name.
@@ -515,6 +567,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2088
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2088
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3610
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3610
 #: build/trunk/includes/class-tgm-plugin-activation.php:3610
 #: includes/class-tgm-plugin-activation.php:3610
 #. translators: 1: plugin name.
@@ -524,6 +577,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2089
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2089
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3611
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3611
 #: build/trunk/includes/class-tgm-plugin-activation.php:3611
 #: includes/class-tgm-plugin-activation.php:3611
 msgid "All installations have been completed."
@@ -532,6 +586,7 @@ msgstr ""
 #: build/tags/2.0.0/class-tgm-plugin-activation.php:2090
 #: build/tags/2.1.0/class-tgm-plugin-activation.php:2090
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3613
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3613
 #: build/trunk/includes/class-tgm-plugin-activation.php:3613
 #: includes/class-tgm-plugin-activation.php:3613
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
@@ -540,37 +595,39 @@ msgstr ""
 
 #: build/tags/2.0.0/indieweb.php:170 build/tags/2.1.0/indieweb.php:210
 #: build/tags/2.1.0/indieweb.php:211 build/tags/3.0.2/indieweb.php:214
-#: build/tags/3.0.2/indieweb.php:215 build/trunk/indieweb.php:214
+#: build/tags/3.0.2/indieweb.php:215 build/tags/3.0.3/indieweb.php:214
+#: build/tags/3.0.3/indieweb.php:215 build/trunk/indieweb.php:214
 #: build/trunk/indieweb.php:215 indieweb.php:214 indieweb.php:215
 msgid "Install IndieWeb Plugins"
 msgstr ""
 
 #: build/tags/2.0.0/indieweb.php:172
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:340
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:340
 #: build/trunk/includes/class-tgm-plugin-activation.php:340
 #: includes/class-tgm-plugin-activation.php:340
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: build/tags/2.0.0/indieweb.php:173 build/tags/2.1.0/indieweb.php:215
-#: build/tags/3.0.2/indieweb.php:219 build/trunk/indieweb.php:219
-#: indieweb.php:219
+#: build/tags/3.0.2/indieweb.php:219 build/tags/3.0.3/indieweb.php:219
+#: build/trunk/indieweb.php:219 indieweb.php:219
 msgid "The IndieWeb plugin requires the following plugin: %1$s."
 msgid_plural "The IndieWeb plugin requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/2.0.0/indieweb.php:174 build/tags/2.1.0/indieweb.php:216
-#: build/tags/3.0.2/indieweb.php:220 build/trunk/indieweb.php:220
-#: indieweb.php:220
+#: build/tags/3.0.2/indieweb.php:220 build/tags/3.0.3/indieweb.php:220
+#: build/trunk/indieweb.php:220 indieweb.php:220
 msgid "The IndieWeb plugin recommends the following plugin: %1$s."
 msgid_plural "The IndieWeb plugin recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/2.0.0/indieweb.php:179 build/tags/2.1.0/indieweb.php:221
-#: build/tags/3.0.2/indieweb.php:225 build/trunk/indieweb.php:225
-#: indieweb.php:225
+#: build/tags/3.0.2/indieweb.php:225 build/tags/3.0.3/indieweb.php:225
+#: build/trunk/indieweb.php:225 indieweb.php:225
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
 "maximum compatibility with this plugin: %1$s."
@@ -581,20 +638,23 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/2.0.0/indieweb.php:185 build/tags/2.1.0/indieweb.php:227
-#: build/tags/3.0.2/indieweb.php:231 build/trunk/indieweb.php:231
-#: indieweb.php:231
+#: build/tags/3.0.2/indieweb.php:231 build/tags/3.0.3/indieweb.php:231
+#: build/trunk/indieweb.php:231 indieweb.php:231
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:3
 #: build/tags/3.0.2/includes/getting-started.php:3
+#: build/tags/3.0.3/includes/getting-started.php:3
 #: build/trunk/includes/getting-started.php:3 includes/getting-started.php:3
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:5 build/tags/2.1.0/indieweb.php:248
 #: build/tags/3.0.2/includes/getting-started.php:5
-#: build/tags/3.0.2/indieweb.php:94 build/trunk/includes/getting-started.php:5
+#: build/tags/3.0.2/indieweb.php:94
+#: build/tags/3.0.3/includes/getting-started.php:5
+#: build/tags/3.0.3/indieweb.php:94 build/trunk/includes/getting-started.php:5
 #: build/trunk/indieweb.php:94 includes/getting-started.php:5 indieweb.php:94
 msgid "Getting Started"
 msgstr ""
@@ -608,6 +668,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:9
 #: build/tags/3.0.2/includes/getting-started.php:9
+#: build/tags/3.0.3/includes/getting-started.php:9
 #: build/trunk/includes/getting-started.php:9 includes/getting-started.php:9
 msgid ""
 "Once you have these activated, you can setup <a "
@@ -618,12 +679,14 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:11
 #: build/tags/3.0.2/includes/getting-started.php:11
+#: build/tags/3.0.3/includes/getting-started.php:11
 #: build/trunk/includes/getting-started.php:11 includes/getting-started.php:11
 msgid "Plugins"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:13
 #: build/tags/3.0.2/includes/getting-started.php:13
+#: build/tags/3.0.3/includes/getting-started.php:13
 #: build/trunk/includes/getting-started.php:13 includes/getting-started.php:13
 msgid ""
 "For more information on these plugins, visit the <a "
@@ -634,12 +697,14 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:17
 #: build/tags/3.0.2/includes/getting-started.php:17
+#: build/tags/3.0.3/includes/getting-started.php:17
 #: build/trunk/includes/getting-started.php:17 includes/getting-started.php:17
 msgid "Send and receive responses with your site"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:18
 #: build/tags/3.0.2/includes/getting-started.php:18
+#: build/tags/3.0.3/includes/getting-started.php:18
 #: build/trunk/includes/getting-started.php:18 includes/getting-started.php:18
 msgid ""
 "Send and receive comments, likes, reposts, and other kinds of post "
@@ -648,6 +713,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:20
 #: build/tags/3.0.2/includes/getting-started.php:20
+#: build/tags/3.0.3/includes/getting-started.php:20
 #: build/trunk/includes/getting-started.php:20 includes/getting-started.php:20
 msgid ""
 "<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
@@ -657,6 +723,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:21
 #: build/tags/3.0.2/includes/getting-started.php:21
+#: build/tags/3.0.3/includes/getting-started.php:21
 #: build/trunk/includes/getting-started.php:21 includes/getting-started.php:21
 msgid ""
 "<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
@@ -665,6 +732,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:22
 #: build/tags/3.0.2/includes/getting-started.php:22
+#: build/tags/3.0.3/includes/getting-started.php:22
 #: build/trunk/includes/getting-started.php:22 includes/getting-started.php:22
 msgid ""
 "<strong>Webmention for (Threaded) Comments</strong> - Adds support for "
@@ -673,6 +741,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:23
 #: build/tags/3.0.2/includes/getting-started.php:23
+#: build/tags/3.0.3/includes/getting-started.php:23
 #: build/trunk/includes/getting-started.php:23 includes/getting-started.php:23
 msgid "<strong>Webactions</strong> - Adds webaction markups to WordPress elements."
 msgstr ""
@@ -686,6 +755,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:29
 #: build/tags/3.0.2/includes/getting-started.php:29
+#: build/tags/3.0.3/includes/getting-started.php:29
 #: build/trunk/includes/getting-started.php:29 includes/getting-started.php:29
 msgid "Syndicate your content to other sites"
 msgstr ""
@@ -713,6 +783,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:38
 #: build/tags/3.0.2/includes/getting-started.php:37
+#: build/tags/3.0.3/includes/getting-started.php:37
 #: build/trunk/includes/getting-started.php:37 includes/getting-started.php:37
 msgid "Other"
 msgstr ""
@@ -726,12 +797,14 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:41
 #: build/tags/3.0.2/includes/getting-started.php:41
+#: build/tags/3.0.3/includes/getting-started.php:41
 #: build/trunk/includes/getting-started.php:41 includes/getting-started.php:41
 msgid "<strong>Hum URL Shortener</strong> - A personal URL shortener."
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:42
 #: build/tags/3.0.2/includes/getting-started.php:42
+#: build/tags/3.0.3/includes/getting-started.php:42
 #: build/trunk/includes/getting-started.php:42 includes/getting-started.php:42
 msgid ""
 "<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
@@ -741,12 +814,14 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:49
 #: build/tags/3.0.2/includes/getting-started.php:49
+#: build/tags/3.0.3/includes/getting-started.php:49
 #: build/trunk/includes/getting-started.php:49 includes/getting-started.php:49
 msgid "Themes"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:51
 #: build/tags/3.0.2/includes/getting-started.php:51
+#: build/tags/3.0.3/includes/getting-started.php:51
 #: build/trunk/includes/getting-started.php:51 includes/getting-started.php:51
 msgid ""
 "Some WordPress themes are compatible with microformats. The IndieWeb uses "
@@ -757,6 +832,7 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:53
 #: build/tags/3.0.2/includes/getting-started.php:53
+#: build/tags/3.0.3/includes/getting-started.php:53
 #: build/trunk/includes/getting-started.php:53 includes/getting-started.php:53
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
@@ -773,13 +849,15 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:57
 #: build/tags/3.0.2/includes/getting-started.php:57
-#: build/trunk/includes/getting-started.php:57 includes/getting-started.php:57
+#: build/tags/3.0.3/includes/getting-started.php:57
+#: build/trunk/includes/getting-started.php:57 includes/getting-started.php:61
 msgid "What is the IndieWeb?"
 msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:59
 #: build/tags/3.0.2/includes/getting-started.php:59
-#: build/trunk/includes/getting-started.php:59 includes/getting-started.php:59
+#: build/tags/3.0.3/includes/getting-started.php:59
+#: build/trunk/includes/getting-started.php:59 includes/getting-started.php:63
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
@@ -787,7 +865,8 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:60
 #: build/tags/3.0.2/includes/getting-started.php:60
-#: build/trunk/includes/getting-started.php:60 includes/getting-started.php:60
+#: build/tags/3.0.3/includes/getting-started.php:60
+#: build/trunk/includes/getting-started.php:60 includes/getting-started.php:64
 msgid ""
 "This is the basis of the <strong>Indie Web</strong>. For more, see <a "
 "href=\"http://indiewebcamp.com/principles\" "
@@ -797,7 +876,8 @@ msgstr ""
 
 #: build/tags/2.1.0/getting_started.php:62
 #: build/tags/3.0.2/includes/getting-started.php:62
-#: build/trunk/includes/getting-started.php:62 includes/getting-started.php:62
+#: build/tags/3.0.3/includes/getting-started.php:62
+#: build/trunk/includes/getting-started.php:62 includes/getting-started.php:66
 msgid ""
 "For even more information, please visit the <a "
 "href=\"http://indiewebcamp.com/\" target=\"_blank\"><em>IndieWebCamp</em> "
@@ -809,42 +889,50 @@ msgid "IndieWeb"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:110 build/tags/3.0.2/indieweb.php:120
-#: build/trunk/indieweb.php:120 indieweb.php:120
+#: build/tags/3.0.3/indieweb.php:120 build/trunk/indieweb.php:120
+#: indieweb.php:120
 msgid "WebMention"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:117 build/tags/3.0.2/indieweb.php:127
-#: build/trunk/indieweb.php:127 indieweb.php:127
+#: build/tags/3.0.3/indieweb.php:127 build/trunk/indieweb.php:127
+#: indieweb.php:127
 msgid "Semantic Linkbacks"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:124 build/tags/3.0.2/indieweb.php:141
-#: build/trunk/indieweb.php:141 indieweb.php:141
+#: build/tags/3.0.3/indieweb.php:141 build/trunk/indieweb.php:141
+#: indieweb.php:141
 msgid "Hum (URL shortener)"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:131 build/tags/3.0.2/indieweb.php:148
-#: build/trunk/indieweb.php:148 indieweb.php:148
+#: build/tags/3.0.3/indieweb.php:148 build/trunk/indieweb.php:148
+#: indieweb.php:148
 msgid "WebActions"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:140 build/tags/3.0.2/indieweb.php:157
-#: build/trunk/indieweb.php:157 indieweb.php:157
+#: build/tags/3.0.3/indieweb.php:157 build/trunk/indieweb.php:157
+#: indieweb.php:157
 msgid "IndieWeb Press-This"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:149 build/tags/3.0.2/indieweb.php:166
-#: build/trunk/indieweb.php:166 indieweb.php:166
+#: build/tags/3.0.3/indieweb.php:166 build/trunk/indieweb.php:166
+#: indieweb.php:166
 msgid "WebMention support for (threaded) comments"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:158 build/tags/3.0.2/indieweb.php:175
-#: build/trunk/indieweb.php:175 indieweb.php:175
+#: build/tags/3.0.3/indieweb.php:175 build/trunk/indieweb.php:175
+#: indieweb.php:175
 msgid "Post Kinds"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:167 build/tags/3.0.2/indieweb.php:182
-#: build/trunk/indieweb.php:182 indieweb.php:182
+#: build/tags/3.0.3/indieweb.php:182 build/trunk/indieweb.php:182
+#: indieweb.php:182
 msgid "Syndication Links"
 msgstr ""
 
@@ -853,7 +941,8 @@ msgid "WordPress Syndication"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:185 build/tags/3.0.2/indieweb.php:189
-#: build/trunk/indieweb.php:189 indieweb.php:189
+#: build/tags/3.0.3/indieweb.php:189 build/trunk/indieweb.php:189
+#: indieweb.php:189
 msgid "Indieauth"
 msgstr ""
 
@@ -868,17 +957,21 @@ msgid "IndieWeb Plugin Installer"
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:214 build/tags/3.0.2/indieweb.php:218
-#: build/trunk/indieweb.php:218 indieweb.php:218
+#: build/tags/3.0.3/indieweb.php:218 build/trunk/indieweb.php:218
+#: indieweb.php:218
 msgid "Something went wrong with the plugin install."
 msgstr ""
 
 #: build/tags/2.1.0/indieweb.php:225 build/tags/3.0.2/indieweb.php:229
-#: build/trunk/indieweb.php:229 indieweb.php:229
+#: build/tags/3.0.3/indieweb.php:229 build/trunk/indieweb.php:229
+#: indieweb.php:229
 msgid "Return to IndieWeb Plugins Installer"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-general-settings.php:13
 #: build/tags/3.0.2/includes/class-general-settings.php:14
+#: build/tags/3.0.3/includes/class-general-settings.php:13
+#: build/tags/3.0.3/includes/class-general-settings.php:14
 #: build/trunk/includes/class-general-settings.php:13
 #: build/trunk/includes/class-general-settings.php:14
 #: includes/class-general-settings.php:13
@@ -887,8 +980,8 @@ msgid "Options"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-general-settings.php:75
+#: build/tags/3.0.3/includes/class-general-settings.php:75
 #: build/trunk/includes/class-general-settings.php:75
-#: includes/class-general-settings.php:75
 msgid ""
 "Using rel=me on a link indicates the link represents the same person or "
 "entity as the current page. Depending on whether this is a single author or "
@@ -897,209 +990,243 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:54
+#: build/tags/3.0.3/includes/class-hcard-user.php:54
 #: build/trunk/includes/class-hcard-user.php:54
-#: includes/class-hcard-user.php:54
+#: includes/class-hcard-user.php:49
 msgid "Telephone"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:58
+#: build/tags/3.0.3/includes/class-hcard-user.php:58
 #: build/trunk/includes/class-hcard-user.php:58
-#: includes/class-hcard-user.php:58
+#: includes/class-hcard-user.php:53
 msgid "Github username"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:62
+#: build/tags/3.0.3/includes/class-hcard-user.php:62
 #: build/trunk/includes/class-hcard-user.php:62
-#: includes/class-hcard-user.php:62
+#: includes/class-hcard-user.php:57
 msgid "Google+ userID (not username)"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:66
+#: build/tags/3.0.3/includes/class-hcard-user.php:66
 #: build/trunk/includes/class-hcard-user.php:66
-#: includes/class-hcard-user.php:66
+#: includes/class-hcard-user.php:61
 msgid "Twitter username (without @)"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:70
+#: build/tags/3.0.3/includes/class-hcard-user.php:70
 #: build/trunk/includes/class-hcard-user.php:70
-#: includes/class-hcard-user.php:70
+#: includes/class-hcard-user.php:65
 msgid "Facebook ID"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:74
+#: build/tags/3.0.3/includes/class-hcard-user.php:74
 #: build/trunk/includes/class-hcard-user.php:74
-#: includes/class-hcard-user.php:74
+#: includes/class-hcard-user.php:69
 msgid "Last.fm username"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:78
+#: build/tags/3.0.3/includes/class-hcard-user.php:78
 #: build/trunk/includes/class-hcard-user.php:78
-#: includes/class-hcard-user.php:78
+#: includes/class-hcard-user.php:73
 msgid "Instagram username"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:82
+#: build/tags/3.0.3/includes/class-hcard-user.php:82
 #: build/trunk/includes/class-hcard-user.php:82
-#: includes/class-hcard-user.php:82
+#: includes/class-hcard-user.php:77
 msgid "Flickr username"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:108
+#: build/tags/3.0.3/includes/class-hcard-user.php:108
 #: build/trunk/includes/class-hcard-user.php:108
-#: includes/class-hcard-user.php:108
+#: includes/class-hcard-user.php:103
 msgid "Street Address"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:109
+#: build/tags/3.0.3/includes/class-hcard-user.php:109
 #: build/trunk/includes/class-hcard-user.php:109
-#: includes/class-hcard-user.php:109
+#: includes/class-hcard-user.php:104
 msgid "Street Number and Name"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:112
+#: build/tags/3.0.3/includes/class-hcard-user.php:112
 #: build/trunk/includes/class-hcard-user.php:112
-#: includes/class-hcard-user.php:112
+#: includes/class-hcard-user.php:107
 msgid "Extended Address"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:113
+#: build/tags/3.0.3/includes/class-hcard-user.php:113
 #: build/trunk/includes/class-hcard-user.php:113
-#: includes/class-hcard-user.php:113
+#: includes/class-hcard-user.php:108
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:116
+#: build/tags/3.0.3/includes/class-hcard-user.php:116
 #: build/trunk/includes/class-hcard-user.php:116
-#: includes/class-hcard-user.php:116
+#: includes/class-hcard-user.php:111
 msgid "Locality"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:117
+#: build/tags/3.0.3/includes/class-hcard-user.php:117
 #: build/trunk/includes/class-hcard-user.php:117
-#: includes/class-hcard-user.php:117
+#: includes/class-hcard-user.php:112
 msgid "City/State/Village"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:120
+#: build/tags/3.0.3/includes/class-hcard-user.php:120
 #: build/trunk/includes/class-hcard-user.php:120
-#: includes/class-hcard-user.php:120
+#: includes/class-hcard-user.php:115
 msgid "Region"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:121
+#: build/tags/3.0.3/includes/class-hcard-user.php:121
 #: build/trunk/includes/class-hcard-user.php:121
-#: includes/class-hcard-user.php:121
+#: includes/class-hcard-user.php:116
 msgid "State/County/Province"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:124
+#: build/tags/3.0.3/includes/class-hcard-user.php:124
 #: build/trunk/includes/class-hcard-user.php:124
-#: includes/class-hcard-user.php:124
+#: includes/class-hcard-user.php:119
 msgid "Postal Code"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:125
+#: build/tags/3.0.3/includes/class-hcard-user.php:125
 #: build/trunk/includes/class-hcard-user.php:125
-#: includes/class-hcard-user.php:125
+#: includes/class-hcard-user.php:120
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:128
 #: build/tags/3.0.2/includes/class-hcard-user.php:129
+#: build/tags/3.0.3/includes/class-hcard-user.php:128
+#: build/tags/3.0.3/includes/class-hcard-user.php:129
 #: build/trunk/includes/class-hcard-user.php:128
 #: build/trunk/includes/class-hcard-user.php:129
-#: includes/class-hcard-user.php:128 includes/class-hcard-user.php:129
+#: includes/class-hcard-user.php:123 includes/class-hcard-user.php:124
 msgid "Country Name"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:138
+#: build/tags/3.0.3/includes/class-hcard-user.php:138
 #: build/trunk/includes/class-hcard-user.php:138
-#: includes/class-hcard-user.php:138
+#: includes/class-hcard-user.php:133
 msgid "Job Title"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:139
+#: build/tags/3.0.3/includes/class-hcard-user.php:139
 #: build/trunk/includes/class-hcard-user.php:139
-#: includes/class-hcard-user.php:139
+#: includes/class-hcard-user.php:134
 msgid "Title or Role"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:142
+#: build/tags/3.0.3/includes/class-hcard-user.php:142
 #: build/trunk/includes/class-hcard-user.php:142
-#: includes/class-hcard-user.php:142
+#: includes/class-hcard-user.php:137
 msgid "Organization"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:143
+#: build/tags/3.0.3/includes/class-hcard-user.php:143
 #: build/trunk/includes/class-hcard-user.php:143
-#: includes/class-hcard-user.php:143
+#: includes/class-hcard-user.php:138
 msgid "Affiliated Organization"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:146
+#: build/tags/3.0.3/includes/class-hcard-user.php:146
 #: build/trunk/includes/class-hcard-user.php:146
-#: includes/class-hcard-user.php:146
+#: includes/class-hcard-user.php:141
 msgid "Honorific Prefix"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:147
+#: build/tags/3.0.3/includes/class-hcard-user.php:147
 #: build/trunk/includes/class-hcard-user.php:147
-#: includes/class-hcard-user.php:147
+#: includes/class-hcard-user.php:142
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:154
+#: build/tags/3.0.3/includes/class-hcard-user.php:154
 #: build/trunk/includes/class-hcard-user.php:154
-#: includes/class-hcard-user.php:154
+#: includes/class-hcard-user.php:149
 msgid "Address"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:155
 #: build/tags/3.0.2/includes/class-hcard-user.php:163
+#: build/tags/3.0.3/includes/class-hcard-user.php:155
+#: build/tags/3.0.3/includes/class-hcard-user.php:163
 #: build/trunk/includes/class-hcard-user.php:155
 #: build/trunk/includes/class-hcard-user.php:163
-#: includes/class-hcard-user.php:155 includes/class-hcard-user.php:163
+#: includes/class-hcard-user.php:150 includes/class-hcard-user.php:158
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:162
+#: build/tags/3.0.3/includes/class-hcard-user.php:162
 #: build/trunk/includes/class-hcard-user.php:162
-#: includes/class-hcard-user.php:162
+#: includes/class-hcard-user.php:157
 msgid "Additional Profile Information"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:168
+#: build/tags/3.0.3/includes/class-hcard-user.php:168
 #: build/trunk/includes/class-hcard-user.php:168
-#: includes/class-hcard-user.php:168
+#: includes/class-hcard-user.php:163
 msgid "Other Sites"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-hcard-user.php:168
+#: build/tags/3.0.3/includes/class-hcard-user.php:168
 #: build/trunk/includes/class-hcard-user.php:168
-#: includes/class-hcard-user.php:168
+#: includes/class-hcard-user.php:163
 msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-relme-widget.php:14
+#: build/tags/3.0.3/includes/class-relme-widget.php:14
 #: build/trunk/includes/class-relme-widget.php:14
 #: includes/class-relme-widget.php:14
 msgid "Rel=Me"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-relme-widget.php:16
+#: build/tags/3.0.3/includes/class-relme-widget.php:16
 #: build/trunk/includes/class-relme-widget.php:16
 #: includes/class-relme-widget.php:16
 msgid "Adds automatic rel-me URLs based on default author profile information."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-relme-widget.php:81
-#: build/trunk/includes/class-relme-widget.php:81
 msgid ""
 "Use post author for rel-me links source on post-like pages instead of "
 "default author:"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:339
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:339
 #: build/trunk/includes/class-tgm-plugin-activation.php:339
 #: includes/class-tgm-plugin-activation.php:339
 #. translators: %s: plugin name.
@@ -1107,6 +1234,7 @@ msgid "Updating Plugin: %s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:382
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:382
 #: build/trunk/includes/class-tgm-plugin-activation.php:382
 #: includes/class-tgm-plugin-activation.php:382
 msgid "Begin updating plugin"
@@ -1115,6 +1243,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:397
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:397
 #: build/trunk/includes/class-tgm-plugin-activation.php:397
 #: includes/class-tgm-plugin-activation.php:397
 #. translators: 1: plugin name.
@@ -1122,6 +1251,7 @@ msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:399
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:399
 #: build/trunk/includes/class-tgm-plugin-activation.php:399
 #: includes/class-tgm-plugin-activation.php:399
 #. translators: 1: plugin name.
@@ -1131,6 +1261,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:403
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:403
 #: build/trunk/includes/class-tgm-plugin-activation.php:403
 #: includes/class-tgm-plugin-activation.php:403
 msgid ""
@@ -1139,30 +1270,35 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:404
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:404
 #: build/trunk/includes/class-tgm-plugin-activation.php:404
 #: includes/class-tgm-plugin-activation.php:404
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:607
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:607
 #: build/trunk/includes/class-tgm-plugin-activation.php:607
 #: includes/class-tgm-plugin-activation.php:607
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:608
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:608
 #: build/trunk/includes/class-tgm-plugin-activation.php:608
 #: includes/class-tgm-plugin-activation.php:608
 msgid "Update Required"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:725
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:725
 #: build/trunk/includes/class-tgm-plugin-activation.php:725
 #: includes/class-tgm-plugin-activation.php:725
 msgid "Set the parent_slug config variable instead."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:1027
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:1027
 #: build/trunk/includes/class-tgm-plugin-activation.php:1027
 #: includes/class-tgm-plugin-activation.php:1027
 msgid ""
@@ -1172,6 +1308,8 @@ msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:1027
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:1030
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:1027
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:1030
 #: build/trunk/includes/class-tgm-plugin-activation.php:1027
 #: build/trunk/includes/class-tgm-plugin-activation.php:1030
 #: includes/class-tgm-plugin-activation.php:1027
@@ -1182,6 +1320,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:1030
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:1030
 #: build/trunk/includes/class-tgm-plugin-activation.php:1030
 #: includes/class-tgm-plugin-activation.php:1030
 msgid ""
@@ -1190,6 +1329,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2075
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2075
 #: build/trunk/includes/class-tgm-plugin-activation.php:2075
 #: includes/class-tgm-plugin-activation.php:2075
 #. translators: %s: version number
@@ -1197,36 +1337,42 @@ msgid "TGMPA v%s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2388
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2388
 #: build/trunk/includes/class-tgm-plugin-activation.php:2388
 #: includes/class-tgm-plugin-activation.php:2388
 msgid "External Source"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2414
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2414
 #: build/trunk/includes/class-tgm-plugin-activation.php:2414
 #: includes/class-tgm-plugin-activation.php:2414
 msgid "Active"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2420
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2420
 #: build/trunk/includes/class-tgm-plugin-activation.php:2420
 #: includes/class-tgm-plugin-activation.php:2420
 msgid "Required Update not Available"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2423
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2423
 #: build/trunk/includes/class-tgm-plugin-activation.php:2423
 #: includes/class-tgm-plugin-activation.php:2423
 msgid "Requires Update"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2426
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2426
 #: build/trunk/includes/class-tgm-plugin-activation.php:2426
 #: includes/class-tgm-plugin-activation.php:2426
 msgid "Update recommended"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2485
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2485
 #: build/trunk/includes/class-tgm-plugin-activation.php:2485
 #: includes/class-tgm-plugin-activation.php:2485
 #. translators: 1: number of plugins.
@@ -1236,6 +1382,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2489
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2489
 #: build/trunk/includes/class-tgm-plugin-activation.php:2489
 #: includes/class-tgm-plugin-activation.php:2489
 #. translators: 1: number of plugins.
@@ -1245,6 +1392,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2493
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2493
 #: build/trunk/includes/class-tgm-plugin-activation.php:2493
 #: includes/class-tgm-plugin-activation.php:2493
 #. translators: 1: number of plugins.
@@ -1254,36 +1402,42 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2583
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2583
 #: build/trunk/includes/class-tgm-plugin-activation.php:2583
 #: includes/class-tgm-plugin-activation.php:2583
 msgid "Installed version:"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2591
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2591
 #: build/trunk/includes/class-tgm-plugin-activation.php:2591
 #: includes/class-tgm-plugin-activation.php:2591
 msgid "Minimum required version:"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2603
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2603
 #: build/trunk/includes/class-tgm-plugin-activation.php:2603
 #: includes/class-tgm-plugin-activation.php:2603
 msgid "Available version:"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2626
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2626
 #: build/trunk/includes/class-tgm-plugin-activation.php:2626
 #: includes/class-tgm-plugin-activation.php:2626
 msgid "No plugins to install, update or activate."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2646
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2646
 #: build/trunk/includes/class-tgm-plugin-activation.php:2646
 #: includes/class-tgm-plugin-activation.php:2646
 msgid "Version"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2696
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2696
 #: build/trunk/includes/class-tgm-plugin-activation.php:2696
 #: includes/class-tgm-plugin-activation.php:2696
 #. translators: %2$s: plugin name in screen reader markup
@@ -1291,6 +1445,7 @@ msgid "Install %2$s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2701
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2701
 #: build/trunk/includes/class-tgm-plugin-activation.php:2701
 #: includes/class-tgm-plugin-activation.php:2701
 #. translators: %2$s: plugin name in screen reader markup
@@ -1298,6 +1453,7 @@ msgid "Update %2$s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2707
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2707
 #: build/trunk/includes/class-tgm-plugin-activation.php:2707
 #: includes/class-tgm-plugin-activation.php:2707
 #. translators: %2$s: plugin name in screen reader markup
@@ -1305,42 +1461,49 @@ msgid "Activate %2$s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2777
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2777
 #: build/trunk/includes/class-tgm-plugin-activation.php:2777
 #: includes/class-tgm-plugin-activation.php:2777
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2816
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2816
 #: build/trunk/includes/class-tgm-plugin-activation.php:2816
 #: includes/class-tgm-plugin-activation.php:2816
 msgid "Update"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2850
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2850
 #: build/trunk/includes/class-tgm-plugin-activation.php:2850
 #: includes/class-tgm-plugin-activation.php:2850
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2852
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2852
 #: build/trunk/includes/class-tgm-plugin-activation.php:2852
 #: includes/class-tgm-plugin-activation.php:2852
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2895
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2895
 #: build/trunk/includes/class-tgm-plugin-activation.php:2895
 #: includes/class-tgm-plugin-activation.php:2895
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3001
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3001
 #: build/trunk/includes/class-tgm-plugin-activation.php:3001
 #: includes/class-tgm-plugin-activation.php:3001
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3591
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3591
 #: build/trunk/includes/class-tgm-plugin-activation.php:3591
 #: includes/class-tgm-plugin-activation.php:3591
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
@@ -1348,6 +1511,7 @@ msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:7
+#: build/tags/3.0.3/includes/getting-started.php:7
 #: build/trunk/includes/getting-started.php:7 includes/getting-started.php:7
 msgid ""
 "The IndieWeb Plugin can help you get set up to be a more active member of "
@@ -1356,6 +1520,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:24
+#: build/tags/3.0.3/includes/getting-started.php:24
 #: build/trunk/includes/getting-started.php:24 includes/getting-started.php:24
 msgid ""
 "<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
@@ -1363,6 +1528,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:30
+#: build/tags/3.0.3/includes/getting-started.php:30
 #: build/trunk/includes/getting-started.php:30 includes/getting-started.php:30
 msgid ""
 "Linking to the syndicated version of a post allows for bridgy to be able to "
@@ -1371,6 +1537,7 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:32
+#: build/tags/3.0.3/includes/getting-started.php:32
 #: build/trunk/includes/getting-started.php:32 includes/getting-started.php:32
 msgid ""
 "<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
@@ -1384,11 +1551,13 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:39
+#: build/tags/3.0.3/includes/getting-started.php:39
 #: build/trunk/includes/getting-started.php:39 includes/getting-started.php:39
 msgid "<strong>MicroPub</strong> - A MicroPub Server"
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:40
+#: build/tags/3.0.3/includes/getting-started.php:40
 #: build/trunk/includes/getting-started.php:40 includes/getting-started.php:40
 msgid ""
 "<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the "
@@ -1397,7 +1566,8 @@ msgid ""
 msgstr ""
 
 #: build/tags/3.0.2/includes/getting-started.php:55
-#: build/trunk/includes/getting-started.php:55 includes/getting-started.php:55
+#: build/tags/3.0.3/includes/getting-started.php:55
+#: build/trunk/includes/getting-started.php:55
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\" "
 "target=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -1406,18 +1576,53 @@ msgid ""
 "display issues."
 msgstr ""
 
-#: build/tags/3.0.2/indieweb.php:134 build/trunk/indieweb.php:134
-#: indieweb.php:134
+#: build/tags/3.0.2/indieweb.php:134 build/tags/3.0.3/indieweb.php:134
+#: build/trunk/indieweb.php:134 indieweb.php:134
 msgid "MicroPub Server"
 msgstr ""
 
-#: build/tags/3.0.2/indieweb.php:216 build/trunk/indieweb.php:216
-#: indieweb.php:216
+#: build/tags/3.0.2/indieweb.php:216 build/tags/3.0.3/indieweb.php:216
+#: build/trunk/indieweb.php:216 indieweb.php:216
 msgid "Extensions"
 msgstr ""
 
-#: includes/class-relme-widget.php:73
+#: build/tags/3.0.3/includes/class-relme-widget.php:73
+#: build/trunk/includes/class-relme-widget.php:73
+#: includes/class-relme-widget.php:76
 msgid "Displays rel=me links"
+msgstr ""
+
+#: includes/class-general-settings.php:64
+msgid ""
+"Using rel=me on a link indicates the link represents the same person or "
+"entity as\n"
+"\t\t\t\tthe current page. On a site with a single author, rel=me links from "
+"their user profile will\n"
+"\t\t\t\tappear on the homepage. On a site with multiple authors rel=me will "
+"appear in the links on the author page only."
+msgstr ""
+
+#: includes/class-general-settings.php:69
+msgid ""
+"The Default Author is the one whose that will be used on the home pages and "
+"archive pages. If the single author setting is not set,\n"
+"\t\t\t\ton all other pages, the post author links will be used. To display "
+"the links, add the\n"
+"\t\t\t\twidget, otherwise they will remain hidden. "
+msgstr ""
+
+#: includes/getting-started.php:55
+msgid ""
+"Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
+"\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
+"repository that is fully\n"
+"\t\t\tmicroformats2 compliant. <a "
+"href=\"http://wordpress.org/themes/independent-publisher/\"\n"
+"\t\t\ttarget=\"_blank\">Independent Publisher</a> has been updated to "
+"include basic microformats2 and\n"
+"\t\t\twebmention display support. In practice, most themes will work "
+"relatively well out of the box, though there can be some minor display "
+"issues."
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -1490,6 +1695,8 @@ msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:1214
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:3041
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:1214
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:3041
 #: build/trunk/includes/class-tgm-plugin-activation.php:1214
 #: build/trunk/includes/class-tgm-plugin-activation.php:3041
 #: includes/class-tgm-plugin-activation.php:1214
@@ -1499,6 +1706,7 @@ msgid "and"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2435
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2435
 #: build/trunk/includes/class-tgm-plugin-activation.php:2435
 #: includes/class-tgm-plugin-activation.php:2435
 #. translators: 1: install status, 2: update status
@@ -1507,6 +1715,7 @@ msgid "%1$s, %2$s"
 msgstr ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2481
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2481
 #: build/trunk/includes/class-tgm-plugin-activation.php:2481
 #: includes/class-tgm-plugin-activation.php:2481
 #. translators: 1: number of plugins.
@@ -1517,6 +1726,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: build/tags/3.0.2/includes/class-tgm-plugin-activation.php:2575
+#: build/tags/3.0.3/includes/class-tgm-plugin-activation.php:2575
 #: build/trunk/includes/class-tgm-plugin-activation.php:2575
 #: includes/class-tgm-plugin-activation.php:2575
 msgctxt "as in: \"version nr unknown\""

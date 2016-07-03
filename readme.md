@@ -4,7 +4,7 @@
 **Tags:** indieweb, webmention, webaction, POSSE, indieauth  
 **Requires at least:** 3.8  
 **Tested up to:** 4.5.3  
-**Stable tag:** 3.0.3  
+**Stable tag:** 3.0.4  
 
 IndieWeb for WordPress!
 
@@ -79,6 +79,11 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.0.4 ###
+
+* Hidden relme links will be active whenever the relme widget is not active
+* Changes in documentation
 
 ### 3.0.3 ###
 * Bug fix re rel=me on multi-author sites
