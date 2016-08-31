@@ -1,16 +1,16 @@
 === IndieWeb ===
 Contributors: pfefferle, dshanske
-Donate link: http://indiewebcamp.com/how-to-sponsor
+Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
-Requires at least: 3.8
-Tested up to: 4.5.3
-Stable tag: 3.0.4
+Requires at least: 4.4
+Tested up to: 4.6
+Stable tag: 3.0.5
 
 IndieWeb for WordPress!
 
 == Description ==
 
-The IndieWeb Plugin for Wordpress helps you establish your IndiewWeb identity by extended the user profile to provide [rel-me](http://indiewebcamp.com/rel-me) and [h-card](http://indiewebcamp.com/h-card) fields.
+The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and [h-card](https://indieweb.org/h-card) fields.
 It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly
 and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below).
 
@@ -25,11 +25,11 @@ Some of these plugins allow you to:
 * allow you to add bookmarklets to easily respond/comment on other sites with one click
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
 * set up a personal URL shortener
-* log into your WordPress site with services like Twitter, GitHub, SMS, or even email using [IndieAuth](http://indiewebcamp.com/indieauth).
+* log into your WordPress site with services like Twitter, GitHub, SMS, or even email using [IndieAuth](https://indieweb.org/indieauth).
 
 = The IndieWeb =
 
-**The [IndieWeb](http://indiewebcamp.com/) is a people-focused alternative to the ‘corporate web’ that allows you to be the hub of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
+**The [IndieWeb](https://indieweb.org/) is a people-focused alternative to the ‘corporate web’ that allows you to be the hub of your own web presence.** It's been written about in [Wired](http://www.wired.com/2013/08/indie-web/), [The Atlantic](http://www.theatlantic.com/technology/archive/2014/08/the-new-editors-of-the-internet/378983/), [Slate](http://www.slate.com/blogs/future_tense/2014/04/25/indiewebcamps_create_tools_for_a_new_internet.html), and [Gigaom](https://gigaom.com/2014/09/03/dont-like-facebook-owning-and-controlling-your-content-use-tools-that-support-the-open-web/) amongst others.
 
 = The IndieWeb, like WordPress, feels that your content is yours =
 
@@ -55,7 +55,7 @@ If you need additional assistance, feel free to reach out to any of the [WordPre
 
 = Why IndieWeb? =
 
-Find more information and details for the motivations for joining the IndieWeb at http://indiewebcamp.com/Why
+Find more information and details for the motivations for joining the IndieWeb at https://indieweb.org/Why
 
 = What about plugin XYZ? =
 
@@ -79,6 +79,10 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.0.5 =
+
+* Textual improvements
 
 = 3.0.4 =
 

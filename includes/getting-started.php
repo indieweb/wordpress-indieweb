@@ -11,7 +11,7 @@
 
 	<h2><?php _e( 'Plugins', 'indieweb' ); ?></h2>
 
-	<p><?php _e( 'For more information on these plugins, visit the <a href="http://indieweb.org/wordpress" target="_blank">WordPress page</a> on the IndieWeb wiki', 'indieweb' ); ?></p>
+	<p><?php _e( 'For more information on these plugins, visit the <a href="https://indieweb.org/wordpress" target="_blank">WordPress page</a> on the IndieWeb wiki', 'indieweb' ); ?></p>
 
 	<ul>
 		<li>
@@ -63,9 +63,9 @@
 
 	<p><?php _e( '<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.', 'indieweb' ); ?></p>
 	<p><?php _e( 'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
-			href="http://indieweb.org/principles" target="_blank">principles</a> and <a
-			href="http://indieweb.org/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
+			href="https://indieweb.org/principles" target="_blank">principles</a> and <a
+			href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'For even more information, please visit the <a href="http://indieweb.org/" target="_blank"><em>IndieWebCamp</em> wiki</a>.', 'indieweb' ); ?></p>
+	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWebp</em> wiki</a>.', 'indieweb' ); ?></p>
 
 </div>
