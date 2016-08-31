@@ -4,13 +4,14 @@
 
 	<h2><?php _e( 'Getting Started', 'indieweb' ); ?></h2>
 
-	<p><?php _e( 'The IndieWeb Plugin can help you get set up to be a more active member of the indieweb. Required plugins make receiving indieweb comments and mentions work; recommended plugins further improve the experience.', 'indieweb' ); ?></p>
+	<p><?php _e( 'The IndieWeb Plugin can help you establish your identity online, as well as
+			installing other plugins to support additional Indieweb features. Required plugins make receiving indieweb comments and mentions work; recommended plugins further improve the experience.', 'indieweb' ); ?></p>
 
 	<p><?php _e( 'Once you have these activated, you can setup <a href="https://www.brid.gy" target="_blank">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience.', 'indieweb' ); ?></p>
 
 	<h2><?php _e( 'Plugins', 'indieweb' ); ?></h2>
 
-	<p><?php _e( 'For more information on these plugins, visit the <a href="http://indiewebcamp.com/wordpress" target="_blank">WordPress page</a> on the IndieWebCamp wiki or click the individual plugin links below.', 'indieweb' ); ?></p>
+	<p><?php _e( 'For more information on these plugins, visit the <a href="http://indieweb.org/wordpress" target="_blank">WordPress page</a> on the IndieWeb wiki', 'indieweb' ); ?></p>
 
 	<ul>
 		<li>
@@ -61,8 +62,10 @@
 	<h2><?php _e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
 
 	<p><?php _e( '<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.', 'indieweb' ); ?></p>
-	<p><?php _e( 'This is the basis of the <strong>Indie Web</strong>. For more, see <a href="http://indiewebcamp.com/principles" target="_blank">principles</a> and <a href="http://indiewebcamp.com/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
+	<p><?php _e( 'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
+			href="http://indieweb.org/principles" target="_blank">principles</a> and <a
+			href="http://indieweb.org/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'For even more information, please visit the <a href="http://indiewebcamp.com/" target="_blank"><em>IndieWebCamp</em> wiki</a>.', 'indieweb' ); ?></p>
+	<p><?php _e( 'For even more information, please visit the <a href="http://indieweb.org/" target="_blank"><em>IndieWebCamp</em> wiki</a>.', 'indieweb' ); ?></p>
 
 </div>

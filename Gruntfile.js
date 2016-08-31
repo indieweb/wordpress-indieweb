@@ -45,6 +45,7 @@ module.exports = function (grunt) {
 				options: {
 					mainFile: 'indieweb.php',
 					domainPath: '/languages',
+					exclude: ['build/.*'],
 					potFilename: 'wordpress-indieweb.pot',
 					type: 'wp-plugin',
 					updateTimestamp: true

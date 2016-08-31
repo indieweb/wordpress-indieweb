@@ -2,10 +2,10 @@
 /*
 Plugin Name: IndieWeb
 Plugin URI: https://github.com/indieweb/wordpress-indieweb
-Description: Interested in connecting your WordPress site to the IndieWeb? Get the right plugins to do so.
+Description: Interested in connecting your WordPress site to the IndieWeb?
 Author: IndieWebCamp WordPress Outreach Club
 Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
-Version: 3.0.4
+Version: 3.0.5
 Text Domain: indieweb
 Domain Path: /languages
 */
@@ -117,21 +117,21 @@ class IndieWeb_Plugin {
 
 			// require the WebMention plugin
 			array(
-				'name'          => __( 'WebMention', 'indieweb' ),
+				'name'          => __( 'Webmention Support', 'indieweb' ),
 				'slug'          => 'webmention',
 				'required'      => true,
 			),
 
 			// require the Semantic Linkbacks plugin
 			array(
-				'name'          => __( 'Semantic Linkbacks', 'indieweb' ),
+				'name'          => __( 'Semantic Linkbacks - More Meaningful Linkbacks', 'indieweb' ),
 				'slug'          => 'semantic-linkbacks',
 				'required'      => true, // If false, the plugin is only 'recommended' instead of required.
 			),
 
 			// recommend the MicroPub server plugin
 			array(
-				'name'          => __( 'MicroPub Server', 'indieweb' ),
+				'name'          => __( 'Publish to Your Site Using Micropub', 'indieweb' ),
 				'slug'          => 'micropub',
 				'required'      => false, // If false, the plugin is only 'recommended' instead of required.
 			),
@@ -154,7 +154,7 @@ class IndieWeb_Plugin {
 
 			// recommend the IndieWeb Press-This plugin
 			array(
-				'name'          => __( 'IndieWeb Press-This', 'indieweb' ),
+				'name'          => __( 'IndieWeb Enhancements to Press-This', 'indieweb' ),
 				'slug'          => 'wordpress-indieweb-press-this-master',
 				'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
 				'required'      => false,
@@ -172,21 +172,22 @@ class IndieWeb_Plugin {
 
 			// recommend the Post Kinds plugin
 			array(
-				'name'          => __( 'Post Kinds', 'indieweb' ),
+				'name'          => __( 'Post Kinds - adds support for responding to and interacting with
+					other sites ', 'indieweb' ),
 				'slug'          => 'indieweb-post-kinds',
 				'required'      => false,
 			),
 
 			// recommend the Syndication Links plugin
 			array(
-				'name'          => __( 'Syndication Links', 'indieweb' ),
+				'name'          => __( 'Syndication Links - link to copies of your posts elsewhere', 'indieweb' ),
 				'slug'          => 'syndication-links',
 				'required'      => false,
 			),
 
 			// recommend the Indieauth plugin
 			array(
-				'name'          => __( 'Indieauth', 'indieweb' ),
+				'name'          => __( 'Log into your site using Indieauth', 'indieweb' ),
 				'slug'          => 'indieauth',
 				'required'      => false,
 			),
@@ -208,7 +209,7 @@ class IndieWeb_Plugin {
 			'has_notices'  => true,                    // Show admin notices or not.
 			'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 			'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-			'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+			'is_automatic' => true,                   // Automatically activate plugins after installation or not.
 			'message'      => '', // Message to output right before the plugins table.
 			'strings'      => array(
 				'page_title'                      => __( 'Install IndieWeb Plugins', 'indieweb' ),
@@ -216,20 +217,23 @@ class IndieWeb_Plugin {
 				'menu_title'                      => __( 'Extensions', 'indieweb' ),
 				'installing'                      => __( 'Installing Plugin: %s', 'indieweb' ), // %s = plugin name.
 				'oops'                            => __( 'Something went wrong with the plugin install.', 'indieweb' ),
-				'notice_can_install_required'     => _n_noop( 'The IndieWeb plugin requires the following plugin: %1$s.', 'The IndieWeb plugin requires the following plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
-				'notice_can_install_recommended'  => _n_noop( 'The IndieWeb plugin recommends the following plugin: %1$s.', 'The IndieWeb plugin recommends the following plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_can_install_required'     => _n_noop( 'The following plugin
+					is required to send and receive webmentions: %1$s.', 'The following plugins are required to send and receive webmentions: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_can_install_recommended'  => _n_noop( 'To do more, add this plugin: %1$s.', 'To do
+					more, install these plugins: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
 				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'indieweb' ), // %1$s = plugin name(s).
 				'notice_can_activate_required'    => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
 				'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
 				'notice_cannot_activate'          => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'indieweb' ), // %1$s = plugin name(s).
-				'notice_ask_to_update'            => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this plugin: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
+				'notice_ask_to_update'            => _n_noop( 'The following plugin should be updated to its
+					latest version to ensure maximum compatibility: %1$s.', 'The following plugins should be updated to their latest version to ensure maximum compatibility: %1$s.', 'indieweb' ), // %1$s = plugin name(s).
 				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'indieweb' ), // %1$s = plugin name(s).
-				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'indieweb' ),
-				'activate_link'                   => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'indieweb' ),
-				'return'                          => __( 'Return to IndieWeb Plugins Installer', 'indieweb' ),
+				'install_link'                    => _n_noop( 'Install plugin', 'Install plugins', 'indieweb' ),
+				'activate_link'                   => _n_noop( 'Activate plugin', 'Activate plugins', 'indieweb' ),
+				'return'                          => __( 'Return to IndieWeb Extensions', 'indieweb' ),
 				'plugin_activated'                => __( 'Plugin activated successfully.', 'indieweb' ),
 				'complete'                        => __( 'All plugins installed and activated successfully. %s', 'indieweb' ), // %s = dashboard link.
-				'nag_type'                        => 'updated',// Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
+				'nag_type'                        => 'update-nag',// Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
 			),
 		); // end config array
 
