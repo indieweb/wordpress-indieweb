@@ -1,5 +1,5 @@
 # IndieWeb #
-**Contributors:** pfefferle, dshanske  
+**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [dshanske](https://profiles.wordpress.org/dshanske)  
 **Donate link:** http://indiewebcamp.com/how-to-sponsor  
 **Tags:** indieweb, webmention, webaction, POSSE, indieauth  
 **Requires at least:** 3.8  
@@ -149,3 +149,4 @@ initial release
 1. Upload the `indieweb`-folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the *Plugins* menu in WordPress
 3. ...and that's it :)
+4. Seriously though, this plugin includes a number of other configurable files as well as services, which need to be set up/configured individually. A good resource for details on setting them up quickly can be found at <a href="https://indieweb.org/Getting_Started_on_WordPress">IndieWeb: Getting Started on WordPress</a>. We also recommend viewing the instruction pages of the individual sub-plugins themselves.
