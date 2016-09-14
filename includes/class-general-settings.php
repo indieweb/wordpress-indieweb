@@ -94,11 +94,11 @@ class IndieWeb_General_Settings {
 		$option = get_option( $args['name'] );
 		$checked = $option;
 
-		echo "<input name='" . $args['name'] . "' type='hidden' value='0' />";
-		echo "<input name='" . $args['name'] . "' type='checkbox' value='1' " . checked( 1, $checked, false ) . ' /> ';
+		echo "<input name='" . esc_html( $args['name'] ) . "' type='hidden' value='0' />";
+		echo "<input name='" . esc_html( $args['name'] ) . "' type='checkbox' value='1' " . checked( 1, $checked, false ) . ' /> ';
 
 		if ( array_key_exists( 'description', $args ) ) {
-			echo '<label for="' . $args['name'] . '">' . $args['description'] . '</label>';
+			echo '<label for="' . esc_html( $args['name'] ) . '">' . esc_html( $args['description'] ) . '</label>';
 		}
 	}
 
@@ -113,7 +113,8 @@ class IndieWeb_General_Settings {
 
 		<select name="iw_default_author">
 		<?php foreach ( $users as $user ) :   ?>
-			<option value="<?php echo $user->ID; ?>" <?php selected( $option, $user->ID ); ?>><?php echo $user->display_name; ?></option>
+			<option value="<?php echo absint( $user->ID ); ?>" <?php selected( $option, $user->ID ); ?>><?php echo
+			esc_html( $user->display_name ); ?></option>
 		<?php endforeach; ?>
 		</select>
 	<?php
