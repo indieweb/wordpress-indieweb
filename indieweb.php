@@ -35,6 +35,7 @@ class IndieWeb_Plugin {
 
 		// Require Rel Me Widget Class
 		require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+
 		add_action( 'wp_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_style' ) );
 
 		// Add General Settings Page

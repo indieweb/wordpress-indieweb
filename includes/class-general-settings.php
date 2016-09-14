@@ -56,7 +56,6 @@ class IndieWeb_General_Settings {
 		);
 
 		register_setting( $section, 'iw_relmehead' );
-
 	}
 
 	public static function identity_options_callback() {

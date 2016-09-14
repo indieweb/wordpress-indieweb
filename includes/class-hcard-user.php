@@ -99,30 +99,30 @@ class HCard_User {
 
 	public static function address_fields() {
 		$address = array(
-				'street_address' => array(
-					'title' => __( 'Street Address', 'indieweb' ),
-					'description' => __( 'Street Number and Name', 'indieweb' ),
-				),
-				'extended_address' => array(
+			'street_address' => array(
+				'title' => __( 'Street Address', 'indieweb' ),
+				'description' => __( 'Street Number and Name', 'indieweb' ),
+			),
+			'extended_address' => array(
 				'title' => __( 'Extended Address', 'indieweb' ),
 				'description' => __( 'Apartment/Suite/Room Name/Number if any', 'indieweb' ),
-				),
-				'locality' => array(
+			),
+			'locality' => array(
 				'title' => __( 'Locality', 'indieweb' ),
 				'description' => __( 'City/State/Village', 'indieweb' ),
-				),
-				'region' => array(
+			),
+			'region' => array(
 				'title' => __( 'Region', 'indieweb' ),
 				'description' => __( 'State/County/Province', 'indieweb' ),
-				),
-				'postal_code' => array(
+			),
+			'postal_code' => array(
 				'title' => __( 'Postal Code', 'indieweb' ),
 				'description' => __( 'Postal Code, such as Zip Code', 'indieweb' ),
-				),
-				'country_name' => array(
+			),
+			'country_name' => array(
 				'title' => __( 'Country Name', 'indieweb' ),
 				'description' => __( 'Country Name', 'indieweb' ),
-				),
+			),
 		);
 		return apply_filters( 'wp_user_address', $address );
 	}
@@ -229,11 +229,13 @@ class HCard_User {
 		return $url;
 	}
 
-	/*
-	Filters incoming URLs.
+	/**
+	 * Filters incoming URLs.
 	 *
 	 * @param array $urls An array of URLs to filter.
+	 *
 	 * @return array A filtered array of unique URLs.
+	 *
 	 * @uses clean_url
 	 */
 	public static function clean_urls( $urls ) {
@@ -311,7 +313,7 @@ class HCard_User {
 		$icon = $icons['default'];
 
 		if ( array_key_exists( $domain, $icons ) ) {
-				$icon = $icons[ $domain ];
+			$icon = $icons[ $domain ];
 		}
 
 		// Substitute another svg sprite file
@@ -354,9 +356,9 @@ class HCard_User {
 		return array_unique( $list );
 	}
 
-		/**
-		 * prints a formatted <ul> list of rel=me to supported silos
-		 */
+	/**
+	 * prints a formatted <ul> list of rel=me to supported silos
+	 */
 	public static function rel_me_list( $author_id = null, $include_rel = false ) {
 		$list = self::get_rel_me( $author_id );
 		if ( ! $list ) {
@@ -397,8 +399,8 @@ class HCard_User {
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
 		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
 		if ( is_front_page() && 1 === $single_author ) {
-			 echo self::relme_head_list( $author_id );
-			 return;
+			echo self::relme_head_list( $author_id );
+			return;
 		}
 		if ( is_author() ) {
 			global $authordata;
@@ -406,6 +408,4 @@ class HCard_User {
 			echo self::relme_head_list( $author_id );
 		}
 	}
-
-
 } // End Class
