@@ -13,6 +13,9 @@ Domain Path: /languages
 // initialize plugin
 add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
 
+defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
+defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
+
 /**
  * IndieWeb Plugin Class
  *
@@ -30,11 +33,15 @@ class IndieWeb_Plugin {
 		// include the TGM_Plugin_Activation class
 		require_once dirname( __FILE__ ) . '/includes/class-tgm-plugin-activation.php';
 
-		// Require H-Card Enhancements to User Profile
-		require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
+		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
+			// Require H-Card Enhancements to User Profile
+			require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
+		}
 
-		// Require Rel Me Widget Class
-		require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+		if ( INDIEWEB_ADD_RELME_SUPPORT ) {
+			// Require Rel Me Widget Class
+			require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+		}
 
 		add_action( 'wp_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_style' ) );
 
