@@ -396,7 +396,7 @@ class HCard_User {
 		global $authordata;
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
 		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
-		if ( is_front_page() && 1 == $single_author ) {
+		if ( is_front_page() && 1 === $single_author ) {
 			 echo self::relme_head_list( $author_id );
 			 return;
 		}
