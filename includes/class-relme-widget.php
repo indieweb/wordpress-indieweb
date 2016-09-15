@@ -32,23 +32,24 @@ class RelMe_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $authordata;
 
-		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
+		$single_author = get_option( 'iw_single_author', is_multi_author() ? '0' : '1' );
 		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
-		$include_rel = false; // is_author() || ( is_front_page() && 1 == $single_author );
-		if ( is_front_page() && 1 === $single_author ) {
+		$include_rel = false;
+		if ( is_front_page()  && '1' === $single_author) {
 			$include_rel = true;
 		}
 		if ( is_author() ) {
 			global $authordata;
 			$author_id = $authordata->ID;
-			if ( 0 === $single_author ) {
+			if ( '0' === $single_author ) {
 				$include_rel = true;
 			}
 		}
-		if ( is_singular() && 0 === $single_author ) {
+		if ( is_singular() && '0' === $single_author ) {
 				global $post;
 				$author_id = $post->post_author;
 		}
+
 		echo hcard_user::rel_me_list( $author_id, $include_rel );
 	}
 
