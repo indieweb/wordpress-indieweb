@@ -73,7 +73,7 @@ class RelMe_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		echo '<p>';
-		_e( 'Displays rel=me links', 'indieweb' );
+		esc_html_e( 'Displays rel=me links', 'indieweb' );
 		echo '</p>';
 	}
 }

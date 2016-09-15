@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.0.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2016-08-31 05:06:03+00:00\n"
+"POT-Creation-Date: 2016-09-15 01:39:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: includes/class-general-settings.php:64
+#: includes/class-general-settings.php:63
 msgid ""
 "Using rel=me on a link indicates the link represents the same person or "
 "entity as\n"
@@ -28,7 +28,7 @@ msgid ""
 "appear in the links on the author page only."
 msgstr ""
 
-#: includes/class-general-settings.php:69
+#: includes/class-general-settings.php:68
 msgid ""
 "The Default Author is the one whose that will be used on the home pages and "
 "archive pages. If the single author setting is not set,\n"
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:337 indieweb.php:218
+#: includes/class-tgm-plugin-activation.php:337 indieweb.php:226
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -222,7 +222,7 @@ msgid "Return to the Dashboard"
 msgstr ""
 
 #: includes/class-tgm-plugin-activation.php:394
-#: includes/class-tgm-plugin-activation.php:3252 indieweb.php:234
+#: includes/class-tgm-plugin-activation.php:3252 indieweb.php:242
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -527,7 +527,7 @@ msgstr ""
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: includes/getting-started.php:5 indieweb.php:94
+#: includes/getting-started.php:5 indieweb.php:102
 msgid "Getting Started"
 msgstr ""
 
@@ -554,8 +554,8 @@ msgstr ""
 #: includes/getting-started.php:14
 msgid ""
 "For more information on these plugins, visit the <a "
-"href=\"http://indieweb.org/wordpress\" target=\"_blank\">WordPress page</a> "
-"on the IndieWeb wiki"
+"href=\"https://indieweb.org/wordpress\" target=\"_blank\">WordPress "
+"page</a> on the IndieWeb wiki"
 msgstr ""
 
 #: includes/getting-started.php:18
@@ -693,73 +693,73 @@ msgstr ""
 #: includes/getting-started.php:65
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
-"\t\t\thref=\"http://indieweb.org/principles\" "
+"\t\t\thref=\"https://indieweb.org/principles\" "
 "target=\"_blank\">principles</a> and <a\n"
-"\t\t\thref=\"http://indieweb.org/why\" target=\"_blank\">why</a>."
+"\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
 #: includes/getting-started.php:69
 msgid ""
 "For even more information, please visit the <a "
-"href=\"http://indieweb.org/\" target=\"_blank\"><em>IndieWebCamp</em> "
+"href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWebp</em> "
 "wiki</a>."
 msgstr ""
 
-#: indieweb.php:120
+#: indieweb.php:128
 msgid "Webmention Support"
 msgstr ""
 
-#: indieweb.php:127
+#: indieweb.php:135
 msgid "Semantic Linkbacks - More Meaningful Linkbacks"
 msgstr ""
 
-#: indieweb.php:134
+#: indieweb.php:142
 msgid "Publish to Your Site Using Micropub"
 msgstr ""
 
-#: indieweb.php:141
+#: indieweb.php:149
 msgid "Hum (URL shortener)"
 msgstr ""
 
-#: indieweb.php:148
+#: indieweb.php:156
 msgid "WebActions"
 msgstr ""
 
-#: indieweb.php:157
+#: indieweb.php:165
 msgid "IndieWeb Enhancements to Press-This"
 msgstr ""
 
-#: indieweb.php:166
+#: indieweb.php:174
 msgid "WebMention support for (threaded) comments"
 msgstr ""
 
-#: indieweb.php:175
+#: indieweb.php:183
 msgid ""
 "Post Kinds - adds support for responding to and interacting with\n"
 "\t\t\t\t\tother sites "
 msgstr ""
 
-#: indieweb.php:183
+#: indieweb.php:191
 msgid "Syndication Links - link to copies of your posts elsewhere"
 msgstr ""
 
-#: indieweb.php:190
+#: indieweb.php:198
 msgid "Log into your site using Indieauth"
 msgstr ""
 
-#: indieweb.php:215 indieweb.php:216
+#: indieweb.php:223 indieweb.php:224
 msgid "Install IndieWeb Plugins"
 msgstr ""
 
-#: indieweb.php:217
+#: indieweb.php:225
 msgid "Extensions"
 msgstr ""
 
-#: indieweb.php:219
+#: indieweb.php:227
 msgid "Something went wrong with the plugin install."
 msgstr ""
 
-#: indieweb.php:220
+#: indieweb.php:228
 msgid ""
 "The following plugin\n"
 "\t\t\t\t\tis required to send and receive webmentions: %1$s."
@@ -767,7 +767,7 @@ msgid_plural "The following plugins are required to send and receive webmentions
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:222
+#: indieweb.php:230
 msgid "To do more, add this plugin: %1$s."
 msgid_plural ""
 "To do\n"
@@ -775,7 +775,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:224
+#: indieweb.php:232
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s "
 "plugin. Contact the administrator of this site for help on getting the "
@@ -787,19 +787,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:225
+#: indieweb.php:233
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:226
+#: indieweb.php:234
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:227
+#: indieweb.php:235
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
 "plugin. Contact the administrator of this site for help on getting the "
@@ -811,7 +811,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:228
+#: indieweb.php:236
 msgid ""
 "The following plugin should be updated to its\n"
 "\t\t\t\t\tlatest version to ensure maximum compatibility: %1$s."
@@ -821,7 +821,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:230
+#: indieweb.php:238
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
 "Contact the administrator of this site for help on getting the plugin "
@@ -833,23 +833,23 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:231
+#: indieweb.php:239
 msgid "Install plugin"
 msgid_plural "Install plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:232
+#: indieweb.php:240
 msgid "Activate plugin"
 msgid_plural "Activate plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: indieweb.php:233
+#: indieweb.php:241
 msgid "Return to IndieWeb Extensions"
 msgstr ""
 
-#: indieweb.php:235
+#: indieweb.php:243
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 

@@ -146,16 +146,16 @@ class HCard_User {
 	}
 
 	public static function extended_user_profile( $user ) {
-		echo '<h3>' . __( 'Address', 'indieweb' ) . '</h3>';
-		echo '<p>' . __( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
+		echo '<h3>' . esc_html__( 'Address', 'indieweb' ) . '</h3>';
+		echo '<p>' . esc_html__( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
 		echo '<table class="form-table">';
 		foreach ( self::address_fields() as $key => $value ) {
 			self::extended_profile_text_field( $user, $key, $value['title'], $value['description'] );
 		}
 		echo '</table>';
 
-		echo '<h3>' . __( 'Additional Profile Information', 'indieweb' ) . '</h3>';
-		echo '<p>' . __( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
+		echo '<h3>' . esc_html__( 'Additional Profile Information', 'indieweb' ) . '</h3>';
+		echo '<p>' . esc_html__( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
 		echo '<table class="form-table">';
 		foreach ( self::extra_fields() as $key => $value ) {
 			self::extended_profile_text_field( $user, $key, $value['title'], $value['description'] );
@@ -167,11 +167,11 @@ class HCard_User {
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
 	?>
 	<tr>
-		<th><label for="<?php echo $key; ?>"><?php echo $title; ?></label></th>
+		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
 		<td>
-			<input type="text" name="<?php echo $key; ?>" id="<?php echo $key; ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
-			<span class="description"><?php echo $description;?></span>
+			<input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php echo esc_html( $description );?></span>
 		</td>
 	</tr>
 	<?php
@@ -180,11 +180,11 @@ class HCard_User {
 	public static function extended_profile_textarea_field( $user, $key, $title, $description ) {
 	?>
 	<tr>
-		<th><label for="<?php echo $key; ?>"><?php echo $title; ?></label></th>
+		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
 		<td>
-			<textarea name="<?php echo $key; ?>" id="<?php echo $key; ?>"><?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?></textarea><br />
-			<span class="description"><?php echo $description;?></span>
+			<textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?></textarea><br />
+			<span class="description"><?php echo esc_html( $description ); ?></span>
 		</td>
 	</tr>
 	<?php
@@ -200,7 +200,7 @@ class HCard_User {
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				if ( ! empty( $_POST[ $key ] ) ) {
-					update_user_meta( $user_id, $key, $_POST[ $key ] );
+					update_user_meta( $user_id, $key, sanitize_key( $_POST[ $key ] ) );
 				} else {
 					delete_user_meta( $user_id, $key );
 				}
@@ -367,7 +367,9 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url u-url" href="' . esc_attr( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' . $silo . '"><span class="relmename">' . $silo . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
+			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
+				u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
+				esc_attr( $silo ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
@@ -386,7 +388,7 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r[ $silo ] = '<link rel="me" href="' . esc_attr( $profile_url ) . '" />';
+			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />';
 		}
 		return join( '', $r );
 	}
