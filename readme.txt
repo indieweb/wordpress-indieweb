@@ -4,7 +4,7 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, webaction, POSSE, indieauth
 Requires at least: 4.4
 Tested up to: 4.6
-Stable tag: 3.0.5
+Stable tag: 3.0.6
 
 IndieWeb for WordPress!
 
@@ -79,6 +79,12 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.0.6 = 
+
+* Fix bug in single author display
+* Add constant INDIEWEB_ADD_HCARD_SUPPORT to disable hcard additions
+* Add constant INDIEWEB_ADD_RELME_SUPPORT to disable rel-me widget
 
 = 3.0.5 =
 
