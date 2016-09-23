@@ -317,7 +317,7 @@ class HCard_User {
 		}
 
 		// Substitute another svg sprite file
-		$sprite = apply_filters( 'indieweb_icon_sprite', plugin_dir_url( __FILE__ ) . 'static/img/social-logos.svg', $domain );
+		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/social-logos.svg', dirname( __FILE__ ) ), $domain );
 
 		return '<svg class="svg-icon svg-' . $icon . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $icon . '"></use><svg>';
 	}

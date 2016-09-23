@@ -77,7 +77,7 @@ class IndieWeb_Plugin {
 	}
 
 	public static function enqueue_style() {
-		wp_enqueue_style( 'indieweb', plugin_dir_url( __FILE__ ) . 'static/css/indieweb.css', array() );
+		wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array() );
 	}
 
 
