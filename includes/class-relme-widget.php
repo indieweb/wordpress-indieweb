@@ -35,7 +35,7 @@ class RelMe_Widget extends WP_Widget {
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? '0' : '1' );
 		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
 		$include_rel = false;
-		if ( is_front_page()  && '1' === $single_author) {
+		if ( is_front_page()  && '1' === $single_author ) {
 			$include_rel = true;
 		}
 		if ( is_author() ) {
