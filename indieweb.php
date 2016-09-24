@@ -1,14 +1,16 @@
 <?php
 /*
-Plugin Name: IndieWeb
-Plugin URI: https://github.com/indieweb/wordpress-indieweb
-Description: Interested in connecting your WordPress site to the IndieWeb?
-Author: IndieWebCamp WordPress Outreach Club
-Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
-Version: 3.0.6
-Text Domain: indieweb
-Domain Path: /languages
-*/
+ * Plugin Name: IndieWeb
+ * Plugin URI: https://github.com/indieweb/wordpress-indieweb
+ * Description: Interested in connecting your WordPress site to the IndieWeb?
+ * Author: IndieWebCamp WordPress Outreach Club
+ * Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
+ * Version: 3.0.6
+ * License: MIT
+ * License URI: http://opensource.org/licenses/MIT
+ * Text Domain: indieweb
+ * Domain Path: /languages
+ */
 
 // initialize plugin
 add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
@@ -75,7 +77,7 @@ class IndieWeb_Plugin {
 	}
 
 	public static function enqueue_style() {
-		wp_enqueue_style( 'indieweb', plugin_dir_url( __FILE__ ) . 'css/indieweb.css', array() );
+		wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array() );
 	}
 
 

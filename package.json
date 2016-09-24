@@ -1,7 +1,6 @@
 {
   "name": "wordpress-indieweb",
-  "version": "1.0.0",
-  "description": "",
+  "description": "IndieWeb for WordPress!",
   "repository": {
     "type": "git",
     "url": "https://github.com/indieweb/wordpress-indieweb.git"
@@ -20,7 +19,7 @@
     "grunt-sass": "~1.2.1",
     "grunt-contrib-copy": "~1.0.0"
   },
-  "license": "GPL",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/indieweb/wordpress-indieweb/issues"
   },

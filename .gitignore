@@ -1,4 +1,6 @@
-
-node_modules/*
-build/*
-sass/.sass-cache/*
+.data
+node_modules
+build
+vendor
+sass/.sass-cache
+npm-debug.log
