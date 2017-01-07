@@ -40,7 +40,7 @@ class HCard_User {
 	 *
 	 * list of popular silos and profile url patterns
 	 * Focusing on those which are supported by indieauth
-	 * http://indiewebcamp.com/indieauth.com
+	 * https://indieweb.org/indieauth.com
 	 */
 	public static function silos() {
 		$silos = array(
