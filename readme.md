@@ -12,7 +12,7 @@ IndieWeb for WordPress!
 
 The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and [h-card](https://indieweb.org/h-card) fields.
 It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly
-and easily join the growing [IndieWeb](http://www.indiewebcamp.com) movement (see below).
+and easily join the growing [IndieWeb](https://indieweb.org) movement (see below).
 
 Some of these plugins allow you to:
 
@@ -39,7 +39,7 @@ When you post something on the web, it should belong to you, not a corporation. 
 
 Your articles and status messages can be syndicated to all services, not just one, allowing you to engage with everyone in your social network/social graph. Even replies and likes on other services can come back to your site so they’re all in one place.
 
-Interested in connecting your WordPress site to the [IndieWeb](https://indiewebcamp.com/)? Let us help you get started.
+Interested in connecting your WordPress site to the [IndieWeb](https://indieweb.org/)? Let us help you get started.
 
 ## Frequently Asked Questions ##
 
@@ -49,9 +49,9 @@ IndieWeb for WordPress includes a plugin installer program. A Getting Started Gu
 
 ### Where can I find help? Can I contribute? ###
 
-A group of web developers (including those knowledgeable about WordPress, among many other web technologies) can be found discussing and working on IndieWeb related technologies in the wiki at [IndieWebCamp.com](http://www.indiewebcamp.com) or in the #IndieWeb [IRC on Freenode](https://indiewebcamp.com/IRC). WordPress specific portions of the IndieWeb camp can be found at [WordPress](https://indiewebcamp.com/wordpress), [Getting Started on WordPress](https://indiewebcamp.com/Getting_Started_on_WordPress), [Examples](https://indiewebcamp.com/WordPress/Examples), and other [plugins](https://indiewebcamp.com/WordPress/Plugins).
+A group of web developers (including those knowledgeable about WordPress, among many other web technologies) can be found discussing and working on IndieWeb related technologies in the wiki at [indieweb.org](https://indieweb.org) or in the #IndieWeb [IRC on Freenode](https://indieweb.org/IRC). WordPress specific portions of the IndieWeb camp can be found at [WordPress](https://indieweb.org/wordpress), [Getting Started on WordPress](https://indieweb.org/Getting_Started_on_WordPress), [Examples](https://indieweb.org/WordPress/Examples), and other [plugins](https://indieweb.org/WordPress/Plugins).
 
-If you need additional assistance, feel free to reach out to any of the [WordPress Outreach Club](https://indiewebcamp.com/WordPress_Outreach_Club) members via the website, our individual websites, or our social media presences -- we're happy to help!
+If you need additional assistance, feel free to reach out to any of the [WordPress Outreach Club](https://indieweb.org/WordPress_Outreach_Club) members via the website, our individual websites, or our social media presences -- we're happy to help!
 
 ### Why IndieWeb? ###
 

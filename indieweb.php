@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/indieweb/wordpress-indieweb
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
- * Author URI: http://indiewebcamp.com/WordPress_Outreach_Club
+ * Author URI: https://indieweb.org/WordPress_Outreach_Club
  * Version: 3.0.6
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
