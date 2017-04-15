@@ -20,8 +20,6 @@
 			<ol>
 				<li><?php _e( '<strong>Webmention</strong> <em>(Required)</em> - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb comments and mentions look better on your site.', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>Webmention for (Threaded) Comments</strong> - Adds support for threaded comments for webmentions.', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>Webactions</strong> - Adds webaction markups to WordPress elements.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.', 'indieweb' ); ?></li>
 			</ol>
 		</li>
@@ -30,6 +28,7 @@
 			<h3><?php esc_html_e( 'Syndicate your content to other sites', 'indieweb' ); ?></h3>
 			<p><?php esc_html_e( 'Linking to the syndicated version of a post allows for bridgy to be able to discover the post as well as for end users to comment on those sites as a way of replying.', 'indieweb' ); ?></p>
 		<ol>
+			<li><?php _e( '<strong>Bridgy Publish</strong> - Adds a user interface for using Bridgy to publish to other sites', 'indieweb' ); ?></li>
 			<li><?php _e( '<strong>Syndication Links</strong> - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports <a href="https://github.com/crowdfavorite/wp-social" target="_blank">Social</a>, partial support for <a href="https://wordpress.org/plugins/social-networks-auto-poster-facebook-twitter-g/" target="_blank">NextScripts: Social Networks Auto-Poster (aka SNAP)</a>.', 'indieweb' ); ?></li>
 	</ol>
 		</li>
@@ -39,7 +38,6 @@
 			<ol>
 				<li><?php _e( '<strong>MicroPub</strong> - A MicroPub Server', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the WordPress Press-This bookmarkets to allow you to respond on your site with one-click.', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>Hum URL Shortener</strong> - A personal URL shortener.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.', 'indieweb' ); ?></li>
 			</ol>
 		</li>

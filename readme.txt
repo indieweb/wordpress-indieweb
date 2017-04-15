@@ -1,9 +1,9 @@
 === IndieWeb ===
 Contributors: pfefferle, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
-Tags: indieweb, webmention, webaction, POSSE, indieauth
+Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.4
-Tested up to: 4.6
+Tested up to: 4.7.3
 Stable tag: 3.0.6
 
 IndieWeb for WordPress!
@@ -19,13 +19,12 @@ Some of these plugins allow you to:
 * send and receive comments, likes, reposts, and other kinds of post responses using your own site
 * allow comments on others' sites to show up as comments on your posts
 * help make IndieWeb comments and mentions look better on your site
-* allow support for threaded comments and webmentions
+* allow support for webmentions
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
 * link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram, Google+ can come back to your original post as comments there
 * allow you to add bookmarklets to easily respond/comment on other sites with one click
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
-* set up a personal URL shortener
-* log into your WordPress site with services like Twitter, GitHub, SMS, or even email using [IndieAuth](https://indieweb.org/indieauth).
+* log into your WordPress site with services like Twitter, GitHub, etc using [IndieAuth](https://indieweb.org/indieauth).
 
 = The IndieWeb =
 
@@ -65,20 +64,24 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 
 * Webmention (Required) - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site.
 * Semantic Linkbacks (Required) - makes IndieWeb comments and mentions look better on your site.
-* Webmention for (Threaded) Comments - Adds support for threaded comments for webmentions.
-* Webactions - Adds webaction markups to WordPress elements.
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for NextScripts: Social Networks Auto-Poster (aka SNAP).
 * MicroPub - A MicroPub Server
 * IndieWeb Press-This - Adds IndieWeb markup to the WordPress Press-This bookmarkets to allow you to respond on your site with one-click.
-* Hum URL Shortener - A personal URL shortener.
 * Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
+* Bridgy Publish - User Interface for the Brid.gy Web Service
 
 One could certainly download, install, and activate some or all of these plugins separately, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them. Note that some of these plugins may only be available on GitHub and are not yet on WordPress.org.
 
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.0.7 =
+* Remove Webmentions for Threaded Comments, hopefully to merge into Webmentions at some future point.
+* Remove Hum URL Shortener in attempt to narrow focus
+* Bridgy Publish plugin to assist people in Publish.
+* Remove Webactions in attempt to narrow focus
 
 = 3.0.6 = 
 
