@@ -23,4 +23,9 @@ matrix:
     - php: 5.6
       env: WP_VERSION=latest WP_MULTISITE=1
 
-script: composer test
+before_script:
+    - composer install
+    - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
+
+script:
+    - vendor/bin/phpunit
