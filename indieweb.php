@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 3.0.6
+ * Version: 3.0.7
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -143,23 +143,7 @@ class IndieWeb_Plugin {
 			array(
 				'name'          => __( 'Publish to Your Site Using Micropub', 'indieweb' ),
 				'slug'          => 'micropub',
-				'required'      => false, // If false, the plugin is only 'recommended' instead of required.
-			),
-
-			// recommend the Hum URL shortener
-			array(
-				'name'          => __( 'Hum (URL shortener)', 'indieweb' ),
-				'slug'          => 'hum',
-				'required'      => false,
-			),
-
-			// recommend the WebActions plugin
-			array(
-				'name'          => __( 'WebActions', 'indieweb' ),
-				'slug'          => 'wordpress-webactions-master',
-				'source'        => 'https://github.com/pfefferle/wordpress-webactions/archive/master.zip',
-				'required'      => false,
-				'external_url'  => 'https://github.com/pfefferle/wordpress-webactions',
+				'required'      => true, // If false, the plugin is only 'recommended' instead of required.
 			),
 
 			// recommend the IndieWeb Press-This plugin
@@ -169,15 +153,6 @@ class IndieWeb_Plugin {
 				'source'        => 'https://github.com/pfefferle/wordpress-indieweb-press-this/archive/master.zip',
 				'required'      => false,
 				'external_url'  => 'https://github.com/pfefferle/wordpress-indieweb-press-this',
-			),
-
-			// recommend the "WebMention for Comments" plugin
-			array(
-				'name'          => __( 'WebMention support for (threaded) comments', 'indieweb' ),
-				'slug'          => 'wordpress-webmention-for-comments-master',
-				'source'        => 'https://github.com/pfefferle/wordpress-webmention-for-comments/archive/master.zip',
-				'required'      => false,
-				'external_url'  => 'https://github.com/pfefferle/wordpress-webmention-for-comments',
 			),
 
 			// recommend the Post Kinds plugin
@@ -199,6 +174,13 @@ class IndieWeb_Plugin {
 			array(
 				'name'          => __( 'Log into your site using Indieauth', 'indieweb' ),
 				'slug'          => 'indieauth',
+				'required'      => false,
+			),
+
+			// recommend the Bridgy Publish plugin
+			array(
+				'name'          => __( 'A user interface for publishing via the Brid.gy Web Service', 'indieweb' ),
+				'slug'          => 'bridgy-publish',
 				'required'      => false,
 			),
 		);

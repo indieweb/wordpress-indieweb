@@ -24,6 +24,8 @@ matrix:
       env: WP_VERSION=latest WP_MULTISITE=1
 
 before_script:
-  - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
+    - composer install
+    - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
 
-script: phpunit
+script:
+    - vendor/bin/phpunit
