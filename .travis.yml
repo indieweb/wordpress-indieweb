@@ -25,5 +25,6 @@ matrix:
 
 before_script:
   - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
+  - composer install
 
 script: phpunit
