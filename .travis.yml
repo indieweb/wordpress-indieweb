@@ -23,4 +23,4 @@ matrix:
     - php: 5.6
       env: WP_VERSION=latest WP_MULTISITE=1
 
-script: composer run-test
+script: composer test
