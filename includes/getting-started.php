@@ -4,8 +4,8 @@
 
 	<h2><?php esc_html_e( 'Getting Started', 'indieweb' ); ?></h2>
 
-	<p><?php esc_html_e( 'The IndieWeb Plugin can help you establish your identity online, as well as
-			installing other plugins to support additional Indieweb features. Required plugins make receiving indieweb comments and mentions work; recommended plugins further improve the experience.', 'indieweb' ); ?></p>
+	<p><?php esc_html_e( 'The IndieWeb Plugin can help you establish your identity online, as well as recommending
+			other plugins to support additional Indieweb features.', 'indieweb' ); ?></p>
 
 	<p><?php _e( 'Once you have these activated, you can setup <a href="https://www.brid.gy" target="_blank">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience.', 'indieweb' ); ?></p>
 
@@ -37,7 +37,6 @@
 			<h3><?php esc_html_e( 'Other', 'indieweb' ); ?></h3>
 			<ol>
 				<li><?php _e( '<strong>MicroPub</strong> - A MicroPub Server', 'indieweb' ); ?></li>
-				<li><?php _e( '<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the WordPress Press-This bookmarkets to allow you to respond on your site with one-click.', 'indieweb' ); ?></li>
 				<li><?php _e( '<strong>Indieauth</strong> - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.', 'indieweb' ); ?></li>
 			</ol>
 		</li>
@@ -66,4 +65,4 @@
 
 	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWebp</em> wiki</a>.', 'indieweb' ); ?></p>
 
-</div>
+</div>				  

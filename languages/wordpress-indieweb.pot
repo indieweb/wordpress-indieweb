@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-05-20 18:22:48+00:00\n"
+"POT-Creation-Date: 2017-05-20 18:41:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,21 +74,21 @@ msgstr ""
 msgid "Default Author ID for this Site"
 msgstr ""
 
-#: includes/class-general-settings.php:80
+#: includes/class-general-settings.php:81
 msgid "Replace Author URL with User Website URL"
 msgstr ""
 
-#: includes/class-general-settings.php:88
+#: includes/class-general-settings.php:89
 msgid "Use User URL for Author"
 msgstr ""
 
-#: includes/class-general-settings.php:94
+#: includes/class-general-settings.php:95
 msgid ""
 "If checked, this will replace the author page URL with the website URL from "
 "your user profile."
 msgstr ""
 
-#: includes/class-general-settings.php:102
+#: includes/class-general-settings.php:103
 msgid ""
 "Using rel=me on a link indicates the link represents the same person or "
 "entity as\n"
@@ -98,7 +98,7 @@ msgid ""
 "appear in the links on the author page only."
 msgstr ""
 
-#: includes/class-general-settings.php:107
+#: includes/class-general-settings.php:108
 msgid ""
 "The Default Author is the one whose that will be used on the home pages and "
 "archive pages. If the single author setting is not set,\n"
@@ -249,10 +249,9 @@ msgstr ""
 
 #: includes/getting-started.php:7
 msgid ""
-"The IndieWeb Plugin can help you establish your identity online, as well as\n"
-"\t\t\tinstalling other plugins to support additional Indieweb features. "
-"Required plugins make receiving indieweb comments and mentions work; "
-"recommended plugins further improve the experience."
+"The IndieWeb Plugin can help you establish your identity online, as well as "
+"recommending\n"
+"\t\t\tother plugins to support additional Indieweb features."
 msgstr ""
 
 #: includes/getting-started.php:10
@@ -342,27 +341,20 @@ msgstr ""
 
 #: includes/getting-started.php:40
 msgid ""
-"<strong>IndieWeb Press-This</strong> - Adds IndieWeb markup to the "
-"WordPress Press-This bookmarkets to allow you to respond on your site with "
-"one-click."
-msgstr ""
-
-#: includes/getting-started.php:41
-msgid ""
 "<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
 "backend via IndieAuth. It uses the URL from the profile page to identify "
 "the blog user."
 msgstr ""
 
-#: includes/getting-started.php:46
+#: includes/getting-started.php:45
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/getting-started.php:48
+#: includes/getting-started.php:47
 msgid "Themes"
 msgstr ""
 
-#: includes/getting-started.php:50
+#: includes/getting-started.php:49
 msgid ""
 "Some WordPress themes are compatible with microformats. The IndieWeb uses "
 "microformats2, the latest version, to mark up sites so that they can be "
@@ -370,7 +362,7 @@ msgid ""
 "the older format if available."
 msgstr ""
 
-#: includes/getting-started.php:52
+#: includes/getting-started.php:51
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
 "the communications IndieWeb sites support. For example, a class of "
@@ -378,7 +370,7 @@ msgid ""
 "relationship."
 msgstr ""
 
-#: includes/getting-started.php:54
+#: includes/getting-started.php:53
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
 "\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -392,17 +384,17 @@ msgid ""
 "issues."
 msgstr ""
 
-#: includes/getting-started.php:60
+#: includes/getting-started.php:59
 msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:62
+#: includes/getting-started.php:61
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
 msgstr ""
 
-#: includes/getting-started.php:63
+#: includes/getting-started.php:62
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
 "\t\t\thref=\"https://indieweb.org/principles\" "
@@ -410,7 +402,7 @@ msgid ""
 "\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:67
+#: includes/getting-started.php:66
 msgid ""
 "For even more information, please visit the <a "
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWebp</em> "
