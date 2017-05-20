@@ -83,6 +83,9 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Remove Webactions in attempt to narrow focus
 * Remove Indieweb Press This as not distributed through wordpress repo
 * Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer 
+* Fix issue where extra user properties were incorrectly sanitized
+* Handle an @ in the twitter username
+* If silo field contains valid URL, pass through instead of adding baseurl
 
 = 3.0.6 = 
 
