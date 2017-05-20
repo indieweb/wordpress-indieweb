@@ -25,12 +25,21 @@ class IndieWeb_General_Settings {
 
 		add_settings_section(
 			$section, // ID used to identify this section and with which to register options
-			'Identity Settings', // Title to be displayed on the administration page
+			__( 'Identity Settings', 'indieweb' ), // Title to be displayed on the administration page
 			array( 'IndieWeb_General_Settings', 'identity_options_callback' ), // Callback used to render the description of the section
 			$page // Page on which to add this section of options
 		);
 
-		register_setting( $section, 'iw_single_author' );
+		register_setting(
+			$section,
+			'iw_single_author',
+			array(
+				'type' => 'boolean',
+				'description' => __( 'Single Author Site', 'indieweb' ),
+				'show_in_rest' => true,
+				'default' => is_multi_author() ? 0 : 1,
+			)
+		);
 
 		add_settings_field(
 			'iw_single_author', // ID used to identify the field throughout the theme
@@ -40,12 +49,21 @@ class IndieWeb_General_Settings {
 			$section, // The name of the section to which this field belongs
 			array( // The array of arguments to pass to the callback. In this case, just a description.
 				'name' => 'iw_single_author',
-				'description' => 'If this website represents a single individual or entity, check this.',
+				'description' => __( 'If this website represents a single individual or entity, check this. This setting cannot be disabled if you only have one user who has made a post.', 'indieweb' ),
 			)
 		);
 
 		// Set Default Author
-		register_setting( $section, 'iw_default_author' );
+		register_setting(
+			$section,
+			'iw_default_author',
+			array(
+				'type' => 'integer',
+				'description' => __( 'Default Author ID for this Site', 'indieweb' ),
+				'show_in_rest' => true,
+				'default' => 1,
+			)
+		);
 
 		add_settings_field(
 			'iw_default_author', // ID used to identify the field throughout the theme
@@ -55,8 +73,30 @@ class IndieWeb_General_Settings {
 			$section // The name of the section to which this field belongs
 		);
 
-		register_setting( $section, 'iw_relmehead' );
+		register_setting(
+			$section,
+			'iw_author_url',
+			array(
+				'type' => 'boolean',
+				'description' => __( 'Replace Author URL with User Website URL', 'indieweb' ),
+				'show_in_rest' => true,
+				'default' => 1,
+			)
+		);
+
+		add_settings_field(
+			'iw_author_url', // ID used to identify the field throughout the theme
+			__( 'Use User Website URL for Author', 'indieweb' ), // The label to the left of the option interface element
+			array( 'IndieWeb_General_Settings', 'checkbox_callback' ),   // The name of the function responsible for rendering the option interface
+			$page, // The page on which this option will be displayed
+			$section, // The name of the section to which this field belongs
+			array( // The array of arguments to pass to the callback. In this case, just a description.
+				'name' => 'iw_author_url',
+				'description' => __( 'If checked, this will replace the author page URL with the website URL from your user profile.', 'indieweb' ),
+			)
+		);
 	}
+
 
 	public static function identity_options_callback() {
 		echo '<p>';
@@ -72,9 +112,9 @@ class IndieWeb_General_Settings {
 	}
 
 	public static function general_options_page() {
-		// If this is not a multi-author site, always set single_author to checked.
+		// If this is not a multi-author site, remove the single author setting
 		if ( ! is_multi_author() ) {
-			update_option( 'iw_single_author', 1 );
+			delete_option( 'iw_single_author' );
 		}
 
 		echo '<div class="wrap">';

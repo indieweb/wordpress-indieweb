@@ -8,7 +8,9 @@ add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 class HCard_User {
 
 	public static function init() {
-		add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+		if ( '1' === get_option( 'iw_author_url' ) ) {
+			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
 		add_action( 'show_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
@@ -200,7 +202,7 @@ class HCard_User {
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				if ( ! empty( $_POST[ $key ] ) ) {
-					update_user_meta( $user_id, $key, sanitize_key( $_POST[ $key ] ) );
+					update_user_meta( $user_id, $key, sanitize_text_field( $_POST[ $key ] ) );
 				} else {
 					delete_user_meta( $user_id, $key );
 				}
@@ -340,7 +342,18 @@ class HCard_User {
 			$socialmeta = get_the_author_meta( $silo, $author_id );
 
 			if ( ! empty( $socialmeta ) ) {
-				$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
+				// If it is not a URL
+				if ( ! filter_var( $socialmeta, FILTER_VALIDATE_URL ) ) {
+					// If the username has the @ symbol strip it
+					if ( ( 'twitter' === $silo ) && ( preg_match( '/^@?(\w+)$/i', $socialmeta, $matches ) ) ) {
+						$socialmeta = trim( $socialmeta, '@' );
+					}
+					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
+				} 
+				// Pass the URL itself
+				else {
+					$list[ $silo ] = self::clean_url( $socialmeta );
+				}
 			}
 		}
 
@@ -388,7 +401,7 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />';
+			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />' . PHP_EOL;
 		}
 		return join( '', $r );
 	}
@@ -398,9 +411,9 @@ class HCard_User {
 	 */
 	public static function relme_head() {
 		global $authordata;
-		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
-		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
-		if ( is_front_page() && 1 === $single_author ) {
+		$single_author = get_option( 'iw_single_author' );
+		$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		if ( is_front_page() && '1' === $single_author ) {
 			echo self::relme_head_list( $author_id );
 			return;
 		}

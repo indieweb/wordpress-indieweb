@@ -2,9 +2,9 @@
 Contributors: pfefferle, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
-Requires at least: 4.4
-Tested up to: 4.7.3
-Stable tag: 3.0.6
+Requires at least: 4.7
+Tested up to: 4.7.5
+Stable tag: 3.0.7
 
 IndieWeb for WordPress!
 
@@ -67,7 +67,6 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for NextScripts: Social Networks Auto-Poster (aka SNAP).
 * MicroPub - A MicroPub Server
-* IndieWeb Press-This - Adds IndieWeb markup to the WordPress Press-This bookmarkets to allow you to respond on your site with one-click.
 * Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
 * Bridgy Publish - User Interface for the Brid.gy Web Service
 
@@ -82,6 +81,14 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Remove Hum URL Shortener in attempt to narrow focus
 * Bridgy Publish plugin to assist people in Publish.
 * Remove Webactions in attempt to narrow focus
+* Remove Indieweb Press This as not distributed through wordpress repo
+* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer 
+* Fix issue where extra user properties were incorrectly sanitized
+* Handle an @ in the twitter username
+* If silo field contains valid URL, pass through instead of adding baseurl
+* Add setting to override author page URL with user website URL
+* Support enhanced registration of settings introduced in 4.7
+* Internationalize additional strings
 
 = 3.0.6 = 
 

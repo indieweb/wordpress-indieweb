@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     wp_readme_to_markdown: {
       target: {
         files: {
-          'README.md': 'readme.txt'
+          'readme.md': 'readme.txt'
         }
       }
     },
