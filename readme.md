@@ -2,7 +2,7 @@
 **Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [dshanske](https://profiles.wordpress.org/dshanske)  
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
-**Requires at least:** 4.4  
+**Requires at least:** 4.7  
 **Tested up to:** 4.7.5  
 **Stable tag:** 3.0.7  
 
@@ -86,6 +86,9 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Fix issue where extra user properties were incorrectly sanitized
 * Handle an @ in the twitter username
 * If silo field contains valid URL, pass through instead of adding baseurl
+* Add setting to override author page URL with user website URL
+* Support enhanced registration of settings introduced in 4.7
+* Internationalize additional strings
 
 ### 3.0.6 ###
 

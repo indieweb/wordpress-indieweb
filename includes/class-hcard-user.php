@@ -8,7 +8,9 @@ add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 class HCard_User {
 
 	public static function init() {
-		add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+		if ( 1 === get_option( 'iw_author_url' ) ) {
+			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
 		add_action( 'show_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
