@@ -49,7 +49,7 @@ class IndieWeb_General_Settings {
 			$section, // The name of the section to which this field belongs
 			array( // The array of arguments to pass to the callback. In this case, just a description.
 				'name' => 'iw_single_author',
-				'description' => __( 'If this website represents a single individual or entity, check this.', 'indieweb' ),
+				'description' => __( 'If this website represents a single individual or entity, check this. This setting cannot be disabled if you only have one user who has made a post.', 'indieweb' ),
 			)
 		);
 
@@ -86,7 +86,7 @@ class IndieWeb_General_Settings {
 
 		add_settings_field(
 			'iw_author_url', // ID used to identify the field throughout the theme
-			__( 'Use User URL for Author', 'indieweb' ), // The label to the left of the option interface element
+			__( 'Use User Website URL for Author', 'indieweb' ), // The label to the left of the option interface element
 			array( 'IndieWeb_General_Settings', 'checkbox_callback' ),   // The name of the function responsible for rendering the option interface
 			$page, // The page on which this option will be displayed
 			$section, // The name of the section to which this field belongs
