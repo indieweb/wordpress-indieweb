@@ -4,7 +4,7 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Tested up to:** 4.7.5  
-**Stable tag:** 3.0.7  
+**Stable tag:** 3.1.0  
 
 IndieWeb for WordPress!
 
@@ -76,7 +76,7 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
-### 3.0.7 ###
+### 3.1.0 ###
 * Remove Webmentions for Threaded Comments, hopefully to merge into Webmentions at some future point.
 * Remove Hum URL Shortener in attempt to narrow focus
 * Bridgy Publish plugin to assist people in Publish.
