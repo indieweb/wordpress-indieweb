@@ -200,7 +200,7 @@ class HCard_User {
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				if ( ! empty( $_POST[ $key ] ) ) {
-					update_user_meta( $user_id, $key, sanitize_key( $_POST[ $key ] ) );
+					update_user_meta( $user_id, $key, sanitize_text_field( $_POST[ $key ] ) );
 				} else {
 					delete_user_meta( $user_id, $key );
 				}
@@ -340,7 +340,17 @@ class HCard_User {
 			$socialmeta = get_the_author_meta( $silo, $author_id );
 
 			if ( ! empty( $socialmeta ) ) {
-				$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
+				// If it is not a URL
+				if ( ! filter_var( $socialmeta, FILTER_VALIDATE_URL ) ) {
+					// If the username has the @ symbol strip it
+					if ( ( 'twitter' === $silo ) && ( preg_match( '/^@?(\w+)$/i', $socialmeta, $matches ) ) ) {
+						$socialmeta = trim( $socialmeta, '@' );
+					}
+					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
+				} // Pass the URL itself
+				else {
+					$list[ $silo ] = self::clean_url( $socialmeta );
+				}
 			}
 		}
 
