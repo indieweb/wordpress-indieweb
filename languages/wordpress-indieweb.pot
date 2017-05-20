@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.0.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-04-15 04:06:04+00:00\n"
+"POT-Creation-Date: 2017-05-20 08:15:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,6 +12,46 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: includes/class-connekt-plugin-installer.php:52
+#: includes/class-connekt-plugin-installer.php:365
+msgid "Install Now"
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:87
+#: includes/class-connekt-plugin-installer.php:367
+msgid "Activated"
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:91
+#: includes/class-connekt-plugin-installer.php:366
+msgid "Activate"
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:129
+msgid "By"
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:142
+msgid "More Details"
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:164
+msgid "Sorry, you are not allowed to install plugins on this site."
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:171
+#: includes/class-connekt-plugin-installer.php:242
+msgid "Error - unable to verify nonce, please try again."
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:235
+msgid "Sorry, you are not allowed to activate plugins on this site."
+msgstr ""
+
+#: includes/class-connekt-plugin-installer.php:364
+msgid "Are you sure you want to install this plugin?"
+msgstr ""
 
 #: includes/class-general-settings.php:13
 #: includes/class-general-settings.php:14
@@ -169,365 +209,11 @@ msgstr ""
 msgid "Displays rel=me links"
 msgstr ""
 
-#: includes/class-tgm-plugin-activation.php:334
-msgid "Install Required Plugins"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:335 includes/getting-started.php:46
-msgid "Install Plugins"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:337 indieweb.php:210
-#. translators: %s: plugin name.
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:339
-#. translators: %s: plugin name.
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:340
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:377
-#. translators: 1: plugin name(s).
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:382
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:387
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:392
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:393
-#: includes/class-tgm-plugin-activation.php:920
-#: includes/class-tgm-plugin-activation.php:2626
-#: includes/class-tgm-plugin-activation.php:3673
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:394
-#: includes/class-tgm-plugin-activation.php:3252 indieweb.php:226
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:395
-#: includes/class-tgm-plugin-activation.php:3045
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:397
-#. translators: 1: plugin name.
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:399
-#. translators: 1: plugin name.
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:401
-#. translators: 1: dashboard link.
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:402
-msgid "Dismiss this notice"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:403
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:404
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:607
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:608
-msgid "Update Required"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:725
-msgid "Set the parent_slug config variable instead."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:1027
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:1027
-#: includes/class-tgm-plugin-activation.php:1030
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:1030
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2075
-#. translators: %s: version number
-msgid "TGMPA v%s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2366
-msgid "Required"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2369
-msgid "Recommended"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2385
-msgid "WordPress Repository"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2388
-msgid "External Source"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2391
-msgid "Pre-Packaged"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2408
-msgid "Not Installed"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2412
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2414
-msgid "Active"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2420
-msgid "Required Update not Available"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2423
-msgid "Requires Update"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2426
-msgid "Update recommended"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2485
-#. translators: 1: number of plugins.
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:2489
-#. translators: 1: number of plugins.
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:2493
-#. translators: 1: number of plugins.
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:2583
-msgid "Installed version:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2591
-msgid "Minimum required version:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2603
-msgid "Available version:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2626
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2640
-msgid "Plugin"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2641
-msgid "Source"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2642
-msgid "Type"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2646
-msgid "Version"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2647
-msgid "Status"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2696
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Install %2$s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2701
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Update %2$s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2707
-#. translators: %2$s: plugin name in screen reader markup
-msgid "Activate %2$s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2777
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2810
-msgid "Install"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2816
-msgid "Update"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2819
-msgid "Activate"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2850
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2852
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2893
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2895
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3001
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3027
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3251
-msgid "Plugin activation failed."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3591
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3594
-#. translators: 1: plugin name, 2: error message.
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3596
-#. translators: 1: plugin name.
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3600
-msgid ""
-"The installation and activation process is starting. This process may take "
-"a while on some hosts, so please be patient."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3602
-#. translators: 1: plugin name.
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3602
-#: includes/class-tgm-plugin-activation.php:3610
-msgid "Show Details"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3602
-#: includes/class-tgm-plugin-activation.php:3610
-msgid "Hide Details"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3603
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3605
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3608
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3610
-#. translators: 1: plugin name.
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3611
-msgid "All installations have been completed."
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:3613
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #: includes/getting-started.php:3
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: includes/getting-started.php:5 indieweb.php:104
+#: includes/getting-started.php:5 indieweb.php:109
 msgid "Getting Started"
 msgstr ""
 
@@ -638,6 +324,10 @@ msgid ""
 "the blog user."
 msgstr ""
 
+#: includes/getting-started.php:46
+msgid "Install Plugins"
+msgstr ""
+
 #: includes/getting-started.php:48
 msgid "Themes"
 msgstr ""
@@ -697,144 +387,18 @@ msgid ""
 "wiki</a>."
 msgstr ""
 
-#: indieweb.php:130
-msgid "Webmention Support"
-msgstr ""
-
-#: indieweb.php:137
-msgid "Semantic Linkbacks - More Meaningful Linkbacks"
-msgstr ""
-
-#: indieweb.php:144
-msgid "Publish to Your Site Using Micropub"
-msgstr ""
-
-#: indieweb.php:151
-msgid "IndieWeb Enhancements to Press-This"
-msgstr ""
-
-#: indieweb.php:160
-msgid ""
-"Post Kinds - adds support for responding to and interacting with\n"
-"\t\t\t\t\tother sites "
-msgstr ""
-
-#: indieweb.php:168
-msgid "Syndication Links - link to copies of your posts elsewhere"
-msgstr ""
-
-#: indieweb.php:175
-msgid "Log into your site using Indieauth"
-msgstr ""
-
-#: indieweb.php:182
-msgid "A user interface for publishing via the Brid.gy Web Service"
-msgstr ""
-
-#: indieweb.php:207 indieweb.php:208
-msgid "Install IndieWeb Plugins"
-msgstr ""
-
-#: indieweb.php:209
+#: indieweb.php:95 indieweb.php:96
 msgid "Extensions"
 msgstr ""
 
-#: indieweb.php:211
-msgid "Something went wrong with the plugin install."
+#: indieweb.php:121
+msgid "IndieWeb Plugin Installer"
 msgstr ""
 
-#: indieweb.php:212
+#: indieweb.php:122
 msgid ""
-"The following plugin\n"
-"\t\t\t\t\tis required to send and receive webmentions: %1$s."
-msgid_plural "The following plugins are required to send and receive webmentions: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:214
-msgid "To do more, add this plugin: %1$s."
-msgid_plural ""
-"To do\n"
-"\t\t\t\t\tmore, install these plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:216
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:217
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:218
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:219
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:220
-msgid ""
-"The following plugin should be updated to its\n"
-"\t\t\t\t\tlatest version to ensure maximum compatibility: %1$s."
-msgid_plural ""
-"The following plugins should be updated to their latest version to ensure "
-"maximum compatibility: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:222
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:223
-msgid "Install plugin"
-msgid_plural "Install plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:224
-msgid "Activate plugin"
-msgid_plural "Activate plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: indieweb.php:225
-msgid "Return to IndieWeb Extensions"
-msgstr ""
-
-#: indieweb.php:227
-msgid "All plugins installed and activated successfully. %s"
+"The below plugins are recommended to enable additional IndieWeb "
+"functionality."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -855,29 +419,4 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://indieweb.org/WordPress_Outreach_Club"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:1214
-#: includes/class-tgm-plugin-activation.php:3041
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2435
-#. translators: 1: install status, 2: update status
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: includes/class-tgm-plugin-activation.php:2481
-#. translators: 1: number of plugins.
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/class-tgm-plugin-activation.php:2575
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
 msgstr ""
