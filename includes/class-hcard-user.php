@@ -8,7 +8,7 @@ add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 class HCard_User {
 
 	public static function init() {
-		if ( 1 === get_option( 'iw_author_url' ) ) {
+		if ( '1' === get_option( 'iw_author_url' ) ) {
 			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
 		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
@@ -400,7 +400,7 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name' , $author_id );
 		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />';
+			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />' . PHP_EOL;
 		}
 		return join( '', $r );
 	}
@@ -410,9 +410,9 @@ class HCard_User {
 	 */
 	public static function relme_head() {
 		global $authordata;
-		$single_author = get_option( 'iw_single_author', is_multi_author() ? 0 : 1 );
-		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
-		if ( is_front_page() && 1 === $single_author ) {
+		$single_author = get_option( 'iw_single_author' );
+		$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		if ( is_front_page() && '1' === $single_author ) {
 			echo self::relme_head_list( $author_id );
 			return;
 		}

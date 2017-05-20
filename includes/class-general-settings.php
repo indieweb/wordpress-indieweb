@@ -37,7 +37,7 @@ class IndieWeb_General_Settings {
 				'type' => 'boolean',
 				'description' => __( 'Single Author Site', 'indieweb' ),
 				'show_in_rest' => true,
-				'default' => is_multi_author() ? 1 : 0,
+				'default' => is_multi_author() ? 0 : 1,
 			)
 		);
 
@@ -61,6 +61,7 @@ class IndieWeb_General_Settings {
 				'type' => 'integer',
 				'description' => __( 'Default Author ID for this Site', 'indieweb' ),
 				'show_in_rest' => true,
+				'default' => 1
 			)
 		);
 
@@ -111,9 +112,9 @@ class IndieWeb_General_Settings {
 	}
 
 	public static function general_options_page() {
-		// If this is not a multi-author site, always set single_author to checked.
+		// If this is not a multi-author site, remove the single author setting
 		if ( ! is_multi_author() ) {
-			update_option( 'iw_single_author', 1 );
+			delete_option( 'iw_single_author' );
 		}
 
 		echo '<div class="wrap">';
