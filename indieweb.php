@@ -17,7 +17,7 @@ add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
 
 defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
 defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
-define('CNKT_INSTALLER_PATH', plugins_url('/', __FILE__));
+define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
 
 /**
  * IndieWeb Plugin Class
@@ -118,9 +118,9 @@ class IndieWeb_Plugin {
 	}
 
 	public static function plugin_installer() {
-		echo '<h1>' . __( 'IndieWeb Plugin Installer', 'indieweb' )  . '</h1>';
+		echo '<h1>' . __( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
 		echo '<p>' . __( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
-		if( class_exists( 'Connekt_Plugin_Installer' ) ) {
+		if ( class_exists( 'Connekt_Plugin_Installer' ) ) {
 			Connekt_Plugin_Installer::init( self::register_plugins() );
 		}
 	}
@@ -148,11 +148,11 @@ class IndieWeb_Plugin {
 				'slug' => 'syndication-links',
 			),
 			array(
-				'slug' => 'bridgy-publish'
+				'slug' => 'bridgy-publish',
 			),
 			array( 
-				'slug' => 'indieauth'
-			)
+				'slug' => 'indieauth',
+			),
 		);
 		return $plugin_array;
 	}

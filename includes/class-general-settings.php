@@ -61,7 +61,7 @@ class IndieWeb_General_Settings {
 				'type' => 'integer',
 				'description' => __( 'Default Author ID for this Site', 'indieweb' ),
 				'show_in_rest' => true,
-				'default' => 1
+				'default' => 1,
 			)
 		);
 

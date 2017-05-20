@@ -349,7 +349,8 @@ class HCard_User {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-				} // Pass the URL itself
+				} 
+				// Pass the URL itself
 				else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}

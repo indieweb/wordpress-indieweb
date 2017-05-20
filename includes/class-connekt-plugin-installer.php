@@ -41,7 +41,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		*
 		* @since 1.0
 		*/
-		public static function init($plugins) {
+		public static function init( $plugins ) {
 	?>
 
 			<div class="cnkt-plugin-installer">
@@ -119,7 +119,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		*
 		* @since 1.0
 		*/
-		public static function render_template($plugin, $api, $button_text, $button_classes) {
+		public static function render_template( $plugin, $api, $button_text, $button_classes ) {
 			if ( isset( $api->icons['1x'] ) ) {
 				  $icon = $api->icons['1x'];
 			} else {
@@ -140,7 +140,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 				  <a class="<?php echo $button_classes; ?>"
 				  	data-slug="<?php echo $api->slug; ?>"
 								data-name="<?php echo $api->name; ?>"
-									href="<?php echo get_admin_url(); ?>/update.php?action=install-plugin&amp;plugin=<?php echo $api->slug; ?>&amp;_wpnonce=<?php echo wp_create_nonce( 'install-plugin_'. $api->slug ) ?>">
+									href="<?php echo get_admin_url(); ?>/update.php?action=install-plugin&amp;plugin=<?php echo $api->slug; ?>&amp;_wpnonce=<?php echo wp_create_nonce( 'install-plugin_' . $api->slug ) ?>">
 							<?php echo $button_text; ?>
 				  </a>
 			   </li>
@@ -212,10 +212,10 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 			if ( $api->name ) {
 				$status = 'success';
-				$msg = $api->name .' successfully installed.';
+				$msg = $api->name . ' successfully installed.';
 			} else {
 				$status = 'failed';
-				$msg = 'There was an error installing '. $api->name .'.';
+				$msg = 'There was an error installing ' . $api->name . '.';
 			}
 
 			$json = array(
@@ -282,11 +282,11 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 				$status = 'success';
 				if ( $main_plugin_file ) {
 					activate_plugin( $main_plugin_file );
-					$msg = $api->name .' successfully activated.';
+					$msg = $api->name . ' successfully activated.';
 				}
 			} else {
 				$status = 'failed';
-				$msg = 'There was an error activating '. $api->name .'.';
+				$msg = 'There was an error activating ' . $api->name .'.';
 			}
 
 			$json = array(
@@ -364,7 +364,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		* @since 1.0
 		*/
 		public function enqueue_scripts() {
-			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH. 'static/js/installer.js', array( 'jquery' ) );
+			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ) );
 			wp_localize_script( 'plugin-installer', 'cnkt_installer_localize', array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'admin_nonce' => wp_create_nonce( 'cnkt_installer_nonce' ),
@@ -374,7 +374,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 				'installed_btn' => __( 'Activated', 'framework' ),
 			));
 
-			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH. 'static/css/installer.css' );
+			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css' );
 		}
 
 	}
@@ -383,4 +383,4 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 	// initialize
 	$connekt_plugin_installer = new Connekt_Plugin_Installer();
 	$connekt_plugin_installer->start();
-}
+} // End if( class_exists )
