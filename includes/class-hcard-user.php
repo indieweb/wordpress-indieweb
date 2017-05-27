@@ -329,7 +329,7 @@ class HCard_User {
 	 */
 	public static function get_rel_me( $author_id = null ) {
 		if ( empty( $author_id ) ) {
-			$author_id = get_the_author_id();
+			$author_id = get_the_author_meta('ID');
 		}
 
 		if ( empty( $author_id ) || 0 === $author_id ) {
