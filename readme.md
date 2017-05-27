@@ -4,7 +4,7 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Tested up to:** 4.7.5  
-**Stable tag:** 3.1.0  
+**Stable tag:** 3.1.1  
 
 IndieWeb for WordPress!
 
@@ -75,6 +75,10 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.1.1 ###
+* Disable single author checkbox if not multi-author site
+* Remove `get_the_author_id` as deprecated since 2.8
 
 ### 3.1.0 ###
 * Remove Webmentions for Threaded Comments, hopefully to merge into Webmentions at some future point.

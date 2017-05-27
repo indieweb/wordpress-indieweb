@@ -49,7 +49,8 @@ class IndieWeb_General_Settings {
 			$section, // The name of the section to which this field belongs
 			array( // The array of arguments to pass to the callback. In this case, just a description.
 				'name' => 'iw_single_author',
-				'description' => __( 'If this website represents a single individual or entity, check this. This setting cannot be disabled if you only have one user who has made a post.', 'indieweb' ),
+				'description' => __( 'If this website represents a single individual or entity, check this. This setting is disabled if you only have one user who has made a post.', 'indieweb' ),
+				'disabled' => is_multi_author(),
 			)
 		);
 
@@ -131,10 +132,12 @@ class IndieWeb_General_Settings {
 
 	public static function checkbox_callback( array $args ) {
 		$option = get_option( $args['name'] );
+		$disabled =  isset( $args['disabled'] ) ? $args['disabled'] : false;
+		
 		$checked = $option;
 
 		echo "<input name='" . esc_html( $args['name'] ) . "' type='hidden' value='0' />";
-		echo "<input name='" . esc_html( $args['name'] ) . "' type='checkbox' value='1' " . checked( 1, $checked, false ) . ' /> ';
+		echo "<input name='" . esc_html( $args['name'] ) . "' type='checkbox' value='1' " . checked( 1, $checked, false ) . ( $disabled ? ' ' : ' disabled ' ) . '/> ';
 
 		if ( array_key_exists( 'description', $args ) ) {
 			echo '<label for="' . esc_html( $args['name'] ) . '">' . esc_html( $args['description'] ) . '</label>';
