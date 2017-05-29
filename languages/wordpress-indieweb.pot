@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.0.7\n"
+"Project-Id-Version: IndieWeb 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-05-20 20:40:10+00:00\n"
+"POT-Creation-Date: 2017-05-27 17:05:12+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -69,28 +69,28 @@ msgstr ""
 #: includes/class-general-settings.php:52
 msgid ""
 "If this website represents a single individual or entity, check this. This "
-"setting cannot be disabled if you only have one user who has made a post."
+"setting is disabled if you only have one user who has made a post."
 msgstr ""
 
-#: includes/class-general-settings.php:62
+#: includes/class-general-settings.php:63
 msgid "Default Author ID for this Site"
 msgstr ""
 
-#: includes/class-general-settings.php:81
+#: includes/class-general-settings.php:82
 msgid "Replace Author URL with User Website URL"
 msgstr ""
 
-#: includes/class-general-settings.php:89
+#: includes/class-general-settings.php:90
 msgid "Use User Website URL for Author"
 msgstr ""
 
-#: includes/class-general-settings.php:95
+#: includes/class-general-settings.php:96
 msgid ""
 "If checked, this will replace the author page URL with the website URL from "
 "your user profile."
 msgstr ""
 
-#: includes/class-general-settings.php:103
+#: includes/class-general-settings.php:104
 msgid ""
 "Using rel=me on a link indicates the link represents the same person or "
 "entity as\n"
@@ -100,7 +100,7 @@ msgid ""
 "appear in the links on the author page only."
 msgstr ""
 
-#: includes/class-general-settings.php:108
+#: includes/class-general-settings.php:109
 msgid ""
 "The Default Author is the one whose that will be used on the home pages and "
 "archive pages. If the single author setting is not set,\n"

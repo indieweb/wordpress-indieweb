@@ -8,7 +8,7 @@ add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 class HCard_User {
 
 	public static function init() {
-		if ( '1' === get_option( 'iw_author_url' ) ) {
+		if ( 1 == get_option( 'iw_author_url' ) ) {
 			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
 		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
@@ -329,7 +329,7 @@ class HCard_User {
 	 */
 	public static function get_rel_me( $author_id = null ) {
 		if ( empty( $author_id ) ) {
-			$author_id = get_the_author_id();
+			$author_id = get_the_author_meta( 'ID' );
 		}
 
 		if ( empty( $author_id ) || 0 === $author_id ) {
@@ -349,8 +349,7 @@ class HCard_User {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-				} 
-				// Pass the URL itself
+				} // Pass the URL itself
 				else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}
@@ -413,7 +412,7 @@ class HCard_User {
 		global $authordata;
 		$single_author = get_option( 'iw_single_author' );
 		$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
-		if ( is_front_page() && '1' === $single_author ) {
+		if ( is_front_page() && 1 == $single_author ) {
 			echo self::relme_head_list( $author_id );
 			return;
 		}
