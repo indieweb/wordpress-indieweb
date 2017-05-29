@@ -329,7 +329,7 @@ class HCard_User {
 	 */
 	public static function get_rel_me( $author_id = null ) {
 		if ( empty( $author_id ) ) {
-			$author_id = get_the_author_meta('ID');
+			$author_id = get_the_author_meta( 'ID' );
 		}
 
 		if ( empty( $author_id ) || 0 === $author_id ) {
@@ -349,8 +349,7 @@ class HCard_User {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-				} 
-				// Pass the URL itself
+				} // Pass the URL itself
 				else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}

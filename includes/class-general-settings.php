@@ -132,8 +132,8 @@ class IndieWeb_General_Settings {
 
 	public static function checkbox_callback( array $args ) {
 		$option = get_option( $args['name'] );
-		$disabled =  isset( $args['disabled'] ) ? $args['disabled'] : false;
-		
+		$disabled = isset( $args['disabled'] ) ? $args['disabled'] : false;
+
 		$checked = $option;
 
 		echo "<input name='" . esc_html( $args['name'] ) . "' type='hidden' value='0' />";
