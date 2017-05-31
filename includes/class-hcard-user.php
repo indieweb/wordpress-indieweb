@@ -410,8 +410,31 @@ class HCard_User {
 	 */
 	public static function relme_head() {
 		global $authordata;
-		$single_author = get_option( 'iw_single_author', 1 );
-		$author_id = get_option( 'iw_default_author', 1 ); // Set the author ID to default
+		$section = 'iw_identity_settings';
+		register_setting(
+			$section,
+			'iw_single_author',
+			array(
+				'type' => 'boolean',
+				'description' => __( 'Single Author Site', 'indieweb' ),
+				'show_in_rest' => true,
+				'default' => is_multi_author() ? 0 : 1,
+			)
+		);
+		$single_author = get_option( 'iw_single_author');
+
+		register_setting(
+			$section,
+			'iw_default_author',
+			array(
+				'type' => 'integer',
+				'description' => __( 'Default Author ID for this Site', 'indieweb' ),
+				'show_in_rest' => true,
+				'default' => 1,
+			)
+		);
+		$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		
 		if ( is_front_page() && 1 == $single_author ) {
 			echo self::relme_head_list( $author_id );
 			return;
