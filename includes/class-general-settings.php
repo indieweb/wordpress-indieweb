@@ -1,6 +1,7 @@
 <?php
 
 add_action( 'admin_menu', array( 'IndieWeb_General_Settings', 'admin_menu' ) );
+add_action( 'init', array( 'IndieWeb_General_Settings', 'register_settings' ) );
 add_action( 'admin_menu', array( 'IndieWeb_General_Settings', 'admin_settings' ), 11 );
 
 class IndieWeb_General_Settings {
@@ -18,18 +19,8 @@ class IndieWeb_General_Settings {
 		);
 	}
 
-	public static function admin_settings() {
-		$page = 'iw_general_options';
-		// Settings Section
+	public static function register_settings() {
 		$section = 'iw_identity_settings';
-
-		add_settings_section(
-			$section, // ID used to identify this section and with which to register options
-			__( 'Identity Settings', 'indieweb' ), // Title to be displayed on the administration page
-			array( 'IndieWeb_General_Settings', 'identity_options_callback' ), // Callback used to render the description of the section
-			$page // Page on which to add this section of options
-		);
-
 		register_setting(
 			$section,
 			'iw_single_author',
@@ -38,19 +29,6 @@ class IndieWeb_General_Settings {
 				'description' => __( 'Single Author Site', 'indieweb' ),
 				'show_in_rest' => true,
 				'default' => is_multi_author() ? 0 : 1,
-			)
-		);
-
-		add_settings_field(
-			'iw_single_author', // ID used to identify the field throughout the theme
-			'Single Author Site', // The label to the left of the option interface element
-			array( 'IndieWeb_General_Settings', 'checkbox_callback' ),   // The name of the function responsible for rendering the option interface
-			$page, // The page on which this option will be displayed
-			$section, // The name of the section to which this field belongs
-			array( // The array of arguments to pass to the callback. In this case, just a description.
-				'name' => 'iw_single_author',
-				'description' => __( 'If this website represents a single individual or entity, check this. This setting is disabled if you only have one user who has made a post.', 'indieweb' ),
-				'disabled' => ! is_multi_author(),
 			)
 		);
 
@@ -66,14 +44,6 @@ class IndieWeb_General_Settings {
 			)
 		);
 
-		add_settings_field(
-			'iw_default_author', // ID used to identify the field throughout the theme
-			'Default Author', // The label to the left of the option interface element
-			array( 'IndieWeb_General_Settings', 'default_author_callback' ), // The name of the function responsible for rendering the option interface
-			$page, // The page on which this option will be displayed
-			$section // The name of the section to which this field belongs
-		);
-
 		register_setting(
 			$section,
 			'iw_author_url',
@@ -83,6 +53,41 @@ class IndieWeb_General_Settings {
 				'show_in_rest' => true,
 				'default' => 1,
 			)
+		);
+
+	}
+
+	public static function admin_settings() {
+		$page = 'iw_general_options';
+		// Settings Section
+		$section = 'iw_identity_settings';
+
+		add_settings_section(
+			$section, // ID used to identify this section and with which to register options
+			__( 'Identity Settings', 'indieweb' ), // Title to be displayed on the administration page
+			array( 'IndieWeb_General_Settings', 'identity_options_callback' ), // Callback used to render the description of the section
+			$page // Page on which to add this section of options
+		);
+
+		add_settings_field(
+			'iw_single_author', // ID used to identify the field throughout the theme
+			'Single Author Site', // The label to the left of the option interface element
+			array( 'IndieWeb_General_Settings', 'checkbox_callback' ),   // The name of the function responsible for rendering the option interface
+			$page, // The page on which this option will be displayed
+			$section, // The name of the section to which this field belongs
+			array( // The array of arguments to pass to the callback. In this case, just a description.
+				'name' => 'iw_single_author',
+				'description' => __( 'If this website represents a single individual or entity, check this. This setting is disabled if you only have one user who has made a post.', 'indieweb' ),
+				'disabled' => ! is_multi_author(),
+			)
+		);
+
+		add_settings_field(
+			'iw_default_author', // ID used to identify the field throughout the theme
+			'Default Author', // The label to the left of the option interface element
+			array( 'IndieWeb_General_Settings', 'default_author_callback' ), // The name of the function responsible for rendering the option interface
+			$page, // The page on which this option will be displayed
+			$section // The name of the section to which this field belongs
 		);
 
 		add_settings_field(
