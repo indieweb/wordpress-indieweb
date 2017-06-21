@@ -8,7 +8,7 @@ add_action( 'init', array( 'IndieWeb_Integrations', 'init' ) );
 class IndieWeb_Integrations {
 
 	public static function init() {
-		add_filter( 'pubsubhubbub_feed_urls', array( 'IndieWeb_Integrations', 'add_pubsubhubbub_feeds') );
+		add_filter( 'pubsubhubbub_feed_urls', array( 'IndieWeb_Integrations', 'add_pubsubhubbub_feeds' ) );
 	}
 
 	/**
