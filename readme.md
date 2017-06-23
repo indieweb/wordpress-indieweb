@@ -2,9 +2,9 @@
 **Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [dshanske](https://profiles.wordpress.org/dshanske)  
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
-**Requires at least:** 4.7  
-**Tested up to:** 4.7.5  
-**Stable tag:** 3.2.0  
+**Requires at least:** 4.7
+**Tested up to:** 4.8
+**Stable tag:** 3.2.0
 
 IndieWeb for WordPress!
 

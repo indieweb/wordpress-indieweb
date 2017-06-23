@@ -13,9 +13,17 @@ php:
   - 5.6
   - 7
 
+after_success: curl -L https://raw.githubusercontent.com/miya0001/travis2wpplugin/master/deploy.sh | bash
+
 env:
-  - WP_VERSION=latest WP_MULTISITE=0
-  - WP_VERSION=4.7 WP_MULTISITE=0
+  matrix:
+    - WP_VERSION=latest WP_MULTISITE=0
+    - WP_VERSION=nightly WP_MULTISITE=0
+
+  global:
+    - SVN_REPO: https://plugins.svn.wordpress.org/indieweb/
+    - GH_REF: https://github.com/indieweb/wordpress-indieweb.git
+    - secure: "XQXCVlHyWGYEtJRwwmP3uIRML07en6LfZ0aW88PoHagLFp/HGIrNX4a2Xah09dAjsaKFUdiUawkk00ge0XGHADbB3n3F7XFshELKS6MFNOOngRiBWYD4aDF7mwZbZ1qab28wh4PCK0LndpfYI5ta+ltg/x9JFpwnELR1nfRFj/s="
 
 matrix:
   include:
@@ -23,8 +31,13 @@ matrix:
       env: WP_VERSION=latest WP_MULTISITE=1
 
 before_script:
-    - composer install
-    - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - |
+    if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
+      composer global require "phpunit/phpunit=5.7.*"
+    elif [[ ${TRAVIS_PHP_VERSION:0:3} != "5.2" ]]; then
+      composer global require "phpunit/phpunit=4.8.*"
+    fi
+  - bash bin/install-wp-tests.sh wordpress root '' localhost $WP_VERSION
 
-script:
-    - vendor/bin/phpunit
+script: phpunit
