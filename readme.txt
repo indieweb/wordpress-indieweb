@@ -3,8 +3,8 @@ Contributors: pfefferle, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
-Tested up to: 4.7.5
-Stable tag: 3.1.1
+Tested up to: 4.8
+Stable tag: 3.2.0
 
 IndieWeb for WordPress!
 
@@ -76,6 +76,9 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+= 3.2.0 =
+* Added UF2 plugin
+
 = 3.1.1 =
 * Disable single author checkbox if not multi-author site
 * Remove `get_the_author_id` as deprecated since 2.8
@@ -86,7 +89,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Bridgy Publish plugin to assist people in Publish.
 * Remove Webactions in attempt to narrow focus
 * Remove Indieweb Press This as not distributed through wordpress repo
-* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer 
+* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer
 * Fix issue where extra user properties were incorrectly sanitized
 * Handle an @ in the twitter username
 * If silo field contains valid URL, pass through instead of adding baseurl
@@ -94,7 +97,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Support enhanced registration of settings introduced in 4.7
 * Internationalize additional strings
 
-= 3.0.6 = 
+= 3.0.6 =
 
 * Fix bug in single author display
 * Add constant INDIEWEB_ADD_HCARD_SUPPORT to disable hcard additions
@@ -109,7 +112,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Hidden relme links will be active whenever the relme widget is not active
 * Changes in documentation
 
-= 3.0.3 = 
+= 3.0.3 =
 * Bug fix re rel=me on multi-author sites
 * Removal of post author option due changes in global config
 * Remove use of deprecated functions

@@ -3,8 +3,8 @@
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
-**Tested up to:** 4.7.5  
-**Stable tag:** 3.1.1  
+**Tested up to:** 4.8  
+**Stable tag:** 3.2.0  
 
 IndieWeb for WordPress!
 
@@ -76,6 +76,9 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+### 3.2.0 ###
+* Added UF2 plugin
+
 ### 3.1.1 ###
 * Disable single author checkbox if not multi-author site
 * Remove `get_the_author_id` as deprecated since 2.8
@@ -86,7 +89,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Bridgy Publish plugin to assist people in Publish.
 * Remove Webactions in attempt to narrow focus
 * Remove Indieweb Press This as not distributed through wordpress repo
-* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer 
+* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer
 * Fix issue where extra user properties were incorrectly sanitized
 * Handle an @ in the twitter username
 * If silo field contains valid URL, pass through instead of adding baseurl

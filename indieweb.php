@@ -156,6 +156,9 @@ class IndieWeb_Plugin {
 			array(
 				'slug' => 'indieauth',
 			),
+			array(
+				'slug' => 'wp-uf2',
+			),
 		);
 		return $plugin_array;
 	}
