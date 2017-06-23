@@ -4,7 +4,7 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Tested up to: 4.7.5
-Stable tag: 3.1.1
+Stable tag: 3.1.2
 
 IndieWeb for WordPress!
 
@@ -20,9 +20,10 @@ Some of these plugins allow you to:
 * allow comments on others' sites to show up as comments on your posts
 * help make IndieWeb comments and mentions look better on your site
 * allow support for webmentions
+* provide basic support for [Microformats 2](http://microformats.org/wiki/microformats2)
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
 * link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram, Google+ can come back to your original post as comments there
-* allow you to add bookmarklets to easily respond/comment on other sites with one click
+* allow you to add bookmarklets to easily respond/comment on other sites with one click (coming soon!)
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
 * log into your WordPress site with services like Twitter, GitHub, etc using [IndieAuth](https://indieweb.org/indieauth).
 
@@ -69,12 +70,16 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 * MicroPub - A MicroPub Server
 * Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
 * Bridgy Publish - User Interface for the Brid.gy Web Service
+* Microformats 2 - provides basic mf2 support for any WordPress theme. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
 
-One could certainly download, install, and activate some or all of these plugins separately, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them. Note that some of these plugins may only be available on GitHub and are not yet on WordPress.org.
+One could certainly download, install, and activate some or all of these plugins separately, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them.
 
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.1.2 =
+* Add Microformats 2 (wp-uf2) to installer.
 
 = 3.1.1 =
 * Disable single author checkbox if not multi-author site
@@ -86,7 +91,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Bridgy Publish plugin to assist people in Publish.
 * Remove Webactions in attempt to narrow focus
 * Remove Indieweb Press This as not distributed through wordpress repo
-* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer 
+* Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer
 * Fix issue where extra user properties were incorrectly sanitized
 * Handle an @ in the twitter username
 * If silo field contains valid URL, pass through instead of adding baseurl
@@ -94,7 +99,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Support enhanced registration of settings introduced in 4.7
 * Internationalize additional strings
 
-= 3.0.6 = 
+= 3.0.6 =
 
 * Fix bug in single author display
 * Add constant INDIEWEB_ADD_HCARD_SUPPORT to disable hcard additions
@@ -109,7 +114,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Hidden relme links will be active whenever the relme widget is not active
 * Changes in documentation
 
-= 3.0.3 = 
+= 3.0.3 =
 * Bug fix re rel=me on multi-author sites
 * Removal of post author option due changes in global config
 * Remove use of deprecated functions
