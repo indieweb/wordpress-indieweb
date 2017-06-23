@@ -4,7 +4,7 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Tested up to: 4.7.5
-Stable tag: 3.1.2
+Stable tag: 3.2.0
 
 IndieWeb for WordPress!
 
@@ -78,7 +78,7 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
-= 3.1.2 =
+= 3.2.0 =
 * Add Microformats 2 (wp-uf2) to installer.
 
 = 3.1.1 =
