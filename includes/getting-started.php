@@ -63,6 +63,6 @@
 			href="https://indieweb.org/principles" target="_blank">principles</a> and <a
 			href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWebp</em> wiki</a>.', 'indieweb' ); ?></p>
+	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>
 
 </div>				  
