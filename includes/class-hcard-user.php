@@ -180,12 +180,16 @@ class HCard_User {
 	}
 
 	public static function extended_profile_textarea_field( $user, $key, $title, $description ) {
+		$value = get_the_author_meta( $key, $user->ID );
+		if ( is_array( $value ) ) {
+			$value = implode( "\n", $value );
+		}
 	?>
 	<tr>
 		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
 		<td>
-			<textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?></textarea><br />
+			<textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( $value ); ?></textarea><br />
 			<span class="description"><?php echo esc_html( $description ); ?></span>
 		</td>
 	</tr>
@@ -198,7 +202,6 @@ class HCard_User {
 			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
-		$fields['relme'] = array();
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $_POST[ $key ] ) ) {
 				if ( ! empty( $_POST[ $key ] ) ) {
@@ -206,6 +209,14 @@ class HCard_User {
 				} else {
 					delete_user_meta( $user_id, $key );
 				}
+			}
+		}
+		if ( isset( $_POST[ 'relme' ] ) ) {
+			$relme = explode( "\n", $_POST['relme'] );
+			if ( ! empty( $relme ) ) {
+				update_user_meta( $user_id, 'relme', self::clean_urls( $relme ) );
+			} else {
+				delete_user_meta( $user_id, 'relme' );
 			}
 		}
 	}
@@ -359,9 +370,11 @@ class HCard_User {
 		$relme = get_the_author_meta( 'relme', $author_id );
 
 		if ( $relme ) {
-			$urls = explode( "\n", $relme );
-			$urls = self::clean_urls( $urls );
-			foreach ( $urls as $url ) {
+			if ( ! is_array( $relme ) ) {
+				$relme = explode( "\n", $relme );
+			}
+			$relme = self::clean_urls( $relme );
+			foreach ( $relme as $url ) {
 				$list[ self::extract_domain_name( $url ) ] = $url;
 			}
 		}

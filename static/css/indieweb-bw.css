@@ -37,8 +37,6 @@ Link Style
       cursor: pointer; }
       .relme ul li a:hover .svg-icon {
         color: grey; }
-      .relme ul li a:hover .relmename {
-        display: inline; }
     .relme ul li a:visited {
       color: black; }
 
