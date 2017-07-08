@@ -211,7 +211,7 @@ class HCard_User {
 				}
 			}
 		}
-		if ( isset( $_POST[ 'relme' ] ) ) {
+		if ( isset( $_POST['relme'] ) ) {
 			$relme = explode( "\n", $_POST['relme'] );
 			if ( ! empty( $relme ) ) {
 				update_user_meta( $user_id, 'relme', self::clean_urls( $relme ) );
