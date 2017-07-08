@@ -4,7 +4,7 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Tested up to:** 4.8  
-**Stable tag:** 3.2.1  
+**Stable tag:** 3.2.2  
 
 IndieWeb for WordPress!
 
@@ -77,6 +77,10 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.2.2 ###
+* Change extra rel-me field to array to ensure proper handlin
+* Remove hover text field feature
 
 ### 3.2.1 ###
 * Added IndieWeb admin menu icon
