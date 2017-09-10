@@ -435,4 +435,63 @@ class HCard_User {
 			echo self::relme_head_list( $author_id );
 		}
 	}
+
+
+	public static function get_hcard_display_defaults() {
+		// $display = self::get_hcard_display_option();
+		$defaults = array(
+				'style' => 'div',
+				'container-css' => '',
+				'single-css' => '',
+				'avatar_size' => 96
+		);
+		return apply_filters( 'hcard_display_defaults', $defaults );
+	}
+
+
+	public static function hcard( $user, $args = array() ) {
+		if ( ! $user ) {
+			return false;
+		}
+		$user = new WP_User( $user );
+		if ( ! $user ) {
+			return false;
+		}
+		$r = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		$avatar = get_avatar( $user, $r['avatar_size'], '404 ', $args );
+		$url = $user->has_prop( 'user_url' ) ?  $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$name = $user->get( 'display_name' );
+
+		$return = '<div class="h-card vcard p-author">';
+		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
+		if ( ! $avatar ) {
+			$return .= '<h2 class="p-name n">' . $name . '</h2>' . '</a>';
+		}
+		else {
+			$return .= $avatar . '</a>';
+			$return .= '<h2 class="p-name n">' . $name . '</h2>';
+		}
+		echo '<p class="h-adr adr">';
+		if ( $user->has_prop( 'locality' ) ) {
+			$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
+		}
+		if ( $user->has_prop( 'region' ) ) {
+			$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
+		}
+		if ( $user->has_prop( 'country-name' ) ) {
+			$return .= '<span class="p-country-name country-name">' . $user->get('country-name') . '</span>';
+		}
+		$return .= '</p>';
+		$return .= '<div class="hcard_contact">';
+		if ( $user->has_prop('tel') ) {
+			$return .= '<a class="p-tel tel" href="tel:' . $user->get('tel') . '">' . $user->get( 'tel' ) . '</a>';
+		}
+		$return .= '</div>';
+		$return .= '<p class="p-note note">' . $user->get('description') . '</p>';
+		$return .= '</div>';
+		return $return;
+	}
+
+
+
 } // End Class

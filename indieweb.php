@@ -38,6 +38,8 @@ class IndieWeb_Plugin {
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 			// Require H-Card Enhancements to User Profile
 			require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
+			require_once dirname( __FILE__ ) . '/includes/class-hcard-widget.php';
+
 		}
 
 		if ( INDIEWEB_ADD_RELME_SUPPORT ) {
