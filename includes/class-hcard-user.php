@@ -202,13 +202,13 @@ class HCard_User {
 			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
+		$p = array_filter( $_POST );
+		error_log( print_r( $p, true ) ) ;
 		foreach ( $fields as $key => $value ) {
-			if ( isset( $_POST[ $key ] ) ) {
-				if ( ! empty( $_POST[ $key ] ) ) {
-					update_user_meta( $user_id, $key, sanitize_text_field( $_POST[ $key ] ) );
-				} else {
-					delete_user_meta( $user_id, $key );
-				}
+			if ( isset( $p[ $key ] ) ) {
+				update_user_meta( $user_id, $key, sanitize_text_field( $p[ $key ] ) );
+			} else {
+				delete_user_meta( $user_id, $key );
 			}
 		}
 		if ( isset( $_POST['relme'] ) ) {
@@ -458,20 +458,32 @@ class HCard_User {
 			return false;
 		}
 		$r = wp_parse_args( $args, self::get_hcard_display_defaults() );
-		$avatar = get_avatar( $user, $r['avatar_size'], '404 ', $args );
+		$avatar = get_avatar( 
+			$user, 
+			$r['avatar_size'], 
+			'default',
+			'',
+			array(
+				'class' => array( 'u-photo', 'hcard-photo' )
+			)	
+		);
 		$url = $user->has_prop( 'user_url' ) ?  $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name = $user->get( 'display_name' );
 
-		$return = '<div class="h-card vcard p-author">';
+		$return = '<div class="hcard-display h-card vcard p-author">';
+		$return .= '<div class="hcard-header">';
 		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
-			$return .= '<h2 class="p-name n">' . $name . '</h2>' . '</a>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</h2>' . '</a>';
 		}
 		else {
 			$return .= $avatar . '</a>';
-			$return .= '<h2 class="p-name n">' . $name . '</h2>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</h2>';
 		}
-		echo '<p class="h-adr adr">';
+		$return .= '</div>';
+		$return .= '<div class="hcard-body">';
+		$return .= '<ul class="hcard-properties">';
+		$return .= '<li class="h-adr adr">';
 		if ( $user->has_prop( 'locality' ) ) {
 			$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
 		}
@@ -481,12 +493,11 @@ class HCard_User {
 		if ( $user->has_prop( 'country-name' ) ) {
 			$return .= '<span class="p-country-name country-name">' . $user->get('country-name') . '</span>';
 		}
-		$return .= '</p>';
-		$return .= '<div class="hcard_contact">';
-		if ( $user->has_prop('tel') ) {
-			$return .= '<a class="p-tel tel" href="tel:' . $user->get('tel') . '">' . $user->get( 'tel' ) . '</a>';
+		$return .= '</li>';
+		if ( $user->has_prop('tel') && ! empty( $user->get('tel' ) ) ) {
+			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get('tel') . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
-		$return .= '</div>';
+		$return .= '</ul>';
 		$return .= '<p class="p-note note">' . $user->get('description') . '</p>';
 		$return .= '</div>';
 		return $return;
