@@ -1,20 +1,21 @@
 <?php
 add_action( 'widgets_init', 'indieweb_register_hcard' );
 function indieweb_register_hcard() {
-	register_widget( "HCard_Author_Widget" );
+	register_widget( 'HCard_Author_Widget' );
 }
 
-class HCard_Author_Widget extends WP_Widget {
+class HCard_Author_Widget extends WP_Widget
+{
 	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
-			'HCard_Widget',				// Base ID
-			'Author H-Card Widget',		// Name
+			'HCard_Widget',                // Base ID
+			'Author H-Card Widget',        // Name
 			array(
-				'classname'		=> 'hcard_widget',
-				'description'	=> __( 'A widget that allows you to display h-cards for a specific author', 'framework' ),
+			'classname'        => 'hcard_widget',
+			'description'    => __( 'A widget that allows you to display h-cards for a specific author', 'framework' ),
 			)
 		);
 
@@ -32,10 +33,19 @@ class HCard_Author_Widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 
-		if ( (int) $override === 1 && is_single() ) {
-			$display_author = get_the_author_meta( 'ID' );
+		if ( 1 === ( int ) get_option( 'iw_single_author' ) ) {
+			$display_author = get_option( 'iw_default_author' );
 		}
-
+		else {
+			if ( is_single() ) {
+				global $wp_query;
+				$display_author = $wp_query->post->post_author;
+			}
+			else {
+				return;
+			}
+		}
+		
 		$user_info = get_userdata( $display_author );
 
 		// Our variables from the widget settings
@@ -46,7 +56,8 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Display the widget title if one was input
 		if ( $title ) {
-			echo $before_title . $title . $after_title; }
+			echo $before_title . $title . $after_title;
+		}
 		?>
 
 		<div id="hcard_widget">
@@ -79,9 +90,6 @@ class HCard_Author_Widget extends WP_Widget {
 			$instance[ $k ] = strip_tags( $v );
 		}
 
-		$instance['display_author'] = $new_instance['display_author'];
-		$instance['override'] = (bool) $new_instance['override'];
-
 		return $instance;
 	}
 
@@ -97,32 +105,17 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Set up some default widget settings
 		$defaults = array(
-		'display_author' => '',
-		'override' => '1',
-		'background' => '#ffffff',
-		'font_color' => '#000000',
 		'avatar_size' => '125',
-		'relme' => 'false',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
-
-	<p>
-		<label for="<?php echo $this->get_field_id( 'display_author' ); ?>"><?php _e( 'Display Author:', 'framework' ) ?></label>
-		<?php wp_dropdown_users( array(
-			'id' => $this->get_field_id( 'display_author' ),
-									'name' => $this->get_field_name( 'display_author' ),
-									'selected' => $instance['display_author'],
-		) ); ?>
-	</p>
-
-	<p>
-		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'framework' ) ?></label>
+	   <p>
+		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ) ?></label>
 		<input type="text" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" value="<?php echo $instance['avatar_size']; ?>" />
-	</p>
+	   </p>
 
 
-	<?php
+		<?php
 	}
 
 
