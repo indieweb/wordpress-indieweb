@@ -4,8 +4,7 @@ function indieweb_register_hcard() {
 	register_widget( 'HCard_Author_Widget' );
 }
 
-class HCard_Author_Widget extends WP_Widget
-{
+class HCard_Author_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -33,19 +32,17 @@ class HCard_Author_Widget extends WP_Widget
 		extract( $args );
 		extract( $instance );
 
-		if ( 1 === ( int ) get_option( 'iw_single_author' ) ) {
+		if ( 1 === (int) get_option( 'iw_single_author' ) ) {
 			$display_author = get_option( 'iw_default_author' );
-		}
-		else {
+		} else {
 			if ( is_single() ) {
 				global $wp_query;
 				$display_author = $wp_query->post->post_author;
-			}
-			else {
+			} else {
 				return;
 			}
 		}
-		
+
 		$user_info = get_userdata( $display_author );
 
 		// Our variables from the widget settings
