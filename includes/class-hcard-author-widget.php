@@ -42,7 +42,6 @@ class HCard_Author_Widget extends WP_Widget {
 
 		$user_info = get_userdata( $display_author );
 
-		// Before widget 
 		echo $args['before_widget'];
 
 		?>
@@ -53,7 +52,6 @@ class HCard_Author_Widget extends WP_Widget {
 
 		<?php
 
-		// After widget
 		echo $args['after_widget'];
 	}
 
