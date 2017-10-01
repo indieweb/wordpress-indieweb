@@ -3,8 +3,9 @@ Contributors: pfefferle, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
-Tested up to: 4.8
-Stable tag: 3.2.2
+Requires PHP: 5.3
+Tested up to: 4.8.2
+Stable tag: 3.2.3
 
 IndieWeb for WordPress!
 
@@ -77,6 +78,12 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.2.3 =
+* Add Basic H-Card widget
+* Minor fixes
+* Basic CONTRIBUTING.md
+
 
 = 3.2.2 =
 * Change extra rel-me field to array to ensure proper handlin
