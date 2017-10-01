@@ -439,10 +439,10 @@ class HCard_User {
 	public static function get_hcard_display_defaults() {
 		// $display = self::get_hcard_display_option();
 		$defaults = array(
-				'style' => 'div',
-				'container-css' => '',
-				'single-css' => '',
-				'avatar_size' => 96,
+			'style' => 'div',
+			'container-css' => '',
+			'single-css' => '',
+			'avatar_size' => 96,
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -466,7 +466,7 @@ class HCard_User {
 				'class' => array( 'u-photo', 'hcard-photo' ),
 			)
 		);
-		$url = $user->has_prop( 'user_url' ) ?  $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$url = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name = $user->get( 'display_name' );
 
 		$return = '<div class="hcard-display h-card vcard p-author">';

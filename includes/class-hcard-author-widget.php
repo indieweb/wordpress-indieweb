@@ -13,8 +13,8 @@ class HCard_Author_Widget extends WP_Widget {
 			'HCard_Widget',                // Base ID
 			'Author H-Card Widget',        // Name
 			array(
-			'classname'        => 'hcard_widget',
-			'description'    => __( 'A widget that allows you to display h-cards for a specific author', 'framework' ),
+				'classname'        => 'hcard_widget',
+				'description'    => __( 'A widget that allows you to display h-cards for a specific author', 'framework' ),
 			)
 		);
 
@@ -102,12 +102,13 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Set up some default widget settings
 		$defaults = array(
-		'avatar_size' => '125',
+			'avatar_size' => '125',
 		);
 
-		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
+		$instance = wp_parse_args( (array) $instance, $defaults ); 
+?>
 	   <p>
-		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ) ?></label>
+		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ); ?></label>
 		<input type="text" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" value="<?php echo $instance['avatar_size']; ?>" />
 	   </p>
 
