@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.2.1\n"
+"Project-Id-Version: IndieWeb 3.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-07-05 18:11:39+00:00\n"
+"POT-Creation-Date: 2017-10-01 16:37:17+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -107,6 +107,14 @@ msgid ""
 "\t\t\t\ton all other pages, the post author links will be used. To display "
 "the links, add the\n"
 "\t\t\t\twidget, otherwise they will remain hidden. "
+msgstr ""
+
+#: includes/class-hcard-author-widget.php:17
+msgid "A widget that allows you to display h-cards for a specific author"
+msgstr ""
+
+#: includes/class-hcard-author-widget.php:110
+msgid "Avatar Size:"
 msgstr ""
 
 #: includes/class-hcard-user.php:51
@@ -245,7 +253,7 @@ msgstr ""
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: includes/getting-started.php:5 indieweb.php:112
+#: includes/getting-started.php:5 indieweb.php:114
 msgid "Getting Started"
 msgstr ""
 
@@ -410,15 +418,15 @@ msgid ""
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
 msgstr ""
 
-#: indieweb.php:98 indieweb.php:99
+#: indieweb.php:100 indieweb.php:101
 msgid "Extensions"
 msgstr ""
 
-#: indieweb.php:124
+#: indieweb.php:126
 msgid "IndieWeb Plugin Installer"
 msgstr ""
 
-#: indieweb.php:125
+#: indieweb.php:127
 msgid ""
 "The below plugins are recommended to enable additional IndieWeb "
 "functionality."
