@@ -29,9 +29,6 @@ class HCard_Author_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		extract( $args );
-		extract( $instance );
-
 		if ( 1 === (int) get_option( 'iw_single_author' ) ) {
 			$display_author = get_option( 'iw_default_author' );
 		} else {
@@ -45,26 +42,19 @@ class HCard_Author_Widget extends WP_Widget {
 
 		$user_info = get_userdata( $display_author );
 
-		// Our variables from the widget settings
-		$title = '';
+		// Before widget 
+		echo $args['before_widget'];
 
-		// Before widget (defined by theme functions file)
-		echo $before_widget;
-
-		// Display the widget title if one was input
-		if ( $title ) {
-			echo $before_title . $title . $after_title;
-		}
 		?>
 
 		<div id="hcard_widget">
-			<?php echo HCard_User::hcard( $user_info ); ?>
+			<?php echo HCard_User::hcard( $user_info, $instance ); ?>
 		</div>
 
 		<?php
 
-		// After widget (defined by theme functions file)
-		echo $after_widget;
+		// After widget
+		echo $args['after_widget'];
 	}
 
 
@@ -105,7 +95,7 @@ class HCard_Author_Widget extends WP_Widget {
 			'avatar_size' => '125',
 		);
 
-		$instance = wp_parse_args( (array) $instance, $defaults ); 
+		$instance = wp_parse_args( (array) $instance, $defaults );
 ?>
 	   <p>
 		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ); ?></label>
