@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
 **Tested up to:** 4.8.2  
-**Stable tag:** 3.3.0  
+**Stable tag:** 3.3.1  
 
 IndieWeb for WordPress!
 
@@ -79,11 +79,13 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+### 3.3.1 ###
+* fix PHP compatibility problem
+
 ### 3.3.0 ###
 * Add Basic H-Card widget
 * Minor fixes
 * Basic CONTRIBUTING.md
-
 
 ### 3.2.2 ###
 * Change extra rel-me field to array to ensure proper handlin
