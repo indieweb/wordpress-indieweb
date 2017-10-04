@@ -492,7 +492,7 @@ class HCard_User {
 			$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
 		}
 		$return .= '</li>';
-		if ( $user->has_prop( 'tel' ) && ! empty( $user->get( 'tel' ) ) ) {
+		if ( $user->has_prop( 'tel' ) && $user->get( 'tel' ) ) {
 			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
 		$return .= '</ul>';
