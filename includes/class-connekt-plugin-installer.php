@@ -9,7 +9,8 @@
  */
 
 
-if ( ! defined( 'ABSPATH' ) ) { exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
 }
 
 
@@ -46,36 +47,33 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 			<div class="cnkt-plugin-installer">
 			<?php
-			require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 
 			foreach ( $plugins as $plugin ) :
 
 				$button_classes = 'install button';
-				$button_text = __( 'Install Now', 'framework' );
+				$button_text    = __( 'Install Now', 'indieweb' );
 
-				$api = plugins_api( 'plugin_information',
+				$api = plugins_api(
+					'plugin_information',
 					array(
-					 'slug' => sanitize_file_name( $plugin['slug'] ),
-					 'fields' => array(
-						'short_description' => true,
-						'sections' => false,
-						'requires' => false,
-						'downloaded' => true,
-						'last_updated' => false,
-						'added' => false,
-						'tags' => false,
-						'compatibility' => false,
-						'homepage' => false,
-						'donate_link' => false,
-						'icons' => true,
-						'banners' => true,
-					 ),
+						'slug'   => sanitize_file_name( $plugin['slug'] ),
+						'fields' => array(
+							'short_description' => true,
+							'sections'          => false,
+							'requires'          => false,
+							'downloaded'        => true,
+							'last_updated'      => false,
+							'added'             => false,
+							'tags'              => false,
+							'compatibility'     => false,
+							'homepage'          => false,
+							'donate_link'       => false,
+							'icons'             => true,
+							'banners'           => true,
+						),
 					)
 				);
-
-				//echo '<pre>';
-				//print_r($api);
-				//echo '</pre>';
 
 				if ( ! is_wp_error( $api ) ) { // confirm error free
 
@@ -85,11 +83,11 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 						if ( is_plugin_active( $main_plugin_file ) ) {
 							 // plugin activation, confirmed!
 							 $button_classes = 'button disabled';
-							 $button_text = __( 'Activated', 'framework' );
+							 $button_text    = __( 'Activated', 'indieweb' );
 						} else {
 							  // It's installed, let's activate it
 							 $button_classes = 'activate button button-primary';
-							 $button_text = __( 'Activate', 'framework' );
+							 $button_text    = __( 'Activate', 'indieweb' );
 						}
 					}
 
@@ -128,25 +126,25 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 			?>
 			<div class="plugin">
-		      <div class="plugin-wrap">
-			      <img src="<?php echo $icon; ?>" alt="">
+			  <div class="plugin-wrap">
+				  <img src="<?php echo $icon; ?>" alt="">
 			   <h2><?php echo $api->name; ?></h2>
 			   <p><?php echo $api->short_description; ?></p>
 
-			   <p class="plugin-author"><?php _e( 'By', 'framework' ); ?> <?php echo $api->author; ?></p>
+			   <p class="plugin-author"><?php _e( 'By', 'indieweb' ); ?> <?php echo $api->author; ?></p>
 			   </div>
 			   <ul class="activation-row">
 			   <li>
 				  <a class="<?php echo $button_classes; ?>"
-				  	data-slug="<?php echo $api->slug; ?>"
+					  data-slug="<?php echo $api->slug; ?>"
 								data-name="<?php echo $api->name; ?>"
-									href="<?php echo get_admin_url(); ?>/update.php?action=install-plugin&amp;plugin=<?php echo $api->slug; ?>&amp;_wpnonce=<?php echo wp_create_nonce( 'install-plugin_' . $api->slug ) ?>">
+									href="<?php echo get_admin_url(); ?>/update.php?action=install-plugin&amp;plugin=<?php echo $api->slug; ?>&amp;_wpnonce=<?php echo wp_create_nonce( 'install-plugin_' . $api->slug ); ?>">
 							<?php echo $button_text; ?>
 				  </a>
 			   </li>
 			   <li>
 				  <a href="https://wordpress.org/plugins/<?php echo $api->slug; ?>/" target="_blank">
-						<?php _e( 'More Details', 'frameworks' ); ?>
+						<?php _e( 'More Details', 'indieweb' ); ?>
 				  </a>
 			   </li>
 			</ul>
@@ -168,40 +166,41 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		public function cnkt_plugin_installer() {
 
 			if ( ! current_user_can( 'install_plugins' ) ) {
-				wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'framework' ) );
+				wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'indieweb' ) );
 			}
 
-			$nonce = $_POST['nonce'];
+			$nonce  = $_POST['nonce'];
 			$plugin = $_POST['plugin'];
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
-				wp_die( __( 'Error - unable to verify nonce, please try again.', 'framework' ) );
+				wp_die( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) );
 			}
 
 			// Include required libs for installation
-			require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
-			require_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
-			require_once( ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php' );
-			require_once( ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
+			require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
 			// Get Plugin Info
-			$api = plugins_api( 'plugin_information',
+			$api = plugins_api(
+				'plugin_information',
 				array(
-					'slug' => $plugin,
+					'slug'   => $plugin,
 					'fields' => array(
 						'short_description' => false,
-						'sections' => false,
-						'requires' => false,
-						'rating' => false,
-						'ratings' => false,
-						'downloaded' => false,
-						'last_updated' => false,
-						'added' => false,
-						'tags' => false,
-						'compatibility' => false,
-						'homepage' => false,
-						'donate_link' => false,
+						'sections'          => false,
+						'requires'          => false,
+						'rating'            => false,
+						'ratings'           => false,
+						'downloaded'        => false,
+						'last_updated'      => false,
+						'added'             => false,
+						'tags'              => false,
+						'compatibility'     => false,
+						'homepage'          => false,
+						'donate_link'       => false,
 					),
 				)
 			);
@@ -212,15 +211,15 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 			if ( $api->name ) {
 				$status = 'success';
-				$msg = $api->name . ' successfully installed.';
+				$msg    = $api->name . ' successfully installed.';
 			} else {
 				$status = 'failed';
-				$msg = 'There was an error installing ' . $api->name . '.';
+				$msg    = 'There was an error installing ' . $api->name . '.';
 			}
 
 			$json = array(
 				'status' => $status,
-				'msg' => $msg,
+				'msg'    => $msg,
 			);
 
 			wp_send_json( $json );
@@ -240,58 +239,59 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		*/
 		public function cnkt_plugin_activation() {
 			if ( ! current_user_can( 'install_plugins' ) ) {
-				wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'framework' ) );
+				wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) );
 			}
 
-			$nonce = $_POST['nonce'];
+			$nonce  = $_POST['nonce'];
 			$plugin = $_POST['plugin'];
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
-				die( __( 'Error - unable to verify nonce, please try again.', 'framework' ) );
+				die( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) );
 			}
 
 			// Include required libs for activation
-			require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
-			require_once( ABSPATH . 'wp-admin/includes/class-wp-upgrader.php' );
-			require_once( ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php' );
+			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+			require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
 			// Get Plugin Info
-			$api = plugins_api( 'plugin_information',
+			$api = plugins_api(
+				'plugin_information',
 				array(
-					'slug' => $plugin,
+					'slug'   => $plugin,
 					'fields' => array(
 						'short_description' => false,
-						'sections' => false,
-						'requires' => false,
-						'rating' => false,
-						'ratings' => false,
-						'downloaded' => false,
-						'last_updated' => false,
-						'added' => false,
-						'tags' => false,
-						'compatibility' => false,
-						'homepage' => false,
-						'donate_link' => false,
+						'sections'          => false,
+						'requires'          => false,
+						'rating'            => false,
+						'ratings'           => false,
+						'downloaded'        => false,
+						'last_updated'      => false,
+						'added'             => false,
+						'tags'              => false,
+						'compatibility'     => false,
+						'homepage'          => false,
+						'donate_link'       => false,
 					),
 				)
 			);
 
 			if ( $api->name ) {
 				$main_plugin_file = Connekt_Plugin_Installer::get_plugin_file( $plugin );
-				$status = 'success';
+				$status           = 'success';
 				if ( $main_plugin_file ) {
 					activate_plugin( $main_plugin_file );
 					$msg = $api->name . ' successfully activated.';
 				}
 			} else {
 				$status = 'failed';
-				$msg = 'There was an error activating ' . $api->name .'.';
+				$msg    = 'There was an error activating ' . $api->name . '.';
 			}
 
 			$json = array(
 				'status' => $status,
-				'msg' => $msg,
+				'msg'    => $msg,
 			);
 
 			wp_send_json( $json );
@@ -313,7 +313,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		*/
 
 		public static function get_plugin_file( $plugin_slug ) {
-			require_once( ABSPATH . '/wp-admin/includes/plugin.php' ); // Load plugin lib
+			require_once ABSPATH . '/wp-admin/includes/plugin.php'; // Load plugin lib
 			$plugins = get_plugins();
 
 			foreach ( $plugins as $plugin_file => $plugin_info ) {
@@ -365,14 +365,16 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		*/
 		public function enqueue_scripts() {
 			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ) );
-			wp_localize_script( 'plugin-installer', 'cnkt_installer_localize', array(
-				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'admin_nonce' => wp_create_nonce( 'cnkt_installer_nonce' ),
-				'install_now' => __( 'Are you sure you want to install this plugin?', 'framework' ),
-				'install_btn' => __( 'Install Now', 'framework' ),
-				'activate_btn' => __( 'Activate', 'framework' ),
-				'installed_btn' => __( 'Activated', 'framework' ),
-			));
+			wp_localize_script(
+				'plugin-installer', 'cnkt_installer_localize', array(
+					'ajax_url'      => admin_url( 'admin-ajax.php' ),
+					'admin_nonce'   => wp_create_nonce( 'cnkt_installer_nonce' ),
+					'install_now'   => __( 'Are you sure you want to install this plugin?', 'indieweb' ),
+					'install_btn'   => __( 'Install Now', 'indieweb' ),
+					'activate_btn'  => __( 'Activate', 'indieweb' ),
+					'installed_btn' => __( 'Activated', 'indieweb' ),
+				)
+			);
 
 			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css' );
 		}

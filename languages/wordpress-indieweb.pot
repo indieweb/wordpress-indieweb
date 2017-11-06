@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.1\n"
+"Project-Id-Version: IndieWeb 3.3.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-10-04 19:28:37+00:00\n"
+"POT-Creation-Date: 2017-11-06 04:04:20+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,43 +13,43 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: includes/class-connekt-plugin-installer.php:54
-#: includes/class-connekt-plugin-installer.php:372
+#: includes/class-connekt-plugin-installer.php:55
+#: includes/class-connekt-plugin-installer.php:373
 msgid "Install Now"
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:88
-#: includes/class-connekt-plugin-installer.php:374
+#: includes/class-connekt-plugin-installer.php:86
+#: includes/class-connekt-plugin-installer.php:375
 msgid "Activated"
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:92
-#: includes/class-connekt-plugin-installer.php:373
+#: includes/class-connekt-plugin-installer.php:90
+#: includes/class-connekt-plugin-installer.php:374
 msgid "Activate"
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:136
+#: includes/class-connekt-plugin-installer.php:134
 msgid "By"
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:149
+#: includes/class-connekt-plugin-installer.php:147
 msgid "More Details"
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:171
+#: includes/class-connekt-plugin-installer.php:169
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:179
-#: includes/class-connekt-plugin-installer.php:251
+#: includes/class-connekt-plugin-installer.php:177
+#: includes/class-connekt-plugin-installer.php:250
 msgid "Error - unable to verify nonce, please try again."
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:243
+#: includes/class-connekt-plugin-installer.php:242
 msgid "Sorry, you are not allowed to activate plugins on this site."
 msgstr ""
 
-#: includes/class-connekt-plugin-installer.php:371
+#: includes/class-connekt-plugin-installer.php:372
 msgid "Are you sure you want to install this plugin?"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgid ""
 "appear in the links on the author page only."
 msgstr ""
 
-#: includes/class-general-settings.php:115
+#: includes/class-general-settings.php:117
 msgid ""
 "The Default Author is the one whose that will be used on the home pages and "
 "archive pages. If the single author setting is not set,\n"
@@ -257,14 +257,14 @@ msgstr ""
 msgid "Getting Started"
 msgstr ""
 
-#: includes/getting-started.php:7
+#: includes/getting-started.php:9
 msgid ""
 "The IndieWeb Plugin can help you establish your identity online, as well as "
 "recommending\n"
 "\t\t\tother plugins to support additional Indieweb features."
 msgstr ""
 
-#: includes/getting-started.php:10
+#: includes/getting-started.php:16
 msgid ""
 "Once you have these activated, you can setup <a "
 "href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
@@ -272,64 +272,64 @@ msgid ""
 "a seamless experience."
 msgstr ""
 
-#: includes/getting-started.php:12
+#: includes/getting-started.php:18
 msgid "Plugins"
 msgstr ""
 
-#: includes/getting-started.php:14
+#: includes/getting-started.php:20
 msgid ""
 "For more information on these plugins, visit the <a "
 "href=\"https://indieweb.org/wordpress\" target=\"_blank\">WordPress "
 "page</a> on the IndieWeb wiki"
 msgstr ""
 
-#: includes/getting-started.php:18
+#: includes/getting-started.php:24
 msgid "Send and receive responses with your site"
 msgstr ""
 
-#: includes/getting-started.php:19
+#: includes/getting-started.php:25
 msgid ""
 "Send and receive comments, likes, reposts, and other kinds of post "
 "responses using your own site!"
 msgstr ""
 
-#: includes/getting-started.php:21
+#: includes/getting-started.php:27
 msgid ""
 "<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
 "receive by adding webmention support to WordPress. Mentions show up as "
 "comments on your site."
 msgstr ""
 
-#: includes/getting-started.php:22
+#: includes/getting-started.php:28
 msgid ""
 "<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
 "comments and mentions look better on your site."
 msgstr ""
 
-#: includes/getting-started.php:23
+#: includes/getting-started.php:29
 msgid ""
 "<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
 "site from your own, by adding support for kinds of posts to WordPress."
 msgstr ""
 
-#: includes/getting-started.php:28
+#: includes/getting-started.php:34
 msgid "Syndicate your content to other sites"
 msgstr ""
 
-#: includes/getting-started.php:29
+#: includes/getting-started.php:35
 msgid ""
 "Linking to the syndicated version of a post allows for bridgy to be able to "
 "discover the post as well as for end users to comment on those sites as a "
 "way of replying."
 msgstr ""
 
-#: includes/getting-started.php:31
+#: includes/getting-started.php:37
 msgid ""
 "<strong>Bridgy Publish</strong> - Adds a user interface for using Bridgy to "
 "publish to other sites"
 msgstr ""
 
-#: includes/getting-started.php:32
+#: includes/getting-started.php:38
 msgid ""
 "<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
 "entry of syndication links as well as automatically from a supported "
@@ -341,30 +341,30 @@ msgid ""
 "(aka SNAP)</a>."
 msgstr ""
 
-#: includes/getting-started.php:37
+#: includes/getting-started.php:43
 msgid "Other"
 msgstr ""
 
-#: includes/getting-started.php:39
+#: includes/getting-started.php:45
 msgid "<strong>MicroPub</strong> - A MicroPub Server"
 msgstr ""
 
-#: includes/getting-started.php:40
+#: includes/getting-started.php:46
 msgid ""
 "<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
 "backend via IndieAuth. It uses the URL from the profile page to identify "
 "the blog user."
 msgstr ""
 
-#: includes/getting-started.php:45
+#: includes/getting-started.php:51
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/getting-started.php:47
+#: includes/getting-started.php:53
 msgid "Themes"
 msgstr ""
 
-#: includes/getting-started.php:49
+#: includes/getting-started.php:55
 msgid ""
 "Some WordPress themes are compatible with microformats. The IndieWeb uses "
 "microformats2, the latest version, to mark up sites so that they can be "
@@ -372,7 +372,7 @@ msgid ""
 "the older format if available."
 msgstr ""
 
-#: includes/getting-started.php:51
+#: includes/getting-started.php:57
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
 "the communications IndieWeb sites support. For example, a class of "
@@ -380,7 +380,7 @@ msgid ""
 "relationship."
 msgstr ""
 
-#: includes/getting-started.php:53
+#: includes/getting-started.php:61
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
 "\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -394,17 +394,17 @@ msgid ""
 "issues."
 msgstr ""
 
-#: includes/getting-started.php:59
+#: includes/getting-started.php:71
 msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:61
+#: includes/getting-started.php:73
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
 msgstr ""
 
-#: includes/getting-started.php:62
+#: includes/getting-started.php:76
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
 "\t\t\thref=\"https://indieweb.org/principles\" "
@@ -412,7 +412,7 @@ msgid ""
 "\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:66
+#: includes/getting-started.php:84
 msgid ""
 "For even more information, please visit the <a "
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
