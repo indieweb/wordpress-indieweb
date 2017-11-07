@@ -4,8 +4,14 @@
 
 	<h2><?php esc_html_e( 'Getting Started', 'indieweb' ); ?></h2>
 
-	<p><?php esc_html_e( 'The IndieWeb Plugin can help you establish your identity online, as well as recommending
-			other plugins to support additional Indieweb features.', 'indieweb' ); ?></p>
+	<p>
+	<?php
+	esc_html_e(
+		'The IndieWeb Plugin can help you establish your identity online, as well as recommending
+			other plugins to support additional Indieweb features.', 'indieweb'
+	);
+?>
+</p>
 
 	<p><?php _e( 'Once you have these activated, you can setup <a href="https://www.brid.gy" target="_blank">Bridgy</a> to connect your blog to responses from sites such as Facebook and Twitter too, allowing for a seamless experience.', 'indieweb' ); ?></p>
 
@@ -50,18 +56,30 @@
 
 	<p><?php _e( 'Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. For example, a class of u-like-of added to a link to a site you liked to indicates that relationship.', 'indieweb' ); ?></p>
 
-	<p><?php _e( 'Currently, <a href="https://wordpress.org/themes/sempress/"
+	<p>
+	<?php
+	_e(
+		'Currently, <a href="https://wordpress.org/themes/sempress/"
 			target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully
 			microformats2 compliant. <a href="http://wordpress.org/themes/independent-publisher/"
 			target="_blank">Independent Publisher</a> has been updated to include basic microformats2 and
-			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues.', 'indieweb' ); ?></p>
+			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues.', 'indieweb'
+	);
+?>
+</p>
 
 	<h2><?php esc_html_e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
 
 	<p><?php _e( '<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.', 'indieweb' ); ?></p>
-	<p><?php _e( 'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
+	<p>
+	<?php
+	_e(
+		'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
 			href="https://indieweb.org/principles" target="_blank">principles</a> and <a
-			href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb' ); ?></p>
+			href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb'
+	);
+?>
+</p>
 
 	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>
 

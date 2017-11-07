@@ -25,10 +25,10 @@ class IndieWeb_General_Settings {
 			$section,
 			'iw_single_author',
 			array(
-				'type' => 'boolean',
-				'description' => __( 'Single Author Site', 'indieweb' ),
+				'type'         => 'boolean',
+				'description'  => __( 'Single Author Site', 'indieweb' ),
 				'show_in_rest' => true,
-				'default' => is_multi_author() ? 0 : 1,
+				'default'      => is_multi_author() ? 0 : 1,
 			)
 		);
 
@@ -37,10 +37,10 @@ class IndieWeb_General_Settings {
 			$section,
 			'iw_default_author',
 			array(
-				'type' => 'integer',
-				'description' => __( 'Default Author ID for this Site', 'indieweb' ),
+				'type'         => 'integer',
+				'description'  => __( 'Default Author ID for this Site', 'indieweb' ),
 				'show_in_rest' => true,
-				'default' => 1,
+				'default'      => 1,
 			)
 		);
 
@@ -48,10 +48,10 @@ class IndieWeb_General_Settings {
 			$section,
 			'iw_author_url',
 			array(
-				'type' => 'boolean',
-				'description' => __( 'Replace Author URL with User Website URL', 'indieweb' ),
+				'type'         => 'boolean',
+				'description'  => __( 'Replace Author URL with User Website URL', 'indieweb' ),
 				'show_in_rest' => true,
-				'default' => 1,
+				'default'      => 1,
 			)
 		);
 
@@ -76,9 +76,9 @@ class IndieWeb_General_Settings {
 			$page, // The page on which this option will be displayed
 			$section, // The name of the section to which this field belongs
 			array( // The array of arguments to pass to the callback. In this case, just a description.
-				'name' => 'iw_single_author',
+				'name'        => 'iw_single_author',
 				'description' => __( 'If this website represents a single individual or entity, check this. This setting is disabled if you only have one user who has made a post.', 'indieweb' ),
-				'disabled' => ! is_multi_author(),
+				'disabled'    => ! is_multi_author(),
 			)
 		);
 
@@ -97,9 +97,9 @@ class IndieWeb_General_Settings {
 			$page, // The page on which this option will be displayed
 			$section, // The name of the section to which this field belongs
 			array( // The array of arguments to pass to the callback. In this case, just a description.
-				'name' => 'iw_author_url',
+				'name'        => 'iw_author_url',
 				'description' => __( 'If checked, this will replace the author page URL with the website URL from your user profile.', 'indieweb' ),
-				'disabled' => false,
+				'disabled'    => false,
 			)
 		);
 	}
@@ -107,14 +107,18 @@ class IndieWeb_General_Settings {
 
 	public static function identity_options_callback() {
 		echo '<p>';
-		esc_html_e( 'Using rel=me on a link indicates the link represents the same person or entity as
+		esc_html_e(
+			'Using rel=me on a link indicates the link represents the same person or entity as
 				the current page. On a site with a single author, rel=me links from their user profile will
-				appear on the homepage. On a site with multiple authors rel=me will appear in the links on the author page only.' , 'indieweb' );
+				appear on the homepage. On a site with multiple authors rel=me will appear in the links on the author page only.', 'indieweb'
+		);
 		echo '</p>';
 		echo '<p>';
-		esc_html_e( 'The Default Author is the one whose that will be used on the home pages and archive pages. If the single author setting is not set,
+		esc_html_e(
+			'The Default Author is the one whose that will be used on the home pages and archive pages. If the single author setting is not set,
 				on all other pages, the post author links will be used. To display the links, add the
-				widget, otherwise they will remain hidden. ', 'indieweb' );
+				widget, otherwise they will remain hidden. ', 'indieweb'
+		);
 		echo '</p>';
 	}
 
@@ -137,7 +141,7 @@ class IndieWeb_General_Settings {
 	}
 
 	public static function checkbox_callback( array $args ) {
-		$option = get_option( $args['name'] );
+		$option   = get_option( $args['name'] );
 		$disabled = isset( $args['disabled'] ) ? $args['disabled'] : false;
 
 		$checked = $option;
@@ -151,18 +155,24 @@ class IndieWeb_General_Settings {
 	}
 
 	public static function default_author_callback() {
-		$users = get_users( array(
-			'orderby' => 'ID',
-			'fields' => array( 'ID', 'display_name' ),
-		));
+		$users = get_users(
+			array(
+				'orderby' => 'ID',
+				'fields'  => array( 'ID', 'display_name' ),
+			)
+		);
 
 		$option = get_option( 'iw_default_author' );
 		?>
 
 		<select name="iw_default_author">
-		<?php foreach ( $users as $user ) :   ?>
-			<option value="<?php echo absint( $user->ID ); ?>" <?php selected( $option, $user->ID ); ?>><?php echo
-			esc_html( $user->display_name ); ?></option>
+		<?php foreach ( $users as $user ) : ?>
+			<option value="<?php echo absint( $user->ID ); ?>" <?php selected( $option, $user->ID ); ?>>
+										<?php
+										echo
+										esc_html( $user->display_name );
+			?>
+			</option>
 		<?php endforeach; ?>
 		</select>
 	<?php

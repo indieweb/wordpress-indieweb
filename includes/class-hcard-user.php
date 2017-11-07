@@ -46,11 +46,11 @@ class HCard_User {
 	 */
 	public static function silos() {
 		$silos = array(
-			'tel' => array(
+			'tel'        => array(
 				'baseurl' => 'sms:%s',
 				'display' => __( 'Telephone', 'indieweb' ),
 			),
-			'github' => array(
+			'github'     => array(
 				'baseurl' => 'https://github.com/%s',
 				'display' => __( 'Github username', 'indieweb' ),
 			),
@@ -58,23 +58,23 @@ class HCard_User {
 				'baseurl' => 'https://plus.google.com/%s',
 				'display' => __( 'Google+ userID (not username)', 'indieweb' ),
 			),
-			'twitter' => array(
+			'twitter'    => array(
 				'baseurl' => 'https://twitter.com/%s',
 				'display' => __( 'Twitter username (without @)', 'indieweb' ),
 			),
-			'facebook' => array(
+			'facebook'   => array(
 				'baseurl' => 'https://www.facebook.com/%s',
 				'display' => __( 'Facebook ID', 'indieweb' ),
 			),
-			'lastfm' => array(
+			'lastfm'     => array(
 				'baseurl' => 'https://last.fm/user/%s',
 				'display' => __( 'Last.fm username', 'indieweb' ),
 			),
-			'instagram' => array(
+			'instagram'  => array(
 				'baseurl' => 'https://www.instagram.com/%s',
 				'display' => __( 'Instagram username', 'indieweb' ),
 			),
-			'flickr' => array(
+			'flickr'     => array(
 				'baseurl' => 'https://www.flickr.com/people/%s',
 				'display' => __( 'Flickr username', 'indieweb' ),
 			),
@@ -101,28 +101,28 @@ class HCard_User {
 
 	public static function address_fields() {
 		$address = array(
-			'street_address' => array(
-				'title' => __( 'Street Address', 'indieweb' ),
+			'street_address'   => array(
+				'title'       => __( 'Street Address', 'indieweb' ),
 				'description' => __( 'Street Number and Name', 'indieweb' ),
 			),
 			'extended_address' => array(
-				'title' => __( 'Extended Address', 'indieweb' ),
+				'title'       => __( 'Extended Address', 'indieweb' ),
 				'description' => __( 'Apartment/Suite/Room Name/Number if any', 'indieweb' ),
 			),
-			'locality' => array(
-				'title' => __( 'Locality', 'indieweb' ),
+			'locality'         => array(
+				'title'       => __( 'Locality', 'indieweb' ),
 				'description' => __( 'City/State/Village', 'indieweb' ),
 			),
-			'region' => array(
-				'title' => __( 'Region', 'indieweb' ),
+			'region'           => array(
+				'title'       => __( 'Region', 'indieweb' ),
 				'description' => __( 'State/County/Province', 'indieweb' ),
 			),
-			'postal_code' => array(
-				'title' => __( 'Postal Code', 'indieweb' ),
+			'postal_code'      => array(
+				'title'       => __( 'Postal Code', 'indieweb' ),
 				'description' => __( 'Postal Code, such as Zip Code', 'indieweb' ),
 			),
-			'country_name' => array(
-				'title' => __( 'Country Name', 'indieweb' ),
+			'country_name'     => array(
+				'title'       => __( 'Country Name', 'indieweb' ),
 				'description' => __( 'Country Name', 'indieweb' ),
 			),
 		);
@@ -131,16 +131,16 @@ class HCard_User {
 
 	public static function extra_fields() {
 		$extras = array(
-			'job_title' => array(
-				'title' => __( 'Job Title', 'indieweb' ),
+			'job_title'        => array(
+				'title'       => __( 'Job Title', 'indieweb' ),
 				'description' => __( 'Title or Role', 'indieweb' ),
 			),
-			'organization' => array(
-				'title' => __( 'Organization', 'indieweb' ),
+			'organization'     => array(
+				'title'       => __( 'Organization', 'indieweb' ),
 				'description' => __( 'Affiliated Organization', 'indieweb' ),
 			),
 			'honorific_prefix' => array(
-				'title' => __( 'Honorific Prefix', 'indieweb' ),
+				'title'       => __( 'Honorific Prefix', 'indieweb' ),
 				'description' => __( 'e.g. Mrs., Mr. Dr.', 'indieweb' ),
 			),
 		);
@@ -173,7 +173,7 @@ class HCard_User {
 
 		<td>
 			<input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
-			<span class="description"><?php echo esc_html( $description );?></span>
+			<span class="description"><?php echo esc_html( $description ); ?></span>
 		</td>
 	</tr>
 	<?php
@@ -202,7 +202,7 @@ class HCard_User {
 			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
-		$p = array_filter( $_POST );
+		$p      = array_filter( $_POST );
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $p[ $key ] ) ) {
 				update_user_meta( $user_id, $key, sanitize_text_field( $p[ $key ] ) );
@@ -263,7 +263,7 @@ class HCard_User {
 	 * @return string domain name
 	 */
 	public static function extract_domain_name( $url ) {
-		$host = parse_url( $url, PHP_URL_HOST );
+		$host = wp_parse_url( $url, PHP_URL_HOST );
 		$host = preg_replace( '/^www\./', '', $host );
 		return $host;
 	}
@@ -278,51 +278,93 @@ class HCard_User {
 	public static function get_icon( $domain ) {
 		// Supported icons.
 		$icons = array(
-			'default'			=> 'share',
-			'amazon.com'		=> 'amazon',
-			'behance.net'		=> 'behance',
-			'blogspot.com'		=> 'blogger',
-			'codepen.io'		=> 'codepen',
-			'dribbble.com'		=> 'dribbble',
-			'dropbox.com'		=> 'dropbox',
-			'eventbrite.com'	=> 'eventbrite',
-			'facebook.com'		=> 'facebook',
-			'flickr.com'		=> 'flickr',
-			// feed
-			'foursquare.com'	=> 'foursquare',
-			'ghost.org'			=> 'ghost',
-			'plus.google.com'	=> 'google-plus',
-			'github.com'		=> 'github',
-			'instagram.com'		=> 'instagram',
-			'linkedin.com'		=> 'linkedin',
-			'mailto:'			=> 'mail',
-			'medium.com'		=> 'medium',
-			'path.com'			=> 'path',
-			'pinterest.com'		=> 'pinterest',
-			'getpocket.com'		=> 'pocket',
-			'polldaddy.com'		=> 'polldaddy',
-			'reddit.com'		=> 'reddit',
-			'squarespace.com'	=> 'squarespace',
-			'skype.com'			=> 'skype',
-			'skype:'			=> 'skype',
-			// share
-			'soundcloud.com'	=> 'cloud',
-			'spotify.com'		=> 'spotify',
-			'stumbleupon.com'	=> 'stumbleupon',
-			'telegram.org'		=> 'telegram',
-			'tumblr.com'		=> 'tumblr',
-			'twitch.tv'			=> 'twitch',
-			'twitter.com'		=> 'twitter',
-			'vimeo.com'			=> 'vimeo',
-			'whatsapp.com'		=> 'whatsapp',
-			'wordpress.org'		=> 'wordpress',
-			'wordpress.com'		=> 'wordpress',
-			'youtube.com'		=> 'youtube',
+			'default'             => 'share',
+			'500px.com'           => '500px',
+			'about.me'            => 'aboutme',
+			'amazon.com'          => 'amazon',
+			'bandcamp.com'        => 'bandcamp',
+			'behance.net'         => 'behance',
+			'bitbucket.com'       => 'bitbucket',
+			'blogspot.com'        => 'blogger',
+			'codepen.io'          => 'codepen',
+			'dailymotion.com'     => 'dailymotion',
+			'deviantart.com'      => 'deviantart',
+			'discordapp.com'      => 'discord',
+			'dribbble.com'        => 'dribbble',
+			'dropbox.com'         => 'dropbox',
+			'ello.com'            => 'ello',
+			'ebay.com'            => 'ebay',
+			'etsy.com'            => 'etsy',
+			'eventbrite.com'      => 'eventbrite',
+			'evernote.com'        => 'evernote',
+			'facebook.com'        => 'facebook',
+			'flickr.com'          => 'flickr',
+			'flipboard.com'       => 'flipboard',
+			'foursquare.com'      => 'foursquare',
+			'gitlab.com'          => 'gitlab',
+			'goodreads.com'       => 'goodreads',
+			'ghost.org'           => 'ghost',
+			'gravatar.com'        => 'gravatar',
+			'allo.google.com'     => 'googleallo',
+			'plus.google.com'     => 'google-plus',
+			'hangouts.google.com' => 'googlehangouts.svg',
+			'github.com'          => 'github',
+			'icq.com'             => 'icq',
+			'imdb.com'            => 'imdb',
+			'instagram.com'       => 'instagram',
+			'lanyrd.com'          => 'lanyrd',
+			'last.fm'             => 'lastfm',
+			'linkedin.com'        => 'linkedin',
+			'livejournal.com'     => 'livejournal',
+			'livestream.com'      => 'livestream',
+			'keybase.io'          => 'keybase',
+			'mailto:'             => 'mail',
+			'mailchimp.com'       => 'mailchimp',
+			'medium.com'          => 'medium',
+			'meetup.com'          => 'meetup',
+			'mixcloud.com'        => 'mixcloud',
+			'myspace.com'         => 'myspace',
+			'pandora.com'         => 'pandora',
+			'path.com'            => 'path',
+			'patreon.com'         => 'patreon',
+			'paypal.com'          => 'paypal',
+			'periscope.tv'        => 'periscope',
+			'pinboard.in'         => 'pinboard',
+			'pinterest.com'       => 'pinterest',
+			'getpocket.com'       => 'pocket',
+			'polldaddy.com'       => 'polldaddy',
+			'quora.com'           => 'quora',
+			'reddit.com'          => 'reddit',
+			'runkeeper.com'       => 'runkeeper',
+			'slack.com'           => 'slack',
+			'signal.com'          => 'signal',
+			'snapchat.com'        => 'snapchat',
+			'stackoverflow.com'   => 'stackoverflow',
+			'strava.com'          => 'strava',
+			'squarespace.com'     => 'squarespace',
+			'skype.com'           => 'skype',
+			'skype:'              => 'skype',
+			'soundcloud.com'      => 'cloud',
+			'spotify.com'         => 'spotify',
+			'swarmapp.com'        => 'swarm',
+			'stumbleupon.com'     => 'stumbleupon',
+			'telegram.org'        => 'telegram',
+			'tumblr.com'          => 'tumblr',
+			'travis-ci.org'       => 'travisci',
+			'tripadvisor.com'     => 'tripadvisor',
+			'twitch.tv'           => 'twitch',
+			'twitter.com'         => 'twitter',
+			'vimeo.com'           => 'vimeo',
+			'whatsapp.com'        => 'whatsapp',
+			'wordpress.org'       => 'wordpress',
+			'wordpress.com'       => 'wordpress',
+			'yelp.com'            => 'yelp',
+			'youtube.com'         => 'youtube',
 		);
 
 		// Substitute another domain to sprite map
 		$icons = apply_filters( 'indieweb_domain_icons', $icons );
-		$icon = $icons['default'];
+		$icon  = $icons['default'];
 
 		if ( array_key_exists( $domain, $icons ) ) {
 			$icon = $icons[ $domain ];
@@ -388,8 +430,8 @@ class HCard_User {
 		if ( ! $list ) {
 			return false;
 		}
-		$author_name = get_the_author_meta( 'display_name' , $author_id );
-		$r = array();
+		$author_name = get_the_author_meta( 'display_name', $author_id );
+		$r           = array();
 		foreach ( $list as $silo => $profile_url ) {
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
 				u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
@@ -409,8 +451,8 @@ class HCard_User {
 		if ( ! $list ) {
 			return false;
 		}
-		$author_name = get_the_author_meta( 'display_name' , $author_id );
-		$r = array();
+		$author_name = get_the_author_meta( 'display_name', $author_id );
+		$r           = array();
 		foreach ( $list as $silo => $profile_url ) {
 			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />' . PHP_EOL;
 		}
@@ -423,7 +465,7 @@ class HCard_User {
 	public static function relme_head() {
 		global $authordata;
 		$single_author = get_option( 'iw_single_author' );
-		$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		$author_id     = get_option( 'iw_default_author' ); // Set the author ID to default
 		if ( is_front_page() && 1 === (int) $single_author ) {
 			echo self::relme_head_list( $author_id );
 			return;
@@ -437,12 +479,11 @@ class HCard_User {
 
 
 	public static function get_hcard_display_defaults() {
-		// $display = self::get_hcard_display_option();
 		$defaults = array(
-			'style' => 'div',
+			'style'         => 'div',
 			'container-css' => '',
-			'single-css' => '',
-			'avatar_size' => 96,
+			'single-css'    => '',
+			'avatar_size'   => 96,
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -456,7 +497,7 @@ class HCard_User {
 		if ( ! $user ) {
 			return false;
 		}
-		$r = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		$r      = wp_parse_args( $args, self::get_hcard_display_defaults() );
 		$avatar = get_avatar(
 			$user,
 			$r['avatar_size'],
@@ -466,10 +507,10 @@ class HCard_User {
 				'class' => array( 'u-photo', 'hcard-photo' ),
 			)
 		);
-		$url = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
-		$name = $user->get( 'display_name' );
+		$url    = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$name   = $user->get( 'display_name' );
 
-		$return = '<div class="hcard-display h-card vcard p-author">';
+		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
 		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
