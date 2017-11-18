@@ -9,8 +9,7 @@ cache:
   directories:
     - vendor
     - $HOME/.composer/cache
-after_success: curl -L https://raw.githubusercontent.com/miya0001/travis2wpplugin/master/deploy.sh
-  | bash
+after_success: curl -L https://raw.githubusercontent.com/miya0001/travis2wpplugin/master/deploy.sh | bash
 env:
   matrix:
   - WP_VERSION=latest WP_MULTISITE=0
