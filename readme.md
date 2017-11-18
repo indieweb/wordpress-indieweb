@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 4.8.3  
-**Stable tag:** 3.3.1  
+**Tested up to:** 4.9  
+**Stable tag:** 3.3.2  
 
 IndieWeb for WordPress!
 
