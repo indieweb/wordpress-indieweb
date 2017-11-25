@@ -461,13 +461,15 @@ class HCard_User {
 		return join( '', $r );
 	}
 
-	public static function php() {
+	public static function pgp() {
 		global $authordata;
 		$single_author = get_option( 'iw_single_author' );
 		if ( is_front_page() && 1 === (int) $single_author ) {
 			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
 		} elseif ( is_author() ) {
 			$author_id = $authordata->ID;
+		} else {
+			return;
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
@@ -486,6 +488,8 @@ class HCard_User {
 			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
 		} elseif ( is_author() ) {
 			$author_id = $authordata->ID;
+		} else {
+			return;
 		}
 		echo self::relme_head_list( $author_id );
 	}
