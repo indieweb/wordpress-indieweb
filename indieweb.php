@@ -161,6 +161,9 @@ class IndieWeb_Plugin {
 			array(
 				'slug' => 'wp-uf2',
 			),
+			array(
+				'slug' => 'indieweb-press-this',
+			),
 		);
 		return $plugin_array;
 	}
