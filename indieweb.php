@@ -164,6 +164,9 @@ class IndieWeb_Plugin {
 			array(
 				'slug' => 'indieweb-press-this',
 			),
+			array(
+				'slug' => 'simple-location',
+			),
 		);
 		return $plugin_array;
 	}
