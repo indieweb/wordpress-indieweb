@@ -7,6 +7,7 @@ add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 // Extended Profile for Rel-Me and H-Card
 class HCard_User {
 
+
 	public static function init() {
 		if ( 1 === (int) get_option( 'iw_author_url' ) ) {
 			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
@@ -18,6 +19,7 @@ class HCard_User {
 		// Save Extra User Data
 		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
+		add_filter( 'wp_head', array( 'HCard_User', 'pgp' ), 11 );
 	}
 
 	/**
@@ -33,13 +35,12 @@ class HCard_User {
 	public static function author_link( $link, $author_id, $nicename ) {
 		$user_info = get_userdata( $author_id );
 		if ( ! empty( $user_info->user_url ) ) {
-				$link = $user_info->user_url;
+			$link = $user_info->user_url;
 		}
 		return $link;
 	}
 
 	/**
-	 *
 	 * list of popular silos and profile url patterns
 	 * Focusing on those which are supported by indieauth
 	 * https://indieweb.org/indieauth.com
@@ -96,6 +97,7 @@ class HCard_User {
 				$profile_fields[ $silo ] = $details['display'];
 			}
 		}
+		$profile_fields['pgp'] = __( 'PGP Key (URL)', 'indieweb' );
 		return $profile_fields;
 	}
 
@@ -169,12 +171,12 @@ class HCard_User {
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
 	?>
 	<tr>
-		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
+	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
-		<td>
-			<input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
-			<span class="description"><?php echo esc_html( $description ); ?></span>
-		</td>
+	 <td>
+	  <input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
+	  <span class="description"><?php echo esc_html( $description ); ?></span>
+	 </td>
 	</tr>
 	<?php
 	}
@@ -186,12 +188,12 @@ class HCard_User {
 		}
 	?>
 	<tr>
-		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
+	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
-		<td>
-			<textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( $value ); ?></textarea><br />
-			<span class="description"><?php echo esc_html( $description ); ?></span>
-		</td>
+	 <td>
+	  <textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( $value ); ?></textarea><br />
+	  <span class="description"><?php echo esc_html( $description ); ?></span>
+	 </td>
 	</tr>
 	<?php
 	}
@@ -223,8 +225,8 @@ class HCard_User {
 	/**
 	 * Filters a single silo URL.
 	 *
-	 * @param string $string A string that is expected to be a silo URL.
-	 * @return string|bool The filtered and escaped URL string, or FALSE if invalid.
+	 * @param   string $string A string that is expected to be a silo URL.
+	 * @return  string|bool The filtered and escaped URL string, or FALSE if invalid.
 	 * @used-by clean_urls
 	 */
 	public static function clean_url( $string ) {
@@ -435,7 +437,7 @@ class HCard_User {
 		foreach ( $list as $silo => $profile_url ) {
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
 				u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
-				esc_attr( $silo ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
+			esc_attr( $silo ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
@@ -459,22 +461,33 @@ class HCard_User {
 		return join( '', $r );
 	}
 
+	public static function php() {
+		global $authordata;
+		$single_author = get_option( 'iw_single_author' );
+		if ( is_front_page() && 1 === (int) $single_author ) {
+			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		} elseif ( is_author() ) {
+			$author_id = $authordata->ID;
+		}
+		$pgp = get_user_option( 'pgp', $author_id );
+		if ( ! empty( $pgp ) ) {
+			echo '<link rel="pgpkey" href="' . $php . '">';
+		}
+	}
+
+
 	/**
 	 *
 	 */
 	public static function relme_head() {
 		global $authordata;
 		$single_author = get_option( 'iw_single_author' );
-		$author_id     = get_option( 'iw_default_author' ); // Set the author ID to default
 		if ( is_front_page() && 1 === (int) $single_author ) {
-			echo self::relme_head_list( $author_id );
-			return;
-		}
-		if ( is_author() ) {
-			global $authordata;
+			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+		} elseif ( is_author() ) {
 			$author_id = $authordata->ID;
-			echo self::relme_head_list( $author_id );
 		}
+		echo self::relme_head_list( $author_id );
 	}
 
 

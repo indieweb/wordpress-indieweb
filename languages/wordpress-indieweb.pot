@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.3.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-11-18 01:28:08+00:00\n"
+"POT-Creation-Date: 2017-11-25 06:50:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -117,123 +117,127 @@ msgstr ""
 msgid "Avatar Size:"
 msgstr ""
 
-#: includes/class-hcard-user.php:51
+#: includes/class-hcard-user.php:52
 msgid "Telephone"
 msgstr ""
 
-#: includes/class-hcard-user.php:55
+#: includes/class-hcard-user.php:56
 msgid "Github username"
 msgstr ""
 
-#: includes/class-hcard-user.php:59
+#: includes/class-hcard-user.php:60
 msgid "Google+ userID (not username)"
 msgstr ""
 
-#: includes/class-hcard-user.php:63
+#: includes/class-hcard-user.php:64
 msgid "Twitter username (without @)"
 msgstr ""
 
-#: includes/class-hcard-user.php:67
+#: includes/class-hcard-user.php:68
 msgid "Facebook ID"
 msgstr ""
 
-#: includes/class-hcard-user.php:71
+#: includes/class-hcard-user.php:72
 msgid "Last.fm username"
 msgstr ""
 
-#: includes/class-hcard-user.php:75
+#: includes/class-hcard-user.php:76
 msgid "Instagram username"
 msgstr ""
 
-#: includes/class-hcard-user.php:79
+#: includes/class-hcard-user.php:80
 msgid "Flickr username"
 msgstr ""
 
-#: includes/class-hcard-user.php:105
+#: includes/class-hcard-user.php:100
+msgid "PGP Key (URL)"
+msgstr ""
+
+#: includes/class-hcard-user.php:107
 msgid "Street Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:106
+#: includes/class-hcard-user.php:108
 msgid "Street Number and Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:109
+#: includes/class-hcard-user.php:111
 msgid "Extended Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:110
+#: includes/class-hcard-user.php:112
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
-#: includes/class-hcard-user.php:113
+#: includes/class-hcard-user.php:115
 msgid "Locality"
 msgstr ""
 
-#: includes/class-hcard-user.php:114
+#: includes/class-hcard-user.php:116
 msgid "City/State/Village"
 msgstr ""
 
-#: includes/class-hcard-user.php:117
+#: includes/class-hcard-user.php:119
 msgid "Region"
 msgstr ""
 
-#: includes/class-hcard-user.php:118
+#: includes/class-hcard-user.php:120
 msgid "State/County/Province"
 msgstr ""
 
-#: includes/class-hcard-user.php:121
+#: includes/class-hcard-user.php:123
 msgid "Postal Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:122
+#: includes/class-hcard-user.php:124
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:125 includes/class-hcard-user.php:126
+#: includes/class-hcard-user.php:127 includes/class-hcard-user.php:128
 msgid "Country Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:135
+#: includes/class-hcard-user.php:137
 msgid "Job Title"
 msgstr ""
 
-#: includes/class-hcard-user.php:136
+#: includes/class-hcard-user.php:138
 msgid "Title or Role"
 msgstr ""
 
-#: includes/class-hcard-user.php:139
+#: includes/class-hcard-user.php:141
 msgid "Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:140
+#: includes/class-hcard-user.php:142
 msgid "Affiliated Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:143
+#: includes/class-hcard-user.php:145
 msgid "Honorific Prefix"
 msgstr ""
 
-#: includes/class-hcard-user.php:144
+#: includes/class-hcard-user.php:146
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
-#: includes/class-hcard-user.php:151
+#: includes/class-hcard-user.php:153
 msgid "Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:152 includes/class-hcard-user.php:160
+#: includes/class-hcard-user.php:154 includes/class-hcard-user.php:162
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:159
+#: includes/class-hcard-user.php:161
 msgid "Additional Profile Information"
 msgstr ""
 
-#: includes/class-hcard-user.php:165
+#: includes/class-hcard-user.php:167
 msgid "Other Sites"
 msgstr ""
 
-#: includes/class-hcard-user.php:165
+#: includes/class-hcard-user.php:167
 msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
 msgstr ""
 
