@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 3.3.2
+ * Version: 3.3.3
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb

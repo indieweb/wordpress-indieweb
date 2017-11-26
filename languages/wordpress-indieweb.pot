@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.2\n"
+"Project-Id-Version: IndieWeb 3.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-11-25 06:50:31+00:00\n"
+"POT-Creation-Date: 2017-11-26 02:52:23+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -268,12 +268,20 @@ msgid ""
 "\t\t\tother plugins to support additional Indieweb features."
 msgstr ""
 
+#: includes/getting-started.php:15
+msgid ""
+"Once you have activated the Indieweb plugin, review the Options for this "
+"plugin, then complete your user profile, adding in connections to other "
+"websites. This allows you to connect your identity on those sites to your "
+"website."
+msgstr ""
+
 #: includes/getting-started.php:16
 msgid ""
-"Once you have these activated, you can setup <a "
-"href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
-"blog to responses from sites such as Facebook and Twitter too, allowing for "
-"a seamless experience."
+"Once you have this setup, and have activated Webmentions and Semantic "
+"Linkbacks, you can setup Bridgy using its plugin to connect your blog to "
+"responses from sites such as Facebook and Twitter too, allowing for a "
+"seamless experience."
 msgstr ""
 
 #: includes/getting-started.php:18
@@ -329,8 +337,9 @@ msgstr ""
 
 #: includes/getting-started.php:37
 msgid ""
-"<strong>Bridgy Publish</strong> - Adds a user interface for using Bridgy to "
-"publish to other sites"
+"<strong>Bridgy</strong> - Adds a user interface to register for the Bridgy "
+"service. Bridgy allows you to pull responses back from other sites as well "
+"as publish them"
 msgstr ""
 
 #: includes/getting-started.php:38
@@ -360,15 +369,27 @@ msgid ""
 "the blog user."
 msgstr ""
 
-#: includes/getting-started.php:51
-msgid "Install Plugins"
+#: includes/getting-started.php:47
+msgid ""
+"<strong>Indieweb Press This</strong> - An Indiewebified version of Press "
+"This"
+msgstr ""
+
+#: includes/getting-started.php:48
+msgid ""
+"<strong>Simple Location</strong> - Adds geographic/location support to "
+"WordPress"
 msgstr ""
 
 #: includes/getting-started.php:53
-msgid "Themes"
+msgid "Install Plugins"
 msgstr ""
 
 #: includes/getting-started.php:55
+msgid "Themes"
+msgstr ""
+
+#: includes/getting-started.php:57
 msgid ""
 "Some WordPress themes are compatible with microformats. The IndieWeb uses "
 "microformats2, the latest version, to mark up sites so that they can be "
@@ -376,7 +397,16 @@ msgid ""
 "the older format if available."
 msgstr ""
 
-#: includes/getting-started.php:57
+#: includes/getting-started.php:58
+msgid ""
+"If your theme is not compatible, the Microformats 2 Plugin attempts to add "
+"microformats to a site that does not support them. This is not a "
+"replacement for a correctly configured theme. If you are interested in "
+"receiving help in converting your theme to support Microformats 2, the "
+"community will be happy to assist."
+msgstr ""
+
+#: includes/getting-started.php:59
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
 "the communications IndieWeb sites support. For example, a class of "
@@ -384,7 +414,7 @@ msgid ""
 "relationship."
 msgstr ""
 
-#: includes/getting-started.php:61
+#: includes/getting-started.php:63
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
 "\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -398,17 +428,17 @@ msgid ""
 "issues."
 msgstr ""
 
-#: includes/getting-started.php:71
+#: includes/getting-started.php:73
 msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:73
+#: includes/getting-started.php:75
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
 msgstr ""
 
-#: includes/getting-started.php:76
+#: includes/getting-started.php:78
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
 "\t\t\thref=\"https://indieweb.org/principles\" "
@@ -416,7 +446,7 @@ msgid ""
 "\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:84
+#: includes/getting-started.php:86
 msgid ""
 "For even more information, please visit the <a "
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."

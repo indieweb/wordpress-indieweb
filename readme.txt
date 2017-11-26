@@ -5,7 +5,7 @@ Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
 Tested up to: 4.9
-Stable tag: 3.3.2
+Stable tag: 3.3.3
 
 IndieWeb for WordPress!
 
@@ -78,6 +78,12 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.3.3 =
+* Add colors for the new icons added in previous version
+* Return Indieweb Press This into the plugin
+* Add Simple Location to the extensions list
+* Amend Getting Started to be clearer about first steps
 
 = 3.3.2 = 
 * Add PHP compatibility testing
