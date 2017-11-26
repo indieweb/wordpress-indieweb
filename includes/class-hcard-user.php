@@ -473,7 +473,7 @@ class HCard_User {
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			echo '<link rel="pgpkey" href="' . $php . '">';
+			echo '<link rel="pgpkey" href="' . $pgp . '">';
 		}
 	}
 
