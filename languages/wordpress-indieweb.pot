@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.2\n"
+"Project-Id-Version: IndieWeb 3.3.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2017-11-18 01:28:08+00:00\n"
+"POT-Creation-Date: 2017-11-28 03:43:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -117,123 +117,127 @@ msgstr ""
 msgid "Avatar Size:"
 msgstr ""
 
-#: includes/class-hcard-user.php:51
+#: includes/class-hcard-user.php:52
 msgid "Telephone"
 msgstr ""
 
-#: includes/class-hcard-user.php:55
+#: includes/class-hcard-user.php:56
 msgid "Github username"
 msgstr ""
 
-#: includes/class-hcard-user.php:59
+#: includes/class-hcard-user.php:60
 msgid "Google+ userID (not username)"
 msgstr ""
 
-#: includes/class-hcard-user.php:63
+#: includes/class-hcard-user.php:64
 msgid "Twitter username (without @)"
 msgstr ""
 
-#: includes/class-hcard-user.php:67
+#: includes/class-hcard-user.php:68
 msgid "Facebook ID"
 msgstr ""
 
-#: includes/class-hcard-user.php:71
+#: includes/class-hcard-user.php:72
 msgid "Last.fm username"
 msgstr ""
 
-#: includes/class-hcard-user.php:75
+#: includes/class-hcard-user.php:76
 msgid "Instagram username"
 msgstr ""
 
-#: includes/class-hcard-user.php:79
+#: includes/class-hcard-user.php:80
 msgid "Flickr username"
 msgstr ""
 
-#: includes/class-hcard-user.php:105
+#: includes/class-hcard-user.php:100
+msgid "PGP Key (URL)"
+msgstr ""
+
+#: includes/class-hcard-user.php:107
 msgid "Street Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:106
+#: includes/class-hcard-user.php:108
 msgid "Street Number and Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:109
+#: includes/class-hcard-user.php:111
 msgid "Extended Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:110
+#: includes/class-hcard-user.php:112
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
-#: includes/class-hcard-user.php:113
+#: includes/class-hcard-user.php:115
 msgid "Locality"
 msgstr ""
 
-#: includes/class-hcard-user.php:114
+#: includes/class-hcard-user.php:116
 msgid "City/State/Village"
 msgstr ""
 
-#: includes/class-hcard-user.php:117
+#: includes/class-hcard-user.php:119
 msgid "Region"
 msgstr ""
 
-#: includes/class-hcard-user.php:118
+#: includes/class-hcard-user.php:120
 msgid "State/County/Province"
 msgstr ""
 
-#: includes/class-hcard-user.php:121
+#: includes/class-hcard-user.php:123
 msgid "Postal Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:122
+#: includes/class-hcard-user.php:124
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:125 includes/class-hcard-user.php:126
+#: includes/class-hcard-user.php:127 includes/class-hcard-user.php:128
 msgid "Country Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:135
+#: includes/class-hcard-user.php:137
 msgid "Job Title"
 msgstr ""
 
-#: includes/class-hcard-user.php:136
+#: includes/class-hcard-user.php:138
 msgid "Title or Role"
 msgstr ""
 
-#: includes/class-hcard-user.php:139
+#: includes/class-hcard-user.php:141
 msgid "Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:140
+#: includes/class-hcard-user.php:142
 msgid "Affiliated Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:143
+#: includes/class-hcard-user.php:145
 msgid "Honorific Prefix"
 msgstr ""
 
-#: includes/class-hcard-user.php:144
+#: includes/class-hcard-user.php:146
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
-#: includes/class-hcard-user.php:151
+#: includes/class-hcard-user.php:153
 msgid "Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:152 includes/class-hcard-user.php:160
+#: includes/class-hcard-user.php:154 includes/class-hcard-user.php:162
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:159
+#: includes/class-hcard-user.php:161
 msgid "Additional Profile Information"
 msgstr ""
 
-#: includes/class-hcard-user.php:165
+#: includes/class-hcard-user.php:167
 msgid "Other Sites"
 msgstr ""
 
-#: includes/class-hcard-user.php:165
+#: includes/class-hcard-user.php:167
 msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
 msgstr ""
 
@@ -266,121 +270,86 @@ msgstr ""
 
 #: includes/getting-started.php:16
 msgid ""
-"Once you have these activated, you can setup <a "
-"href=\"https://www.brid.gy\" target=\"_blank\">Bridgy</a> to connect your "
-"blog to responses from sites such as Facebook and Twitter too, allowing for "
-"a seamless experience."
+"Complete your user profile, adding in connections to other websites. This "
+"allows you to connect your identity on those sites to your website."
+msgstr ""
+
+#: includes/getting-started.php:17
+msgid ""
+"Under Options on the Indieweb menu in the sidebar, set whether this is a "
+"single author or multi-author site"
 msgstr ""
 
 #: includes/getting-started.php:18
-msgid "Plugins"
+msgid ""
+"Links to your various sites will now appear on your site, allowing you to "
+"use Indieauth and other services. If you want them visible to site "
+"visitors, you can add the rel-me widget to your site."
 msgstr ""
 
 #: includes/getting-started.php:20
-msgid ""
-"For more information on these plugins, visit the <a "
-"href=\"https://indieweb.org/wordpress\" target=\"_blank\">WordPress "
-"page</a> on the IndieWeb wiki"
+msgid "Plugins"
 msgstr ""
 
-#: includes/getting-started.php:24
-msgid "Send and receive responses with your site"
+#: includes/getting-started.php:22
+msgid ""
+"After you have established your identity, you can now log into the <a "
+"href=\"https://indieweb.org\">Indieweb wiki</a> and add a user page as a "
+"way of introducing yourself to the community. The wiki is also a great "
+"source of IndieWeb information"
 msgstr ""
 
 #: includes/getting-started.php:25
 msgid ""
-"Send and receive comments, likes, reposts, and other kinds of post "
-"responses using your own site!"
+"Install and activate the Webmentions and Semantic Linkbacks plugins. These "
+"will allow you to receive responses such as replies, likes, etc from other "
+"Indieweb sites"
+msgstr ""
+
+#: includes/getting-started.php:26
+msgid ""
+"You can now install the Bridgy plugin. It will add its settings options "
+"under Indieweb and allow you to directly register for Bridgy to connect "
+"your blog to responses from sites such as Facebook and Twitter."
 msgstr ""
 
 #: includes/getting-started.php:27
 msgid ""
-"<strong>Webmention</strong> <em>(Required)</em> - allows you to send and "
-"receive by adding webmention support to WordPress. Mentions show up as "
-"comments on your site."
+"Browse the Extensions page for a list of other recommended Indieweb plugins "
+"that can expand your functionality."
 msgstr ""
 
-#: includes/getting-started.php:28
-msgid ""
-"<strong>Semantic Linkbacks</strong> <em>(Required)</em> - makes IndieWeb "
-"comments and mentions look better on your site."
+#: includes/getting-started.php:30
+msgid "Install Plugins"
 msgstr ""
 
-#: includes/getting-started.php:29
-msgid ""
-"<strong>Post Kinds</strong> - Allows you to reply/like/RSVP etc to another "
-"site from your own, by adding support for kinds of posts to WordPress."
+#: includes/getting-started.php:32
+msgid "Themes"
 msgstr ""
 
 #: includes/getting-started.php:34
-msgid "Syndicate your content to other sites"
+msgid ""
+"The IndieWeb uses <a "
+"href=\"https://indieweb.org/microformats\">microformats</a> 2 to mark up "
+"sites so that they can be interpreted by other sites when retrieved."
 msgstr ""
 
 #: includes/getting-started.php:35
 msgid ""
-"Linking to the syndicated version of a post allows for bridgy to be able to "
-"discover the post as well as for end users to comment on those sites as a "
-"way of replying."
+"The Microformats 2 Plugin attempts to add microformats to a theme that does "
+"not support them. This is not a replacement for a correctly configured "
+"theme and may not work with all themes."
 msgstr ""
 
-#: includes/getting-started.php:37
-msgid ""
-"<strong>Bridgy Publish</strong> - Adds a user interface for using Bridgy to "
-"publish to other sites"
-msgstr ""
-
-#: includes/getting-started.php:38
-msgid ""
-"<strong>Syndication Links</strong> - Adds fields to a post to allow manual "
-"entry of syndication links as well as automatically from a supported "
-"syndication plugin. Fully supports <a "
-"href=\"https://github.com/crowdfavorite/wp-social\" "
-"target=\"_blank\">Social</a>, partial support for <a "
-"href=\"https://wordpress.org/plugins/social-networks-auto-poster-facebook-"
-"twitter-g/\" target=\"_blank\">NextScripts: Social Networks Auto-Poster "
-"(aka SNAP)</a>."
-msgstr ""
-
-#: includes/getting-started.php:43
-msgid "Other"
-msgstr ""
-
-#: includes/getting-started.php:45
-msgid "<strong>MicroPub</strong> - A MicroPub Server"
-msgstr ""
-
-#: includes/getting-started.php:46
-msgid ""
-"<strong>Indieauth</strong> - The plugin lets you login to the WordPress "
-"backend via IndieAuth. It uses the URL from the profile page to identify "
-"the blog user."
-msgstr ""
-
-#: includes/getting-started.php:51
-msgid "Install Plugins"
-msgstr ""
-
-#: includes/getting-started.php:53
-msgid "Themes"
-msgstr ""
-
-#: includes/getting-started.php:55
-msgid ""
-"Some WordPress themes are compatible with microformats. The IndieWeb uses "
-"microformats2, the latest version, to mark up sites so that they can be "
-"interpreted by other sites when retrieved. Most parsers will fall back onto "
-"the older format if available."
-msgstr ""
-
-#: includes/getting-started.php:57
+#: includes/getting-started.php:36
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
-"the communications IndieWeb sites support. For example, a class of "
-"u-like-of added to a link to a site you liked to indicates that "
-"relationship."
+"the communications IndieWeb sites support. Most tools will attempt to use "
+"means other than Microformats2 if they are not available, but will lack "
+"detail."
 msgstr ""
 
-#: includes/getting-started.php:61
+#: includes/getting-started.php:40
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
 "\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -391,20 +360,22 @@ msgid ""
 "include basic microformats2 and\n"
 "\t\t\twebmention display support. In practice, most themes will work "
 "relatively well out of the box, though there can be some minor display "
-"issues."
+"issues. If you are interested in receiving help in converting your theme to "
+"support Microformats 2, the community will be <a "
+"href=\"https://indieweb.org/discuss\">happy to assist</a>."
 msgstr ""
 
-#: includes/getting-started.php:71
+#: includes/getting-started.php:50
 msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:73
+#: includes/getting-started.php:52
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
 msgstr ""
 
-#: includes/getting-started.php:76
+#: includes/getting-started.php:55
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
 "\t\t\thref=\"https://indieweb.org/principles\" "
@@ -412,7 +383,7 @@ msgid ""
 "\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:84
+#: includes/getting-started.php:63
 msgid ""
 "For even more information, please visit the <a "
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
