@@ -68,10 +68,11 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 * Semantic Linkbacks (Required) - makes IndieWeb comments and mentions look better on your site.
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for NextScripts: Social Networks Auto-Poster (aka SNAP).
-* MicroPub - A MicroPub Server
+* MicroPub - A MicroPub Server for publishing posts using Micropub clients
 * Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
 * Bridgy Publish - User Interface for the Brid.gy Web Service
 * Microformats 2 - provides basic mf2 support for any WordPress theme. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
+* Simple Location - adds basic location support to WordPress posts
 
 One could certainly download, install, and activate some or all of these plugins separately, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them.
 
@@ -81,7 +82,6 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 = 3.3.3 =
 * Add colors for the new icons added in previous version
-* Return Indieweb Press This into the plugin
 * Add Simple Location to the extensions list
 * Amend Getting Started to be clearer about first steps
 
