@@ -22,9 +22,9 @@ Some of these plugins allow you to:
 * help make IndieWeb comments and mentions look better on your site
 * allow support for webmentions
 * provide basic support for [Microformats 2](http://microformats.org/wiki/microformats2)
+* add location support to your posts
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
 * link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram, Google+ can come back to your original post as comments there
-* allow you to add bookmarklets to easily respond/comment on other sites with one click (coming soon!)
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
 * log into your WordPress site with services like Twitter, GitHub, etc using [IndieAuth](https://indieweb.org/indieauth).
 
@@ -64,17 +64,18 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 
 ### What plugins are included in this package? Can I install them separately? ###
 
+One could certainly download, install, and activate some or all of these plugins separately, picking and choosing features as needed, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them.
+
 * Webmention (Required) - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site.
-* Semantic Linkbacks (Required) - makes IndieWeb comments and mentions look better on your site.
+* Semantic Linkbacks (Required) - turns webmentions into richer responses, such as replies/likes/RSVP etc.
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
-* Syndication Links - Adds fields to a post to allow manual entry of syndication links as well as automatically from a supported syndication plugin. Fully supports Social, partial support for NextScripts: Social Networks Auto-Poster (aka SNAP).
-* MicroPub - A MicroPub Server for publishing posts using Micropub clients
+* Syndication Links - Automatically adds syndication links from a supported syndication plugin or by manual entry in the post editor. Support for NextScripts: Social Networks Auto-Poster (aka SNAP), the Medium plugin, and a few others.
+* MicroPub - A MicroPub Server for publishing posts using third-party Micropub clients
 * Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
-* Bridgy Publish - User Interface for the Brid.gy Web Service
-* Microformats 2 - provides basic mf2 support for any WordPress theme. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
+* Bridgy - User Interface for the Brid.gy Web Service
+* Microformats 2 - provides basic mf2 support for any WordPress theme that does not support mf2 already. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
 * Simple Location - adds basic location support to WordPress posts
 
-One could certainly download, install, and activate some or all of these plugins separately, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them.
 
 ## Changelog ##
 

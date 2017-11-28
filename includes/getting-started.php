@@ -15,7 +15,7 @@
 	<ol>
 	<li><?php _e( 'Complete your user profile, adding in connections to other websites. This allows you to connect your identity on those sites to your website.', 'indieweb' ); ?></li>
 	<li><?php _e( 'Under Options on the Indieweb menu in the sidebar, set whether this is a single author or multi-author site', 'indieweb' ); ?></li>
-	<li><?php _e( 'Links to your various sites will now appear invisibly on your site, allowing you to use Indieauth and other services. For an option visible to humans, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
+	<li><?php _e( 'Links to your various sites will now appear on your site, allowing you to use Indieauth and other services. If you want them visible to site visitors, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
 	</ol>
 	<h2><?php esc_html_e( 'Plugins', 'indieweb' ); ?></h2>
 
@@ -23,7 +23,7 @@
 
 	<ol>
 	<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other Indieweb sites', 'indieweb' ); ?></li>
-	<li><?php _e( 'You can now install the Bridgy plugin. It will add its settings options under Indieweb and allow you to directly register for Bridgy to connect your blog to responses from sites such as Facebook and Twitter too', 'indieweb' ); ?></li>
+	<li><?php _e( 'You can now install the Bridgy plugin. It will add its settings options under Indieweb and allow you to directly register for Bridgy to connect your blog to responses from sites such as Facebook and Twitter.', 'indieweb' ); ?></li>
 	<li><?php _e( 'Browse the Extensions page for a list of other recommended Indieweb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 	</ol>
 
@@ -31,8 +31,8 @@
 
 	<h2><?php esc_html_e( 'Themes', 'indieweb' ); ?></h2>
 
-	<p><?php _e( 'The IndieWeb uses microformats2 to mark up sites so that they can be interpreted by other sites when retrieved.', 'indieweb' ); ?></p>
-	<p><?php _e( 'If your theme does not identify itself as supporting Microformats 2, the Microformats 2 Plugin attempts to add microformats to a site that does not support them. This is not a replacement for a correctly configured theme and may not work with all themes.', 'indieweb' ); ?></p>
+	<p><?php _e( 'The IndieWeb uses <a href="https://indieweb.org/microformats">microformats</a> 2 to mark up sites so that they can be interpreted by other sites when retrieved.', 'indieweb' ); ?></p>
+	<p><?php _e( 'The Microformats 2 Plugin attempts to add microformats to a theme that does not support them. This is not a replacement for a correctly configured theme and may not work with all themes.', 'indieweb' ); ?></p>
 	<p><?php _e( 'Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. Most tools will attempt to use means other than Microformats2 if they are not available, but will lack detail.', 'indieweb' ); ?></p>
 
 	<p>
@@ -42,7 +42,7 @@
 			target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully
 			microformats2 compliant. <a href="http://wordpress.org/themes/independent-publisher/"
 			target="_blank">Independent Publisher</a> has been updated to include basic microformats2 and
-			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats 2, the community will be happy to assist.', 'indieweb'
+			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats 2, the community will be <a href="https://indieweb.org/discuss">happy to assist</a>.', 'indieweb'
 	);
 ?>
 </p>
