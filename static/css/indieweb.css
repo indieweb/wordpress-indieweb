@@ -41,139 +41,868 @@ Link Style
       color: black; }
 
 /*--------------------------------------------------------------
-Social Icons
+Simple Icons
 --------------------------------------------------------------*/
-.relme li a .svg-facebook {
-  color: #3b5998; }
+.relme li a .svg-500px {
+  color: #0099E5; }
 
-.relme li a .svg-feed {
-  color: #ffa500; }
+.relme li a .svg-acm {
+  color: #0085CA; }
 
-.relme li a .svg-twitter, .relme li a .svg-twitter-alt {
-  color: #1DA1F2; }
+.relme li a .svg-aim {
+  color: #FFCA00; }
 
-.relme li a .svg-dribbble {
-  color: #ea4c89; }
+.relme li a .svg-aboutme {
+  color: #00A98F; }
 
-.relme li a .svg-google-plus, .relme li a .svg-google-plus-alt {
-  color: #dc4e41; }
+.relme li a .svg-addthis {
+  color: #FF5C3E; }
 
-.relme li a .svg-pinterest, .relme li a .svg-pinterest-alt {
-  color: #bd081c; }
-
-.relme li a .svg-github {
-  color: #181717; }
-
-.relme li a .svg-tumblr {
-  color: #36465D; }
-
-.relme li a .svg-youtube {
+.relme li a .svg-adobe {
   color: #FF0000; }
 
-.relme li a .svg-flickr {
-  color: #0063DC; }
+.relme li a .svg-adobeacrobatreader {
+  color: #EE3F24; }
 
-.relme li a .svg-vimeo {
-  color: #1AB7EA; }
+.relme li a .svg-adobeaftereffects {
+  color: #D291FF; }
 
-.relme li a .svg-instagram {
-  color: #E4405F; }
+.relme li a .svg-adobedreamweaver {
+  color: #35FA00; }
 
-.relme li a .svg-codepen {
-  color: #000000; }
+.relme li a .svg-adobeillustrator {
+  color: #FF7C00; }
 
-.relme li a .svg-linkedin, .relme li a .svg-linkedin-alt {
-  color: #0077B5; }
+.relme li a .svg-adobeindesign {
+  color: #FD3F93; }
 
-.relme li a .svg-skype {
-  color: #00AFF0; }
+.relme li a .svg-adobelightroom {
+  color: #ADD5EC; }
 
-.relme li a .svg-reddit {
-  color: #FF4500; }
+.relme li a .svg-adobephotoshop {
+  color: #00C8FF; }
 
-.relme li a .svg-foursquare {
-  color: #F94877; }
+.relme li a .svg-adobetypekit {
+  color: #87EC00; }
 
-.relme li a .svg-pocket {
-  color: #EF3F56; }
-
-.relme li a .svg-dropbox {
-  color: #0061FF; }
-
-.relme li a .svg-soundcloud {
-  color: #FF3300; }
-
-.relme li a .svg-swarm {
-  color: #FFA633; }
-
-.relme li a .svg-wordpress {
-  color: #21759B; }
-
-.relme li a .svg-podcasts {
-  color: #9933CC; }
-
-.relme li a .svg-meetup {
-  color: #ED1C40; }
-
-.relme li a .svg-gnusocial {
-  color: #A22430; }
-
-.relme li a .svg-ebay {
-  color: #E53238; }
-
-.relme li a .svg-quora {
-  color: #B92B27; }
-
-.relme li a .svg-yelp {
-  color: #C41200; }
-
-.relme li a .svg-gitlab {
-  color: #E24329; }
-
-.relme li a .svg-stumbleupon {
-  color: #EB4924; }
-
-.relme li a .svg-eventbrite {
-  color: #F6682F; }
-
-.relme li a .svg-strava {
-  color: #FC4C02; }
-
-.relme li a .svg-etsy {
-  color: #F45800; }
-
-.relme li a .svg-stackoverflow {
-  color: #FE7A16; }
-
-.relme li a .svg-goodreads {
-  color: #663300; }
-
-.relme li a .svg-bitcoin {
-  color: #F7931A; }
+.relme li a .svg-airbnb {
+  color: #FF5A5F; }
 
 .relme li a .svg-amazon {
   color: #FF9900; }
 
-.relme li a .svg-snapchat {
-  color: #FFFC00; }
+.relme li a .svg-americanexpress {
+  color: #2E77BC; }
 
 .relme li a .svg-android {
   color: #A4C639; }
 
-.relme li a .svg-tripadvisor {
-  color: #589442; }
+.relme li a .svg-angellist {
+  color: #000000; }
 
-.relme li a .svg-travisci {
-  color: #39A85B; }
+.relme li a .svg-angular {
+  color: #DD0031; }
+
+.relme li a .svg-apple {
+  color: #999999; }
+
+.relme li a .svg-applemusic {
+  color: #000000; }
+
+.relme li a .svg-archlinux {
+  color: #1793D1; }
+
+.relme li a .svg-asana {
+  color: #273347; }
+
+.relme li a .svg-atlassian {
+  color: #0747A6; }
+
+.relme li a .svg-atom {
+  color: #66595C; }
+
+.relme li a .svg-auth0 {
+  color: #EB5424; }
+
+.relme li a .svg-automatic {
+  color: #7D8084; }
+
+.relme li a .svg-baidu {
+  color: #2319DC; }
+
+.relme li a .svg-bandcamp {
+  color: #408294; }
+
+.relme li a .svg-basecamp {
+  color: #5ECC62; }
+
+.relme li a .svg-bathasu {
+  color: #00A3E0; }
+
+.relme li a .svg-behance {
+  color: #1769FF; }
+
+.relme li a .svg-bigcartel {
+  color: #222222; }
+
+.relme li a .svg-bing {
+  color: #008373; }
+
+.relme li a .svg-bitbucket {
+  color: #0052CC; }
+
+.relme li a .svg-bitcoin {
+  color: #F7931A; }
+
+.relme li a .svg-bitly {
+  color: #EE6123; }
+
+.relme li a .svg-blogger {
+  color: #FF5722; }
+
+.relme li a .svg-bootstrap {
+  color: #563D7C; }
+
+.relme li a .svg-bower {
+  color: #EF5734; }
+
+.relme li a .svg-brandai {
+  color: #0AA0FF; }
+
+.relme li a .svg-buffer {
+  color: #168EEA; }
+
+.relme li a .svg-buzzfeed {
+  color: #EE3322; }
+
+.relme li a .svg-csswizardry {
+  color: #F43059; }
+
+.relme li a .svg-css3 {
+  color: #1572B6; }
+
+.relme li a .svg-cakephp {
+  color: #D33C43; }
+
+.relme li a .svg-campaignmonitor {
+  color: #509CF6; }
+
+.relme li a .svg-circleci {
+  color: #343434; }
+
+.relme li a .svg-coop {
+  color: #00A1CC; }
+
+.relme li a .svg-codeschool {
+  color: #4CADC0; }
+
+.relme li a .svg-codeigniter {
+  color: #EE4623; }
+
+.relme li a .svg-codepen {
+  color: #000000; }
+
+.relme li a .svg-codecademy {
+  color: #204056; }
+
+.relme li a .svg-codeforces {
+  color: #1F8ACB; }
+
+.relme li a .svg-coderwall {
+  color: #3E8DCC; }
+
+.relme li a .svg-codewars {
+  color: #AD2C27; }
+
+.relme li a .svg-codio {
+  color: #4574E0; }
+
+.relme li a .svg-compropago {
+  color: #00AAEF; }
+
+.relme li a .svg-conekta {
+  color: #414959; }
+
+.relme li a .svg-coursera {
+  color: #757575; }
+
+.relme li a .svg-dailymotion {
+  color: #0066DC; }
+
+.relme li a .svg-deezer {
+  color: #00C7F2; }
+
+.relme li a .svg-delicious {
+  color: #3399FF; }
+
+.relme li a .svg-designernews {
+  color: #2D72D9; }
 
 .relme li a .svg-deviantart {
   color: #05CC47; }
 
+.relme li a .svg-diaspora {
+  color: #000000; }
+
+.relme li a .svg-digg {
+  color: #000000; }
+
+.relme li a .svg-digitalocean {
+  color: #0080FF; }
+
+.relme li a .svg-discord {
+  color: #7289DA; }
+
+.relme li a .svg-discourse {
+  color: #000000; }
+
+.relme li a .svg-discover {
+  color: #FF6000; }
+
+.relme li a .svg-disqus {
+  color: #2E9FFF; }
+
+.relme li a .svg-django {
+  color: #092E20; }
+
+.relme li a .svg-docker {
+  color: #1488C6; }
+
+.relme li a .svg-draugiemlv {
+  color: #FF6600; }
+
+.relme li a .svg-dribbble {
+  color: #EA4C89; }
+
+.relme li a .svg-dropbox {
+  color: #0061FF; }
+
+.relme li a .svg-drupal {
+  color: #0678BE; }
+
+.relme li a .svg-ello {
+  color: #000000; }
+
+.relme li a .svg-empirekred {
+  color: #72BE50; }
+
+.relme li a .svg-ethereum {
+  color: #3C3C3D; }
+
+.relme li a .svg-etsy {
+  color: #F45800; }
+
+.relme li a .svg-eventstore {
+  color: #5AB552; }
+
+.relme li a .svg-eventbrite {
+  color: #F6682F; }
+
 .relme li a .svg-evernote {
   color: #2DBE60; }
 
-.relme li a .svg-whatsapp {
-  color: #25D366; }
+.relme li a .svg-everplaces {
+  color: #FA4B32; }
+
+.relme li a .svg-facebook {
+  color: #3B5998; }
+
+.relme li a .svg-fandango {
+  color: #FF7300; }
+
+.relme li a .svg-feathub {
+  color: #9B9B9B; }
+
+.relme li a .svg-feedly {
+  color: #6CC655; }
+
+.relme li a .svg-fitbit {
+  color: #00B0B9; }
+
+.relme li a .svg-flickr {
+  color: #0063DC; }
+
+.relme li a .svg-flipboard {
+  color: #E12828; }
+
+.relme li a .svg-fnac {
+  color: #E1A925; }
+
+.relme li a .svg-foursquare {
+  color: #F94877; }
+
+.relme li a .svg-gnu {
+  color: #A42E2B; }
+
+.relme li a .svg-gnusocial {
+  color: #A22430; }
+
+.relme li a .svg-govuk {
+  color: #005EA5; }
+
+.relme li a .svg-garmin {
+  color: #007DC3; }
+
+.relme li a .svg-gatsby {
+  color: #744C9E; }
+
+.relme li a .svg-gauges {
+  color: #339966; }
+
+.relme li a .svg-geeklist {
+  color: #8CC63F; }
+
+.relme li a .svg-geocaching {
+  color: #467126; }
+
+.relme li a .svg-gerrit {
+  color: #EEEEEE; }
+
+.relme li a .svg-ghost {
+  color: #718087; }
+
+.relme li a .svg-git {
+  color: #F14E32; }
+
+.relme li a .svg-github {
+  color: #181717; }
+
+.relme li a .svg-gitlab {
+  color: #E24329; }
+
+.relme li a .svg-gitter {
+  color: #FF0064; }
+
+.relme li a .svg-glassdoor {
+  color: #0CAA41; }
+
+.relme li a .svg-gmail {
+  color: #D14836; }
+
+.relme li a .svg-goldenline {
+  color: #FBBF00; }
+
+.relme li a .svg-goodreads {
+  color: #663300; }
+
+.relme li a .svg-google {
+  color: #4285F4; }
+
+.relme li a .svg-googleallo {
+  color: #ECB842; }
+
+.relme li a .svg-googleanalytics {
+  color: #FFC107; }
+
+.relme li a .svg-googlechrome {
+  color: #4285F4; }
+
+.relme li a .svg-googledrive {
+  color: #4386FC; }
+
+.relme li a .svg-googlehangouts {
+  color: #0C9D58; }
+
+.relme li a .svg-googlekeep {
+  color: #FFBB00; }
+
+.relme li a .svg-googleplay {
+  color: #607D8B; }
+
+.relme li a .svg-googleplus {
+  color: #DC4E41; }
+
+.relme li a .svg-graphql {
+  color: #E10098; }
+
+.relme li a .svg-graphcool {
+  color: #27AE60; }
+
+.relme li a .svg-gratipay {
+  color: #663300; }
+
+.relme li a .svg-grav {
+  color: #221E1F; }
+
+.relme li a .svg-gravatar {
+  color: #1E8CBE; }
+
+.relme li a .svg-gulp {
+  color: #DA4648; }
+
+.relme li a .svg-gumtree {
+  color: #72EF36; }
+
+.relme li a .svg-html5 {
+  color: #E34F26; }
+
+.relme li a .svg-hackerrank {
+  color: #2EC866; }
+
+.relme li a .svg-hackster {
+  color: #1BACF7; }
+
+.relme li a .svg-haskell {
+  color: #5D4F85; }
+
+.relme li a .svg-hatenabookmark {
+  color: #00A4DE; }
+
+.relme li a .svg-heroku {
+  color: #430098; }
+
+.relme li a .svg-hexo {
+  color: #0E83CD; }
+
+.relme li a .svg-hipchat {
+  color: #205281; }
+
+.relme li a .svg-hootsuite {
+  color: #000000; }
+
+.relme li a .svg-houzz {
+  color: #7AC142; }
+
+.relme li a .svg-hulu {
+  color: #66AA33; }
+
+.relme li a .svg-humblebundle {
+  color: #CC2929; }
+
+.relme li a .svg-icq {
+  color: #7EBD00; }
+
+.relme li a .svg-imdb {
+  color: #E6B91E; }
+
+.relme li a .svg-invision {
+  color: #FF3366; }
+
+.relme li a .svg-inkscape {
+  color: #000000; }
+
+.relme li a .svg-instacart {
+  color: #43B02A; }
+
+.relme li a .svg-instagram {
+  color: #E4405F; }
+
+.relme li a .svg-instapaper {
+  color: #1F1F1F; }
+
+.relme li a .svg-intel {
+  color: #0071C5; }
+
+.relme li a .svg-intercom {
+  color: #1F8DED; }
+
+.relme li a .svg-jira {
+  color: #172B4D; }
+
+.relme li a .svg-jsfiddle {
+  color: #4679A4; }
+
+.relme li a .svg-json {
+  color: #000000; }
+
+.relme li a .svg-javascript {
+  color: #F7DF1E; }
+
+.relme li a .svg-jekyll {
+  color: #CC0000; }
+
+.relme li a .svg-jenkins {
+  color: #D24939; }
+
+.relme li a .svg-joomla {
+  color: #5091CD; }
+
+.relme li a .svg-justgiving {
+  color: #AD29B6; }
+
+.relme li a .svg-kaggle {
+  color: #20BEFF; }
+
+.relme li a .svg-keycdn {
+  color: #3686BE; }
+
+.relme li a .svg-keybase {
+  color: #33A0FF; }
+
+.relme li a .svg-khanacademy {
+  color: #9DB63B; }
+
+.relme li a .svg-kickstarter {
+  color: #2BDE73; }
+
+.relme li a .svg-kik {
+  color: #82BC23; }
+
+.relme li a .svg-kirby {
+  color: #FF0100; }
+
+.relme li a .svg-klout {
+  color: #E44600; }
+
+.relme li a .svg-koding {
+  color: #00B057; }
+
+.relme li a .svg-lanyrd {
+  color: #3C80CA; }
+
+.relme li a .svg-laravel {
+  color: #E74430; }
+
+.relme li a .svg-lastfm {
+  color: #D51007; }
+
+.relme li a .svg-launchpad {
+  color: #F8C300; }
+
+.relme li a .svg-letterboxd {
+  color: #00D735; }
+
+.relme li a .svg-line {
+  color: #00C300; }
+
+.relme li a .svg-linkedin {
+  color: #0077B5; }
+
+.relme li a .svg-linux {
+  color: #FCC624; }
+
+.relme li a .svg-linuxfoundation {
+  color: #009BEE; }
+
+.relme li a .svg-livejournal {
+  color: #00B0EA; }
+
+.relme li a .svg-livestream {
+  color: #CF202E; }
+
+.relme li a .svg-macys {
+  color: #E21A2C; }
+
+.relme li a .svg-magento {
+  color: #EE672F; }
+
+.relme li a .svg-mailchimp {
+  color: #239AB9; }
+
+.relme li a .svg-makerbot {
+  color: #FF1E0D; }
+
+.relme li a .svg-mastercard {
+  color: #EB001B; }
+
+.relme li a .svg-mastodon {
+  color: #189EFC; }
+
+.relme li a .svg-matternet {
+  color: #261C29; }
+
+.relme li a .svg-mediatemple {
+  color: #000000; }
+
+.relme li a .svg-medium {
+  color: #1C1B1A; }
+
+.relme li a .svg-meetup {
+  color: #ED1C40; }
+
+.relme li a .svg-messenger {
+  color: #0084FF; }
+
+.relme li a .svg-meteor {
+  color: #DE4F4F; }
+
+.relme li a .svg-microgenetics {
+  color: #FF0000; }
+
+.relme li a .svg-microsoft {
+  color: #666666; }
+
+.relme li a .svg-microsoftaccess {
+  color: #BA141A; }
+
+.relme li a .svg-microsoftexcel {
+  color: #217346; }
+
+.relme li a .svg-microsoftonenote {
+  color: #80397B; }
+
+.relme li a .svg-microsoftoutlook {
+  color: #0072C6; }
+
+.relme li a .svg-microsoftpowerpoint {
+  color: #D24726; }
+
+.relme li a .svg-microsoftword {
+  color: #2B579A; }
+
+.relme li a .svg-minutemailer {
+  color: #3ABFE6; }
+
+.relme li a .svg-mixcloud {
+  color: #314359; }
+
+.relme li a .svg-monero {
+  color: #FF6600; }
+
+.relme li a .svg-mongodb {
+  color: #47A248; }
+
+.relme li a .svg-monkeytie {
+  color: #FFC619; }
+
+.relme li a .svg-monogram {
+  color: #FDB22A; }
+
+.relme li a .svg-moo {
+  color: #00945E; }
+
+.relme li a .svg-mozilla {
+  color: #000000; }
+
+.relme li a .svg-mozillafirefox {
+  color: #FF9400; }
+
+.relme li a .svg-mysql {
+  color: #4479A1; }
+
+.relme li a .svg-myspace {
+  color: #030303; }
+
+.relme li a .svg-nginx {
+  color: #269539; }
+
+.relme li a .svg-npm {
+  color: #CB3837; }
+
+.relme li a .svg-neo4j {
+  color: #008CC1; }
+
+.relme li a .svg-netflix {
+  color: #E50914; }
+
+.relme li a .svg-netlify {
+  color: #00C7B7; }
+
+.relme li a .svg-nextdoor {
+  color: #00B246; }
+
+.relme li a .svg-nintendo {
+  color: #8F8F8F; }
+
+.relme li a .svg-nintendogamecube {
+  color: #6A5FBB; }
+
+.relme li a .svg-nintendoswitch {
+  color: #E60012; }
+
+.relme li a .svg-nodejs {
+  color: #339933; }
+
+.relme li a .svg-nucleo {
+  color: #766DCC; }
+
+.relme li a .svg-ovh {
+  color: #123F6D; }
+
+.relme li a .svg-oculus {
+  color: #1C1E20; }
+
+.relme li a .svg-odnoklassniki {
+  color: #F4731C; }
+
+.relme li a .svg-onedrive {
+  color: #094AB2; }
+
+.relme li a .svg-opera {
+  color: #FF1B2D; }
+
+.relme li a .svg-origin {
+  color: #F56C2D; }
+
+.relme li a .svg-overcast {
+  color: #FC7E0F; }
+
+.relme li a .svg-php {
+  color: #777BB4; }
+
+.relme li a .svg-pagekit {
+  color: #212121; }
+
+.relme li a .svg-pandora {
+  color: #005483; }
+
+.relme li a .svg-patreon {
+  color: #F96854; }
+
+.relme li a .svg-paypal {
+  color: #00457C; }
+
+.relme li a .svg-periscope {
+  color: #40A4C4; }
+
+.relme li a .svg-pinboard {
+  color: #0000FF; }
+
+.relme li a .svg-pingdom {
+  color: #FFF000; }
+
+.relme li a .svg-pingup {
+  color: #00B1AB; }
+
+.relme li a .svg-pinterest {
+  color: #BD081C; }
+
+.relme li a .svg-plangrid {
+  color: #0085DE; }
+
+.relme li a .svg-playstation {
+  color: #003791; }
+
+.relme li a .svg-playstation3 {
+  color: #003791; }
+
+.relme li a .svg-playstation4 {
+  color: #003791; }
+
+.relme li a .svg-playerme {
+  color: #C0379A; }
+
+.relme li a .svg-plex {
+  color: #E5A00D; }
+
+.relme li a .svg-pluralsight {
+  color: #F15B2A; }
+
+.relme li a .svg-plurk {
+  color: #E9443D; }
+
+.relme li a .svg-pocket {
+  color: #EF3F56; }
+
+.relme li a .svg-podcasts {
+  color: #9933CC; }
+
+.relme li a .svg-prismic {
+  color: #484A7A; }
+
+.relme li a .svg-processwire {
+  color: #EF145F; }
+
+.relme li a .svg-producthunt {
+  color: #DA552F; }
+
+.relme li a .svg-protoio {
+  color: #34A7C1; }
+
+.relme li a .svg-protonmail {
+  color: #8B89CC; }
+
+.relme li a .svg-python {
+  color: #3776AB; }
+
+.relme li a .svg-quantcast {
+  color: #1E262C; }
+
+.relme li a .svg-quantopian {
+  color: #C50000; }
+
+.relme li a .svg-quora {
+  color: #B92B27; }
+
+.relme li a .svg-rss {
+  color: #FFA500; }
+
+.relme li a .svg-rails {
+  color: #CC0000; }
+
+.relme li a .svg-raspberrypi {
+  color: #C51A4A; }
+
+.relme li a .svg-react {
+  color: #00D8FF; }
+
+.relme li a .svg-readthedocs {
+  color: #8CA1AF; }
+
+.relme li a .svg-readability {
+  color: #990000; }
+
+.relme li a .svg-reddit {
+  color: #FF4500; }
+
+.relme li a .svg-redis {
+  color: #D82C20; }
+
+.relme li a .svg-redux {
+  color: #764ABC; }
+
+.relme li a .svg-reverbnation {
+  color: #E43526; }
+
+.relme li a .svg-roots {
+  color: #27AE60; }
+
+.relme li a .svg-ruby {
+  color: #CC342D; }
+
+.relme li a .svg-runkeeper {
+  color: #2DC9D7; }
+
+.relme li a .svg-rust {
+  color: #000000; }
+
+.relme li a .svg-salesforce {
+  color: #00A1E0; }
+
+.relme li a .svg-sass {
+  color: #CC6699; }
+
+.relme li a .svg-saucelabs {
+  color: #E2231A; }
+
+.relme li a .svg-scribd {
+  color: #1A7BBA; }
+
+.relme li a .svg-sega {
+  color: #0089CF; }
+
+.relme li a .svg-sellfy {
+  color: #21B352; }
+
+.relme li a .svg-sentry {
+  color: #FB4226; }
+
+.relme li a .svg-serverfault {
+  color: #E7282D; }
+
+.relme li a .svg-shazam {
+  color: #0088FF; }
+
+.relme li a .svg-shopify {
+  color: #7AB55C; }
+
+.relme li a .svg-signal {
+  color: #2592E9; }
+
+.relme li a .svg-simpleicons {
+  color: #111111; }
+
+.relme li a .svg-sinaweibo {
+  color: #E6162D; }
+
+.relme li a .svg-sitepoint {
+  color: #258AAF; }
+
+.relme li a .svg-skyliner {
+  color: #2FCEA0; }
+
+.relme li a .svg-skype {
+  color: #00AFF0; }
 
 .relme li a .svg-slack {
   color: #56B68B; }
@@ -181,116 +910,314 @@ Social Icons
 .relme li a .svg-slashdot {
   color: #026664; }
 
-.relme li a .svg-runkeeper {
-  color: #2DC9D7; }
+.relme li a .svg-slickpic {
+  color: #FF880F; }
 
-.relme li a .svg-bandcamp {
-  color: #408294; }
+.relme li a .svg-slides {
+  color: #E4637C; }
 
-.relme li a .svg-livejournal {
-  color: #00B0EA; }
+.relme li a .svg-smashingmagazine {
+  color: #E85C33; }
 
-.relme li a .svg-mailchimp {
-  color: #2C9AB7; }
+.relme li a .svg-snapchat {
+  color: #FFFC00; }
 
-.relme li a .svg-telegram {
-  color: #2CA5E0; }
+.relme li a .svg-sogou {
+  color: #FB6022; }
 
-.relme li a .svg-500px {
-  color: #0099E5; }
+.relme li a .svg-songkick {
+  color: #F80046; }
 
-.relme li a .svg-mastodon {
-  color: #189EFC; }
+.relme li a .svg-soundcloud {
+  color: #FF3300; }
 
-.relme li a .svg-lanryd {
-  color: #3C80CA; }
+.relme li a .svg-sourceforge {
+  color: #535353; }
 
-.relme li a .svg-dailymotion {
-  color: #0066DC; }
+.relme li a .svg-sparkpost {
+  color: #FA6423; }
 
-.relme li a .svg-bitbucket {
-  color: #0052CC; }
-
-.relme li a .svg-jira {
-  color: #172B4D; }
-
-.relme li a .svg-pinboard {
-  color: #0000FF; }
-
-.relme li a .svg-twitch {
-  color: #6441A5; }
-
-.relme li a .svg-apple {
-  color: #999999; }
-
-.relme li a .svg-automatic {
-  color: #7D8084; }
-
-.relme li a .svg-ghost {
-  color: #718087; }
-
-.relme li a .svg-microsoft {
-  color: #666666; }
-
-.relme li a .svg-circleci {
-  color: #343434; }
-
-.relme li a .svg-instapaper {
-  color: #1F1F1F; }
-
-.relme li a .svg-medium {
-  color: #1C1B1A; }
+.relme li a .svg-speakerdeck {
+  color: #339966; }
 
 .relme li a .svg-spotify {
   color: #1ED760; }
 
-.relme li a .svg-diaspora {
+.relme li a .svg-spotlight {
+  color: #352A71; }
+
+.relme li a .svg-spreaker {
+  color: #F5C300; }
+
+.relme li a .svg-squarespace {
   color: #000000; }
 
-.relme li a .svg-discord {
-  color: #7289DA; }
+.relme li a .svg-stackexchange {
+  color: #1E5397; }
 
-.relme li a .svg-bing {
-  color: #008373; }
+.relme li a .svg-stackoverflow {
+  color: #FE7A16; }
 
-.relme li a .svg-behance {
-  color: #1769FF; }
+.relme li a .svg-statamic {
+  color: #1F3641; }
 
-.relme li a .svg-aboutme {
-  color: #00A98F; }
-
-.relme li a .svg-ello {
+.relme li a .svg-staticman {
   color: #000000; }
 
-.relme li a .svg-googleallo {
-  color: #ECB842; }
+.relme li a .svg-steam {
+  color: #000000; }
 
-.relme li a .svg-googlehangouts {
-  color: #0C9D58; }
+.relme li a .svg-steem {
+  color: #4BA2F2; }
 
-.relme li a .svg-gravatar {
-  color: #1E8CBE; }
+.relme li a .svg-stitcher {
+  color: #000000; }
 
-.relme li a .svg-imdb {
-  color: #E6B91E; }
+.relme li a .svg-storify {
+  color: #3A98D9; }
 
-.relme li a .svg-keybase {
-  color: #33A0FF; }
+.relme li a .svg-strava {
+  color: #FC4C02; }
 
-.relme li a .svg-lastfm {
-  color: #D51007; }
+.relme li a .svg-stripe {
+  color: #008CDD; }
 
-.relme li a .svg-livestream {
-  color: #CF202E; }
+.relme li a .svg-stubhub {
+  color: #003168; }
 
-.relme li a .svg-mixcloud {
-  color: #314359; }
+.relme li a .svg-stumbleupon {
+  color: #EB4924; }
 
-.relme li a .svg-myspace {
-  color: #030303; }
+.relme li a .svg-styleshare {
+  color: #231F20; }
 
-.relme li a .svg-periscope {
-  color: #40A4C4; }
+.relme li a .svg-stylus {
+  color: #333333; }
+
+.relme li a .svg-sublimetext {
+  color: #272822; }
+
+.relme li a .svg-subversion {
+  color: #809CC9; }
+
+.relme li a .svg-superuser {
+  color: #2EACE3; }
+
+.relme li a .svg-swarm {
+  color: #FFA633; }
+
+.relme li a .svg-swift {
+  color: #FA7343; }
+
+.relme li a .svg-symfony {
+  color: #000000; }
+
+.relme li a .svg-ted {
+  color: #E62B1E; }
+
+.relme li a .svg-teespring {
+  color: #39ACE6; }
+
+.relme li a .svg-telegram {
+  color: #2CA5E0; }
+
+.relme li a .svg-tencentqq {
+  color: #12B7F5; }
+
+.relme li a .svg-tesla {
+  color: #CC0000; }
+
+.relme li a .svg-themighty {
+  color: #D0072A; }
+
+.relme li a .svg-tinder {
+  color: #FF6B6B; }
+
+.relme li a .svg-toggl {
+  color: #E01B22; }
+
+.relme li a .svg-topcoder {
+  color: #29A8E0; }
+
+.relme li a .svg-toptal {
+  color: #3863A0; }
+
+.relme li a .svg-trakt {
+  color: #ED1C24; }
+
+.relme li a .svg-travisci {
+  color: #39A85B; }
+
+.relme li a .svg-treehouse {
+  color: #5FCF80; }
+
+.relme li a .svg-trello {
+  color: #0079BF; }
+
+.relme li a .svg-tripadvisor {
+  color: #00AF87; }
+
+.relme li a .svg-trulia {
+  color: #53B50A; }
+
+.relme li a .svg-tumblr {
+  color: #36465D; }
+
+.relme li a .svg-twilio {
+  color: #F22F46; }
+
+.relme li a .svg-twitch {
+  color: #6441A5; }
+
+.relme li a .svg-twitter {
+  color: #1DA1F2; }
+
+.relme li a .svg-twoo {
+  color: #FF7102; }
+
+.relme li a .svg-uikit {
+  color: #2396F3; }
+
+.relme li a .svg-uber {
+  color: #000000; }
+
+.relme li a .svg-ubuntu {
+  color: #E95420; }
+
+.relme li a .svg-udacity {
+  color: #01B3E3; }
+
+.relme li a .svg-umbraco {
+  color: #00BEC1; }
+
+.relme li a .svg-upwork {
+  color: #6FDA44; }
+
+.relme li a .svg-vk {
+  color: #6383A8; }
+
+.relme li a .svg-vsco {
+  color: #000000; }
+
+.relme li a .svg-viadeo {
+  color: #F88D2D; }
+
+.relme li a .svg-viber {
+  color: #7C529E; }
+
+.relme li a .svg-vim {
+  color: #019733; }
+
+.relme li a .svg-vimeo {
+  color: #1AB7EA; }
+
+.relme li a .svg-vine {
+  color: #11B48A; }
+
+.relme li a .svg-virb {
+  color: #0093DA; }
+
+.relme li a .svg-visa {
+  color: #142787; }
+
+.relme li a .svg-visualstudiocode {
+  color: #0271BC; }
+
+.relme li a .svg-vuejs {
+  color: #4FC08D; }
+
+.relme li a .svg-wpengine {
+  color: #40BAC8; }
+
+.relme li a .svg-wechat {
+  color: #7BB32E; }
+
+.relme li a .svg-webstorm {
+  color: #00CDD7; }
+
+.relme li a .svg-webpack {
+  color: #8DD6F9; }
+
+.relme li a .svg-whatsapp {
+  color: #25D366; }
+
+.relme li a .svg-wheniwork {
+  color: #51A33D; }
+
+.relme li a .svg-wii {
+  color: #8B8B8B; }
+
+.relme li a .svg-wiiu {
+  color: #8B8B8B; }
+
+.relme li a .svg-wikipedia {
+  color: #000000; }
+
+.relme li a .svg-windows {
+  color: #0078D6; }
+
+.relme li a .svg-wire {
+  color: #000000; }
+
+.relme li a .svg-wix {
+  color: #FAAD4D; }
+
+.relme li a .svg-wordpress {
+  color: #21759B; }
+
+.relme li a .svg-xbox {
+  color: #107C10; }
+
+.relme li a .svg-xero {
+  color: #13B5EA; }
+
+.relme li a .svg-xing {
+  color: #006567; }
+
+.relme li a .svg-ycombinator {
+  color: #F0652F; }
+
+.relme li a .svg-yahoo {
+  color: #440099; }
+
+.relme li a .svg-yammer {
+  color: #0072C6; }
+
+.relme li a .svg-yandex {
+  color: #FF0000; }
+
+.relme li a .svg-yelp {
+  color: #D32323; }
+
+.relme li a .svg-youtube {
+  color: #FF0000; }
+
+.relme li a .svg-zapier {
+  color: #FF4A00; }
+
+.relme li a .svg-zendesk {
+  color: #03363D; }
+
+.relme li a .svg-zerply {
+  color: #9DBC7A; }
+
+.relme li a .svg-zillow {
+  color: #0074E4; }
+
+.relme li a .svg-ebay {
+  color: #E53238; }
+
+.relme li a .svg-freecodecamp {
+  color: #006600; }
+
+.relme li a .svg-homify {
+  color: #7DCDA3; }
+
+.relme li a .svg-ifixit {
+  color: #0071CE; }
+
+.relme li a .svg-jquery {
+  color: #0769AD; }
 
 /*--------------------------------------------------------------
 Widgets

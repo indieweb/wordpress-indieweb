@@ -81,6 +81,10 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+= 3.3.4 =
+* Script creation of icon pack, CSS colors, and textual notes
+* Adopt a combination of Genericons Neue and Simple Icons for icon pack
+
 = 3.3.3 =
 * Add colors for the new icons added in previous version
 * Add Simple Location to the extensions list

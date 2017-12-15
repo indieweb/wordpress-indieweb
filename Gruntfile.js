@@ -1,6 +1,11 @@
 module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
+    execute: {
+      simpleicons: {
+        src: ['static/js/simpleicons.js']
+      }
+    },
     checktextdomain: {
       options:{
         text_domain: 'indieweb',
@@ -55,7 +60,7 @@ module.exports = function (grunt) {
                 },
                 dist: {
                                 files: {
-                                        'static/img/social-logos.svg': ['static/svg/*.svg']
+                                        'static/img/simple-icons.svg': ['node_modules/simple-icons/icons/*.svg', 'node_modules/genericons-neue/svg/*.svg']
                                 }
                 }
         },
@@ -92,6 +97,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-checktextdomain');
+  grunt.loadNpmTasks('grunt-execute');
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'svgstore', 'checktextdomain']);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain']);
 };
