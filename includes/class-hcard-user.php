@@ -9,7 +9,7 @@ class HCard_User {
 
 
 	public static function init() {
-		include_once( 'simple-icons.php' );
+		include_once 'simple-icons.php';
 		if ( 1 === (int) get_option( 'iw_author_url' ) ) {
 			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
 		}
@@ -96,7 +96,7 @@ class HCard_User {
 		}
 
 		// Telephone Number and PGP Key are not silos
-		$profile_fields['tel'] =  __( 'Telephone', 'indieweb' );
+		$profile_fields['tel'] = __( 'Telephone', 'indieweb' );
 		$profile_fields['pgp'] = __( 'PGP Key (URL)', 'indieweb' );
 		return $profile_fields;
 	}
@@ -151,7 +151,7 @@ class HCard_User {
 
 	public static function extended_user_profile( $user ) {
 		echo '<h3>' . esc_html__( 'Address', 'indieweb' ) . '</h3>';
-		echo '<p>' . esc_html__( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
+		echo '<p>' . esc_html__( 'Fill in all fields you wish displayed.', 'indieweb' ) . '</p>';
 		echo '<table class="form-table">';
 		foreach ( self::address_fields() as $key => $value ) {
 			self::extended_profile_text_field( $user, $key, $value['title'], $value['description'] );
@@ -282,11 +282,11 @@ class HCard_User {
 	}
 
 	public static function url_to_name( $url ) {
-		$scheme = wp_parse_url( $url, PHP_URL_SCHEME );
+		$scheme  = wp_parse_url( $url, PHP_URL_SCHEME );
 		$strings = array_keys( simpleicons_iw_get_names() );
 		if ( ( 'http' === $scheme ) || ( 'https' === $scheme ) ) {
-			$domain  = self::extract_domain_name( $url );
-			$strip   = self::split_domain( $domain );
+			$domain = self::extract_domain_name( $url );
+			$strip  = self::split_domain( $domain );
 			if ( in_array( $strip, array_keys( $strings ), true ) ) {
 				return $strip;
 			}
@@ -300,7 +300,7 @@ class HCard_User {
 			}
 			// Anything with WordPress in the name that is not matched return WordPress
 			if ( false !== stripos( $domain, 'WordPress' ) ) {
-				return 'wordpress';
+				return 'WordPress';
 			}
 			// Some domains have the word app in them check for matches with that
 			$strip = str_replace( 'app', '', $strip );
@@ -344,7 +344,7 @@ class HCard_User {
 		// Substitute another svg sprite file
 		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/simple-icons.svg', dirname( __FILE__ ) ), $name );
 
-		return '<svg class="svg-icon svg-' . $name  . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use><svg>';
+		return '<svg class="svg-icon svg-' . $name . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use><svg>';
 	}
 
 	/**
@@ -407,8 +407,7 @@ class HCard_User {
 			$name = self::url_to_name( $profile_url );
 			if ( in_array( $name, array( 'notice', 'website' ), true ) ) {
 				$title = self::extract_domain_name( $profile_url );
-			}
-			else { 
+			} else {
 				$title = self::get_title( $name );
 			}
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
