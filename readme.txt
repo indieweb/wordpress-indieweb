@@ -5,7 +5,7 @@ Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
 Tested up to: 4.9
-Stable tag: 3.3.3
+Stable tag: 3.3.4
 
 IndieWeb for WordPress!
 
@@ -84,6 +84,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 = 3.3.4 =
 * Script creation of icon pack, CSS colors, and textual notes
 * Adopt a combination of Genericons Neue and Simple Icons for icon pack
+* Move telephone out of rel-me as no more authentication in Indieauth
 
 = 3.3.3 =
 * Add colors for the new icons added in previous version
