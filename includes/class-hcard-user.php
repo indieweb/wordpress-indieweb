@@ -9,6 +9,7 @@ class HCard_User {
 
 
 	public static function init() {
+		include_once 'simple-icons.php';
 		if ( 1 === (int) get_option( 'iw_author_url' ) ) {
 			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
 		}
@@ -47,10 +48,6 @@ class HCard_User {
 	 */
 	public static function silos() {
 		$silos = array(
-			'tel'        => array(
-				'baseurl' => 'sms:%s',
-				'display' => __( 'Telephone', 'indieweb' ),
-			),
 			'github'     => array(
 				'baseurl' => 'https://github.com/%s',
 				'display' => __( 'Github username', 'indieweb' ),
@@ -97,6 +94,9 @@ class HCard_User {
 				$profile_fields[ $silo ] = $details['display'];
 			}
 		}
+
+		// Telephone Number and PGP Key are not silos
+		$profile_fields['tel'] = __( 'Telephone', 'indieweb' );
 		$profile_fields['pgp'] = __( 'PGP Key (URL)', 'indieweb' );
 		return $profile_fields;
 	}
@@ -151,7 +151,7 @@ class HCard_User {
 
 	public static function extended_user_profile( $user ) {
 		echo '<h3>' . esc_html__( 'Address', 'indieweb' ) . '</h3>';
-		echo '<p>' . esc_html__( 'Fill in all fields you are wish displayed.', 'indieweb' ) . '</p>';
+		echo '<p>' . esc_html__( 'Fill in all fields you wish displayed.', 'indieweb' ) . '</p>';
 		echo '<table class="form-table">';
 		foreach ( self::address_fields() as $key => $value ) {
 			self::extended_profile_text_field( $user, $key, $value['title'], $value['description'] );
@@ -270,112 +270,81 @@ class HCard_User {
 		return $host;
 	}
 
+	// Try to get the correct icon for the majority of sites by dropping
+	public static function split_domain( $string ) {
+		// Strip things we know we dont want. Not every TLD but the common ones in the fontset
+		$unwanted = array( '-', '.com', '.org', '.net', '.io', '.in', '.tv', '.fm', '.social' );
+		// Strip these
+		$string = str_replace( $unwanted, '', $string );
+		// Strip the dot if it is a TLD other than the above
+		$string = str_replace( '.', '', $string );
+		return strtolower( $string );
+	}
+
+	public static function url_to_name( $url ) {
+		$scheme  = wp_parse_url( $url, PHP_URL_SCHEME );
+		$strings = array_keys( simpleicons_iw_get_names() );
+		if ( ( 'http' === $scheme ) || ( 'https' === $scheme ) ) {
+			$domain = self::extract_domain_name( $url );
+			$strip  = self::split_domain( $domain );
+			if ( in_array( $strip, array_keys( $strings ), true ) ) {
+				return $strip;
+			}
+			// Special Cases
+			if ( false !== stripos( $url, 'plus.google.com' ) ) {
+				return 'googleplus';
+			}
+
+			if ( false !== stripos( $url, 'lanyard' ) ) {
+				return 'lanyrd';
+			}
+			// Anything with WordPress in the name that is not matched return WordPress
+			if ( false !== stripos( $domain, 'WordPress' ) ) {
+				return 'WordPress';
+			}
+			// Some domains have the word app in them check for matches with that
+			$strip = str_replace( 'app', '', $strip );
+			if ( in_array( $strip, $strings, true ) ) {
+				return $strip;
+			}
+			return apply_filters( 'indieweb_links_url_to_name', 'website', $url );
+		}
+		if ( in_array( $scheme, array_keys( $strings ), true ) ) {
+			return apply_filters( 'indieweb_links_url_to_name', $strings[ $scheme ], $url );
+		}
+		if ( 'sms' === $scheme ) {
+			return 'phone';
+		}
+		if ( 'mailto' === $scheme ) {
+			return 'mail';
+		}
+		if ( 'gtalk' === $scheme ) {
+			return 'googlehangouts';
+		}
+		// Not sure why someone would do a scheme other than web
+		return 'notice';
+	}
+
+	public static function get_title( $name ) {
+		$strings = simpleicons_iw_get_names();
+		if ( isset( $strings[ $name ] ) ) {
+			return $strings[ $name ];
+		}
+		return $name;
+	}
+
 	/**
 	 * Return a marked up SVG icon..
 	 *
-	 * @param string $domain domain.
+	 * @param string $name name.
 	 *
 	 * @return string svg icon
 	 */
-	public static function get_icon( $domain ) {
-		// Supported icons.
-		$icons = array(
-			'default'             => 'share',
-			'500px.com'           => '500px',
-			'about.me'            => 'aboutme',
-			'amazon.com'          => 'amazon',
-			'bandcamp.com'        => 'bandcamp',
-			'behance.net'         => 'behance',
-			'bitbucket.com'       => 'bitbucket',
-			'blogspot.com'        => 'blogger',
-			'codepen.io'          => 'codepen',
-			'dailymotion.com'     => 'dailymotion',
-			'deviantart.com'      => 'deviantart',
-			'discordapp.com'      => 'discord',
-			'dribbble.com'        => 'dribbble',
-			'dropbox.com'         => 'dropbox',
-			'ello.com'            => 'ello',
-			'ebay.com'            => 'ebay',
-			'etsy.com'            => 'etsy',
-			'eventbrite.com'      => 'eventbrite',
-			'evernote.com'        => 'evernote',
-			'facebook.com'        => 'facebook',
-			'flickr.com'          => 'flickr',
-			'flipboard.com'       => 'flipboard',
-			'foursquare.com'      => 'foursquare',
-			'gitlab.com'          => 'gitlab',
-			'goodreads.com'       => 'goodreads',
-			'ghost.org'           => 'ghost',
-			'gravatar.com'        => 'gravatar',
-			'allo.google.com'     => 'googleallo',
-			'plus.google.com'     => 'google-plus',
-			'hangouts.google.com' => 'googlehangouts.svg',
-			'github.com'          => 'github',
-			'icq.com'             => 'icq',
-			'imdb.com'            => 'imdb',
-			'instagram.com'       => 'instagram',
-			'lanyrd.com'          => 'lanyrd',
-			'last.fm'             => 'lastfm',
-			'linkedin.com'        => 'linkedin',
-			'livejournal.com'     => 'livejournal',
-			'livestream.com'      => 'livestream',
-			'keybase.io'          => 'keybase',
-			'mailto:'             => 'mail',
-			'mailchimp.com'       => 'mailchimp',
-			'medium.com'          => 'medium',
-			'meetup.com'          => 'meetup',
-			'mixcloud.com'        => 'mixcloud',
-			'myspace.com'         => 'myspace',
-			'pandora.com'         => 'pandora',
-			'path.com'            => 'path',
-			'patreon.com'         => 'patreon',
-			'paypal.com'          => 'paypal',
-			'periscope.tv'        => 'periscope',
-			'pinboard.in'         => 'pinboard',
-			'pinterest.com'       => 'pinterest',
-			'getpocket.com'       => 'pocket',
-			'polldaddy.com'       => 'polldaddy',
-			'quora.com'           => 'quora',
-			'reddit.com'          => 'reddit',
-			'runkeeper.com'       => 'runkeeper',
-			'slack.com'           => 'slack',
-			'signal.com'          => 'signal',
-			'snapchat.com'        => 'snapchat',
-			'stackoverflow.com'   => 'stackoverflow',
-			'strava.com'          => 'strava',
-			'squarespace.com'     => 'squarespace',
-			'skype.com'           => 'skype',
-			'skype:'              => 'skype',
-			'soundcloud.com'      => 'cloud',
-			'spotify.com'         => 'spotify',
-			'swarmapp.com'        => 'swarm',
-			'stumbleupon.com'     => 'stumbleupon',
-			'telegram.org'        => 'telegram',
-			'tumblr.com'          => 'tumblr',
-			'travis-ci.org'       => 'travisci',
-			'tripadvisor.com'     => 'tripadvisor',
-			'twitch.tv'           => 'twitch',
-			'twitter.com'         => 'twitter',
-			'vimeo.com'           => 'vimeo',
-			'whatsapp.com'        => 'whatsapp',
-			'wordpress.org'       => 'wordpress',
-			'wordpress.com'       => 'wordpress',
-			'yelp.com'            => 'yelp',
-			'youtube.com'         => 'youtube',
-		);
-
-		// Substitute another domain to sprite map
-		$icons = apply_filters( 'indieweb_domain_icons', $icons );
-		$icon  = $icons['default'];
-
-		if ( array_key_exists( $domain, $icons ) ) {
-			$icon = $icons[ $domain ];
-		}
-
+	public static function get_icon( $name ) {
 		// Substitute another svg sprite file
-		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/social-logos.svg', dirname( __FILE__ ) ), $domain );
+		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/simple-icons.svg', dirname( __FILE__ ) ), $name );
 
-		return '<svg class="svg-icon svg-' . $icon . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $icon . '"></use><svg>';
+		return '<svg class="svg-icon svg-' . $name . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use><svg>';
 	}
 
 	/**
@@ -435,9 +404,15 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name', $author_id );
 		$r           = array();
 		foreach ( $list as $silo => $profile_url ) {
+			$name = self::url_to_name( $profile_url );
+			if ( in_array( $name, array( 'notice', 'website' ), true ) ) {
+				$title = self::extract_domain_name( $profile_url );
+			} else {
+				$title = self::get_title( $name );
+			}
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
 				u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
-			esc_attr( $silo ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( self::extract_domain_name( $profile_url ) ) . '</a>';
+			esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( $name ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
