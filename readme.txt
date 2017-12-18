@@ -1,10 +1,10 @@
 === IndieWeb ===
-Contributors: pfefferle, dshanske
+Contributors: pfefferle, indieweb, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
-Tested up to: 4.9
+Tested up to: 4.9.1
 Stable tag: 3.3.5
 
 IndieWeb for WordPress!
@@ -94,7 +94,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Add Simple Location to the extensions list
 * Amend Getting Started to be clearer about first steps
 
-= 3.3.2 = 
+= 3.3.2 =
 * Add PHP compatibility testing
 * Add Travis CI testing of all supported versions of PHP
 * Add textdomain testing

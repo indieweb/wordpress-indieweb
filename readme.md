@@ -1,10 +1,10 @@
 # IndieWeb #
-**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [dshanske](https://profiles.wordpress.org/dshanske)  
+**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [indieweb](https://profiles.wordpress.org/indieweb), [dshanske](https://profiles.wordpress.org/dshanske)  
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 4.9  
+**Tested up to:** 4.9.1  
 **Stable tag:** 3.3.5  
 
 IndieWeb for WordPress!
