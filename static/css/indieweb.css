@@ -116,7 +116,7 @@ Simple Icons
   color: #273347; }
 
 .relme li a .svg-atlassian {
-  color: #0747A6; }
+  color: #0052CC; }
 
 .relme li a .svg-atom {
   color: #66595C; }
@@ -126,6 +126,9 @@ Simple Icons
 
 .relme li a .svg-automatic {
   color: #7D8084; }
+
+.relme li a .svg-aventrix {
+  color: #0099DD; }
 
 .relme li a .svg-baidu {
   color: #2319DC; }
@@ -191,7 +194,7 @@ Simple Icons
   color: #343434; }
 
 .relme li a .svg-coop {
-  color: #00A1CC; }
+  color: #00B1E7; }
 
 .relme li a .svg-codeschool {
   color: #4CADC0; }
@@ -203,7 +206,7 @@ Simple Icons
   color: #000000; }
 
 .relme li a .svg-codecademy {
-  color: #204056; }
+  color: #1F4056; }
 
 .relme li a .svg-codeforces {
   color: #1F8ACB; }
@@ -224,7 +227,7 @@ Simple Icons
   color: #414959; }
 
 .relme li a .svg-coursera {
-  color: #757575; }
+  color: #2A73CC; }
 
 .relme li a .svg-dailymotion {
   color: #0066DC; }
@@ -455,7 +458,7 @@ Simple Icons
   color: #0E83CD; }
 
 .relme li a .svg-hipchat {
-  color: #205281; }
+  color: #0052CC; }
 
 .relme li a .svg-hootsuite {
   color: #000000; }
@@ -464,7 +467,7 @@ Simple Icons
   color: #7AC142; }
 
 .relme li a .svg-hulu {
-  color: #66AA33; }
+  color: #3DBB3D; }
 
 .relme li a .svg-humblebundle {
   color: #CC2929; }
@@ -544,6 +547,9 @@ Simple Icons
 .relme li a .svg-klout {
   color: #E44600; }
 
+.relme li a .svg-known {
+  color: #333333; }
+
 .relme li a .svg-koding {
   color: #00B057; }
 
@@ -615,6 +621,9 @@ Simple Icons
 
 .relme li a .svg-meteor {
   color: #DE4F4F; }
+
+.relme li a .svg-microblog {
+  color: #FD8308; }
 
 .relme li a .svg-microgenetics {
   color: #FF0000; }
@@ -702,6 +711,9 @@ Simple Icons
 
 .relme li a .svg-nodejs {
   color: #339933; }
+
+.relme li a .svg-nodemon {
+  color: #76D04B; }
 
 .relme li a .svg-nucleo {
   color: #766DCC; }
@@ -805,6 +817,9 @@ Simple Icons
 .relme li a .svg-python {
   color: #3776AB; }
 
+.relme li a .svg-qiita {
+  color: #55C500; }
+
 .relme li a .svg-quantcast {
   color: #1E262C; }
 
@@ -824,7 +839,7 @@ Simple Icons
   color: #C51A4A; }
 
 .relme li a .svg-react {
-  color: #00D8FF; }
+  color: #61DAFB; }
 
 .relme li a .svg-readthedocs {
   color: #8CA1AF; }
@@ -1067,7 +1082,7 @@ Simple Icons
   color: #F22F46; }
 
 .relme li a .svg-twitch {
-  color: #6441A5; }
+  color: #6441A4; }
 
 .relme li a .svg-twitter {
   color: #1DA1F2; }
@@ -1089,6 +1104,9 @@ Simple Icons
 
 .relme li a .svg-umbraco {
   color: #00BEC1; }
+
+.relme li a .svg-untappd {
+  color: #FFC000; }
 
 .relme li a .svg-upwork {
   color: #6FDA44; }
@@ -1167,6 +1185,9 @@ Simple Icons
 
 .relme li a .svg-xbox {
   color: #107C10; }
+
+.relme li a .svg-xcode {
+  color: #1575F9; }
 
 .relme li a .svg-xero {
   color: #13B5EA; }
