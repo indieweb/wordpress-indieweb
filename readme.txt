@@ -4,8 +4,8 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
-Tested up to: 4.9.1
-Stable tag: 3.3.5
+Tested up to: 4.9.2
+Stable tag: 3.3.6
 
 IndieWeb for WordPress!
 
@@ -80,6 +80,9 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.3.6 = 
+* Refresh icons
 
 = 3.3.5 =
 * Fix missing file on previous commit
