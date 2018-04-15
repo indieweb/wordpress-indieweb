@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.3.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2018-02-04 05:24:39+00:00\n"
+"POT-Creation-Date: 2018-04-15 05:48:45+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -402,87 +402,87 @@ msgid "ACM"
 msgstr ""
 
 #: includes/simple-icons.php:7
-msgid "AIM"
-msgstr ""
-
-#: includes/simple-icons.php:8
 msgid "About.me"
 msgstr ""
 
-#: includes/simple-icons.php:9
+#: includes/simple-icons.php:8
 msgid "AddThis"
 msgstr ""
 
-#: includes/simple-icons.php:10
+#: includes/simple-icons.php:9
 msgid "Adobe"
 msgstr ""
 
-#: includes/simple-icons.php:11
+#: includes/simple-icons.php:10
 msgid "Adobe Acrobat Reader"
 msgstr ""
 
-#: includes/simple-icons.php:12
+#: includes/simple-icons.php:11
 msgid "Adobe After Effects"
 msgstr ""
 
-#: includes/simple-icons.php:13
+#: includes/simple-icons.php:12
 msgid "Adobe Dreamweaver"
 msgstr ""
 
-#: includes/simple-icons.php:14
+#: includes/simple-icons.php:13
 msgid "Adobe Illustrator"
 msgstr ""
 
-#: includes/simple-icons.php:15
+#: includes/simple-icons.php:14
 msgid "Adobe InDesign"
 msgstr ""
 
-#: includes/simple-icons.php:16
+#: includes/simple-icons.php:15
 msgid "Adobe Lightroom"
 msgstr ""
 
-#: includes/simple-icons.php:17
+#: includes/simple-icons.php:16
 msgid "Adobe Photoshop"
 msgstr ""
 
-#: includes/simple-icons.php:18
+#: includes/simple-icons.php:17
 msgid "Adobe Typekit"
 msgstr ""
 
-#: includes/simple-icons.php:19
+#: includes/simple-icons.php:18
 msgid "Airbnb"
 msgstr ""
 
-#: includes/simple-icons.php:20
+#: includes/simple-icons.php:19
 msgid "Amazon"
 msgstr ""
 
-#: includes/simple-icons.php:21
+#: includes/simple-icons.php:20
 msgid "American Express"
 msgstr ""
 
-#: includes/simple-icons.php:22
+#: includes/simple-icons.php:21
 msgid "Android"
 msgstr ""
 
-#: includes/simple-icons.php:23
+#: includes/simple-icons.php:22
 msgid "AngelList"
 msgstr ""
 
-#: includes/simple-icons.php:24
+#: includes/simple-icons.php:23
 msgid "Angular"
 msgstr ""
 
-#: includes/simple-icons.php:25
+#: includes/simple-icons.php:24
 msgid "Apple"
 msgstr ""
 
-#: includes/simple-icons.php:26
+#: includes/simple-icons.php:25
 msgid "Apple Music"
 msgstr ""
 
-#: includes/simple-icons.php:27
+#: includes/simple-icons.php:26
 msgid "Arch Linux"
+msgstr ""
+
+#: includes/simple-icons.php:27
+msgid "ArtStation"
 msgstr ""
 
 #: includes/simple-icons.php:28
@@ -498,1494 +498,1542 @@ msgid "Atom"
 msgstr ""
 
 #: includes/simple-icons.php:31
-msgid "Auth0"
+msgid "Aurelia"
 msgstr ""
 
 #: includes/simple-icons.php:32
-msgid "Automatic"
+msgid "Auth0"
 msgstr ""
 
 #: includes/simple-icons.php:33
-msgid "Aventrix"
+msgid "Automatic"
 msgstr ""
 
 #: includes/simple-icons.php:34
-msgid "Baidu"
+msgid "Aventrix"
 msgstr ""
 
 #: includes/simple-icons.php:35
-msgid "Bandcamp"
+msgid "Baidu"
 msgstr ""
 
 #: includes/simple-icons.php:36
-msgid "Basecamp"
+msgid "Bandcamp"
 msgstr ""
 
 #: includes/simple-icons.php:37
-msgid "Bath ASU"
+msgid "Basecamp"
 msgstr ""
 
 #: includes/simple-icons.php:38
-msgid "Behance"
+msgid "Bath ASU"
 msgstr ""
 
 #: includes/simple-icons.php:39
-msgid "Big Cartel"
+msgid "Behance"
 msgstr ""
 
 #: includes/simple-icons.php:40
-msgid "Bing"
+msgid "Big Cartel"
 msgstr ""
 
 #: includes/simple-icons.php:41
-msgid "Bitbucket"
+msgid "Bing"
 msgstr ""
 
 #: includes/simple-icons.php:42
-msgid "Bitcoin"
+msgid "Bitbucket"
 msgstr ""
 
 #: includes/simple-icons.php:43
-msgid "Bitly"
+msgid "Bitcoin"
 msgstr ""
 
 #: includes/simple-icons.php:44
-msgid "Blogger"
+msgid "Bitly"
 msgstr ""
 
 #: includes/simple-icons.php:45
-msgid "Bootstrap"
+msgid "Blender"
 msgstr ""
 
 #: includes/simple-icons.php:46
-msgid "Bower"
+msgid "Blogger"
 msgstr ""
 
 #: includes/simple-icons.php:47
-msgid "Brand.ai"
+msgid "Bootstrap"
 msgstr ""
 
 #: includes/simple-icons.php:48
-msgid "Buffer"
+msgid "Bower"
 msgstr ""
 
 #: includes/simple-icons.php:49
-msgid "BuzzFeed"
+msgid "Brand.ai"
 msgstr ""
 
 #: includes/simple-icons.php:50
-msgid "CSS Wizardry"
+msgid "Buffer"
 msgstr ""
 
 #: includes/simple-icons.php:51
-msgid "CSS3"
+msgid "BuzzFeed"
 msgstr ""
 
 #: includes/simple-icons.php:52
-msgid "CakePHP"
+msgid "CSS Wizardry"
 msgstr ""
 
 #: includes/simple-icons.php:53
-msgid "Campaign Monitor"
+msgid "CSS3"
 msgstr ""
 
 #: includes/simple-icons.php:54
-msgid "CircleCI"
+msgid "CakePHP"
 msgstr ""
 
 #: includes/simple-icons.php:55
-msgid "Co-op"
+msgid "Campaign Monitor"
 msgstr ""
 
 #: includes/simple-icons.php:56
-msgid "Code School"
+msgid "CircleCI"
 msgstr ""
 
 #: includes/simple-icons.php:57
-msgid "CodeIgniter"
+msgid "Cloudflare"
 msgstr ""
 
 #: includes/simple-icons.php:58
-msgid "CodePen"
+msgid "Co-op"
 msgstr ""
 
 #: includes/simple-icons.php:59
-msgid "Codecademy"
+msgid "Code School"
 msgstr ""
 
 #: includes/simple-icons.php:60
-msgid "Codeforces"
+msgid "CodeIgniter"
 msgstr ""
 
 #: includes/simple-icons.php:61
-msgid "Coderwall"
+msgid "CodePen"
 msgstr ""
 
 #: includes/simple-icons.php:62
-msgid "Codewars"
+msgid "Codecademy"
 msgstr ""
 
 #: includes/simple-icons.php:63
-msgid "Codio"
+msgid "Codeforces"
 msgstr ""
 
 #: includes/simple-icons.php:64
-msgid "ComproPago"
+msgid "Coderwall"
 msgstr ""
 
 #: includes/simple-icons.php:65
-msgid "Conekta"
+msgid "Codewars"
 msgstr ""
 
 #: includes/simple-icons.php:66
-msgid "Coursera"
+msgid "Codio"
 msgstr ""
 
 #: includes/simple-icons.php:67
-msgid "Dailymotion"
+msgid "ComproPago"
 msgstr ""
 
 #: includes/simple-icons.php:68
-msgid "Deezer"
+msgid "Conekta"
 msgstr ""
 
 #: includes/simple-icons.php:69
-msgid "Delicious"
+msgid "Coursera"
 msgstr ""
 
 #: includes/simple-icons.php:70
-msgid "Designer News"
+msgid "Dailymotion"
 msgstr ""
 
 #: includes/simple-icons.php:71
-msgid "DeviantArt"
+msgid "Deezer"
 msgstr ""
 
 #: includes/simple-icons.php:72
-msgid "Diaspora"
+msgid "Delicious"
 msgstr ""
 
 #: includes/simple-icons.php:73
-msgid "Digg"
+msgid "Designer News"
 msgstr ""
 
 #: includes/simple-icons.php:74
-msgid "DigitalOcean"
+msgid "DeviantArt"
 msgstr ""
 
 #: includes/simple-icons.php:75
-msgid "Discord"
+msgid "Diaspora"
 msgstr ""
 
 #: includes/simple-icons.php:76
-msgid "Discourse"
+msgid "Digg"
 msgstr ""
 
 #: includes/simple-icons.php:77
-msgid "Discover"
+msgid "DigitalOcean"
 msgstr ""
 
 #: includes/simple-icons.php:78
-msgid "Disqus"
+msgid "Discord"
 msgstr ""
 
 #: includes/simple-icons.php:79
-msgid "Django"
+msgid "Discourse"
 msgstr ""
 
 #: includes/simple-icons.php:80
-msgid "Docker"
+msgid "Discover"
 msgstr ""
 
 #: includes/simple-icons.php:81
-msgid "Draugiem.lv"
+msgid "Disqus"
 msgstr ""
 
 #: includes/simple-icons.php:82
-msgid "Dribbble"
+msgid "Disroot"
 msgstr ""
 
 #: includes/simple-icons.php:83
-msgid "Dropbox"
+msgid "Django"
 msgstr ""
 
 #: includes/simple-icons.php:84
-msgid "Drupal"
+msgid "Docker"
 msgstr ""
 
 #: includes/simple-icons.php:85
-msgid "Ello"
+msgid "Draugiem.lv"
 msgstr ""
 
 #: includes/simple-icons.php:86
-msgid "Empire Kred"
+msgid "Dribbble"
 msgstr ""
 
 #: includes/simple-icons.php:87
-msgid "Ethereum"
+msgid "Dropbox"
 msgstr ""
 
 #: includes/simple-icons.php:88
-msgid "Etsy"
+msgid "Drupal"
 msgstr ""
 
 #: includes/simple-icons.php:89
-msgid "Event Store"
+msgid "Ello"
 msgstr ""
 
 #: includes/simple-icons.php:90
-msgid "Eventbrite"
+msgid "Empire Kred"
 msgstr ""
 
 #: includes/simple-icons.php:91
-msgid "Evernote"
+msgid "Ethereum"
 msgstr ""
 
 #: includes/simple-icons.php:92
-msgid "Everplaces"
+msgid "Etsy"
 msgstr ""
 
 #: includes/simple-icons.php:93
-msgid "Facebook"
+msgid "Event Store"
 msgstr ""
 
 #: includes/simple-icons.php:94
-msgid "Fandango"
+msgid "Eventbrite"
 msgstr ""
 
 #: includes/simple-icons.php:95
-msgid "FeatHub"
+msgid "Evernote"
 msgstr ""
 
 #: includes/simple-icons.php:96
-msgid "Feedly"
+msgid "Everplaces"
 msgstr ""
 
 #: includes/simple-icons.php:97
-msgid "Fitbit"
+msgid "Facebook"
 msgstr ""
 
 #: includes/simple-icons.php:98
-msgid "Flickr"
+msgid "Fandango"
 msgstr ""
 
 #: includes/simple-icons.php:99
-msgid "Flipboard"
+msgid "FeatHub"
 msgstr ""
 
 #: includes/simple-icons.php:100
-msgid "Fnac"
+msgid "Feedly"
 msgstr ""
 
 #: includes/simple-icons.php:101
-msgid "Foursquare"
+msgid "Firebase"
 msgstr ""
 
 #: includes/simple-icons.php:102
-msgid "GNU"
+msgid "Fitbit"
 msgstr ""
 
 #: includes/simple-icons.php:103
-msgid "GNU social"
+msgid "Flickr"
 msgstr ""
 
 #: includes/simple-icons.php:104
-msgid "GOV.UK"
+msgid "Flipboard"
 msgstr ""
 
 #: includes/simple-icons.php:105
-msgid "Garmin"
+msgid "Fnac"
 msgstr ""
 
 #: includes/simple-icons.php:106
-msgid "Gatsby"
+msgid "Foursquare"
 msgstr ""
 
 #: includes/simple-icons.php:107
-msgid "Gauges"
+msgid "GNU"
 msgstr ""
 
 #: includes/simple-icons.php:108
-msgid "Geeklist"
+msgid "GNU social"
 msgstr ""
 
 #: includes/simple-icons.php:109
-msgid "Geocaching"
+msgid "GOV.UK"
 msgstr ""
 
 #: includes/simple-icons.php:110
-msgid "Gerrit"
+msgid "Garmin"
 msgstr ""
 
 #: includes/simple-icons.php:111
-msgid "Ghost"
+msgid "Gatsby"
 msgstr ""
 
 #: includes/simple-icons.php:112
-msgid "Git"
+msgid "Gauges"
 msgstr ""
 
 #: includes/simple-icons.php:113
-msgid "GitHub"
+msgid "Geeklist"
 msgstr ""
 
 #: includes/simple-icons.php:114
-msgid "GitLab"
+msgid "Geocaching"
 msgstr ""
 
 #: includes/simple-icons.php:115
-msgid "Gitter"
+msgid "Gerrit"
 msgstr ""
 
 #: includes/simple-icons.php:116
-msgid "Glassdoor"
+msgid "Ghost"
 msgstr ""
 
 #: includes/simple-icons.php:117
-msgid "Gmail"
+msgid "Git"
 msgstr ""
 
 #: includes/simple-icons.php:118
-msgid "GoldenLine"
+msgid "GitHub"
 msgstr ""
 
 #: includes/simple-icons.php:119
-msgid "Goodreads"
+msgid "GitLab"
 msgstr ""
 
 #: includes/simple-icons.php:120
-msgid "Google"
+msgid "Gitter"
 msgstr ""
 
 #: includes/simple-icons.php:121
-msgid "Google Allo"
+msgid "Glassdoor"
 msgstr ""
 
 #: includes/simple-icons.php:122
-msgid "Google Analytics"
+msgid "Gmail"
 msgstr ""
 
 #: includes/simple-icons.php:123
-msgid "Google Chrome"
+msgid "GoldenLine"
 msgstr ""
 
 #: includes/simple-icons.php:124
-msgid "Google Drive"
+msgid "Goodreads"
 msgstr ""
 
 #: includes/simple-icons.php:125
-msgid "Google Hangouts"
+msgid "Google"
 msgstr ""
 
 #: includes/simple-icons.php:126
-msgid "Google Keep"
+msgid "Google Allo"
 msgstr ""
 
 #: includes/simple-icons.php:127
-msgid "Google Play"
+msgid "Google Analytics"
 msgstr ""
 
 #: includes/simple-icons.php:128
-msgid "Google+"
+msgid "Google Chrome"
 msgstr ""
 
 #: includes/simple-icons.php:129
-msgid "GraphQL"
+msgid "Google Drive"
 msgstr ""
 
 #: includes/simple-icons.php:130
-msgid "Graphcool"
+msgid "Google Hangouts"
 msgstr ""
 
 #: includes/simple-icons.php:131
-msgid "Gratipay"
+msgid "Google Keep"
 msgstr ""
 
 #: includes/simple-icons.php:132
-msgid "Grav"
+msgid "Google Play"
 msgstr ""
 
 #: includes/simple-icons.php:133
-msgid "Gravatar"
+msgid "Google+"
 msgstr ""
 
 #: includes/simple-icons.php:134
-msgid "Gulp"
+msgid "GraphQL"
 msgstr ""
 
 #: includes/simple-icons.php:135
-msgid "Gumtree"
+msgid "Graphcool"
 msgstr ""
 
 #: includes/simple-icons.php:136
-msgid "HTML5"
+msgid "Gratipay"
 msgstr ""
 
 #: includes/simple-icons.php:137
-msgid "HackerRank"
+msgid "Grav"
 msgstr ""
 
 #: includes/simple-icons.php:138
-msgid "Hackster"
+msgid "Gravatar"
 msgstr ""
 
 #: includes/simple-icons.php:139
-msgid "Haskell"
+msgid "Gulp"
 msgstr ""
 
 #: includes/simple-icons.php:140
-msgid "Hatena Bookmark"
+msgid "Gumroad"
 msgstr ""
 
 #: includes/simple-icons.php:141
-msgid "Heroku"
+msgid "Gumtree"
 msgstr ""
 
 #: includes/simple-icons.php:142
-msgid "Hexo"
+msgid "HTML5"
 msgstr ""
 
 #: includes/simple-icons.php:143
-msgid "HipChat"
+msgid "HackerRank"
 msgstr ""
 
 #: includes/simple-icons.php:144
-msgid "Hootsuite"
+msgid "Hackster"
 msgstr ""
 
 #: includes/simple-icons.php:145
-msgid "Houzz"
+msgid "Haskell"
 msgstr ""
 
 #: includes/simple-icons.php:146
-msgid "Hulu"
+msgid "Hatena Bookmark"
 msgstr ""
 
 #: includes/simple-icons.php:147
-msgid "Humble Bundle"
+msgid "Heroku"
 msgstr ""
 
 #: includes/simple-icons.php:148
-msgid "ICQ"
+msgid "Hexo"
 msgstr ""
 
 #: includes/simple-icons.php:149
-msgid "IMDb"
+msgid "Highly"
 msgstr ""
 
 #: includes/simple-icons.php:150
-msgid "InVision"
+msgid "HipChat"
 msgstr ""
 
 #: includes/simple-icons.php:151
-msgid "Inkscape"
+msgid "Hootsuite"
 msgstr ""
 
 #: includes/simple-icons.php:152
-msgid "Instacart"
+msgid "Houzz"
 msgstr ""
 
 #: includes/simple-icons.php:153
-msgid "Instagram"
+msgid "Hulu"
 msgstr ""
 
 #: includes/simple-icons.php:154
-msgid "Instapaper"
+msgid "Humble Bundle"
 msgstr ""
 
 #: includes/simple-icons.php:155
-msgid "Intel"
+msgid "ICQ"
 msgstr ""
 
 #: includes/simple-icons.php:156
-msgid "Intercom"
+msgid "IMDb"
 msgstr ""
 
 #: includes/simple-icons.php:157
-msgid "JIRA"
+msgid "InVision"
 msgstr ""
 
 #: includes/simple-icons.php:158
-msgid "JSFiddle"
+msgid "Inkscape"
 msgstr ""
 
 #: includes/simple-icons.php:159
-msgid "JSON"
+msgid "Instacart"
 msgstr ""
 
 #: includes/simple-icons.php:160
-msgid "JavaScript"
+msgid "Instagram"
 msgstr ""
 
 #: includes/simple-icons.php:161
-msgid "Jekyll"
+msgid "Instapaper"
 msgstr ""
 
 #: includes/simple-icons.php:162
-msgid "Jenkins"
+msgid "Intel"
 msgstr ""
 
 #: includes/simple-icons.php:163
-msgid "Joomla"
+msgid "Intercom"
 msgstr ""
 
 #: includes/simple-icons.php:164
-msgid "JustGiving"
+msgid "JSFiddle"
 msgstr ""
 
 #: includes/simple-icons.php:165
-msgid "Kaggle"
+msgid "JSON"
 msgstr ""
 
 #: includes/simple-icons.php:166
-msgid "KeyCDN"
+msgid "JavaScript"
 msgstr ""
 
 #: includes/simple-icons.php:167
-msgid "Keybase"
+msgid "Jekyll"
 msgstr ""
 
 #: includes/simple-icons.php:168
-msgid "Khan Academy"
+msgid "Jenkins"
 msgstr ""
 
 #: includes/simple-icons.php:169
-msgid "Kickstarter"
+msgid "Jira"
 msgstr ""
 
 #: includes/simple-icons.php:170
-msgid "Kik"
+msgid "Joomla"
 msgstr ""
 
 #: includes/simple-icons.php:171
-msgid "Kirby"
+msgid "JustGiving"
 msgstr ""
 
 #: includes/simple-icons.php:172
-msgid "Klout"
+msgid "Kaggle"
 msgstr ""
 
 #: includes/simple-icons.php:173
-msgid "Known"
+msgid "KeyCDN"
 msgstr ""
 
 #: includes/simple-icons.php:174
-msgid "Koding"
+msgid "Keybase"
 msgstr ""
 
 #: includes/simple-icons.php:175
-msgid "Lanyrd"
+msgid "Khan Academy"
 msgstr ""
 
 #: includes/simple-icons.php:176
-msgid "Laravel"
+msgid "Kickstarter"
 msgstr ""
 
 #: includes/simple-icons.php:177
-msgid "Last.fm"
+msgid "Kik"
 msgstr ""
 
 #: includes/simple-icons.php:178
-msgid "Launchpad"
+msgid "Kirby"
 msgstr ""
 
 #: includes/simple-icons.php:179
-msgid "Letterboxd"
+msgid "Klout"
 msgstr ""
 
 #: includes/simple-icons.php:180
-msgid "Line"
+msgid "Known"
 msgstr ""
 
 #: includes/simple-icons.php:181
-msgid "LinkedIn"
+msgid "Koding"
 msgstr ""
 
 #: includes/simple-icons.php:182
-msgid "Linux"
+msgid "LINE WEBTOON"
 msgstr ""
 
 #: includes/simple-icons.php:183
-msgid "Linux Foundation"
+msgid "Lanyrd"
 msgstr ""
 
 #: includes/simple-icons.php:184
-msgid "LiveJournal"
+msgid "Laravel"
 msgstr ""
 
 #: includes/simple-icons.php:185
-msgid "Livestream"
+msgid "Last.fm"
 msgstr ""
 
 #: includes/simple-icons.php:186
-msgid "Macy’s"
+msgid "Launchpad"
 msgstr ""
 
 #: includes/simple-icons.php:187
-msgid "Magento"
+msgid "Letterboxd"
 msgstr ""
 
 #: includes/simple-icons.php:188
-msgid "MailChimp"
+msgid "Line"
 msgstr ""
 
 #: includes/simple-icons.php:189
-msgid "MakerBot"
+msgid "LinkedIn"
 msgstr ""
 
 #: includes/simple-icons.php:190
-msgid "MasterCard"
+msgid "Linux"
 msgstr ""
 
 #: includes/simple-icons.php:191
-msgid "Mastodon"
+msgid "Linux Foundation"
 msgstr ""
 
 #: includes/simple-icons.php:192
-msgid "Matternet"
+msgid "LiveJournal"
 msgstr ""
 
 #: includes/simple-icons.php:193
-msgid "MediaTemple"
+msgid "Livestream"
 msgstr ""
 
 #: includes/simple-icons.php:194
-msgid "Medium"
+msgid "Macy’s"
 msgstr ""
 
 #: includes/simple-icons.php:195
-msgid "Meetup"
+msgid "Magento"
 msgstr ""
 
 #: includes/simple-icons.php:196
-msgid "Messenger"
+msgid "MailChimp"
 msgstr ""
 
 #: includes/simple-icons.php:197
-msgid "Meteor"
+msgid "MakerBot"
 msgstr ""
 
 #: includes/simple-icons.php:198
-msgid "Micro.blog"
+msgid "MasterCard"
 msgstr ""
 
 #: includes/simple-icons.php:199
-msgid "Microgenetics"
+msgid "Mastodon"
 msgstr ""
 
 #: includes/simple-icons.php:200
-msgid "Microsoft"
+msgid "Matternet"
 msgstr ""
 
 #: includes/simple-icons.php:201
-msgid "Microsoft Access"
+msgid "MediaTemple"
 msgstr ""
 
 #: includes/simple-icons.php:202
-msgid "Microsoft Excel"
+msgid "Medium"
 msgstr ""
 
 #: includes/simple-icons.php:203
-msgid "Microsoft OneNote"
+msgid "Meetup"
 msgstr ""
 
 #: includes/simple-icons.php:204
-msgid "Microsoft Outlook"
+msgid "Messenger"
 msgstr ""
 
 #: includes/simple-icons.php:205
-msgid "Microsoft PowerPoint"
+msgid "Meteor"
 msgstr ""
 
 #: includes/simple-icons.php:206
-msgid "Microsoft Word"
+msgid "Micro.blog"
 msgstr ""
 
 #: includes/simple-icons.php:207
-msgid "Minutemailer"
+msgid "Microgenetics"
 msgstr ""
 
 #: includes/simple-icons.php:208
-msgid "Mixcloud"
+msgid "Microsoft"
 msgstr ""
 
 #: includes/simple-icons.php:209
-msgid "Monero"
+msgid "Microsoft Access"
 msgstr ""
 
 #: includes/simple-icons.php:210
-msgid "MongoDB"
+msgid "Microsoft Excel"
 msgstr ""
 
 #: includes/simple-icons.php:211
-msgid "Monkey tie"
+msgid "Microsoft OneNote"
 msgstr ""
 
 #: includes/simple-icons.php:212
-msgid "Monogram"
+msgid "Microsoft Outlook"
 msgstr ""
 
 #: includes/simple-icons.php:213
-msgid "Moo"
+msgid "Microsoft PowerPoint"
 msgstr ""
 
 #: includes/simple-icons.php:214
-msgid "Mozilla"
+msgid "Microsoft Word"
 msgstr ""
 
 #: includes/simple-icons.php:215
-msgid "Mozilla Firefox"
+msgid "Minutemailer"
 msgstr ""
 
 #: includes/simple-icons.php:216
-msgid "MySQL"
+msgid "Mixcloud"
 msgstr ""
 
 #: includes/simple-icons.php:217
-msgid "Myspace"
+msgid "Monero"
 msgstr ""
 
 #: includes/simple-icons.php:218
-msgid "NGINX"
+msgid "MongoDB"
 msgstr ""
 
 #: includes/simple-icons.php:219
-msgid "NPM"
+msgid "Monkey tie"
 msgstr ""
 
 #: includes/simple-icons.php:220
-msgid "Neo4j"
+msgid "Monogram"
 msgstr ""
 
 #: includes/simple-icons.php:221
-msgid "Netflix"
+msgid "Moo"
 msgstr ""
 
 #: includes/simple-icons.php:222
-msgid "Netlify"
+msgid "Mozilla"
 msgstr ""
 
 #: includes/simple-icons.php:223
-msgid "Nextdoor"
+msgid "Mozilla Firefox"
 msgstr ""
 
 #: includes/simple-icons.php:224
-msgid "Nintendo"
+msgid "MySQL"
 msgstr ""
 
 #: includes/simple-icons.php:225
-msgid "Nintendo GameCube"
+msgid "Myspace"
 msgstr ""
 
 #: includes/simple-icons.php:226
-msgid "Nintendo Switch"
+msgid "NGINX"
 msgstr ""
 
 #: includes/simple-icons.php:227
-msgid "Node.js"
+msgid "NPM"
 msgstr ""
 
 #: includes/simple-icons.php:228
-msgid "Nodemon"
+msgid "Neo4j"
 msgstr ""
 
 #: includes/simple-icons.php:229
-msgid "Nucleo"
+msgid "Netflix"
 msgstr ""
 
 #: includes/simple-icons.php:230
-msgid "OVH"
+msgid "Netlify"
 msgstr ""
 
 #: includes/simple-icons.php:231
-msgid "Oculus"
+msgid "Nextdoor"
 msgstr ""
 
 #: includes/simple-icons.php:232
-msgid "Odnoklassniki"
+msgid "Nintendo"
 msgstr ""
 
 #: includes/simple-icons.php:233
-msgid "OneDrive"
+msgid "Nintendo GameCube"
 msgstr ""
 
 #: includes/simple-icons.php:234
-msgid "Opera"
+msgid "Nintendo Switch"
 msgstr ""
 
 #: includes/simple-icons.php:235
-msgid "Origin"
+msgid "Node.js"
 msgstr ""
 
 #: includes/simple-icons.php:236
-msgid "Overcast"
+msgid "Nodemon"
 msgstr ""
 
 #: includes/simple-icons.php:237
-msgid "PHP"
+msgid "Nucleo"
 msgstr ""
 
 #: includes/simple-icons.php:238
-msgid "Pagekit"
+msgid "OVH"
 msgstr ""
 
 #: includes/simple-icons.php:239
-msgid "Pandora"
+msgid "Oculus"
 msgstr ""
 
 #: includes/simple-icons.php:240
-msgid "Patreon"
+msgid "Odnoklassniki"
 msgstr ""
 
 #: includes/simple-icons.php:241
-msgid "PayPal"
+msgid "OneDrive"
 msgstr ""
 
 #: includes/simple-icons.php:242
-msgid "Periscope"
+msgid "Opera"
 msgstr ""
 
 #: includes/simple-icons.php:243
-msgid "Pinboard"
+msgid "Origin"
 msgstr ""
 
 #: includes/simple-icons.php:244
-msgid "Pingdom"
+msgid "Overcast"
 msgstr ""
 
 #: includes/simple-icons.php:245
-msgid "Pingup"
+msgid "PHP"
 msgstr ""
 
 #: includes/simple-icons.php:246
-msgid "Pinterest"
+msgid "Pagekit"
 msgstr ""
 
 #: includes/simple-icons.php:247
-msgid "PlanGrid"
+msgid "Pandora"
 msgstr ""
 
 #: includes/simple-icons.php:248
-msgid "PlayStation"
+msgid "Patreon"
 msgstr ""
 
 #: includes/simple-icons.php:249
-msgid "PlayStation 3"
+msgid "PayPal"
 msgstr ""
 
 #: includes/simple-icons.php:250
-msgid "PlayStation 4"
+msgid "Periscope"
 msgstr ""
 
 #: includes/simple-icons.php:251
-msgid "Player.me"
+msgid "Picarto.TV"
 msgstr ""
 
 #: includes/simple-icons.php:252
-msgid "Plex"
+msgid "Pinboard"
 msgstr ""
 
 #: includes/simple-icons.php:253
-msgid "Pluralsight"
+msgid "Pingdom"
 msgstr ""
 
 #: includes/simple-icons.php:254
-msgid "Plurk"
+msgid "Pingup"
 msgstr ""
 
 #: includes/simple-icons.php:255
-msgid "Pocket"
+msgid "Pinterest"
 msgstr ""
 
 #: includes/simple-icons.php:256
-msgid "Podcasts"
+msgid "PlanGrid"
 msgstr ""
 
 #: includes/simple-icons.php:257
-msgid "Prismic"
+msgid "PlayStation"
 msgstr ""
 
 #: includes/simple-icons.php:258
-msgid "ProcessWire"
+msgid "PlayStation 3"
 msgstr ""
 
 #: includes/simple-icons.php:259
-msgid "Product Hunt"
+msgid "PlayStation 4"
 msgstr ""
 
 #: includes/simple-icons.php:260
-msgid "Proto.io"
+msgid "Player.me"
 msgstr ""
 
 #: includes/simple-icons.php:261
-msgid "ProtonMail"
+msgid "Plex"
 msgstr ""
 
 #: includes/simple-icons.php:262
-msgid "Python"
+msgid "Pluralsight"
 msgstr ""
 
 #: includes/simple-icons.php:263
-msgid "Qiita"
+msgid "Plurk"
 msgstr ""
 
 #: includes/simple-icons.php:264
-msgid "Quantcast"
+msgid "Pocket"
 msgstr ""
 
 #: includes/simple-icons.php:265
-msgid "Quantopian"
+msgid "Podcasts"
 msgstr ""
 
 #: includes/simple-icons.php:266
-msgid "Quora"
+msgid "Prismic"
 msgstr ""
 
 #: includes/simple-icons.php:267
-msgid "RSS"
+msgid "ProcessWire"
 msgstr ""
 
 #: includes/simple-icons.php:268
-msgid "Rails"
+msgid "Product Hunt"
 msgstr ""
 
 #: includes/simple-icons.php:269
-msgid "Raspberry Pi"
+msgid "Proto.io"
 msgstr ""
 
 #: includes/simple-icons.php:270
-msgid "React"
+msgid "ProtonMail"
 msgstr ""
 
 #: includes/simple-icons.php:271
-msgid "Read the Docs"
+msgid "Python"
 msgstr ""
 
 #: includes/simple-icons.php:272
-msgid "Readability"
+msgid "Qiita"
 msgstr ""
 
 #: includes/simple-icons.php:273
-msgid "Reddit"
+msgid "Quantcast"
 msgstr ""
 
 #: includes/simple-icons.php:274
-msgid "Redis"
+msgid "Quantopian"
 msgstr ""
 
 #: includes/simple-icons.php:275
-msgid "Redux"
+msgid "Quora"
 msgstr ""
 
 #: includes/simple-icons.php:276
-msgid "ReverbNation"
+msgid "RSS"
 msgstr ""
 
 #: includes/simple-icons.php:277
-msgid "Roots"
+msgid "Rails"
 msgstr ""
 
 #: includes/simple-icons.php:278
-msgid "Ruby"
+msgid "Raspberry Pi"
 msgstr ""
 
 #: includes/simple-icons.php:279
-msgid "Runkeeper"
+msgid "React"
 msgstr ""
 
 #: includes/simple-icons.php:280
-msgid "Rust"
+msgid "Read the Docs"
 msgstr ""
 
 #: includes/simple-icons.php:281
-msgid "Salesforce"
+msgid "Reddit"
 msgstr ""
 
 #: includes/simple-icons.php:282
-msgid "Sass"
+msgid "Redis"
 msgstr ""
 
 #: includes/simple-icons.php:283
-msgid "Sauce Labs"
+msgid "Redux"
 msgstr ""
 
 #: includes/simple-icons.php:284
-msgid "Scribd"
+msgid "ReverbNation"
 msgstr ""
 
 #: includes/simple-icons.php:285
-msgid "Sega"
+msgid "Roots"
 msgstr ""
 
 #: includes/simple-icons.php:286
-msgid "Sellfy"
+msgid "Ruby"
 msgstr ""
 
 #: includes/simple-icons.php:287
-msgid "Sentry"
+msgid "Runkeeper"
 msgstr ""
 
 #: includes/simple-icons.php:288
-msgid "Server Fault"
+msgid "Rust"
 msgstr ""
 
 #: includes/simple-icons.php:289
-msgid "Shazam"
+msgid "Salesforce"
 msgstr ""
 
 #: includes/simple-icons.php:290
-msgid "Shopify"
+msgid "Sass"
 msgstr ""
 
 #: includes/simple-icons.php:291
-msgid "Signal"
+msgid "Sauce Labs"
 msgstr ""
 
 #: includes/simple-icons.php:292
-msgid "Simple Icons"
+msgid "Scribd"
 msgstr ""
 
 #: includes/simple-icons.php:293
-msgid "Sina Weibo"
+msgid "Sega"
 msgstr ""
 
 #: includes/simple-icons.php:294
-msgid "SitePoint"
+msgid "Sellfy"
 msgstr ""
 
 #: includes/simple-icons.php:295
-msgid "Skyliner"
+msgid "Sentry"
 msgstr ""
 
 #: includes/simple-icons.php:296
-msgid "Skype"
+msgid "Server Fault"
 msgstr ""
 
 #: includes/simple-icons.php:297
-msgid "Slack"
+msgid "Shazam"
 msgstr ""
 
 #: includes/simple-icons.php:298
-msgid "Slashdot"
+msgid "Shopify"
 msgstr ""
 
 #: includes/simple-icons.php:299
-msgid "SlickPic"
+msgid "Signal"
 msgstr ""
 
 #: includes/simple-icons.php:300
-msgid "Slides"
+msgid "Simple Icons"
 msgstr ""
 
 #: includes/simple-icons.php:301
-msgid "Smashing Magazine"
+msgid "Sina Weibo"
 msgstr ""
 
 #: includes/simple-icons.php:302
-msgid "Snapchat"
+msgid "SitePoint"
 msgstr ""
 
 #: includes/simple-icons.php:303
-msgid "Sogou"
+msgid "Skyliner"
 msgstr ""
 
 #: includes/simple-icons.php:304
-msgid "Songkick"
+msgid "Skype"
 msgstr ""
 
 #: includes/simple-icons.php:305
-msgid "SoundCloud"
+msgid "Slack"
 msgstr ""
 
 #: includes/simple-icons.php:306
-msgid "SourceForge"
+msgid "Slashdot"
 msgstr ""
 
 #: includes/simple-icons.php:307
-msgid "SparkPost"
+msgid "SlickPic"
 msgstr ""
 
 #: includes/simple-icons.php:308
-msgid "Speaker Deck"
+msgid "Slides"
 msgstr ""
 
 #: includes/simple-icons.php:309
-msgid "Spotify"
+msgid "Smashing Magazine"
 msgstr ""
 
 #: includes/simple-icons.php:310
-msgid "Spotlight"
+msgid "Snapchat"
 msgstr ""
 
 #: includes/simple-icons.php:311
-msgid "Spreaker"
+msgid "Sogou"
 msgstr ""
 
 #: includes/simple-icons.php:312
-msgid "Squarespace"
+msgid "Songkick"
 msgstr ""
 
 #: includes/simple-icons.php:313
-msgid "Stack Exchange"
+msgid "SoundCloud"
 msgstr ""
 
 #: includes/simple-icons.php:314
-msgid "Stack Overflow"
+msgid "SourceForge"
 msgstr ""
 
 #: includes/simple-icons.php:315
-msgid "Statamic"
+msgid "SparkPost"
 msgstr ""
 
 #: includes/simple-icons.php:316
-msgid "Staticman"
+msgid "Speaker Deck"
 msgstr ""
 
 #: includes/simple-icons.php:317
-msgid "Steam"
+msgid "Spotify"
 msgstr ""
 
 #: includes/simple-icons.php:318
-msgid "Steem"
+msgid "Spotlight"
 msgstr ""
 
 #: includes/simple-icons.php:319
-msgid "Stitcher"
+msgid "Spreaker"
 msgstr ""
 
 #: includes/simple-icons.php:320
-msgid "Storify"
+msgid "Squarespace"
 msgstr ""
 
 #: includes/simple-icons.php:321
-msgid "Strava"
+msgid "Stack Exchange"
 msgstr ""
 
 #: includes/simple-icons.php:322
-msgid "Stripe"
+msgid "Stack Overflow"
 msgstr ""
 
 #: includes/simple-icons.php:323
-msgid "StubHub"
+msgid "Statamic"
 msgstr ""
 
 #: includes/simple-icons.php:324
-msgid "StumbleUpon"
+msgid "Staticman"
 msgstr ""
 
 #: includes/simple-icons.php:325
-msgid "StyleShare"
+msgid "Steam"
 msgstr ""
 
 #: includes/simple-icons.php:326
-msgid "Stylus"
+msgid "Steem"
 msgstr ""
 
 #: includes/simple-icons.php:327
-msgid "Sublime Text"
+msgid "Stitcher"
 msgstr ""
 
 #: includes/simple-icons.php:328
-msgid "Subversion"
+msgid "Storify"
 msgstr ""
 
 #: includes/simple-icons.php:329
-msgid "Super User"
+msgid "Strava"
 msgstr ""
 
 #: includes/simple-icons.php:330
-msgid "Swarm"
+msgid "Stripe"
 msgstr ""
 
 #: includes/simple-icons.php:331
-msgid "Swift"
+msgid "StubHub"
 msgstr ""
 
 #: includes/simple-icons.php:332
-msgid "Symfony"
+msgid "StumbleUpon"
 msgstr ""
 
 #: includes/simple-icons.php:333
-msgid "TED"
+msgid "StyleShare"
 msgstr ""
 
 #: includes/simple-icons.php:334
-msgid "Teespring"
+msgid "Stylus"
 msgstr ""
 
 #: includes/simple-icons.php:335
-msgid "Telegram"
+msgid "Sublime Text"
 msgstr ""
 
 #: includes/simple-icons.php:336
-msgid "Tencent QQ"
+msgid "Subversion"
 msgstr ""
 
 #: includes/simple-icons.php:337
-msgid "Tesla"
+msgid "Super User"
 msgstr ""
 
 #: includes/simple-icons.php:338
-msgid "The Mighty"
+msgid "Swarm"
 msgstr ""
 
 #: includes/simple-icons.php:339
-msgid "Tinder"
+msgid "Swift"
 msgstr ""
 
 #: includes/simple-icons.php:340
-msgid "Toggl"
+msgid "Symfony"
 msgstr ""
 
 #: includes/simple-icons.php:341
-msgid "Topcoder"
+msgid "TED"
 msgstr ""
 
 #: includes/simple-icons.php:342
-msgid "Toptal"
+msgid "Tapas"
 msgstr ""
 
 #: includes/simple-icons.php:343
-msgid "Trakt"
+msgid "Teespring"
 msgstr ""
 
 #: includes/simple-icons.php:344
-msgid "Travis CI"
+msgid "Telegram"
 msgstr ""
 
 #: includes/simple-icons.php:345
-msgid "Treehouse"
+msgid "Tencent QQ"
 msgstr ""
 
 #: includes/simple-icons.php:346
-msgid "Trello"
+msgid "Tesla"
 msgstr ""
 
 #: includes/simple-icons.php:347
-msgid "TripAdvisor"
+msgid "The Mighty"
 msgstr ""
 
 #: includes/simple-icons.php:348
-msgid "Trulia"
+msgid "Tinder"
 msgstr ""
 
 #: includes/simple-icons.php:349
-msgid "Tumblr"
+msgid "Toggl"
 msgstr ""
 
 #: includes/simple-icons.php:350
-msgid "Twilio"
+msgid "Topcoder"
 msgstr ""
 
 #: includes/simple-icons.php:351
-msgid "Twitch"
+msgid "Toptal"
 msgstr ""
 
 #: includes/simple-icons.php:352
-msgid "Twitter"
+msgid "Trakt"
 msgstr ""
 
 #: includes/simple-icons.php:353
-msgid "Twoo"
+msgid "Travis CI"
 msgstr ""
 
 #: includes/simple-icons.php:354
-msgid "UIkit"
+msgid "Treehouse"
 msgstr ""
 
 #: includes/simple-icons.php:355
-msgid "Uber"
+msgid "Trello"
 msgstr ""
 
 #: includes/simple-icons.php:356
-msgid "Ubuntu"
+msgid "TripAdvisor"
 msgstr ""
 
 #: includes/simple-icons.php:357
-msgid "Udacity"
+msgid "Trulia"
 msgstr ""
 
 #: includes/simple-icons.php:358
-msgid "Umbraco"
+msgid "Tumblr"
 msgstr ""
 
 #: includes/simple-icons.php:359
-msgid "Untappd"
+msgid "Twilio"
 msgstr ""
 
 #: includes/simple-icons.php:360
-msgid "Upwork"
+msgid "Twitch"
 msgstr ""
 
 #: includes/simple-icons.php:361
-msgid "VK"
+msgid "Twitter"
 msgstr ""
 
 #: includes/simple-icons.php:362
-msgid "VSCO"
+msgid "Twoo"
 msgstr ""
 
 #: includes/simple-icons.php:363
-msgid "Viadeo"
+msgid "UIkit"
 msgstr ""
 
 #: includes/simple-icons.php:364
-msgid "Viber"
+msgid "Uber"
 msgstr ""
 
 #: includes/simple-icons.php:365
-msgid "Vim"
+msgid "Ubuntu"
 msgstr ""
 
 #: includes/simple-icons.php:366
-msgid "Vimeo"
+msgid "Udacity"
 msgstr ""
 
 #: includes/simple-icons.php:367
-msgid "Vine"
+msgid "Umbraco"
 msgstr ""
 
 #: includes/simple-icons.php:368
-msgid "Virb"
+msgid "Unsplash"
 msgstr ""
 
 #: includes/simple-icons.php:369
-msgid "Visa"
+msgid "Untappd"
 msgstr ""
 
 #: includes/simple-icons.php:370
-msgid "Visual Studio Code"
+msgid "Upwork"
 msgstr ""
 
 #: includes/simple-icons.php:371
-msgid "Vue.js"
+msgid "VK"
 msgstr ""
 
 #: includes/simple-icons.php:372
-msgid "WP Engine"
+msgid "VSCO"
 msgstr ""
 
 #: includes/simple-icons.php:373
-msgid "WeChat"
+msgid "Viadeo"
 msgstr ""
 
 #: includes/simple-icons.php:374
-msgid "WebStorm"
+msgid "Viber"
 msgstr ""
 
 #: includes/simple-icons.php:375
-msgid "Webpack"
+msgid "Vim"
 msgstr ""
 
 #: includes/simple-icons.php:376
-msgid "WhatsApp"
+msgid "Vimeo"
 msgstr ""
 
 #: includes/simple-icons.php:377
-msgid "When I Work"
+msgid "Vine"
 msgstr ""
 
 #: includes/simple-icons.php:378
-msgid "Wii"
+msgid "Virb"
 msgstr ""
 
 #: includes/simple-icons.php:379
-msgid "Wii U"
+msgid "Visa"
 msgstr ""
 
 #: includes/simple-icons.php:380
-msgid "Wikipedia"
+msgid "Visual Studio Code"
 msgstr ""
 
 #: includes/simple-icons.php:381
-msgid "Windows"
+msgid "Vue.js"
 msgstr ""
 
 #: includes/simple-icons.php:382
-msgid "Wire"
+msgid "WP Engine"
 msgstr ""
 
 #: includes/simple-icons.php:383
-msgid "Wix"
+msgid "Wattpad"
 msgstr ""
 
 #: includes/simple-icons.php:384
-msgid "WordPress"
+msgid "WeChat"
 msgstr ""
 
 #: includes/simple-icons.php:385
-msgid "Xbox"
+msgid "WebStorm"
 msgstr ""
 
 #: includes/simple-icons.php:386
-msgid "Xcode"
+msgid "Webpack"
 msgstr ""
 
 #: includes/simple-icons.php:387
-msgid "Xero"
+msgid "WhatsApp"
 msgstr ""
 
 #: includes/simple-icons.php:388
-msgid "Xing"
+msgid "When I Work"
 msgstr ""
 
 #: includes/simple-icons.php:389
-msgid "Y Combinator"
+msgid "Wii"
 msgstr ""
 
 #: includes/simple-icons.php:390
-msgid "Yahoo!"
+msgid "Wii U"
 msgstr ""
 
 #: includes/simple-icons.php:391
-msgid "Yammer"
+msgid "Wikipedia"
 msgstr ""
 
 #: includes/simple-icons.php:392
-msgid "Yandex"
+msgid "Windows"
 msgstr ""
 
 #: includes/simple-icons.php:393
-msgid "Yelp"
+msgid "Wire"
 msgstr ""
 
 #: includes/simple-icons.php:394
-msgid "YouTube"
+msgid "Wix"
 msgstr ""
 
 #: includes/simple-icons.php:395
-msgid "Zapier"
+msgid "WordPress"
 msgstr ""
 
 #: includes/simple-icons.php:396
-msgid "Zendesk"
+msgid "Xbox"
 msgstr ""
 
 #: includes/simple-icons.php:397
-msgid "Zerply"
+msgid "Xcode"
 msgstr ""
 
 #: includes/simple-icons.php:398
-msgid "Zillow"
+msgid "Xero"
 msgstr ""
 
 #: includes/simple-icons.php:399
-msgid "eBay"
+msgid "Xing"
 msgstr ""
 
 #: includes/simple-icons.php:400
-msgid "freeCodeCamp"
+msgid "Y Combinator"
 msgstr ""
 
 #: includes/simple-icons.php:401
-msgid "homify"
+msgid "Yahoo!"
 msgstr ""
 
 #: includes/simple-icons.php:402
-msgid "iFixit"
+msgid "Yammer"
 msgstr ""
 
 #: includes/simple-icons.php:403
+msgid "Yandex"
+msgstr ""
+
+#: includes/simple-icons.php:404
+msgid "Yelp"
+msgstr ""
+
+#: includes/simple-icons.php:405
+msgid "YouTube"
+msgstr ""
+
+#: includes/simple-icons.php:406
+msgid "Zapier"
+msgstr ""
+
+#: includes/simple-icons.php:407
+msgid "Zendesk"
+msgstr ""
+
+#: includes/simple-icons.php:408
+msgid "Zerply"
+msgstr ""
+
+#: includes/simple-icons.php:409
+msgid "Zillow"
+msgstr ""
+
+#: includes/simple-icons.php:410
+msgid "dev.to"
+msgstr ""
+
+#: includes/simple-icons.php:411
+msgid "eBay"
+msgstr ""
+
+#: includes/simple-icons.php:412
+msgid "freeCodeCamp"
+msgstr ""
+
+#: includes/simple-icons.php:413
+msgid "homify"
+msgstr ""
+
+#: includes/simple-icons.php:414
+msgid "iFixit"
+msgstr ""
+
+#: includes/simple-icons.php:415
 msgid "jQuery"
 msgstr ""
 
