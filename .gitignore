@@ -1,6 +1,5 @@
 .data
 node_modules
-!node_modules/simple-icons/LICENSE.md
 build
 vendor
 sass/.sass-cache
