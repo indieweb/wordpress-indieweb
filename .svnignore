@@ -29,3 +29,4 @@ phpunit.xml.dist
 tests
 node_modules
 vendor
+static/genericons-neue

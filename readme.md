@@ -4,16 +4,16 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 4.9.1  
-**Stable tag:** 3.3.5  
+**Tested up to:** 4.9.5  
+**Stable tag:** 3.3.6  
 
 IndieWeb for WordPress!
 
 ## Description ##
 
-The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and [h-card](https://indieweb.org/h-card) fields.
-It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly
-and easily join the growing [IndieWeb](https://indieweb.org) movement (see below).
+The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and
+[h-card](https://indieweb.org/h-card) fields and optionally adding widgets to display this. It also includes a bundled installer for a core set of IndieWeb-related plugins. It's
+meant to be a one-stop shop to help WordPress users quickly and easily join the growing [IndieWeb](https://indieweb.org) movement (see below).
 
 Some of these plugins allow you to:
 
@@ -26,7 +26,7 @@ Some of these plugins allow you to:
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
 * link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram, Google+ can come back to your original post as comments there
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
-* log into your WordPress site with services like Twitter, GitHub, etc using [IndieAuth](https://indieweb.org/indieauth).
+* Use your site to log into other services with [IndieAuth](https://indieweb.org/indieauth).
 
 ### The IndieWeb ###
 
@@ -71,15 +71,18 @@ One could certainly download, install, and activate some or all of these plugins
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Automatically adds syndication links from a supported syndication plugin or by manual entry in the post editor. Support for NextScripts: Social Networks Auto-Poster (aka SNAP), the Medium plugin, and a few others.
 * MicroPub - A MicroPub Server for publishing posts using third-party Micropub clients
-* Indieauth - The plugin lets you login to the WordPress backend via IndieAuth. It uses the URL from the profile page to identify the blog user.
+* IndieAuth - Adds an IndieAuth endpoint to WordPress. Alternatively, if you do not want to enable this, you can use a third-party endpoint to login to the WordPress backend via IndieAuth.
 * Bridgy - User Interface for the Brid.gy Web Service
 * Microformats 2 - provides basic mf2 support for any WordPress theme that does not support mf2 already. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
-* Simple Location - adds basic location support to WordPress posts
+* Simple Location - adds basic location and weather support to WordPress posts
 
 
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.3.6 ###
+* Refresh icons
 
 ### 3.3.5 ###
 * Fix missing file on previous commit

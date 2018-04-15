@@ -60,7 +60,7 @@ module.exports = function (grunt) {
                 },
                 dist: {
                                 files: {
-                                        'static/img/simple-icons.svg': ['node_modules/simple-icons/icons/*.svg', 'node_modules/genericons-neue/svg/*.svg']
+                                        'static/img/simple-icons.svg': ['node_modules/simple-icons/icons/*.svg', 'static/genericons-neue/*.svg']
                                 }
                 }
         },
@@ -99,5 +99,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-execute');
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain']);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain', 'svgstore']);
 };
