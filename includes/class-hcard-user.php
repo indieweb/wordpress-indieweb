@@ -64,7 +64,7 @@ class HCard_User {
 				'baseurl' => 'https://www.facebook.com/%s',
 				'display' => __( 'Facebook ID', 'indieweb' ),
 			),
-			'microblog'     => array(
+			'microblog'  => array(
 				'baseurl' => 'https://micro.blog/%s',
 				'display' => __( 'Micro.blog username', 'indieweb' ),
 			),
