@@ -5,7 +5,9 @@ Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
 Tested up to: 4.9.5
-Stable tag: 3.3.6
+Stable tag: 3.3.7
+License: MIT
+License URI: http://opensource.org/licenses/MIT
 
 IndieWeb for WordPress!
 
@@ -80,6 +82,11 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 3.3.7 =
+* Add micro.blog username to user profile as it uses rel-me
+* Remove last.fm due no indieweb support
+* Add option for the icons to be black and white only
 
 = 3.3.6 = 
 * Refresh icons

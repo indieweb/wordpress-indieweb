@@ -64,9 +64,9 @@ class HCard_User {
 				'baseurl' => 'https://www.facebook.com/%s',
 				'display' => __( 'Facebook ID', 'indieweb' ),
 			),
-			'lastfm'     => array(
-				'baseurl' => 'https://last.fm/user/%s',
-				'display' => __( 'Last.fm username', 'indieweb' ),
+			'microblog'  => array(
+				'baseurl' => 'https://micro.blog/%s',
+				'display' => __( 'Micro.blog username', 'indieweb' ),
 			),
 			'instagram'  => array(
 				'baseurl' => 'https://www.instagram.com/%s',

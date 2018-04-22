@@ -22,7 +22,8 @@
 	<p><?php _e( 'After you have established your identity, you can now log into the <a href="https://indieweb.org">Indieweb wiki</a> and add a user page as a way of introducing yourself to the community. The wiki is also a great source of IndieWeb information', 'indieweb' ); ?></p>
 
 	<ol>
-	<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other Indieweb sites', 'indieweb' ); ?></li>
+	<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other Indieweb sites. You can configure it in the Discussion Settings', 'indieweb' ); ?></li>
+	<li><?php _e( 'Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub and the IndieAuth plugin adds an IndieAuth endpoint to allow it to authenticate to your site. Without it, the Micropub plugin will use a third-party IndieAuth server to authenticate to your site.', 'indieweb' ); ?></li>
 	<li><?php _e( 'You can now install the Bridgy plugin. It will add its settings options under Indieweb and allow you to directly register for Bridgy to connect your blog to responses from sites such as Facebook and Twitter.', 'indieweb' ); ?></li>
 	<li><?php _e( 'Browse the Extensions page for a list of other recommended Indieweb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 	</ol>
@@ -32,7 +33,7 @@
 	<h2><?php esc_html_e( 'Themes', 'indieweb' ); ?></h2>
 
 	<p><?php _e( 'The IndieWeb uses <a href="https://indieweb.org/microformats">microformats</a> 2 to mark up sites so that they can be interpreted by other sites when retrieved.', 'indieweb' ); ?></p>
-	<p><?php _e( 'The Microformats 2 Plugin attempts to add microformats to a theme that does not support them. This is not a replacement for a correctly configured theme and may not work with all themes.', 'indieweb' ); ?></p>
+	<p><?php _e( 'The Microformats 2 Plugin attempts to add microformats to a theme that does not support them. This is not a replacement for a correctly configured theme and does not work with all themes.', 'indieweb' ); ?></p>
 	<p><?php _e( 'Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. Most tools will attempt to use means other than Microformats2 if they are not available, but will lack detail.', 'indieweb' ); ?></p>
 
 	<p>
