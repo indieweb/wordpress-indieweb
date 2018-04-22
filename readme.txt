@@ -5,7 +5,9 @@ Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
 Tested up to: 4.9.5
-Stable tag: 3.3.6
+Stable tag: 3.3.7
+License: MIT
+License URI: http://opensource.org/licenses/MIT
 
 IndieWeb for WordPress!
 

@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.6\n"
+"Project-Id-Version: IndieWeb 3.3.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2018-04-22 04:50:44+00:00\n"
+"POT-Creation-Date: 2018-04-22 05:06:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -74,35 +74,35 @@ msgstr ""
 msgid "Black and White Rel-Me Icons"
 msgstr ""
 
-#: includes/class-general-settings.php:79
+#: includes/class-general-settings.php:78
 msgid "Identity Settings"
 msgstr ""
 
-#: includes/class-general-settings.php:92
+#: includes/class-general-settings.php:91
 msgid ""
 "If this website represents a single individual or entity, check this. This "
 "setting is disabled if you only have one user who has made a post."
 msgstr ""
 
-#: includes/class-general-settings.php:107
+#: includes/class-general-settings.php:106
 msgid "Use User Website URL for Author"
 msgstr ""
 
-#: includes/class-general-settings.php:113
+#: includes/class-general-settings.php:112
 msgid ""
 "If checked, this will replace the author page URL with the website URL from "
 "your user profile."
 msgstr ""
 
-#: includes/class-general-settings.php:120
+#: includes/class-general-settings.php:119
 msgid "Black and White Icons"
 msgstr ""
 
-#: includes/class-general-settings.php:126
+#: includes/class-general-settings.php:125
 msgid "If checked, the icon colors will not be loaded"
 msgstr ""
 
-#: includes/class-general-settings.php:136
+#: includes/class-general-settings.php:135
 msgid ""
 "Using rel=me on a link indicates the link represents the same person or "
 "entity as\n"
@@ -112,7 +112,7 @@ msgid ""
 "appear in the links on the author page only."
 msgstr ""
 
-#: includes/class-general-settings.php:143
+#: includes/class-general-settings.php:142
 msgid ""
 "The Default Author is the one whose that will be used on the home pages and "
 "archive pages. The default author setting is also used \n"
