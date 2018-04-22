@@ -79,7 +79,11 @@ class IndieWeb_Plugin {
 	}
 
 	public static function enqueue_style() {
-		wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array() );
+		if ( '1' === get_option( 'iw_relme_bw' ) ) {
+			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb-bw.css', __FILE__ ), array() );
+		} else {
+			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array() );
+		}
 	}
 
 

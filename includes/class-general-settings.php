@@ -55,6 +55,17 @@ class IndieWeb_General_Settings {
 			)
 		);
 
+		register_setting(
+			$section,
+			'iw_relme_bw',
+			array(
+				'type'         => 'boolean',
+				'description'  => __( 'Black and White Rel-Me Icons', 'indieweb' ),
+				'show_in_rest' => true,
+				'default'      => 0,
+			)
+		);
+
 	}
 
 	public static function admin_settings() {
@@ -102,6 +113,20 @@ class IndieWeb_General_Settings {
 				'disabled'    => false,
 			)
 		);
+
+		add_settings_field(
+			'iw_relme_bw', // ID used to identify the field throughout the theme
+			__( 'Black and White Icons', 'indieweb' ), // The label to the left of the option interface element
+			array( 'IndieWeb_General_Settings', 'checkbox_callback' ),   // The name of the function responsible for rendering the option interface
+			$page, // The page on which this option will be displayed
+			$section, // The name of the section to which this field belongs
+			array( // The array of arguments to pass to the callback. In this case, just a description.
+				'name'        => 'iw_relme_bw',
+				'description' => __( 'If checked, the icon colors will not be loaded', 'indieweb' ),
+				'disabled'    => false,
+			)
+		);
+
 	}
 
 
@@ -115,7 +140,8 @@ class IndieWeb_General_Settings {
 		echo '</p>';
 		echo '<p>';
 		esc_html_e(
-			'The Default Author is the one whose that will be used on the home pages and archive pages. If the single author setting is not set,
+			'The Default Author is the one whose that will be used on the home pages and archive pages. The default author setting is also used 
+			by the IndieAuth plugin to identify the primary author of a site. If the single author setting is not set,
 				on all other pages, the post author links will be used. To display the links, add the
 				widget, otherwise they will remain hidden. ', 'indieweb'
 		);

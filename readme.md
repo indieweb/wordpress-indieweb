@@ -81,6 +81,11 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+### 3.3.7 ###
+* Add micro.blog username to user profile as it uses rel-me
+* Remove last.fm due no indieweb support
+* Add option for the icons to be black and white only
+
 ### 3.3.6 ###
 * Refresh icons
 
