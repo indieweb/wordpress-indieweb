@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: IndieWeb 3.3.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2018-04-22 05:06:30+00:00\n"
+"POT-Creation-Date: 2018-04-22 05:25:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -321,45 +321,54 @@ msgstr ""
 msgid ""
 "Install and activate the Webmentions and Semantic Linkbacks plugins. These "
 "will allow you to receive responses such as replies, likes, etc from other "
-"Indieweb sites"
+"Indieweb sites. You can configure it in the Discussion Settings"
 msgstr ""
 
 #: includes/getting-started.php:26
+msgid ""
+"Install and activate the Micropub and IndieAuth plugins. The Micropub "
+"plugin will allow you to publish to your website using Micropub and the "
+"IndieAuth plugin adds an IndieAuth endpoint to allow it to authenticate to "
+"your site. Without it, the Micropub plugin will use a third-party IndieAuth "
+"server to authenticate to your site."
+msgstr ""
+
+#: includes/getting-started.php:27
 msgid ""
 "You can now install the Bridgy plugin. It will add its settings options "
 "under Indieweb and allow you to directly register for Bridgy to connect "
 "your blog to responses from sites such as Facebook and Twitter."
 msgstr ""
 
-#: includes/getting-started.php:27
+#: includes/getting-started.php:28
 msgid ""
 "Browse the Extensions page for a list of other recommended Indieweb plugins "
 "that can expand your functionality."
 msgstr ""
 
-#: includes/getting-started.php:30
+#: includes/getting-started.php:31
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/getting-started.php:32
+#: includes/getting-started.php:33
 msgid "Themes"
 msgstr ""
 
-#: includes/getting-started.php:34
+#: includes/getting-started.php:35
 msgid ""
 "The IndieWeb uses <a "
 "href=\"https://indieweb.org/microformats\">microformats</a> 2 to mark up "
 "sites so that they can be interpreted by other sites when retrieved."
 msgstr ""
 
-#: includes/getting-started.php:35
+#: includes/getting-started.php:36
 msgid ""
 "The Microformats 2 Plugin attempts to add microformats to a theme that does "
 "not support them. This is not a replacement for a correctly configured "
-"theme and may not work with all themes."
+"theme and does not work with all themes."
 msgstr ""
 
-#: includes/getting-started.php:36
+#: includes/getting-started.php:37
 msgid ""
 "Formatting your site so other sites can consume the information allows for "
 "the communications IndieWeb sites support. Most tools will attempt to use "
@@ -367,7 +376,7 @@ msgid ""
 "detail."
 msgstr ""
 
-#: includes/getting-started.php:40
+#: includes/getting-started.php:41
 msgid ""
 "Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
 "\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
@@ -383,17 +392,17 @@ msgid ""
 "href=\"https://indieweb.org/discuss\">happy to assist</a>."
 msgstr ""
 
-#: includes/getting-started.php:50
+#: includes/getting-started.php:51
 msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:52
+#: includes/getting-started.php:53
 msgid ""
 "<strong>Own your data.</strong> Create and publish content on your own "
 "site, and only optionally syndicate to third-party silos."
 msgstr ""
 
-#: includes/getting-started.php:55
+#: includes/getting-started.php:56
 msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
 "\t\t\thref=\"https://indieweb.org/principles\" "
@@ -401,7 +410,7 @@ msgid ""
 "\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:63
+#: includes/getting-started.php:64
 msgid ""
 "For even more information, please visit the <a "
 "href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
