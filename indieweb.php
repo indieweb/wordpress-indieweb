@@ -57,7 +57,9 @@ class IndieWeb_Plugin {
 
 		// add menu
 		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'add_menu_item' ), 9 );
-		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'change_menu_title' ), 12 );
+
+		// Privacy Declaration
+		add_action( 'admin_init', array( 'Indieweb_Plugin', 'privacy_declaration' ) );
 
 		// we're up and running
 		do_action( 'indieweb_loaded' );
@@ -72,7 +74,7 @@ class IndieWeb_Plugin {
 	public static function enable_translation() {
 		// for plugins
 		load_plugin_textdomain(
-			'indieweb', // unique slug
+			'indieweb',
 			false,
 			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
 		);
@@ -91,7 +93,7 @@ class IndieWeb_Plugin {
 	 * Add Top Level Menu Item
 	 */
 	public static function add_menu_item() {
-		add_menu_page(
+		$options_page = add_menu_page(
 			'IndieWeb',
 			'IndieWeb',
 			'manage_options',
@@ -107,6 +109,7 @@ class IndieWeb_Plugin {
 			'indieweb-installer',
 			array( 'IndieWeb_Plugin', 'plugin_installer' )
 		);
+		self::change_menu_title();
 	}
 
 	/**
@@ -171,5 +174,20 @@ class IndieWeb_Plugin {
 		);
 		return $plugin_array;
 	}
+
+	public static function privacy_declaration() {
+		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
+				$content = __(
+					'Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove
+				it at your discretion.', 'indieweb'
+				);
+				wp_add_privacy_policy_content(
+					'Indieweb',
+					wp_kses_post( wpautop( $content, false ) )
+				);
+		}
+	}
+
+
 
 } // end class IndieWeb_Plugin
