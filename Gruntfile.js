@@ -49,22 +49,34 @@ module.exports = function (grunt) {
       }
     },
 
-        svgstore: {
-                options: {
-                        prefix : '', // Unused by us, but svgstore demands this variable
-                        cleanup : ['style', 'fill', 'id'],
-                        svg: { // will add and overide the the default xmlns="http://www.w3.org/2000/svg" attribute to the resulting SVG
-                                viewBox : '0 0 24 24',
-                                xmlns: 'http://www.w3.org/2000/svg'
-                        },
-                },
-                dist: {
-                                files: {
-                                        'static/img/simple-icons.svg': ['node_modules/simple-icons/icons/*.svg', 'static/genericons-neue/*.svg']
+        svg_sprite: {
+                icons: {
+                        src: ['node_modules/simple-icons/icons/*.svg', 'static/genericons-neue/*.svg'],
+                        dest: '.',
+                        options         : {
+
+                                shape                           : {
+                                        dimension               : {                     // Set maximum dimensions
+                                                maxWidth        : 64,
+                                                maxHeight       : 64
+                                        },
+                                        spacing                 : {                     // Add padding
+                                                padding         : 2
+                                        },
+                                        id                      : {
+                                                separator       : ''
+                                        }
+                                },
+                                mode : {
+                                        symbol                  : {             // Activate the «symbol» mode
+                                                sprite : 'static/img/simple-icons.svg',
+                                                dest: ''
+                                        }
+
                                 }
+                        }
                 }
         },
-
 
     sass: {                              // Task
       dist: {                            // Target
@@ -94,10 +106,10 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-wp-i18n');
-  grunt.loadNpmTasks('grunt-svgstore');
+  grunt.loadNpmTasks('grunt-svg-sprite');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-execute');
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain', 'svgstore']);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain', 'svg_sprite']);
 };
