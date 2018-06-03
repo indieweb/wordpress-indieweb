@@ -62,5 +62,5 @@
 </p>
 
 	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>
-
+	<p><?php _e( 'For assistance and to chat with community members, please visit <a href="https://indieweb.org/discuss" target="_blank">this page</a> for more details.', 'indieweb' ); ?></p>
 </div>				  
