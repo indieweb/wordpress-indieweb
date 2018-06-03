@@ -22,11 +22,11 @@ Link Style
   margin: 0;
   padding: 1px; }
   .relme ul .svg-icon {
-    height: 2em;
-    width: 2em; }
+    height: 42px;
+    width: 42px; }
   .relme ul li {
     display: inline-block;
-    padding-right: 5px; }
+    padding-right: 3px; }
     .relme ul li a {
       text-decoration: none;
       color: black; }
@@ -49,14 +49,11 @@ Simple Icons
 .relme li a .svg-acm {
   color: #0085CA; }
 
-.relme li a .svg-aim {
-  color: #FFCA00; }
-
 .relme li a .svg-aboutme {
   color: #00A98F; }
 
 .relme li a .svg-addthis {
-  color: #FF5C3E; }
+  color: #FF6550; }
 
 .relme li a .svg-adobe {
   color: #FF0000; }
@@ -112,6 +109,9 @@ Simple Icons
 .relme li a .svg-archlinux {
   color: #1793D1; }
 
+.relme li a .svg-artstation {
+  color: #13AFF0; }
+
 .relme li a .svg-asana {
   color: #273347; }
 
@@ -120,6 +120,9 @@ Simple Icons
 
 .relme li a .svg-atom {
   color: #66595C; }
+
+.relme li a .svg-aurelia {
+  color: #ED2B88; }
 
 .relme li a .svg-auth0 {
   color: #EB5424; }
@@ -160,6 +163,9 @@ Simple Icons
 .relme li a .svg-bitly {
   color: #EE6123; }
 
+.relme li a .svg-blender {
+  color: #F5792A; }
+
 .relme li a .svg-blogger {
   color: #FF5722; }
 
@@ -190,8 +196,14 @@ Simple Icons
 .relme li a .svg-campaignmonitor {
   color: #509CF6; }
 
+.relme li a .svg-castro {
+  color: #00B265; }
+
 .relme li a .svg-circleci {
   color: #343434; }
+
+.relme li a .svg-cloudflare {
+  color: #F38020; }
 
 .relme li a .svg-coop {
   color: #00B1E7; }
@@ -232,6 +244,9 @@ Simple Icons
 .relme li a .svg-dailymotion {
   color: #0066DC; }
 
+.relme li a .svg-debian {
+  color: #A81D33; }
+
 .relme li a .svg-deezer {
   color: #00C7F2; }
 
@@ -265,6 +280,9 @@ Simple Icons
 .relme li a .svg-disqus {
   color: #2E9FFF; }
 
+.relme li a .svg-disroot {
+  color: #50162D; }
+
 .relme li a .svg-django {
   color: #092E20; }
 
@@ -293,7 +311,7 @@ Simple Icons
   color: #3C3C3D; }
 
 .relme li a .svg-etsy {
-  color: #F45800; }
+  color: #F16521; }
 
 .relme li a .svg-eventstore {
   color: #5AB552; }
@@ -302,7 +320,7 @@ Simple Icons
   color: #F6682F; }
 
 .relme li a .svg-evernote {
-  color: #2DBE60; }
+  color: #2DBD60; }
 
 .relme li a .svg-everplaces {
   color: #FA4B32; }
@@ -317,7 +335,10 @@ Simple Icons
   color: #9B9B9B; }
 
 .relme li a .svg-feedly {
-  color: #6CC655; }
+  color: #2BB24C; }
+
+.relme li a .svg-firebase {
+  color: #FFCA28; }
 
 .relme li a .svg-fitbit {
   color: #00B0B9; }
@@ -344,28 +365,25 @@ Simple Icons
   color: #005EA5; }
 
 .relme li a .svg-garmin {
-  color: #007DC3; }
+  color: #007CC3; }
 
 .relme li a .svg-gatsby {
-  color: #744C9E; }
+  color: #663399; }
 
 .relme li a .svg-gauges {
-  color: #339966; }
-
-.relme li a .svg-geeklist {
-  color: #8CC63F; }
+  color: #2FA66A; }
 
 .relme li a .svg-geocaching {
-  color: #467126; }
+  color: #00874D; }
 
 .relme li a .svg-gerrit {
   color: #EEEEEE; }
 
 .relme li a .svg-ghost {
-  color: #718087; }
+  color: #738A94; }
 
 .relme li a .svg-git {
-  color: #F14E32; }
+  color: #F05032; }
 
 .relme li a .svg-github {
   color: #181717; }
@@ -374,7 +392,7 @@ Simple Icons
   color: #E24329; }
 
 .relme li a .svg-gitter {
-  color: #FF0064; }
+  color: #ED1965; }
 
 .relme li a .svg-glassdoor {
   color: #0CAA41; }
@@ -421,9 +439,6 @@ Simple Icons
 .relme li a .svg-graphcool {
   color: #27AE60; }
 
-.relme li a .svg-gratipay {
-  color: #663300; }
-
 .relme li a .svg-grav {
   color: #221E1F; }
 
@@ -432,6 +447,9 @@ Simple Icons
 
 .relme li a .svg-gulp {
   color: #DA4648; }
+
+.relme li a .svg-gumroad {
+  color: #36A9AE; }
 
 .relme li a .svg-gumtree {
   color: #72EF36; }
@@ -456,6 +474,9 @@ Simple Icons
 
 .relme li a .svg-hexo {
   color: #0E83CD; }
+
+.relme li a .svg-highly {
+  color: #FF3C00; }
 
 .relme li a .svg-hipchat {
   color: #0052CC; }
@@ -499,9 +520,6 @@ Simple Icons
 .relme li a .svg-intercom {
   color: #1F8DED; }
 
-.relme li a .svg-jira {
-  color: #172B4D; }
-
 .relme li a .svg-jsfiddle {
   color: #4679A4; }
 
@@ -516,6 +534,9 @@ Simple Icons
 
 .relme li a .svg-jenkins {
   color: #D24939; }
+
+.relme li a .svg-jira {
+  color: #172B4D; }
 
 .relme li a .svg-joomla {
   color: #5091CD; }
@@ -552,6 +573,9 @@ Simple Icons
 
 .relme li a .svg-koding {
   color: #00B057; }
+
+.relme li a .svg-linewebtoon {
+  color: #00D564; }
 
 .relme li a .svg-lanyrd {
   color: #3C80CA; }
@@ -591,6 +615,9 @@ Simple Icons
 
 .relme li a .svg-magento {
   color: #EE672F; }
+
+.relme li a .svg-mailru {
+  color: #168DE2; }
 
 .relme li a .svg-mailchimp {
   color: #239AB9; }
@@ -757,6 +784,9 @@ Simple Icons
 .relme li a .svg-periscope {
   color: #40A4C4; }
 
+.relme li a .svg-picartotv {
+  color: #1DA456; }
+
 .relme li a .svg-pinboard {
   color: #0000FF; }
 
@@ -844,9 +874,6 @@ Simple Icons
 .relme li a .svg-readthedocs {
   color: #8CA1AF; }
 
-.relme li a .svg-readability {
-  color: #990000; }
-
 .relme li a .svg-reddit {
   color: #FF4500; }
 
@@ -860,7 +887,7 @@ Simple Icons
   color: #E43526; }
 
 .relme li a .svg-roots {
-  color: #27AE60; }
+  color: #525DDC; }
 
 .relme li a .svg-ruby {
   color: #CC342D; }
@@ -1030,6 +1057,9 @@ Simple Icons
 .relme li a .svg-ted {
   color: #E62B1E; }
 
+.relme li a .svg-tapas {
+  color: #FFCE00; }
+
 .relme li a .svg-teespring {
   color: #39ACE6; }
 
@@ -1105,6 +1135,9 @@ Simple Icons
 .relme li a .svg-umbraco {
   color: #00BEC1; }
 
+.relme li a .svg-unsplash {
+  color: #000000; }
+
 .relme li a .svg-untappd {
   color: #FFC000; }
 
@@ -1121,7 +1154,7 @@ Simple Icons
   color: #F88D2D; }
 
 .relme li a .svg-viber {
-  color: #7C529E; }
+  color: #665CAC; }
 
 .relme li a .svg-vim {
   color: #019733; }
@@ -1146,6 +1179,9 @@ Simple Icons
 
 .relme li a .svg-wpengine {
   color: #40BAC8; }
+
+.relme li a .svg-wattpad {
+  color: #F68D12; }
 
 .relme li a .svg-wechat {
   color: #7BB32E; }
@@ -1225,11 +1261,14 @@ Simple Icons
 .relme li a .svg-zillow {
   color: #0074E4; }
 
+.relme li a .svg-devto {
+  color: #0A0A0A; }
+
 .relme li a .svg-ebay {
   color: #E53238; }
 
 .relme li a .svg-freecodecamp {
-  color: #006600; }
+  color: #006400; }
 
 .relme li a .svg-homify {
   color: #7DCDA3; }
