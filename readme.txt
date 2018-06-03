@@ -88,6 +88,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Remove unused dependencies
 * Change svg generation package to ensure maximum size of svg icons
 * Add link to chat page in Getting Started page
+* Add Websub plugin
 
 = 3.3.7 =
 * Add micro.blog username to user profile as it uses rel-me
