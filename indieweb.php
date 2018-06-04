@@ -171,6 +171,9 @@ class IndieWeb_Plugin {
 			array(
 				'slug' => 'simple-location',
 			),
+			array(
+				'slug' => 'pubsubhubbub',
+			),
 		);
 		return $plugin_array;
 	}
