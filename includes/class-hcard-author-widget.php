@@ -105,7 +105,7 @@ class HCard_Author_Widget extends WP_Widget {
 	   </p>
 	   <p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['reveal_email'], 'on' ); ?> id="<?php echo $this->get_field_id( 'reveal_email' ); ?>" name="<?php echo $this->get_field_name( 'reveal_email' ); ?>" />
-		<label for="<?= $this->get_field_id( 'reveal_email' ); ?>"><?php _e( 'Reveal email address in public:', 'indieweb' ); ?></label>
+		<label for="<?php echo $this->get_field_id( 'reveal_email' ); ?>"><?php _e( 'Reveal email address in public:', 'indieweb' ); ?></label>
 	   </p>
 
 
