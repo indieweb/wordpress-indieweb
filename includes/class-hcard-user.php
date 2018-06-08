@@ -507,10 +507,10 @@ class HCard_User {
 		$return .= '<div class="hcard-header">';
 		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
-			$return .= '<p class="hcard-name p-name n">' . $name . '</h2></a>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</p></a>';
 		} else {
 			$return .= $avatar . '</a>';
-			$return .= '<p class="hcard-name p-name n">' . $name . '</h2>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</p>';
 		}
 		if ( 'on' === $r[ 'reveal_email' ] ) {
 			$return .= '<p class="u-email"><a rel="me" href="mailto:' . $email . '">' . $email . '</a></p>';
