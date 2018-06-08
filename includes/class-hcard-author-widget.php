@@ -76,7 +76,7 @@ class HCard_Author_Widget extends WP_Widget {
 		}
 
 		// Apply changes to checkboxes which are unchecked when absent from the POST
-		$instance [ 'reveal_email' ] = isset( $new_instance [ 'reveal_email' ] ) ? 'on' : '';
+		$instance[ 'reveal_email' ] = isset( $new_instance[ 'reveal_email' ] ) ? 'on' : '';
 
 		return $instance;
 	}
