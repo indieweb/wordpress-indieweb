@@ -76,7 +76,7 @@ class HCard_Author_Widget extends WP_Widget {
 		}
 
 		// Apply changes to checkboxes which are unchecked when absent from the POST
-		$instance[ 'reveal_email' ] = isset( $new_instance[ 'reveal_email' ] ) ? 'on' : '';
+		$instance['reveal_email'] = isset( $new_instance['reveal_email'] ) ? 'on' : '';
 
 		return $instance;
 	}
@@ -94,7 +94,7 @@ class HCard_Author_Widget extends WP_Widget {
 		// Set up some default widget settings
 		$defaults = array(
 			'avatar_size' => '125',
-			'reveal_email' => ''
+			'reveal_email' => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -104,7 +104,7 @@ class HCard_Author_Widget extends WP_Widget {
 		<input type="text" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" value="<?php echo $instance['avatar_size']; ?>" />
 	   </p>
 	   <p>
-		<input class="checkbox" type="checkbox" <?php checked( $instance[ 'reveal_email' ], 'on' ); ?> id="<?= $this->get_field_id( 'reveal_email' ); ?>" name="<?= $this->get_field_name( 'reveal_email' ); ?>" />
+		<input class="checkbox" type="checkbox" <?php checked( $instance['reveal_email'], 'on' ); ?> id="<?php echo $this->get_field_id( 'reveal_email' ); ?>" name="<?php echo $this->get_field_name( 'reveal_email' ); ?>" />
 		<label for="<?= $this->get_field_id( 'reveal_email' ); ?>"><?php _e( 'Reveal email address in public:', 'indieweb' ); ?></label>
 	   </p>
 

@@ -501,7 +501,7 @@ class HCard_User {
 		);
 		$url    = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name   = $user->get( 'display_name' );
-		$email	= $user->get( 'user_email' );
+		$email  = $user->get( 'user_email' );
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
@@ -512,7 +512,7 @@ class HCard_User {
 			$return .= $avatar . '</a>';
 			$return .= '<p class="hcard-name p-name n">' . $name . '</p>';
 		}
-		if ( 'on' === $r[ 'reveal_email' ] ) {
+		if ( 'on' === $r['reveal_email'] ) {
 			$return .= '<p class="u-email"><a rel="me" href="mailto:' . $email . '">' . $email . '</a></p>';
 		}
 		$return .= '</div>';
