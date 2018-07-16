@@ -344,7 +344,7 @@ class HCard_User {
 		// Substitute another svg sprite file
 		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/simple-icons.svg', dirname( __FILE__ ) ), $name );
 
-		return '<svg class="svg-icon svg-' . $name . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use><svg>';
+		return '<svg class="svg-icon svg-' . $name . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use></svg>';
 	}
 
 	/**
