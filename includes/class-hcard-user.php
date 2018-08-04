@@ -438,14 +438,21 @@ class HCard_User {
 		return join( '', $r );
 	}
 
-	public static function pgp() {
-		global $authordata;
+	public static function get_author() {
 		$single_author = get_option( 'iw_single_author' );
 		if ( is_front_page() && 1 === (int) $single_author ) {
-			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+			return get_option( 'iw_default_author' ); // Set the author ID to default
 		} elseif ( is_author() ) {
-			$author_id = $authordata->ID;
+			$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
+			return $author->ID;
 		} else {
+			return null;
+		}
+	}
+
+	public static function pgp() {
+		$author_id = self::get_author();
+		if ( ! $author_id ) {
 			return;
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
@@ -454,23 +461,16 @@ class HCard_User {
 		}
 	}
 
-
 	/**
 	 *
 	 */
 	public static function relme_head() {
-		global $authordata;
-		$single_author = get_option( 'iw_single_author' );
-		if ( is_front_page() && 1 === (int) $single_author ) {
-			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
-		} elseif ( is_author() ) {
-			$author_id = $authordata->ID;
-		} else {
+		$author_id = self::get_author();
+		if ( ! $author_id ) {
 			return;
 		}
 		echo self::relme_head_list( $author_id ); // phpcs:ignore
 	}
-
 
 	public static function get_hcard_display_defaults() {
 		$defaults = array(
@@ -481,7 +481,6 @@ class HCard_User {
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
-
 
 	public static function hcard( $user, $args = array() ) {
 		if ( ! $user ) {
@@ -535,7 +534,5 @@ class HCard_User {
 		$return .= '</div>';
 		return $return;
 	}
-
-
 
 } // End Class
