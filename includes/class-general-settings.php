@@ -196,10 +196,10 @@ class IndieWeb_General_Settings {
 			<option value="<?php echo absint( $user->ID ); ?>" <?php selected( $option, $user->ID ); ?>>
 										<?php
 										echo esc_html( $user->display_name );
-			?>
+										?>
 			</option>
 		<?php endforeach; ?>
 		</select>
-	<?php
+		<?php
 	}
 }

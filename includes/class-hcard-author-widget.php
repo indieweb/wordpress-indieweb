@@ -42,16 +42,18 @@ class HCard_Author_Widget extends WP_Widget {
 
 		$user_info = get_userdata( $display_author );
 
-		echo $args['before_widget'];
+		// phpcs:ignore
+		esc_html( $args['before_widget'] );
 
 		?>
 
 		<div id="hcard_widget">
-			<?php echo HCard_User::hcard( $user_info, $instance ); ?>
+			<?php // phpcs:ignore
+				echo HCard_User::hcard( $user_info, $instance ); ?>
 		</div>
 
 		<?php
-
+		// phpcs:ignore
 		echo $args['after_widget'];
 	}
 
@@ -72,7 +74,7 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Strip tags to remove HTML (important for text inputs)
 		foreach ( $new_instance as $k => $v ) {
-			$instance[ $k ] = strip_tags( $v );
+			$instance[ $k ] = wp_strip_all_tags( $v );
 		}
 
 		return $instance;
@@ -94,11 +96,11 @@ class HCard_Author_Widget extends WP_Widget {
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
-?>
-	   <p>
-		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ); ?></label>
-		<input type="text" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" value="<?php echo $instance['avatar_size']; ?>" />
-	   </p>
+		?>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>"><?php esc_html_e( 'Avatar Size:', 'indieweb' ); ?></label>
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'avatar_size' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>" value="<?php echo esc_attr( $instance['avatar_size'] ); ?>" />
+	</p>
 
 
 		<?php

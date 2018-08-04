@@ -6,7 +6,7 @@
     "composer/installers": "~1.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
     "wimg/php-compatibility": "^8.0",
-    "wp-coding-standards/wpcs": "^0.14.0"
+    "wp-coding-standards/wpcs": "^1.0.0"
   },
   "extra": {
     "installer-name": "indieweb"

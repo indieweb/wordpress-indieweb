@@ -5,3 +5,4 @@ vendor
 sass/.sass-cache
 npm-debug.log
 package-lock.json
+composer.lock

@@ -1,10 +1,11 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress Indieweb">
 	<description>WordPress Indieweb Standards</description>
-
 	<file>./indieweb.php</file>
 	<file>./includes/</file>
+	<config name="minimum_supported_wp_version" value="4.7"/>
 	<exclude-pattern>*/includes/*\.(inc|css|js|svg)</exclude-pattern>
+	<exclude-pattern>*/includes/getting-started.php</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<rule ref="PHPCompatibility"/>
 	<config name="testVersion" value="5.3-"/>
@@ -14,18 +15,8 @@
 	<property name="strict_class_file_names" value="false" />
 	</properties>
 	</rule>
-
+	<rule ref="WordPress.WP.DeprecatedFunctions" />
 	<rule ref="WordPress-Extra" />
         <rule ref="WordPress.WP.I18n"/>
 	<config name="text_domain" value="indieweb,default"/>
-	<rule ref="WordPress-VIP">
-		<exclude name="WordPress.VIP.FileSystemWritesDisallow" />
-		<exclude name="WordPress.VIP.RestrictedFunctions" />
-		<exclude name="WordPress.VIP.RestrictedVariables" />
-		<exclude name="WordPress.VIP.SuperGlobalInputUsage" />
-		<exclude name="WordPress.VIP.ValidatedSanitizedInput" />
-		<exclude name="WordPress.CSRF.NonceVerification" />
-		<exclude name="WordPress.XSS.EscapeOutput" />
-		<exclude name="WordPress.VIP.PostsPerPage.posts_per_page" />
-	</rule>
 </ruleset>

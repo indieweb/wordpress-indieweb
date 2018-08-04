@@ -50,7 +50,7 @@ class RelMe_Widget extends WP_Widget {
 				$author_id = $post->post_author;
 		}
 
-		echo hcard_user::rel_me_list( $author_id, $include_rel );
+		echo hcard_user::rel_me_list( $author_id, $include_rel ); // phpcs:ignore
 	}
 
 	/**

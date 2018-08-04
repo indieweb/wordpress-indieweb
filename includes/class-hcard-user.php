@@ -34,9 +34,11 @@ class HCard_User {
 	 * If there is a URL set in the user profile, set author link to that
 	 */
 	public static function author_link( $link, $author_id, $nicename ) {
-		$user_info = get_userdata( $author_id );
-		if ( ! empty( $user_info->user_url ) ) {
-			$link = $user_info->user_url;
+		if ( in_the_loop() && ( is_home() || is_archive() || is_singular() ) ) {
+			$user_info = get_userdata( $author_id );
+			if ( ! empty( $user_info->user_url ) ) {
+				$link = $user_info->user_url;
+			}
 		}
 		return $link;
 	}
@@ -169,7 +171,7 @@ class HCard_User {
 	}
 
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
-	?>
+		?>
 	<tr>
 	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
@@ -178,7 +180,7 @@ class HCard_User {
 	  <span class="description"><?php echo esc_html( $description ); ?></span>
 	 </td>
 	</tr>
-	<?php
+		<?php
 	}
 
 	public static function extended_profile_textarea_field( $user, $key, $title, $description ) {
@@ -186,7 +188,7 @@ class HCard_User {
 		if ( is_array( $value ) ) {
 			$value = implode( "\n", $value );
 		}
-	?>
+		?>
 	<tr>
 	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
@@ -195,7 +197,7 @@ class HCard_User {
 	  <span class="description"><?php echo esc_html( $description ); ?></span>
 	 </td>
 	</tr>
-	<?php
+		<?php
 	}
 
 
@@ -204,7 +206,7 @@ class HCard_User {
 			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
-		$p      = array_filter( $_POST );
+		$p      = array_filter( $_POST ); // phpcs:ignore
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $p[ $key ] ) ) {
 				update_user_meta( $user_id, $key, sanitize_text_field( $p[ $key ] ) );
@@ -212,8 +214,8 @@ class HCard_User {
 				delete_user_meta( $user_id, $key );
 			}
 		}
-		if ( isset( $_POST['relme'] ) ) {
-			$relme = explode( "\n", $_POST['relme'] );
+		if ( isset( $_POST['relme'] ) ) { // phpcs:ignore
+			$relme = explode( "\n", $_POST['relme'] ); // phpcs:ignore
 			if ( ! empty( $relme ) ) {
 				update_user_meta( $user_id, 'relme', self::clean_urls( $relme ) );
 			} else {
@@ -372,8 +374,8 @@ class HCard_User {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-				} // Pass the URL itself
-				else {
+					// Pass the URL itself
+				} else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}
 			}
@@ -417,7 +419,7 @@ class HCard_User {
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
 
-		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list );
+		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list ); // phpcs:ignore
 	}
 
 	/**
@@ -448,7 +450,7 @@ class HCard_User {
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			echo '<link rel="pgpkey" href="' . $pgp . '">';
+			echo '<link rel="pgpkey" href="' . $pgp . '">'; // phpcs:ignore
 		}
 	}
 
@@ -466,7 +468,7 @@ class HCard_User {
 		} else {
 			return;
 		}
-		echo self::relme_head_list( $author_id );
+		echo self::relme_head_list( $author_id ); // phpcs:ignore
 	}
 
 
