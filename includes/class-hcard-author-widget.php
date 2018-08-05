@@ -11,10 +11,10 @@ class HCard_Author_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'HCard_Widget',                // Base ID
-			'Author H-Card Widget',        // Name
+			'Author Profile H-Card Widget',        // Name
 			array(
 				'classname'   => 'hcard_widget',
-				'description' => __( 'A widget that allows you to display h-cards for a specific author', 'indieweb' ),
+				'description' => __( 'A widget that allows you to display author profile marked up as an h-card', 'indieweb' ),
 			)
 		);
 
