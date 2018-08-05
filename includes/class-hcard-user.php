@@ -457,7 +457,7 @@ class HCard_User {
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			echo '<link rel="pgpkey" href="' . $pgp . '">'; // phpcs:ignore
+			printf( '<link rel="pgpkey" href="%1$s" />',  $pgp ); // phpcs:ignore
 		}
 	}
 
@@ -512,7 +512,7 @@ class HCard_User {
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
-		$return .= '<a class="u-url u-uid" href="' . $url . '" rel="author">';
+		$return .= '<a class="u-url url fn u-uid" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
 			$return .= '<p class="hcard-name p-name n">' . $name . '</h2></a>';
 		} else {
