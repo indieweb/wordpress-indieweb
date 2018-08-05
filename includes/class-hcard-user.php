@@ -480,6 +480,7 @@ class HCard_User {
 			'avatar_size'   => 96,
 			'avatar'        => true, // Display Avatar
 			'location'      => true, // Display location elements
+			'notes'         => true, // Display Bio/Notes
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -538,7 +539,9 @@ class HCard_User {
 			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
 		$return .= '</ul>';
-		$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
+		if ( $args['notes'] ) {
+			$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
+		}
 		$return .= '</div>';
 		return $return;
 	}
