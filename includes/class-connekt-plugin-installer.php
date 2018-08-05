@@ -43,7 +43,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 		* @since 1.0
 		*/
 		public static function init( $plugins ) {
-	?>
+			?>
 
 			<div class="cnkt-plugin-installer">
 			<?php
@@ -77,7 +77,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 				if ( ! is_wp_error( $api ) ) { // confirm error free
 
-					$main_plugin_file = Connekt_Plugin_Installer::get_plugin_file( $plugin['slug'] ); // Get main plugin file
+					$main_plugin_file = self::get_plugin_file( $plugin['slug'] ); // Get main plugin file
 					//echo $main_plugin_file;
 					if ( self::check_file_extension( $main_plugin_file ) ) { // check file extension
 						if ( is_plugin_active( $main_plugin_file ) ) {
@@ -97,7 +97,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 				}
 
 			   endforeach;
-				?>
+			?>
 			</div>
 			<?php
 		}
@@ -278,7 +278,7 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 			);
 
 			if ( $api->name ) {
-				$main_plugin_file = Connekt_Plugin_Installer::get_plugin_file( $plugin );
+				$main_plugin_file = self::get_plugin_file( $plugin );
 				$status           = 'success';
 				if ( $main_plugin_file ) {
 					activate_plugin( $main_plugin_file );

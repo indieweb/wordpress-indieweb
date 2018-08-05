@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.8\n"
+"Project-Id-Version: IndieWeb 3.3.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2018-06-03 06:28:58+00:00\n"
+"POT-Creation-Date: 2018-08-05 14:12:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -124,158 +124,175 @@ msgid ""
 msgstr ""
 
 #: includes/class-hcard-author-widget.php:17
-msgid "A widget that allows you to display h-cards for a specific author"
+msgid "A widget that allows you to display author profile marked up as an h-card"
 msgstr ""
 
-#: includes/class-hcard-author-widget.php:99
+#: includes/class-hcard-author-widget.php:107
 msgid "Avatar Size:"
 msgstr ""
 
-#: includes/class-hcard-user.php:53
+#: includes/class-hcard-author-widget.php:111
+msgid "Show Avatar:"
+msgstr ""
+
+#: includes/class-hcard-author-widget.php:116
+msgid "Show Location:"
+msgstr ""
+
+#: includes/class-hcard-author-widget.php:121
+msgid "Show Notes:"
+msgstr ""
+
+#: includes/class-hcard-user.php:55
 msgid "Github username"
 msgstr ""
 
-#: includes/class-hcard-user.php:57
+#: includes/class-hcard-user.php:59
 msgid "Google+ userID (not username)"
 msgstr ""
 
-#: includes/class-hcard-user.php:61
+#: includes/class-hcard-user.php:63
 msgid "Twitter username (without @)"
 msgstr ""
 
-#: includes/class-hcard-user.php:65
+#: includes/class-hcard-user.php:67
 msgid "Facebook ID"
 msgstr ""
 
-#: includes/class-hcard-user.php:69
+#: includes/class-hcard-user.php:71
 msgid "Micro.blog username"
 msgstr ""
 
-#: includes/class-hcard-user.php:73
+#: includes/class-hcard-user.php:75
 msgid "Instagram username"
 msgstr ""
 
-#: includes/class-hcard-user.php:77
+#: includes/class-hcard-user.php:79
 msgid "Flickr username"
 msgstr ""
 
-#: includes/class-hcard-user.php:99
+#: includes/class-hcard-user.php:101
 msgid "Telephone"
 msgstr ""
 
-#: includes/class-hcard-user.php:100
+#: includes/class-hcard-user.php:102
 msgid "PGP Key (URL)"
 msgstr ""
 
-#: includes/class-hcard-user.php:107
+#: includes/class-hcard-user.php:109
 msgid "Street Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:108
+#: includes/class-hcard-user.php:110
 msgid "Street Number and Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:111
+#: includes/class-hcard-user.php:113
 msgid "Extended Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:112
+#: includes/class-hcard-user.php:114
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
-#: includes/class-hcard-user.php:115
+#: includes/class-hcard-user.php:117
 msgid "Locality"
 msgstr ""
 
-#: includes/class-hcard-user.php:116
+#: includes/class-hcard-user.php:118
 msgid "City/State/Village"
 msgstr ""
 
-#: includes/class-hcard-user.php:119
+#: includes/class-hcard-user.php:121
 msgid "Region"
 msgstr ""
 
-#: includes/class-hcard-user.php:120
+#: includes/class-hcard-user.php:122
 msgid "State/County/Province"
 msgstr ""
 
-#: includes/class-hcard-user.php:123
+#: includes/class-hcard-user.php:125
 msgid "Postal Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:124
+#: includes/class-hcard-user.php:126
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:127 includes/class-hcard-user.php:128
+#: includes/class-hcard-user.php:129 includes/class-hcard-user.php:130
 msgid "Country Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:137
+#: includes/class-hcard-user.php:139
 msgid "Job Title"
 msgstr ""
 
-#: includes/class-hcard-user.php:138
+#: includes/class-hcard-user.php:140
 msgid "Title or Role"
 msgstr ""
 
-#: includes/class-hcard-user.php:141
+#: includes/class-hcard-user.php:143
 msgid "Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:142
+#: includes/class-hcard-user.php:144
 msgid "Affiliated Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:145
+#: includes/class-hcard-user.php:147
 msgid "Honorific Prefix"
 msgstr ""
 
-#: includes/class-hcard-user.php:146
+#: includes/class-hcard-user.php:148
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
-#: includes/class-hcard-user.php:153
+#: includes/class-hcard-user.php:155
 msgid "Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:154
+#: includes/class-hcard-user.php:156
 msgid "Fill in all fields you wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:161
+#: includes/class-hcard-user.php:163
 msgid "Additional Profile Information"
 msgstr ""
 
-#: includes/class-hcard-user.php:162
+#: includes/class-hcard-user.php:164
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:167
+#: includes/class-hcard-user.php:169
 msgid "Other Sites"
 msgstr ""
 
-#: includes/class-hcard-user.php:167
+#: includes/class-hcard-user.php:169
 msgid "Sites not listed in the profile to add to rel-me (One URL per line)"
 msgstr ""
 
 #: includes/class-relme-widget.php:14
-msgid "Rel=Me"
+msgid "Rel=Me Links"
 msgstr ""
 
 #: includes/class-relme-widget.php:16
-msgid "Adds automatic rel-me URLs based on default author profile information."
+msgid ""
+"Adds automatic rel-me URLs based on default author profile information. "
+"Rel=me links are links to your presence on other websites and visually "
+"appear like many social link widgets"
 msgstr ""
 
 #: includes/class-relme-widget.php:77
-msgid "Displays rel=me links"
+msgid ""
+"Displays rel=me links which appear as icons with the logo of the site "
+"linked to when possible"
 msgstr ""
 
 #: includes/getting-started.php:3
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: includes/getting-started.php:5 indieweb.php:121
+#: includes/getting-started.php:5 indieweb.php:124
 msgid "Getting Started"
 msgstr ""
 
@@ -423,21 +440,21 @@ msgid ""
 "more details."
 msgstr ""
 
-#: indieweb.php:106 indieweb.php:107
+#: indieweb.php:108 indieweb.php:109
 msgid "Extensions"
 msgstr ""
 
-#: indieweb.php:133
+#: indieweb.php:136
 msgid "IndieWeb Plugin Installer"
 msgstr ""
 
-#: indieweb.php:134
+#: indieweb.php:137
 msgid ""
 "The below plugins are recommended to enable additional IndieWeb "
 "functionality."
 msgstr ""
 
-#: indieweb.php:180
+#: indieweb.php:186
 msgid ""
 "Users can optionally add additional information to their profile. As this "
 "is part of your user profile you have control of this information and can "

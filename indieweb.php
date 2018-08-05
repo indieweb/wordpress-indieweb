@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 3.3.8
+ * Version: 3.3.9
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -25,6 +25,8 @@ define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
  * @author Matthias Pfefferle
  */
 class IndieWeb_Plugin {
+
+	public static $version = '3.3.9';
 
 	/**
 	 * Initialize the plugin, registering WordPress hooks.
@@ -82,9 +84,9 @@ class IndieWeb_Plugin {
 
 	public static function enqueue_style() {
 		if ( '1' === get_option( 'iw_relme_bw' ) ) {
-			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb-bw.css', __FILE__ ), array() );
+			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb-bw.css', __FILE__ ), array(), self::$version );
 		} else {
-			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array() );
+			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array(), self::$version );
 		}
 	}
 
@@ -118,6 +120,7 @@ class IndieWeb_Plugin {
 	public static function change_menu_title() {
 		global $submenu;
 		if ( isset( $submenu['indieweb'] ) && current_user_can( 'manage_options' ) ) {
+			// phpcs:ignore
 			$submenu['indieweb'][0][0] = __( 'Getting Started', 'indieweb' );
 		}
 	}
@@ -130,8 +133,8 @@ class IndieWeb_Plugin {
 	}
 
 	public static function plugin_installer() {
-		echo '<h1>' . __( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
-		echo '<p>' . __( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
+		echo '<h1>' . esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
+		echo '<p>' . esc_html__( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
 		if ( class_exists( 'Connekt_Plugin_Installer' ) ) {
 			Connekt_Plugin_Installer::init( self::register_plugins() );
 		}

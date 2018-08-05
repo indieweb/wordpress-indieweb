@@ -11,10 +11,10 @@ class HCard_Author_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'HCard_Widget',                // Base ID
-			'Author H-Card Widget',        // Name
+			'Author Profile H-Card Widget',        // Name
 			array(
 				'classname'   => 'hcard_widget',
-				'description' => __( 'A widget that allows you to display h-cards for a specific author', 'indieweb' ),
+				'description' => __( 'A widget that allows you to display author profile marked up as an h-card', 'indieweb' ),
 			)
 		);
 
@@ -42,16 +42,18 @@ class HCard_Author_Widget extends WP_Widget {
 
 		$user_info = get_userdata( $display_author );
 
-		echo $args['before_widget'];
+		// phpcs:ignore
+		esc_html( $args['before_widget'] );
 
 		?>
 
 		<div id="hcard_widget">
-			<?php echo HCard_User::hcard( $user_info, $instance ); ?>
+			<?php // phpcs:ignore
+				echo HCard_User::hcard( $user_info, $instance ); ?>
 		</div>
 
 		<?php
-
+		// phpcs:ignore
 		echo $args['after_widget'];
 	}
 
@@ -72,7 +74,10 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Strip tags to remove HTML (important for text inputs)
 		foreach ( $new_instance as $k => $v ) {
-			$instance[ $k ] = strip_tags( $v );
+			if ( in_array( $k, array( 'notes', 'location', 'avatar' ), true ) ) {
+				$v = (int) $v;
+			}
+			$instance[ $k ] = wp_strip_all_tags( $v );
 		}
 
 		// Apply changes to checkboxes which are unchecked when absent from the POST
@@ -93,22 +98,35 @@ class HCard_Author_Widget extends WP_Widget {
 
 		// Set up some default widget settings
 		$defaults = array(
+			'avatar'      => 1,
+			'location'    => 1,
+			'notes'       => 1,
 			'avatar_size' => '125',
 			'reveal_email' => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
-?>
-	   <p>
-		<label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php _e( 'Avatar Size:', 'indieweb' ); ?></label>
-		<input type="text" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" value="<?php echo $instance['avatar_size']; ?>" />
-	   </p>
-	   <p>
-		<input class="checkbox" type="checkbox" <?php checked( $instance['reveal_email'], 'on' ); ?> id="<?php echo $this->get_field_id( 'reveal_email' ); ?>" name="<?php echo $this->get_field_name( 'reveal_email' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'reveal_email' ); ?>"><?php _e( 'Reveal email address in public:', 'indieweb' ); ?></label>
-	   </p>
 
-
+		?>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>"><?php esc_html_e( 'Avatar Size:', 'indieweb' ); ?></label>
+		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'avatar_size' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>" value="<?php echo esc_attr( $instance['avatar_size'] ); ?>" />
+	</p>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>"><?php esc_html_e( 'Show Avatar:', 'indieweb' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" value="0" />
+		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'avatar' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'avatar' ) ); ?>" value="1" <?php checked( $instance['avatar'], 1 ); ?> />
+	</p>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'location' ) ); ?>"><?php esc_html_e( 'Show Location:', 'indieweb' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'location' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'location' ) ); ?>" value="0" />
+		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'location' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'location' ) ); ?>" value="1" <?php checked( $instance['location'], 1 ); ?> />
+	</p>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'notes' ) ); ?>"><?php esc_html_e( 'Show Notes:', 'indieweb' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'notes' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'notes' ) ); ?>" value="0" />
+		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'notes' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'notes' ) ); ?>" value="1" <?php checked( $instance['notes'], 1 ); ?> />
+	</p>
 		<?php
 	}
 

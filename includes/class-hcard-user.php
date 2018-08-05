@@ -34,9 +34,11 @@ class HCard_User {
 	 * If there is a URL set in the user profile, set author link to that
 	 */
 	public static function author_link( $link, $author_id, $nicename ) {
-		$user_info = get_userdata( $author_id );
-		if ( ! empty( $user_info->user_url ) ) {
-			$link = $user_info->user_url;
+		if ( in_the_loop() && ( is_home() || is_archive() || is_singular() ) ) {
+			$user_info = get_userdata( $author_id );
+			if ( ! empty( $user_info->user_url ) ) {
+				$link = $user_info->user_url;
+			}
 		}
 		return $link;
 	}
@@ -169,7 +171,7 @@ class HCard_User {
 	}
 
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
-	?>
+		?>
 	<tr>
 	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
@@ -178,7 +180,7 @@ class HCard_User {
 	  <span class="description"><?php echo esc_html( $description ); ?></span>
 	 </td>
 	</tr>
-	<?php
+		<?php
 	}
 
 	public static function extended_profile_textarea_field( $user, $key, $title, $description ) {
@@ -186,7 +188,7 @@ class HCard_User {
 		if ( is_array( $value ) ) {
 			$value = implode( "\n", $value );
 		}
-	?>
+		?>
 	<tr>
 	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
 
@@ -195,7 +197,7 @@ class HCard_User {
 	  <span class="description"><?php echo esc_html( $description ); ?></span>
 	 </td>
 	</tr>
-	<?php
+		<?php
 	}
 
 
@@ -204,7 +206,7 @@ class HCard_User {
 			return false;
 		}
 		$fields = array_merge( self::extra_fields(), self::address_fields() );
-		$p      = array_filter( $_POST );
+		$p      = array_filter( $_POST ); // phpcs:ignore
 		foreach ( $fields as $key => $value ) {
 			if ( isset( $p[ $key ] ) ) {
 				update_user_meta( $user_id, $key, sanitize_text_field( $p[ $key ] ) );
@@ -212,8 +214,8 @@ class HCard_User {
 				delete_user_meta( $user_id, $key );
 			}
 		}
-		if ( isset( $_POST['relme'] ) ) {
-			$relme = explode( "\n", $_POST['relme'] );
+		if ( isset( $_POST['relme'] ) ) { // phpcs:ignore
+			$relme = explode( "\n", $_POST['relme'] ); // phpcs:ignore
 			if ( ! empty( $relme ) ) {
 				update_user_meta( $user_id, 'relme', self::clean_urls( $relme ) );
 			} else {
@@ -372,8 +374,8 @@ class HCard_User {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-				} // Pass the URL itself
-				else {
+					// Pass the URL itself
+				} else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}
 			}
@@ -417,7 +419,7 @@ class HCard_User {
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
 
-		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list );
+		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list ); // phpcs:ignore
 	}
 
 	/**
@@ -436,39 +438,39 @@ class HCard_User {
 		return join( '', $r );
 	}
 
-	public static function pgp() {
-		global $authordata;
+	public static function get_author() {
 		$single_author = get_option( 'iw_single_author' );
 		if ( is_front_page() && 1 === (int) $single_author ) {
-			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
+			return get_option( 'iw_default_author' ); // Set the author ID to default
 		} elseif ( is_author() ) {
-			$author_id = $authordata->ID;
+			$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
+			return $author->ID;
 		} else {
+			return null;
+		}
+	}
+
+	public static function pgp() {
+		$author_id = self::get_author();
+		if ( ! $author_id ) {
 			return;
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			echo '<link rel="pgpkey" href="' . $pgp . '">';
+			printf( '<link rel="pgpkey" href="%1$s" />',  $pgp ); // phpcs:ignore
 		}
 	}
-
 
 	/**
 	 *
 	 */
 	public static function relme_head() {
-		global $authordata;
-		$single_author = get_option( 'iw_single_author' );
-		if ( is_front_page() && 1 === (int) $single_author ) {
-			$author_id = get_option( 'iw_default_author' ); // Set the author ID to default
-		} elseif ( is_author() ) {
-			$author_id = $authordata->ID;
-		} else {
+		$author_id = self::get_author();
+		if ( ! $author_id ) {
 			return;
 		}
-		echo self::relme_head_list( $author_id );
+		echo self::relme_head_list( $author_id ); // phpcs:ignore
 	}
-
 
 	public static function get_hcard_display_defaults() {
 		$defaults = array(
@@ -476,10 +478,12 @@ class HCard_User {
 			'container-css' => '',
 			'single-css'    => '',
 			'avatar_size'   => 96,
+			'avatar'        => true, // Display Avatar
+			'location'      => true, // Display location elements
+			'notes'         => true, // Display Bio/Notes
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
-
 
 	public static function hcard( $user, $args = array() ) {
 		if ( ! $user ) {
@@ -489,23 +493,28 @@ class HCard_User {
 		if ( ! $user ) {
 			return false;
 		}
-		$r      = wp_parse_args( $args, self::get_hcard_display_defaults() );
-		$avatar = get_avatar(
-			$user,
-			$r['avatar_size'],
-			'default',
-			'',
-			array(
-				'class' => array( 'u-photo', 'hcard-photo' ),
-			)
-		);
-		$url    = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
-		$name   = $user->get( 'display_name' );
+
+		$args = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		if ( $args['avatar'] ) {
+			$avatar = get_avatar(
+				$user,
+				$args['avatar_size'],
+				'default',
+				'',
+				array(
+					'class' => array( 'u-photo', 'hcard-photo' ),
+				)
+			);
+		} else {
+			$avatar = '';
+		}
+		$url  = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$name = $user->get( 'display_name' );
 		$email  = $user->get( 'user_email' );
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
-		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
+		$return .= '<a class="u-url url fn u-uid" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
 			$return .= '<p class="hcard-name p-name n">' . $name . '</p></a>';
 		} else {
@@ -518,26 +527,28 @@ class HCard_User {
 		$return .= '</div>';
 		$return .= '<div class="hcard-body">';
 		$return .= '<ul class="hcard-properties">';
-		$return .= '<li class="h-adr adr">';
-		if ( $user->has_prop( 'locality' ) ) {
-			$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
+		if ( $args['location'] && ( $user->has_prop( 'locality' ) || $user->has_prop( 'region' ) || $user->has_prop( 'country-name' ) ) ) {
+			$return .= '<li class="h-adr adr">';
+			if ( $user->has_prop( 'locality' ) ) {
+				$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
+			}
+			if ( $user->has_prop( 'region' ) ) {
+				$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
+			}
+			if ( $user->has_prop( 'country-name' ) ) {
+				$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
+			}
+			$return .= '</li>';
 		}
-		if ( $user->has_prop( 'region' ) ) {
-			$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
-		}
-		if ( $user->has_prop( 'country-name' ) ) {
-			$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
-		}
-		$return .= '</li>';
 		if ( $user->has_prop( 'tel' ) && $user->get( 'tel' ) ) {
 			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
 		$return .= '</ul>';
-		$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
+		if ( $args['notes'] ) {
+			$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
+		}
 		$return .= '</div>';
 		return $return;
 	}
-
-
 
 } // End Class

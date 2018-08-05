@@ -10,7 +10,7 @@
 		'The IndieWeb Plugin can help you establish your identity online, as well as recommending
 			other plugins to support additional Indieweb features.', 'indieweb'
 	);
-?>
+	?>
 </p>
 	<ol>
 	<li><?php _e( 'Complete your user profile, adding in connections to other websites. This allows you to connect your identity on those sites to your website.', 'indieweb' ); ?></li>
@@ -45,7 +45,7 @@
 			target="_blank">Independent Publisher</a> has been updated to include basic microformats2 and
 			webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats 2, the community will be <a href="https://indieweb.org/discuss">happy to assist</a>.', 'indieweb'
 	);
-?>
+	?>
 </p>
 
 	<h2><?php esc_html_e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
@@ -58,7 +58,7 @@
 			href="https://indieweb.org/principles" target="_blank">principles</a> and <a
 			href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb'
 	);
-?>
+	?>
 </p>
 
 	<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>

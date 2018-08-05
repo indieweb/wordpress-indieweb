@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 4.9.6  
-**Stable tag:** 3.3.8  
+**Tested up to:** 4.9.8  
+**Stable tag:** 3.3.9  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -82,6 +82,13 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.3.9 ###
+* Update dependencies
+* Change text on widgets to be more descriptive
+* Add uid to h-card widget
+* Add toggles for location, avatar, and notes to h-card widget setting
+* Only update author post URL to user_url when option set only on displayed links as messing up backend lookup.
 
 ### 3.3.8 ###
 * Add privacy declaration

@@ -11,9 +11,9 @@ class RelMe_Widget extends WP_Widget {
 	public function __construct() {
 		parent::__construct(
 			'RelMe_Widget',
-			__( 'Rel=Me', 'indieweb' ),
+			__( 'Rel=Me Links', 'indieweb' ),
 			array(
-				'description' => __( 'Adds automatic rel-me URLs based on default author profile information.', 'indieweb' ),
+				'description' => __( 'Adds automatic rel-me URLs based on default author profile information. Rel=me links are links to your presence on other websites and visually appear like many social link widgets', 'indieweb' ),
 			)
 		);
 		if ( ! is_active_widget( false, false, $this->id_base ) ) {
@@ -50,7 +50,7 @@ class RelMe_Widget extends WP_Widget {
 				$author_id = $post->post_author;
 		}
 
-		echo hcard_user::rel_me_list( $author_id, $include_rel );
+		echo hcard_user::rel_me_list( $author_id, $include_rel ); // phpcs:ignore
 	}
 
 	/**
@@ -74,7 +74,7 @@ class RelMe_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		echo '<p>';
-		esc_html_e( 'Displays rel=me links', 'indieweb' );
+		esc_html_e( 'Displays rel=me links which appear as icons with the logo of the site linked to when possible', 'indieweb' );
 		echo '</p>';
 	}
 }
