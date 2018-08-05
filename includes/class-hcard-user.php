@@ -512,7 +512,6 @@ class HCard_User {
 		$name = $user->get( 'display_name' );
 		$email  = $user->get( 'user_email' );
 
-
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
 		$return .= '<a class="u-url url fn u-uid" href="' . $url . '" rel="author">';
