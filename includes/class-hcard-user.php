@@ -493,6 +493,7 @@ class HCard_User {
 		if ( ! $user ) {
 			return false;
 		}
+
 		$args = wp_parse_args( $args, self::get_hcard_display_defaults() );
 		if ( $args['avatar'] ) {
 			$avatar = get_avatar(
@@ -509,15 +510,20 @@ class HCard_User {
 		}
 		$url  = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name = $user->get( 'display_name' );
+		$email  = $user->get( 'user_email' );
+
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
 		$return .= '<a class="u-url url fn u-uid" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
-			$return .= '<p class="hcard-name p-name n">' . $name . '</h2></a>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</p></a>';
 		} else {
 			$return .= $avatar . '</a>';
-			$return .= '<p class="hcard-name p-name n">' . $name . '</h2>';
+			$return .= '<p class="hcard-name p-name n">' . $name . '</p>';
+		}
+		if ( 'on' === $r['reveal_email'] ) {
+			$return .= '<p class="u-email"><a rel="me" href="mailto:' . $email . '">' . $email . '</a></p>';
 		}
 		$return .= '</div>';
 		$return .= '<div class="hcard-body">';

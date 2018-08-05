@@ -18,7 +18,7 @@ Link Style
 .relme ul {
   display: inline-block;
   list-style: none;
-  text-align: top;
+  veritical-align: top;
   margin: 0;
   padding: 1px; }
   .relme ul .svg-icon {
