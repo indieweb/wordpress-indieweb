@@ -478,6 +478,8 @@ class HCard_User {
 			'container-css' => '',
 			'single-css'    => '',
 			'avatar_size'   => 96,
+			'avatar'        => true, // Display Avatar
+			'location'      => true, // Display location elements
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -490,22 +492,26 @@ class HCard_User {
 		if ( ! $user ) {
 			return false;
 		}
-		$r      = wp_parse_args( $args, self::get_hcard_display_defaults() );
-		$avatar = get_avatar(
-			$user,
-			$r['avatar_size'],
-			'default',
-			'',
-			array(
-				'class' => array( 'u-photo', 'hcard-photo' ),
-			)
-		);
-		$url    = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
-		$name   = $user->get( 'display_name' );
+		$args = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		if ( $args['avatar'] ) {
+			$avatar = get_avatar(
+				$user,
+				$args['avatar_size'],
+				'default',
+				'',
+				array(
+					'class' => array( 'u-photo', 'hcard-photo' ),
+				)
+			);
+		} else {
+			$avatar = '';
+		}
+		$url  = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$name = $user->get( 'display_name' );
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
-		$return .= '<a class="u-url url fn" href="' . $url . '" rel="author">';
+		$return .= '<a class="u-url u-uid" href="' . $url . '" rel="author">';
 		if ( ! $avatar ) {
 			$return .= '<p class="hcard-name p-name n">' . $name . '</h2></a>';
 		} else {
@@ -515,17 +521,19 @@ class HCard_User {
 		$return .= '</div>';
 		$return .= '<div class="hcard-body">';
 		$return .= '<ul class="hcard-properties">';
-		$return .= '<li class="h-adr adr">';
-		if ( $user->has_prop( 'locality' ) ) {
-			$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
+		if ( $args['location'] && ( $user->has_prop( 'locality' ) || $user->has_prop( 'region' ) || $user->has_prop( 'country-name' ) ) ) {
+			$return .= '<li class="h-adr adr">';
+			if ( $user->has_prop( 'locality' ) ) {
+				$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
+			}
+			if ( $user->has_prop( 'region' ) ) {
+				$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
+			}
+			if ( $user->has_prop( 'country-name' ) ) {
+				$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
+			}
+			$return .= '</li>';
 		}
-		if ( $user->has_prop( 'region' ) ) {
-			$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
-		}
-		if ( $user->has_prop( 'country-name' ) ) {
-			$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
-		}
-		$return .= '</li>';
 		if ( $user->has_prop( 'tel' ) && $user->get( 'tel' ) ) {
 			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
