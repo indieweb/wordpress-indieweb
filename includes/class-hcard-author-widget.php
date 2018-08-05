@@ -80,6 +80,9 @@ class HCard_Author_Widget extends WP_Widget {
 			$instance[ $k ] = wp_strip_all_tags( $v );
 		}
 
+		// Apply changes to checkboxes which are unchecked when absent from the POST
+		$instance['reveal_email'] = isset( $new_instance['reveal_email'] ) ? 'on' : '';
+
 		return $instance;
 	}
 
@@ -99,9 +102,11 @@ class HCard_Author_Widget extends WP_Widget {
 			'location'    => 1,
 			'notes'       => 1,
 			'avatar_size' => '125',
+			'reveal_email' => '',
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
+
 		?>
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>"><?php esc_html_e( 'Avatar Size:', 'indieweb' ); ?></label>
@@ -122,8 +127,6 @@ class HCard_Author_Widget extends WP_Widget {
 		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'notes' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'notes' ) ); ?>" value="0" />
 		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'notes' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'notes' ) ); ?>" value="1" <?php checked( $instance['notes'], 1 ); ?> />
 	</p>
-
-
 		<?php
 	}
 
