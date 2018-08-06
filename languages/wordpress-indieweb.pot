@@ -2,9 +2,9 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.3.9\n"
+"Project-Id-Version: IndieWeb 3.3.10\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2018-08-05 14:12:26+00:00\n"
+"POT-Creation-Date: 2018-08-06 04:18:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -127,20 +127,24 @@ msgstr ""
 msgid "A widget that allows you to display author profile marked up as an h-card"
 msgstr ""
 
-#: includes/class-hcard-author-widget.php:107
+#: includes/class-hcard-author-widget.php:112
 msgid "Avatar Size:"
 msgstr ""
 
-#: includes/class-hcard-author-widget.php:111
+#: includes/class-hcard-author-widget.php:116
 msgid "Show Avatar:"
 msgstr ""
 
-#: includes/class-hcard-author-widget.php:116
+#: includes/class-hcard-author-widget.php:121
 msgid "Show Location:"
 msgstr ""
 
-#: includes/class-hcard-author-widget.php:121
+#: includes/class-hcard-author-widget.php:126
 msgid "Show Notes:"
+msgstr ""
+
+#: includes/class-hcard-author-widget.php:131
+msgid "Show Email:"
 msgstr ""
 
 #: includes/class-hcard-user.php:55
