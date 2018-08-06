@@ -300,6 +300,10 @@ class HCard_User {
 			if ( false !== stripos( $url, 'lanyard' ) ) {
 				return 'lanyrd';
 			}
+
+			if ( false !== stripos( $url, 'micro.blog' ) ) {
+				return 'micro-dot-blog';
+			}
 			// Anything with WordPress in the name that is not matched return WordPress
 			if ( false !== stripos( $domain, 'WordPress' ) ) {
 				return 'WordPress';
