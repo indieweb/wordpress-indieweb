@@ -485,6 +485,7 @@ class HCard_User {
 			'avatar'        => true, // Display Avatar
 			'location'      => true, // Display location elements
 			'notes'         => true, // Display Bio/Notes
+			'email'         => false,  // Display email
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -512,9 +513,9 @@ class HCard_User {
 		} else {
 			$avatar = '';
 		}
-		$url  = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
-		$name = $user->get( 'display_name' );
-		$email  = $user->get( 'user_email' );
+		$url   = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
+		$name  = $user->get( 'display_name' );
+		$email = $user->get( 'user_email' );
 
 		$return  = '<div class="hcard-display h-card vcard p-author">';
 		$return .= '<div class="hcard-header">';
@@ -525,7 +526,7 @@ class HCard_User {
 			$return .= $avatar . '</a>';
 			$return .= '<p class="hcard-name p-name n">' . $name . '</p>';
 		}
-		if ( 'on' === $r['reveal_email'] ) {
+		if ( $args['email'] ) {
 			$return .= '<p class="u-email"><a rel="me" href="mailto:' . $email . '">' . $email . '</a></p>';
 		}
 		$return .= '</div>';
