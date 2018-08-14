@@ -169,7 +169,7 @@ class IndieWeb_Plugin {
 				'slug' => 'indieauth',
 			),
 			array(
-				'slug' => 'wp-uf2',
+				'slug' => 'mf2-feed',
 			),
 			array(
 				'slug' => 'simple-location',
