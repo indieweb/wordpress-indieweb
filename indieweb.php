@@ -169,9 +169,6 @@ class IndieWeb_Plugin {
 				'slug' => 'indieauth',
 			),
 			array(
-				'slug' => 'wp-uf2',
-			),
-			array(
 				'slug' => 'simple-location',
 			),
 			array(
