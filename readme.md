@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
 **Tested up to:** 4.9.8  
-**Stable tag:** 3.3.10  
+**Stable tag:** 3.3.11  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -82,6 +82,9 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.3.11 ###
+* Removed uf2 plugin from recommended plugins
 
 ### 3.3.10 ###
 * Fix email property not being used and hook it to setting
