@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 3.3.10
+ * Version: 3.3.11
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -26,7 +26,7 @@ define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
  */
 class IndieWeb_Plugin {
 
-	public static $version = '3.3.10';
+	public static $version = '3.3.11';
 
 	/**
 	 * Initialize the plugin, registering WordPress hooks.
@@ -183,17 +183,14 @@ class IndieWeb_Plugin {
 
 	public static function privacy_declaration() {
 		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
-				$content = __(
-					'Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove
+			$content = __(
+				'Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove
 				it at your discretion.', 'indieweb'
-				);
-				wp_add_privacy_policy_content(
-					'Indieweb',
-					wp_kses_post( wpautop( $content, false ) )
-				);
+			);
+			wp_add_privacy_policy_content(
+				'Indieweb',
+				wp_kses_post( wpautop( $content, false ) )
+			);
 		}
 	}
-
-
-
-} // end class IndieWeb_Plugin
+}

@@ -1,4 +1,5 @@
 <?php
+
 add_action( 'init', array( 'IndieWeb_Integrations', 'init' ) );
 
 /**

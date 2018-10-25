@@ -3,10 +3,8 @@
 add_action( 'init', array( 'HCard_User', 'init' ) );
 add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 
-
 // Extended Profile for Rel-Me and H-Card
 class HCard_User {
-
 
 	public static function init() {
 		include_once 'simple-icons.php';
@@ -173,12 +171,11 @@ class HCard_User {
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
 		?>
 	<tr>
-	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
-
-	 <td>
-	  <input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
-	  <span class="description"><?php echo esc_html( $description ); ?></span>
-	 </td>
+		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
+		<td>
+			<input type="text" name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>" value="<?php echo esc_attr( get_the_author_meta( $key, $user->ID ) ); ?>" class="regular-text" /><br />
+			<span class="description"><?php echo esc_html( $description ); ?></span>
+		</td>
 	</tr>
 		<?php
 	}
@@ -190,12 +187,11 @@ class HCard_User {
 		}
 		?>
 	<tr>
-	 <th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
-
-	 <td>
-	  <textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( $value ); ?></textarea><br />
-	  <span class="description"><?php echo esc_html( $description ); ?></span>
-	 </td>
+		<th><label for="<?php echo esc_html( $key ); ?>"><?php echo esc_html( $title ); ?></label></th>
+		<td>
+			<textarea name="<?php echo esc_html( $key ); ?>" id="<?php echo esc_html( $key ); ?>"><?php echo esc_attr( $value ); ?></textarea><br />
+			<span class="description"><?php echo esc_html( $description ); ?></span>
+		</td>
 	</tr>
 		<?php
 	}
@@ -416,9 +412,9 @@ class HCard_User {
 			} else {
 				$title = self::get_title( $name );
 			}
-			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' . $silo . ' url
-				u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
-			esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( $name ) . '</a>';
+			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' .
+				$silo . ' url u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
+				esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( $name ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
@@ -555,5 +551,4 @@ class HCard_User {
 		$return .= '</div>';
 		return $return;
 	}
-
-} // End Class
+}
