@@ -140,7 +140,7 @@ class IndieWeb_General_Settings {
 		echo '</p>';
 		echo '<p>';
 		esc_html_e(
-			'The Default Author is the one whose that will be used on the home pages and archive pages. The default author setting is also used 
+			'The Default Author is the one whose that will be used on the home pages and archive pages. The default author setting is also used
 			by the IndieAuth plugin to identify the primary author of a site. If the single author setting is not set,
 				on all other pages, the post author links will be used. To display the links, add the
 				widget, otherwise they will remain hidden. ', 'indieweb'
@@ -194,9 +194,9 @@ class IndieWeb_General_Settings {
 		<select name="iw_default_author">
 		<?php foreach ( $users as $user ) : ?>
 			<option value="<?php echo absint( $user->ID ); ?>" <?php selected( $option, $user->ID ); ?>>
-										<?php
-										echo esc_html( $user->display_name );
-										?>
+				<?php
+				echo esc_html( $user->display_name );
+				?>
 			</option>
 		<?php endforeach; ?>
 		</select>

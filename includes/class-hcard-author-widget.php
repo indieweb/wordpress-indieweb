@@ -1,5 +1,7 @@
 <?php
+
 add_action( 'widgets_init', 'indieweb_register_hcard' );
+
 function indieweb_register_hcard() {
 	register_widget( 'HCard_Author_Widget' );
 }
@@ -49,7 +51,8 @@ class HCard_Author_Widget extends WP_Widget {
 
 		<div id="hcard_widget">
 			<?php // phpcs:ignore
-				echo HCard_User::hcard( $user_info, $instance ); ?>
+			echo HCard_User::hcard( $user_info, $instance );
+			?>
 		</div>
 
 		<?php
@@ -102,11 +105,10 @@ class HCard_Author_Widget extends WP_Widget {
 			'location'    => 1,
 			'notes'       => 1,
 			'avatar_size' => '125',
-			'email' => 0,
+			'email'       => 0,
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
-
 		?>
 	<p>
 		<label for="<?php echo esc_attr( $this->get_field_id( 'avatar_size' ) ); ?>"><?php esc_html_e( 'Avatar Size:', 'indieweb' ); ?></label>
@@ -134,7 +136,4 @@ class HCard_Author_Widget extends WP_Widget {
 	</p>
 		<?php
 	}
-
-
 }
-?>
