@@ -185,7 +185,8 @@ class IndieWeb_Plugin {
 		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
 			$content = __(
 				'Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove
-				it at your discretion.', 'indieweb'
+				it at your discretion.',
+				'indieweb'
 			);
 			wp_add_privacy_policy_content(
 				'Indieweb',
