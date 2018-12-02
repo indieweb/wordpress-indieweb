@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
 **Tested up to:** 4.9.8  
-**Stable tag:** 3.3.11  
+**Stable tag:** 3.3.12  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -83,6 +83,10 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
+### 3.3.12 ###
+* Update icon file
+
+
 ### 3.3.11 ###
 * Code cleanups
 
@@ -93,6 +97,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 ### 3.3.9 ###
 * Update dependencies
+
 * Change text on widgets to be more descriptive
 * Add uid to h-card widget
 * Add toggles for location, avatar, and notes to h-card widget setting
