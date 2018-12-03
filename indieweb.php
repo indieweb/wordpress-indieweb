@@ -163,9 +163,6 @@ class IndieWeb_Plugin {
 				'slug' => 'syndication-links',
 			),
 			array(
-				'slug' => 'bridgy-publish',
-			),
-			array(
 				'slug' => 'indieauth',
 			),
 			array(
