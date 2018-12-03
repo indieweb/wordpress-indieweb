@@ -25,7 +25,7 @@
 	<ol>
 		<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other Indieweb sites. You can configure it in the Discussion Settings', 'indieweb' ); ?></li>
 		<li><?php _e( 'Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub and the IndieAuth plugin adds an IndieAuth endpoint to allow it to authenticate to your site. Without it, the Micropub plugin will use a third-party IndieAuth server to authenticate to your site.', 'indieweb' ); ?></li>
-		<li><?php _e( 'You can now install the Bridgy plugin. It will add its settings options under Indieweb and allow you to directly register for Bridgy to connect your blog to responses from sites such as Facebook and Twitter.', 'indieweb' ); ?></li>
+		<li><?php _e( 'You can now install the Syndication Links plugin. It will add its settings options under Indieweb and allow you to connect your blog to responses from sites such as Flickr, Twitter and Github.', 'indieweb' ); ?></li>
 		<li><?php _e( 'Browse the Extensions page for a list of other recommended Indieweb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 	</ol>
 
