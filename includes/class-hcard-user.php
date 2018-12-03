@@ -396,9 +396,16 @@ class HCard_User {
 	}
 
 	/**
-	 * prints a formatted <ul> list of rel=me to supported silos
+	 * returns a formatted <ul> list of rel=me to supported silos
 	 */
 	public static function rel_me_list( $author_id = null, $include_rel = false ) {
+		echo self::get_me_list( $author_id, $include_rel );
+	}
+
+	/**
+	 * returns a formatted <ul> list of rel=me to supported silos
+	 */
+	public static function get_rel_me_list( $author_id = null, $include_rel = false ) {
 		$list = self::get_rel_me( $author_id );
 		if ( ! $list ) {
 			return false;
@@ -419,7 +426,7 @@ class HCard_User {
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";
 
-		echo apply_filters( 'indieweb_rel_me', $r, $author_id, $list ); // phpcs:ignore
+		return apply_filters( 'indieweb_rel_me', $r, $author_id, $list ); // phpcs:ignore
 	}
 
 	/**
@@ -482,6 +489,7 @@ class HCard_User {
 			'location'      => true, // Display location elements
 			'notes'         => true, // Display Bio/Notes
 			'email'         => false,  // Display email
+			'me'            => true, // Display rel-me links inside h-card
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -545,6 +553,9 @@ class HCard_User {
 			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
 		}
 		$return .= '</ul>';
+		if ( $args['me'] ) {
+			$return .= '<p>' . self::get_rel_me_list( $user->ID ) . '</p>';
+		}
 		if ( $args['notes'] ) {
 			$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
 		}

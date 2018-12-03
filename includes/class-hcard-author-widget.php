@@ -106,6 +106,7 @@ class HCard_Author_Widget extends WP_Widget {
 			'notes'       => 1,
 			'avatar_size' => '125',
 			'email'       => 0,
+			'me'          => 0,
 		);
 
 		$instance = wp_parse_args( (array) $instance, $defaults );
@@ -133,6 +134,11 @@ class HCard_Author_Widget extends WP_Widget {
 		<label for="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>"><?php esc_html_e( 'Show Email:', 'indieweb' ); ?></label>
 		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" value="0" />
 		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'email' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'email' ) ); ?>" value="1" <?php checked( $instance['email'], 1 ); ?> />
+	</p>
+	<p>
+		<label for="<?php echo esc_attr( $this->get_field_id( 'me' ) ); ?>"><?php esc_html_e( 'Show Rel-Me:', 'indieweb' ); ?></label>
+		<input type="hidden" name="<?php echo esc_attr( $this->get_field_name( 'me' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'me' ) ); ?>" value="0" />
+		<input type="checkbox" name="<?php echo esc_attr( $this->get_field_name( 'me' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'me' ) ); ?>" value="1" <?php checked( $instance['me'], 1 ); ?> />
 	</p>
 		<?php
 	}
