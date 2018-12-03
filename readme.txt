@@ -74,7 +74,6 @@ One could certainly download, install, and activate some or all of these plugins
 * Syndication Links - Automatically adds syndication links from a supported syndication plugin or by manual entry in the post editor. Support for NextScripts: Social Networks Auto-Poster (aka SNAP), the Medium plugin, and a few others.
 * MicroPub - A MicroPub Server for publishing posts using third-party Micropub clients
 * IndieAuth - Adds an IndieAuth endpoint to WordPress. Alternatively, if you do not want to enable this, you can use a third-party endpoint to login to the WordPress backend via IndieAuth.
-* Bridgy - User Interface for the Brid.gy Web Service
 * Microformats 2 - provides basic mf2 support for any WordPress theme that does not support mf2 already. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
 * Simple Location - adds basic location and weather support to WordPress posts
 
@@ -85,7 +84,8 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 = 3.3.12 =
 * Update icon file
-
+* Add option to show rel-me icons inside h-card
+* Remove Bridgy from Suggested Plugins
 
 = 3.3.11 =
 * Code cleanups
