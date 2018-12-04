@@ -399,7 +399,7 @@ class HCard_User {
 	 * returns a formatted <ul> list of rel=me to supported silos
 	 */
 	public static function rel_me_list( $author_id = null, $include_rel = false ) {
-		echo self::get_me_list( $author_id, $include_rel );
+		echo self::get_rel_me_list( $author_id, $include_rel );
 	}
 
 	/**
