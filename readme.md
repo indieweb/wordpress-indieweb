@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 4.9.8  
-**Stable tag:** 3.3.13  
+**Tested up to:** 5.0  
+**Stable tag:** 3.3.14  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -81,6 +81,10 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.3.14 ###
+* Fixed issue with missing closing tag on h-card widget
+* Turned h-card widget into an HTML template to allow for easier customization
 
 ### 3.3.13 ###
 * Typo causing rel-me error. Sorry folks.

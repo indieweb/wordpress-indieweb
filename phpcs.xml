@@ -3,9 +3,10 @@
 	<description>WordPress Indieweb Standards</description>
 	<file>./indieweb.php</file>
 	<file>./includes/</file>
-	<config name="minimum_supported_wp_version" value="4.7"/>
+	<config name="minimum_supported_wp_version" value="4.8"/>
 	<exclude-pattern>*/includes/*\.(inc|css|js|svg)</exclude-pattern>
 	<exclude-pattern>*/includes/getting-started.php</exclude-pattern>
+	<exclude-pattern>*/includes/class-connekt-plugin-installer.php</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<rule ref="PHPCompatibility"/>
 	<config name="testVersion" value="5.3-"/>
