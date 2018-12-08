@@ -399,7 +399,7 @@ class HCard_User {
 	 * returns a formatted <ul> list of rel=me to supported silos
 	 */
 	public static function rel_me_list( $author_id = null, $include_rel = false ) {
-		echo self::get_rel_me_list( $author_id, $include_rel );
+		echo self::get_rel_me_list( $author_id, $include_rel ); // phpcs:ignore
 	}
 
 	/**
@@ -520,46 +520,10 @@ class HCard_User {
 		$url   = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name  = $user->get( 'display_name' );
 		$email = $user->get( 'user_email' );
-
-		$return  = '<div class="hcard-display h-card vcard p-author">';
-		$return .= '<div class="hcard-header">';
-		$return .= '<a class="u-url url fn u-uid" href="' . $url . '" rel="author">';
-		if ( ! $avatar ) {
-			$return .= '<p class="hcard-name p-name n">' . $name . '</p></a>';
-		} else {
-			$return .= $avatar . '</a>';
-			$return .= '<p class="hcard-name p-name n">' . $name . '</p>';
-		}
-		if ( $args['email'] ) {
-			$return .= '<p class="u-email"><a rel="me" href="mailto:' . $email . '">' . $email . '</a></p>';
-		}
-		$return .= '</div>';
-		$return .= '<div class="hcard-body">';
-		$return .= '<ul class="hcard-properties">';
-		if ( $args['location'] && ( $user->has_prop( 'locality' ) || $user->has_prop( 'region' ) || $user->has_prop( 'country-name' ) ) ) {
-			$return .= '<li class="h-adr adr">';
-			if ( $user->has_prop( 'locality' ) ) {
-				$return .= '<span class="p-locality locality">' . $user->get( 'locality' ) . '</span>, ';
-			}
-			if ( $user->has_prop( 'region' ) ) {
-				$return .= '<span class="p-region region">' . $user->get( 'region' ) . '</span> ';
-			}
-			if ( $user->has_prop( 'country-name' ) ) {
-				$return .= '<span class="p-country-name country-name">' . $user->get( 'country-name' ) . '</span>';
-			}
-			$return .= '</li>';
-		}
-		if ( $user->has_prop( 'tel' ) && $user->get( 'tel' ) ) {
-			$return .= '<li><a class="p-tel tel" href="tel:' . $user->get( 'tel' ) . '">' . $user->get( 'tel' ) . '</a></li>';
-		}
-		$return .= '</ul>';
-		if ( $args['me'] ) {
-			$return .= '<p>' . self::get_rel_me_list( $user->ID ) . '</p>';
-		}
-		if ( $args['notes'] ) {
-			$return .= '<p class="p-note note">' . $user->get( 'description' ) . '</p>';
-		}
-		$return .= '</div>';
+		ob_start();
+		include dirname( __FILE__ ) . '/../templates/h-card.php';
+		$return = ob_get_contents();
+		ob_end_clean();
 		return $return;
 	}
 }
