@@ -85,7 +85,8 @@ module.exports = function (grunt) {
         },
         files: {                         // Dictionary of files
           'static/css/indieweb.css': 'sass/main.scss',       // 'destination': 'source'
-          'static/css/indieweb-bw.css': 'sass/main-bw.scss'
+          'static/css/indieweb-bw.css': 'sass/main-bw.scss',
+          'static/css/indieweb-admin.css': 'sass/main-admin.scss'
         }
       }
     },

@@ -1,0 +1,28 @@
+.indieweb-getting-started {
+    *, *::after, *::before {
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .indieweb-flex-container {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+    }
+    .indieweb-flex {
+	    padding: 0 20px 50px;
+	    width: 50%;
+	    &:nth-child(2n+1) {
+	        padding-left: 0px;
+	    }
+    }
+
+    @media screen and (max-width: 767px) {
+        .indieweb-flex-container {
+            display: block;
+        }
+	    .indieweb-flex {
+		    width: 100%;
+	    }
+    }
+}

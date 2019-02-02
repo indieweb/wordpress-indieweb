@@ -51,6 +51,8 @@ class IndieWeb_Plugin {
 
 		add_action( 'wp_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_style' ) );
 
+		add_action( 'admin_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_admin_style' ) );
+
 		// Add General Settings Page
 		require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
 
@@ -90,6 +92,9 @@ class IndieWeb_Plugin {
 		}
 	}
 
+	public static function enqueue_admin_style() {
+		wp_enqueue_style( 'indieweb-admin', plugins_url( 'static/css/indieweb-admin.css', __FILE__ ), array(), self::$version );
+	}
 
 	/**
 	 * Add Top Level Menu Item
