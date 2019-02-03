@@ -9,11 +9,12 @@
 /*--------------------------------------------------------------
 Link Style
 --------------------------------------------------------------*/
-.svg-icon {
+.svg-icon svg {
   fill: currentColor;
   vertical-align: middle;
-  /*  position: relative;  Align more nicely with capital letters */
   top: -0.0625em; }
+  .svg-icon svg :hover {
+    filter: brightness(50%); }
 
 .relme ul {
   display: inline-block;
@@ -21,12 +22,12 @@ Link Style
   vertical-align: top;
   margin: 0;
   padding: 1px; }
-  .relme ul .svg-icon {
-    height: 42px;
-    width: 42px; }
   .relme ul li {
     display: inline-block;
     padding-right: 3px; }
+    .relme ul li svg {
+      height: 32px;
+      width: 32px; }
     .relme ul li a {
       text-decoration: none;
       color: black; }
@@ -35,7 +36,7 @@ Link Style
     .relme ul li a:hover {
       text-decoration: none;
       cursor: pointer; }
-      .relme ul li a:hover .svg-icon {
+      .relme ul li a:hover svg {
         color: grey; }
     .relme ul li a:visited {
       color: black; }
@@ -43,11 +44,20 @@ Link Style
 /*--------------------------------------------------------------
 Simple Icons
 --------------------------------------------------------------*/
+.relme li a .svg-net {
+  color: #5C2D91; }
+
 .relme li a .svg-500px {
   color: #0099E5; }
 
 .relme li a .svg-acm {
   color: #0085CA; }
+
+.relme li a .svg-amd {
+  color: #ED1C24; }
+
+.relme li a .svg-atandt {
+  color: #00A8E0; }
 
 .relme li a .svg-aboutme {
   color: #00A98F; }
@@ -64,6 +74,12 @@ Simple Icons
 .relme li a .svg-adobeaftereffects {
   color: #D291FF; }
 
+.relme li a .svg-adobeaudition {
+  color: #00E4BB; }
+
+.relme li a .svg-adobecreativecloud {
+  color: #D41818; }
+
 .relme li a .svg-adobedreamweaver {
   color: #35FA00; }
 
@@ -79,6 +95,9 @@ Simple Icons
 .relme li a .svg-adobephotoshop {
   color: #00C8FF; }
 
+.relme li a .svg-adobepremiere {
+  color: #EA77FF; }
+
 .relme li a .svg-adobetypekit {
   color: #87EC00; }
 
@@ -87,6 +106,9 @@ Simple Icons
 
 .relme li a .svg-amazon {
   color: #FF9900; }
+
+.relme li a .svg-amazonaws {
+  color: #232F3E; }
 
 .relme li a .svg-americanexpress {
   color: #2E77BC; }
@@ -100,14 +122,23 @@ Simple Icons
 .relme li a .svg-angular {
   color: #DD0031; }
 
+.relme li a .svg-appveyor {
+  color: #00B3E0; }
+
 .relme li a .svg-apple {
   color: #999999; }
 
 .relme li a .svg-applemusic {
   color: #000000; }
 
+.relme li a .svg-applepay {
+  color: #000000; }
+
 .relme li a .svg-archlinux {
   color: #1793D1; }
+
+.relme li a .svg-archiveofourown {
+  color: #990000; }
 
 .relme li a .svg-artstation {
   color: #13AFF0; }
@@ -130,8 +161,14 @@ Simple Icons
 .relme li a .svg-automatic {
   color: #7D8084; }
 
+.relme li a .svg-autotask {
+  color: #E51937; }
+
 .relme li a .svg-aventrix {
   color: #0099DD; }
+
+.relme li a .svg-azuredevops {
+  color: #0078D7; }
 
 .relme li a .svg-baidu {
   color: #2319DC; }
@@ -144,6 +181,9 @@ Simple Icons
 
 .relme li a .svg-bathasu {
   color: #00A3E0; }
+
+.relme li a .svg-beats {
+  color: #005571; }
 
 .relme li a .svg-behance {
   color: #1769FF; }
@@ -160,6 +200,9 @@ Simple Icons
 .relme li a .svg-bitcoin {
   color: #F7931A; }
 
+.relme li a .svg-bitdefender {
+  color: #ED1C24; }
+
 .relme li a .svg-bitly {
   color: #EE6123; }
 
@@ -168,6 +211,9 @@ Simple Icons
 
 .relme li a .svg-blogger {
   color: #FF5722; }
+
+.relme li a .svg-boost {
+  color: #F69220; }
 
 .relme li a .svg-bootstrap {
   color: #563D7C; }
@@ -184,6 +230,9 @@ Simple Icons
 .relme li a .svg-buzzfeed {
   color: #EE3322; }
 
+.relme li a .svg-cplus + {
+  color: #00599C; }
+
 .relme li a .svg-csswizardry {
   color: #F43059; }
 
@@ -196,11 +245,26 @@ Simple Icons
 .relme li a .svg-campaignmonitor {
   color: #509CF6; }
 
+.relme li a .svg-cashapp {
+  color: #00C244; }
+
+.relme li a .svg-castorama {
+  color: #0078D7; }
+
 .relme li a .svg-castro {
   color: #00B265; }
 
+.relme li a .svg-circle {
+  color: #8669AE; }
+
 .relme li a .svg-circleci {
   color: #343434; }
+
+.relme li a .svg-clockify {
+  color: #03A9F4; }
+
+.relme li a .svg-clojure {
+  color: #5881D8; }
 
 .relme li a .svg-cloudflare {
   color: #F38020; }
@@ -208,8 +272,8 @@ Simple Icons
 .relme li a .svg-coop {
   color: #00B1E7; }
 
-.relme li a .svg-codeschool {
-  color: #4CADC0; }
+.relme li a .svg-codacy {
+  color: #222F29; }
 
 .relme li a .svg-codeigniter {
   color: #EE4623; }
@@ -220,17 +284,26 @@ Simple Icons
 .relme li a .svg-codecademy {
   color: #1F4056; }
 
+.relme li a .svg-codecov {
+  color: #F01F7A; }
+
 .relme li a .svg-codeforces {
   color: #1F8ACB; }
 
 .relme li a .svg-coderwall {
   color: #3E8DCC; }
 
+.relme li a .svg-codeship {
+  color: #3C4858; }
+
 .relme li a .svg-codewars {
   color: #AD2C27; }
 
 .relme li a .svg-codio {
   color: #4574E0; }
+
+.relme li a .svg-coffeescript {
+  color: #2F2625; }
 
 .relme li a .svg-compropago {
   color: #00AAEF; }
@@ -240,6 +313,15 @@ Simple Icons
 
 .relme li a .svg-coursera {
   color: #2A73CC; }
+
+.relme li a .svg-d3js {
+  color: #F9A03C; }
+
+.relme li a .svg-dazn {
+  color: #F8F8F5; }
+
+.relme li a .svg-dtube {
+  color: #FF0000; }
 
 .relme li a .svg-dailymotion {
   color: #0066DC; }
@@ -252,6 +334,12 @@ Simple Icons
 
 .relme li a .svg-delicious {
   color: #3399FF; }
+
+.relme li a .svg-dell {
+  color: #007DB8; }
+
+.relme li a .svg-dependabot {
+  color: #0025FF; }
 
 .relme li a .svg-designernews {
   color: #2D72D9; }
@@ -301,11 +389,32 @@ Simple Icons
 .relme li a .svg-drupal {
   color: #0678BE; }
 
+.relme li a .svg-eslint {
+  color: #4B32C3; }
+
+.relme li a .svg-eclipseide {
+  color: #2C2255; }
+
+.relme li a .svg-elastic {
+  color: #005571; }
+
+.relme li a .svg-elasticcloud {
+  color: #005571; }
+
+.relme li a .svg-elasticstack {
+  color: #005571; }
+
+.relme li a .svg-elasticsearch {
+  color: #005571; }
+
 .relme li a .svg-ello {
   color: #000000; }
 
 .relme li a .svg-empirekred {
   color: #72BE50; }
+
+.relme li a .svg-envato {
+  color: #81B441; }
 
 .relme li a .svg-ethereum {
   color: #3C3C3D; }
@@ -317,13 +426,19 @@ Simple Icons
   color: #5AB552; }
 
 .relme li a .svg-eventbrite {
-  color: #F6682F; }
+  color: #F05537; }
 
 .relme li a .svg-evernote {
-  color: #2DBD60; }
+  color: #00A82D; }
 
 .relme li a .svg-everplaces {
   color: #FA4B32; }
+
+.relme li a .svg-expertsexchange {
+  color: #00AAE7; }
+
+.relme li a .svg-fsecure {
+  color: #00BAFF; }
 
 .relme li a .svg-facebook {
   color: #3B5998; }
@@ -337,11 +452,20 @@ Simple Icons
 .relme li a .svg-feedly {
   color: #2BB24C; }
 
+.relme li a .svg-figma {
+  color: #F24E1E; }
+
 .relme li a .svg-firebase {
   color: #FFCA28; }
 
 .relme li a .svg-fitbit {
   color: #00B0B9; }
+
+.relme li a .svg-flask {
+  color: #000000; }
+
+.relme li a .svg-flattr {
+  color: #000000; }
 
 .relme li a .svg-flickr {
   color: #0063DC; }
@@ -354,6 +478,15 @@ Simple Icons
 
 .relme li a .svg-foursquare {
   color: #F94877; }
+
+.relme li a .svg-framer {
+  color: #0055FF; }
+
+.relme li a .svg-furaffinity {
+  color: #FAAF3A; }
+
+.relme li a .svg-furrynetwork {
+  color: #2E75B4; }
 
 .relme li a .svg-gnu {
   color: #A42E2B; }
@@ -400,8 +533,11 @@ Simple Icons
 .relme li a .svg-gmail {
   color: #D14836; }
 
+.relme li a .svg-go {
+  color: #76E1FE; }
+
 .relme li a .svg-goldenline {
-  color: #FBBF00; }
+  color: #F1B92B; }
 
 .relme li a .svg-goodreads {
   color: #663300; }
@@ -419,7 +555,7 @@ Simple Icons
   color: #4285F4; }
 
 .relme li a .svg-googledrive {
-  color: #4386FC; }
+  color: #4285F4; }
 
 .relme li a .svg-googlehangouts {
   color: #0C9D58; }
@@ -427,11 +563,20 @@ Simple Icons
 .relme li a .svg-googlekeep {
   color: #FFBB00; }
 
+.relme li a .svg-googlepay {
+  color: #5F6368; }
+
 .relme li a .svg-googleplay {
   color: #607D8B; }
 
+.relme li a .svg-googlepodcasts {
+  color: #4285F4; }
+
 .relme li a .svg-googleplus {
   color: #DC4E41; }
+
+.relme li a .svg-grafana {
+  color: #F46800; }
 
 .relme li a .svg-graphql {
   color: #E10098; }
@@ -445,6 +590,9 @@ Simple Icons
 .relme li a .svg-gravatar {
   color: #1E8CBE; }
 
+.relme li a .svg-groupon {
+  color: #53A318; }
+
 .relme li a .svg-gulp {
   color: #DA4648; }
 
@@ -454,8 +602,14 @@ Simple Icons
 .relme li a .svg-gumtree {
   color: #72EF36; }
 
+.relme li a .svg-here {
+  color: #48DAD0; }
+
 .relme li a .svg-html5 {
   color: #E34F26; }
+
+.relme li a .svg-hackhands {
+  color: #00ACBD; }
 
 .relme li a .svg-hackerrank {
   color: #2EC866; }
@@ -481,11 +635,17 @@ Simple Icons
 .relme li a .svg-hipchat {
   color: #0052CC; }
 
+.relme li a .svg-hockeyapp {
+  color: #009EE1; }
+
 .relme li a .svg-hootsuite {
   color: #000000; }
 
 .relme li a .svg-houzz {
   color: #7AC142; }
+
+.relme li a .svg-huawei {
+  color: #FF0000; }
 
 .relme li a .svg-hulu {
   color: #3DBB3D; }
@@ -498,6 +658,9 @@ Simple Icons
 
 .relme li a .svg-imdb {
   color: #E6B91E; }
+
+.relme li a .svg-iconjar {
+  color: #16A5F3; }
 
 .relme li a .svg-invision {
   color: #FF3366; }
@@ -520,11 +683,20 @@ Simple Icons
 .relme li a .svg-intercom {
   color: #1F8DED; }
 
+.relme li a .svg-internetexplorer {
+  color: #0076D6; }
+
 .relme li a .svg-jsfiddle {
   color: #4679A4; }
 
 .relme li a .svg-json {
   color: #000000; }
+
+.relme li a .svg-jabber {
+  color: #CC0000; }
+
+.relme li a .svg-java {
+  color: #007396; }
 
 .relme li a .svg-javascript {
   color: #F7DF1E; }
@@ -541,11 +713,17 @@ Simple Icons
 .relme li a .svg-joomla {
   color: #5091CD; }
 
+.relme li a .svg-jupyter {
+  color: #F37626; }
+
 .relme li a .svg-justgiving {
   color: #AD29B6; }
 
 .relme li a .svg-kaggle {
   color: #20BEFF; }
+
+.relme li a .svg-kaios {
+  color: #6F02B5; }
 
 .relme li a .svg-keycdn {
   color: #3686BE; }
@@ -555,6 +733,9 @@ Simple Icons
 
 .relme li a .svg-khanacademy {
   color: #9DB63B; }
+
+.relme li a .svg-kibana {
+  color: #005571; }
 
 .relme li a .svg-kickstarter {
   color: #2BDE73; }
@@ -571,8 +752,14 @@ Simple Icons
 .relme li a .svg-known {
   color: #333333; }
 
+.relme li a .svg-kofi {
+  color: #F16061; }
+
 .relme li a .svg-koding {
   color: #00B057; }
+
+.relme li a .svg-kotlin {
+  color: #0095D5; }
 
 .relme li a .svg-linewebtoon {
   color: #00D564; }
@@ -589,8 +776,17 @@ Simple Icons
 .relme li a .svg-launchpad {
   color: #F8C300; }
 
+.relme li a .svg-leetcode {
+  color: #F89F1B; }
+
 .relme li a .svg-letterboxd {
   color: #00D735; }
+
+.relme li a .svg-liberapay {
+  color: #F6C915; }
+
+.relme li a .svg-librarything {
+  color: #251A15; }
 
 .relme li a .svg-line {
   color: #00C300; }
@@ -610,6 +806,12 @@ Simple Icons
 .relme li a .svg-livestream {
   color: #CF202E; }
 
+.relme li a .svg-logstash {
+  color: #005571; }
+
+.relme li a .svg-lua {
+  color: #2C2D72; }
+
 .relme li a .svg-macys {
   color: #E21A2C; }
 
@@ -620,7 +822,7 @@ Simple Icons
   color: #168DE2; }
 
 .relme li a .svg-mailchimp {
-  color: #239AB9; }
+  color: #FFE01B; }
 
 .relme li a .svg-makerbot {
   color: #FF1E0D; }
@@ -629,7 +831,10 @@ Simple Icons
   color: #EB001B; }
 
 .relme li a .svg-mastodon {
-  color: #189EFC; }
+  color: #3088D4; }
+
+.relme li a .svg-matrix {
+  color: #000000; }
 
 .relme li a .svg-matternet {
   color: #261C29; }
@@ -638,7 +843,7 @@ Simple Icons
   color: #000000; }
 
 .relme li a .svg-medium {
-  color: #1C1B1A; }
+  color: #12100E; }
 
 .relme li a .svg-meetup {
   color: #ED1C40; }
@@ -661,8 +866,14 @@ Simple Icons
 .relme li a .svg-microsoftaccess {
   color: #BA141A; }
 
+.relme li a .svg-microsoftedge {
+  color: #0078D7; }
+
 .relme li a .svg-microsoftexcel {
   color: #217346; }
+
+.relme li a .svg-microsoftonedrive {
+  color: #094AB2; }
 
 .relme li a .svg-microsoftonenote {
   color: #80397B; }
@@ -679,8 +890,14 @@ Simple Icons
 .relme li a .svg-minutemailer {
   color: #3ABFE6; }
 
+.relme li a .svg-mix {
+  color: #FF8126; }
+
 .relme li a .svg-mixcloud {
   color: #314359; }
+
+.relme li a .svg-mixer {
+  color: #002050; }
 
 .relme li a .svg-monero {
   color: #FF6600; }
@@ -693,6 +910,9 @@ Simple Icons
 
 .relme li a .svg-monogram {
   color: #FDB22A; }
+
+.relme li a .svg-monzo {
+  color: #14233C; }
 
 .relme li a .svg-moo {
   color: #00945E; }
@@ -715,6 +935,9 @@ Simple Icons
 .relme li a .svg-npm {
   color: #CB3837; }
 
+.relme li a .svg-nvidia {
+  color: #76B900; }
+
 .relme li a .svg-neo4j {
   color: #008CC1; }
 
@@ -723,6 +946,9 @@ Simple Icons
 
 .relme li a .svg-netlify {
   color: #00C7B7; }
+
+.relme li a .svg-nextcloud {
+  color: #0082C9; }
 
 .relme li a .svg-nextdoor {
   color: #00B246; }
@@ -742,6 +968,9 @@ Simple Icons
 .relme li a .svg-nodemon {
   color: #76D04B; }
 
+.relme li a .svg-nuget {
+  color: #004880; }
+
 .relme li a .svg-nucleo {
   color: #766DCC; }
 
@@ -753,9 +982,6 @@ Simple Icons
 
 .relme li a .svg-odnoklassniki {
   color: #F4731C; }
-
-.relme li a .svg-onedrive {
-  color: #094AB2; }
 
 .relme li a .svg-opera {
   color: #FF1B2D; }
@@ -821,13 +1047,19 @@ Simple Icons
   color: #F15B2A; }
 
 .relme li a .svg-plurk {
-  color: #E9443D; }
+  color: #FF574D; }
 
 .relme li a .svg-pocket {
   color: #EF3F56; }
 
 .relme li a .svg-podcasts {
   color: #9933CC; }
+
+.relme li a .svg-postgresql {
+  color: #336791; }
+
+.relme li a .svg-powershell {
+  color: #5391FE; }
 
 .relme li a .svg-prismic {
   color: #484A7A; }
@@ -850,6 +1082,9 @@ Simple Icons
 .relme li a .svg-qiita {
   color: #55C500; }
 
+.relme li a .svg-qualcomm {
+  color: #3253DC; }
+
 .relme li a .svg-quantcast {
   color: #1E262C; }
 
@@ -858,6 +1093,12 @@ Simple Icons
 
 .relme li a .svg-quora {
   color: #B92B27; }
+
+.relme li a .svg-qzone {
+  color: #FECE00; }
+
+.relme li a .svg-r {
+  color: #276DC3; }
 
 .relme li a .svg-rss {
   color: #FFA500; }
@@ -874,6 +1115,9 @@ Simple Icons
 .relme li a .svg-readthedocs {
   color: #8CA1AF; }
 
+.relme li a .svg-redbubble {
+  color: #E41321; }
+
 .relme li a .svg-reddit {
   color: #FF4500; }
 
@@ -883,8 +1127,14 @@ Simple Icons
 .relme li a .svg-redux {
   color: #764ABC; }
 
+.relme li a .svg-renren {
+  color: #217DC6; }
+
 .relme li a .svg-reverbnation {
   color: #E43526; }
+
+.relme li a .svg-riseup {
+  color: #5E9EE3; }
 
 .relme li a .svg-roots {
   color: #525DDC; }
@@ -898,8 +1148,23 @@ Simple Icons
 .relme li a .svg-rust {
   color: #000000; }
 
+.relme li a .svg-sap {
+  color: #008FD3; }
+
+.relme li a .svg-spdx {
+  color: #4398CC; }
+
+.relme li a .svg-safari {
+  color: #000000; }
+
 .relme li a .svg-salesforce {
   color: #00A1E0; }
+
+.relme li a .svg-samsung {
+  color: #1428A0; }
+
+.relme li a .svg-samsungpay {
+  color: #1428A0; }
 
 .relme li a .svg-sass {
   color: #CC6699; }
@@ -907,8 +1172,14 @@ Simple Icons
 .relme li a .svg-saucelabs {
   color: #E2231A; }
 
+.relme li a .svg-scala {
+  color: #DC322F; }
+
 .relme li a .svg-scribd {
   color: #1A7BBA; }
+
+.relme li a .svg-scrutinizerci {
+  color: #8A9296; }
 
 .relme li a .svg-sega {
   color: #0089CF; }
@@ -964,6 +1235,9 @@ Simple Icons
 .relme li a .svg-snapchat {
   color: #FFFC00; }
 
+.relme li a .svg-snyk {
+  color: #4C4A73; }
+
 .relme li a .svg-sogou {
   color: #FB6022; }
 
@@ -975,6 +1249,12 @@ Simple Icons
 
 .relme li a .svg-sourceforge {
   color: #535353; }
+
+.relme li a .svg-sourcegraph {
+  color: #00B4F2; }
+
+.relme li a .svg-sparkfun {
+  color: #E53525; }
 
 .relme li a .svg-sparkpost {
   color: #FA6423; }
@@ -990,6 +1270,9 @@ Simple Icons
 
 .relme li a .svg-spreaker {
   color: #F5C300; }
+
+.relme li a .svg-sprint {
+  color: #FFCE0A; }
 
 .relme li a .svg-squarespace {
   color: #000000; }
@@ -1012,6 +1295,9 @@ Simple Icons
 .relme li a .svg-steem {
   color: #4BA2F2; }
 
+.relme li a .svg-steemit {
+  color: #06D6A9; }
+
 .relme li a .svg-stitcher {
   color: #000000; }
 
@@ -1027,11 +1313,8 @@ Simple Icons
 .relme li a .svg-stubhub {
   color: #003168; }
 
-.relme li a .svg-stumbleupon {
-  color: #EB4924; }
-
 .relme li a .svg-styleshare {
-  color: #231F20; }
+  color: #212121; }
 
 .relme li a .svg-stylus {
   color: #333333; }
@@ -1054,8 +1337,17 @@ Simple Icons
 .relme li a .svg-symfony {
   color: #000000; }
 
+.relme li a .svg-tmobile {
+  color: #E20074; }
+
 .relme li a .svg-ted {
   color: #E62B1E; }
+
+.relme li a .svg-typo3 {
+  color: #FF8700; }
+
+.relme li a .svg-tails {
+  color: #56347C; }
 
 .relme li a .svg-tapas {
   color: #FFCE00; }
@@ -1067,13 +1359,16 @@ Simple Icons
   color: #2CA5E0; }
 
 .relme li a .svg-tencentqq {
-  color: #12B7F5; }
+  color: #EB1923; }
 
 .relme li a .svg-tesla {
   color: #CC0000; }
 
 .relme li a .svg-themighty {
   color: #D0072A; }
+
+.relme li a .svg-themoviedatabase {
+  color: #01D277; }
 
 .relme li a .svg-tinder {
   color: #FF6B6B; }
@@ -1132,6 +1427,9 @@ Simple Icons
 .relme li a .svg-udacity {
   color: #01B3E3; }
 
+.relme li a .svg-udemy {
+  color: #EC5252; }
+
 .relme li a .svg-umbraco {
   color: #00BEC1; }
 
@@ -1147,8 +1445,20 @@ Simple Icons
 .relme li a .svg-vk {
   color: #6383A8; }
 
+.relme li a .svg-vlcmediaplayer {
+  color: #FF8800; }
+
 .relme li a .svg-vsco {
   color: #000000; }
+
+.relme li a .svg-vagrant {
+  color: #1563FF; }
+
+.relme li a .svg-venmo {
+  color: #3D95CE; }
+
+.relme li a .svg-verizon {
+  color: #CD040B; }
 
 .relme li a .svg-viadeo {
   color: #F88D2D; }
@@ -1172,7 +1482,7 @@ Simple Icons
   color: #142787; }
 
 .relme li a .svg-visualstudiocode {
-  color: #0271BC; }
+  color: #007ACC; }
 
 .relme li a .svg-vuejs {
   color: #4FC08D; }
@@ -1185,6 +1495,9 @@ Simple Icons
 
 .relme li a .svg-wechat {
   color: #7BB32E; }
+
+.relme li a .svg-weasyl {
+  color: #990000; }
 
 .relme li a .svg-webstorm {
   color: #00CDD7; }
@@ -1216,8 +1529,23 @@ Simple Icons
 .relme li a .svg-wix {
   color: #FAAD4D; }
 
+.relme li a .svg-wolfram {
+  color: #DD1100; }
+
+.relme li a .svg-wolframlanguage {
+  color: #DD1100; }
+
+.relme li a .svg-wolframmathematica {
+  color: #DD1100; }
+
 .relme li a .svg-wordpress {
   color: #21759B; }
+
+.relme li a .svg-xpack {
+  color: #005571; }
+
+.relme li a .svg-xsplit {
+  color: #0095DE; }
 
 .relme li a .svg-xbox {
   color: #107C10; }
@@ -1261,11 +1589,20 @@ Simple Icons
 .relme li a .svg-zillow {
   color: #0074E4; }
 
+.relme li a .svg-dblp {
+  color: #004F9F; }
+
 .relme li a .svg-devto {
   color: #0A0A0A; }
 
+.relme li a .svg-devrant {
+  color: #F99A66; }
+
 .relme li a .svg-ebay {
   color: #E53238; }
+
+.relme li a .svg-elementary {
+  color: #64BAFF; }
 
 .relme li a .svg-freecodecamp {
   color: #006400; }
@@ -1273,11 +1610,17 @@ Simple Icons
 .relme li a .svg-homify {
   color: #7DCDA3; }
 
+.relme li a .svg-icloud {
+  color: #3693F3; }
+
 .relme li a .svg-ifixit {
   color: #0071CE; }
 
 .relme li a .svg-jquery {
   color: #0769AD; }
+
+.relme li a .svg-rollupjs {
+  color: #EC4A3F; }
 
 /*--------------------------------------------------------------
 Widgets

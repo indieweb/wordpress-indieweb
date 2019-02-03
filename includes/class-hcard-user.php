@@ -343,10 +343,14 @@ class HCard_User {
 	 * @return string svg icon
 	 */
 	public static function get_icon( $name ) {
-		// Substitute another svg sprite file
-		$sprite = apply_filters( 'indieweb_icon_sprite', plugins_url( 'static/img/simple-icons.svg', dirname( __FILE__ ) ), $name );
-
-		return '<svg class="svg-icon svg-' . $name . '" aria-hidden="true"><use xlink:href="' . $sprite . '#' . $name . '"></use><svg>';
+		$svg = sprintf( '%1$s/static/svg/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
+		if ( file_exists( $svg ) ) {
+			$icon = file_get_contents( $svg );
+			if ( $icon ) {
+				return sprintf( '<span class="svg-icon svg-%1$s" aria-hidden="true" aria-label="%2$s" title="%2$s" >%3$s</span>', esc_attr( $name ), esc_attr( $name ), $icon );
+			}
+		}
+		return '';
 	}
 
 	/**

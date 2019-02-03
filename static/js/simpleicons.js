@@ -92,6 +92,7 @@ for (var i = 0; i < source.icons.length; i++) {
     var fileName = source.icons[i].title.toLowerCase();
     fileName = fileName.replace(/[!|’|.| |-]/g, ''); // Replace bang, apostrophe, period and space with nothing.
     fileName = fileName.replace(/[+]/, 'plus'); // Replace the plus symbol with “plus”.
+    fileName = fileName.replace(/[&]/, 'and'); // Replace the and symbol with “and”.
 
     if (fileName.length > maxNameLength) {
         maxNameLength = fileName.length;
@@ -114,6 +115,7 @@ for (var i = 0; i < source.icons.length; i++) {
     var fileName = source.icons[i].title.toLowerCase();
     fileName = fileName.replace(/[!|’|.| |-]/g, ''); // Replace bang, apostrophe, period and space with nothing.
     fileName = fileName.replace(/[+]/, 'plus'); // Replace the plus symbol with “plus”.
+    fileName = fileName.replace(/[&]/, 'and'); // Replace the and symbol with “and”.
 
     spacing = "";
     if (fileName.length < maxNameLength) {

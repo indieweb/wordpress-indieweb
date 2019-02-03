@@ -11,8 +11,10 @@
     "web": "https://notiz.blog"
   },
   "devDependencies": {
+    "genericons-neue": "^4.0.5",
     "grunt": "^1.0.2",
     "grunt-checktextdomain": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-execute": "^0.2.2",
     "grunt-sass": "~1.2.1",
     "grunt-svg-sprite": "^1.4.0",
