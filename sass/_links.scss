@@ -1,38 +1,44 @@
 .svg-icon {
-	fill: currentColor;
-	vertical-align: middle;
-	/*  position: relative;  Align more nicely with capital letters */
-	top: -0.0625em;
-} 
+	svg {
+		fill: currentColor;
+		vertical-align: middle;
+		top: -0.0625em;
+		:hover {
+			filter: brightness(50%);
+		}
+	}
+}
+
+
 .relme ul{
-	  display: inline-block;
-		list-style: none;
-		vertical-align: top;
-		margin: 0;
-		padding: 1px;
-		.svg-icon {
- 			height: 42px;
-  			width: 42px;
-  	 }
-		li {
+	li {
   		display: inline-block;
-			padding-right: 3px;
+		padding-right: 3px;
+		svg {
+			height: 32px;
+			width: 32px;
+		}
   		a {
    			text-decoration: none;
 				color: black;
 				.relmename {
 					display: none;
 				}
+		}
+		a:hover {
+			text-decoration: none;
+  			cursor: pointer;
+			svg {
+				color: grey;
 			}
-			a:hover {
-				text-decoration: none;
-  		  cursor: pointer;
-				.svg-icon {
-					color: grey;
-				}
 	  	}
-			a:visited {
+		a:visited {
 			color: black;
-			}
+		}
   	}
-	}
+	display: inline-block;
+	list-style: none;
+	vertical-align: top;
+	margin: 0;
+	padding: 1px;
+}

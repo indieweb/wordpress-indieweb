@@ -9,24 +9,25 @@
 /*--------------------------------------------------------------
 Link Style
 --------------------------------------------------------------*/
-.svg-icon {
+.svg-icon svg {
   fill: currentColor;
   vertical-align: middle;
-  /*  position: relative;  Align more nicely with capital letters */
   top: -0.0625em; }
+  .svg-icon svg :hover {
+    filter: brightness(50%); }
 
 .relme ul {
   display: inline-block;
   list-style: none;
-  veritical-align: top;
+  vertical-align: top;
   margin: 0;
   padding: 1px; }
-  .relme ul .svg-icon {
-    height: 42px;
-    width: 42px; }
   .relme ul li {
     display: inline-block;
     padding-right: 3px; }
+    .relme ul li svg {
+      height: 32px;
+      width: 32px; }
     .relme ul li a {
       text-decoration: none;
       color: black; }
@@ -35,7 +36,7 @@ Link Style
     .relme ul li a:hover {
       text-decoration: none;
       cursor: pointer; }
-      .relme ul li a:hover .svg-icon {
+      .relme ul li a:hover svg {
         color: grey; }
     .relme ul li a:visited {
       color: black; }
