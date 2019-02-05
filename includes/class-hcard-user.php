@@ -455,7 +455,7 @@ class HCard_User {
 			return get_option( 'iw_default_author' ); // Set the author ID to default
 		} elseif ( is_author() ) {
 			$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
-			if ( $author instanceOf WP_User ) {
+			if ( $author instanceof WP_User ) {
 				return $author->ID;
 			} else {
 				return $author;
