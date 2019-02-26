@@ -48,31 +48,27 @@ class HCard_User {
 	 */
 	public static function silos() {
 		$silos = array(
-			'github'     => array(
+			'github'    => array(
 				'baseurl' => 'https://github.com/%s',
 				'display' => __( 'Github username', 'indieweb' ),
 			),
-			'googleplus' => array(
-				'baseurl' => 'https://plus.google.com/%s',
-				'display' => __( 'Google+ userID (not username)', 'indieweb' ),
-			),
-			'twitter'    => array(
+			'twitter'   => array(
 				'baseurl' => 'https://twitter.com/%s',
 				'display' => __( 'Twitter username (without @)', 'indieweb' ),
 			),
-			'facebook'   => array(
+			'facebook'  => array(
 				'baseurl' => 'https://www.facebook.com/%s',
 				'display' => __( 'Facebook ID', 'indieweb' ),
 			),
-			'microblog'  => array(
+			'microblog' => array(
 				'baseurl' => 'https://micro.blog/%s',
 				'display' => __( 'Micro.blog username', 'indieweb' ),
 			),
-			'instagram'  => array(
+			'instagram' => array(
 				'baseurl' => 'https://www.instagram.com/%s',
 				'display' => __( 'Instagram username', 'indieweb' ),
 			),
-			'flickr'     => array(
+			'flickr'    => array(
 				'baseurl' => 'https://www.flickr.com/people/%s',
 				'display' => __( 'Flickr username', 'indieweb' ),
 			),
@@ -233,7 +229,7 @@ class HCard_User {
 			return false;
 		}
 		// Rewrite these to https as needed
-		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com' ) );
+		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com', 'github.com' ) );
 		if ( in_array( self::extract_domain_name( $url ), $secure, true ) ) {
 			$url = preg_replace( '/^http:/i', 'https:', $url );
 		}
