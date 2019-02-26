@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 5.0.3  
-**Stable tag:** 3.4  
+**Tested up to:** 5.1  
+**Stable tag:** 3.4.1  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -81,6 +81,10 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.4.1 ###
+* Replace missing icon
+* Remove Google Plus profile option due impending shutdown of service
 
 ### 3.4.0 ###
 * Switch from svg sprite to inline svg
