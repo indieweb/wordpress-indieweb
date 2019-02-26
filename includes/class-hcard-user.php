@@ -52,10 +52,6 @@ class HCard_User {
 				'baseurl' => 'https://github.com/%s',
 				'display' => __( 'Github username', 'indieweb' ),
 			),
-			'googleplus' => array(
-				'baseurl' => 'https://plus.google.com/%s',
-				'display' => __( 'Google+ userID (not username)', 'indieweb' ),
-			),
 			'twitter'    => array(
 				'baseurl' => 'https://twitter.com/%s',
 				'display' => __( 'Twitter username (without @)', 'indieweb' ),
