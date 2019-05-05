@@ -498,6 +498,19 @@ class HCard_User {
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
 
+	/**
+	 * Looks up, and returns if exists, the full path to a given file in the
+	 * /templates subdirectory of the active theme (child, parent).
+	 * Defaults to the /templates subdirectory in this plugin.
+	 *
+	 * @param string $file_name   File name, example: h-card.php
+	 * @return string             Full path to file
+	 */
+	public static function get_template_file( $file_name ) {
+		$theme_template_file = locate_template( 'templates/' . $file_name );
+		return $theme_template_file ? $theme_template_file : dirname( __FILE__ ) . '/../templates/' . $file_name;
+	}
+
 	public static function hcard( $user, $args = array() ) {
 		if ( ! $user ) {
 			return false;
@@ -525,7 +538,7 @@ class HCard_User {
 		$name  = $user->get( 'display_name' );
 		$email = $user->get( 'user_email' );
 		ob_start();
-		include dirname( __FILE__ ) . '/../templates/h-card.php';
+		include self::get_template_file( 'h-card.php' );
 		$return = ob_get_contents();
 		ob_end_clean();
 		return $return;
