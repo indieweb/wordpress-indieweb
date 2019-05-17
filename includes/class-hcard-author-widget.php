@@ -45,7 +45,7 @@ class HCard_Author_Widget extends WP_Widget {
 		$user_info = get_userdata( $display_author );
 
 		// phpcs:ignore
-		esc_html( $args['before_widget'] );
+		echo $args['before_widget'];
 
 		?>
 
