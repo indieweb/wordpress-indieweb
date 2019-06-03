@@ -28,17 +28,13 @@ matrix:
   - php: 5.6
     env: WP_PULUGIN_DEPLOY=1
   - PHP: 5.5
-    WP_VERSION: 4.9
-    WP_MULTISITE: 0
+    env: WP_VERSION=4.9 WP_MULTISITE=0
   - PHP: 5.4
-    WP_VERSION: 4.9
-    WP_MULTISITE: 0
+    env: WP_VERSION=4.9 WP_MULTISITE=0
   - PHP: 5.3
-    WP_VERSION: 4.9
-    WP_MULTISITE: 0
+    env: WP_VERSION=4.9 WP_MULTISITE=0
   - PHP: 5.2
-    WP_VERSION: 4.9
-    WP_MULTISITE: 0
+    env: WP_VERSION=4.9 WP_MULTISITE=0
 before_script:
 - |
   # Remove Xdebug for a huge performance increase:
