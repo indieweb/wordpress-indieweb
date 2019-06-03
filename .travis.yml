@@ -27,6 +27,18 @@ matrix:
   - php: 5.6
   - php: 5.6
     env: WP_PULUGIN_DEPLOY=1
+  - PHP: 5.5
+    WP_VERSION: 4.9
+    WP_MULTISITE: 0
+  - PHP: 5.4
+    WP_VERSION: 4.9
+    WP_MULTISITE: 0
+  - PHP: 5.3
+    WP_VERSION: 4.9
+    WP_MULTISITE: 0
+  - PHP: 5.2
+    WP_VERSION: 4.9
+    WP_MULTISITE: 0
 before_script:
 - |
   # Remove Xdebug for a huge performance increase:
@@ -47,9 +59,13 @@ before_script:
         echo "Using PHPUnit 6.x"
         composer global require "phpunit/phpunit:^6"
         ;;
-      5.6)
+      5.6|5.5|5.4|5.3)
         echo "Using PHPUnit 4.x"
         composer global require "phpunit/phpunit:^4"
+        ;;
+      5.2)
+        # Do nothing, use default PHPUnit 3.6.x
+        echo "Using default PHPUnit, hopefully 3.6"
         ;;
       *)
         echo "No PHPUnit version handling for PHP version $TRAVIS_PHP_VERSION"

@@ -2,8 +2,8 @@
 **Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [indieweb](https://profiles.wordpress.org/indieweb), [dshanske](https://profiles.wordpress.org/dshanske)  
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
-**Requires at least:** 5.2  
-**Requires PHP:** 5.6  
+**Requires at least:** 4.9  
+**Requires PHP:** 5.2  
 **Tested up to:** 5.2.1  
 **Stable tag:** 3.4.1  
 **License:** MIT  
