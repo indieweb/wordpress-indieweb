@@ -2,16 +2,17 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.4.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/indieweb\n"
-"POT-Creation-Date: 2019-02-26 06:49:42+00:00\n"
+"Project-Id-Version: IndieWeb 3.4.1\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/wordpress-indieweb\n"
+"POT-Creation-Date: 2019-06-03 11:45:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: includes/class-connekt-plugin-installer.php:55
 #: includes/class-connekt-plugin-installer.php:375

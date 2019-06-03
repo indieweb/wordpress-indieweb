@@ -7,12 +7,12 @@ module.exports = function (grunt) {
       }
     },
     copy: {
-	    main: {
-		    files: [
-		    	{expand: true, cwd: 'node_modules/simple-icons/icons/', src: ['*.svg'], dest: 'static/svg/'}, 
-		    	{expand: true, cwd: 'node_modules/genericons-neue/svg-min/', src: ['*.svg'], dest: 'static/svg/'},
-		    ],
-		},
+      main: {
+        files: [
+          {expand: true, cwd: 'node_modules/simple-icons/icons/', src: ['*.svg'], dest: 'static/svg/'},
+          {expand: true, cwd: 'node_modules/genericons-neue/svg-min/', src: ['*.svg'], dest: 'static/svg/'},
+        ]
+      }
     },
     checktextdomain: {
       options:{
@@ -43,7 +43,7 @@ module.exports = function (grunt) {
           '!tests/**',        // Exclude tests/
           '!vendor/**',       // Exclude vendor/
           '!build/**',           // Exclude build/
-	  '!static/**',   // Exclude static resources
+          '!static/**',   // Exclude static resources
         ],
         expand: true
      }

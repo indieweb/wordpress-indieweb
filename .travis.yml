@@ -20,6 +20,7 @@ env:
   - secure: "XQXCVlHyWGYEtJRwwmP3uIRML07en6LfZ0aW88PoHagLFp/HGIrNX4a2Xah09dAjsaKFUdiUawkk00ge0XGHADbB3n3F7XFshELKS6MFNOOngRiBWYD4aDF7mwZbZ1qab28wh4PCK0LndpfYI5ta+ltg/x9JFpwnELR1nfRFj/s="
 matrix:
   include:
+  - php: 7.3
   - php: 7.2
   - php: 7.1
   - php: 7.0
@@ -27,8 +28,14 @@ matrix:
   - php: 5.6
     env: WP_PULUGIN_DEPLOY=1
   - php: 5.5
+    env: WP_VERSION=4.7 WP_MULTISITE=0
   - php: 5.4
+    env: WP_VERSION=4.7 WP_MULTISITE=0
   - php: 5.3
+    env: WP_VERSION=4.7 WP_MULTISITE=0
+    dist: precise
+  - php: 5.2
+    env: WP_VERSION=4.7 WP_MULTISITE=0
     dist: precise
 before_script:
 - |
@@ -46,7 +53,7 @@ before_script:
   # Install the specified version of PHPUnit depending on the PHP version:
   if [[ "$WP_TRAVISCI" == "travis:phpunit" ]]; then
     case "$TRAVIS_PHP_VERSION" in
-      7.2|7.1|7.0|nightly)
+      7.3|7.2|7.1|7.0|nightly)
         echo "Using PHPUnit 6.x"
         composer global require "phpunit/phpunit:^6"
         ;;
