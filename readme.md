@@ -112,7 +112,6 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 ### 3.3.9 ###
 * Update dependencies
-
 * Change text on widgets to be more descriptive
 * Add uid to h-card widget
 * Add toggles for location, avatar, and notes to h-card widget setting
