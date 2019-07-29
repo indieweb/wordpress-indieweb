@@ -4,7 +4,7 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.3
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 Stable tag: 3.4.1
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -112,7 +112,6 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 = 3.3.9 =
 * Update dependencies
-
 * Change text on widgets to be more descriptive
 * Add uid to h-card widget
 * Add toggles for location, avatar, and notes to h-card widget setting
@@ -180,7 +179,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Remove Hum URL Shortener in attempt to narrow focus
 * Bridgy Publish plugin to assist people in Publish.
 * Remove Webactions in attempt to narrow focus
-* Remove Indieweb Press This as not distributed through wordpress repo
+* Remove IndieWeb Press This as not distributed through wordpress repo
 * Switch plugin installer from TGM to simpler https://github.com/dcooney/wordpress-plugin-installer
 * Fix issue where extra user properties were incorrectly sanitized
 * Handle an @ in the twitter username

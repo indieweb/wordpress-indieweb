@@ -35,7 +35,7 @@ class IndieWeb_Plugin {
 		// enable translation
 		self::enable_translation();
 
-		require_once dirname( __FILE__ ) . '/includes/class-connekt-plugin-installer.php';
+		require_once dirname( __FILE__ ) . '/includes/class-plugin-installer.php';
 
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 			// Require H-Card Enhancements to User Profile
@@ -140,8 +140,8 @@ class IndieWeb_Plugin {
 	public static function plugin_installer() {
 		echo '<h1>' . esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
 		echo '<p>' . esc_html__( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
-		if ( class_exists( 'Connekt_Plugin_Installer' ) ) {
-			Connekt_Plugin_Installer::init( self::register_plugins() );
+		if ( class_exists( 'IndieWeb_Plugin_Installer' ) ) {
+			IndieWeb_Plugin_Installer::init( self::register_plugins() );
 		}
 	}
 

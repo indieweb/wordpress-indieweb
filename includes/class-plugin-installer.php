@@ -1,6 +1,6 @@
 <?php
 /**
- * Connekt_Plugin_Installer
+ * IndieWeb_Plugin_Installer
  *
  * @author   Darren Cooney
  * @link     https://github.com/dcooney/wordpress-plugin-installer
@@ -15,9 +15,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
+if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
-	class Connekt_Plugin_Installer {
+	class IndieWeb_Plugin_Installer {
 
 		public function start() {
 			if ( ! defined( 'CNKT_INSTALLER_PATH' ) ) {
@@ -385,6 +385,6 @@ if ( ! class_exists( 'Connekt_Plugin_Installer' ) ) {
 
 
 	// initialize
-	$connekt_plugin_installer = new Connekt_Plugin_Installer();
+	$connekt_plugin_installer = new IndieWeb_Plugin_Installer();
 	$connekt_plugin_installer->start();
 } // End if( class_exists )
