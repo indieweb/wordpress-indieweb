@@ -9,26 +9,26 @@
 			<p>
 			<?php
 			esc_html_e(
-				'The IndieWeb Plugin can help you establish your identity online, as well as recommending other plugins to support additional Indieweb features.', 'indieweb'
+				'The IndieWeb Plugin can help you establish your identity online, as well as recommending other plugins to support additional IndieWeb features.', 'indieweb'
 			);
 			?>
 			</p>
 			<ol>
 				<li><?php _e( 'Complete your user profile, adding in connections to other websites. This allows you to connect your identity on those sites to your website.', 'indieweb' ); ?></li>
-				<li><?php _e( 'Under Options on the Indieweb menu in the sidebar, set whether this is a single author or multi-author site', 'indieweb' ); ?></li>
+				<li><?php _e( 'Under Options on the IndieWeb menu in the sidebar, set whether this is a single author or multi-author site', 'indieweb' ); ?></li>
 				<li><?php _e( 'Links to your various sites will now appear on your site, allowing you to use Indieauth and other services. If you want them visible to site visitors, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
 			</ol>
 		</div>
 		<div class="indieweb-flex plugins">
 			<h2><?php esc_html_e( 'Plugins', 'indieweb' ); ?></h2>
 
-			<p><?php _e( 'After you have established your identity, you can now log into the <a href="https://indieweb.org">Indieweb wiki</a> and add a user page as a way of introducing yourself to the community. The wiki is also a great source of IndieWeb information', 'indieweb' ); ?></p>
+			<p><?php _e( 'After you have established your identity, you can now log into the <a href="https://indieweb.org">IndieWeb wiki</a> and add a user page as a way of introducing yourself to the community. The wiki is also a great source of IndieWeb information', 'indieweb' ); ?></p>
 
 			<ol>
-				<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other Indieweb sites. You can configure it in the Discussion Settings', 'indieweb' ); ?></li>
+				<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other IndieWeb sites. You can configure it in the Discussion Settings', 'indieweb' ); ?></li>
 				<li><?php _e( 'Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub and the IndieAuth plugin adds an IndieAuth endpoint to allow it to authenticate to your site. Without it, the Micropub plugin will use a third-party IndieAuth server to authenticate to your site.', 'indieweb' ); ?></li>
-				<li><?php _e( 'You can now install the Syndication Links plugin. It will add its settings options under Indieweb and allow you to connect your blog to responses from sites such as Flickr, Twitter and Github.', 'indieweb' ); ?></li>
-				<li><?php _e( 'Browse the Extensions page for a list of other recommended Indieweb plugins that can expand your functionality.', 'indieweb' ); ?></li>
+				<li><?php _e( 'You can now install the Syndication Links plugin. It will add its settings options under IndieWeb and allow you to connect your blog to responses from sites such as Flickr, Twitter and Github.', 'indieweb' ); ?></li>
+				<li><?php _e( 'Browse the Extensions page for a list of other recommended IndieWeb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 			</ol>
 
 			<p><a href="<?php echo admin_url( 'admin.php?page=indieweb-installer' ); ?>" class="button button-primary"><?php esc_html_e( 'Install Plugins', 'indieweb' ); ?></a></p>
