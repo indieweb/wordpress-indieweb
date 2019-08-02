@@ -40,7 +40,7 @@ class RelMe_Widget extends WP_Widget {
 		}
 		if ( is_author() ) {
 			global $authordata;
-			$author_id = $authordata->ID;
+			$author_id = ( $authordata instanceof WP_User ) ? $authordata->ID : 1;
 			if ( 0 === (int) $single_author ) {
 				$include_rel = true;
 			}
