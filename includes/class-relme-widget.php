@@ -32,15 +32,23 @@ class RelMe_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $authordata;
 
+		$users = get_users(
+			array(
+				'role'   => 'administrator',
+				'number' => 1,
+				'fields' => 'ids',
+			)
+		);
+
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? '0' : '1' );
-		$author_id     = get_option( 'iw_default_author', 1 ); // Set the author ID to default
+		$author_id     = get_option( 'iw_default_author', $users[0] ); // Set the author ID to default.
 		$include_rel   = false;
 		if ( is_front_page() && '1' === $single_author ) {
 			$include_rel = true;
 		}
 		if ( is_author() ) {
 			global $authordata;
-			$author_id = ( $authordata instanceof WP_User ) ? $authordata->ID : 1;
+			$author_id = ( $authordata instanceof WP_User ) ? $authordata->ID : $author_id;
 			if ( 0 === (int) $single_author ) {
 				$include_rel = true;
 			}
