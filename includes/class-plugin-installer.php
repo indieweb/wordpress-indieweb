@@ -81,13 +81,13 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 					//echo $main_plugin_file;
 					if ( self::check_file_extension( $main_plugin_file ) ) { // check file extension
 						if ( is_plugin_active( $main_plugin_file ) ) {
-							 // plugin activation, confirmed!
-							 $button_classes = 'button disabled';
-							 $button_text    = __( 'Activated', 'indieweb' );
+							// plugin activation, confirmed!
+							$button_classes = 'button disabled';
+							$button_text    = __( 'Activated', 'indieweb' );
 						} else {
-							  // It's installed, let's activate it
-							 $button_classes = 'activate button button-primary';
-							 $button_text    = __( 'Activate', 'indieweb' );
+							// It's installed, let's activate it
+							$button_classes = 'activate button button-primary';
+							$button_text    = __( 'Activate', 'indieweb' );
 						}
 					}
 
@@ -96,7 +96,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 				}
 
-			   endforeach;
+			endforeach;
 			?>
 			</div>
 			<?php
@@ -119,36 +119,41 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 		*/
 		public static function render_template( $plugin, $api, $button_text, $button_classes ) {
 			if ( isset( $api->icons['1x'] ) ) {
-				  $icon = $api->icons['1x'];
+				$icon = $api->icons['1x'];
 			} else {
 				$icon = $api->icons['default'];
 			}
 
+			$install_url = add_query_arg( array(
+				'action'   => 'install-plugin',
+				'plugin'   => $api->slug,
+				'_wpnonce' => wp_create_nonce( 'install-plugin_' . $api->slug ),
+			), get_admin_url( null, '/update.php' ) );
 			?>
 			<div class="plugin">
-			  <div class="plugin-wrap">
-				  <img src="<?php echo $icon; ?>" alt="">
-			   <h2><?php echo $api->name; ?></h2>
-			   <p><?php echo $api->short_description; ?></p>
+				<div class="plugin-wrap">
+					<img src="<?php echo esc_url( $icon ); ?>" alt="">
+					<h2><?php echo esc_html( $api->name ); ?></h2>
+					<p><?php echo esc_html( $api->short_description ); ?></p>
 
-			   <p class="plugin-author"><?php _e( 'By', 'indieweb' ); ?> <?php echo $api->author; ?></p>
-			   </div>
-			   <ul class="activation-row">
-			   <li>
-				  <a class="<?php echo $button_classes; ?>"
-					  data-slug="<?php echo $api->slug; ?>"
-								data-name="<?php echo $api->name; ?>"
-									href="<?php echo get_admin_url(); ?>/update.php?action=install-plugin&amp;plugin=<?php echo $api->slug; ?>&amp;_wpnonce=<?php echo wp_create_nonce( 'install-plugin_' . $api->slug ); ?>">
-							<?php echo $button_text; ?>
-				  </a>
-			   </li>
-			   <li>
-				  <a href="https://wordpress.org/plugins/<?php echo $api->slug; ?>/" target="_blank">
-						<?php _e( 'More Details', 'indieweb' ); ?>
-				  </a>
-			   </li>
-			</ul>
-			 </div>
+					<p class="plugin-author"><?php esc_html_e( 'By', 'indieweb' ); ?> <?php echo $api->author; ?></p>
+				</div>
+				<ul class="activation-row">
+					<li>
+						<a class="<?php echo esc_attr( $button_classes ); ?>"
+							data-slug="<?php echo esc_attr( $api->slug ); ?>"
+							data-name="<?php echo esc_attr( $api->name ); ?>"
+							href="<?php echo esc_url( $install_url ); ?>">
+							<?php echo esc_html( $button_text ); ?>
+						</a>
+					</li>
+					<li>
+						<a href="https://wordpress.org/plugins/<?php echo esc_attr( $api->slug ); ?>/" target="_blank">
+							<?php esc_html_e( 'More Details', 'indieweb' ); ?>
+						</a>
+					</li>
+				</ul>
+			</div>
 			<?php
 		}
 
@@ -166,7 +171,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 		public function cnkt_plugin_installer() {
 
 			if ( ! current_user_can( 'install_plugins' ) ) {
-				wp_die( __( 'Sorry, you are not allowed to install plugins on this site.', 'indieweb' ) );
+				wp_die( esc_html( __( 'Sorry, you are not allowed to install plugins on this site.', 'indieweb' ) ) );
 			}
 
 			$nonce  = $_POST['nonce'];
@@ -174,7 +179,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
-				wp_die( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) );
+				wp_die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
 			}
 
 			// Include required libs for installation
@@ -239,7 +244,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 		*/
 		public function cnkt_plugin_activation() {
 			if ( ! current_user_can( 'install_plugins' ) ) {
-				wp_die( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) );
+				wp_die( esc_html( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) ) );
 			}
 
 			$nonce  = $_POST['nonce'];
@@ -247,7 +252,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
-				die( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) );
+				die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
 			}
 
 			// Include required libs for activation
