@@ -32,16 +32,10 @@ class RelMe_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $authordata;
 
-		$users = get_users(
-			array(
-				'role'   => 'administrator',
-				'number' => 1,
-				'fields' => 'ids',
-			)
-		);
+		$default_admin_user = $this->get_default_admin_author();
 
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? '0' : '1' );
-		$author_id     = get_option( 'iw_default_author', $users[0] ); // Set the author ID to default.
+		$author_id     = get_option( 'iw_default_author', $default_admin_user ); // Set the author ID to default.
 		$include_rel   = false;
 		if ( is_front_page() && '1' === $single_author ) {
 			$include_rel = true;
@@ -84,5 +78,17 @@ class RelMe_Widget extends WP_Widget {
 		echo '<p>';
 		esc_html_e( 'Displays rel=me links which appear as icons with the logo of the site linked to when possible', 'indieweb' );
 		echo '</p>';
+	}
+
+	public function get_default_admin_author() {
+		$users = get_users(
+			array(
+				'role'   => 'administrator',
+				'number' => 1,
+				'fields' => 'ids',
+			)
+		);
+
+		return $users[0];
 	}
 }
