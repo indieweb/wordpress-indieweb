@@ -80,6 +80,11 @@ class RelMe_Widget extends WP_Widget {
 		echo '</p>';
 	}
 
+	/**
+	 * Fetch the first administrator ID.
+	 *
+	 * @return mixed Administrator user ID.
+	 */
 	public function get_default_admin_author() {
 		$users = get_users(
 			array(
