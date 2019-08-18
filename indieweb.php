@@ -179,6 +179,9 @@ class IndieWeb_Plugin {
 			array(
 				'slug' => 'pubsubhubbub',
 			),
+			array(
+				'slug' => 'classic-editor',
+			),
 		);
 		return $plugin_array;
 	}
