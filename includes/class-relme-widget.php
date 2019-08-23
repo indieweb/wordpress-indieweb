@@ -32,7 +32,7 @@ class RelMe_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		global $authordata;
 
-		$default_admin_user = $this->get_default_admin_author();
+		$default_admin_user = $this->get_default_admin_author_id();
 
 		$single_author = get_option( 'iw_single_author', is_multi_author() ? '0' : '1' );
 		$author_id     = get_option( 'iw_default_author', $default_admin_user ); // Set the author ID to default.
@@ -83,14 +83,14 @@ class RelMe_Widget extends WP_Widget {
 	/**
 	 * Fetch the first administrator ID.
 	 *
-	 * @return mixed Administrator user ID.
+	 * @return int Administrator user ID.
 	 */
-	public function get_default_admin_author() {
+	public function get_default_admin_author_id() {
 		$users = get_users(
 			array(
 				'role'   => 'administrator',
 				'number' => 1,
-				'fields' => 'ids',
+				'fields' => 'ID',
 			)
 		);
 
