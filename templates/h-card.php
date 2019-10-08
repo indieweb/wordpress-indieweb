@@ -9,8 +9,8 @@
 				<p class="hcard-name p-name n"><?php echo $name; ?></p>
 		<?php }
 		if ( $args['email'] ) { ?>
-			<p class="u-email">
-				<a rel="me" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+			<p>
+				<a class="u-email" rel="me" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
 			</p>
 		<?php } ?>
 	</div> <!-- end hcard-header -->
