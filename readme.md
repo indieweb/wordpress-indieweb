@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.3  
-**Tested up to:** 5.2.2  
-**Stable tag:** 3.4.1  
+**Tested up to:** 5.3.2  
+**Stable tag:** 3.4.2  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -26,7 +26,7 @@ Some of these plugins allow you to:
 * provide basic support for [Microformats 2](http://microformats.org/wiki/microformats2)
 * add location support to your posts
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
-* link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram, Google+ can come back to your original post as comments there
+* link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram can come back to your original post as comments there
 * set up a MicroPub Server to use other posting interfaces. (You could potentially use services like Instagram, Foursquare, and others to post to your WordPress site.)
 * Use your site to log into other services with [IndieAuth](https://indieweb.org/indieauth).
 
@@ -81,6 +81,10 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.4.2 ###
+* Update domain to icon mapping functionality
+* Add mastodon profile url field and store the mastodon URL in a transient so it can be mapped
 
 ### 3.4.1 ###
 * Replace missing icon

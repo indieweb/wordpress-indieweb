@@ -134,15 +134,14 @@ class IndieWeb_General_Settings {
 		echo '<p>';
 		esc_html_e(
 			'Using rel=me on a link indicates the link represents the same person or entity as
-				the current page. On a site with a single author, rel=me links from their user profile will
-				appear on the homepage. On a site with multiple authors rel=me will appear in the links on the author page only.',
+				the current page. On a site with a single author, links to other profiles from their user profile will
+				appear on the homepage. On a site with multiple authors these links will appear on the author page only.',
 			'indieweb'
 		);
 		echo '</p>';
 		echo '<p>';
 		esc_html_e(
-			'The Default Author is the one whose that will be used on the home pages and archive pages. The default author setting is also used
-			by the IndieAuth plugin to identify the primary author of a site. If the single author setting is not set,
+			'The Default Author is the one whose that will be used on the home pages and archive pages.  If the single author setting is not set,
 				on all other pages, the post author links will be used. To display the links, add the
 				widget, otherwise they will remain hidden. ',
 			'indieweb'

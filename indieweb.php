@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 3.4.1
+ * Version: 3.4.2
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -26,7 +26,7 @@ define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
  */
 class IndieWeb_Plugin {
 
-	public static $version = '3.4.1';
+	public static $version = '3.4.2';
 
 	/**
 	 * Initialize the plugin, registering WordPress hooks.
@@ -39,6 +39,8 @@ class IndieWeb_Plugin {
 
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 			// Require H-Card Enhancements to User Profile
+
+			require_once dirname( __FILE__ ) . '/includes/class-relme-domain-icon-map.php';
 			require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
 			require_once dirname( __FILE__ ) . '/includes/class-hcard-author-widget.php';
 
