@@ -124,11 +124,14 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				$icon = $api->icons['default'];
 			}
 
-			$install_url = add_query_arg( array(
-				'action'   => 'install-plugin',
-				'plugin'   => $api->slug,
-				'_wpnonce' => wp_create_nonce( 'install-plugin_' . $api->slug ),
-			), get_admin_url( null, '/update.php' ) );
+			$install_url = add_query_arg(
+				array(
+					'action'   => 'install-plugin',
+					'plugin'   => $api->slug,
+					'_wpnonce' => wp_create_nonce( 'install-plugin_' . $api->slug ),
+				),
+				get_admin_url( null, '/update.php' )
+			);
 			?>
 			<div class="plugin">
 				<div class="plugin-wrap">
