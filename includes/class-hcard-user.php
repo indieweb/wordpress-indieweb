@@ -252,104 +252,6 @@ class HCard_User {
 	}
 
 	/**
-	 * Returns the Domain Name out of a URL.
-	 *
-	 * @param string $url URL.
-	 *
-	 * @return string domain name
-	 */
-	public static function extract_domain_name( $url ) {
-		$host = wp_parse_url( $url, PHP_URL_HOST );
-		$host = preg_replace( '/^www\./', '', $host );
-		return $host;
-	}
-
-	// Try to get the correct icon for the majority of sites by dropping
-	public static function split_domain( $string ) {
-		// Strip things we know we dont want. Not every TLD but the common ones in the fontset
-		$unwanted = array( '-', '.com', '.org', '.net', '.io', '.in', '.tv', '.fm', '.social' );
-		// Strip these
-		$string = str_replace( $unwanted, '', $string );
-		// Strip the dot if it is a TLD other than the above
-		$string = str_replace( '.', '', $string );
-		return strtolower( $string );
-	}
-
-	public static function url_to_name( $url ) {
-		$scheme  = wp_parse_url( $url, PHP_URL_SCHEME );
-		$strings = array_keys( simpleicons_iw_get_names() );
-		if ( ( 'http' === $scheme ) || ( 'https' === $scheme ) ) {
-			$domain = self::extract_domain_name( $url );
-			$strip  = self::split_domain( $domain );
-			if ( in_array( $strip, array_keys( $strings ), true ) ) {
-				return $strip;
-			}
-			// Special Cases
-			if ( false !== stripos( $url, 'plus.google.com' ) ) {
-				return 'googleplus';
-			}
-
-			if ( false !== stripos( $url, 'lanyard' ) ) {
-				return 'lanyrd';
-			}
-
-			if ( false !== stripos( $url, 'micro.blog' ) ) {
-				return 'micro-dot-blog';
-			}
-			// Anything with WordPress in the name that is not matched return WordPress
-			if ( false !== stripos( $domain, 'WordPress' ) ) {
-				return 'WordPress';
-			}
-			// Some domains have the word app in them check for matches with that
-			$strip = str_replace( 'app', '', $strip );
-			if ( in_array( $strip, $strings, true ) ) {
-				return $strip;
-			}
-			return apply_filters( 'indieweb_links_url_to_name', 'website', $url );
-		}
-		if ( in_array( $scheme, array_keys( $strings ), true ) ) {
-			return apply_filters( 'indieweb_links_url_to_name', $strings[ $scheme ], $url );
-		}
-		if ( 'sms' === $scheme ) {
-			return 'phone';
-		}
-		if ( 'mailto' === $scheme ) {
-			return 'mail';
-		}
-		if ( 'gtalk' === $scheme ) {
-			return 'googlehangouts';
-		}
-		// Not sure why someone would do a scheme other than web
-		return 'notice';
-	}
-
-	public static function get_title( $name ) {
-		$strings = simpleicons_iw_get_names();
-		if ( isset( $strings[ $name ] ) ) {
-			return $strings[ $name ];
-		}
-		return $name;
-	}
-
-	/**
-	 * Return a marked up SVG icon..
-	 *
-	 * @param string $name name.
-	 *
-	 * @return string svg icon
-	 */
-	public static function get_icon( $name ) {
-		$svg = sprintf( '%1$s/static/svg/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
-		if ( file_exists( $svg ) ) {
-			$icon = file_get_contents( $svg );
-			if ( $icon ) {
-				return sprintf( '<span class="svg-icon svg-%1$s" aria-hidden="true" aria-label="%2$s" title="%2$s" >%3$s</span>', esc_attr( $name ), esc_attr( $name ), $icon );
-			}
-		}
-		return '';
-	}
-
-	/**
 	 * returns an array of links from the user profile to be used as rel-me
 	 */
 	public static function get_rel_me( $author_id = null ) {
@@ -413,15 +315,15 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name', $author_id );
 		$r           = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$name = self::url_to_name( $profile_url );
+			$name = Rel_Me_Domain_Icon_Map::url_to_name( $profile_url );
 			if ( in_array( $name, array( 'notice', 'website' ), true ) ) {
-				$title = self::extract_domain_name( $profile_url );
+				$title = Rel_Me_Domain_Icon_Map::extract_domain_name( $profile_url );
 			} else {
-				$title = self::get_title( $name );
+				$title = Rel_Me_Domain_Icon_Map::get_title( $name );
 			}
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' .
 				$silo . ' url u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
-				esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . self::get_icon( $name ) . '</a>';
+				esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . Rel_Me_Domain_Icon_Map::get_icon( $name ) . '</a>';
 		}
 
 		$r = "<div class='relme'><ul>\n<li>" . join( "</li>\n<li>", $r ) . "</li>\n</ul></div>";

@@ -39,6 +39,8 @@ class IndieWeb_Plugin {
 
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 			// Require H-Card Enhancements to User Profile
+
+			require_once dirname( __FILE__ ) . '/includes/class-relme-domain-icon-map.php';
 			require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
 			require_once dirname( __FILE__ ) . '/includes/class-hcard-author-widget.php';
 
