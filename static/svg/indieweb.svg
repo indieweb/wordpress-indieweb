@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 488 488" style="enable-background:new 0 0 488 488;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FF5C00;}
+	.st1{clip-path:url(#SVGID_2_);fill:#FF0000;}
+	.st2{clip-path:url(#SVGID_4_);fill:#FF0000;}
+	.st3{fill:#FFB100;}
+	.st4{fill:none;}
+</style>
+    <title>IndieWebCamp Icon</title>
+<g>
+	<polygon class="st0" points="164.3,185.6 223.4,311.8 242,272 201.8,185.6 	"/>
+	<polygon class="st0" points="333.4,185.6 282.5,185.6 215.4,185.6 254.2,268.9 274.3,311.8 	"/>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="33.5" y="185.6" width="117.8" height="33"/>
+		</defs>
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;fill:#FF0000;"/>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect x="31.9" y="184.1" class="st1" width="120.9" height="36.1"/>
+	</g>
+	<g>
+		<defs>
+			<rect id="SVGID_3_" x="33.5" y="230.6" width="117.8" height="71.8"/>
+		</defs>
+		<use xlink:href="#SVGID_3_"  style="overflow:visible;fill:#FF0000;"/>
+		<clipPath id="SVGID_4_">
+			<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
+		</clipPath>
+		<rect x="31.9" y="229.1" class="st2" width="120.9" height="74.9"/>
+	</g>
+	<path class="st3" d="M453.6,250.5c-3.1,32.4-30.3,57.8-63.5,57.8c-35.2,0-63.8-28.6-63.8-63.8s28.6-63.8,63.8-63.8
+		c33.1,0,60.3,25.2,63.5,57.5h-63.5c-3.4,0-6.2,2.8-6.2,6.2c0,3.4,2.8,6.2,6.2,6.2H453.6z"/>
+	<rect class="st4" width="488" height="488"/>
+</g>
+</svg>
