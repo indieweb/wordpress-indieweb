@@ -72,6 +72,10 @@ class HCard_User {
 				'baseurl' => 'https://www.flickr.com/people/%s',
 				'display' => __( 'Flickr username', 'indieweb' ),
 			),
+			'mastodon'  => array(
+				'baseurl' => '%s',
+				'display' => __( 'Mastodon Server (URL)', 'indieweb' ),
+			),
 		);
 		return apply_filters( 'wp_relme_silos', $silos );
 	}
@@ -160,7 +164,7 @@ class HCard_User {
 		foreach ( self::extra_fields() as $key => $value ) {
 			self::extended_profile_text_field( $user, $key, $value['title'], $value['description'] );
 		}
-		self::extended_profile_textarea_field( $user, 'relme', __( 'Other Sites', 'indieweb' ), __( 'Sites not listed in the profile to add to rel-me (One URL per line)', 'indieweb' ) );
+		self::extended_profile_textarea_field( $user, 'relme', __( 'Other Sites', 'indieweb' ), __( 'Other profiles without their own field in your user profile (One URL per line)', 'indieweb' ) );
 		echo '</table>';
 	}
 
@@ -214,6 +218,7 @@ class HCard_User {
 				delete_user_meta( $user_id, 'relme' );
 			}
 		}
+		delete_transient( 'indieweb_mastodon' );
 	}
 
 	/**
@@ -230,7 +235,7 @@ class HCard_User {
 		}
 		// Rewrite these to https as needed
 		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com', 'github.com' ) );
-		if ( in_array( self::extract_domain_name( $url ), $secure, true ) ) {
+		if ( in_array( preg_replace( '/^www\./', '', wp_parse_url( $url, PHP_URL_HOST ) ), $secure, true ) ) {
 			$url = preg_replace( '/^http:/i', 'https:', $url );
 		}
 		$url = esc_url_raw( $url );
@@ -291,7 +296,7 @@ class HCard_User {
 			}
 			$relme = self::clean_urls( $relme );
 			foreach ( $relme as $url ) {
-				$list[ self::extract_domain_name( $url ) ] = $url;
+				$list[ preg_replace( '/^www\./', '', wp_parse_url( $url, PHP_URL_HOST ) ) ] = $url;
 			}
 		}
 		return array_unique( $list );
@@ -315,12 +320,8 @@ class HCard_User {
 		$author_name = get_the_author_meta( 'display_name', $author_id );
 		$r           = array();
 		foreach ( $list as $silo => $profile_url ) {
-			$name = Rel_Me_Domain_Icon_Map::url_to_name( $profile_url );
-			if ( in_array( $name, array( 'notice', 'website' ), true ) ) {
-				$title = Rel_Me_Domain_Icon_Map::extract_domain_name( $profile_url );
-			} else {
-				$title = Rel_Me_Domain_Icon_Map::get_title( $name );
-			}
+			$name       = Rel_Me_Domain_Icon_Map::url_to_name( $profile_url );
+			$title      = Rel_Me_Domain_Icon_Map::get_title( $name );
 			$r[ $silo ] = '<a ' . ( $include_rel ? 'rel="me" ' : '' ) . 'class="icon-' .
 				$silo . ' url u-url" href="' . esc_url( $profile_url ) . '" title="' . esc_attr( $author_name ) . ' @ ' .
 				esc_attr( $title ) . '"><span class="relmename">' . esc_attr( $silo ) . '</span>' . Rel_Me_Domain_Icon_Map::get_icon( $name ) . '</a>';

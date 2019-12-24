@@ -74,6 +74,35 @@ class Rel_Me_Domain_Icon_Map {
 		return $name;
 	}
 
+	public static function mastodon_url() {
+		$mastodon = get_transient( 'indieweb_mastodon' );
+		if ( false !== $mastodon ) {
+			return $mastodon;
+		}
+		$args    = array(
+			'number'      => 1,
+			'count_total' => false,
+			'meta_query'  => array(
+				array(
+					'key'     => 'mastodon',
+					'compare' => 'EXISTS',
+				),
+			),
+		);
+		$query   = new WP_User_Query( $args );
+		$results = $query->get_results();
+		if ( empty( $results ) ) {
+			$value = false;
+		} else {
+			$user  = $results[0];
+			$value = get_user_meta( $user->ID, 'mastodon', true );
+			if ( ! empty( $value ) && is_string( $value ) ) {
+				$value = wp_parse_url( $value, PHP_URL_HOST );
+			}
+		}
+		set_transient( 'indieweb_mastodon', $value );
+	}
+
 	public static function url_to_name( $url ) {
 		$scheme = wp_parse_url( $url, PHP_URL_SCHEME );
 		// The default if not an http link is to return notice
@@ -88,6 +117,8 @@ class Rel_Me_Domain_Icon_Map {
 			// If the domain is already on the pre-loaded list then use that
 			if ( array_key_exists( $domain, self::$map ) ) {
 				$return = self::$map[ $domain ];
+			} elseif ( self::mastodon_url() === $domain ) {
+				$return = 'mastodon';
 			} else {
 				// Remove extra info and try to map it to an icon
 				$strip = self::split_domain( $domain );
