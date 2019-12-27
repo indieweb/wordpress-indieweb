@@ -19,7 +19,7 @@
 				<li><?php _e( 'Links to your various sites will now appear on your site, allowing you to use Indieauth and other services. If you want them visible to site visitors, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
 			</ol>
 		</div>
-		<div class="indieweb-flex plugins">
+		<div class="indieweb-flex indieweb-plugins">
 			<h2><?php esc_html_e( 'Plugins', 'indieweb' ); ?></h2>
 
 			<p><?php _e( 'After you have established your identity, you can now log into the <a href="https://indieweb.org">IndieWeb wiki</a> and add a user page as a way of introducing yourself to the community. The wiki is also a great source of IndieWeb information', 'indieweb' ); ?></p>
