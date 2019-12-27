@@ -34,7 +34,7 @@
 			<p><a href="<?php echo admin_url( 'admin.php?page=indieweb-installer' ); ?>" class="button button-primary"><?php esc_html_e( 'Install Plugins', 'indieweb' ); ?></a></p>
 		</div>
 
-		<div class="indieweb-flex themes">
+		<div class="indieweb-flex indieweb-themes">
 			<h2><?php esc_html_e( 'Themes', 'indieweb' ); ?></h2>
 
 			<p><?php _e( 'The IndieWeb uses <a href="https://indieweb.org/microformats">microformats</a> 2 to mark up sites so that they can be interpreted by other sites when retrieved.', 'indieweb' ); ?></p>
