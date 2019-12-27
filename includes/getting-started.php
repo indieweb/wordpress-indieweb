@@ -19,6 +19,25 @@
 				<li><?php _e( 'Links to your various sites will now appear on your site, allowing you to use Indieauth and other services. If you want them visible to site visitors, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
 			</ol>
 		</div>
+
+		<div class="indieweb-flex what-is">
+			<h2><?php esc_html_e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
+
+			<p><?php _e( '<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.', 'indieweb' ); ?></p>
+			<p>
+				<?php
+				_e(
+					'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
+					href="https://indieweb.org/principles" target="_blank">principles</a> and <a
+					href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb'
+				);
+				?>
+			</p>
+
+			<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>
+			<p><?php _e( 'For assistance and to chat with community members, please visit <a href="https://indieweb.org/discuss" target="_blank">the discuss</a> page for more details.', 'indieweb' ); ?></p>
+		</div>
+
 		<div class="indieweb-flex indieweb-plugins">
 			<h2><?php esc_html_e( 'Plugins', 'indieweb' ); ?></h2>
 
@@ -54,24 +73,6 @@
 				);
 				?>
 			</p>
-		</div>
-
-		<div class="indieweb-flex what-is">
-			<h2><?php esc_html_e( 'What is the IndieWeb?', 'indieweb' ); ?></h2>
-
-			<p><?php _e( '<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos.', 'indieweb' ); ?></p>
-			<p>
-				<?php
-				_e(
-					'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
-					href="https://indieweb.org/principles" target="_blank">principles</a> and <a
-					href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb'
-				);
-				?>
-			</p>
-
-			<p><?php _e( 'For even more information, please visit the <a href="https://indieweb.org/" target="_blank"><em>IndieWeb</em> wiki</a>.', 'indieweb' ); ?></p>
-			<p><?php _e( 'For assistance and to chat with community members, please visit <a href="https://indieweb.org/discuss" target="_blank">the discuss</a> page for more details.', 'indieweb' ); ?></p>
 		</div>
 	</div>
 </div>
