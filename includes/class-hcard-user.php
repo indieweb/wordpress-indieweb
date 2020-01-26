@@ -203,7 +203,7 @@ class HCard_User {
 			'me',
 			array(
 				'get_callback' => function( $user, $attr, $request, $object_type ) {
-						return array_values( self::get_rel_me( $user['id'] ) );
+					return array_values( self::get_rel_me( $user['id'] ) );
 				},
 			)
 		);
