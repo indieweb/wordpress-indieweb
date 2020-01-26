@@ -19,6 +19,7 @@ class HCard_User {
 		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_filter( 'wp_head', array( 'HCard_User', 'pgp' ), 11 );
+		add_action( 'rest_api_init', array( 'HCard_User', 'rest_fields' ) );
 	}
 
 	/**
@@ -196,6 +197,26 @@ class HCard_User {
 		<?php
 	}
 
+	public static function rest_fields() {
+		register_rest_field(
+			'user',
+			'me',
+			array(
+				'get_callback' => function( $user, $attr, $request, $object_type ) {
+					return array_values( self::get_rel_me( $user['id'] ) );
+				},
+			)
+		);
+		register_rest_field(
+			'user',
+			'first_name',
+			array(
+				'get_callback' => function( $user, $attr, $request, $object_type ) {
+					return get_user_meta( $user['id'], 'first_name' );
+				},
+			)
+		);
+	}
 
 	public static function save_profile( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {

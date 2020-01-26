@@ -3,7 +3,7 @@ Contributors: pfefferle, indieweb, dshanske
 Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
-Requires PHP: 5.3
+Requires PHP: 5.6
 Tested up to: 5.3.2
 Stable tag: 3.4.2
 License: MIT
