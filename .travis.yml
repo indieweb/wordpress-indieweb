@@ -9,7 +9,7 @@ cache:
   directories:
     - vendor
     - $HOME/.composer/cache
-after_success: curl -L https://raw.githubusercontent.com/miya0001/travis2wpplugin/master/deploy.sh | bash
+after_success:
 env:
   matrix:
   - WP_VERSION=latest WP_MULTISITE=0
@@ -17,7 +17,6 @@ env:
   - WP_TRAVISCI=travis:phpunit
   - SVN_REPO: https://plugins.svn.wordpress.org/indieweb/
   - GH_REF: https://github.com/indieweb/wordpress-indieweb.git
-  - secure: "XQXCVlHyWGYEtJRwwmP3uIRML07en6LfZ0aW88PoHagLFp/HGIrNX4a2Xah09dAjsaKFUdiUawkk00ge0XGHADbB3n3F7XFshELKS6MFNOOngRiBWYD4aDF7mwZbZ1qab28wh4PCK0LndpfYI5ta+ltg/x9JFpwnELR1nfRFj/s="
 matrix:
   include:
   - php: 7.3
@@ -25,8 +24,6 @@ matrix:
   - php: 7.1
   - php: 7.0
   - php: 5.6
-  - php: 5.6
-    env: WP_PULUGIN_DEPLOY=1
 before_script:
 - |
   # Remove Xdebug for a huge performance increase:
