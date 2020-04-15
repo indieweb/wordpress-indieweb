@@ -6,6 +6,7 @@ class Rel_Me_Domain_Icon_Map {
 	// Common mappings and custom mappings
 	private static $map = array(
 		'twitter.com'         => 'twitter',
+		'blogspot.com'        => 'blogger',
 		'facebook.com'        => 'facebook',
 		'swarmapp.com'        => 'swarm',
 		'instagram.com'       => 'instagram',
