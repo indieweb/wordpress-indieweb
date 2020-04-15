@@ -11,15 +11,14 @@
   },
   "devDependencies": {
     "genericons-neue": "^4.0.5",
-    "grunt": "^1.0.4",
+    "grunt": "^1.1.0",
     "grunt-checktextdomain": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "^1.0.0",
     "grunt-execute": "^0.2.2",
     "grunt-sass": "^3.1.0",
-    "grunt-wp-i18n": "~1.0.3",
     "grunt-wp-readme-to-markdown": "~2.0.1",
-    "simple-icons": "^1.9.27"
+    "node-sass": "^4.13.1",
+    "simple-icons": "^2.9.0"
   },
   "license": "MIT",
   "bugs": {

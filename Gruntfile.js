@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
-  // Project configuration.
+const sass = require('node-sass');
+// Project configuration.
   grunt.initConfig({
     execute: {
       simpleicons: {
@@ -56,39 +57,28 @@ module.exports = function (grunt) {
         }
       }
     },
-    sass: {                              // Task
+    sass: { 
+      options: {
+        implementation: sass,
+	sourceMap: true,
+	outputStyle: 'compressed'
+      },
+      // Task
       dist: {                            // Target
-        options: {                       // Target options
-          style: 'compressed'
-        },
         files: {                         // Dictionary of files
           'static/css/indieweb.css': 'sass/main.scss',       // 'destination': 'source'
           'static/css/indieweb-bw.css': 'sass/main-bw.scss',
           'static/css/indieweb-admin.css': 'sass/main-admin.scss'
         }
       }
-    },
-
-    makepot: {
-      target: {
-        options: {
-          mainFile: 'indieweb.php',
-          domainPath: '/languages',
-          exclude: ['build/.*'],
-          potFilename: 'wordpress-indieweb.pot',
-          type: 'wp-plugin',
-          updateTimestamp: true
-        }
-      }
     }
-  });
+ });
 
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
-  grunt.loadNpmTasks('grunt-wp-i18n');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-execute');
   grunt.loadNpmTasks('grunt-contrib-copy');
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'makepot', 'execute', 'checktextdomain', 'copy' ]);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'copy', 'execute', 'checktextdomain', 'copy' ]);
 };
