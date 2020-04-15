@@ -139,7 +139,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 					<h2><?php echo esc_html( $api->name ); ?></h2>
 					<p><?php echo esc_html( $api->short_description ); ?></p>
 
-					<p class="plugin-author"><?php esc_html_e( 'By', 'indieweb' ); ?> <?php echo $api->author; ?></p>
+					<p class="plugin-author"><?php esc_html_e( 'By', 'indieweb' ); ?> <?php echo $api->author; // phpcs:ignore ?></p>
 				</div>
 				<ul class="activation-row">
 					<li>
@@ -177,8 +177,8 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				wp_die( esc_html( __( 'Sorry, you are not allowed to install plugins on this site.', 'indieweb' ) ) );
 			}
 
-			$nonce  = $_POST['nonce'];
-			$plugin = $_POST['plugin'];
+			$nonce  = $_POST['nonce']; // phpcs:ignore
+			$plugin = $_POST['plugin']; // phpcs:ignore
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
@@ -250,8 +250,8 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				wp_die( esc_html( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) ) );
 			}
 
-			$nonce  = $_POST['nonce'];
-			$plugin = $_POST['plugin'];
+			$nonce  = $_POST['nonce']; // phpcs:ignore
+			$plugin = $_POST['plugin']; // phpcs:ignore
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
@@ -330,7 +330,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				$slug = dirname( plugin_basename( $plugin_file ) );
 
 				if ( $slug ) {
-					if ( $slug == $plugin_slug ) {
+					if ( $slug === $plugin_slug ) {
 						return $plugin_file; // If $slug = $plugin_name
 					}
 				}
@@ -372,7 +372,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 		* @since 1.0
 		*/
 		public function enqueue_scripts() {
-			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ) );
+			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ), IndieWeb_Plugin::$version, true );
 			wp_localize_script(
 				'plugin-installer',
 				'cnkt_installer_localize',
@@ -386,7 +386,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				)
 			);
 
-			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css' );
+			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css', array(), IndieWeb_Plugin::$version );
 		}
 
 	}
