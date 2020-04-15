@@ -58,10 +58,10 @@ const sass = require('node-sass');
       }
     },
     sass: { 
-      options: {
-        implementation: sass,
-	sourceMap: true,
-	outputStyle: 'compressed'
+    	options: {
+		implementation: sass,
+		sourceMap: true,
+		outputStyle: 'compressed'
       },
       // Task
       dist: {                            // Target

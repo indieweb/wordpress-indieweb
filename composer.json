@@ -25,12 +25,12 @@
      "source": "https://github.com/indieweb/wordpress-indieweb"
   },
   "require-dev": {
-       "dealerdirect/phpcodesniffer-composer-installer": "^0.6",
-       	"squizlabs/php_codesniffer": "^2.2 || ^3.0.2",
-        "phpcompatibility/php-compatibility": "*",
-        "wp-coding-standards/wpcs": "*",
-        "phpcompatibility/phpcompatibility-wp": "*",
-        "php-parallel-lint/php-parallel-lint": "^1.2",
+  	"dealerdirect/phpcodesniffer-composer-installer": "^0.6",
+	"squizlabs/php_codesniffer": "^2.2 || ^3.0.2",
+	"phpcompatibility/php-compatibility": "*",
+	"wp-coding-standards/wpcs": "*",
+	"phpcompatibility/phpcompatibility-wp": "*",
+	"php-parallel-lint/php-parallel-lint": "^1.2",
 	"wp-cli/i18n-command": "^2.2",
 	"sebastian/phpcpd": "^5.0",
 	"phpunit/phpunit": "^7.0"
@@ -38,14 +38,14 @@
   "prefer-stable" : true,
   "scripts": {
     "test": [
-      "composer install",
-      "bin/install-wp-tests.sh wordpress wordpress wordpress",
-      "vendor/bin/phpunit"
+    	"composer install",
+	"bin/install-wp-tests.sh wordpress wordpress wordpress",
+	"vendor/bin/phpunit"
     ],
 
     "lint": [
-	"@lint:php",
-        "@phpcs",
+    	"@lint:php",
+	"@phpcs",
 	"@phpcpd"
      ],
     "install-codestandards": [
@@ -57,9 +57,9 @@
     "phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
     "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
     "post-update-cmd": [
-       "@phpcbf",
-       "@lint",
-       "@make-pot"
+	"@phpcbf",
+	"@lint",
+	"@make-pot"
     ]
 
     }
