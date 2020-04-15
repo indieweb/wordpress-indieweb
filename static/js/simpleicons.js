@@ -89,11 +89,8 @@ names += "<?php\n\nfunction simpleicons_iw_get_names() {\n\treturn array(";
 var maxNameLength = 0;
 
 for (var i = 0; i < source.icons.length; i++) {
-    var fileName = source.icons[i].title.toLowerCase();
-    fileName = fileName.replace(/[!|’|.| |-]/g, ''); // Replace bang, apostrophe, period and space with nothing.
-    fileName = fileName.replace(/[+]/, 'plus'); // Replace the plus symbol with “plus”.
-    fileName = fileName.replace(/[&]/, 'and'); // Replace the and symbol with “and”.
-
+    	var fileName = source.icons[i].title.toLowerCase();
+	fileName = fileName.replace(/\+/g, "plus").replace(/^\./, "dot-").replace(/\.$/, "-dot").replace(/\./g, "-dot-").replace(/^&/, "and-").replace(/&$/, "-and").replace(/&/g, "-and-").replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g, "a").replace(/ç|č|ć/g, "c").replace(/è|é|ê|ë/g, "e").replace(/ì|í|î|ï/g, "i").replace(/ñ|ň|ń/g, "n").replace(/ò|ó|ô|õ|ö/g, "o").replace(/š|ś/g, "s").replace(/ù|ú|û|ü/g, "u").replace(/ý|ÿ/g, "y").replace(/ž|ź/g, "z");
     if (fileName.length > maxNameLength) {
         maxNameLength = fileName.length;
     }
@@ -113,9 +110,7 @@ source.icons.sort(function(a, b) {
 
 for (var i = 0; i < source.icons.length; i++) {
     var fileName = source.icons[i].title.toLowerCase();
-    fileName = fileName.replace(/[!|’|.| |-]/g, ''); // Replace bang, apostrophe, period and space with nothing.
-    fileName = fileName.replace(/[+]/, 'plus'); // Replace the plus symbol with “plus”.
-    fileName = fileName.replace(/[&]/, 'and'); // Replace the and symbol with “and”.
+    fileName = fileName.replace(/\+/g, "plus").replace(/^\./, "dot-").replace(/\.$/, "-dot").replace(/\./g, "-dot-").replace(/^&/, "and-").replace(/&$/, "-and").replace(/&/g, "-and-").replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g, "a").replace(/ç|č|ć/g, "c").replace(/è|é|ê|ë/g, "e").replace(/ì|í|î|ï/g, "i").replace(/ñ|ň|ń/g, "n").replace(/ò|ó|ô|õ|ö/g, "o").replace(/š|ś/g, "s").replace(/ù|ú|û|ü/g, "u").replace(/ý|ÿ/g, "y").replace(/ž|ź/g, "z");
 
     spacing = "";
     if (fileName.length < maxNameLength) {
@@ -123,7 +118,7 @@ for (var i = 0; i < source.icons.length; i++) {
     }
 
     sass += "\n\t.svg-" + fileName.toLowerCase() + spacing + "{" + "\n\t\tcolor: #" + source.icons[i].hex.toUpperCase() + ";" + "\n\t}";
-    names += "\n\t\t'" + fileName.toLowerCase() + "'" + spacing + "=>" + spacing + "'" + source.icons[i].title + "',";
+    names += "\n\t\t'" + fileName.toLowerCase() + "'" + spacing + "=>" + spacing + "'" + source.icons[i].title.replace(/&amp;/g, "&").replace("'", /&apos;/g ) + "',";
 }
 sass += "\n}"
 names += "\n\t);\n}"

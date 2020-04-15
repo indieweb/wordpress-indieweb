@@ -2,7 +2,7 @@
   "name": "indiewordpress/wordpress-indieweb",
   "description": "IndieWeb for WordPress!",
   "require": {
-    "php": ">=5.2.0",
+    "php": ">=5.4.0",
     "composer/installers": "~1.0"
   },
   "extra": {
@@ -20,29 +20,47 @@
       "homepage": "https://david.shanske.com"
     }
   ],
-  "require-dev": {
-    "phpunit/phpunit": "5.5.*",
-    "phpcompatibility/phpcompatibility-wp": "^2.0",
-    "phpcompatibility/php-compatibility": "^9.0",
-    "wp-coding-standards/wpcs": "^1.2",
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0"
+  "support": {
+     "issues": "https://github.com/indieweb/wordpress-indieweb/issues",
+     "source": "https://github.com/indieweb/wordpress-indieweb"
   },
+  "require-dev": {
+  	"dealerdirect/phpcodesniffer-composer-installer": "^0.6",
+	"squizlabs/php_codesniffer": "^2.2 || ^3.0.2",
+	"phpcompatibility/php-compatibility": "*",
+	"wp-coding-standards/wpcs": "*",
+	"phpcompatibility/phpcompatibility-wp": "*",
+	"php-parallel-lint/php-parallel-lint": "^1.2",
+	"wp-cli/i18n-command": "^2.2",
+	"sebastian/phpcpd": "^5.0",
+	"phpunit/phpunit": "^7.0"
+  },
+  "prefer-stable" : true,
   "scripts": {
     "test": [
-      "composer install",
-      "bin/install-wp-tests.sh wordpress wordpress wordpress",
-      "vendor/bin/phpunit"
+    	"composer install",
+	"bin/install-wp-tests.sh wordpress wordpress wordpress",
+	"vendor/bin/phpunit"
     ],
-    "lint": "phpcs",
-	"install-codestandards": [
-		"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-    	],
-    "phpcbf": [
-	"phpcbf --standard=phpcs.xml"
-			        ],
-        "post-update-cmd": [
-		                "@phpcbf"
-				        ]
+
+    "lint": [
+    	"@lint:php",
+	"@phpcs",
+	"@phpcpd"
+     ],
+    "install-codestandards": [
+	"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+    ],
+    "make-pot": "./vendor/bin/wp i18n make-pot . languages/wordpress-indieweb.pot",
+    "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
+    "phpcs": "./vendor/bin/phpcs",
+    "phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
+    "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
+    "post-update-cmd": [
+	"@phpcbf",
+	"@lint",
+	"@make-pot"
+    ]
 
     }
 }
