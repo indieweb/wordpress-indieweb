@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
-**Tested up to:** 5.3.2  
-**Stable tag:** 3.4.2  
+**Tested up to:** 5.5  
+**Stable tag:** 3.4.3  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -81,6 +81,9 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.4.3 ###
+* Refresh dependencies
 
 ### 3.4.2 ###
 * Update domain to icon mapping functionality
