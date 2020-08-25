@@ -17,8 +17,8 @@
     "grunt-execute": "^0.2.2",
     "grunt-sass": "^3.1.0",
     "grunt-wp-readme-to-markdown": "~2.0.1",
-    "node-sass": "^4.13.1",
-    "simple-icons": "^2.9.0"
+    "node-sass": "^4.14.1",
+    "simple-icons": "^3.4.0"
   },
   "license": "MIT",
   "bugs": {

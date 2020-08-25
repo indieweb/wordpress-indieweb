@@ -16,7 +16,7 @@
 			<ol>
 				<li><?php _e( 'Complete your user profile, adding in connections to other websites. This allows you to connect your identity on those sites to your website.', 'indieweb' ); ?></li>
 				<li><?php _e( 'Under Options on the IndieWeb menu, in the sidebar, set whether this is a single author or multi-author site', 'indieweb' ); ?></li>
-				<li><?php _e( 'Links to your various sites will now appear on your site, allowing you to use Indieauth and other services. If you want them visible to site visitors, you can add the rel-me widget to your site.', 'indieweb' ); ?></li>
+				<li><?php _e( 'Links to your various sites will now appear on your site. If you want them visible to site visitors, you can add the Author Profile H-Card widget or the standalone Show My Profile on Other Sites widget to your site.', 'indieweb' ); ?></li>
 			</ol>
 		</div>
 
@@ -47,7 +47,7 @@
 
 			<ol>
 				<li><?php _e( 'Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other IndieWeb sites. You can configure it in the Webmention Settings', 'indieweb' ); ?></li>
-				<li><?php _e( 'Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub clients and the IndieAuth plugin adds an IndieAuth endpoint to allow authentication through your site. Without it, the Micropub plugin will use a third-party IndieAuth server to authenticate to your site.', 'indieweb' ); ?></li>
+				<li><?php _e( 'Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub clients and the IndieAuth plugin adds an IndieAuth endpoint to allow authentication through your site, which Micropub requires.', 'indieweb' ); ?></li>
 				<li><?php _e( 'Install and activate the Syndication Links plugin. This will allow you to display the external permalinks that your content published to, on site such as Twitter, Facebook, Flickr, LinkedIn, and others.', 'indieweb' ); ?></li>
 				<li><?php _e( 'Browse the Extensions page for a list of other recommended IndieWeb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 			</ol>

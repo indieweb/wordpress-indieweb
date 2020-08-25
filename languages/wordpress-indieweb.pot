@@ -1,18 +1,38 @@
-# Copyright (C) 2019 IndieWebCamp WordPress Outreach Club
+# Copyright (C) 2020 IndieWebCamp WordPress Outreach Club
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.4.2\n"
-"Report-Msgid-Bugs-To: "
-"https://wordpress.org/support/plugin/wordpress-indieweb\n"
-"POT-Creation-Date: 2019-12-24 02:28:04+00:00\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Project-Id-Version: IndieWeb 3.4.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-indieweb\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 1.0.3\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-08-16T01:20:48+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: indieweb\n"
+
+#. Plugin Name of the plugin
+msgid "IndieWeb"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://github.com/indieweb/wordpress-indieweb"
+msgstr ""
+
+#. Description of the plugin
+msgid "Interested in connecting your WordPress site to the IndieWeb?"
+msgstr ""
+
+#. Author of the plugin
+msgid "IndieWebCamp WordPress Outreach Club"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://indieweb.org/WordPress_Outreach_Club"
+msgstr ""
 
 #: includes/class-general-settings.php:14
 #: includes/class-general-settings.php:15
@@ -40,9 +60,7 @@ msgid "Identity Settings"
 msgstr ""
 
 #: includes/class-general-settings.php:91
-msgid ""
-"If this website represents a single individual or entity, check this. This "
-"setting is disabled if you only have one user who has made a post."
+msgid "If this website represents a single individual or entity, check this. This setting is disabled if you only have one user who has made a post."
 msgstr ""
 
 #: includes/class-general-settings.php:106
@@ -50,9 +68,7 @@ msgid "Use User Website URL for Author"
 msgstr ""
 
 #: includes/class-general-settings.php:112
-msgid ""
-"If checked, this will replace the author page URL with the website URL from "
-"your user profile."
+msgid "If checked, this will replace the author page URL with the website URL from your user profile."
 msgstr ""
 
 #: includes/class-general-settings.php:119
@@ -65,20 +81,15 @@ msgstr ""
 
 #: includes/class-general-settings.php:135
 msgid ""
-"Using rel=me on a link indicates the link represents the same person or "
-"entity as\n"
-"\t\t\t\tthe current page. On a site with a single author, links to other "
-"profiles from their user profile will\n"
-"\t\t\t\tappear on the homepage. On a site with multiple authors these links "
-"will appear on the author page only."
+"Using rel=me on a link indicates the link represents the same person or entity as\n"
+"\t\t\t\tthe current page. On a site with a single author, links to other profiles from their user profile will\n"
+"\t\t\t\tappear on the homepage. On a site with multiple authors these links will appear on the author page only."
 msgstr ""
 
 #: includes/class-general-settings.php:143
 msgid ""
-"The Default Author is the one whose that will be used on the home pages and "
-"archive pages.  If the single author setting is not set,\n"
-"\t\t\t\ton all other pages, the post author links will be used. To display "
-"the links, add the\n"
+"The Default Author is the one whose that will be used on the home pages and archive pages.  If the single author setting is not set,\n"
+"\t\t\t\ton all other pages, the post author links will be used. To display the links, add the\n"
 "\t\t\t\twidget, otherwise they will remain hidden. "
 msgstr ""
 
@@ -110,134 +121,133 @@ msgstr ""
 msgid "Show Rel-Me:"
 msgstr ""
 
-#: includes/class-hcard-user.php:53
+#: includes/class-hcard-user.php:54
 msgid "Github username"
 msgstr ""
 
-#: includes/class-hcard-user.php:57
+#: includes/class-hcard-user.php:58
 msgid "Twitter username (without @)"
 msgstr ""
 
-#: includes/class-hcard-user.php:61
+#: includes/class-hcard-user.php:62
 msgid "Facebook ID"
 msgstr ""
 
-#: includes/class-hcard-user.php:65
+#: includes/class-hcard-user.php:66
 msgid "Micro.blog username"
 msgstr ""
 
-#: includes/class-hcard-user.php:69
+#: includes/class-hcard-user.php:70
 msgid "Instagram username"
 msgstr ""
 
-#: includes/class-hcard-user.php:73
+#: includes/class-hcard-user.php:74
 msgid "Flickr username"
 msgstr ""
 
-#: includes/class-hcard-user.php:77
+#: includes/class-hcard-user.php:78
 msgid "Mastodon Server (URL)"
 msgstr ""
 
-#: includes/class-hcard-user.php:99
+#: includes/class-hcard-user.php:100
 msgid "Telephone"
 msgstr ""
 
-#: includes/class-hcard-user.php:100
+#: includes/class-hcard-user.php:101
 msgid "PGP Key (URL)"
 msgstr ""
 
-#: includes/class-hcard-user.php:107
+#: includes/class-hcard-user.php:108
 msgid "Street Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:108
+#: includes/class-hcard-user.php:109
 msgid "Street Number and Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:111
+#: includes/class-hcard-user.php:112
 msgid "Extended Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:112
+#: includes/class-hcard-user.php:113
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
-#: includes/class-hcard-user.php:115
+#: includes/class-hcard-user.php:116
 msgid "Locality"
 msgstr ""
 
-#: includes/class-hcard-user.php:116
+#: includes/class-hcard-user.php:117
 msgid "City/State/Village"
 msgstr ""
 
-#: includes/class-hcard-user.php:119
+#: includes/class-hcard-user.php:120
 msgid "Region"
 msgstr ""
 
-#: includes/class-hcard-user.php:120
+#: includes/class-hcard-user.php:121
 msgid "State/County/Province"
 msgstr ""
 
-#: includes/class-hcard-user.php:123
+#: includes/class-hcard-user.php:124
 msgid "Postal Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:124
+#: includes/class-hcard-user.php:125
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:127 includes/class-hcard-user.php:128
+#: includes/class-hcard-user.php:128
+#: includes/class-hcard-user.php:129
 msgid "Country Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:137
+#: includes/class-hcard-user.php:138
 msgid "Job Title"
 msgstr ""
 
-#: includes/class-hcard-user.php:138
+#: includes/class-hcard-user.php:139
 msgid "Title or Role"
 msgstr ""
 
-#: includes/class-hcard-user.php:141
+#: includes/class-hcard-user.php:142
 msgid "Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:142
+#: includes/class-hcard-user.php:143
 msgid "Affiliated Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:145
+#: includes/class-hcard-user.php:146
 msgid "Honorific Prefix"
 msgstr ""
 
-#: includes/class-hcard-user.php:146
+#: includes/class-hcard-user.php:147
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
-#: includes/class-hcard-user.php:153
+#: includes/class-hcard-user.php:154
 msgid "Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:154
+#: includes/class-hcard-user.php:155
 msgid "Fill in all fields you wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:161
+#: includes/class-hcard-user.php:162
 msgid "Additional Profile Information"
 msgstr ""
 
-#: includes/class-hcard-user.php:162
+#: includes/class-hcard-user.php:163
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:167
+#: includes/class-hcard-user.php:168
 msgid "Other Sites"
 msgstr ""
 
-#: includes/class-hcard-user.php:167
-msgid ""
-"Other profiles without their own field in your user profile (One URL per "
-"line)"
+#: includes/class-hcard-user.php:168
+msgid "Other profiles without their own field in your user profile (One URL per line)"
 msgstr ""
 
 #: includes/class-plugin-installer.php:55
@@ -285,170 +295,120 @@ msgid "Show My Profiles on Other Sites"
 msgstr ""
 
 #: includes/class-relme-widget.php:16
-msgid ""
-"Adds automatic rel-me URLs based on default author profile information. "
-"Rel=me links are links to your presence on other websites and visually "
-"appear like many social link widgets"
+msgid "Adds automatic rel-me URLs based on default author profile information. Rel=me links are links to your presence on other websites and visually appear like many social link widgets"
 msgstr ""
 
 #: includes/class-relme-widget.php:79
-msgid ""
-"Displays rel=me links which appear as icons with the logo of the site "
-"linked to when possible"
+msgid "Displays rel=me links which appear as icons with the logo of the site linked to when possible"
 msgstr ""
 
 #: includes/getting-started.php:3
 msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
-#: includes/getting-started.php:7 indieweb.php:131
+#: includes/getting-started.php:7
+#: indieweb.php:131
 msgid "Getting Started"
 msgstr ""
 
 #: includes/getting-started.php:11
-msgid ""
-"The IndieWeb Plugin can help you establish your identity online, as well as "
-"recommending other plugins to support additional IndieWeb features."
+msgid "The IndieWeb Plugin can help you establish your identity online, as well as recommend other plugins to support additional IndieWeb features."
 msgstr ""
 
 #: includes/getting-started.php:17
-msgid ""
-"Complete your user profile, adding in connections to other websites. This "
-"allows you to connect your identity on those sites to your website."
+msgid "Complete your user profile, adding in connections to other websites. This allows you to connect your identity on those sites to your website."
 msgstr ""
 
 #: includes/getting-started.php:18
-msgid ""
-"Under Options on the IndieWeb menu in the sidebar, set whether this is a "
-"single author or multi-author site"
+msgid "Under Options on the IndieWeb menu, in the sidebar, set whether this is a single author or multi-author site"
 msgstr ""
 
 #: includes/getting-started.php:19
-msgid ""
-"Links to your various sites will now appear on your site, allowing you to "
-"use Indieauth and other services. If you want them visible to site "
-"visitors, you can add the rel-me widget to your site."
+msgid "Links to your various sites will now appear on your site. If you want them visible to site visitors, you can add the Author Profile H-Card widget or the standalone Show My Profile on Other Sites widget to your site."
 msgstr ""
 
-#: includes/getting-started.php:23
-msgid "Plugins"
+#: includes/getting-started.php:24
+msgid "What is the IndieWeb?"
 msgstr ""
 
-#: includes/getting-started.php:25
-msgid ""
-"After you have established your identity, you can now log into the <a "
-"href=\"https://indieweb.org\">IndieWeb wiki</a> and add a user page as a "
-"way of introducing yourself to the community. The wiki is also a great "
-"source of IndieWeb information"
-msgstr ""
-
-#: includes/getting-started.php:28
-msgid ""
-"Install and activate the Webmentions and Semantic Linkbacks plugins. These "
-"will allow you to receive responses such as replies, likes, etc from other "
-"IndieWeb sites. You can configure it in the Discussion Settings"
+#: includes/getting-started.php:26
+msgid "<strong>Own your data.</strong> Create and publish content on your own site, and only optionally syndicate to third-party silos."
 msgstr ""
 
 #: includes/getting-started.php:29
 msgid ""
-"Install and activate the Micropub and IndieAuth plugins. The Micropub "
-"plugin will allow you to publish to your website using Micropub and the "
-"IndieAuth plugin adds an IndieAuth endpoint to allow it to authenticate to "
-"your site. Without it, the Micropub plugin will use a third-party IndieAuth "
-"server to authenticate to your site."
-msgstr ""
-
-#: includes/getting-started.php:30
-msgid ""
-"You can now install the Syndication Links plugin. It will add its settings "
-"options under IndieWeb and allow you to connect your blog to responses from "
-"sites such as Flickr, Twitter and Github."
-msgstr ""
-
-#: includes/getting-started.php:31
-msgid ""
-"Browse the Extensions page for a list of other recommended IndieWeb plugins "
-"that can expand your functionality."
-msgstr ""
-
-#: includes/getting-started.php:34
-msgid "Install Plugins"
-msgstr ""
-
-#: includes/getting-started.php:38
-msgid "Themes"
-msgstr ""
-
-#: includes/getting-started.php:40
-msgid ""
-"The IndieWeb uses <a "
-"href=\"https://indieweb.org/microformats\">microformats</a> 2 to mark up "
-"sites so that they can be interpreted by other sites when retrieved."
-msgstr ""
-
-#: includes/getting-started.php:41
-msgid ""
-"The Microformats 2 Plugin attempts to add microformats to a theme that does "
-"not support them. This is not a replacement for a correctly configured "
-"theme and does not work with all themes."
-msgstr ""
-
-#: includes/getting-started.php:42
-msgid ""
-"Formatting your site so other sites can consume the information allows for "
-"the communications IndieWeb sites support. Most tools will attempt to use "
-"means other than Microformats2 if they are not available, but will lack "
-"detail."
-msgstr ""
-
-#: includes/getting-started.php:46
-msgid ""
-"Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
-"\t\t\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress "
-"repository that is fully\n"
-"\t\t\t\t\tmicroformats2 compliant. <a "
-"href=\"http://wordpress.org/themes/independent-publisher/\"\n"
-"\t\t\t\t\ttarget=\"_blank\">Independent Publisher</a> has been updated to "
-"include basic microformats2 and\n"
-"\t\t\t\t\twebmention display support. In practice, most themes will work "
-"relatively well out of the box, though there can be some minor display "
-"issues. If you are interested in receiving help in converting your theme to "
-"support Microformats 2, the community will be <a "
-"href=\"https://indieweb.org/discuss\">happy to assist</a>."
-msgstr ""
-
-#: includes/getting-started.php:58
-msgid "What is the IndieWeb?"
-msgstr ""
-
-#: includes/getting-started.php:60
-msgid ""
-"<strong>Own your data.</strong> Create and publish content on your own "
-"site, and only optionally syndicate to third-party silos."
-msgstr ""
-
-#: includes/getting-started.php:63
-msgid ""
 "This is the basis of the <strong>IndieWeb</strong>. For more, see <a\n"
-"\t\t\t\t\thref=\"https://indieweb.org/principles\" "
-"target=\"_blank\">principles</a> and <a\n"
+"\t\t\t\t\thref=\"https://indieweb.org/principles\" target=\"_blank\">principles</a> and <a\n"
 "\t\t\t\t\thref=\"https://indieweb.org/why\" target=\"_blank\">why</a>."
 msgstr ""
 
-#: includes/getting-started.php:71
-msgid ""
-"For even more information, please visit the <a "
-"href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
+#: includes/getting-started.php:37
+msgid "For even more information, please visit the <a href=\"https://indieweb.org/\" target=\"_blank\"><em>IndieWeb</em> wiki</a>."
 msgstr ""
 
-#: includes/getting-started.php:72
-msgid ""
-"For assistance and to chat with community members, please visit <a "
-"href=\"https://indieweb.org/discuss\" target=\"_blank\">this page</a> for "
-"more details."
+#: includes/getting-started.php:38
+msgid "For assistance and to chat with community members, please visit <a href=\"https://indieweb.org/discuss\" target=\"_blank\">the discuss</a> page for more details."
 msgstr ""
 
-#: indieweb.php:115 indieweb.php:116
+#: includes/getting-started.php:42
+msgid "Plugins"
+msgstr ""
+
+#: includes/getting-started.php:44
+msgid "After you have established your identity, you can now optionally log into the <a href=\"https://indieweb.org\">IndieWeb wiki</a> and create a user page as a way of introducing yourself to the community. The wiki is also a great source of IndieWeb information"
+msgstr ""
+
+#: includes/getting-started.php:46
+msgid "To continue setting up and configuring your WordPress install to support IndieWeb features, you can start exploring the following optional plugins."
+msgstr ""
+
+#: includes/getting-started.php:49
+msgid "Install and activate the Webmentions and Semantic Linkbacks plugins. These will allow you to receive responses such as replies, likes, etc from other IndieWeb sites. You can configure it in the Webmention Settings"
+msgstr ""
+
+#: includes/getting-started.php:50
+msgid "Install and activate the Micropub and IndieAuth plugins. The Micropub plugin will allow you to publish to your website using Micropub clients and the IndieAuth plugin adds an IndieAuth endpoint to allow authentication through your site, which Micropub requires."
+msgstr ""
+
+#: includes/getting-started.php:51
+msgid "Install and activate the Syndication Links plugin. This will allow you to display the external permalinks that your content published to, on site such as Twitter, Facebook, Flickr, LinkedIn, and others."
+msgstr ""
+
+#: includes/getting-started.php:52
+msgid "Browse the Extensions page for a list of other recommended IndieWeb plugins that can expand your functionality."
+msgstr ""
+
+#: includes/getting-started.php:55
+msgid "Install plugins on the Extensions page."
+msgstr ""
+
+#: includes/getting-started.php:59
+msgid "Themes"
+msgstr ""
+
+#: includes/getting-started.php:61
+msgid "The IndieWeb uses <a href=\"https://indieweb.org/microformats\">microformats2</a> to mark up sites so that they can be interpreted by other sites when retrieved."
+msgstr ""
+
+#: includes/getting-started.php:62
+msgid "The Microformats2 Plugin attempts to add microformats to a theme that does not support them. This is not a replacement for a correctly configured theme and does not work with all themes."
+msgstr ""
+
+#: includes/getting-started.php:63
+msgid "Formatting your site so other sites can consume the information allows for the communications IndieWeb sites support. Most tools will attempt to use means other than Microformats2 if they are not available, but will lack detail."
+msgstr ""
+
+#: includes/getting-started.php:67
+msgid ""
+"Currently, <a href=\"https://wordpress.org/themes/sempress/\"\n"
+"\t\t\t\t\ttarget=\"_blank\">SemPress</a> is the only theme in the WordPress repository that is fully\n"
+"\t\t\t\t\tmicroformats2 compliant. <a href=\"http://wordpress.org/themes/independent-publisher/\"\n"
+"\t\t\t\t\ttarget=\"_blank\">Independent Publisher</a> has been updated to include basic microformats2 and\n"
+"\t\t\t\t\twebmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats2, the community will be <a href=\"https://indieweb.org/discuss\">happy to assist</a>."
+msgstr ""
+
+#: indieweb.php:115
+#: indieweb.php:116
 msgid "Extensions"
 msgstr ""
 
@@ -457,35 +417,11 @@ msgid "IndieWeb Plugin Installer"
 msgstr ""
 
 #: indieweb.php:144
-msgid ""
-"The below plugins are recommended to enable additional IndieWeb "
-"functionality."
+msgid "The below plugins are recommended to enable additional IndieWeb functionality."
 msgstr ""
 
 #: indieweb.php:193
 msgid ""
-"Users can optionally add additional information to their profile. As this "
-"is part of your user profile you have control of this information and can "
-"remove\n"
+"Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove\n"
 "\t\t\t\tit at your discretion."
-msgstr ""
-
-#. Plugin Name of the plugin/theme
-msgid "IndieWeb"
-msgstr ""
-
-#. Plugin URI of the plugin/theme
-msgid "https://github.com/indieweb/wordpress-indieweb"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Interested in connecting your WordPress site to the IndieWeb?"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "IndieWebCamp WordPress Outreach Club"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://indieweb.org/WordPress_Outreach_Club"
 msgstr ""
