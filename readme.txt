@@ -196,17 +196,14 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Internationalize additional strings
 
 = 3.0.6 =
-
 * Fix bug in single author display
 * Add constant INDIEWEB_ADD_HCARD_SUPPORT to disable hcard additions
 * Add constant INDIEWEB_ADD_RELME_SUPPORT to disable rel-me widget
 
 = 3.0.5 =
-
 * Textual improvements
 
 = 3.0.4 =
-
 * Hidden relme links will be active whenever the relme widget is not active
 * Changes in documentation
 
@@ -217,18 +214,15 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 * Disable hidden rel=me option due error
 
 = 3.0.2 =
-
 * WordPress coding style
 * Fixed indents
 
 = 3.0.1 =
-
 * General cleanups
 * Update TGM Plugin Activation to 2.6.1
 * SVG Icon Support
 
 = 3.0.0 =
-
 * The plugin now supports establishing your identity on the web with your site.
 * Extended User Profile
 * includes additional properties to be used to generate h-card
@@ -239,35 +233,29 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 
 = 2.2.0 =
-
 * Update to Version 2.5.0 of the TGM Plugins Activation which adds update capability
 * Now that Syndication Links has the functionality of WordPress Syndication remove as duplicative
 
 = 2.1.1 =
-
 * "Post Kinds" is now in the WordPress repository
 * "MicroPub" server plugin added
 * "Syndication Links" is now in the WordPress repository
 
 = 2.1.0 =
-
 * added "syndication-links", "indieauth" and "wordpress-syndication plugins
 * expanded IndieWeb Page with description of plugins
 * second contributor
 * fixed some small bugs
 
 = 2.0.0 =
-
 * plugins are not bundled any more
 
 = 1.1.0 =
-
 * updated webmention and semantic-linkbacks plugins
 * added hum (url shortener)
 
 = 1.0.0 =
-
-initial release
+* initial release
 
 == Installation ==
 
