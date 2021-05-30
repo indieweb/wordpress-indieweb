@@ -26,14 +26,14 @@
   },
   "require-dev": {
   	"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-	"squizlabs/php_codesniffer": "^2.2 || ^3.5",
+	"squizlabs/php_codesniffer": "^2.2 || ^3.6",
 	"phpcompatibility/php-compatibility": "*",
 	"wp-coding-standards/wpcs": "*",
 	"phpcompatibility/phpcompatibility-wp": "*",
 	"php-parallel-lint/php-parallel-lint": "^1.2",
 	"wp-cli/i18n-command": "^2.2",
-	"sebastian/phpcpd": "^5.0",
-	"phpunit/phpunit": "^5.0 || ^7.0"
+        "sebastian/phpcpd": "^3.0 || ^5.0 || ^6.0",
+        "phpunit/phpunit": "^5.0 || ^6.0 || ^7.5"
   },
   "prefer-stable" : true,
   "scripts": {
