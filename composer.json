@@ -42,19 +42,16 @@
 	"bin/install-wp-tests.sh wordpress wordpress wordpress",
 	"vendor/bin/phpunit"
     ],
-
-    "lint": [
-    	"@lint:php",
-	"@phpcs",
-	"@phpcpd"
-     ],
     "install-codestandards": [
 	"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
     ],
+    "lint":  "./vendor/bin/phpcs -n -q",
+    "setup-local-tests": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
     "make-pot": "./vendor/bin/wp i18n make-pot . languages/wordpress-indieweb.pot",
     "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
     "phpcs": "./vendor/bin/phpcs",
     "phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
+    "phpunit": "./vendor/bin/phpunit",
     "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
     "post-update-cmd": [
 	"@phpcbf",
