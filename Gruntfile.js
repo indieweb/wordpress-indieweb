@@ -1,5 +1,4 @@
 module.exports = function (grunt) {
-const sass = require('node-sass');
 // Project configuration.
   grunt.initConfig({
     execute: {
@@ -57,25 +56,23 @@ const sass = require('node-sass');
         }
       }
     },
-    sass: { 
-    	options: {
-		implementation: sass,
-		sourceMap: true,
-		outputStyle: 'compressed'
-      },
-      // Task
-      dist: {                            // Target
-        files: {                         // Dictionary of files
-          'static/css/indieweb.css': 'sass/main.scss',       // 'destination': 'source'
-          'static/css/indieweb-bw.css': 'sass/main-bw.scss',
-          'static/css/indieweb-admin.css': 'sass/main-admin.scss'
-        }
-      }
-    }
+	sass                 : { // Task.
+				dist: { // Target.
+					options: { // Target options.
+						style: 'compressed'
+					},
+					files  : { // Dictionary of files.
+
+          					'static/css/indieweb.css': 'sass/main.scss',       // 'destination': 'source'
+					        'static/css/indieweb-bw.css': 'sass/main-bw.scss',
+					        'static/css/indieweb-admin.css': 'sass/main-admin.scss'
+					}
+				}
+			}
  });
 
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-checktextdomain');
   grunt.loadNpmTasks('grunt-execute');
   grunt.loadNpmTasks('grunt-contrib-copy');
