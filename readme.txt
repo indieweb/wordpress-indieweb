@@ -4,7 +4,7 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 5.7.2
+Tested up to: 5.8
 Stable tag: 3.4.5
 License: MIT
 License URI: http://opensource.org/licenses/MIT
