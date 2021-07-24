@@ -33,7 +33,7 @@
 	"php-parallel-lint/php-parallel-lint": "^1.2",
 	"wp-cli/i18n-command": "^2.2",
 	"sebastian/phpcpd": "^5.0",
-	"phpunit/phpunit": "^5.0 || ^7.0"
+	"phpunit/phpunit": "^9.1.5"
   },
   "prefer-stable" : true,
   "scripts": {
