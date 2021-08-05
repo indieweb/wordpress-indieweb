@@ -3,37 +3,27 @@
 		fill: currentColor;
 		vertical-align: middle;
 		top: -0.0625em;
-		:hover {
-			filter: brightness(50%);
-		}
 	}
 }
 
-
 .relme ul{
 	li {
+		:hover {
+			text-decoration: none;
+ 			cursor: pointer;
+			filter: brightness(120%);
+		}
   		display: inline-block;
 		padding-right: 3px;
 		svg {
-			height: 32px;
-			width: 32px;
+			height: 2em;
+			width: 2em;
 		}
   		a {
    			text-decoration: none;
-				color: black;
-				.relmename {
-					display: none;
-				}
-		}
-		a:hover {
-			text-decoration: none;
-  			cursor: pointer;
-			svg {
-				color: grey;
+			.relmename {
+				display: none;
 			}
-	  	}
-		a:visited {
-			color: black;
 		}
   	}
 	display: inline-block;
