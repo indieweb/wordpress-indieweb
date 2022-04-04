@@ -17,7 +17,7 @@
     "grunt-contrib-sass": "^2.0.0",
     "grunt-execute": "^0.2.2",
     "grunt-wp-readme-to-markdown": "~2.0.1",
-    "simple-icons": "^5.8.1"
+    "simple-icons": "^6.17.0"
   },
   "license": "MIT",
   "bugs": {
