@@ -1,11 +1,11 @@
 <div class="hcard-display h-card vcard p-author">
 	<div class="hcard-header">
 		<?php if ( ! $avatar ) { ?>
-			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>" rel="author">
+			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>"rel="author">
 				<p class="hcard-name p-name n"><?php echo $name; ?></p>
 			</a>
 		<?php } else { ?>
-			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>" rel="author"><?php echo $avatar; ?></a>
+			<a class="u-url url fn u-uid" href=" <?php echo esc_url( $url ); ?>" rel= "author"><?php echo $avatar; ?></a>
 				<p class="hcard-name p-name n"><?php echo $name; ?></p>
 		<?php }
 		if ( $args['email'] ) { ?>
@@ -42,5 +42,6 @@
 			<p class="p-note note"><?php echo $user->get( 'description' ); ?></p>
 		<?php } ?>
 	</div> <!-- end hcard-body -->
-</div><!-- end hcard-display -->
+</div>
+<!-- end hcard-display -->
 <?php
