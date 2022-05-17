@@ -81,6 +81,7 @@ function readFile(path, callback) {
     }
 }
 
+
 var sass = "// Brand colors from simpleicons.org\n";
 var names = "";
 var textdomain = "indieweb";
@@ -90,7 +91,7 @@ var maxNameLength = 0;
 
 for (var i = 0; i < source.icons.length; i++) {
     	var fileName = source.icons[i].title.toLowerCase();
-	fileName = fileName.replace(/\+/g, "plus").replace(/^\./, "dot-").replace(/\.$/, "-dot").replace(/\./g, "-dot-").replace(/^&/, "and-").replace(/&$/, "-and").replace(/&/g, "-and-").replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g, "a").replace(/ç|č|ć/g, "c").replace(/è|é|ê|ë/g, "e").replace(/ì|í|î|ï/g, "i").replace(/ñ|ň|ń/g, "n").replace(/ò|ó|ô|õ|ö/g, "o").replace(/š|ś/g, "s").replace(/ù|ú|û|ü/g, "u").replace(/ý|ÿ/g, "y").replace(/ž|ź/g, "z");
+	fileName = fileName.replace(/\+/g, "plus").replace(/\./g, "dot").replace(/&/g, "and").replace(/đ/g, "d").replace(/ħ/g, "h").replace(/ı/g, "i").replace(/ĸ/g, "k").replace(/ŀ/g, "l").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ŧ/g, "t").normalize("NFD").replace(/[^a-z0-9]/g, "");
     if (fileName.length > maxNameLength) {
         maxNameLength = fileName.length;
     }
@@ -110,8 +111,7 @@ source.icons.sort(function(a, b) {
 
 for (var i = 0; i < source.icons.length; i++) {
     var fileName = source.icons[i].title.toLowerCase();
-    fileName = fileName.replace(/\+/g, "plus").replace(/^\./, "dot-").replace(/\.$/, "-dot").replace(/\./g, "-dot-").replace(/^&/, "and-").replace(/&$/, "-and").replace(/&/g, "-and-").replace(/[ !:’']/g, "").replace(/à|á|â|ã|ä/g, "a").replace(/ç|č|ć/g, "c").replace(/è|é|ê|ë/g, "e").replace(/ì|í|î|ï/g, "i").replace(/ñ|ň|ń/g, "n").replace(/ò|ó|ô|õ|ö/g, "o").replace(/š|ś/g, "s").replace(/ù|ú|û|ü/g, "u").replace(/ý|ÿ/g, "y").replace(/ž|ź/g, "z");
-
+	fileName = fileName.replace(/\+/g, "plus").replace(/\./g, "dot").replace(/&/g, "and").replace(/đ/g, "d").replace(/ħ/g, "h").replace(/ı/g, "i").replace(/ĸ/g, "k").replace(/ŀ/g, "l").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ŧ/g, "t").normalize("NFD").replace(/[^a-z0-9]/g, "");
     spacing = "";
     if (fileName.length < maxNameLength) {
         spacing = " ".repeat(maxNameLength - fileName.length);

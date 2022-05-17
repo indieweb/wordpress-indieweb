@@ -2,7 +2,7 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.4.4\n"
+"Project-Id-Version: IndieWeb 3.4.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-indieweb\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: indieweb\n"
-
+ 
 #. Plugin Name of the plugin
 msgid "IndieWeb"
 msgstr ""
