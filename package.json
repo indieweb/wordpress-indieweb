@@ -15,9 +15,8 @@
     "grunt-checktextdomain": "^1.0.1",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sass": "^2.0.0",
-    "grunt-execute": "^0.2.2",
     "grunt-wp-readme-to-markdown": "~2.1.0",
-    "simple-icons": "^5.8.1"
+    "simple-icons": "^6.21.0"
   },
   "license": "MIT",
   "bugs": {
@@ -27,5 +26,8 @@
   "keywords": [
     "indieweb",
     "wordpress"
-  ]
+  ],
+  "scripts": {
+    "build-icons": "node static/js/simpleicons.js"
+  }
 }

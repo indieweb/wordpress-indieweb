@@ -2,7 +2,7 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 3.4.6\n"
+"Project-Id-Version: IndieWeb 3.4.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-indieweb\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

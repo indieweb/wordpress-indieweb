@@ -1,16 +1,16 @@
-<div class="hcard-display h-card vcard p-author">
+<div class="hcard-display h-card vcard u-author">
 	<div class="hcard-header">
 		<?php if ( ! $avatar ) { ?>
-			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>"rel="author">
+			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>">
 				<p class="hcard-name p-name n"><?php echo $name; ?></p>
 			</a>
 		<?php } else { ?>
-			<a class="u-url url fn u-uid" href=" <?php echo esc_url( $url ); ?>" rel= "author"><?php echo $avatar; ?></a>
+			<a class="u-url url fn u-uid" href="<?php echo esc_url( $url ); ?>"><?php echo $avatar; ?></a>
 				<p class="hcard-name p-name n"><?php echo $name; ?></p>
 		<?php }
 		if ( $args['email'] ) { ?>
 			<p>
-				<a class="u-email" rel="me" href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+				<a class="u-email" href="mailto:<?php echo $email; ?>" <?php echo is_front_page() ? 'rel="me"' : ''; ?>><?php echo $email; ?></a>
 			</p>
 		<?php } ?>
 	</div> <!-- end hcard-header -->

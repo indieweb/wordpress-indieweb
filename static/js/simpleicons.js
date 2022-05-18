@@ -1,3 +1,39 @@
+const TITLE_TO_SLUG_REPLACEMENTS = {
+  '+': 'plus',
+  '.': 'dot',
+  '&': 'and',
+  đ: 'd',
+  ħ: 'h',
+  ı: 'i',
+  ĸ: 'k',
+  ŀ: 'l',
+  ł: 'l',
+  ß: 'ss',
+  ŧ: 't',
+};
+
+const TITLE_TO_SLUG_CHARS_REGEX = RegExp(
+  `[${Object.keys(TITLE_TO_SLUG_REPLACEMENTS).join('')}]`,
+  'g',
+);
+
+const TITLE_TO_SLUG_RANGE_REGEX = /[^a-z0-9]/g;
+
+/**
+ * Converts a brand title into a slug/filename.
+ * @param {String} title The title to convert
+ */
+const titleToSlug = (title) =>
+  title
+    .toLowerCase()
+    .replace(
+      TITLE_TO_SLUG_CHARS_REGEX,
+      (char) => TITLE_TO_SLUG_REPLACEMENTS[char],
+    )
+    .normalize('NFD')
+    .replace(TITLE_TO_SLUG_RANGE_REGEX, '');
+
+
 // Generate SASS file from Simple Icons json data
 // Get JSON from source file
 var source = require('../../node_modules/simple-icons/_data/simple-icons.json');
@@ -90,8 +126,7 @@ names += "<?php\n\nfunction simpleicons_iw_get_names() {\n\treturn array(";
 var maxNameLength = 0;
 
 for (var i = 0; i < source.icons.length; i++) {
-    	var fileName = source.icons[i].title.toLowerCase();
-	fileName = fileName.replace(/\+/g, "plus").replace(/\./g, "dot").replace(/&/g, "and").replace(/đ/g, "d").replace(/ħ/g, "h").replace(/ı/g, "i").replace(/ĸ/g, "k").replace(/ŀ/g, "l").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ŧ/g, "t").normalize("NFD").replace(/[^a-z0-9]/g, "");
+    var fileName = titleToSlug( source.icons[i].title.toLowerCase() );
     if (fileName.length > maxNameLength) {
         maxNameLength = fileName.length;
     }
@@ -110,9 +145,7 @@ source.icons.sort(function(a, b) {
 });
 
 for (var i = 0; i < source.icons.length; i++) {
-    var fileName = source.icons[i].title.toLowerCase();
-	fileName = fileName.replace(/\+/g, "plus").replace(/\./g, "dot").replace(/&/g, "and").replace(/đ/g, "d").replace(/ħ/g, "h").replace(/ı/g, "i").replace(/ĸ/g, "k").replace(/ŀ/g, "l").replace(/ł/g, "l").replace(/ß/g, "ss").replace(/ŧ/g, "t").normalize("NFD").replace(/[^a-z0-9]/g, "");
-    spacing = "";
+    var fileName = titleToSlug( source.icons[i].title.toLowerCase() );
     if (fileName.length < maxNameLength) {
         spacing = " ".repeat(maxNameLength - fileName.length);
     }

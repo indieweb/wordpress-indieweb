@@ -1,11 +1,11 @@
 # IndieWeb #
-**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle), [indieweb](https://profiles.wordpress.org/indieweb), [dshanske](https://profiles.wordpress.org/dshanske)  
+**Contributors:** [pfefferle](https://profiles.wordpress.org/pfefferle/), [indieweb](https://profiles.wordpress.org/indieweb/), [dshanske](https://profiles.wordpress.org/dshanske/)  
 **Donate link:** https://indieweb.org/how-to-sponsor  
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
-**Tested up to:** 5.8  
-**Stable tag:** 3.4.6  
+**Tested up to:** 6.0  
+**Stable tag:** 3.4.7  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -81,6 +81,11 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 3.4.7 ###
+* Update dependencies
+* Refresh icons
+* Fix h-card markup issue
 
 ### 3.4.6 ###
 * Refresh icons

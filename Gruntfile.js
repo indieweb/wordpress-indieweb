@@ -74,8 +74,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-wp-readme-to-markdown');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-checktextdomain');
-  grunt.loadNpmTasks('grunt-execute');
   grunt.loadNpmTasks('grunt-contrib-copy');
   // Default task(s).
-  grunt.registerTask('default', ['wp_readme_to_markdown', 'copy', 'execute', 'checktextdomain', 'copy' ]);
+  grunt.registerTask('default', ['wp_readme_to_markdown', 'copy', 'checktextdomain', 'copy' ]);
 };
