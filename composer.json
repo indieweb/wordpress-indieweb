@@ -25,15 +25,16 @@
      "source": "https://github.com/indieweb/wordpress-indieweb"
   },
   "require-dev": {
-  	"dealerdirect/phpcodesniffer-composer-installer": "^0.7",
-	"squizlabs/php_codesniffer": "^2.2 || ^3.5",
+  	"dealerdirect/phpcodesniffer-composer-installer": "*",
+	"squizlabs/php_codesniffer": "*",
 	"phpcompatibility/php-compatibility": "*",
 	"wp-coding-standards/wpcs": "*",
 	"phpcompatibility/phpcompatibility-wp": "*",
 	"php-parallel-lint/php-parallel-lint": "^1.2",
 	"wp-cli/i18n-command": "^2.2",
-	"sebastian/phpcpd": "^5.0",
-	"phpunit/phpunit": "^5.0 || ^7.0"
+	"sebastian/phpcpd": "^3.0 || ^5.0 || ^6.0",
+	"phpunit/phpunit": "^5.7.21 || ^6.0 || ^7.5",
+	"yoast/phpunit-polyfills": "^1.0"
   },
   "prefer-stable" : true,
   "scripts": {
@@ -42,19 +43,16 @@
 	"bin/install-wp-tests.sh wordpress wordpress wordpress",
 	"vendor/bin/phpunit"
     ],
-
-    "lint": [
-    	"@lint:php",
-	"@phpcs",
-	"@phpcpd"
-     ],
     "install-codestandards": [
 	"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
     ],
+    "lint":  "./vendor/bin/phpcs -n -q",
+    "setup-local-tests": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
     "make-pot": "./vendor/bin/wp i18n make-pot . languages/wordpress-indieweb.pot",
     "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
     "phpcs": "./vendor/bin/phpcs",
     "phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
+    "phpunit": "./vendor/bin/phpunit",
     "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
     "post-update-cmd": [
 	"@phpcbf",
