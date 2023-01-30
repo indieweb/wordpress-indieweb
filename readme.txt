@@ -4,8 +4,8 @@ Donate link: https://indieweb.org/how-to-sponsor
 Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 6.0
-Stable tag: 3.4.7
+Tested up to: 6.1
+Stable tag: 4.0.0
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -23,7 +23,6 @@ Some of these plugins allow you to:
 * allow comments on others' sites to show up as comments on your posts
 * help make IndieWeb comments and mentions look better on your site
 * allow support for webmentions
-* provide basic support for [Microformats 2](http://microformats.org/wiki/microformats2)
 * add location support to your posts
 * more easily syndicate your content to other sites to take advantage of network effects and other communities while still owning all of your original content
 * link to syndicated versions of a post so that comments on your content in silos like Facebook, Twitter, Instagram can come back to your original post as comments there
@@ -69,18 +68,22 @@ If you think we missed a plugin reference, please file an issue on [Github](http
 One could certainly download, install, and activate some or all of these plugins separately, picking and choosing features as needed, but it is much quicker and easier to utilize the interface provided by this IndieWeb plugin to install and activate them.
 
 * Webmention (Required) - allows you to send and receive by adding webmention support to WordPress. Mentions show up as comments on your site.
-* Semantic Linkbacks (Required) - turns webmentions into richer responses, such as replies/likes/RSVP etc.
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Automatically adds syndication links from a supported syndication plugin or by manual entry in the post editor. Support for NextScripts: Social Networks Auto-Poster (aka SNAP), the Medium plugin, and a few others.
 * MicroPub - A MicroPub Server for publishing posts using third-party Micropub clients
 * IndieAuth - Adds an IndieAuth endpoint to WordPress. Alternatively, if you do not want to enable this, you can use a third-party endpoint to login to the WordPress backend via IndieAuth.
-* Microformats 2 - provides basic mf2 support for any WordPress theme that does not support mf2 already. Note, due to inability to access every element via a filter or action, an [IndieWeb theme](http://indieweb.org/WordPress/Themes) is recommended.
 * Simple Location - adds basic location and weather support to WordPress posts
 
 
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 4.0.0 =
+* Remove Semantic Linkbacks recommendation
+* Remove Microformats2 recommendation
+* Update dependencies
+* Refresh icons
 
 = 3.4.7 =
 * Update dependencies
