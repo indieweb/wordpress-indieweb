@@ -2,14 +2,14 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 4.0.0\n"
+"Project-Id-Version: IndieWeb 4.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-indieweb\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-06-07T01:17:54+00:00\n"
+"POT-Creation-Date: 2023-06-07T01:28:12+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: indieweb\n"
@@ -307,7 +307,7 @@ msgid "IndieWebify your WordPress-Blog"
 msgstr ""
 
 #: includes/getting-started.php:7
-#: indieweb.php:131
+#: indieweb.php:132
 msgid "Getting Started"
 msgstr ""
 
@@ -407,20 +407,20 @@ msgid ""
 "\t\t\t\t\twebmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats2, the community will be <a href=\"https://indieweb.org/discuss\">happy to assist</a>."
 msgstr ""
 
-#: indieweb.php:115
 #: indieweb.php:116
+#: indieweb.php:117
 msgid "Extensions"
 msgstr ""
 
-#: indieweb.php:143
+#: indieweb.php:144
 msgid "IndieWeb Plugin Installer"
 msgstr ""
 
-#: indieweb.php:144
+#: indieweb.php:145
 msgid "The below plugins are recommended to enable additional IndieWeb functionality."
 msgstr ""
 
-#: indieweb.php:187
+#: indieweb.php:188
 msgid ""
 "Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove\n"
 "\t\t\t\tit at your discretion."
