@@ -161,6 +161,4 @@ class Rel_Me_Domain_Icon_Map {
 		$return               = apply_filters( 'indieweb_links_url_to_name', $return, $url );
 		return $return;
 	}
-
 }
-

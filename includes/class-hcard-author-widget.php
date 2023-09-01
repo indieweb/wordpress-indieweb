@@ -19,7 +19,6 @@ class HCard_Author_Widget extends WP_Widget {
 				'description' => __( 'A widget that allows you to display author profile marked up as an h-card', 'indieweb' ),
 			)
 		);
-
 	} // end constructor
 
 	/**
@@ -33,13 +32,11 @@ class HCard_Author_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		if ( 1 === (int) get_option( 'iw_single_author' ) ) {
 			$display_author = get_option( 'iw_default_author' );
-		} else {
-			if ( is_single() ) {
+		} elseif ( is_single() ) {
 				global $wp_query;
 				$display_author = $wp_query->post->post_author;
-			} else {
-				return;
-			}
+		} else {
+			return;
 		}
 
 		$user_info = get_userdata( $display_author );
