@@ -1,5 +1,5 @@
 name: Unit Testing
-on: 
+on:
     push:
     pull_request:
 jobs:
@@ -15,7 +15,7 @@ jobs:
        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     strategy:
       matrix:
-        php-versions: ['5.6', '7.2', '7.3', '7.4', '8.0']
+        php-versions: ['7.0', '7.2', '7.3', '7.4', '8.0']
     steps:
       - name: Checkout
         uses: actions/checkout@v3
