@@ -202,7 +202,7 @@ class HCard_User {
 			'user',
 			'me',
 			array(
-				'get_callback' => function( $user, $attr, $request, $object_type ) {
+				'get_callback' => function ( $user, $attr, $request, $object_type ) {
 					return array_values( self::get_rel_me( $user['id'] ) );
 				},
 			)
@@ -211,7 +211,7 @@ class HCard_User {
 			'user',
 			'first_name',
 			array(
-				'get_callback' => function( $user, $attr, $request, $object_type ) {
+				'get_callback' => function ( $user, $attr, $request, $object_type ) {
 					return get_user_meta( $user['id'], 'first_name' );
 				},
 			)
@@ -432,7 +432,7 @@ class HCard_User {
 	 */
 	public static function get_template_file( $file_name ) {
 		$theme_template_file = locate_template( 'templates/' . $file_name );
-		return $theme_template_file ? $theme_template_file : dirname( __FILE__ ) . '/../templates/' . $file_name;
+		return $theme_template_file ? $theme_template_file : __DIR__ . '/../templates/' . $file_name;
 	}
 
 	public static function hcard( $user, $args = array() ) {

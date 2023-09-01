@@ -65,7 +65,6 @@ class IndieWeb_General_Settings {
 				'default'      => 0,
 			)
 		);
-
 	}
 
 	public static function admin_settings() {
@@ -126,7 +125,6 @@ class IndieWeb_General_Settings {
 				'disabled'    => false,
 			)
 		);
-
 	}
 
 

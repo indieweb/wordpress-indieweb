@@ -36,20 +36,20 @@ class IndieWeb_Plugin {
 		// enable translation
 		self::enable_translation();
 
-		require_once dirname( __FILE__ ) . '/includes/class-plugin-installer.php';
+		require_once __DIR__ . '/includes/class-plugin-installer.php';
 
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 			// Require H-Card Enhancements to User Profile
 
-			require_once dirname( __FILE__ ) . '/includes/class-relme-domain-icon-map.php';
-			require_once dirname( __FILE__ ) . '/includes/class-hcard-user.php';
-			require_once dirname( __FILE__ ) . '/includes/class-hcard-author-widget.php';
+			require_once __DIR__ . '/includes/class-relme-domain-icon-map.php';
+			require_once __DIR__ . '/includes/class-hcard-user.php';
+			require_once __DIR__ . '/includes/class-hcard-author-widget.php';
 
 		}
 
 		if ( INDIEWEB_ADD_RELME_SUPPORT ) {
 			// Require Rel Me Widget Class
-			require_once dirname( __FILE__ ) . '/includes/class-relme-widget.php';
+			require_once __DIR__ . '/includes/class-relme-widget.php';
 		}
 
 		add_action( 'wp_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_style' ) );
@@ -57,10 +57,10 @@ class IndieWeb_Plugin {
 		add_action( 'admin_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_admin_style' ) );
 
 		// Add General Settings Page
-		require_once dirname( __FILE__ ) . '/includes/class-general-settings.php';
+		require_once __DIR__ . '/includes/class-general-settings.php';
 
 		// Add third party integrations
-		require_once dirname( __FILE__ ) . '/includes/class-integrations.php';
+		require_once __DIR__ . '/includes/class-integrations.php';
 
 		// add menu
 		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'add_menu_item' ), 9 );
@@ -137,7 +137,7 @@ class IndieWeb_Plugin {
 	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
 	 */
 	public static function getting_started() {
-		require_once dirname( __FILE__ ) . '/includes/getting-started.php';
+		require_once __DIR__ . '/includes/getting-started.php';
 	}
 
 	public static function plugin_installer() {

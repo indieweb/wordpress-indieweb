@@ -27,7 +27,6 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) ); // Enqueue scripts and Localize
 			add_action( 'wp_ajax_cnkt_plugin_installer', array( &$this, 'cnkt_plugin_installer' ) ); // Install plugin
 			add_action( 'wp_ajax_cnkt_plugin_activation', array( &$this, 'cnkt_plugin_activation' ) ); // Activate plugin
-
 		}
 
 
@@ -231,7 +230,6 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 			);
 
 			wp_send_json( $json );
-
 		}
 
 
@@ -303,7 +301,6 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 			);
 
 			wp_send_json( $json );
-
 		}
 
 
@@ -388,7 +385,6 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 			wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css', array(), IndieWeb_Plugin::$version );
 		}
-
 	}
 
 
