@@ -6,6 +6,7 @@ function indieweb_register_hcard() {
 	register_widget( 'HCard_Author_Widget' );
 }
 
+// phpcs:ignore Universal.Files.SeparateFunctionsFromOO.Mixed
 class HCard_Author_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
