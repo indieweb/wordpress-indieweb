@@ -1929,7 +1929,6 @@ function simpleicons_iw_get_names() {
 		'spreadshirt'                  => 'Spreadshirt',
 		'spreaker'                     => 'Spreaker',
 		'spring'                       => 'Spring',
-		'spring'                       => 'Spring',
 		'springboot'                   => 'Spring Boot',
 		'springsecurity'               => 'Spring Security',
 		'spyderide'                    => 'Spyder IDE',
