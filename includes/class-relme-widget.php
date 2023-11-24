@@ -14,6 +14,7 @@ class RelMe_Widget extends WP_Widget {
 			__( 'Show My Profiles on Other Sites', 'indieweb' ),
 			array(
 				'description' => __( 'Adds automatic rel-me URLs based on default author profile information. Rel=me links are links to your presence on other websites and visually appear like many social link widgets', 'indieweb' ),
+				'show_instance_in_rest' => true,
 			)
 		);
 		if ( ! is_active_widget( false, false, $this->id_base ) ) {

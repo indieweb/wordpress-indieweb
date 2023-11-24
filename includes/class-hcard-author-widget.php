@@ -18,6 +18,7 @@ class HCard_Author_Widget extends WP_Widget {
 			array(
 				'classname'   => 'hcard_widget',
 				'description' => __( 'A widget that allows you to display author profile marked up as an h-card', 'indieweb' ),
+				'show_instance_in_rest' => true,
 			)
 		);
 	} // end constructor
