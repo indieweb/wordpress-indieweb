@@ -22,6 +22,8 @@ class Rel_Me_Domain_Icon_Map {
 		'wordpress.com'       => 'wordpress',
 		'itunes.apple.com'    => 'applemusic',
 		'reading.am'          => 'book',
+		'bsky.app'            => 'bsky',
+		'bsky.social'         => 'bsky'
 
 	);
 
