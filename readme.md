@@ -4,8 +4,8 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
-**Tested up to:** 6.3  
-**Stable tag:** 4.0.1  
+**Tested up to:** 6.4  
+**Stable tag:** 4.0.2  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -71,13 +71,18 @@ One could certainly download, install, and activate some or all of these plugins
 * Post Kinds - Allows you to reply/like/RSVP etc to another site from your own, by adding support for kinds of posts to WordPress.
 * Syndication Links - Automatically adds syndication links from a supported syndication plugin or by manual entry in the post editor. Support for NextScripts: Social Networks Auto-Poster (aka SNAP), the Medium plugin, and a few others.
 * MicroPub - A MicroPub Server for publishing posts using third-party Micropub clients
-* IndieAuth - Adds an IndieAuth endpoint to WordPress. Alternatively, if you do not want to enable this, you can use a third-party endpoint to login to the WordPress backend via IndieAuth.
+* IndieAuth - Adds an IndieAuth endpoint to WordPress.
 * Simple Location - adds basic location and weather support to WordPress posts
 
 
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 4.0.2 ###
+* Refresh icons
+* Add bluesky and nostr icon manually per prior request
+* Add legacy widget block support
 
 ### 4.0.1 ###
 * Refresh dependencies and icons
