@@ -22,6 +22,14 @@ class Rel_Me_Domain_Icon_Map {
 		'wordpress.com'       => 'wordpress',
 		'itunes.apple.com'    => 'applemusic',
 		'reading.am'          => 'book',
+		'astral.ninja'        => 'nostr',
+		'nos.social'          => 'nostr',
+		'iris.to'             => 'nostr',
+		'snort.social'        => 'nostr',
+		'app.coracle.social'  => 'nostr',
+		'primal.net'          => 'nostr',
+		'habla.news'          => 'nostr',
+		'nostr.band'          => 'nostr',
 		'bsky.app'            => 'bsky',
 		'bsky.social'         => 'bsky'
 
