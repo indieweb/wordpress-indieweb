@@ -55,7 +55,7 @@ class HCard_User {
 			),
 			'twitter'   => array(
 				'baseurl' => 'https://twitter.com/%s',
-				'display' => __( 'Twitter username (without @)', 'indieweb' ),
+				'display' => __( 'X/Twitter username (without @)', 'indieweb' ),
 			),
 			'facebook'  => array(
 				'baseurl' => 'https://www.facebook.com/%s',
@@ -72,6 +72,14 @@ class HCard_User {
 			'flickr'    => array(
 				'baseurl' => 'https://www.flickr.com/people/%s',
 				'display' => __( 'Flickr username', 'indieweb' ),
+			),
+			'bluesky'    => array(
+				'baseurl' => 'https://bsky.app/profile/%s',
+				'display' => __( 'Bluesky Username', 'indieweb' ),
+			),
+			'reddit'    => array(
+				'baseurl' => 'https:/reddit.com/user/%s',
+				'display' => __( 'Reddit Username', 'indieweb' ),
 			),
 			'mastodon'  => array(
 				'baseurl' => '%s',
