@@ -5,7 +5,7 @@ Tags: indieweb, webmention, POSSE, indieauth
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.4
-Stable tag: 4.0.2
+Stable tag: 4.0.3
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -78,6 +78,13 @@ One could certainly download, install, and activate some or all of these plugins
 == Changelog ==
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+= 4.0.3 =
+* Refresh icons
+* Add minimal CSS file
+* Replace Bluesky with now official icon
+* Add user profile setting for bluesky and reddit as both are now supported by Bridgy
+* Fix null check
 
 = 4.0.2 =
 * Refresh icons
