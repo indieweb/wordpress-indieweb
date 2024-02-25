@@ -254,9 +254,13 @@ class HCard_User {
 		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
 			return false;
 		}
+		$host = wp_parse_url( $url, PHP_URL_HOST );
+		if ( ! $host ) {
+			return false;
+		}
 		// Rewrite these to https as needed
 		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com', 'github.com' ) );
-		if ( in_array( preg_replace( '/^www\./', '', wp_parse_url( $url, PHP_URL_HOST ) ), $secure, true ) ) {
+		if ( in_array( preg_replace( '/^www\./', '', $host ), $secure, true ) ) {
 			$url = preg_replace( '/^http:/i', 'https:', $url );
 		}
 		$url = esc_url_raw( $url );
