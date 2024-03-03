@@ -31,7 +31,7 @@ class Rel_Me_Domain_Icon_Map {
 		'habla.news'          => 'nostr',
 		'nostr.band'          => 'nostr',
 		'bsky.app'            => 'bluesky',
-		'bsky.social'         => 'bluesky'
+		'bsky.social'         => 'bluesky',
 
 	);
 

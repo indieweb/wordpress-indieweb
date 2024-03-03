@@ -73,7 +73,7 @@ class HCard_User {
 				'baseurl' => 'https://www.flickr.com/people/%s',
 				'display' => __( 'Flickr username', 'indieweb' ),
 			),
-			'bluesky'    => array(
+			'bluesky'   => array(
 				'baseurl' => 'https://bsky.app/profile/%s',
 				'display' => __( 'Bluesky Username', 'indieweb' ),
 			),
