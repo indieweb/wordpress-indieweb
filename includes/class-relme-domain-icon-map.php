@@ -30,8 +30,8 @@ class Rel_Me_Domain_Icon_Map {
 		'primal.net'          => 'nostr',
 		'habla.news'          => 'nostr',
 		'nostr.band'          => 'nostr',
-		'bsky.app'            => 'bsky',
-		'bsky.social'         => 'bsky'
+		'bsky.app'            => 'bluesky',
+		'bsky.social'         => 'bluesky',
 
 	);
 
