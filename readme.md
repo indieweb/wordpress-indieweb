@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
 **Tested up to:** 6.4  
-**Stable tag:** 4.0.3  
+**Stable tag:** 4.0.4  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
 
@@ -78,6 +78,9 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog ##
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 4.0.4 ###
+* Profile setting for reddit was missing a /
 
 ### 4.0.3 ###
 * Refresh icons
