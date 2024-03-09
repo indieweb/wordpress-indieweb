@@ -78,7 +78,7 @@ class HCard_User {
 				'display' => __( 'Bluesky Username', 'indieweb' ),
 			),
 
-			'reddit'   => array(
+			'reddit'    => array(
 				'baseurl' => 'https://reddit.com/user/%s',
 				'display' => __( 'Reddit Username', 'indieweb' ),
 			),
