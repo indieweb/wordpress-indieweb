@@ -2,14 +2,14 @@
 # This file is distributed under the MIT.
 msgid ""
 msgstr ""
-"Project-Id-Version: IndieWeb 4.0.3\n"
+"Project-Id-Version: IndieWeb 4.0.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wordpress-indieweb\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-02-25T10:51:51+00:00\n"
+"POT-Creation-Date: 2024-03-09T15:17:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: indieweb\n"
@@ -149,112 +149,112 @@ msgstr ""
 msgid "Bluesky Username"
 msgstr ""
 
-#: includes/class-hcard-user.php:82
+#: includes/class-hcard-user.php:83
 msgid "Reddit Username"
 msgstr ""
 
-#: includes/class-hcard-user.php:86
+#: includes/class-hcard-user.php:87
 msgid "Mastodon Server (URL)"
 msgstr ""
 
-#: includes/class-hcard-user.php:108
+#: includes/class-hcard-user.php:109
 msgid "Telephone"
 msgstr ""
 
-#: includes/class-hcard-user.php:109
+#: includes/class-hcard-user.php:110
 msgid "PGP Key (URL)"
 msgstr ""
 
-#: includes/class-hcard-user.php:116
+#: includes/class-hcard-user.php:117
 msgid "Street Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:117
+#: includes/class-hcard-user.php:118
 msgid "Street Number and Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:120
+#: includes/class-hcard-user.php:121
 msgid "Extended Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:121
+#: includes/class-hcard-user.php:122
 msgid "Apartment/Suite/Room Name/Number if any"
 msgstr ""
 
-#: includes/class-hcard-user.php:124
+#: includes/class-hcard-user.php:125
 msgid "Locality"
 msgstr ""
 
-#: includes/class-hcard-user.php:125
+#: includes/class-hcard-user.php:126
 msgid "City/State/Village"
 msgstr ""
 
-#: includes/class-hcard-user.php:128
+#: includes/class-hcard-user.php:129
 msgid "Region"
 msgstr ""
 
-#: includes/class-hcard-user.php:129
+#: includes/class-hcard-user.php:130
 msgid "State/County/Province"
 msgstr ""
 
-#: includes/class-hcard-user.php:132
+#: includes/class-hcard-user.php:133
 msgid "Postal Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:133
+#: includes/class-hcard-user.php:134
 msgid "Postal Code, such as Zip Code"
 msgstr ""
 
-#: includes/class-hcard-user.php:136
 #: includes/class-hcard-user.php:137
+#: includes/class-hcard-user.php:138
 msgid "Country Name"
 msgstr ""
 
-#: includes/class-hcard-user.php:146
+#: includes/class-hcard-user.php:147
 msgid "Job Title"
 msgstr ""
 
-#: includes/class-hcard-user.php:147
+#: includes/class-hcard-user.php:148
 msgid "Title or Role"
 msgstr ""
 
-#: includes/class-hcard-user.php:150
+#: includes/class-hcard-user.php:151
 msgid "Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:151
+#: includes/class-hcard-user.php:152
 msgid "Affiliated Organization"
 msgstr ""
 
-#: includes/class-hcard-user.php:154
+#: includes/class-hcard-user.php:155
 msgid "Honorific Prefix"
 msgstr ""
 
-#: includes/class-hcard-user.php:155
+#: includes/class-hcard-user.php:156
 msgid "e.g. Mrs., Mr. Dr."
 msgstr ""
 
-#: includes/class-hcard-user.php:162
+#: includes/class-hcard-user.php:163
 msgid "Address"
 msgstr ""
 
-#: includes/class-hcard-user.php:163
+#: includes/class-hcard-user.php:164
 msgid "Fill in all fields you wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:170
+#: includes/class-hcard-user.php:171
 msgid "Additional Profile Information"
 msgstr ""
 
-#: includes/class-hcard-user.php:171
+#: includes/class-hcard-user.php:172
 msgid "Fill in all fields you are wish displayed."
 msgstr ""
 
-#: includes/class-hcard-user.php:176
+#: includes/class-hcard-user.php:177
 msgid "Other Sites"
 msgstr ""
 
-#: includes/class-hcard-user.php:176
+#: includes/class-hcard-user.php:177
 msgid "Other profiles without their own field in your user profile (One URL per line)"
 msgstr ""
 
