@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const TITLE_TO_SLUG_REPLACEMENTS = {
   '+': 'plus',
   '.': 'dot',
@@ -13,9 +15,11 @@ const TITLE_TO_SLUG_REPLACEMENTS = {
 };
 
 const TITLE_TO_SLUG_CHARS_REGEX = RegExp(
-  `[${Object.keys(TITLE_TO_SLUG_REPLACEMENTS).join('')}]`,
-  'g',
+	  `[${Object.keys(TITLE_TO_SLUG_REPLACEMENTS).join('')}]`,
+	  'g',
 );
+
+const icons = [ "twitter", "swarm", "facebook", "instagram", "microdotblog", "bluesky", "github", "flickr", "mastodon", "wordpress", "tumblr", "blogger", "medium", "reddit" ];
 
 const TITLE_TO_SLUG_RANGE_REGEX = /[^a-z0-9]/g;
 
@@ -33,10 +37,10 @@ const titleToSlug = (title) =>
     .normalize('NFD')
     .replace(TITLE_TO_SLUG_RANGE_REGEX, '');
 
-
 // Generate SASS file from Simple Icons json data
 // Get JSON from source file
 var source = require('../../node_modules/simple-icons/_data/simple-icons.json');
+// Use function from SimpleIcons Util file
 
 // Loop through icons
 for (var i = 0; i < source.icons.length; i++) {
@@ -117,11 +121,12 @@ function readFile(path, callback) {
     }
 }
 
-
 var sass = "// Brand colors from simpleicons.org\n";
+var min = "// Brand colors from simpleicons.org\n";
 var names = "";
 var textdomain = "indieweb";
 sass += ".relme li a {\n";
+min += ".relme li a {\n";
 names += "<?php\n\nfunction simpleicons_iw_get_names() {\n\treturn array(";
 var maxNameLength = 0;
 
@@ -146,14 +151,19 @@ source.icons.sort(function(a, b) {
 
 for (var i = 0; i < source.icons.length; i++) {
     var fileName = titleToSlug( source.icons[i].title.toLowerCase() );
+    spacing = "";
     if (fileName.length < maxNameLength) {
         spacing = " ".repeat(maxNameLength - fileName.length);
     }
 
     sass += "\n\t.svg-" + fileName.toLowerCase() + spacing + "{" + "\n\t\tcolor: #" + source.icons[i].hex.toUpperCase() + ";" + "\n\t}";
+    if  ( icons.includes( fileName.toLowerCase() ) ) {
+	min += "\n\t.svg-" + fileName.toLowerCase() + spacing + "{" + "\n\t\tcolor: #" + source.icons[i].hex.toUpperCase() + ";" + "\n\t}";
+    }
     names += "\n\t\t'" + fileName.toLowerCase() + "'" + spacing + "=>" + spacing + "'" + source.icons[i].title.replace(/&amp;/g, "&").replace("'", /&apos;/g ) + "',";
 }
 sass += "\n}"
+min += "\n}"
 names += "\n\t);\n}"
 
 // Generate Sass file with color variables
@@ -162,6 +172,13 @@ fs.writeFile("./sass/_simple-icons.scss", sass, function(err) {
         return console.log(err);
     }
     console.log("The Sass file was built");
+});
+
+fs.writeFile("./sass/_simple-icons-min.scss", min, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("The Minimal Sass file was built");
 });
 
 // Generate PHP file with names
