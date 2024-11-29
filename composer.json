@@ -1,69 +1,68 @@
 {
-  "name": "indiewordpress/wordpress-indieweb",
-  "description": "IndieWeb for WordPress!",
-  "require": {
-    "php": ">=5.6.0",
-    "composer/installers": "^1.0 | ^2.1"
-  },
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "extra": {
-    "installer-name": "indieweb"
-  },
-  "type": "wordpress-plugin",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Matthias Pfefferle",
-      "homepage": "http://notiz.blog"
-    },
-    {
-      "name": "David Shanske",
-      "homepage": "https://david.shanske.com"
-    }
-  ],
-  "support": {
-     "issues": "https://github.com/indieweb/wordpress-indieweb/issues",
-     "source": "https://github.com/indieweb/wordpress-indieweb"
-  },
-  "require-dev": {
-  	"dealerdirect/phpcodesniffer-composer-installer": "*",
-	"squizlabs/php_codesniffer": "*",
-	"phpcompatibility/php-compatibility": "*",
-	"wp-coding-standards/wpcs": "*",
-	"phpcompatibility/phpcompatibility-wp": "*",
-	"php-parallel-lint/php-parallel-lint": "^1.3",
-	"wp-cli/i18n-command": "^2.2",
-	"sebastian/phpcpd": "^3.0 || ^5.0 || ^6.0",
-	"yoast/phpunit-polyfills": "^3.0"
-  },
-  "prefer-stable" : true,
-  "scripts": {
-    "test": [
-    	"composer install",
-	"bin/install-wp-tests.sh wordpress wordpress wordpress",
-	"vendor/bin/phpunit"
-    ],
-    "install-codestandards": [
-	"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
-    ],
-    "lint":  "./vendor/bin/phpcs -n -q",
-    "setup-local-tests": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
-    "make-pot": "./vendor/bin/wp i18n make-pot . languages/wordpress-indieweb.pot",
-    "lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
-    "phpcs": "./vendor/bin/phpcs",
-    "phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
-    "phpunit": "./vendor/bin/phpunit",
-    "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
-    "post-update-cmd": [
-	"@phpcbf",
-	"@lint",
-	"@make-pot"
-    ]
-
-    }
+	"name": "indiewordpress/wordpress-indieweb",
+	"description": "IndieWeb for WordPress!",
+	"require": {
+		"php": ">=5.6.0",
+		"composer/installers": "^1.0 | ^2.1"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"extra": {
+		"installer-name": "indieweb"
+	},
+	"type": "wordpress-plugin",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Matthias Pfefferle",
+			"homepage": "http://notiz.blog"
+		},
+		{
+			"name": "David Shanske",
+			"homepage": "https://david.shanske.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/indieweb/wordpress-indieweb/issues",
+		"source": "https://github.com/indieweb/wordpress-indieweb"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "*",
+		"squizlabs/php_codesniffer": "*",
+		"phpcompatibility/php-compatibility": "*",
+		"wp-coding-standards/wpcs": "*",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"php-parallel-lint/php-parallel-lint": "^1.3",
+		"wp-cli/i18n-command": "^2.2",
+		"sebastian/phpcpd": "^3.0 || ^5.0 || ^6.0",
+		"yoast/phpunit-polyfills": "^3.0"
+	},
+	"prefer-stable" : true,
+	"scripts": {
+		"test": [
+			"composer install",
+			"bin/install-wp-tests.sh wordpress wordpress wordpress",
+			"vendor/bin/phpunit"
+		],
+		"install-codestandards": [
+			"Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
+		],
+		"lint":	"./vendor/bin/phpcs -n -q",
+		"setup-local-tests": "bash bin/install-wp-tests.sh wordpress_test root root 127.0.0.1 latest",
+		"make-pot": "./vendor/bin/wp i18n make-pot . languages/wordpress-indieweb.pot",
+		"lint:php": "@php ./vendor/bin/parallel-lint --exclude .git --exclude vendor --exclude node_modules .",
+		"phpcs": "./vendor/bin/phpcs",
+		"phpcpd": "./vendor/bin/phpcpd --fuzzy --exclude .git --exclude vendor --exclude node_modules .",
+		"phpunit": "./vendor/bin/phpunit",
+		"phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
+		"post-update-cmd": [
+			"@phpcbf",
+			"@lint",
+			"@make-pot"
+		]
+	}
 }

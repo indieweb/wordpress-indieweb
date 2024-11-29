@@ -1,33 +1,28 @@
 {
-  "name": "wordpress-indieweb",
-  "description": "IndieWeb for WordPress!",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/indieweb/wordpress-indieweb.git"
-  },
-  "author": {
-    "name": "Matthias Pfefferle",
-    "web": "https://notiz.blog"
-  },
-  "devDependencies": {
-    "genericons-neue": "^4.0.5",
-    "grunt": "^1.6.1",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "^2.0.0",
-    "grunt-wp-readme-to-markdown": "~2.1.0",
-    "simple-icons": "^13.0.0"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/indieweb/wordpress-indieweb/issues"
-  },
-  "homepage": "https://github.com/indieweb/wordpress-indieweb",
-  "keywords": [
-    "indieweb",
-    "wordpress"
-  ],
-  "scripts": {
-    "build-icons": "node static/js/simpleicons.js"
-  }
+	"name": "wordpress-indieweb",
+	"description": "IndieWeb for WordPress!",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/indieweb/wordpress-indieweb.git"
+	},
+	"author": {
+		"name": "Matthias Pfefferle",
+		"web": "https://notiz.blog"
+	},
+	"devDependencies": {
+		"genericons-neue": "^4.0.5",
+		"simple-icons": "^13.0.0"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/indieweb/wordpress-indieweb/issues"
+	},
+	"homepage": "https://github.com/indieweb/wordpress-indieweb",
+	"keywords": [
+		"indieweb",
+		"wordpress"
+	],
+	"scripts": {
+		"build-icons": "node static/js/simpleicons.js"
+	}
 }

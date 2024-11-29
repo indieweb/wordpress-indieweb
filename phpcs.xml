@@ -18,6 +18,6 @@
 	</rule>
 	<rule ref="WordPress.WP.DeprecatedFunctions" />
 	<rule ref="WordPress-Extra" />
-        <rule ref="WordPress.WP.I18n"/>
+		<rule ref="WordPress.WP.I18n"/>
 	<config name="text_domain" value="indieweb,default"/>
 </ruleset>

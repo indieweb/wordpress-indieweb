@@ -1,8 +1,0 @@
-engines:
-  phpcodesniffer:
-    enabled: true
-    config:
-      standard: "WordPress-Core"
-exclude_paths:
-- "includes/class-tgm-plugin-activation.php"
-- "tests/"
