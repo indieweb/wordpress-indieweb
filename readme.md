@@ -4,7 +4,7 @@
 **Tags:** indieweb, webmention, POSSE, indieauth  
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
-**Tested up to:** 6.6  
+**Tested up to:** 6.9  
 **Stable tag:** 4.0.5  
 **License:** MIT  
 **License URI:** http://opensource.org/licenses/MIT  
