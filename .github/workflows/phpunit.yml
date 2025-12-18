@@ -31,10 +31,10 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=10s --health-retries=10
     strategy:
       matrix:
-        php-versions: ['7.2', '7.4', '8.0', '8.2', '8.3']
+        php-versions: ['7.4', '8.0', '8.2', '8.3']
         wp-version: ['latest']
         include:
-          - php-versions: '7.2'
+          - php-versions: '7.4'
             wp-version: '6.2'
           - php-versions: '8.3'
             wp-version: 'trunk'
