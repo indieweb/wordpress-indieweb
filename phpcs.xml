@@ -1,23 +1,30 @@
 <?xml version="1.0"?>
 <ruleset name="WordPress IndieWeb">
-	<description>WordPress IndieWeb Standards</description>
-	<file>./indieweb.php</file>
-	<file>./includes/</file>
-	<config name="minimum_supported_wp_version" value="4.8"/>
-	<exclude-pattern>*/includes/*\.(inc|css|js|svg)</exclude-pattern>
-	<exclude-pattern>*/includes/getting-started.php</exclude-pattern>
-	<exclude-pattern>*/includes/class-connekt-plugin-installer.php</exclude-pattern>
+	<description>WordPress IndieWeb Coding Standards</description>
+
+	<file>.</file>
+	<exclude-pattern>\.git</exclude-pattern>
+	<exclude-pattern>\.github</exclude-pattern>
+	<exclude-pattern>*\.(css|js|svg)</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
-	<rule ref="PHPCompatibility"/>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<arg value="ps"/>
+	<arg name="basepath" value="."/>
+	<arg name="colors"/>
+	<arg name="parallel" value="50"/>
+
 	<config name="testVersion" value="7.2-"/>
-	<rule ref="WordPress-Core" />
-	<rule ref="WordPress.Files.FileName">
-	<properties>
-	<property name="strict_class_file_names" value="false" />
-	</properties>
-	</rule>
-	<rule ref="WordPress.WP.DeprecatedFunctions" />
-	<rule ref="WordPress-Extra" />
-		<rule ref="WordPress.WP.I18n"/>
+	<config name="minimum_supported_wp_version" value="6.2"/>
 	<config name="text_domain" value="indieweb,default"/>
+
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="WordPress"/>
+	<rule ref="VariableAnalysis"/>
+
+	<rule ref="WordPress.Files.FileName">
+		<properties>
+			<property name="strict_class_file_names" value="false"/>
+		</properties>
+	</rule>
 </ruleset>
