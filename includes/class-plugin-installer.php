@@ -1,46 +1,43 @@
 <?php
 /**
- * IndieWeb_Plugin_Installer
+ * IndieWeb Plugin Installer.
  *
  * @author   Darren Cooney
  * @link     https://github.com/dcooney/wordpress-plugin-installer
  * @link     https://connekthq.com
  * @version  1.0
+ * @package  IndieWeb
  */
-
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
-
 if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
+	/**
+	 * Plugin Installer class for IndieWeb.
+	 */
 	class IndieWeb_Plugin_Installer {
 
+		/**
+		 * Start the installer.
+		 */
 		public function start() {
 			if ( ! defined( 'CNKT_INSTALLER_PATH' ) ) {
-				// Update this constant to use outside the plugins directory
+				// Update this constant to use outside the plugins directory.
 				define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
 			}
-			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) ); // Enqueue scripts and Localize
-			add_action( 'wp_ajax_cnkt_plugin_installer', array( &$this, 'cnkt_plugin_installer' ) ); // Install plugin
-			add_action( 'wp_ajax_cnkt_plugin_activation', array( &$this, 'cnkt_plugin_activation' ) ); // Activate plugin
+			add_action( 'admin_enqueue_scripts', array( &$this, 'enqueue_scripts' ) ); // Enqueue scripts and Localize.
+			add_action( 'wp_ajax_cnkt_plugin_installer', array( &$this, 'cnkt_plugin_installer' ) ); // Install plugin.
+			add_action( 'wp_ajax_cnkt_plugin_activation', array( &$this, 'cnkt_plugin_activation' ) ); // Activate plugin.
 		}
 
-
-
-
-		/*
-		* init
-		* Initialize the display of the plugins.
-		*
-		*
-		* @param $plugin            Array - plugin data
-		*
-		* @since 1.0
-		*/
+		/**
+		 * Initialize the display of the plugins.
+		 *
+		 * @param array $plugins Array of plugin data.
+		 */
 		public static function init( $plugins ) {
 			?>
 
@@ -74,23 +71,22 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 					)
 				);
 
-				if ( ! is_wp_error( $api ) ) { // confirm error free
+				if ( ! is_wp_error( $api ) ) { // Confirm error free.
 
-					$main_plugin_file = self::get_plugin_file( $plugin['slug'] ); // Get main plugin file
-					// echo $main_plugin_file;
-					if ( self::check_file_extension( $main_plugin_file ) ) { // check file extension
+					$main_plugin_file = self::get_plugin_file( $plugin['slug'] ); // Get main plugin file.
+					if ( self::check_file_extension( $main_plugin_file ) ) { // Check file extension.
 						if ( is_plugin_active( $main_plugin_file ) ) {
-							// plugin activation, confirmed!
+							// Plugin activation, confirmed!
 							$button_classes = 'button disabled';
 							$button_text    = __( 'Activated', 'indieweb' );
 						} else {
-							// It's installed, let's activate it
+							// It's installed, let's activate it.
 							$button_classes = 'activate button button-primary';
 							$button_text    = __( 'Activate', 'indieweb' );
 						}
 					}
 
-					// Send plugin data to template
+					// Send plugin data to template.
 					self::render_template( $plugin, $api, $button_text, $button_classes );
 
 				}
@@ -101,21 +97,14 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 			<?php
 		}
 
-
-
-
-		/*
-		* render_template
-		* Render display template for each plugin.
-		*
-		*
-		* @param $plugin            Array - Original data passed to init()
-		* @param $api               Array - Results from plugins_api
-		* @param $button_text       String - text for the button
-		* @param $button_classes    String - classnames for the button
-		*
-		* @since 1.0
-		*/
+		/**
+		 * Render display template for each plugin.
+		 *
+		 * @param array  $plugin         Original data passed to init().
+		 * @param object $api            Results from plugins_api.
+		 * @param string $button_text    Text for the button.
+		 * @param string $button_classes Classnames for the button.
+		 */
 		public static function render_template( $plugin, $api, $button_text, $button_classes ) {
 			if ( isset( $api->icons['1x'] ) ) {
 				$icon = $api->icons['1x'];
@@ -162,14 +151,9 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 
 
-		/*
-		* cnkt_plugin_installer
-		* An Ajax method for installing plugin.
-		*
-		* @return $json
-		*
-		* @since 1.0
-		*/
+		/**
+		 * An Ajax method for installing plugin.
+		 */
 		public function cnkt_plugin_installer() {
 
 			if ( ! current_user_can( 'install_plugins' ) ) {
@@ -184,13 +168,13 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				wp_die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
 			}
 
-			// Include required libs for installation
+			// Include required libs for installation.
 			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 			require_once ABSPATH . 'wp-admin/includes/class-wp-ajax-upgrader-skin.php';
 			require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
-			// Get Plugin Info
+			// Get Plugin Info.
 			$api = plugins_api(
 				'plugin_information',
 				array(
@@ -235,14 +219,9 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 
 
-		/*
-		* cnkt_plugin_activation
-		* Activate plugin via Ajax.
-		*
-		* @return $json
-		*
-		* @since 1.0
-		*/
+		/**
+		 * Activate plugin via Ajax.
+		 */
 		public function cnkt_plugin_activation() {
 			if ( ! current_user_can( 'install_plugins' ) ) {
 				wp_die( esc_html( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) ) );
@@ -256,12 +235,12 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
 			}
 
-			// Include required libs for activation
+			// Include required libs for activation.
 			require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 			require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 			require_once ABSPATH . 'wp-admin/includes/class-plugin-upgrader.php';
 
-			// Get Plugin Info
+			// Get Plugin Info.
 			$api = plugins_api(
 				'plugin_information',
 				array(
@@ -306,68 +285,48 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 
 
 
-		/*
-		* get_plugin_file
-		* A method to get the main plugin file.
-		*
-		*
-		* @param  $plugin_slug    String - The slug of the plugin
-		* @return $plugin_file
-		*
-		* @since 1.0
-		*/
-
+		/**
+		 * A method to get the main plugin file.
+		 *
+		 * @param string $plugin_slug The slug of the plugin.
+		 * @return string|null The plugin file path or null.
+		 */
 		public static function get_plugin_file( $plugin_slug ) {
-			require_once ABSPATH . '/wp-admin/includes/plugin.php'; // Load plugin lib
+			require_once ABSPATH . '/wp-admin/includes/plugin.php'; // Load plugin lib.
 			$plugins = get_plugins();
 
 			foreach ( $plugins as $plugin_file => $plugin_info ) {
 
-				// Get the basename of the plugin e.g. [askismet]/askismet.php
+				// Get the basename of the plugin e.g. [askismet]/askismet.php.
 				$slug = dirname( plugin_basename( $plugin_file ) );
 
 				if ( $slug ) {
 					if ( $slug === $plugin_slug ) {
-						return $plugin_file; // If $slug = $plugin_name
+						return $plugin_file; // If $slug = $plugin_name.
 					}
 				}
 			}
 			return null;
 		}
 
-
-
-
-		/*
-		* check_file_extension
-		* A helper to check file extension
-		*
-		*
-		* @param $filename    String - The filename of the plugin
-		* @return boolean
-		*
-		* @since 1.0
-		*/
+		/**
+		 * A helper to check file extension.
+		 *
+		 * @param string $filename The filename of the plugin.
+		 * @return bool True if PHP file, false otherwise.
+		 */
 		public static function check_file_extension( $filename ) {
 			if ( substr( strrchr( $filename, '.' ), 1 ) === 'php' ) {
-				// has .php exension
+				// Has .php extension.
 				return true;
 			} else {
-				// ./wp-content/plugins
 				return false;
 			}
 		}
 
-
-
-
-		/*
-		* enqueue_scripts
-		* Enqueue admin scripts and scripts localization
-		*
-		*
-		* @since 1.0
-		*/
+		/**
+		 * Enqueue admin scripts and scripts localization.
+		 */
 		public function enqueue_scripts() {
 			wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ), IndieWeb_Plugin::$version, true );
 			wp_localize_script(
@@ -388,7 +347,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 	}
 
 
-	// initialize
+	// Initialize.
 	$connekt_plugin_installer = new IndieWeb_Plugin_Installer();
 	$connekt_plugin_installer->start();
 } // End if( class_exists )

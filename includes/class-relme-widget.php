@@ -1,12 +1,17 @@
 <?php
+/**
+ * Rel-Me Widget.
+ *
+ * @package IndieWeb
+ */
 
 /**
- * adds widget to display rel-me links for indieauth with per-user profile support
+ * Adds widget to display rel-me links for IndieAuth with per-user profile support.
  */
 class RelMe_Widget extends WP_Widget {
 
 	/**
-	 * widget constructor
+	 * Widget constructor.
 	 */
 	public function __construct() {
 		parent::__construct(
@@ -23,12 +28,10 @@ class RelMe_Widget extends WP_Widget {
 	}
 
 	/**
-	 * widget worker
+	 * Widget worker.
 	 *
-	 * @param mixed $args widget parameters
-	 * @param mixed $instance saved widget data
-	 *
-	 * @output echoes the list of rel-me links for the author
+	 * @param mixed $args     Widget parameters.
+	 * @param mixed $instance Saved widget data.
 	 */
 	public function widget( $args, $instance ) {
 		global $authordata;
@@ -57,23 +60,21 @@ class RelMe_Widget extends WP_Widget {
 	}
 
 	/**
-	 * widget data updater
+	 * Widget data updater.
 	 *
-	 * @param mixed $new_instance new widget data
-	 * @param mixed $old_instance current widget data
+	 * @param mixed $new_instance New widget data.
+	 * @param mixed $old_instance Current widget data.
 	 *
-	 * @return mixed widget data
+	 * @return mixed Widget data.
 	 */
 	public function update( $new_instance, $old_instance ) {
 		return $new_instance;
 	}
 
 	/**
-	 * widget form
+	 * Widget form.
 	 *
-	 * @param mixed $instance
-	 *
-	 * @output displays the widget form
+	 * @param mixed $instance Widget instance.
 	 */
 	public function form( $instance ) {
 		echo '<p>';

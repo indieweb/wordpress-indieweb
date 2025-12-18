@@ -1,10 +1,20 @@
 <?php
-/*
-Maps domain names to icons from the provided SVG fontset
+/**
+ * Maps domain names to icons from the provided SVG fontset.
+ *
+ * @package IndieWeb
+ */
+
+/**
+ * Rel-Me Domain Icon Map class.
  */
 class Rel_Me_Domain_Icon_Map {
 
-	// Common mappings and custom mappings
+	/**
+	 * Common and custom domain to icon mappings.
+	 *
+	 * @var array
+	 */
 	private static $map = array(
 		'twitter.com'         => 'twitter',
 		'blogspot.com'        => 'blogger',
@@ -36,7 +46,12 @@ class Rel_Me_Domain_Icon_Map {
 
 	);
 
-	// Try to get the correct icon for the majority of sites
+	/**
+	 * Try to get the correct icon for the majority of sites.
+	 *
+	 * @param string $string The domain string to split.
+	 * @return string The extracted domain part.
+	 */
 	public static function split_domain( $string ) {
 		$explode = explode( '.', $string );
 		if ( 2 === count( $explode ) ) {
@@ -48,7 +63,12 @@ class Rel_Me_Domain_Icon_Map {
 		return $string;
 	}
 
-	// Return the filename of an icon based on name if the file exists
+	/**
+	 * Return the filename of an icon based on name if the file exists.
+	 *
+	 * @param string $name The icon name.
+	 * @return string|null The icon file path or null if not found.
+	 */
 	public static function get_icon_filename( $name ) {
 		$svg = sprintf( '%1$s/static/svg/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
 		if ( file_exists( $svg ) ) {
@@ -57,7 +77,12 @@ class Rel_Me_Domain_Icon_Map {
 		return null;
 	}
 
-	// Return the retrieved svg based on name
+	/**
+	 * Return the retrieved SVG based on name.
+	 *
+	 * @param string $name The icon name.
+	 * @return string|null The SVG content or null if not found.
+	 */
 	public static function get_icon_svg( $name ) {
 		$file = self::get_icon_filename( $name );
 		if ( $file ) {
@@ -69,6 +94,12 @@ class Rel_Me_Domain_Icon_Map {
 		return null;
 	}
 
+	/**
+	 * Get the icon HTML markup.
+	 *
+	 * @param string $name The icon name.
+	 * @return string The icon HTML or the name if not found.
+	 */
 	public static function get_icon( $name ) {
 		$icon  = self::get_icon_svg( $name );
 		$title = self::get_title( $name );
@@ -78,6 +109,12 @@ class Rel_Me_Domain_Icon_Map {
 		return $name;
 	}
 
+	/**
+	 * Get the title for an icon.
+	 *
+	 * @param string $name The icon name.
+	 * @return string The icon title.
+	 */
 	public static function get_title( $name ) {
 		$strings = simpleicons_iw_get_names();
 		if ( isset( $strings[ $name ] ) ) {
@@ -86,6 +123,11 @@ class Rel_Me_Domain_Icon_Map {
 		return $name;
 	}
 
+	/**
+	 * Get the Mastodon URL from user meta.
+	 *
+	 * @return string|false The Mastodon domain or false.
+	 */
 	public static function mastodon_url() {
 		$mastodon = get_transient( 'indieweb_mastodon' );
 		if ( false !== $mastodon ) {
@@ -115,24 +157,30 @@ class Rel_Me_Domain_Icon_Map {
 		set_transient( 'indieweb_mastodon', $value );
 	}
 
+	/**
+	 * Convert a URL to an icon name.
+	 *
+	 * @param string $url The URL to convert.
+	 * @return string The icon name.
+	 */
 	public static function url_to_name( $url ) {
 		$scheme = wp_parse_url( $url, PHP_URL_SCHEME );
-		// The default if not an http link is to return notice
+		// The default if not an http link is to return notice.
 		$return = 'notice';
 		if ( ( 'http' === $scheme ) || ( 'https' === $scheme ) ) {
-			$return = 'website'; // default for web links
+			$return = 'website'; // Default for web links.
 			$url    = strtolower( $url );
 			$domain = wp_parse_url( $url, PHP_URL_HOST );
 
-			$domain = str_replace( 'www.', '', $domain ); // Always remove www
+			$domain = str_replace( 'www.', '', $domain ); // Always remove www.
 
-			// If the domain is already on the pre-loaded list then use that
+			// If the domain is already on the pre-loaded list then use that.
 			if ( array_key_exists( $domain, self::$map ) ) {
 				$return = self::$map[ $domain ];
 			} elseif ( self::mastodon_url() === $domain ) {
 				$return = 'mastodon';
 			} else {
-				// Remove extra info and try to map it to an icon
+				// Remove extra info and try to map it to an icon.
 				$strip = self::split_domain( $domain );
 				if ( self::get_icon_filename( $strip ) ) {
 					$return = $strip;
@@ -140,17 +188,17 @@ class Rel_Me_Domain_Icon_Map {
 					$return = str_replace( '.', '-dot-', $domain );
 				} elseif ( self::get_icon_filename( str_replace( '.', '', $domain ) ) ) {
 					$return = str_replace( '.', '', $domain );
-				} else if ( false !== stripos( $domain, 'wordpress' ) ) { // phpcs:ignore
-					// Anything with WordPress in the name that is not matched return WordPress
-					$return = 'wordpress'; // phpcs:ignore
-				} else if ( false !== stripos( $domain, 'read' ) ) { // phpcs:ignore
-					// Anything with read in the name that is not matched return a book
-					$return = 'book'; // phpcs:ignore
-				} else if ( false !== stripos( $domain, 'news' ) ) { // phpcs:ignore
-					// Anything with news in the name that is not matched return the summary icon
-					$return = 'summary'; // phpcs:ignore
+				} elseif ( false !== stripos( $domain, 'wordpress' ) ) { // phpcs:ignore WordPress.WP.CapitalPDangit
+					// Anything with WordPress in the name that is not matched return WordPress icon.
+					$return = 'wordpress'; // phpcs:ignore WordPress.WP.CapitalPDangit
+				} elseif ( false !== stripos( $domain, 'read' ) ) {
+					// Anything with read in the name that is not matched return a book.
+					$return = 'book';
+				} elseif ( false !== stripos( $domain, 'news' ) ) {
+					// Anything with news in the name that is not matched return the summary icon.
+					$return = 'summary';
 				} else {
-					// Some domains have the word app in them check for matches with that
+					// Some domains have the word app in them check for matches with that.
 					$strip = str_replace( 'app', '', $strip );
 					if ( self::get_icon_filename( $strip ) ) {
 						$return = $strip;
@@ -167,7 +215,7 @@ class Rel_Me_Domain_Icon_Map {
 		if ( 'gtalk' === $scheme ) {
 			return 'googlehangouts';
 		}
-		// Save the determined mapping into the map so that it will not have to look again on the same page load
+		// Save the determined mapping into the map so that it will not have to look again on the same page load.
 		self::$map[ $domain ] = $return;
 		$return               = apply_filters( 'indieweb_links_url_to_name', $return, $url );
 		return $return;

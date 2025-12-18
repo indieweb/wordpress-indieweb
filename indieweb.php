@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * Plugin Name: IndieWeb
  * Plugin URI: https://github.com/indieweb/wordpress-indieweb
  * Description: Interested in connecting your WordPress site to the IndieWeb?
@@ -10,9 +10,11 @@
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
  * Domain Path: /languages
+ *
+ * @package IndieWeb
  */
 
-// initialize plugin
+// Initialize plugin.
 add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
 
 defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
@@ -26,6 +28,11 @@ define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
  */
 class IndieWeb_Plugin {
 
+	/**
+	 * Plugin version.
+	 *
+	 * @var string
+	 */
 	public static $version;
 
 	/**
@@ -33,14 +40,13 @@ class IndieWeb_Plugin {
 	 */
 	public static function init() {
 		self::$version = get_file_data( __FILE__, array( 'Version' => 'Version' ) )['Version'];
-		// enable translation
+		// Enable translation.
 		self::enable_translation();
 
 		require_once __DIR__ . '/includes/class-plugin-installer.php';
 
 		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
-			// Require H-Card Enhancements to User Profile
-
+			// Require H-Card Enhancements to User Profile.
 			require_once __DIR__ . '/includes/class-relme-domain-icon-map.php';
 			require_once __DIR__ . '/includes/class-hcard-user.php';
 			require_once __DIR__ . '/includes/class-hcard-author-widget.php';
@@ -48,7 +54,7 @@ class IndieWeb_Plugin {
 		}
 
 		if ( INDIEWEB_ADD_RELME_SUPPORT ) {
-			// Require Rel Me Widget Class
+			// Require Rel Me Widget Class.
 			require_once __DIR__ . '/includes/class-relme-widget.php';
 		}
 
@@ -56,19 +62,19 @@ class IndieWeb_Plugin {
 
 		add_action( 'admin_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_admin_style' ) );
 
-		// Add General Settings Page
+		// Add General Settings Page.
 		require_once __DIR__ . '/includes/class-general-settings.php';
 
-		// Add third party integrations
+		// Add third party integrations.
 		require_once __DIR__ . '/includes/class-integrations.php';
 
-		// add menu
+		// Add menu.
 		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'add_menu_item' ), 9 );
 
-		// Privacy Declaration
+		// Privacy Declaration.
 		add_action( 'admin_init', array( 'Indieweb_Plugin', 'privacy_declaration' ) );
 
-		// we're up and running
+		// We're up and running.
 		do_action( 'indieweb_loaded' );
 	}
 
@@ -79,14 +85,17 @@ class IndieWeb_Plugin {
 	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
 	 */
 	public static function enable_translation() {
-		// for plugins
+		// For plugins.
 		load_plugin_textdomain(
 			'indieweb',
 			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages/' // path
+			dirname( plugin_basename( __FILE__ ) ) . '/languages/'
 		);
 	}
 
+	/**
+	 * Enqueue frontend styles.
+	 */
 	public static function enqueue_style() {
 		if ( '1' === get_option( 'iw_relme_bw' ) ) {
 			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb-bw.css', __FILE__ ), array(), self::$version );
@@ -95,6 +104,9 @@ class IndieWeb_Plugin {
 		}
 	}
 
+	/**
+	 * Enqueue admin styles.
+	 */
 	public static function enqueue_admin_style() {
 		wp_enqueue_style( 'indieweb-admin', plugins_url( 'static/css/indieweb-admin.css', __FILE__ ), array(), self::$version );
 	}
@@ -113,9 +125,9 @@ class IndieWeb_Plugin {
 		);
 		add_submenu_page(
 			'indieweb',
-			__( 'Extensions', 'indieweb' ), // page title
-			__( 'Extensions', 'indieweb' ), // menu title
-			'manage_options', // access capability
+			__( 'Extensions', 'indieweb' ), // Page title.
+			__( 'Extensions', 'indieweb' ), // Menu title.
+			'manage_options', // Access capability.
 			'indieweb-installer',
 			array( 'IndieWeb_Plugin', 'plugin_installer' )
 		);
@@ -140,6 +152,9 @@ class IndieWeb_Plugin {
 		require_once __DIR__ . '/includes/getting-started.php';
 	}
 
+	/**
+	 * Render the plugin installer page.
+	 */
 	public static function plugin_installer() {
 		echo '<h1>' . esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
 		echo '<p>' . esc_html__( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
@@ -181,6 +196,9 @@ class IndieWeb_Plugin {
 		return $plugin_array;
 	}
 
+	/**
+	 * Add privacy policy content.
+	 */
 	public static function privacy_declaration() {
 		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
 			$content = __(
