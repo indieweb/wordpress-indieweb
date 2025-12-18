@@ -138,7 +138,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 					<h2><?php echo esc_html( $api->name ); ?></h2>
 					<p><?php echo esc_html( $api->short_description ); ?></p>
 
-					<p class="plugin-author"><?php esc_html_e( 'By', 'indieweb' ); ?> <?php echo $api->author; // phpcs:ignore ?></p>
+					<p class="plugin-author"><?php esc_html_e( 'By', 'indieweb' ); ?> <?php echo wp_kses( $api->author, array( 'a' => array( 'href' => array() ) ) ); ?></p>
 				</div>
 				<ul class="activation-row">
 					<li>
@@ -176,8 +176,8 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				wp_die( esc_html( __( 'Sorry, you are not allowed to install plugins on this site.', 'indieweb' ) ) );
 			}
 
-			$nonce  = $_POST['nonce']; // phpcs:ignore
-			$plugin = $_POST['plugin']; // phpcs:ignore
+			$nonce  = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+			$plugin = isset( $_POST['plugin'] ) ? sanitize_key( wp_unslash( $_POST['plugin'] ) ) : '';
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
@@ -248,12 +248,12 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				wp_die( esc_html( __( 'Sorry, you are not allowed to activate plugins on this site.', 'indieweb' ) ) );
 			}
 
-			$nonce  = $_POST['nonce']; // phpcs:ignore
-			$plugin = $_POST['plugin']; // phpcs:ignore
+			$nonce  = isset( $_POST['nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['nonce'] ) ) : '';
+			$plugin = isset( $_POST['plugin'] ) ? sanitize_key( wp_unslash( $_POST['plugin'] ) ) : '';
 
 			// Check our nonce, if they don't match then bounce!
 			if ( ! wp_verify_nonce( $nonce, 'cnkt_installer_nonce' ) ) {
-				die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
+				wp_die( esc_html( __( 'Error - unable to verify nonce, please try again.', 'indieweb' ) ) );
 			}
 
 			// Include required libs for activation

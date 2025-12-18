@@ -405,7 +405,7 @@ class HCard_User {
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			printf( '<link rel="pgpkey" href="%1$s" />',  $pgp ); // phpcs:ignore
+			printf( '<link rel="pgpkey" href="%1$s" />', esc_url( $pgp ) );
 		}
 	}
 
