@@ -19,7 +19,7 @@ class HCard_User {
 	public static function init() {
 		include_once 'simple-icons.php';
 		if ( 1 === (int) get_option( 'iw_author_url' ) ) {
-			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 2 );
 		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
@@ -44,10 +44,9 @@ class HCard_User {
 	 *
 	 * @param string $link      The author link.
 	 * @param int    $author_id The author ID.
-	 * @param string $nicename  The author nicename (unused).
 	 * @return string The modified author link.
 	 */
-	public static function author_link( $link, $author_id, $nicename ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
+	public static function author_link( $link, $author_id ) {
 		if ( in_the_loop() && ( is_home() || is_archive() || is_singular() ) ) {
 			$user_info = get_userdata( $author_id );
 			if ( ! empty( $user_info->user_url ) ) {
@@ -262,7 +261,7 @@ class HCard_User {
 			'user',
 			'me',
 			array(
-				'get_callback' => function ( $user, $attr, $request, $object_type ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+				'get_callback' => function ( $user ) {
 					return array_values( self::get_rel_me( $user['id'] ) );
 				},
 			)
@@ -271,7 +270,7 @@ class HCard_User {
 			'user',
 			'first_name',
 			array(
-				'get_callback' => function ( $user, $attr, $request, $object_type ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter
+				'get_callback' => function ( $user ) {
 					return get_user_meta( $user['id'], 'first_name', true );
 				},
 			)
@@ -311,11 +310,11 @@ class HCard_User {
 	/**
 	 * Filters a single silo URL.
 	 *
-	 * @param string $string A string that is expected to be a silo URL.
+	 * @param string $url_string A string that is expected to be a silo URL.
 	 * @return string|bool The filtered and escaped URL string, or FALSE if invalid.
 	 */
-	public static function clean_url( $string ) {
-		$url = trim( $string );
+	public static function clean_url( $url_string ) {
+		$url = trim( $url_string );
 		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
 			return false;
 		}
@@ -443,8 +442,7 @@ class HCard_User {
 		if ( ! $list ) {
 			return false;
 		}
-		$author_name = get_the_author_meta( 'display_name', $author_id );
-		$r           = array();
+		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
 			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />' . PHP_EOL;
 		}
@@ -547,6 +545,8 @@ class HCard_User {
 		}
 
 		$args = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		// Variables are used in the included template file (h-card.php).
+		// phpcs:disable VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
 		if ( $args['avatar'] ) {
 			$avatar = get_avatar(
 				$user,
@@ -563,6 +563,7 @@ class HCard_User {
 		$url   = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name  = $user->get( 'display_name' );
 		$email = $user->get( 'user_email' );
+		// phpcs:enable VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
 		ob_start();
 		include self::get_template_file( 'h-card.php' );
 		$return = ob_get_contents();

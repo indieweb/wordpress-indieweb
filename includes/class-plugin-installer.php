@@ -300,10 +300,8 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				// Get the basename of the plugin e.g. [askismet]/askismet.php.
 				$slug = dirname( plugin_basename( $plugin_file ) );
 
-				if ( $slug ) {
-					if ( $slug === $plugin_slug ) {
-						return $plugin_file; // If $slug = $plugin_name.
-					}
+				if ( $slug && $slug === $plugin_slug ) {
+					return $plugin_file;
 				}
 			}
 			return null;

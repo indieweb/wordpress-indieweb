@@ -112,10 +112,10 @@ class IndieWeb_Plugin {
 	}
 
 	/**
-	 * Add Top Level Menu Item
+	 * Add Top Level Menu Item.
 	 */
 	public static function add_menu_item() {
-		$options_page = add_menu_page(
+		add_menu_page(
 			'IndieWeb',
 			'IndieWeb',
 			'manage_options',

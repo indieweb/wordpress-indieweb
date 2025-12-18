@@ -49,18 +49,18 @@ class Rel_Me_Domain_Icon_Map {
 	/**
 	 * Try to get the correct icon for the majority of sites.
 	 *
-	 * @param string $string The domain string to split.
+	 * @param string $domain_string The domain string to split.
 	 * @return string The extracted domain part.
 	 */
-	public static function split_domain( $string ) {
-		$explode = explode( '.', $string );
+	public static function split_domain( $domain_string ) {
+		$explode = explode( '.', $domain_string );
 		if ( 2 === count( $explode ) ) {
 			return $explode[0];
 		}
 		if ( 3 === count( $explode ) ) {
 			return $explode[1];
 		}
-		return $string;
+		return $domain_string;
 	}
 
 	/**
@@ -136,6 +136,7 @@ class Rel_Me_Domain_Icon_Map {
 		$args    = array(
 			'number'      => 1,
 			'count_total' => false,
+			// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- Required to find users with Mastodon URL.
 			'meta_query'  => array(
 				array(
 					'key'     => 'mastodon',
