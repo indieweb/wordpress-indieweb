@@ -11,6 +11,7 @@
 	},
 	"devDependencies": {
 		"genericons-neue": "^4.0.5",
+		"sass": "^1.77.0",
 		"simple-icons": "^13.0.0"
 	},
 	"license": "MIT",
@@ -23,6 +24,8 @@
 		"wordpress"
 	],
 	"scripts": {
-		"build-icons": "node static/js/simpleicons.js"
+		"build-icons": "node static/js/simpleicons.js",
+		"build-css": "sass --style=compressed --no-source-map sass/main.scss:static/css/indieweb.css sass/min.scss:static/css/indieweb-minimal.css sass/main-bw.scss:static/css/indieweb-bw.css sass/main-admin.scss:static/css/indieweb-admin.css",
+		"build": "npm run build-icons && npm run build-css"
 	}
 }
