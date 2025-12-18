@@ -150,8 +150,6 @@ class IndieWeb_Plugin {
 
 	/**
 	 * Register the required plugins.
-	 *
-	 *
 	 */
 	public static function register_plugins() {
 		$plugin_array = array(

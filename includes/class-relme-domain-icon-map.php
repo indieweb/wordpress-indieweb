@@ -1,5 +1,6 @@
 <?php
-/* Maps domain names to icons from the provided SVG fontset
+/*
+Maps domain names to icons from the provided SVG fontset
  */
 class Rel_Me_Domain_Icon_Map {
 

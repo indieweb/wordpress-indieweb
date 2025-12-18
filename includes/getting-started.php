@@ -9,7 +9,8 @@
 			<p>
 			<?php
 			esc_html_e(
-				'The IndieWeb Plugin can help you establish your identity online, as well as recommend other plugins to support additional IndieWeb features.', 'indieweb'
+				'The IndieWeb Plugin can help you establish your identity online, as well as recommend other plugins to support additional IndieWeb features.',
+				'indieweb'
 			);
 			?>
 			</p>
@@ -29,7 +30,8 @@
 				_e(
 					'This is the basis of the <strong>IndieWeb</strong>. For more, see <a
 					href="https://indieweb.org/principles" target="_blank">principles</a> and <a
-					href="https://indieweb.org/why" target="_blank">why</a>.', 'indieweb'
+					href="https://indieweb.org/why" target="_blank">why</a>.',
+					'indieweb'
 				);
 				?>
 			</p>
@@ -69,7 +71,8 @@
 					target="_blank">SemPress</a> is the only theme in the WordPress repository that is fully
 					microformats2 compliant. <a href="http://wordpress.org/themes/independent-publisher/"
 					target="_blank">Independent Publisher</a> has been updated to include basic microformats2 and
-					webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats2, the community will be <a href="https://indieweb.org/discuss">happy to assist</a>.', 'indieweb'
+					webmention display support. In practice, most themes will work relatively well out of the box, though there can be some minor display issues. If you are interested in receiving help in converting your theme to support Microformats2, the community will be <a href="https://indieweb.org/discuss">happy to assist</a>.',
+					'indieweb'
 				);
 				?>
 			</p>

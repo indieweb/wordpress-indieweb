@@ -77,7 +77,7 @@ if ( ! class_exists( 'IndieWeb_Plugin_Installer' ) ) {
 				if ( ! is_wp_error( $api ) ) { // confirm error free
 
 					$main_plugin_file = self::get_plugin_file( $plugin['slug'] ); // Get main plugin file
-					//echo $main_plugin_file;
+					// echo $main_plugin_file;
 					if ( self::check_file_extension( $main_plugin_file ) ) { // check file extension
 						if ( is_plugin_active( $main_plugin_file ) ) {
 							// plugin activation, confirmed!
