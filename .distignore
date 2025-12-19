@@ -6,7 +6,6 @@
 /sass
 /vendor
 /tests
-readme.md
 package.json
 composer.json
 composer.lock
