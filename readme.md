@@ -6,7 +6,7 @@
 - Requires at least: 4.7
 - Requires PHP: 7.4
 - Tested up to: 6.9
-- Stable tag: 4.0.5
+- Stable tag: 5.0.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -79,6 +79,13 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 5.0.0
+* Requires PHP 7.4 or higher
+* Tested with WordPress 6.9
+* Refreshed icons
+* Improved security with better input sanitization and output escaping
+* Improved code quality and plugin structure
 
 ### 4.0.5
 * Update dependencies
