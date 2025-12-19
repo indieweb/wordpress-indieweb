@@ -1,33 +1,38 @@
 {
-  "name": "wordpress-indieweb",
-  "description": "IndieWeb for WordPress!",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/indieweb/wordpress-indieweb.git"
-  },
-  "author": {
-    "name": "Matthias Pfefferle",
-    "web": "https://notiz.blog"
-  },
-  "devDependencies": {
-    "genericons-neue": "^4.0.5",
-    "grunt": "^1.6.1",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-sass": "^2.0.0",
-    "grunt-wp-readme-to-markdown": "~2.1.0",
-    "simple-icons": "^13.0.0"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/indieweb/wordpress-indieweb/issues"
-  },
-  "homepage": "https://github.com/indieweb/wordpress-indieweb",
-  "keywords": [
-    "indieweb",
-    "wordpress"
-  ],
-  "scripts": {
-    "build-icons": "node static/js/simpleicons.js"
-  }
+	"name": "wordpress-indieweb",
+	"description": "IndieWeb for WordPress!",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/indieweb/wordpress-indieweb.git"
+	},
+	"author": {
+		"name": "Matthias Pfefferle",
+		"web": "https://notiz.blog"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/indieweb/wordpress-indieweb/issues"
+	},
+	"homepage": "https://github.com/indieweb/wordpress-indieweb",
+	"keywords": [
+		"indieweb",
+		"wordpress"
+	],
+	"devDependencies": {
+		"@wordpress/env": "^10.0.0",
+		"genericons-neue": "^4.0.5",
+		"sass": "^1.77.0",
+		"simple-icons": "^13.0.0"
+	},
+	"scripts": {
+		"build-icons": "node static/js/simpleicons.js",
+		"build-css": "sass --style=compressed --no-source-map sass/main.scss:static/css/indieweb.css sass/min.scss:static/css/indieweb-minimal.css sass/main-bw.scss:static/css/indieweb-bw.css sass/main-admin.scss:static/css/indieweb-admin.css",
+		"build": "npm run build-icons && npm run build-css",
+		"wp-env": "wp-env",
+		"wp-env:start": "wp-env start",
+		"wp-env:stop": "wp-env stop",
+		"test:php": "wp-env run tests-cli --env-cwd='wp-content/plugins/indieweb' vendor/bin/phpunit --colors=always",
+		"lint:php": "wp-env run cli --env-cwd='wp-content/plugins/indieweb' vendor/bin/phpcs",
+		"lint:php:fix": "wp-env run cli --env-cwd='wp-content/plugins/indieweb' vendor/bin/phpcbf"
+	}
 }

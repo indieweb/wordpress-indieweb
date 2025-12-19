@@ -1,5 +1,15 @@
 <?php
+/**
+ * Simple Icons name mappings.
+ *
+ * @package IndieWeb
+ */
 
+/**
+ * Returns an array of Simple Icons name mappings.
+ *
+ * @return array Associative array of icon slug to display name.
+ */
 function simpleicons_iw_get_names() {
 	return array(
 		'dotenv'                         => '.ENV',

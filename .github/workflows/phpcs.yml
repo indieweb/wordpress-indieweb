@@ -1,19 +1,39 @@
 name: PHP_CodeSniffer
-on: push
+
+on:
+  push:
+    branches:
+      - trunk
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+      - 'phpcs.xml'
+      - '.github/workflows/phpcs.yml'
+  pull_request:
+    paths:
+      - '**.php'
+      - 'composer.json'
+      - 'composer.lock'
+      - 'phpcs.xml'
+      - '.github/workflows/phpcs.yml'
+
 jobs:
   phpcs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.2'
           coverage: none
           tools: composer, cs2pr
-      - name: Install Composer dependencies for PHP
-        uses: "ramsey/composer-install@v2"
-      - name: Detect coding standard violations
-        run: composer lint
 
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v3
+
+      - name: Detect coding standard violations
+        run: ./vendor/bin/phpcs -q --report=checkstyle | cs2pr

@@ -1,27 +1,39 @@
 <?php
+/**
+ * H-Card Author Widget.
+ *
+ * @package IndieWeb
+ *
+ * phpcs:disable Universal.Files.SeparateFunctionsFromOO.Mixed
+ */
 
 add_action( 'widgets_init', 'indieweb_register_hcard' );
 
+/**
+ * Register the H-Card widget.
+ */
 function indieweb_register_hcard() {
 	register_widget( 'HCard_Author_Widget' );
 }
 
-// phpcs:ignore Universal.Files.SeparateFunctionsFromOO.Mixed
+/**
+ * Widget to display author profile as an h-card.
+ */
 class HCard_Author_Widget extends WP_Widget {
 	/**
 	 * Register widget with WordPress.
 	 */
 	public function __construct() {
 		parent::__construct(
-			'HCard_Widget',                // Base ID
-			'Author Profile H-Card Widget',        // Name
+			'HCard_Widget',                        // Base ID.
+			'Author Profile H-Card Widget',        // Name.
 			array(
 				'classname'             => 'hcard_widget',
 				'description'           => __( 'A widget that allows you to display author profile marked up as an h-card', 'indieweb' ),
 				'show_instance_in_rest' => true,
 			)
 		);
-	} // end constructor
+	}
 
 	/**
 	 * Front-end display of widget.
@@ -74,7 +86,7 @@ class HCard_Author_Widget extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		// Strip tags to remove HTML (important for text inputs)
+		// Strip tags to remove HTML (important for text inputs).
 		foreach ( $new_instance as $k => $v ) {
 			if ( in_array( $k, array( 'notes', 'location', 'avatar' ), true ) ) {
 				$v = (int) $v;
@@ -82,7 +94,7 @@ class HCard_Author_Widget extends WP_Widget {
 			$instance[ $k ] = wp_strip_all_tags( $v );
 		}
 
-		// Apply changes to checkboxes which are unchecked when absent from the POST
+		// Apply changes to checkboxes which are unchecked when absent from the POST.
 		$instance['reveal_email'] = isset( $new_instance['reveal_email'] ) ? 'on' : '';
 
 		return $instance;
@@ -90,7 +102,7 @@ class HCard_Author_Widget extends WP_Widget {
 
 
 	/**
-	 * Create the form for the Widget admin
+	 * Create the form for the Widget admin.
 	 *
 	 * @see WP_Widget::form()
 	 *
@@ -98,7 +110,7 @@ class HCard_Author_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 
-		// Set up some default widget settings
+		// Set up some default widget settings.
 		$defaults = array(
 			'avatar'      => 1,
 			'location'    => 1,

@@ -1,21 +1,31 @@
 <?php
+/**
+ * H-Card User Profile Extensions.
+ *
+ * @package IndieWeb
+ */
 
 add_action( 'init', array( 'HCard_User', 'init' ) );
 add_action( 'widgets_init', array( 'HCard_User', 'init_widgets' ) );
 
-// Extended Profile for Rel-Me and H-Card
+/**
+ * Extended Profile for Rel-Me and H-Card.
+ */
 class HCard_User {
 
+	/**
+	 * Initialize the H-Card user functionality.
+	 */
 	public static function init() {
 		include_once 'simple-icons.php';
 		if ( 1 === (int) get_option( 'iw_author_url' ) ) {
-			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 3 );
+			add_filter( 'author_link', array( 'HCard_User', 'author_link' ), 10, 2 );
 		}
 		add_filter( 'user_contactmethods', array( 'HCard_User', 'user_contactmethods' ) );
 
 		add_action( 'show_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
 		add_action( 'edit_user_profile', array( 'HCard_User', 'extended_user_profile' ) );
-		// Save Extra User Data
+		// Save Extra User Data.
 		add_action( 'personal_options_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_action( 'edit_user_profile_update', array( 'HCard_User', 'save_profile' ), 11 );
 		add_filter( 'wp_head', array( 'HCard_User', 'pgp' ), 11 );
@@ -23,16 +33,20 @@ class HCard_User {
 	}
 
 	/**
-	 * register WordPress widgets
+	 * Register WordPress widgets.
 	 */
 	public static function init_widgets() {
 		register_widget( 'RelMe_Widget' );
 	}
 
 	/**
-	 * If there is a URL set in the user profile, set author link to that
+	 * If there is a URL set in the user profile, set author link to that.
+	 *
+	 * @param string $link      The author link.
+	 * @param int    $author_id The author ID.
+	 * @return string The modified author link.
 	 */
-	public static function author_link( $link, $author_id, $nicename ) {
+	public static function author_link( $link, $author_id ) {
 		if ( in_the_loop() && ( is_home() || is_archive() || is_singular() ) ) {
 			$user_info = get_userdata( $author_id );
 			if ( ! empty( $user_info->user_url ) ) {
@@ -43,9 +57,12 @@ class HCard_User {
 	}
 
 	/**
-	 * list of popular silos and profile url patterns
-	 * Focusing on those which are supported by indieauth
-	 * https://indieweb.org/indieauth.com
+	 * List of popular silos and profile URL patterns.
+	 *
+	 * Focusing on those which are supported by IndieAuth.
+	 *
+	 * @see https://indieweb.org/indieauth.com
+	 * @return array Array of silo configurations.
 	 */
 	public static function silos() {
 		$silos = array(
@@ -92,11 +109,10 @@ class HCard_User {
 
 
 	/**
-	 * additional user fields
+	 * Additional user fields.
 	 *
-	 * @param array $profile_fields Current profile fields
-	 *
-	 * @return array $profile_fields extended
+	 * @param array $profile_fields Current profile fields.
+	 * @return array Extended profile fields.
 	 */
 	public static function user_contactmethods( $profile_fields ) {
 		foreach ( self::silos() as $silo => $details ) {
@@ -105,12 +121,17 @@ class HCard_User {
 			}
 		}
 
-		// Telephone Number and PGP Key are not silos
+		// Telephone Number and PGP Key are not silos.
 		$profile_fields['tel'] = __( 'Telephone', 'indieweb' );
 		$profile_fields['pgp'] = __( 'PGP Key (URL)', 'indieweb' );
 		return $profile_fields;
 	}
 
+	/**
+	 * Get address fields configuration.
+	 *
+	 * @return array Address fields.
+	 */
 	public static function address_fields() {
 		$address = array(
 			'street_address'   => array(
@@ -141,6 +162,11 @@ class HCard_User {
 		return apply_filters( 'wp_user_address', $address );
 	}
 
+	/**
+	 * Get extra profile fields configuration.
+	 *
+	 * @return array Extra fields.
+	 */
 	public static function extra_fields() {
 		$extras = array(
 			'job_title'        => array(
@@ -159,6 +185,11 @@ class HCard_User {
 		return apply_filters( 'wp_user_extrafields', $extras );
 	}
 
+	/**
+	 * Render extended user profile fields.
+	 *
+	 * @param WP_User $user The user object.
+	 */
 	public static function extended_user_profile( $user ) {
 		echo '<h3>' . esc_html__( 'Address', 'indieweb' ) . '</h3>';
 		echo '<p>' . esc_html__( 'Fill in all fields you wish displayed.', 'indieweb' ) . '</p>';
@@ -178,6 +209,14 @@ class HCard_User {
 		echo '</table>';
 	}
 
+	/**
+	 * Render a text field for the extended profile.
+	 *
+	 * @param WP_User $user        The user object.
+	 * @param string  $key         The field key.
+	 * @param string  $title       The field title.
+	 * @param string  $description The field description.
+	 */
 	public static function extended_profile_text_field( $user, $key, $title, $description ) {
 		?>
 	<tr>
@@ -190,6 +229,14 @@ class HCard_User {
 		<?php
 	}
 
+	/**
+	 * Render a textarea field for the extended profile.
+	 *
+	 * @param WP_User $user        The user object.
+	 * @param string  $key         The field key.
+	 * @param string  $title       The field title.
+	 * @param string  $description The field description.
+	 */
 	public static function extended_profile_textarea_field( $user, $key, $title, $description ) {
 		$value = get_the_author_meta( $key, $user->ID );
 		if ( is_array( $value ) ) {
@@ -206,12 +253,15 @@ class HCard_User {
 		<?php
 	}
 
+	/**
+	 * Register REST API fields.
+	 */
 	public static function rest_fields() {
 		register_rest_field(
 			'user',
 			'me',
 			array(
-				'get_callback' => function ( $user, $attr, $request, $object_type ) {
+				'get_callback' => function ( $user ) {
 					return array_values( self::get_rel_me( $user['id'] ) );
 				},
 			)
@@ -220,13 +270,19 @@ class HCard_User {
 			'user',
 			'first_name',
 			array(
-				'get_callback' => function ( $user, $attr, $request, $object_type ) {
-					return get_user_meta( $user['id'], 'first_name' );
+				'get_callback' => function ( $user ) {
+					return get_user_meta( $user['id'], 'first_name', true );
 				},
 			)
 		);
 	}
 
+	/**
+	 * Save profile data.
+	 *
+	 * @param int $user_id The user ID.
+	 * @return bool|void False if permission denied.
+	 */
 	public static function save_profile( $user_id ) {
 		if ( ! current_user_can( 'edit_user', $user_id ) ) {
 			return false;
@@ -254,12 +310,11 @@ class HCard_User {
 	/**
 	 * Filters a single silo URL.
 	 *
-	 * @param   string $string A string that is expected to be a silo URL.
-	 * @return  string|bool The filtered and escaped URL string, or FALSE if invalid.
-	 * @used-by clean_urls
+	 * @param string $url_string A string that is expected to be a silo URL.
+	 * @return string|bool The filtered and escaped URL string, or FALSE if invalid.
 	 */
-	public static function clean_url( $string ) {
-		$url = trim( $string );
+	public static function clean_url( $url_string ) {
+		$url = trim( $url_string );
 		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) ) {
 			return false;
 		}
@@ -267,7 +322,7 @@ class HCard_User {
 		if ( ! $host ) {
 			return false;
 		}
-		// Rewrite these to https as needed
+		// Rewrite these to https as needed.
 		$secure = apply_filters( 'iwc_rewrite_secure', array( 'facebook.com', 'twitter.com', 'github.com' ) );
 		if ( in_array( preg_replace( '/^www\./', '', $host ), $secure, true ) ) {
 			$url = preg_replace( '/^http:/i', 'https:', $url );
@@ -291,7 +346,10 @@ class HCard_User {
 	}
 
 	/**
-	 * returns an array of links from the user profile to be used as rel-me
+	 * Returns an array of links from the user profile to be used as rel-me.
+	 *
+	 * @param int|null $author_id The author ID.
+	 * @return array|false Array of rel-me links or false.
 	 */
 	public static function get_rel_me( $author_id = null ) {
 		if ( empty( $author_id ) ) {
@@ -308,14 +366,14 @@ class HCard_User {
 			$socialmeta = get_the_author_meta( $silo, $author_id );
 
 			if ( ! empty( $socialmeta ) ) {
-				// If it is not a URL
+				// If it is not a URL.
 				if ( ! filter_var( $socialmeta, FILTER_VALIDATE_URL ) ) {
-					// If the username has the @ symbol strip it
+					// If the username has the @ symbol strip it.
 					if ( ( 'twitter' === $silo ) && ( preg_match( '/^@?(\w+)$/i', $socialmeta, $matches ) ) ) {
 						$socialmeta = trim( $socialmeta, '@' );
 					}
 					$list[ $silo ] = sprintf( $details['baseurl'], $socialmeta );
-					// Pass the URL itself
+					// Pass the URL itself.
 				} else {
 					$list[ $silo ] = self::clean_url( $socialmeta );
 				}
@@ -337,14 +395,21 @@ class HCard_User {
 	}
 
 	/**
-	 * returns a formatted <ul> list of rel=me to supported silos
+	 * Prints a formatted list of rel=me to supported silos.
+	 *
+	 * @param int|null $author_id   The author ID.
+	 * @param bool     $include_rel Whether to include rel attribute.
 	 */
 	public static function rel_me_list( $author_id = null, $include_rel = false ) {
 		echo self::get_rel_me_list( $author_id, $include_rel ); // phpcs:ignore
 	}
 
 	/**
-	 * returns a formatted <ul> list of rel=me to supported silos
+	 * Returns a formatted list of rel=me to supported silos.
+	 *
+	 * @param int|null $author_id   The author ID.
+	 * @param bool     $include_rel Whether to include rel attribute.
+	 * @return string|false The HTML list or false.
 	 */
 	public static function get_rel_me_list( $author_id = null, $include_rel = false ) {
 		$list = self::get_rel_me( $author_id );
@@ -367,25 +432,32 @@ class HCard_User {
 	}
 
 	/**
-	 * prints a formatted list of rel=me for the head to supported silos
+	 * Returns a formatted list of rel=me for the head to supported silos.
+	 *
+	 * @param int|null $author_id The author ID.
+	 * @return string|false The HTML links or false.
 	 */
 	public static function relme_head_list( $author_id = null ) {
 		$list = self::get_rel_me( $author_id );
 		if ( ! $list ) {
 			return false;
 		}
-		$author_name = get_the_author_meta( 'display_name', $author_id );
-		$r           = array();
+		$r = array();
 		foreach ( $list as $silo => $profile_url ) {
 			$r[ $silo ] = '<link rel="me" href="' . esc_url( $profile_url ) . '" />' . PHP_EOL;
 		}
 		return join( '', $r );
 	}
 
+	/**
+	 * Get the current author ID based on context.
+	 *
+	 * @return int|null The author ID or null.
+	 */
 	public static function get_author() {
 		$single_author = get_option( 'iw_single_author' );
 		if ( is_front_page() && 1 === (int) $single_author ) {
-			return get_option( 'iw_default_author' ); // Set the author ID to default
+			return get_option( 'iw_default_author' ); // Set the author ID to default.
 		} elseif ( is_author() ) {
 			$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
 			if ( $author instanceof WP_User ) {
@@ -398,6 +470,9 @@ class HCard_User {
 		}
 	}
 
+	/**
+	 * Output PGP key link in head.
+	 */
 	public static function pgp() {
 		$author_id = self::get_author();
 		if ( ! $author_id ) {
@@ -405,12 +480,12 @@ class HCard_User {
 		}
 		$pgp = get_user_option( 'pgp', $author_id );
 		if ( ! empty( $pgp ) ) {
-			printf( '<link rel="pgpkey" href="%1$s" />',  $pgp ); // phpcs:ignore
+			printf( '<link rel="pgpkey" href="%1$s" />', esc_url( $pgp ) );
 		}
 	}
 
 	/**
-	 *
+	 * Output rel-me links in head.
 	 */
 	public static function relme_head() {
 		$author_id = self::get_author();
@@ -420,17 +495,22 @@ class HCard_User {
 		echo self::relme_head_list( $author_id ); // phpcs:ignore
 	}
 
+	/**
+	 * Get default display options for h-card.
+	 *
+	 * @return array Default display options.
+	 */
 	public static function get_hcard_display_defaults() {
 		$defaults = array(
 			'style'         => 'div',
 			'container-css' => '',
 			'single-css'    => '',
 			'avatar_size'   => 96,
-			'avatar'        => true, // Display Avatar
-			'location'      => true, // Display location elements
-			'notes'         => true, // Display Bio/Notes
-			'email'         => false,  // Display email
-			'me'            => true, // Display rel-me links inside h-card
+			'avatar'        => true,  // Display Avatar.
+			'location'      => true,  // Display location elements.
+			'notes'         => true,  // Display Bio/Notes.
+			'email'         => false, // Display email.
+			'me'            => true,  // Display rel-me links inside h-card.
 		);
 		return apply_filters( 'hcard_display_defaults', $defaults );
 	}
@@ -440,14 +520,21 @@ class HCard_User {
 	 * /templates subdirectory of the active theme (child, parent).
 	 * Defaults to the /templates subdirectory in this plugin.
 	 *
-	 * @param string $file_name   File name, example: h-card.php
-	 * @return string             Full path to file
+	 * @param string $file_name File name, example: h-card.php.
+	 * @return string Full path to file.
 	 */
 	public static function get_template_file( $file_name ) {
 		$theme_template_file = locate_template( 'templates/' . $file_name );
 		return $theme_template_file ? $theme_template_file : __DIR__ . '/../templates/' . $file_name;
 	}
 
+	/**
+	 * Render the h-card for a user.
+	 *
+	 * @param int|WP_User $user The user ID or object.
+	 * @param array       $args Display arguments.
+	 * @return string|false The h-card HTML or false.
+	 */
 	public static function hcard( $user, $args = array() ) {
 		if ( ! $user ) {
 			return false;
@@ -458,6 +545,8 @@ class HCard_User {
 		}
 
 		$args = wp_parse_args( $args, self::get_hcard_display_defaults() );
+		// Variables are used in the included template file (h-card.php).
+		// phpcs:disable VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
 		if ( $args['avatar'] ) {
 			$avatar = get_avatar(
 				$user,
@@ -474,6 +563,7 @@ class HCard_User {
 		$url   = $user->has_prop( 'user_url' ) ? $user->get( 'user_url' ) : $url = get_author_posts_url( $user->ID );
 		$name  = $user->get( 'display_name' );
 		$email = $user->get( 'user_email' );
+		// phpcs:enable VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable
 		ob_start();
 		include self::get_template_file( 'h-card.php' );
 		$return = ob_get_contents();

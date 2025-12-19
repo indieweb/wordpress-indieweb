@@ -1,0 +1,11 @@
+{
+	"core": null,
+	"plugins": [ "." ],
+	"env": {
+		"tests": {
+			"mappings": {
+				"wp-content/plugins/indieweb": "."
+			}
+		}
+	}
+}
