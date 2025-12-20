@@ -2,13 +2,15 @@
 /**
  * Maps domain names to icons from the provided SVG fontset.
  *
- * @package IndieWeb
+ * @package Indieweb
  */
+
+namespace Indieweb\Relme;
 
 /**
  * Rel-Me Domain Icon Map class.
  */
-class Rel_Me_Domain_Icon_Map {
+class Domain_Icon_Map {
 
 	/**
 	 * Common and custom domain to icon mappings.
@@ -70,7 +72,7 @@ class Rel_Me_Domain_Icon_Map {
 	 * @return string|null The icon file path or null if not found.
 	 */
 	public static function get_icon_filename( $name ) {
-		$svg = sprintf( '%1$s/static/svg/%2$s.svg', plugin_dir_path( __DIR__ ), $name );
+		$svg = sprintf( '%1$s/static/svg/%2$s.svg', \plugin_dir_path( \dirname( __DIR__ ) ), $name );
 		if ( file_exists( $svg ) ) {
 			return $svg;
 		}
@@ -104,7 +106,7 @@ class Rel_Me_Domain_Icon_Map {
 		$icon  = self::get_icon_svg( $name );
 		$title = self::get_title( $name );
 		if ( $icon ) {
-			return sprintf( '<span class="relme-icon svg-%1$s" aria-hidden="true" aria-label="%2$s" title="%2$s" >%3$s</span>', esc_attr( $name ), esc_attr( $title ), $icon );
+			return sprintf( '<span class="relme-icon svg-%1$s" aria-hidden="true" aria-label="%2$s" title="%2$s" >%3$s</span>', \esc_attr( $name ), \esc_attr( $title ), $icon );
 		}
 		return $name;
 	}
@@ -129,7 +131,7 @@ class Rel_Me_Domain_Icon_Map {
 	 * @return string|false The Mastodon domain or false.
 	 */
 	public static function mastodon_url() {
-		$mastodon = get_transient( 'indieweb_mastodon' );
+		$mastodon = \get_transient( 'indieweb_mastodon' );
 		if ( false !== $mastodon ) {
 			return $mastodon;
 		}
@@ -144,18 +146,18 @@ class Rel_Me_Domain_Icon_Map {
 				),
 			),
 		);
-		$query   = new WP_User_Query( $args );
+		$query   = new \WP_User_Query( $args );
 		$results = $query->get_results();
 		if ( empty( $results ) ) {
 			$value = false;
 		} else {
 			$user  = $results[0];
-			$value = get_user_meta( $user->ID, 'mastodon', true );
+			$value = \get_user_meta( $user->ID, 'mastodon', true );
 			if ( ! empty( $value ) && is_string( $value ) ) {
-				$value = wp_parse_url( $value, PHP_URL_HOST );
+				$value = \wp_parse_url( $value, PHP_URL_HOST );
 			}
 		}
-		set_transient( 'indieweb_mastodon', $value );
+		\set_transient( 'indieweb_mastodon', $value );
 	}
 
 	/**
@@ -165,13 +167,13 @@ class Rel_Me_Domain_Icon_Map {
 	 * @return string The icon name.
 	 */
 	public static function url_to_name( $url ) {
-		$scheme = wp_parse_url( $url, PHP_URL_SCHEME );
+		$scheme = \wp_parse_url( $url, PHP_URL_SCHEME );
 		// The default if not an http link is to return notice.
 		$return = 'notice';
 		if ( ( 'http' === $scheme ) || ( 'https' === $scheme ) ) {
 			$return = 'website'; // Default for web links.
 			$url    = strtolower( $url );
-			$domain = wp_parse_url( $url, PHP_URL_HOST );
+			$domain = \wp_parse_url( $url, PHP_URL_HOST );
 
 			$domain = str_replace( 'www.', '', $domain ); // Always remove www.
 
@@ -217,8 +219,10 @@ class Rel_Me_Domain_Icon_Map {
 			return 'googlehangouts';
 		}
 		// Save the determined mapping into the map so that it will not have to look again on the same page load.
-		self::$map[ $domain ] = $return;
-		$return               = apply_filters( 'indieweb_links_url_to_name', $return, $url );
+		if ( isset( $domain ) ) {
+			self::$map[ $domain ] = $return;
+		}
+		$return = \apply_filters( 'indieweb_links_url_to_name', $return, $url );
 		return $return;
 	}
 }
