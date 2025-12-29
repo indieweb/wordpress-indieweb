@@ -22,7 +22,7 @@
 		"@wordpress/env": "^10.0.0",
 		"genericons-neue": "^4.0.5",
 		"sass": "^1.77.0",
-		"simple-icons": "^13.0.0"
+		"simple-icons": "^16.3.0"
 	},
 	"scripts": {
 		"build-icons": "node static/js/simpleicons.js",
