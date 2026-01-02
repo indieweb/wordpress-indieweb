@@ -9,7 +9,6 @@
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
- * Domain Path: /languages
  *
  * @package Indieweb
  */
