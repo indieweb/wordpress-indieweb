@@ -7,8 +7,6 @@
 
 namespace Indieweb\Hcard;
 
-\add_action( 'widgets_init', array( Author_Widget::class, 'register' ) );
-
 /**
  * Widget to display author profile as an h-card.
  */

@@ -10,9 +10,6 @@ namespace Indieweb\Hcard;
 use Indieweb\Relme\Domain_Icon_Map;
 use Indieweb\Relme\Widget as Relme_Widget;
 
-\add_action( 'init', array( User::class, 'init' ) );
-\add_action( 'widgets_init', array( User::class, 'init_widgets' ) );
-
 /**
  * Extended Profile for Rel-Me and H-Card.
  */

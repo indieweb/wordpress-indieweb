@@ -7,6 +7,9 @@
 
 namespace Indieweb;
 
+use Indieweb\Hcard\Author_Widget;
+use Indieweb\Hcard\User;
+
 /**
  * Indieweb Class.
  *
@@ -73,6 +76,19 @@ class Indieweb {
 
 		// Privacy Declaration.
 		\add_action( 'admin_init', array( $this, 'privacy_declaration' ) );
+
+		// General Settings.
+		\add_action( 'admin_menu', array( General_Settings::class, 'admin_menu' ) );
+		\add_action( 'init', array( General_Settings::class, 'register_settings' ) );
+		\add_action( 'admin_menu', array( General_Settings::class, 'admin_settings' ), 11 );
+
+		// Third party integrations.
+		\add_action( 'init', array( Integrations::class, 'init' ) );
+
+		// H-Card support.
+		\add_action( 'init', array( User::class, 'init' ) );
+		\add_action( 'widgets_init', array( User::class, 'init_widgets' ) );
+		\add_action( 'widgets_init', array( Author_Widget::class, 'register' ) );
 
 		// We're up and running.
 		\do_action( 'indieweb_loaded' );

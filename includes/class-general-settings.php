@@ -7,10 +7,6 @@
 
 namespace Indieweb;
 
-\add_action( 'admin_menu', array( General_Settings::class, 'admin_menu' ) );
-\add_action( 'init', array( General_Settings::class, 'register_settings' ) );
-\add_action( 'admin_menu', array( General_Settings::class, 'admin_settings' ), 11 );
-
 /**
  * General Settings class for Indieweb plugin.
  */

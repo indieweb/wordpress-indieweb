@@ -7,8 +7,6 @@
 
 namespace Indieweb;
 
-\add_action( 'init', array( Integrations::class, 'init' ) );
-
 /**
  * Third party integrations.
  */
