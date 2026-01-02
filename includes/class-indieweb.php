@@ -24,13 +24,6 @@ class Indieweb {
 	private static $instance;
 
 	/**
-	 * Text domain.
-	 *
-	 * @var string
-	 */
-	const TEXT_DOMAIN = 'indieweb';
-
-	/**
 	 * Whether the class has been initialized.
 	 *
 	 * @var boolean
@@ -65,22 +58,18 @@ class Indieweb {
 			return;
 		}
 
-		// Load language files.
-		\load_plugin_textdomain( self::TEXT_DOMAIN, false, \dirname( \plugin_basename( INDIEWEB_PLUGIN_FILE ) ) . '/languages' );
-
+		// Enqueue styles.
 		\add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_style' ) );
 
-		// Add menu.
+		// Admin menu and settings.
 		\add_action( 'admin_menu', array( $this, 'add_menu_item' ), 9 );
-
-		// Privacy Declaration.
+		\add_action( 'admin_menu', array( General_Settings::class, 'admin_menu' ) );
+		\add_action( 'admin_menu', array( General_Settings::class, 'admin_settings' ), 11 );
 		\add_action( 'admin_init', array( $this, 'privacy_declaration' ) );
 
 		// General Settings.
-		\add_action( 'admin_menu', array( General_Settings::class, 'admin_menu' ) );
 		\add_action( 'init', array( General_Settings::class, 'register_settings' ) );
-		\add_action( 'admin_menu', array( General_Settings::class, 'admin_settings' ), 11 );
 
 		// Third party integrations.
 		\add_action( 'init', array( Integrations::class, 'init' ) );
