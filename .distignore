@@ -9,7 +9,6 @@
 package.json
 composer.json
 composer.lock
-Gruntfile.js
 push.sh
 phpunit.xml
 phpunit.xml.dist
@@ -17,4 +16,4 @@ phpcs.xml
 .travis.yml
 .distignore
 .gitignore
-docker-compose.yml
+.wp-env.json
