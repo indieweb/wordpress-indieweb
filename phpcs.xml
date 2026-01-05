@@ -21,10 +21,4 @@
 	<rule ref="PHPCompatibilityWP"/>
 	<rule ref="WordPress"/>
 	<rule ref="VariableAnalysis"/>
-
-	<rule ref="WordPress.Files.FileName">
-		<properties>
-			<property name="strict_class_file_names" value="false"/>
-		</properties>
-	</rule>
 </ruleset>
