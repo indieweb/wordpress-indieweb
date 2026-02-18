@@ -19,7 +19,7 @@
 		"wordpress"
 	],
 	"devDependencies": {
-		"@wordpress/env": "^10.0.0",
+		"@wordpress/env": "^11.0.0",
 		"genericons-neue": "^4.0.5",
 		"sass": "^1.77.0",
 		"simple-icons": "^16.7.0"
