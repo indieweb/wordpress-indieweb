@@ -263,7 +263,8 @@ class User {
 			'me',
 			array(
 				'get_callback' => function ( $user ) {
-					return array_values( self::get_rel_me( $user['id'] ) );
+					$rel_me = self::get_rel_me( $user['id'] );
+					return $rel_me ? array_values( $rel_me ) : array();
 				},
 			)
 		);
