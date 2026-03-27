@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - trunk
+    paths:
+      - '.wordpress-org/**'
+      - 'readme.md'
+      - '.github/workflows/update-assets.yml'
 
 jobs:
   trunk:
