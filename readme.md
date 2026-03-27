@@ -5,8 +5,8 @@
 - Tags: indieweb, webmention, POSSE, indieauth
 - Requires at least: 4.7
 - Requires PHP: 7.4
-- Tested up to: 6.9
-- Stable tag: 5.0.0
+- Tested up to: 7.0
+- Stable tag: 5.1.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -79,6 +79,14 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 5.1.0
+* Tested with WordPress 7.0
+* Added namespacing and PSR-4 style autoloader
+* Added unit tests
+* Centralized hook registrations
+* Fix fatal error when `get_rel_me` returns false in REST API
+* Updated dependencies
 
 ### 5.0.0
 * Requires PHP 7.4 or higher
