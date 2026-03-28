@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 5.1.0
+ * Version: 5.1.1
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -15,7 +15,7 @@
 
 namespace Indieweb;
 
-\define( 'INDIEWEB_VERSION', '5.1.0' );
+\define( 'INDIEWEB_VERSION', '5.1.1' );
 
 \defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || \define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
 \defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || \define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
