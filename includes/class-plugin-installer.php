@@ -339,8 +339,3 @@ class Plugin_Installer {
 		\wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css', array(), INDIEWEB_VERSION );
 	}
 }
-
-
-// Initialize.
-$indieweb_plugin_installer = new Plugin_Installer();
-$indieweb_plugin_installer->start();

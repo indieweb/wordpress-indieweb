@@ -62,6 +62,10 @@ class Indieweb {
 		\add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_style' ) );
 
+		// Plugin installer (extensions page).
+		$plugin_installer = new Plugin_Installer();
+		$plugin_installer->start();
+
 		// Admin menu and settings.
 		\add_action( 'admin_menu', array( $this, 'add_menu_item' ), 9 );
 		\add_action( 'admin_menu', array( General_Settings::class, 'admin_menu' ) );
