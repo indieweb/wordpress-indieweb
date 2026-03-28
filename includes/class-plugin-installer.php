@@ -5,7 +5,7 @@
  * @author   Darren Cooney
  * @link     https://github.com/dcooney/wordpress-plugin-installer
  * @link     https://connekthq.com
- * @version  1.0
+ * @version  1.0.2
  * @package  Indieweb
  */
 
@@ -20,9 +20,9 @@ class Plugin_Installer {
 	 * Start the installer.
 	 */
 	public function start() {
-		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) ); // Enqueue scripts and Localize.
-		\add_action( 'wp_ajax_cnkt_plugin_installer', array( $this, 'cnkt_plugin_installer' ) ); // Install plugin.
-		\add_action( 'wp_ajax_cnkt_plugin_activation', array( $this, 'cnkt_plugin_activation' ) ); // Activate plugin.
+		\add_action( 'cnkt_installer_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		\add_action( 'wp_ajax_cnkt_plugin_installer', array( $this, 'cnkt_plugin_installer' ) );
+		\add_action( 'wp_ajax_cnkt_plugin_activation', array( $this, 'cnkt_plugin_activation' ) );
 	}
 
 	/**
@@ -31,6 +31,8 @@ class Plugin_Installer {
 	 * @param array $plugins Array of plugin data.
 	 */
 	public static function init( $plugins ) {
+		// Add the required plugin scripts.
+		\do_action( 'cnkt_installer_enqueue_scripts' );
 		?>
 
 		<div class="cnkt-plugin-installer">
@@ -63,10 +65,12 @@ class Plugin_Installer {
 				)
 			);
 
-			if ( ! \is_wp_error( $api ) ) { // Confirm error free.
+			if ( ! \is_wp_error( $api ) ) {
 
 				$main_plugin_file = self::get_plugin_file( $plugin['slug'] ); // Get main plugin file.
-				if ( self::check_file_extension( $main_plugin_file ) ) { // Check file extension.
+
+				// Plugin is installed.
+				if ( $main_plugin_file ) {
 					if ( \is_plugin_active( $main_plugin_file ) ) {
 						// Plugin activation, confirmed!
 						$button_classes = 'button disabled';
@@ -297,25 +301,6 @@ class Plugin_Installer {
 			}
 		}
 		return null;
-	}
-
-	/**
-	 * A helper to check file extension.
-	 *
-	 * @param string $filename The filename of the plugin.
-	 * @return bool True if PHP file, false otherwise.
-	 */
-	public static function check_file_extension( $filename ) {
-		if ( ! $filename ) {
-			return false;
-		}
-
-		if ( substr( strrchr( $filename, '.' ), 1 ) === 'php' ) {
-			// Has .php extension.
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 	/**

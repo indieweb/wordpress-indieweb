@@ -81,7 +81,9 @@ One could certainly download, install, and activate some or all of these plugins
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
 ### 5.1.1
-* Fix broken styles and scripts on extensions page caused by referencing non-existent static property
+* Update Plugin Installer to upstream version 1.0.2
+* Fix broken styles and scripts on extensions page
+* Fix PHP deprecation warning for uninstalled plugins
 
 ### 5.1.0
 * Tested with WordPress 7.0
