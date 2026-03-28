@@ -306,6 +306,10 @@ class Plugin_Installer {
 	 * @return bool True if PHP file, false otherwise.
 	 */
 	public static function check_file_extension( $filename ) {
+		if ( ! $filename ) {
+			return false;
+		}
+
 		if ( substr( strrchr( $filename, '.' ), 1 ) === 'php' ) {
 			// Has .php extension.
 			return true;
