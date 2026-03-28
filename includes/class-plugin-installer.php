@@ -318,7 +318,7 @@ class Plugin_Installer {
 	 * Enqueue admin scripts and scripts localization.
 	 */
 	public function enqueue_scripts() {
-		\wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ), Indieweb::$version, true );
+		\wp_enqueue_script( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/js/installer.js', array( 'jquery' ), INDIEWEB_VERSION, true );
 		\wp_localize_script(
 			'plugin-installer',
 			'cnkt_installer_localize',
@@ -332,7 +332,7 @@ class Plugin_Installer {
 			)
 		);
 
-		\wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css', array(), Indieweb::$version );
+		\wp_enqueue_style( 'plugin-installer', CNKT_INSTALLER_PATH . 'static/css/installer.css', array(), INDIEWEB_VERSION );
 	}
 }
 
