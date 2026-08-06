@@ -132,7 +132,7 @@ class Indieweb {
 			\__( 'Extensions', 'indieweb' ), // Page title.
 			\__( 'Extensions', 'indieweb' ), // Menu title.
 			'manage_options', // Access capability.
-			'indieweb-installer',
+			Plugin_Installer::PAGE_SLUG,
 			array( $this, 'plugin_installer' )
 		);
 
@@ -166,20 +166,6 @@ class Indieweb {
 	 */
 	public function plugin_installer() {
 		Plugin_Installer::render_plugins_ui();
-	}
-
-	/**
-	 * Register the recommended plugins.
-	 *
-	 * @return array List of plugins, each with a `slug` key.
-	 */
-	public function register_plugins() {
-		return \array_map(
-			static function ( $slug ) {
-				return array( 'slug' => $slug );
-			},
-			Plugin_Installer::get_plugin_slugs()
-		);
 	}
 
 	/**

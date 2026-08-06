@@ -22,11 +22,28 @@ use WP_Ajax_Upgrader_Skin;
 class Plugin_Installer {
 
 	/**
+	 * Slug of the Extensions admin screen.
+	 *
+	 * @var string
+	 */
+	const PAGE_SLUG = 'indieweb-installer';
+
+	/**
 	 * Transient key the WordPress.org plugin data is cached under.
 	 *
 	 * @var string
 	 */
 	const TRANSIENT_KEY = 'indieweb_plugins_info';
+
+	/**
+	 * Transient key failed WordPress.org lookups are cached under.
+	 *
+	 * Kept apart from the plugin data so one broken slug cannot shorten the
+	 * lifetime of every successful lookup.
+	 *
+	 * @var string
+	 */
+	const ERROR_TRANSIENT_KEY = 'indieweb_plugins_errors';
 
 	/**
 	 * Slug of the classic (meta box based) Post Kinds plugin.
@@ -43,6 +60,25 @@ class Plugin_Installer {
 	const POST_KINDS_BLOCK = 'post-kinds-for-indieweb-in-block-themes';
 
 	/**
+	 * The recommended plugins, in display order.
+	 *
+	 * The Post Kinds entry is a placeholder. get_plugin_slugs() swaps in
+	 * whichever of the two variants fits the site.
+	 *
+	 * @var string[]
+	 */
+	const PLUGINS = array(
+		'webmention',
+		'micropub',
+		self::POST_KINDS_CLASSIC,
+		'syndication-links',
+		'indieauth',
+		'simple-location',
+		'pubsubhubbub',
+		'indieblocks',
+	);
+
+	/**
 	 * Plugin fields requested from the WordPress.org API and kept in the cache.
 	 *
 	 * @var string[]
@@ -57,6 +93,13 @@ class Plugin_Installer {
 		'icons',
 		'version', // Needed by install_plugin_install_status().
 	);
+
+	/**
+	 * In-request copy of the transients, keyed by transient name.
+	 *
+	 * @var array<string, array>
+	 */
+	private static $cache = array();
 
 	/**
 	 * Register the hooks.
@@ -80,36 +123,56 @@ class Plugin_Installer {
 	 */
 	public static function enqueue_scripts() {
 		// These assets are needed for the "Learn more" popover.
-		\wp_enqueue_script( 'thickbox' );
-		\wp_enqueue_style( 'thickbox' );
+		\add_thickbox();
 		\wp_enqueue_script( 'plugin-install' );
+	}
+
+	/**
+	 * Get every plugin slug this screen is willing to install.
+	 *
+	 * This is the allow list for install requests, so it holds both Post Kinds
+	 * variants regardless of which one is currently recommended.
+	 *
+	 * @return string[] List of plugin slugs.
+	 */
+	public static function get_installable_slugs() {
+		$slugs   = self::PLUGINS;
+		$slugs[] = self::POST_KINDS_BLOCK;
+
+		return $slugs;
 	}
 
 	/**
 	 * Get the slugs of the recommended plugins.
 	 *
+	 * The list is dynamic: the Post Kinds entry depends on the site, see
+	 * get_post_kinds_slug().
+	 *
 	 * @return string[] List of plugin slugs.
 	 */
 	public static function get_plugin_slugs() {
-		$slugs = array(
-			'webmention',
-			'micropub',
-			self::get_post_kinds_slug(),
-			'syndication-links',
-			'indieauth',
-			'simple-location',
-			'pubsubhubbub',
-			'indieblocks',
-		);
+		static $slugs = null;
+
+		if ( null !== $slugs ) {
+			return $slugs;
+		}
+
+		$recommended = array();
+
+		foreach ( self::PLUGINS as $slug ) {
+			$recommended[] = self::POST_KINDS_CLASSIC === $slug ? self::get_post_kinds_slug() : $slug;
+		}
 
 		/**
 		 * Filters the list of plugins recommended on the Extensions screen.
 		 *
-		 * @param string[] $slugs List of WordPress.org plugin slugs.
+		 * @param string[] $recommended List of WordPress.org plugin slugs.
 		 */
-		$slugs = \apply_filters( 'indieweb_recommended_plugins', $slugs );
+		$recommended = \apply_filters( 'indieweb_recommended_plugins', $recommended );
 
-		return \array_values( \array_unique( \array_filter( $slugs ) ) );
+		$slugs = \array_values( \array_unique( \array_filter( $recommended ) ) );
+
+		return $slugs;
 	}
 
 	/**
@@ -123,27 +186,37 @@ class Plugin_Installer {
 	 * @return string The plugin slug to recommend.
 	 */
 	public static function get_post_kinds_slug() {
-		foreach ( array( self::POST_KINDS_BLOCK, self::POST_KINDS_CLASSIC ) as $slug ) {
-			if ( null !== self::get_plugin_file( $slug ) ) {
+		static $slug = null;
+
+		if ( null !== $slug ) {
+			return $slug;
+		}
+
+		foreach ( array( self::POST_KINDS_BLOCK, self::POST_KINDS_CLASSIC ) as $installed ) {
+			if ( self::is_plugin_installed( $installed ) ) {
+				$slug = $installed;
+
 				return $slug;
 			}
 		}
 
+		$slug = self::POST_KINDS_CLASSIC;
+
 		if ( ! self::is_block_editor_enabled() ) {
-			return self::POST_KINDS_CLASSIC;
+			return $slug;
 		}
 
 		$plugin_data = self::query_plugin_info( self::POST_KINDS_BLOCK );
 		if ( \is_wp_error( $plugin_data ) ) {
-			return self::POST_KINDS_CLASSIC;
+			return $slug;
 		}
 
 		$availability = self::get_plugin_availability( $plugin_data );
-		if ( ! $availability['compatible_wp'] || ! $availability['compatible_php'] ) {
-			return self::POST_KINDS_CLASSIC;
+		if ( $availability['compatible_wp'] && $availability['compatible_php'] ) {
+			$slug = self::POST_KINDS_BLOCK;
 		}
 
-		return self::POST_KINDS_BLOCK;
+		return $slug;
 	}
 
 	/**
@@ -162,21 +235,53 @@ class Plugin_Installer {
 			return false;
 		}
 
+		// Lived in wp-admin/includes/post.php before WordPress 6.1.
 		if ( ! \function_exists( 'use_block_editor_for_post_type' ) ) {
-			$file = ABSPATH . 'wp-admin/includes/post.php';
-
-			if ( ! \file_exists( $file ) ) {
-				return false;
-			}
-
-			require_once $file;
-		}
-
-		if ( ! \function_exists( 'use_block_editor_for_post_type' ) ) {
-			return false;
+			require_once ABSPATH . 'wp-admin/includes/post.php';
 		}
 
 		return (bool) \use_block_editor_for_post_type( 'post' );
+	}
+
+	/**
+	 * Whether a plugin is present in the plugins directory.
+	 *
+	 * @param string $plugin_slug The WordPress.org plugin slug.
+	 * @return bool True if the plugin is installed.
+	 */
+	private static function is_plugin_installed( $plugin_slug ) {
+		require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+		return \count( \get_plugins( '/' . $plugin_slug ) ) > 0;
+	}
+
+	/**
+	 * Read a transient, keeping an in-request copy.
+	 *
+	 * @param string $key The transient key.
+	 * @return array The cached array, empty if there is nothing cached.
+	 */
+	private static function get_cache( $key ) {
+		if ( ! isset( self::$cache[ $key ] ) ) {
+			$value = \get_transient( $key );
+
+			self::$cache[ $key ] = \is_array( $value ) ? $value : array();
+		}
+
+		return self::$cache[ $key ];
+	}
+
+	/**
+	 * Write a transient and update the in-request copy.
+	 *
+	 * @param string $key        The transient key.
+	 * @param array  $value      The value to cache.
+	 * @param int    $expiration Time until expiration, in seconds.
+	 */
+	private static function set_cache( $key, $value, $expiration ) {
+		self::$cache[ $key ] = $value;
+
+		\set_transient( $key, $value, $expiration );
 	}
 
 	/**
@@ -190,14 +295,16 @@ class Plugin_Installer {
 	 * @return array|WP_Error Array of plugin data or WP_Error on failure.
 	 */
 	public static function query_plugin_info( $plugin_slug ) {
-		$plugins = \get_transient( self::TRANSIENT_KEY );
-
-		if ( ! \is_array( $plugins ) ) {
-			$plugins = array();
-		}
+		$plugins = self::get_cache( self::TRANSIENT_KEY );
 
 		if ( isset( $plugins[ $plugin_slug ] ) ) {
-			return self::prepare_plugin_info( $plugins[ $plugin_slug ] );
+			return $plugins[ $plugin_slug ];
+		}
+
+		$errors = self::get_cache( self::ERROR_TRANSIENT_KEY );
+
+		if ( isset( $errors[ $plugin_slug ] ) ) {
+			return $errors[ $plugin_slug ];
 		}
 
 		require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
@@ -213,65 +320,51 @@ class Plugin_Installer {
 			)
 		);
 
-		$has_errors = false;
+		$error = null;
 
 		if ( \is_wp_error( $response ) ) {
-			$plugins[ $plugin_slug ] = array(
-				'error' => array(
-					'code'    => 'api_error',
-					'message' => \sprintf(
-						/* translators: %s: API error message */
-						\__( 'Failed to retrieve plugin data from the WordPress.org API: %s', 'indieweb' ),
-						$response->get_error_message()
-					),
-				),
+			$error = new WP_Error(
+				'api_error',
+				\sprintf(
+					/* translators: %s: API error message */
+					\__( 'Failed to retrieve plugin data from the WordPress.org API: %s', 'indieweb' ),
+					$response->get_error_message()
+				)
 			);
-
-			$has_errors = true;
 		} elseif ( ! \is_object( $response ) || ! isset( $response->slug ) ) {
-			$plugins[ $plugin_slug ] = array(
-				'error' => array(
-					'code'    => 'plugin_not_found',
-					'message' => \__( 'Plugin not found in the API response.', 'indieweb' ),
-				),
+			$error = new WP_Error(
+				'plugin_not_found',
+				\__( 'Plugin not found in the API response.', 'indieweb' )
 			);
-
-			$has_errors = true;
-		} else {
-			$plugin_data = \wp_array_slice_assoc( (array) $response, self::FIELDS );
-
-			// Not every plugin declares dependencies, but the rest of the code expects the key.
-			if ( ! isset( $plugin_data['requires_plugins'] ) || ! \is_array( $plugin_data['requires_plugins'] ) ) {
-				$plugin_data['requires_plugins'] = array();
-			}
-
-			$plugins[ $plugin_slug ] = $plugin_data;
 		}
 
-		\set_transient( self::TRANSIENT_KEY, $plugins, $has_errors ? MINUTE_IN_SECONDS : HOUR_IN_SECONDS );
+		if ( $error instanceof WP_Error ) {
+			$errors[ $plugin_slug ] = $error;
 
-		return self::prepare_plugin_info( $plugins[ $plugin_slug ] );
-	}
+			self::set_cache( self::ERROR_TRANSIENT_KEY, $errors, MINUTE_IN_SECONDS );
 
-	/**
-	 * Turn a cache entry into either plugin data or the error it recorded.
-	 *
-	 * @param array $entry Cached plugin data or error.
-	 * @return array|WP_Error Array of plugin data or WP_Error.
-	 */
-	private static function prepare_plugin_info( $entry ) {
-		if ( isset( $entry['error'] ) ) {
-			return new WP_Error( $entry['error']['code'], $entry['error']['message'] );
+			return $error;
 		}
 
-		return $entry;
+		$plugin_data = \wp_array_slice_assoc( (array) $response, self::FIELDS );
+
+		// Not every plugin declares dependencies, but the rest of the code expects the key.
+		if ( ! isset( $plugin_data['requires_plugins'] ) || ! \is_array( $plugin_data['requires_plugins'] ) ) {
+			$plugin_data['requires_plugins'] = array();
+		}
+
+		$plugins[ $plugin_slug ] = $plugin_data;
+
+		self::set_cache( self::TRANSIENT_KEY, $plugins, HOUR_IN_SECONDS );
+
+		return $plugin_data;
 	}
 
 	/**
 	 * Check whether a given plugin can be installed and activated.
 	 *
 	 * @param array $plugin_data                     Plugin data from the WordPress.org API.
-	 * @param array $processed_plugin_availabilities Availabilities already processed. Only used by recursive calls.
+	 * @param array $processed_plugin_availabilities Availabilities already processed, reused across cards.
 	 * @return array {
 	 *     @type bool $compatible_php Whether the PHP requirement is met.
 	 *     @type bool $compatible_wp  Whether the WordPress requirement is met.
@@ -416,16 +509,15 @@ class Plugin_Installer {
 				return $skin->get_errors();
 			}
 
-			$plugins = \get_plugins( '/' . $plugin_slug );
-			if ( 0 === \count( $plugins ) ) {
+			// Resolves the main file from what was actually unpacked, which can differ from the slug.
+			$plugin_file = $upgrader->plugin_info();
+
+			if ( ! $plugin_file ) {
 				return new WP_Error(
 					'plugin_not_found',
 					\__( 'Plugin not found among installed plugins.', 'indieweb' )
 				);
 			}
-
-			$plugin_file_names = \array_keys( $plugins );
-			$plugin_file       = $plugin_slug . '/' . $plugin_file_names[0];
 		}
 
 		// Activate the plugin.
@@ -464,7 +556,7 @@ class Plugin_Installer {
 
 		$plugin_slug = \sanitize_key( \wp_unslash( $_GET['slug'] ) );
 
-		if ( ! \in_array( $plugin_slug, self::get_plugin_slugs(), true ) ) {
+		if ( ! \in_array( $plugin_slug, self::get_installable_slugs(), true ) ) {
 			\wp_die( \esc_html__( 'Invalid plugin.', 'indieweb' ) );
 		}
 
@@ -474,17 +566,16 @@ class Plugin_Installer {
 			\wp_die( \wp_kses_post( $result->get_error_message() ) );
 		}
 
-		$url = \add_query_arg(
-			array(
-				'page'     => 'indieweb-installer',
-				'activate' => $plugin_slug,
-			),
-			\admin_url( 'admin.php' )
+		\wp_safe_redirect(
+			\add_query_arg(
+				array(
+					'page'     => self::PAGE_SLUG,
+					'activate' => $plugin_slug,
+				),
+				\admin_url( 'admin.php' )
+			)
 		);
-
-		if ( \wp_safe_redirect( $url ) ) {
-			exit;
-		}
+		exit;
 	}
 
 	/**
@@ -506,13 +597,16 @@ class Plugin_Installer {
 				$plugins[ $plugin_slug ] = $plugin_data;
 			}
 		}
+
+		// Shared across every card, so dependencies are only resolved once.
+		$availabilities = array();
 		?>
 		<div class="wrap plugin-install-php">
 			<h1><?php \esc_html_e( 'IndieWeb Plugin Installer', 'indieweb' ); ?></h1>
 			<p><?php \esc_html_e( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ); ?></p>
 
 			<?php
-			self::render_activation_notice();
+			self::render_activation_notice( $plugins );
 			self::render_error_notice( $errors );
 
 			if ( \count( $plugins ) > 0 ) :
@@ -522,7 +616,7 @@ class Plugin_Installer {
 					<div id="the-list">
 						<?php
 						foreach ( $plugins as $plugin_data ) {
-							self::render_plugin_card( $plugin_data );
+							self::render_plugin_card( $plugin_data, $availabilities );
 						}
 						?>
 					</div>
@@ -554,8 +648,10 @@ class Plugin_Installer {
 
 	/**
 	 * Render the notice shown after a plugin was installed and activated.
+	 *
+	 * @param array $plugins Plugin data for the recommended plugins, keyed by slug.
 	 */
-	private static function render_activation_notice() {
+	private static function render_activation_notice( $plugins ) {
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice, the action itself is nonce checked.
 		if ( ! isset( $_GET['activate'] ) ) {
 			return;
@@ -563,14 +659,13 @@ class Plugin_Installer {
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice, the action itself is nonce checked.
 		$plugin_slug = \sanitize_key( \wp_unslash( $_GET['activate'] ) );
-		$plugin_data = self::query_plugin_info( $plugin_slug );
-		$name        = \is_wp_error( $plugin_data ) ? $plugin_slug : $plugin_data['name'];
+		$name        = isset( $plugins[ $plugin_slug ]['name'] ) ? $plugins[ $plugin_slug ]['name'] : $plugin_slug;
 		?>
 		<div class="notice notice-success is-dismissible">
 			<p>
 				<?php
 				/* translators: %s: Plugin name */
-				\printf( \esc_html__( '%s was successfully installed and activated.', 'indieweb' ), \esc_html( \wp_strip_all_tags( $name ) ) );
+				\printf( \esc_html__( '%s was successfully installed and activated.', 'indieweb' ), \esc_html( $name ) );
 				?>
 			</p>
 		</div>
@@ -586,15 +681,6 @@ class Plugin_Installer {
 		if ( 0 === \count( $errors ) ) {
 			return;
 		}
-
-		$error_messages = \array_unique(
-			\array_map(
-				static function ( $error ) {
-					return $error->get_error_message();
-				},
-				$errors
-			)
-		);
 		?>
 		<div class="notice notice-error">
 			<p>
@@ -610,17 +696,13 @@ class Plugin_Installer {
 				?>
 			</p>
 			<ul>
-				<?php foreach ( \array_keys( $errors ) as $plugin_slug ) : ?>
+				<?php foreach ( $errors as $plugin_slug => $error ) : ?>
 					<li>
-						<a target="_blank" href="<?php echo \esc_url( \trailingslashit( \__( 'https://wordpress.org/plugins/', 'default' ) . $plugin_slug ) ); ?>">
+						<a target="_blank" href="<?php echo \esc_url( self::get_plugin_directory_url( $plugin_slug ) ); ?>">
 							<code><?php echo \esc_html( $plugin_slug ); ?></code>
 						</a>
+						<?php echo \wp_kses( $error->get_error_message(), array( 'a' => array( 'href' => true ) ) ); ?>
 					</li>
-				<?php endforeach; ?>
-			</ul>
-			<ul>
-				<?php foreach ( $error_messages as $error_message ) : ?>
-					<li><?php echo \wp_kses( $error_message, array( 'a' => array( 'href' => true ) ) ); ?></li>
 				<?php endforeach; ?>
 			</ul>
 			<p><?php \esc_html_e( 'Please consider installing and activating these plugins manually.', 'indieweb' ); ?></p>
@@ -635,9 +717,10 @@ class Plugin_Installer {
 	 *
 	 * @see \WP_Plugin_Install_List_Table::display_rows()
 	 *
-	 * @param array $plugin_data Plugin data from the WordPress.org API.
+	 * @param array $plugin_data    Plugin data from the WordPress.org API.
+	 * @param array $availabilities Availabilities already processed, reused across cards.
 	 */
-	public static function render_plugin_card( $plugin_data ) {
+	public static function render_plugin_card( $plugin_data, &$availabilities = array() ) {
 		$name        = \wp_strip_all_tags( $plugin_data['name'] );
 		$description = \wp_strip_all_tags( $plugin_data['short_description'] );
 
@@ -645,10 +728,7 @@ class Plugin_Installer {
 		// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentionally applying a core filter.
 		$description = \apply_filters( 'plugin_install_description', $description, $plugin_data );
 
-		$availability   = self::get_plugin_availability( $plugin_data );
-		$compatible_php = $availability['compatible_php'];
-		$compatible_wp  = $availability['compatible_wp'];
-
+		$availability = self::get_plugin_availability( $plugin_data, $availabilities );
 		$action_links = array();
 
 		if ( $availability['activated'] ) {
@@ -662,18 +742,9 @@ class Plugin_Installer {
 			$availability['can_install'] &&
 			$availability['can_activate']
 		) {
-			$url = \add_query_arg(
-				array(
-					'action'   => 'indieweb_install_activate_plugin',
-					'_wpnonce' => \wp_create_nonce( 'indieweb_install_activate_plugin' ),
-					'slug'     => $plugin_data['slug'],
-				),
-				\admin_url( 'admin.php' )
-			);
-
 			$action_links[] = \sprintf(
 				'<a class="button" href="%s">%s</a>',
-				\esc_url( $url ),
+				\esc_url( self::get_install_url( $plugin_data['slug'] ) ),
 				$availability['installed'] ? \esc_html__( 'Activate', 'default' ) : \esc_html__( 'Install Now', 'default' )
 			);
 		} else {
@@ -702,11 +773,11 @@ class Plugin_Installer {
 				/* translators: %s: Plugin name */
 				\esc_attr( \sprintf( \__( 'More information about %s', 'default' ), $name ) ),
 				\esc_attr( $name ),
-				\esc_html__( 'More Details', 'indieweb' )
+				\esc_html__( 'More Details', 'default' )
 			);
 		} else {
 			$title_link_attr = ' target="_blank"';
-			$details_link    = \__( 'https://wordpress.org/plugins/', 'default' ) . $plugin_data['slug'] . '/';
+			$details_link    = self::get_plugin_directory_url( $plugin_data['slug'] );
 
 			$action_links[] = \sprintf(
 				'<a href="%s" aria-label="%s" target="_blank">%s</a>',
@@ -718,76 +789,7 @@ class Plugin_Installer {
 		}
 		?>
 		<div class="plugin-card plugin-card-<?php echo \sanitize_html_class( $plugin_data['slug'] ); ?>">
-			<?php if ( ! $compatible_php || ! $compatible_wp ) : ?>
-				<div class="notice inline notice-error notice-alt">
-					<?php if ( ! $compatible_php && ! $compatible_wp ) : ?>
-						<p><?php \esc_html_e( 'This plugin does not work with your versions of WordPress and PHP.', 'default' ); ?></p>
-						<?php
-						if ( \current_user_can( 'update_core' ) && \current_user_can( 'update_php' ) ) {
-							echo \wp_kses_post(
-								\sprintf(
-									/* translators: 1: URL to WordPress Updates screen, 2: URL to Update PHP page. */
-									' ' . \__( '<a href="%1$s">Please update WordPress</a>, and then <a href="%2$s">learn more about updating PHP</a>.', 'default' ),
-									\esc_url( \self_admin_url( 'update-core.php' ) ),
-									\esc_url( \wp_get_update_php_url() )
-								)
-							);
-							\wp_update_php_annotation( '<p><em>', '</em></p>' );
-						} elseif ( \current_user_can( 'update_core' ) ) {
-							echo \wp_kses_post(
-								\sprintf(
-									/* translators: %s: URL to WordPress Updates screen. */
-									' ' . \__( '<a href="%s">Please update WordPress</a>.', 'default' ),
-									\esc_url( \self_admin_url( 'update-core.php' ) )
-								)
-							);
-						} elseif ( \current_user_can( 'update_php' ) ) {
-							echo \wp_kses_post(
-								\sprintf(
-									/* translators: %s: URL to Update PHP page. */
-									' ' . \__( '<a href="%s">Learn more about updating PHP</a>.', 'default' ),
-									\esc_url( \wp_get_update_php_url() )
-								)
-							);
-							\wp_update_php_annotation( '<p><em>', '</em></p>' );
-						}
-						?>
-					<?php elseif ( ! $compatible_wp ) : ?>
-						<p>
-							<?php
-							\esc_html_e( 'This plugin does not work with your version of WordPress.', 'default' );
-
-							if ( \current_user_can( 'update_core' ) ) {
-								echo \wp_kses_post(
-									\sprintf(
-										/* translators: %s: URL to WordPress Updates screen. */
-										' ' . \__( '<a href="%s">Please update WordPress</a>.', 'default' ),
-										\esc_url( \self_admin_url( 'update-core.php' ) )
-									)
-								);
-							}
-							?>
-						</p>
-					<?php else : ?>
-						<p>
-							<?php
-							\esc_html_e( 'This plugin does not work with your version of PHP.', 'default' );
-
-							if ( \current_user_can( 'update_php' ) ) {
-								echo \wp_kses_post(
-									\sprintf(
-										/* translators: %s: URL to Update PHP page. */
-										' ' . \__( '<a href="%s">Learn more about updating PHP</a>.', 'default' ),
-										\esc_url( \wp_get_update_php_url() )
-									)
-								);
-								\wp_update_php_annotation( '<p><em>', '</em></p>' );
-							}
-							?>
-						</p>
-					<?php endif; ?>
-				</div>
-			<?php endif; ?>
+			<?php self::render_compatibility_notice( $availability ); ?>
 			<div class="plugin-card-top">
 				<?php
 				$icon = self::get_plugin_icon( $plugin_data );
@@ -821,6 +823,94 @@ class Plugin_Installer {
 	}
 
 	/**
+	 * Render the "does not work with your version of…" notice for a card.
+	 *
+	 * @param array $availability Availability as returned by get_plugin_availability().
+	 */
+	private static function render_compatibility_notice( $availability ) {
+		$compatible_php = $availability['compatible_php'];
+		$compatible_wp  = $availability['compatible_wp'];
+
+		if ( $compatible_php && $compatible_wp ) {
+			return;
+		}
+
+		if ( ! $compatible_php && ! $compatible_wp ) {
+			$message = \__( 'This plugin does not work with your versions of WordPress and PHP.', 'default' );
+		} elseif ( ! $compatible_wp ) {
+			$message = \__( 'This plugin does not work with your version of WordPress.', 'default' );
+		} else {
+			$message = \__( 'This plugin does not work with your version of PHP.', 'default' );
+		}
+
+		$can_update_core = ! $compatible_wp && \current_user_can( 'update_core' );
+		$can_update_php  = ! $compatible_php && \current_user_can( 'update_php' );
+		?>
+		<div class="notice inline notice-error notice-alt">
+			<p>
+				<?php
+				echo \esc_html( $message );
+
+				if ( $can_update_core ) {
+					echo \wp_kses_post(
+						\sprintf(
+							/* translators: %s: URL to WordPress Updates screen. */
+							' ' . \__( '<a href="%s">Please update WordPress</a>.', 'default' ),
+							\esc_url( \self_admin_url( 'update-core.php' ) )
+						)
+					);
+				}
+
+				if ( $can_update_php ) {
+					echo \wp_kses_post(
+						\sprintf(
+							/* translators: %s: URL to Update PHP page. */
+							' ' . \__( '<a href="%s">Learn more about updating PHP</a>.', 'default' ),
+							\esc_url( \wp_get_update_php_url() )
+						)
+					);
+				}
+				?>
+			</p>
+			<?php
+			if ( $can_update_php ) {
+				\wp_update_php_annotation( '<p><em>', '</em></p>' );
+			}
+			?>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Get the nonced URL that installs and activates a plugin.
+	 *
+	 * @param string $plugin_slug The WordPress.org plugin slug.
+	 * @return string The install URL.
+	 */
+	private static function get_install_url( $plugin_slug ) {
+		static $base = null;
+
+		if ( null === $base ) {
+			$base = \wp_nonce_url(
+				\add_query_arg( 'action', 'indieweb_install_activate_plugin', \admin_url( 'admin.php' ) ),
+				'indieweb_install_activate_plugin'
+			);
+		}
+
+		return \add_query_arg( 'slug', $plugin_slug, $base );
+	}
+
+	/**
+	 * Get the WordPress.org plugin directory URL for a plugin.
+	 *
+	 * @param string $plugin_slug The WordPress.org plugin slug.
+	 * @return string The plugin directory URL.
+	 */
+	private static function get_plugin_directory_url( $plugin_slug ) {
+		return \trailingslashit( \__( 'https://wordpress.org/plugins/', 'default' ) . $plugin_slug );
+	}
+
+	/**
 	 * Get the icon URL for a plugin, preferring the vector version.
 	 *
 	 * @param array $plugin_data Plugin data from the WordPress.org API.
@@ -838,26 +928,5 @@ class Plugin_Installer {
 		}
 
 		return '';
-	}
-
-	/**
-	 * Get the main plugin file for a given plugin slug.
-	 *
-	 * @param string $plugin_slug The slug of the plugin.
-	 * @return string|null The plugin file path or null if not installed.
-	 */
-	public static function get_plugin_file( $plugin_slug ) {
-		require_once ABSPATH . 'wp-admin/includes/plugin.php';
-
-		foreach ( \array_keys( \get_plugins() ) as $plugin_file ) {
-			// Get the basename of the plugin, e.g. [akismet]/akismet.php.
-			$slug = \dirname( \plugin_basename( $plugin_file ) );
-
-			if ( $slug && $slug === $plugin_slug ) {
-				return $plugin_file;
-			}
-		}
-
-		return null;
 	}
 }

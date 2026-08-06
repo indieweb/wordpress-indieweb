@@ -96,7 +96,7 @@ $allowed_html = array(
 				<li><?php esc_html_e( 'Browse the Extensions page for a list of other recommended IndieWeb plugins that can expand your functionality.', 'indieweb' ); ?></li>
 			</ol>
 
-			<p><a href="<?php echo esc_url( admin_url( 'admin.php?page=indieweb-installer' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install plugins on the Extensions page.', 'indieweb' ); ?></a></p>
+			<p><a href="<?php echo esc_url( admin_url( 'admin.php?page=' . \Indieweb\Plugin_Installer::PAGE_SLUG ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install plugins on the Extensions page.', 'indieweb' ); ?></a></p>
 		</div>
 
 		<div class="indieweb-flex indieweb-themes">
