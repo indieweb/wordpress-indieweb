@@ -5,211 +5,46 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 5.0.0
+ * Version: 5.1.1
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
- * Domain Path: /languages
  *
- * @package IndieWeb
+ * @package Indieweb
  */
 
-// Initialize plugin.
-add_action( 'plugins_loaded', array( 'IndieWeb_Plugin', 'init' ) );
+namespace Indieweb;
 
-defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
-defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
-define( 'CNKT_INSTALLER_PATH', plugins_url( '/', __FILE__ ) );
+\define( 'INDIEWEB_VERSION', '5.1.1' );
+
+\defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || \define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
+\defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || \define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
+
+\define( 'INDIEWEB_PLUGIN_DIR', \plugin_dir_path( __FILE__ ) );
+\define( 'INDIEWEB_PLUGIN_BASENAME', \plugin_basename( __FILE__ ) );
+\define( 'INDIEWEB_PLUGIN_FILE', \plugin_dir_path( __FILE__ ) . '/' . \basename( __FILE__ ) );
+\define( 'INDIEWEB_PLUGIN_URL', \plugin_dir_url( __FILE__ ) );
+\define( 'CNKT_INSTALLER_PATH', \plugins_url( '/', __FILE__ ) );
+
+require_once INDIEWEB_PLUGIN_DIR . '/includes/class-autoloader.php';
+
+if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
+	// Require simple-icons data.
+	require_once INDIEWEB_PLUGIN_DIR . '/includes/simple-icons.php';
+}
+
+// Register the autoloader.
+Autoloader::register_path( __NAMESPACE__, INDIEWEB_PLUGIN_DIR . '/includes' );
+
+// Initialize the plugin.
+$indieweb = Indieweb::get_instance();
+$indieweb->init();
 
 /**
- * IndieWeb Plugin Class
+ * Plugin Version Number used for caching.
  *
- * @author Matthias Pfefferle
+ * @return string The plugin version.
  */
-class IndieWeb_Plugin {
-
-	/**
-	 * Plugin version.
-	 *
-	 * @var string
-	 */
-	public static $version;
-
-	/**
-	 * Initialize the plugin, registering WordPress hooks.
-	 */
-	public static function init() {
-		self::$version = get_file_data( __FILE__, array( 'Version' => 'Version' ) )['Version'];
-		// Enable translation.
-		self::enable_translation();
-
-		require_once __DIR__ . '/includes/class-plugin-installer.php';
-
-		if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
-			// Require H-Card Enhancements to User Profile.
-			require_once __DIR__ . '/includes/class-relme-domain-icon-map.php';
-			require_once __DIR__ . '/includes/class-hcard-user.php';
-			require_once __DIR__ . '/includes/class-hcard-author-widget.php';
-
-		}
-
-		if ( INDIEWEB_ADD_RELME_SUPPORT ) {
-			// Require Rel Me Widget Class.
-			require_once __DIR__ . '/includes/class-relme-widget.php';
-		}
-
-		add_action( 'wp_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_style' ) );
-
-		add_action( 'admin_enqueue_scripts', array( 'IndieWeb_Plugin', 'enqueue_admin_style' ) );
-
-		// Add General Settings Page.
-		require_once __DIR__ . '/includes/class-general-settings.php';
-
-		// Add third party integrations.
-		require_once __DIR__ . '/includes/class-integrations.php';
-
-		// Add menu.
-		add_action( 'admin_menu', array( 'IndieWeb_Plugin', 'add_menu_item' ), 9 );
-
-		// Privacy Declaration.
-		add_action( 'admin_init', array( 'Indieweb_Plugin', 'privacy_declaration' ) );
-
-		// We're up and running.
-		do_action( 'indieweb_loaded' );
-	}
-
-	/**
-	 * Load translation files.
-	 *
-	 * A good reference on how to implement translation in WordPress:
-	 * http://ottopress.com/2012/internationalization-youre-probably-doing-it-wrong/
-	 */
-	public static function enable_translation() {
-		// For plugins.
-		load_plugin_textdomain(
-			'indieweb',
-			false,
-			dirname( plugin_basename( __FILE__ ) ) . '/languages/'
-		);
-	}
-
-	/**
-	 * Enqueue frontend styles.
-	 */
-	public static function enqueue_style() {
-		if ( '1' === get_option( 'iw_relme_bw' ) ) {
-			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb-bw.css', __FILE__ ), array(), self::$version );
-		} else {
-			wp_enqueue_style( 'indieweb', plugins_url( 'static/css/indieweb.css', __FILE__ ), array(), self::$version );
-		}
-	}
-
-	/**
-	 * Enqueue admin styles.
-	 */
-	public static function enqueue_admin_style() {
-		wp_enqueue_style( 'indieweb-admin', plugins_url( 'static/css/indieweb-admin.css', __FILE__ ), array(), self::$version );
-	}
-
-	/**
-	 * Add Top Level Menu Item.
-	 */
-	public static function add_menu_item() {
-		add_menu_page(
-			'IndieWeb',
-			'IndieWeb',
-			'manage_options',
-			'indieweb',
-			array( 'IndieWeb_Plugin', 'getting_started' ),
-			plugins_url( 'static/img/indieweb.svg', __FILE__ )
-		);
-		add_submenu_page(
-			'indieweb',
-			__( 'Extensions', 'indieweb' ), // Page title.
-			__( 'Extensions', 'indieweb' ), // Menu title.
-			'manage_options', // Access capability.
-			'indieweb-installer',
-			array( 'IndieWeb_Plugin', 'plugin_installer' )
-		);
-		self::change_menu_title();
-	}
-
-	/**
-	 * Changes the menu title
-	 */
-	public static function change_menu_title() {
-		global $submenu;
-		if ( isset( $submenu['indieweb'] ) && current_user_can( 'manage_options' ) ) {
-			// phpcs:ignore
-			$submenu['indieweb'][0][0] = __( 'Getting Started', 'indieweb' );
-		}
-	}
-
-	/**
-	 * Callback from `add_plugins_page()` that shows the "Getting Started" page.
-	 */
-	public static function getting_started() {
-		require_once __DIR__ . '/includes/getting-started.php';
-	}
-
-	/**
-	 * Render the plugin installer page.
-	 */
-	public static function plugin_installer() {
-		echo '<h1>' . esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
-		echo '<p>' . esc_html__( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
-		if ( class_exists( 'IndieWeb_Plugin_Installer' ) ) {
-			IndieWeb_Plugin_Installer::init( self::register_plugins() );
-		}
-	}
-
-	/**
-	 * Register the required plugins.
-	 */
-	public static function register_plugins() {
-		$plugin_array = array(
-			array(
-				'slug' => 'webmention',
-			),
-			array(
-				'slug' => 'micropub',
-			),
-			array(
-				'slug' => 'indieweb-post-kinds',
-			),
-			array(
-				'slug' => 'syndication-links',
-			),
-			array(
-				'slug' => 'indieauth',
-			),
-			array(
-				'slug' => 'simple-location',
-			),
-			array(
-				'slug' => 'pubsubhubbub',
-			),
-			array(
-				'slug' => 'indieblocks',
-			),
-		);
-		return $plugin_array;
-	}
-
-	/**
-	 * Add privacy policy content.
-	 */
-	public static function privacy_declaration() {
-		if ( function_exists( 'wp_add_privacy_policy_content' ) ) {
-			$content = __(
-				'Users can optionally add additional information to their profile. As this is part of your user profile you have control of this information and can remove
-				it at your discretion.',
-				'indieweb'
-			);
-			wp_add_privacy_policy_content(
-				'Indieweb',
-				wp_kses_post( wpautop( $content, false ) )
-			);
-		}
-	}
+function version() {
+	return INDIEWEB_VERSION;
 }

@@ -1,20 +1,21 @@
 <?xml version="1.0"?>
 <phpunit
-	bootstrap="tests/bootstrap.php"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+	bootstrap="tests/phpunit/bootstrap.php"
 	backupGlobals="false"
 	colors="true"
-	convertErrorsToExceptions="true"
-	convertNoticesToExceptions="true"
-	convertWarningsToExceptions="true"
+	beStrictAboutTestsThatDoNotTestAnything="true"
+	beStrictAboutOutputDuringTests="true"
 >
 	<testsuites>
-		<testsuite name="IndieWeb">
-			<directory prefix="test-" suffix=".php">./tests/</directory>
+		<testsuite name="Indieweb">
+			<directory prefix="class-test-" suffix=".php">tests/phpunit/tests/</directory>
 		</testsuite>
 	</testsuites>
-	<coverage>
+	<source>
 		<include>
 			<directory suffix=".php">./includes</directory>
 		</include>
-	</coverage>
+	</source>
 </phpunit>

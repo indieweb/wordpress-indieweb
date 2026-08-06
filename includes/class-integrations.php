@@ -1,22 +1,22 @@
 <?php
 /**
- * Third party integrations for IndieWeb.
+ * Third party integrations for Indieweb.
  *
- * @package IndieWeb
+ * @package Indieweb
  */
 
-add_action( 'init', array( 'IndieWeb_Integrations', 'init' ) );
+namespace Indieweb;
 
 /**
  * Third party integrations.
  */
-class IndieWeb_Integrations {
+class Integrations {
 
 	/**
 	 * Initialize integrations.
 	 */
 	public static function init() {
-		add_filter( 'pubsubhubbub_feed_urls', array( 'IndieWeb_Integrations', 'add_pubsubhubbub_feeds' ) );
+		\add_filter( 'pubsubhubbub_feed_urls', array( self::class, 'add_pubsubhubbub_feeds' ) );
 	}
 
 	/**
@@ -26,7 +26,7 @@ class IndieWeb_Integrations {
 	 * @return array Modified array of feed URLs.
 	 */
 	public static function add_pubsubhubbub_feeds( $feeds ) {
-		$feeds[] = get_post_type_archive_link( 'post' );
+		$feeds[] = \get_post_type_archive_link( 'post' );
 
 		return array_unique( $feeds );
 	}
