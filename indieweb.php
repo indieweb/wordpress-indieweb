@@ -24,7 +24,6 @@ namespace Indieweb;
 \define( 'INDIEWEB_PLUGIN_BASENAME', \plugin_basename( __FILE__ ) );
 \define( 'INDIEWEB_PLUGIN_FILE', \plugin_dir_path( __FILE__ ) . '/' . \basename( __FILE__ ) );
 \define( 'INDIEWEB_PLUGIN_URL', \plugin_dir_url( __FILE__ ) );
-\define( 'CNKT_INSTALLER_PATH', \plugins_url( '/', __FILE__ ) );
 
 require_once INDIEWEB_PLUGIN_DIR . '/includes/class-autoloader.php';
 
