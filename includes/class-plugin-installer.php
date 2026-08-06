@@ -60,6 +60,13 @@ class Plugin_Installer {
 	const POST_KINDS_BLOCK = 'post-kinds-for-indieweb-in-block-themes';
 
 	/**
+	 * How deep to follow `requires_plugins` when installing.
+	 *
+	 * @var int
+	 */
+	const MAX_DEPENDENCY_DEPTH = 2;
+
+	/**
 	 * The recommended plugins, in display order.
 	 *
 	 * The Post Kinds entry is a placeholder. get_plugin_slugs() swaps in
@@ -130,8 +137,10 @@ class Plugin_Installer {
 	/**
 	 * Get every plugin slug this screen is willing to install.
 	 *
-	 * This is the allow list for install requests, so it holds both Post Kinds
-	 * variants regardless of which one is currently recommended.
+	 * This is the allow list for install requests. It holds both Post Kinds
+	 * variants regardless of which one is currently recommended, plus anything
+	 * `indieweb_recommended_plugins` added, because a card that renders an
+	 * install button has to be installable.
 	 *
 	 * @return string[] List of plugin slugs.
 	 */
@@ -139,7 +148,7 @@ class Plugin_Installer {
 		$slugs   = self::PLUGINS;
 		$slugs[] = self::POST_KINDS_BLOCK;
 
-		return $slugs;
+		return \array_values( \array_unique( \array_merge( $slugs, self::get_plugin_slugs() ) ) );
 	}
 
 	/**
@@ -180,8 +189,9 @@ class Plugin_Installer {
 	 *
 	 * The block editor variant is only recommended if the site can actually run
 	 * it: the block editor has to be available and the plugin's WordPress and
-	 * PHP requirements have to be met. If either variant is already installed
-	 * we stick with it, so we never nudge anyone to switch.
+	 * PHP requirements have to be met. An active variant always wins, and a
+	 * variant that is merely installed wins over the version check, so we never
+	 * nudge anyone off what they already run.
 	 *
 	 * @return string The plugin slug to recommend.
 	 */
@@ -192,9 +202,21 @@ class Plugin_Installer {
 			return $slug;
 		}
 
-		foreach ( array( self::POST_KINDS_BLOCK, self::POST_KINDS_CLASSIC ) as $installed ) {
-			if ( self::is_plugin_installed( $installed ) ) {
-				$slug = $installed;
+		$variants = array( self::POST_KINDS_CLASSIC, self::POST_KINDS_BLOCK );
+
+		// Whichever variant is running is the one to show.
+		foreach ( $variants as $variant ) {
+			if ( self::is_plugin_active_by_slug( $variant ) ) {
+				$slug = $variant;
+
+				return $slug;
+			}
+		}
+
+		// Otherwise stick with whatever is already on disk.
+		foreach ( $variants as $variant ) {
+			if ( null !== self::get_installed_plugin_file( $variant ) ) {
+				$slug = $variant;
 
 				return $slug;
 			}
@@ -244,15 +266,50 @@ class Plugin_Installer {
 	}
 
 	/**
-	 * Whether a plugin is present in the plugins directory.
+	 * Get the main plugin file of an installed plugin, by slug.
 	 *
 	 * @param string $plugin_slug The WordPress.org plugin slug.
-	 * @return bool True if the plugin is installed.
+	 * @return string|null The plugin file, relative to the plugins directory, or null if not installed.
 	 */
-	private static function is_plugin_installed( $plugin_slug ) {
+	private static function get_installed_plugin_file( $plugin_slug ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-		return \count( \get_plugins( '/' . $plugin_slug ) ) > 0;
+		$plugins = \get_plugins( '/' . $plugin_slug );
+
+		if ( 0 === \count( $plugins ) ) {
+			return null;
+		}
+
+		$plugin_files = \array_keys( $plugins );
+
+		return $plugin_slug . '/' . $plugin_files[0];
+	}
+
+	/**
+	 * Whether an installed plugin is active, by slug.
+	 *
+	 * @param string $plugin_slug The WordPress.org plugin slug.
+	 * @return bool True if the plugin is installed and active.
+	 */
+	private static function is_plugin_active_by_slug( $plugin_slug ) {
+		$plugin_file = self::get_installed_plugin_file( $plugin_slug );
+
+		return null !== $plugin_file && \is_plugin_active( $plugin_file );
+	}
+
+	/**
+	 * Build the locale specific transient key.
+	 *
+	 * `plugins_api()` defaults its `locale` argument to `get_user_locale()`, so
+	 * the names and descriptions it returns are translated for whoever asked.
+	 * Caching those under a shared key would serve one admin's language to
+	 * everybody else.
+	 *
+	 * @param string $key The transient key.
+	 * @return string The key for the current user's locale.
+	 */
+	private static function get_transient_key( $key ) {
+		return $key . '_' . \strtolower( \get_user_locale() );
 	}
 
 	/**
@@ -262,6 +319,8 @@ class Plugin_Installer {
 	 * @return array The cached array, empty if there is nothing cached.
 	 */
 	private static function get_cache( $key ) {
+		$key = self::get_transient_key( $key );
+
 		if ( ! isset( self::$cache[ $key ] ) ) {
 			$value = \get_transient( $key );
 
@@ -279,6 +338,8 @@ class Plugin_Installer {
 	 * @param int    $expiration Time until expiration, in seconds.
 	 */
 	private static function set_cache( $key, $value, $expiration ) {
+		$key = self::get_transient_key( $key );
+
 		self::$cache[ $key ] = $value;
 
 		\set_transient( $key, $value, $expiration );
@@ -395,9 +456,11 @@ class Plugin_Installer {
 		);
 
 		$plugin_status = \install_plugin_install_status( $plugin_data );
+		$plugin_file   = false !== $plugin_status['file'] ? $plugin_status['file'] : self::get_installed_plugin_file( $plugin_data['slug'] );
 
-		$availability['installed'] = ( 'install' !== $plugin_status['status'] );
-		$availability['activated'] = false !== $plugin_status['file'] && \is_plugin_active( $plugin_status['file'] );
+		// Core can report "install" for a plugin that is already on disk, so check the directory too.
+		$availability['installed'] = ( 'install' !== $plugin_status['status'] || null !== $plugin_file );
+		$availability['activated'] = ! empty( $plugin_file ) && \is_plugin_active( $plugin_file );
 
 		// The plugin is already installed or the user can install plugins.
 		$availability['can_install'] = (
@@ -409,8 +472,8 @@ class Plugin_Installer {
 		$availability['can_activate'] = (
 			$availability['activated'] ||
 			(
-				false !== $plugin_status['file'] // When not false, the plugin is installed.
-					? \current_user_can( 'activate_plugin', $plugin_status['file'] )
+				! empty( $plugin_file ) // When not empty, the plugin is installed.
+					? \current_user_can( 'activate_plugin', $plugin_file )
 					: \current_user_can( 'activate_plugins' )
 			)
 		);
@@ -425,7 +488,13 @@ class Plugin_Installer {
 			}
 
 			$dependency_availability = self::get_plugin_availability( $dependency_plugin_data, $processed_plugin_availabilities );
-			foreach ( array( 'compatible_php', 'compatible_wp', 'can_install', 'can_activate', 'installed', 'activated' ) as $key ) {
+
+			/*
+			 * Only the gates fold in. `installed` and `activated` describe this plugin, and
+			 * folding a missing dependency into them would render an active plugin as
+			 * "Install Now".
+			 */
+			foreach ( array( 'compatible_php', 'compatible_wp', 'can_install', 'can_activate' ) as $key ) {
 				$availability[ $key ] = $availability[ $key ] && $dependency_availability[ $key ];
 			}
 		}
@@ -438,17 +507,29 @@ class Plugin_Installer {
 	/**
 	 * Install and activate a plugin by its slug.
 	 *
-	 * Dependencies are recursively installed and activated as well.
+	 * Dependencies are installed and activated as well. Their slugs come from the
+	 * requested plugin's own WordPress.org metadata rather than from our allow
+	 * list, so the depth is capped: we install what an allow-listed plugin asks
+	 * for, not a chain of arbitrary length.
 	 *
 	 * @param string $plugin_slug       Plugin slug.
 	 * @param array  $processed_plugins Slugs for plugins which have already been processed. Only used by recursive calls.
+	 * @param int    $depth             Current recursion depth. Only used by recursive calls.
 	 * @return WP_Error|null WP_Error on failure, null on success.
 	 */
-	public static function install_and_activate_plugin( $plugin_slug, &$processed_plugins = array() ) {
+	public static function install_and_activate_plugin( $plugin_slug, &$processed_plugins = array(), $depth = 0 ) {
 		if ( \in_array( $plugin_slug, $processed_plugins, true ) ) {
 			// Prevent infinite recursion from a possible circular dependency.
 			return null;
 		}
+
+		if ( $depth > self::MAX_DEPENDENCY_DEPTH ) {
+			return new WP_Error(
+				'dependency_depth_exceeded',
+				\__( 'This plugin declares too many nested dependencies to install automatically.', 'indieweb' )
+			);
+		}
+
 		$processed_plugins[] = $plugin_slug;
 
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -482,7 +563,7 @@ class Plugin_Installer {
 
 		// Install and activate plugin dependencies first.
 		foreach ( $plugin_data['requires_plugins'] as $requires_plugin_slug ) {
-			$result = self::install_and_activate_plugin( $requires_plugin_slug, $processed_plugins );
+			$result = self::install_and_activate_plugin( $requires_plugin_slug, $processed_plugins, $depth + 1 );
 			if ( \is_wp_error( $result ) ) {
 				return $result;
 			}
@@ -491,6 +572,21 @@ class Plugin_Installer {
 		// Install the plugin.
 		$plugin_status = \install_plugin_install_status( $plugin_data );
 		$plugin_file   = $plugin_status['file'];
+
+		/*
+		 * Core reports "install" for a plugin whose folder is already there when its header
+		 * version trails wordpress.org and the update transient does not list it, e.g. a
+		 * locally patched copy. Running the upgrader on that folder just fails with
+		 * "Destination folder already exists", so activate what is on disk instead.
+		 */
+		if ( 'install' === $plugin_status['status'] ) {
+			$installed_file = self::get_installed_plugin_file( $plugin_slug );
+
+			if ( null !== $installed_file ) {
+				$plugin_status['status'] = 'installed';
+				$plugin_file             = $installed_file;
+			}
+		}
 
 		if ( 'install' === $plugin_status['status'] ) {
 			if ( ! \current_user_can( 'install_plugins' ) ) {
@@ -547,23 +643,23 @@ class Plugin_Installer {
 		 * in install_and_activate_plugin().
 		 */
 		if ( ! \current_user_can( 'install_plugins' ) && ! \current_user_can( 'activate_plugins' ) ) {
-			\wp_die( \esc_html__( 'Sorry, you are not allowed to manage plugins for this site.', 'default' ) );
+			self::die_with_back_link( \esc_html__( 'Sorry, you are not allowed to manage plugins for this site.', 'default' ), 403 );
 		}
 
 		if ( ! isset( $_GET['slug'] ) ) {
-			\wp_die( \esc_html__( 'Missing required parameter.', 'indieweb' ) );
+			self::die_with_back_link( \esc_html__( 'Missing required parameter.', 'indieweb' ), 400 );
 		}
 
 		$plugin_slug = \sanitize_key( \wp_unslash( $_GET['slug'] ) );
 
 		if ( ! \in_array( $plugin_slug, self::get_installable_slugs(), true ) ) {
-			\wp_die( \esc_html__( 'Invalid plugin.', 'indieweb' ) );
+			self::die_with_back_link( \esc_html__( 'Invalid plugin.', 'indieweb' ), 400 );
 		}
 
 		// Install and activate the plugin and its dependencies.
 		$result = self::install_and_activate_plugin( $plugin_slug );
 		if ( \is_wp_error( $result ) ) {
-			\wp_die( \wp_kses_post( $result->get_error_message() ) );
+			self::die_with_back_link( \wp_kses_post( $result->get_error_message() ) );
 		}
 
 		\wp_safe_redirect(
@@ -576,6 +672,26 @@ class Plugin_Installer {
 			)
 		);
 		exit;
+	}
+
+	/**
+	 * Bail out of the install request with a way back to the Extensions screen.
+	 *
+	 * The install runs as a full page navigation, so without a link back the only
+	 * way out of a failure is the browser's back button.
+	 *
+	 * @param string $message  The already escaped error message.
+	 * @param int    $response The HTTP status code to send.
+	 */
+	private static function die_with_back_link( $message, $response = 500 ) {
+		\wp_die(
+			$message, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by the caller.
+			\esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ),
+			array(
+				'back_link' => true,
+				'response'  => \absint( $response ),
+			)
+		);
 	}
 
 	/**
@@ -659,7 +775,13 @@ class Plugin_Installer {
 
 		// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Read-only notice, the action itself is nonce checked.
 		$plugin_slug = \sanitize_key( \wp_unslash( $_GET['activate'] ) );
-		$name        = isset( $plugins[ $plugin_slug ]['name'] ) ? $plugins[ $plugin_slug ]['name'] : $plugin_slug;
+
+		// Only report success for something we offer and that really is running now.
+		if ( ! \in_array( $plugin_slug, self::get_installable_slugs(), true ) || ! self::is_plugin_active_by_slug( $plugin_slug ) ) {
+			return;
+		}
+
+		$name = isset( $plugins[ $plugin_slug ]['name'] ) ? $plugins[ $plugin_slug ]['name'] : $plugin_slug;
 		?>
 		<div class="notice notice-success is-dismissible">
 			<p>
@@ -745,12 +867,13 @@ class Plugin_Installer {
 			$action_links[] = \sprintf(
 				'<a class="button" href="%s">%s</a>',
 				\esc_url( self::get_install_url( $plugin_data['slug'] ) ),
-				$availability['installed'] ? \esc_html__( 'Activate', 'default' ) : \esc_html__( 'Install Now', 'default' )
+				\esc_html( $availability['installed'] ? \_x( 'Activate', 'plugin', 'default' ) : \_x( 'Install Now', 'plugin', 'default' ) )
 			);
 		} else {
 			$action_links[] = \sprintf(
 				'<button type="button" class="button button-disabled" disabled="disabled">%s</button>',
-				\esc_html( $availability['can_install'] ? \_x( 'Cannot Activate', 'plugin', 'default' ) : \_x( 'Cannot Install', 'plugin', 'default' ) )
+				// Core has no plugin-context "Cannot Install", so that one stays in our own text domain.
+				\esc_html( $availability['can_install'] ? \_x( 'Cannot Activate', 'plugin', 'default' ) : \__( 'Cannot Install', 'indieweb' ) )
 			);
 		}
 
