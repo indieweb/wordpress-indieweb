@@ -215,7 +215,7 @@ class Plugin_Installer {
 
 		// Otherwise stick with whatever is already on disk.
 		foreach ( $variants as $variant ) {
-			if ( null !== self::get_installed_plugin_file( $variant ) ) {
+			if ( ! empty( self::get_installed_plugin_file( $variant ) ) ) {
 				$slug = $variant;
 
 				return $slug;
@@ -294,7 +294,7 @@ class Plugin_Installer {
 	private static function is_plugin_active_by_slug( $plugin_slug ) {
 		$plugin_file = self::get_installed_plugin_file( $plugin_slug );
 
-		return null !== $plugin_file && \is_plugin_active( $plugin_file );
+		return ! empty( $plugin_file ) && \is_plugin_active( $plugin_file );
 	}
 
 	/**
@@ -459,7 +459,7 @@ class Plugin_Installer {
 		$plugin_file   = false !== $plugin_status['file'] ? $plugin_status['file'] : self::get_installed_plugin_file( $plugin_data['slug'] );
 
 		// Core can report "install" for a plugin that is already on disk, so check the directory too.
-		$availability['installed'] = ( 'install' !== $plugin_status['status'] || null !== $plugin_file );
+		$availability['installed'] = ( 'install' !== $plugin_status['status'] || ! empty( $plugin_file ) );
 		$availability['activated'] = ! empty( $plugin_file ) && \is_plugin_active( $plugin_file );
 
 		// The plugin is already installed or the user can install plugins.
@@ -582,7 +582,7 @@ class Plugin_Installer {
 		if ( 'install' === $plugin_status['status'] ) {
 			$installed_file = self::get_installed_plugin_file( $plugin_slug );
 
-			if ( null !== $installed_file ) {
+			if ( ! empty( $installed_file ) ) {
 				$plugin_status['status'] = 'installed';
 				$plugin_file             = $installed_file;
 			}
