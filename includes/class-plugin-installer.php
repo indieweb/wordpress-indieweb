@@ -246,20 +246,25 @@ class Plugin_Installer {
 	 *
 	 * `use_block_editor_for_post_type()` is the gate core itself uses, and the
 	 * one the Classic Editor plugin, Disable Gutenberg and friends filter, so a
-	 * single check covers all of them. ClassicPress does not ship a block
-	 * editor at all.
+	 * single check covers all of them.
+	 *
+	 * ClassicPress is asked about separately. Its version of the function is a
+	 * stub that returns false, so the answer would be the same, but calling it
+	 * runs `WP_Compat::using_block_function()`, which walks the backtrace and
+	 * records us in the `plugins_using_blocks` option. On a site running blocks
+	 * compatibility level 2 that puts a "uses block-related functions and may
+	 * have issues" warning next to this plugin on the Plugins screen.
 	 *
 	 * @return bool True if the block editor is used for posts.
 	 */
 	public static function is_block_editor_enabled() {
-		// ClassicPress and other forks without a block editor.
 		if ( \function_exists( 'classicpress_version' ) ) {
 			return false;
 		}
 
-		// Lived in wp-admin/includes/post.php before WordPress 6.1.
+		// In wp-includes since WordPress 6.1, so loaded on every version we support.
 		if ( ! \function_exists( 'use_block_editor_for_post_type' ) ) {
-			require_once ABSPATH . 'wp-admin/includes/post.php';
+			return false;
 		}
 
 		return (bool) \use_block_editor_for_post_type( 'post' );
