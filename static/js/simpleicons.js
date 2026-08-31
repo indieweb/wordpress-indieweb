@@ -290,7 +290,10 @@ fs.readdir(svgDir, function(err, files) {
         var destFile = path.join(svgDir, iconName + '.svg');
 
         if (fs.existsSync(srcFile)) {
-            fs.copyFileSync(srcFile, destFile);
+            // The Icons API sanitizer strips <title> tags but keeps their text,
+            // so remove them here to keep the markup clean on WordPress 7.1+.
+            var svgContent = fs.readFileSync(srcFile, 'utf8').replace(/<title>[^<]*<\/title>/g, '');
+            fs.writeFileSync(destFile, svgContent);
             copied++;
         } else {
             console.log(
