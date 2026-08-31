@@ -7,6 +7,8 @@
 
 namespace Indieweb\Relme;
 
+use Indieweb\Icons;
+
 /**
  * Rel-Me Domain Icon Map class.
  */
@@ -89,27 +91,17 @@ class Domain_Icon_Map {
 	}
 
 	/**
-	 * Return the filename of an icon based on name if the file exists.
+	 * Check if an icon is registered with the Icons API.
 	 *
 	 * @param string $name The icon name.
-	 * @return string|null The icon file path or null if not found.
+	 * @return boolean True if the icon is registered.
 	 */
-	public static function get_icon_filename( $name ) {
-		// The name is used as a filename, so do not allow anything that could leave the directory.
-		if ( ! is_string( $name ) || ! preg_match( '/^[a-z0-9._-]+$/i', $name ) || false !== strpos( $name, '..' ) ) {
-			return null;
+	public static function has_icon( $name ) {
+		if ( ! is_string( $name ) || '' === $name ) {
+			return false;
 		}
 
-		$svg = $name . '.svg';
-
-		foreach ( self::get_icon_file_dirs() as $dir ) {
-			$file = \trailingslashit( $dir ) . $svg;
-			if ( file_exists( $file ) ) {
-				return $file;
-			}
-		}
-
-		return null;
+		return '' !== \wp_get_icon( Icons::COLLECTION . '/' . $name, array( 'size' => null ) );
 	}
 
 	/**
@@ -120,12 +112,12 @@ class Domain_Icon_Map {
 	 */
 	public static function get_icon_svg( $name ) {
 		/**
-		 * Filters the SVG of an icon before it is looked up on disk.
+		 * Filters the SVG of an icon before it is looked up in the icon registry.
 		 *
 		 * Returning a string short circuits the lookup, which makes it possible
-		 * to add an icon without adding a file.
+		 * to add an icon without registering it.
 		 *
-		 * @param string|null $icon The SVG markup, or null to use the file lookup.
+		 * @param string|null $icon The SVG markup, or null to use the registry lookup.
 		 * @param string      $name The icon name.
 		 */
 		$icon = \apply_filters( 'pre_indieweb_icon_svg', null, $name );
@@ -133,13 +125,11 @@ class Domain_Icon_Map {
 			return $icon;
 		}
 
-		$file = self::get_icon_filename( $name );
-		if ( $file ) {
-			$icon = file_get_contents( $file ); // phpcs:ignore
-			if ( $icon ) {
-				return $icon;
-			}
+		$icon = \wp_get_icon( Icons::COLLECTION . '/' . $name, array( 'size' => null ) );
+		if ( '' !== $icon ) {
+			return $icon;
 		}
+
 		return null;
 	}
 
@@ -240,11 +230,11 @@ class Domain_Icon_Map {
 			} else {
 				// Remove extra info and try to map it to an icon.
 				$strip = self::split_domain( $domain );
-				if ( self::get_icon_filename( $strip ) ) {
+				if ( self::has_icon( $strip ) ) {
 					$return = $strip;
-				} elseif ( self::get_icon_filename( str_replace( '.', '-dot-', $domain ) ) ) {
+				} elseif ( self::has_icon( str_replace( '.', '-dot-', $domain ) ) ) {
 					$return = str_replace( '.', '-dot-', $domain );
-				} elseif ( self::get_icon_filename( str_replace( '.', '', $domain ) ) ) {
+				} elseif ( self::has_icon( str_replace( '.', '', $domain ) ) ) {
 					$return = str_replace( '.', '', $domain );
 				} elseif ( false !== stripos( $domain, 'wordpress' ) ) { // phpcs:ignore WordPress.WP.CapitalPDangit
 					// Anything with WordPress in the name that is not matched return WordPress icon.
@@ -258,7 +248,7 @@ class Domain_Icon_Map {
 				} else {
 					// Some domains have the word app in them check for matches with that.
 					$strip = str_replace( 'app', '', $strip );
-					if ( self::get_icon_filename( $strip ) ) {
+					if ( self::has_icon( $strip ) ) {
 						$return = $strip;
 					}
 				}

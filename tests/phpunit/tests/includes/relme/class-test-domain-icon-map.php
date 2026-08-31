@@ -25,7 +25,7 @@ class Test_Relme_Domain_Icon_Map extends WP_UnitTestCase {
 
 		$this->icon_dir = get_temp_dir() . 'indieweb-test-icons/';
 		wp_mkdir_p( $this->icon_dir );
-		file_put_contents( $this->icon_dir . 'testicon.svg', '<svg><title>Test Icon</title></svg>' ); // phpcs:ignore
+		file_put_contents( $this->icon_dir . 'testicon.svg', '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z"/></svg>' ); // phpcs:ignore
 	}
 
 	/**
@@ -155,12 +155,11 @@ class Test_Relme_Domain_Icon_Map extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test get_icon_filename returns null for non-existent icon.
+	 * Test has_icon for bundled and non-existent icons.
 	 */
-	public function test_get_icon_filename_returns_null_for_nonexistent() {
-		$result = \Indieweb\Relme\Domain_Icon_Map::get_icon_filename( 'nonexistenticon12345' );
-
-		$this->assertNull( $result );
+	public function test_has_icon() {
+		$this->assertTrue( \Indieweb\Relme\Domain_Icon_Map::has_icon( 'mastodon' ) );
+		$this->assertFalse( \Indieweb\Relme\Domain_Icon_Map::has_icon( 'nonexistenticon12345' ) );
 	}
 
 	/**
@@ -205,60 +204,28 @@ class Test_Relme_Domain_Icon_Map extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test get_icon_filename finds an icon in an additional directory.
-	 */
-	public function test_get_icon_filename_finds_icon_in_added_dir() {
-		$this->add_icon_dir();
-
-		$result = \Indieweb\Relme\Domain_Icon_Map::get_icon_filename( 'testicon' );
-
-		$this->assertEquals( $this->icon_dir . 'testicon.svg', $result );
-	}
-
-	/**
-	 * Test get_icon_filename does not find the icon without the added directory.
-	 */
-	public function test_get_icon_filename_without_added_dir() {
-		$result = \Indieweb\Relme\Domain_Icon_Map::get_icon_filename( 'testicon' );
-
-		$this->assertNull( $result );
-	}
-
-	/**
-	 * Test get_icon_svg reads an icon from an additional directory.
+	 * Test get_icon_svg uses an icon from an additional directory.
 	 */
 	public function test_get_icon_svg_from_added_dir() {
 		$this->add_icon_dir();
+		\Indieweb\Icons::register_icons();
 
 		$result = \Indieweb\Relme\Domain_Icon_Map::get_icon_svg( 'testicon' );
 
-		$this->assertEquals( '<svg><title>Test Icon</title></svg>', $result );
+		$this->assertStringContainsString( '<svg', $result );
+		$this->assertStringContainsString( '<path d="M0 0h24v24H0z"', $result );
 	}
 
 	/**
 	 * Test url_to_name uses an icon from an additional directory.
 	 */
 	public function test_url_to_name_uses_added_dir() {
-		add_filter(
-			'indieweb_icon_file_dirs',
-			function ( $dirs ) {
-				$dirs[] = $this->icon_dir;
-				return $dirs;
-			}
-		);
+		$this->add_icon_dir();
+		\Indieweb\Icons::register_icons();
 
 		$result = \Indieweb\Relme\Domain_Icon_Map::url_to_name( 'https://testicon.example/profile' );
 
 		$this->assertEquals( 'testicon', $result );
-	}
-
-	/**
-	 * Test get_icon_filename rejects a name that could leave the directory.
-	 */
-	public function test_get_icon_filename_rejects_traversal() {
-		$result = \Indieweb\Relme\Domain_Icon_Map::get_icon_filename( '../../../wp-config' );
-
-		$this->assertNull( $result );
 	}
 
 	/**

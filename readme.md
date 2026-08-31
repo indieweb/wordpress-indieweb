@@ -5,7 +5,7 @@
 - Tags: indieweb, webmention, POSSE, indieauth
 - Requires at least: 4.7
 - Requires PHP: 7.4
-- Tested up to: 7.0
+- Tested up to: 7.1
 - Stable tag: 5.1.1
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
@@ -76,7 +76,9 @@ add_filter(
 );
 ```
 
-The directories are searched in order and the first match wins, so adding a directory to the front of the list also replaces a bundled icon. Use `indieweb_icon_title` to set a readable title for your icon, and `pre_indieweb_icon_svg` to return the SVG markup directly instead of adding a file. Icons that are not part of the bundled set have no color of their own, they use the color of the surrounding text.
+The directories are searched in order and the first match wins, so adding a directory to the front of the list also replaces a bundled icon. Add the filter before `init`, the icons are registered there. Use `indieweb_icon_title` to set a readable title for your icon, and `pre_indieweb_icon_svg` to return the SVG markup directly instead of adding a file. Icons that are not part of the bundled set have no color of their own, they use the color of the surrounding text.
+
+The icons are registered with the [Icons API](https://developer.wordpress.org/news/2026/08/hands-on-with-the-wordpress-7-1-icon-registration-api/) of WordPress 7.1 as the `indieweb` collection, so they also show up in the editor's Icon Library and can be rendered with `wp_get_icon( 'indieweb/mastodon' )`. The plugin ships a shim for older WordPress versions, so `wp_register_icon()` and `wp_get_icon()` work there too. An icon that is registered this way is used for matching domains as well.
 
 ### What about plugin XYZ?
 

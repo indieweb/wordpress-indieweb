@@ -78,6 +78,9 @@ class Indieweb {
 		// Third party integrations.
 		\add_action( 'init', array( Integrations::class, 'init' ) );
 
+		// Register the bundled icons with the Icons API.
+		\add_action( 'init', array( Icons::class, 'register_icons' ) );
+
 		// H-Card support.
 		\add_action( 'init', array( User::class, 'init' ) );
 		\add_action( 'widgets_init', array( User::class, 'init_widgets' ) );
