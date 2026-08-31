@@ -125,7 +125,7 @@ class Indieweb {
 			'manage_options',
 			'indieweb',
 			array( $this, 'getting_started' ),
-			INDIEWEB_PLUGIN_URL . 'static/img/indieweb.svg'
+			INDIEWEB_PLUGIN_URL . 'static/img/indieweb-icon.svg'
 		);
 		$installer_page = \add_submenu_page(
 			'indieweb',
