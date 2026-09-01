@@ -63,8 +63,7 @@ class Indieweb {
 		\add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_style' ) );
 
 		// Plugin installer (extensions page).
-		$plugin_installer = new Plugin_Installer();
-		$plugin_installer->start();
+		Plugin_Installer::init();
 
 		// Admin menu and settings.
 		\add_action( 'admin_menu', array( $this, 'add_menu_item' ), 9 );
@@ -128,14 +127,19 @@ class Indieweb {
 			array( $this, 'getting_started' ),
 			INDIEWEB_PLUGIN_URL . 'static/img/indieweb.svg'
 		);
-		\add_submenu_page(
+		$installer_page = \add_submenu_page(
 			'indieweb',
 			\__( 'Extensions', 'indieweb' ), // Page title.
 			\__( 'Extensions', 'indieweb' ), // Menu title.
 			'manage_options', // Access capability.
-			'indieweb-installer',
+			Plugin_Installer::PAGE_SLUG,
 			array( $this, 'plugin_installer' )
 		);
+
+		if ( $installer_page ) {
+			\add_action( 'load-' . $installer_page, array( Plugin_Installer::class, 'load_page' ) );
+		}
+
 		$this->change_menu_title();
 	}
 
@@ -161,42 +165,7 @@ class Indieweb {
 	 * Render the plugin installer page.
 	 */
 	public function plugin_installer() {
-		echo '<h1>' . \esc_html__( 'IndieWeb Plugin Installer', 'indieweb' ) . '</h1>';
-		echo '<p>' . \esc_html__( 'The below plugins are recommended to enable additional IndieWeb functionality.', 'indieweb' ) . '</p>';
-		Plugin_Installer::init( $this->register_plugins() );
-	}
-
-	/**
-	 * Register the required plugins.
-	 */
-	public function register_plugins() {
-		$plugin_array = array(
-			array(
-				'slug' => 'webmention',
-			),
-			array(
-				'slug' => 'micropub',
-			),
-			array(
-				'slug' => 'indieweb-post-kinds',
-			),
-			array(
-				'slug' => 'syndication-links',
-			),
-			array(
-				'slug' => 'indieauth',
-			),
-			array(
-				'slug' => 'simple-location',
-			),
-			array(
-				'slug' => 'pubsubhubbub',
-			),
-			array(
-				'slug' => 'indieblocks',
-			),
-		);
-		return $plugin_array;
+		Plugin_Installer::render_plugins_ui();
 	}
 
 	/**
