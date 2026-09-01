@@ -60,6 +60,26 @@ If you need additional assistance, feel free to reach out to any of the [WordPre
 
 Find more information and details for the motivations for joining the IndieWeb at https://indieweb.org/Why
 
+### An icon for my profile is missing. What can I do?
+
+The plugin ships a curated set of icons, so not every site has one. If you think an icon should be part of the plugin, please file an issue on [Github](https://github.com/indieweb/wordpress-indieweb/issues).
+
+You can also add icons yourself. The plugin searches a list of directories for a file named after the domain, for example `example.svg` for `example.com`. Add your own directory with the `indieweb_icon_file_dirs` filter:
+
+```php
+add_filter(
+	'indieweb_icon_file_dirs',
+	function ( $dirs ) {
+		$dirs[] = get_stylesheet_directory() . '/indieweb-icons/';
+		return $dirs;
+	}
+);
+```
+
+The directories are searched in order and the first match wins, so adding a directory to the front of the list also replaces a bundled icon. Add the filter before `init`, the icons are registered there. Use `indieweb_icon_title` to set a readable title for your icon, and `pre_indieweb_icon_svg` to return the SVG markup directly instead of adding a file. Icons that are not part of the bundled set have no color of their own, they use the color of the surrounding text.
+
+The icons are registered with the [Icons API](https://developer.wordpress.org/news/2026/08/hands-on-with-the-wordpress-7-1-icon-registration-api/) of WordPress 7.1 as the `indieweb` collection, so they also show up in the editor's Icon Library and can be rendered with `wp_get_icon( 'indieweb/mastodon' )`. The plugin ships a shim for older WordPress versions, so `wp_register_icon()` and `wp_get_icon()` work there too. An icon that is registered this way is used for matching domains as well.
+
 ### What about plugin XYZ?
 
 If you think we missed a plugin reference, please file an issue on [Github](https://github.com/indieweb/wordpress-indieweb/issues).

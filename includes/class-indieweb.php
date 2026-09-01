@@ -78,6 +78,9 @@ class Indieweb {
 		// Third party integrations.
 		\add_action( 'init', array( Integrations::class, 'init' ) );
 
+		// Register the bundled icons with the Icons API.
+		\add_action( 'init', array( Icons::class, 'register_icons' ) );
+
 		// H-Card support.
 		\add_action( 'init', array( User::class, 'init' ) );
 		\add_action( 'widgets_init', array( User::class, 'init_widgets' ) );
@@ -117,6 +120,20 @@ class Indieweb {
 	}
 
 	/**
+	 * Get the menu icon.
+	 *
+	 * The "i" of the IndieWeb logo as a base64 encoded SVG, so that
+	 * WordPress colors it like the other menu icons.
+	 *
+	 * @return string The menu icon as a data URI.
+	 */
+	public function get_menu_icon() {
+		$icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#a7aaad" d="M4 4.1h16v4.5H4zM4 10.2h16v9.8H4z"/></svg>';
+
+		return 'data:image/svg+xml;base64,' . base64_encode( $icon ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- Encoding the menu icon.
+	}
+
+	/**
 	 * Add Top Level Menu Item.
 	 */
 	public function add_menu_item() {
@@ -126,7 +143,7 @@ class Indieweb {
 			'manage_options',
 			'indieweb',
 			array( $this, 'getting_started' ),
-			INDIEWEB_PLUGIN_URL . 'static/img/indieweb.svg'
+			$this->get_menu_icon()
 		);
 		\add_submenu_page(
 			'indieweb',

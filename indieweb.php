@@ -27,6 +27,7 @@ namespace Indieweb;
 \define( 'CNKT_INSTALLER_PATH', \plugins_url( '/', __FILE__ ) );
 
 require_once INDIEWEB_PLUGIN_DIR . '/includes/class-autoloader.php';
+require_once INDIEWEB_PLUGIN_DIR . '/includes/compat.php';
 
 if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 	// Require simple-icons data.
