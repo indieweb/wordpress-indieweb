@@ -12,10 +12,6 @@
 
 namespace Indieweb;
 
-use WP_Error;
-use Plugin_Upgrader;
-use WP_Ajax_Upgrader_Skin;
-
 /**
  * Plugin Installer class for Indieweb.
  */
@@ -102,13 +98,6 @@ class Plugin_Installer {
 	);
 
 	/**
-	 * In-request copy of the transients, keyed by transient name.
-	 *
-	 * @var array<string, array>
-	 */
-	private static $cache = array();
-
-	/**
 	 * Register the hooks.
 	 */
 	public static function init() {
@@ -160,12 +149,6 @@ class Plugin_Installer {
 	 * @return string[] List of plugin slugs.
 	 */
 	public static function get_plugin_slugs() {
-		static $slugs = null;
-
-		if ( null !== $slugs ) {
-			return $slugs;
-		}
-
 		$recommended = array();
 
 		foreach ( self::PLUGINS as $slug ) {
@@ -179,9 +162,7 @@ class Plugin_Installer {
 		 */
 		$recommended = \apply_filters( 'indieweb_recommended_plugins', $recommended );
 
-		$slugs = \array_values( \array_unique( \array_filter( $recommended ) ) );
-
-		return $slugs;
+		return \array_values( \array_unique( \array_filter( $recommended ) ) );
 	}
 
 	/**
@@ -196,49 +177,37 @@ class Plugin_Installer {
 	 * @return string The plugin slug to recommend.
 	 */
 	public static function get_post_kinds_slug() {
-		static $slug = null;
-
-		if ( null !== $slug ) {
-			return $slug;
-		}
-
 		$variants = array( self::POST_KINDS_CLASSIC, self::POST_KINDS_BLOCK );
 
 		// Whichever variant is running is the one to show.
 		foreach ( $variants as $variant ) {
 			if ( self::is_plugin_active_by_slug( $variant ) ) {
-				$slug = $variant;
-
-				return $slug;
+				return $variant;
 			}
 		}
 
 		// Otherwise stick with whatever is already on disk.
 		foreach ( $variants as $variant ) {
 			if ( ! empty( self::get_installed_plugin_file( $variant ) ) ) {
-				$slug = $variant;
-
-				return $slug;
+				return $variant;
 			}
 		}
 
-		$slug = self::POST_KINDS_CLASSIC;
-
 		if ( ! self::is_block_editor_enabled() ) {
-			return $slug;
+			return self::POST_KINDS_CLASSIC;
 		}
 
 		$plugin_data = self::query_plugin_info( self::POST_KINDS_BLOCK );
 		if ( \is_wp_error( $plugin_data ) ) {
-			return $slug;
+			return self::POST_KINDS_CLASSIC;
 		}
 
 		$availability = self::get_plugin_availability( $plugin_data );
 		if ( $availability['compatible_wp'] && $availability['compatible_php'] ) {
-			$slug = self::POST_KINDS_BLOCK;
+			return self::POST_KINDS_BLOCK;
 		}
 
-		return $slug;
+		return self::POST_KINDS_CLASSIC;
 	}
 
 	/**
@@ -318,36 +287,26 @@ class Plugin_Installer {
 	}
 
 	/**
-	 * Read a transient, keeping an in-request copy.
+	 * Read one of the cached arrays.
 	 *
 	 * @param string $key The transient key.
 	 * @return array The cached array, empty if there is nothing cached.
 	 */
 	private static function get_cache( $key ) {
-		$key = self::get_transient_key( $key );
+		$value = \get_transient( self::get_transient_key( $key ) );
 
-		if ( ! isset( self::$cache[ $key ] ) ) {
-			$value = \get_transient( $key );
-
-			self::$cache[ $key ] = \is_array( $value ) ? $value : array();
-		}
-
-		return self::$cache[ $key ];
+		return \is_array( $value ) ? $value : array();
 	}
 
 	/**
-	 * Write a transient and update the in-request copy.
+	 * Write one of the cached arrays.
 	 *
 	 * @param string $key        The transient key.
 	 * @param array  $value      The value to cache.
 	 * @param int    $expiration Time until expiration, in seconds.
 	 */
 	private static function set_cache( $key, $value, $expiration ) {
-		$key = self::get_transient_key( $key );
-
-		self::$cache[ $key ] = $value;
-
-		\set_transient( $key, $value, $expiration );
+		\set_transient( self::get_transient_key( $key ), $value, $expiration );
 	}
 
 	/**
@@ -358,7 +317,7 @@ class Plugin_Installer {
 	 * of one on every page load.
 	 *
 	 * @param string $plugin_slug The WordPress.org plugin slug.
-	 * @return array|WP_Error Array of plugin data or WP_Error on failure.
+	 * @return array|\WP_Error Array of plugin data or WP_Error on failure.
 	 */
 	public static function query_plugin_info( $plugin_slug ) {
 		$plugins = self::get_cache( self::TRANSIENT_KEY );
@@ -389,7 +348,7 @@ class Plugin_Installer {
 		$error = null;
 
 		if ( \is_wp_error( $response ) ) {
-			$error = new WP_Error(
+			$error = new \WP_Error(
 				'api_error',
 				\sprintf(
 					/* translators: %s: API error message */
@@ -398,13 +357,13 @@ class Plugin_Installer {
 				)
 			);
 		} elseif ( ! \is_object( $response ) || ! isset( $response->slug ) ) {
-			$error = new WP_Error(
+			$error = new \WP_Error(
 				'plugin_not_found',
 				\__( 'Plugin not found in the API response.', 'indieweb' )
 			);
 		}
 
-		if ( $error instanceof WP_Error ) {
+		if ( $error instanceof \WP_Error ) {
 			$errors[ $plugin_slug ] = $error;
 
 			self::set_cache( self::ERROR_TRANSIENT_KEY, $errors, MINUTE_IN_SECONDS );
@@ -520,7 +479,7 @@ class Plugin_Installer {
 	 * @param string $plugin_slug       Plugin slug.
 	 * @param array  $processed_plugins Slugs for plugins which have already been processed. Only used by recursive calls.
 	 * @param int    $depth             Current recursion depth. Only used by recursive calls.
-	 * @return WP_Error|null WP_Error on failure, null on success.
+	 * @return \WP_Error|null WP_Error on failure, null on success.
 	 */
 	public static function install_and_activate_plugin( $plugin_slug, &$processed_plugins = array(), $depth = 0 ) {
 		if ( \in_array( $plugin_slug, $processed_plugins, true ) ) {
@@ -529,7 +488,7 @@ class Plugin_Installer {
 		}
 
 		if ( $depth > self::MAX_DEPENDENCY_DEPTH ) {
-			return new WP_Error(
+			return new \WP_Error(
 				'dependency_depth_exceeded',
 				\__( 'This plugin declares too many nested dependencies to install automatically.', 'indieweb' )
 			);
@@ -595,11 +554,11 @@ class Plugin_Installer {
 
 		if ( 'install' === $plugin_status['status'] ) {
 			if ( ! \current_user_can( 'install_plugins' ) ) {
-				return new WP_Error( 'cannot_install_plugin', \__( 'Sorry, you are not allowed to install plugins on this site.', 'default' ) );
+				return new \WP_Error( 'cannot_install_plugin', \__( 'Sorry, you are not allowed to install plugins on this site.', 'default' ) );
 			}
 
-			$skin     = new WP_Ajax_Upgrader_Skin( array( 'api' => $plugin_data ) );
-			$upgrader = new Plugin_Upgrader( $skin );
+			$skin     = new \WP_Ajax_Upgrader_Skin( array( 'api' => $plugin_data ) );
+			$upgrader = new \Plugin_Upgrader( $skin );
 			$result   = $upgrader->install( $plugin_data['download_link'] );
 
 			if ( \is_wp_error( $result ) ) {
@@ -614,7 +573,7 @@ class Plugin_Installer {
 			$plugin_file = $upgrader->plugin_info();
 
 			if ( ! $plugin_file ) {
-				return new WP_Error(
+				return new \WP_Error(
 					'plugin_not_found',
 					\__( 'Plugin not found among installed plugins.', 'indieweb' )
 				);
@@ -624,7 +583,7 @@ class Plugin_Installer {
 		// Activate the plugin.
 		if ( ! \is_plugin_active( $plugin_file ) ) {
 			if ( ! \current_user_can( 'activate_plugin', $plugin_file ) ) {
-				return new WP_Error( 'cannot_activate_plugin', \__( 'Sorry, you are not allowed to activate this plugin.', 'default' ) );
+				return new \WP_Error( 'cannot_activate_plugin', \__( 'Sorry, you are not allowed to activate this plugin.', 'default' ) );
 			}
 
 			$result = \activate_plugin( $plugin_file );
@@ -802,7 +761,7 @@ class Plugin_Installer {
 	/**
 	 * Render a notice for plugins that could not be looked up.
 	 *
-	 * @param WP_Error[] $errors Errors keyed by plugin slug.
+	 * @param \WP_Error[] $errors Errors keyed by plugin slug.
 	 */
 	private static function render_error_notice( $errors ) {
 		if ( 0 === \count( $errors ) ) {
@@ -1016,16 +975,16 @@ class Plugin_Installer {
 	 * @return string The install URL.
 	 */
 	private static function get_install_url( $plugin_slug ) {
-		static $base = null;
-
-		if ( null === $base ) {
-			$base = \wp_nonce_url(
-				\add_query_arg( 'action', 'indieweb_install_activate_plugin', \admin_url( 'admin.php' ) ),
-				'indieweb_install_activate_plugin'
-			);
-		}
-
-		return \add_query_arg( 'slug', $plugin_slug, $base );
+		return \wp_nonce_url(
+			\add_query_arg(
+				array(
+					'action' => 'indieweb_install_activate_plugin',
+					'slug'   => $plugin_slug,
+				),
+				\admin_url( 'admin.php' )
+			),
+			'indieweb_install_activate_plugin'
+		);
 	}
 
 	/**
