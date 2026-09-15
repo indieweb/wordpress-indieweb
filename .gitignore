@@ -7,5 +7,5 @@ npm-debug.log
 package-lock.json
 composer.lock
 .DS_Store
-.vscode/settings.json
 .phpunit.result.cache
+.vscode/settings.json

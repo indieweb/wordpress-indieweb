@@ -5,7 +5,7 @@
 - Tags: indieweb, webmention, POSSE, indieauth
 - Requires at least: 6.2
 - Requires PHP: 7.4
-- Tested up to: 7.0
+- Tested up to: 7.1
 - Stable tag: 5.2.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
@@ -82,6 +82,7 @@ Project maintained on github at [indieweb/wordpress-indieweb](https://github.com
 
 ### 5.2.0
 * Requires WordPress 6.2 or higher
+* Tested with WordPress 7.1
 * Replaced the bundled plugin installer on the Extensions page with core's own plugin cards
 * Fix failed installs being reported as successful
 * Cache the WordPress.org plugin data instead of requesting it on every page load
