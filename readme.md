@@ -3,10 +3,10 @@
 - Contributors: pfefferle, indieweb, dshanske
 - Donate link: https://indieweb.org/how-to-sponsor
 - Tags: indieweb, webmention, POSSE, indieauth
-- Requires at least: 4.7
+- Requires at least: 6.2
 - Requires PHP: 7.4
 - Tested up to: 7.1
-- Stable tag: 5.1.1
+- Stable tag: 5.2.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -99,6 +99,17 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 5.2.0
+* Requires WordPress 6.2 or higher
+* Tested with WordPress 7.1
+* Replaced the bundled plugin installer on the Extensions page with core's own plugin cards
+* Fix failed installs being reported as successful
+* Cache the WordPress.org plugin data instead of requesting it on every page load
+* Recommend the block editor version of Post Kinds when the site can run it
+* Added `indieweb_recommended_plugins` filter
+* Added unit tests for the plugin installer
+* Updated dependencies
 
 ### 5.1.1
 * Update Plugin Installer to upstream version 1.0.2
