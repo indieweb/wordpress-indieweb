@@ -26,6 +26,7 @@ namespace Indieweb;
 \define( 'INDIEWEB_PLUGIN_URL', \plugin_dir_url( __FILE__ ) );
 
 require_once INDIEWEB_PLUGIN_DIR . '/includes/class-autoloader.php';
+require_once INDIEWEB_PLUGIN_DIR . '/includes/compat.php';
 
 if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 	// Require simple-icons data.
