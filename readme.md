@@ -14,9 +14,7 @@ IndieWeb for WordPress!
 
 ## Description
 
-The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and
-[h-card](https://indieweb.org/h-card) fields and optionally adding widgets to display this. It also includes a bundled installer for a core set of IndieWeb-related plugins. It's
-meant to be a one-stop shop to help WordPress users quickly and easily join the growing [IndieWeb](https://indieweb.org) movement (see below).
+The IndieWeb Plugin for Wordpress helps you establish your IndieWeb identity by extending the user profile to provide [rel-me](https://indieweb.org/rel-me) and [h-card](https://indieweb.org/h-card) fields and optionally adding widgets to display this. It also includes a bundled installer for a core set of IndieWeb-related plugins. It's meant to be a one-stop shop to help WordPress users quickly and easily join the growing [IndieWeb](https://indieweb.org) movement (see below).
 
 Some of these plugins allow you to:
 
