@@ -24,7 +24,6 @@ class Domain_Icon_Map {
 		'swarmapp.com'        => 'swarm',
 		'instagram.com'       => 'instagram',
 		'play.google.com'     => 'googleplay',
-		'plus.google.com'     => 'googleplus',
 		'podcasts.google.com' => 'googlepodcasts',
 		'podcasts.apple.com'  => 'applepodcasts',
 		'indieweb.xyz'        => 'info',
@@ -269,9 +268,6 @@ class Domain_Icon_Map {
 		}
 		if ( 'mailto' === $scheme ) {
 			return 'mail';
-		}
-		if ( 'gtalk' === $scheme ) {
-			return 'googlehangouts';
 		}
 		// Save the determined mapping into the map so that it will not have to look again on the same page load.
 		if ( isset( $domain ) ) {
