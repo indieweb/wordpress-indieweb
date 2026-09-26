@@ -1,0 +1,55 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"permalink_structure": "/%postname%/",
+				"blogname": "IndieWeb Demo",
+				"blogdescription": "Own your content, own your identity"
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "wordpress.org/themes",
+				"slug": "twentytwentyone"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "wordpress.org/plugins",
+				"slug": "indieweb"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "mkdir",
+			"path": "/wordpress/wp-content/mu-plugins"
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/mu-plugins/show-admin-notice.php",
+			"data": "<?php\nadd_action(\n'admin_notices',\nfunction() {\n$dismissed = get_user_option( 'dismissed_indieweb_blueprint_notice', get_current_user_id() );\nif ( $dismissed ) {\nreturn;\n}\necho '<div class=\"notice notice-info is-dismissible\" id=\"indieweb-admin-notice\"><p>' . esc_html( 'Welcome to IndieWeb! Your profile has example h-card and rel-me data, check your user profile and the sidebar on the front page. 👋' ) . '</p></div>';\n}\n);\nadd_action('wp_ajax_dismiss_indieweb-admin-notice', function() {\ncheck_ajax_referer('indieweb-admin-notice', 'nonce');\n$user_id = get_current_user_id();\nif ( $user_id ) {\nupdate_user_option($user_id, 'dismissed_indieweb_blueprint_notice', 1, false);\nwp_send_json_success();\n} else {\nwp_send_json_error('User not found');\n}\n} );\nadd_action('admin_footer', function() {\n?>\n<script type=\"text/javascript\">\njQuery(document).ready( function($) {\nvar ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';\nvar nonce = '<?php echo esc_js( wp_create_nonce( 'indieweb-admin-notice' ) ); ?>';\n$( '#indieweb-admin-notice' ).on( 'click', '.notice-dismiss', function() {\n$.ajax({\nurl: ajaxurl,\ntype: 'POST',\ndata: {\naction: 'dismiss_indieweb-admin-notice',\nnonce: nonce\n}\n});\n});\n});\n</script>\n<?php\n} );"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire_once '/wordpress/wp-load.php';\n$post_id = wp_insert_post(\n\tarray(\n\t\t'post_title'   => 'Hello IndieWeb!',\n\t\t'post_name'    => 'hello-indieweb',\n\t\t'post_content' => '<!-- wp:paragraph --><p>This is a demo post. Own your content, publish on your own site and syndicate elsewhere.</p><!-- /wp:paragraph -->',\n\t\t'post_status'  => 'publish',\n\t\t'post_author'  => 1,\n\t)\n);\n\n$user_id = 1;\nwp_update_user(\n\tarray(\n\t\t'ID'           => $user_id,\n\t\t'first_name'   => 'Jane',\n\t\t'last_name'    => 'Doe',\n\t\t'display_name' => 'Jane Doe',\n\t\t'user_url'     => home_url( '/' ),\n\t\t'description'  => 'Writer, tinkerer and IndieWeb enthusiast. I publish on my own site first.',\n\t)\n);\n$meta = array(\n\t'github'       => 'janedoe',\n\t'microblog'    => 'janedoe',\n\t'bluesky'      => 'janedoe.bsky.social',\n\t'flickr'       => 'janedoe',\n\t'mastodon'     => 'https://mastodon.social/@janedoe',\n\t'locality'     => 'Berlin',\n\t'country_name' => 'Germany',\n\t'job_title'    => 'Software Developer',\n\t'organization' => 'Example Inc.',\n\t'relme'        => array( 'https://indieweb.org/User:janedoe.example.com' ),\n);\nforeach ( $meta as $key => $value ) {\n\tupdate_user_meta( $user_id, $key, $value );\n}\nupdate_option( 'iw_single_author', 1 );\nupdate_option( 'iw_default_author', $user_id );\nupdate_option( 'widget_hcard_widget', array( 2 => array( 'avatar' => 1, 'avatar_size' => 125, 'notes' => 1, 'location' => 1 ), '_multiwidget' => 1 ) );\nupdate_option( 'widget_relme_widget', array( 2 => array( 'title' => 'Find me elsewhere' ), '_multiwidget' => 1 ) );\n$sidebars              = get_option( 'sidebars_widgets', array() );\n$sidebars['sidebar-1'] = array( 'hcard_widget-2', 'relme_widget-2' );\nupdate_option( 'sidebars_widgets', $sidebars );\nflush_rewrite_rules();\n"
+		}
+	]
+}
