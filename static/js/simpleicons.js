@@ -20,12 +20,12 @@ const TITLE_TO_SLUG_CHARS_REGEX = RegExp(
 );
 
 // Curated list of icons to include in the plugin (from Simple Icons only)
-// Note: twitter, nostr, googlepodcasts are custom icons, not from Simple Icons
+// Note: nostr is a custom icon, not from Simple Icons
 const curatedIcons = [
 	// Explicitly mapped domains (from class-relme-domain-icon-map.php)
 	'blogger', 'facebook', 'swarm', 'instagram', 'googleplay',
-	'applepodcasts', 'pocket', 'flipboard', 'microdotblog', 'wordpress',
-	'applemusic', 'bluesky', 'mastodon',
+	'applepodcasts', 'flipboard', 'microdotblog', 'wordpress',
+	'bluesky', 'mastodon',
 	// Profile fields
 	'github', 'flickr', 'reddit',
 	// Common social networks
@@ -35,17 +35,17 @@ const curatedIcons = [
 	'activitypub', 'pixelfed', 'peertube', 'lemmy', 'diaspora', 'pleroma', 'misskey', 'matrix',
 	// Developer platforms
 	'gitlab', 'codeberg', 'gitea', 'codepen', 'stackoverflow', 'npm', 'ycombinator',
-	'orcid', 'keybase', 'gravatar',
+	'orcid', 'gravatar',
 	// Content/Creator platforms
 	'substack', 'patreon', 'kofi', 'buymeacoffee', 'gumroad', 'etsy', 'bandcamp', 'soundcloud',
 	// Media/Entertainment
 	'spotify', 'lastdotfm', 'letterboxd', 'goodreads', 'vimeo', 'twitch', '500px', 'strava',
 	// Design
-	'dribbble', 'behance', 'figma', 'adobe',
+	'dribbble', 'behance', 'figma',
 	// Messaging
-	'slack', 'signal', 'element', 'googlechat', 'zoom',
+	'signal', 'element',
 	// Other common
-	'paypal', 'stripe', 'bitcoin', 'ethereum', 'rss',
+	'paypal', 'rss',
 ];
 
 // Minimal list for the minimal CSS (most common icons)
@@ -246,11 +246,9 @@ fs.writeFile("./includes/simple-icons.php", names, function(err) {
 
 // Custom icons that should not be deleted (not from Simple Icons or modified versions)
 const customIcons = [
-    'audio-mute', 'book', 'checkmark', 'circle', 'cog', 'eraser', 'fullscreen',
-    'home', 'info', 'mail', 'notice', 'phone', 'reply', 'search', 'summary',
-    'user', 'website',
+    'book', 'mail', 'notice', 'phone', 'summary', 'website',
     // Legacy icons that were in Simple Icons but removed/renamed
-    'twitter', 'nostr', 'googlepodcasts'
+    'nostr'
 ];
 
 // Copy curated SVG files from Simple Icons to static/svg
@@ -290,8 +288,7 @@ fs.readdir(svgDir, function(err, files) {
         var destFile = path.join(svgDir, iconName + '.svg');
 
         if (fs.existsSync(srcFile)) {
-            // The Icons API sanitizer strips <title> tags but keeps their text,
-            // so remove them here to keep the markup clean on WordPress 7.1+.
+            // Remove the <title> tags, the link already has a title.
             var svgContent = fs.readFileSync(srcFile, 'utf8').replace(/<title>[^<]*<\/title>/g, '');
             fs.writeFileSync(destFile, svgContent);
             copied++;

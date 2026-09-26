@@ -97,7 +97,7 @@ class Test_Relme_Domain_Icon_Map extends WP_UnitTestCase {
 	public function test_url_to_name_twitter() {
 		$result = \Indieweb\Relme\Domain_Icon_Map::url_to_name( 'https://twitter.com/username' );
 
-		$this->assertEquals( 'twitter', $result );
+		$this->assertEquals( 'x', $result );
 	}
 
 	/**
