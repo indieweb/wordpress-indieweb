@@ -6,7 +6,7 @@
 - Requires at least: 6.2
 - Requires PHP: 7.4
 - Tested up to: 7.1
-- Stable tag: 5.2.0
+- Stable tag: 5.3.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -97,6 +97,15 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 5.3.0
+* Reduced the bundled icons from 3,447 to 73, `indieweb.css` is now about 3 KB instead of 121 KB
+* Removed icons of services that are gone (Google+, Google Podcasts, GTalk, Pocket, Keybase, reading.am)
+* `twitter.com` links now use the X icon
+* Removed the unused Genericons
+* Added `indieweb_icon_file_dirs` filter to add custom icons
+* Use the IndieWeb icon for the admin menu
+* Added a Playground blueprint for the live preview
 
 ### 5.2.0
 * Requires WordPress 6.2 or higher
