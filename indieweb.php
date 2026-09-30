@@ -35,6 +35,11 @@ if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 // Register the autoloader.
 Autoloader::register_path( __NAMESPACE__, INDIEWEB_PLUGIN_DIR . '/includes' );
 
+if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
+	// Keep the pre-5.1.0 class name for themes and plugins that still use it.
+	\class_alias( Hcard\User::class, 'HCard_User' );
+}
+
 // Initialize the plugin.
 $indieweb = Indieweb::get_instance();
 $indieweb->init();
