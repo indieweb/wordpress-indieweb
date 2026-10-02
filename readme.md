@@ -6,7 +6,7 @@
 - Requires at least: 6.2
 - Requires PHP: 7.4
 - Tested up to: 7.1
-- Stable tag: 5.3.0
+- Stable tag: 5.3.1
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -95,6 +95,9 @@ One could certainly download, install, and activate some or all of these plugins
 ## Changelog
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
+
+### 5.3.1
+* Restored the `HCard_User` class name, themes that check for it show the h-card again
 
 ### 5.3.0
 * Reduced the bundled icons from 3,447 to 73, `indieweb.css` is now about 3 KB instead of 121 KB

@@ -5,7 +5,7 @@
  * Description: Interested in connecting your WordPress site to the IndieWeb?
  * Author: IndieWebCamp WordPress Outreach Club
  * Author URI: https://indieweb.org/WordPress_Outreach_Club
- * Version: 5.3.0
+ * Version: 5.3.1
  * License: MIT
  * License URI: http://opensource.org/licenses/MIT
  * Text Domain: indieweb
@@ -15,7 +15,7 @@
 
 namespace Indieweb;
 
-\define( 'INDIEWEB_VERSION', '5.3.0' );
+\define( 'INDIEWEB_VERSION', '5.3.1' );
 
 \defined( 'INDIEWEB_ADD_HCARD_SUPPORT' ) || \define( 'INDIEWEB_ADD_HCARD_SUPPORT', true );
 \defined( 'INDIEWEB_ADD_RELME_SUPPORT' ) || \define( 'INDIEWEB_ADD_RELME_SUPPORT', true );
@@ -34,6 +34,11 @@ if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
 
 // Register the autoloader.
 Autoloader::register_path( __NAMESPACE__, INDIEWEB_PLUGIN_DIR . '/includes' );
+
+if ( INDIEWEB_ADD_HCARD_SUPPORT ) {
+	// Keep the pre-5.1.0 class name for themes and plugins that still use it.
+	\class_alias( Hcard\User::class, 'HCard_User' );
+}
 
 // Initialize the plugin.
 $indieweb = Indieweb::get_instance();
