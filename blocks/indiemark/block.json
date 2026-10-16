@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "indieweb/indiemark",
+	"version": "1.0.0",
+	"title": "IndieMark",
+	"category": "widgets",
+	"icon": "awards",
+	"description": "Display a compact IndieMark badge for your site.",
+	"textdomain": "indieweb",
+	"attributes": {
+		"level": { "type": "string", "default": "auto" },
+		"details": { "type": "boolean", "default": false },
+		"overrides": { "type": "object", "default": {} }
+	},
+	"supports": { "html": false, "align": true },
+	"editorScript": "file:./index.js",
+	"style": "indieweb-indiemark"
+}

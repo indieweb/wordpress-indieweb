@@ -1,0 +1,8 @@
+.wp-block-indieweb-indiemark { display: inline-block; color: inherit; }
+.wp-block-indieweb-indiemark .indieweb-indiemark-title { display: flex; align-items: center; gap: .65em; margin: 0; font-size: .9em; font-weight: 600; }
+.wp-block-indieweb-indiemark .indieweb-indiemark-seal { display: inline-flex; align-items: center; justify-content: center; width: 2em; height: 2em; border: .15em solid currentColor; border-radius: 50%; font-size: 1.25em; font-weight: 700; line-height: 1; flex-shrink: 0; }
+.wp-block-indieweb-indiemark.has-details { display: block; }
+.wp-block-indieweb-indiemark ul { padding-inline-start: 1.5rem; }
+.wp-block-indieweb-indiemark li { margin-block: .5rem; }
+.wp-block-indieweb-indiemark small { display: block; }
+.wp-block-indieweb-indiemark.indieweb-indiemark-editor { display: block; padding: 0; border: 0; background: none; }

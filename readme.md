@@ -44,6 +44,14 @@ Interested in connecting your WordPress site to the [IndieWeb](https://indieweb.
 
 ## Frequently Asked Questions
 
+### How do I display IndieMark?
+
+Add the **IndieMark** block or use `[indieweb_indiemark]`. It automatically detects your site's capabilities and displays your IndieMark level. To choose a level yourself, use the block's Level setting or `[indieweb_indiemark level="2"]`.
+
+Detection uses the configured domain, published posts, IndieAuth, microformats2 theme support (including SemPress and Autonomie), Microformats2 or rendered h-entry markup, search visibility, homepage h-card and site icon, WordPress post formats, Post Kinds (classic or block), IndieBlocks’ enabled microformats, post type, and Webmention modules, Syndication Links, PubSubHubbub, Webmention post type support, comment settings, and published event posts. WordPress supplies search, navigation, links, and embeds. Active plugins are treated as available capabilities; the result is an estimate of draft levels 0–5. Rendered markup checks (homepage h-card and post h-entry) run in the background via WP-Cron, are cached for a day, and are refreshed when plugins, relevant settings, themes, or published posts change.
+
+Developers can extend detection with `indieweb_indiemark_features`. Advanced shortcode attributes include `details="true"`, `confirm="feature_key,..."`, and `exclude="feature_key,..."`.
+
 ### How do I get Started?
 
 IndieWeb for WordPress includes a plugin installer program. A Getting Started Guide can be found under IndieWeb.
