@@ -199,14 +199,8 @@ class IndieMark {
 		);
 		$found    = null;
 		if ( ! \is_wp_error( $response ) && 200 === \wp_remote_retrieve_response_code( $response ) ) {
-			$found = false;
 			$html  = new \WP_HTML_Tag_Processor( \wp_remote_retrieve_body( $response ) );
-			while ( $html->next_tag() ) {
-				if ( $html->has_class( $class_name ) ) {
-					$found = true;
-					break;
-				}
-			}
+			$found = $html->next_tag( array( 'class_name' => $class_name ) );
 		}
 		return $found;
 	}
