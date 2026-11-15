@@ -76,6 +76,10 @@ add_filter(
 
 The directories are searched in order and the first match wins, so adding a directory to the front of the list also replaces a bundled icon. Use `indieweb_icon_title` to set a readable title for your icon, and `pre_indieweb_icon_svg` to return the SVG markup directly instead of adding a file. Icons that are not part of the bundled set have no color of their own, they use the color of the surrounding text.
 
+### Does it work with block themes (Full Site Editing)?
+
+Yes. The plugin does not change your theme, so the profile fields and the rel-me links in the `<head>` work with every theme. The h-card and rel-me widgets need a widget area, and block themes do not have one.
+
 ### What about plugin XYZ?
 
 If you think we missed a plugin reference, please file an issue on [Github](https://github.com/indieweb/wordpress-indieweb/issues).
