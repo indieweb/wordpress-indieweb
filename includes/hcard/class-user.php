@@ -102,7 +102,7 @@ class User {
 			),
 			'mastodon'  => array(
 				'baseurl' => '%s',
-				'display' => \__( 'Mastodon Server (URL)', 'indieweb' ),
+				'display' => \__( 'Mastodon profile URL', 'indieweb' ),
 			),
 		);
 		return \apply_filters( 'wp_relme_silos', $silos );
