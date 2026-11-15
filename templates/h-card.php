@@ -59,6 +59,13 @@
 				<li>
 					<a class="p-tel tel" href="tel:<?php echo esc_attr( $user->get( 'tel' ) ); ?>"><?php echo esc_html( $user->get( 'tel' ) ); ?></a>
 				</li>
+				<?php
+			}
+			if ( $user->has_prop( 'pgp' ) && $user->get( 'pgp' ) ) {
+				?>
+				<li>
+					<a class="u-key key" href="<?php echo esc_url( $user->get( 'pgp' ) ); ?>"><?php esc_html_e( 'PGP Key', 'indieweb' ); ?></a>
+				</li>
 			<?php } ?>
 		</ul> <!-- end hcard-properties -->
 		<?php if ( $args['me'] ) { ?>
