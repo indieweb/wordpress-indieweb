@@ -263,6 +263,9 @@ class User {
 			'me',
 			array(
 				'get_callback' => function ( $user ) {
+					if ( empty( $user['id'] ) ) {
+						return array();
+					}
 					$rel_me = self::get_rel_me( $user['id'] );
 					return $rel_me ? array_values( $rel_me ) : array();
 				},
@@ -273,6 +276,9 @@ class User {
 			'first_name',
 			array(
 				'get_callback' => function ( $user ) {
+					if ( empty( $user['id'] ) ) {
+						return '';
+					}
 					return \get_user_meta( $user['id'], 'first_name', true );
 				},
 			)
