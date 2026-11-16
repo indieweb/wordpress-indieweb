@@ -108,6 +108,7 @@ class Test_Hcard_User extends WP_UnitTestCase {
 		$this->assertArrayHasKey( 'job_title', $fields );
 		$this->assertArrayHasKey( 'organization', $fields );
 		$this->assertArrayHasKey( 'honorific_prefix', $fields );
+		$this->assertArrayHasKey( 'pronouns', $fields );
 	}
 
 	/**
@@ -186,5 +187,27 @@ class Test_Hcard_User extends WP_UnitTestCase {
 
 		$this->assertIsString( $result );
 		$this->assertStringContainsString( 'h-card', $result );
+	}
+
+	/**
+	 * Test hcard renders pronouns as p-pronouns.
+	 */
+	public function test_hcard_renders_pronouns() {
+		\update_user_meta( self::$user_id, 'pronouns', 'they/them' );
+
+		$result = \Indieweb\Hcard\User::hcard( self::$user_id );
+
+		$this->assertStringContainsString( '<p class="hcard-pronouns p-pronouns">they/them</p>', $result );
+
+		\delete_user_meta( self::$user_id, 'pronouns' );
+	}
+
+	/**
+	 * Test hcard omits pronouns when not set.
+	 */
+	public function test_hcard_omits_empty_pronouns() {
+		$result = \Indieweb\Hcard\User::hcard( self::$user_id );
+
+		$this->assertStringNotContainsString( 'p-pronouns', $result );
 	}
 }
