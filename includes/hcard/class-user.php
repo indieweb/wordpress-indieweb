@@ -182,6 +182,10 @@ class User {
 				'title'       => \__( 'Honorific Prefix', 'indieweb' ),
 				'description' => \__( 'e.g. Mrs., Mr. Dr.', 'indieweb' ),
 			),
+			'pronouns'         => array(
+				'title'       => \__( 'Pronouns', 'indieweb' ),
+				'description' => \__( 'e.g. she/her, he/him, they/them', 'indieweb' ),
+			),
 		);
 		return \apply_filters( 'wp_user_extrafields', $extras );
 	}

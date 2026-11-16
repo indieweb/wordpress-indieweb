@@ -27,6 +27,11 @@
 				<p class="hcard-name p-name n"><?php echo esc_html( $name ); ?></p>
 			<?php
 		}
+		if ( $user->has_prop( 'pronouns' ) && $user->get( 'pronouns' ) ) {
+			?>
+			<p class="hcard-pronouns p-pronouns"><?php echo esc_html( $user->get( 'pronouns' ) ); ?></p>
+			<?php
+		}
 		if ( $args['email'] ) {
 			?>
 			<p>
