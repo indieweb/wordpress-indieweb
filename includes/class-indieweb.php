@@ -73,6 +73,7 @@ class Indieweb {
 
 		// General Settings.
 		\add_action( 'init', array( General_Settings::class, 'register_settings' ) );
+		\add_action( 'init', array( IndieMark::class, 'register' ) );
 
 		// Third party integrations.
 		\add_action( 'init', array( Integrations::class, 'init' ) );
