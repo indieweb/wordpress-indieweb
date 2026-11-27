@@ -5,8 +5,8 @@
 - Tags: indieweb, webmention, POSSE, indieauth
 - Requires at least: 6.2
 - Requires PHP: 7.4
-- Tested up to: 7.1
-- Stable tag: 5.3.1
+- Tested up to: 7.2
+- Stable tag: 5.4.0
 - License: MIT
 - License URI: http://opensource.org/licenses/MIT
 
@@ -100,8 +100,15 @@ One could certainly download, install, and activate some or all of these plugins
 
 Project maintained on github at [indieweb/wordpress-indieweb](https://github.com/indieweb/wordpress-indieweb).
 
-### 5.3.1
+### 5.4.0
+* Tested with WordPress 7.2
+* Added a pronouns field to the profile, shown as `p-pronouns` in the h-card
+* Show the PGP key in the h-card
+* Fix the country not being shown in the h-card
 * Restored the `HCard_User` class name, themes that check for it show the h-card again
+* Fix REST API user fields when the user has no ID
+* Renamed the "Mastodon Server (URL)" profile field to "Mastodon profile URL"
+* Added a FAQ entry about block themes
 
 ### 5.3.0
 * Reduced the bundled icons from 3,447 to 73, `indieweb.css` is now about 3 KB instead of 121 KB
