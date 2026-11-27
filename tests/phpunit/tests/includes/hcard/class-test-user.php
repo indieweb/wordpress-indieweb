@@ -201,9 +201,9 @@ class Test_Hcard_User extends WP_UnitTestCase {
 		$this->assertStringContainsString( '<span class="p-country-name country-name">Germany</span>', $result );
 
 		\delete_user_meta( self::$user_id, 'country_name' );
-  }
+	}
 
-  /**
+	/**
 	 * Test hcard renders pronouns as p-pronouns.
 	 */
 	public function test_hcard_renders_pronouns() {
