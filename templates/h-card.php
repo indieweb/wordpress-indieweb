@@ -41,7 +41,7 @@
 	</div> <!-- end hcard-header -->
 	<div class="hcard-body">
 		<ul class="hcard-properties">
-			<?php if ( $args['location'] && ( $user->has_prop( 'locality' ) || $user->has_prop( 'region' ) || $user->has_prop( 'country-name' ) ) ) { ?>
+			<?php if ( $args['location'] && ( $user->has_prop( 'locality' ) || $user->has_prop( 'region' ) || $user->has_prop( 'country_name' ) ) ) { ?>
 				<li class="h-adr adr">
 					<?php if ( $user->has_prop( 'locality' ) ) { ?>
 						<span class="p-locality locality"><?php echo esc_html( $user->get( 'locality' ) ); ?></span>
@@ -52,9 +52,9 @@
 						<span class="p-region region"><?php echo esc_html( $user->get( 'region' ) ); ?></span>
 						<?php
 					}
-					if ( $user->has_prop( 'country-name' ) ) {
+					if ( $user->has_prop( 'country_name' ) ) {
 						?>
-						<span class="p-country-name country-name"><?php echo esc_html( $user->get( 'country-name' ) ); ?></span>
+						<span class="p-country-name country-name"><?php echo esc_html( $user->get( 'country_name' ) ); ?></span>
 					<?php } ?>
 				</li>
 				<?php

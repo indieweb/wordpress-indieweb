@@ -190,6 +190,20 @@ class Test_Hcard_User extends WP_UnitTestCase {
 	}
 
 	/**
+	 * Test hcard renders the country saved in the profile.
+	 */
+	public function test_hcard_renders_country_name() {
+		\update_user_meta( self::$user_id, 'country_name', 'Germany' );
+
+		$result = \Indieweb\Hcard\User::hcard( self::$user_id );
+
+		$this->assertStringContainsString( 'h-adr', $result );
+		$this->assertStringContainsString( '<span class="p-country-name country-name">Germany</span>', $result );
+
+		\delete_user_meta( self::$user_id, 'country_name' );
+	}
+
+	/**
 	 * Test hcard renders pronouns as p-pronouns.
 	 */
 	public function test_hcard_renders_pronouns() {
